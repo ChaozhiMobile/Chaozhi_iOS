@@ -1,0 +1,72 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - IQKeyboardManager (6.1.1)
+  - lottie-ios (2.5.0)
+  - Masonry (1.1.0)
+  - MJRefresh (3.1.15.6)
+  - ReactiveObjC (3.1.0)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
+  - TZImagePickerController (2.2.6)
+  - XLGCategory (1.1.0):
+    - XLGCategory/NSCategory (= 1.1.0)
+    - XLGCategory/UICategory (= 1.1.0)
+  - XLGCategory/NSCategory (1.1.0)
+  - XLGCategory/UICategory (1.1.0)
+  - YYModel (1.0.4)
+
+DEPENDENCIES:
+  - AFNetworking
+  - IQKeyboardManager
+  - lottie-ios
+  - Masonry
+  - MJRefresh
+  - ReactiveObjC
+  - SDWebImage
+  - TZImagePickerController
+  - XLGCategory
+  - YYModel
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - IQKeyboardManager
+    - lottie-ios
+    - Masonry
+    - MJRefresh
+    - ReactiveObjC
+    - SDWebImage
+    - TZImagePickerController
+    - XLGCategory
+    - YYModel
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  IQKeyboardManager: 79c57795f5c2408d259d37b9da2ed07efcbb5225
+  lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJRefresh: 0efa19656679d70a0f47cbe76e56c2271fe53a97
+  ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  TZImagePickerController: 3b25b39ba2e28984fb51bbf3ca5187ffccebb239
+  XLGCategory: b93fda8378ccd3e04deb87033c02ad3e6dee3c4a
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+
+PODFILE CHECKSUM: 7d77b70859815d4f63543cfd8ec1d3773cdde866
+
+COCOAPODS: 1.5.3
