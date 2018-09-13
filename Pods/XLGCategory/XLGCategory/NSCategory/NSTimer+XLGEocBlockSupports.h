@@ -1,6 +1,6 @@
 //
 //  NSTimer+XLGEocBlockSupports.h
-//  SharenGo
+//  Chaozhi
 //  Notes：NSTimer 封装
 //
 //  Created by Jason_hzb on 2018/5/7.

@@ -1,6 +1,6 @@
 //
 //  UIColor+XLGExtension.h
-//  SharenGo
+//  Chaozhi
 //  Notes：通过Hex获取颜色
 //
 //  Created by Jason_hzb on 2018/5/14.

@@ -1,0 +1,99 @@
+//
+//  Chaozhi.pch
+//  Chaozhi
+//  Notes：全局文件
+//
+//  Created by Jason on 2018/5/7.
+//  Copyright © 2018年 小灵狗出行. All rights reserved.
+//
+
+#ifndef Chaozhi_pch
+#define Chaozhi_pch
+
+/****************************头文件*****************************/
+#ifdef __OBJC__
+
+#import "AppDelegate.h"
+#import "BaseVC.h"
+#import <UIImageView+WebCache.h>
+#import <UIButton+WebCache.h>
+#import "Utils.h"
+#import "CacheUtil.h"
+#import "ReactiveObjC.h"
+#import "Masonry.h"
+#import <XLGCategory.h>
+#import "UserInfo.h"
+#import "CommonRequest.h"
+#import "XLGLottie.h"
+
+#endif
+
+#define kCachePath [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]
+
+/******************************keys****************************/
+
+//网络请求key
+#define kSignKey        @"ghOwfR7Wz44cbKU93KVSxwYXPGloNu"
+#define kNonceStr       [SignKeyUtil getNonceString]
+
+//cache key
+#define kTestServerKey   @"testServer"
+
+/******************************通知****************************/
+
+#define kLoginSuccNotification  @"kLoginSuccNotification"
+#define kLogoutSuccNotification  @"kLogoutSuccNotification"
+
+/********************屏幕宽高、系统版本、手机型号******************/
+
+#define SCREEN_BOUNDS [[UIScreen mainScreen] bounds]
+#define WIDTH  [[UIScreen mainScreen] bounds].size.width
+#define HEIGHT [[UIScreen mainScreen] bounds].size.height
+#define kNavBarH (IS_IPhoneX?88:64)
+#define kStatusBarH (IS_IPhoneX?44:20)
+#define kTabBarH (IS_IPhoneX?83:49)
+#define kTabBarSafeH (IS_IPhoneX?34:0)
+#define IS_IOS_11 ([[[UIDevice currentDevice] systemVersion] floatValue]>=11.0)
+#define IS_IPhoneX (CGSizeEqualToSize(CGSizeMake(375.f, 812.f), [UIScreen mainScreen].bounds.size) || CGSizeEqualToSize(CGSizeMake(812.f, 375.f), [UIScreen mainScreen].bounds.size))
+
+//控件宽高、字体适配
+#define autoScaleW(width) [(AppDelegate *)[UIApplication sharedApplication].delegate autoScaleW:width]
+#define autoScaleH(height) [(AppDelegate *)[UIApplication sharedApplication].delegate autoScaleH:height]
+
+/*****************************颜色*****************************/
+
+#define AEColor(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+#define kColorFromARGBHex(value,a) [UIColor colorWithRed:((float)((value & 0xFF0000) >> 16))/255.0 green:((float)((value & 0xFF00) >> 8))/255.0 blue:((float)(value & 0xFF))/255.0 alpha:a] //a:透明度
+#define kColorFromRGBHex(value) [UIColor colorWithRed:((float)((value & 0xFF0000) >> 16))/255.0 green:((float)((value & 0xFF00) >> 8))/255.0 blue:((float)(value & 0xFF))/255.0 alpha:1.0]
+
+#define AppThemeColor kColorFromRGBHex(0x25D880)
+#define PageColor kColorFromRGBHex(0xF7F7F7)
+#define kTitleColor kColorFromRGBHex(0x030303)
+#define kShadowColor kColorFromRGBHex(0x24709C)
+#define kBlueColor kColorFromRGBHex(0x00A8FF)
+#define kGreenColor kColorFromRGBHex(0x7AD300)
+#define kLightBlackColor [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8]
+#define kLineColor kColorFromRGBHex(0xEEEEEE)
+#define kWhiteColor kColorFromRGBHex(0xFFFFFF)
+#define kBlackColor kColorFromRGBHex(0x000000)
+#define kBorderGrayColor kColorFromRGBHex(0xCCCCCC)
+
+#define OffLineServer [Utils isBlankString:[CacheUtil getCacherWithKey:kTestServerKey]]
+
+#ifdef DEBUG
+#define KOnline NO
+
+#else
+#define KOnline YES
+#endif
+
+/**
+ *  完美解决Xcode NSLog打印不全的宏
+ */
+#ifdef DEBUG
+#define NSLog(...) printf("%f %s\n",[[NSDate date]timeIntervalSince1970],[[NSString stringWithFormat:__VA_ARGS__]UTF8String]);
+#else
+#define NSLog(format, ...)
+#endif
+
+#endif /* Chaozhi_pch */

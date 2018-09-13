@@ -1,6 +1,6 @@
 //
 //  NSDate+XLGExtension.h
-//  SharenGo
+//  Chaozhi
 //  Notes：时间处理相关方法
 //
 //  Created by Jason_hzb on 2018/5/7.

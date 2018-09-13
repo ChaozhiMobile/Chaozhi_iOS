@@ -1,6 +1,6 @@
 //
 //  UIApplication+XLGExtension.h
-//  SharenGo
+//  Chaozhi
 //  Notes：获取设备的相关存储路径和一些app参数
 //
 //  Created by Jason_hzb on 2018/5/7.
