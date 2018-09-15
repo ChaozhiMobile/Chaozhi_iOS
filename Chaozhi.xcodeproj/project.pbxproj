@@ -14,10 +14,8 @@
 		A020B01E214AAB150011BB4F /* SignKeyUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AF63214AAB130011BB4F /* SignKeyUtil.m */; };
 		A020B01F214AAB150011BB4F /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AF68214AAB130011BB4F /* Config.m */; };
 		A020B020214AAB150011BB4F /* UrlConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AF69214AAB130011BB4F /* UrlConfig.m */; };
-		A020B021214AAB150011BB4F /* XLGRentalService.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AF6C214AAB130011BB4F /* XLGRentalService.m */; };
 		A020B022214AAB150011BB4F /* BaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AF6D214AAB130011BB4F /* BaseService.m */; };
 		A020B023214AAB150011BB4F /* XLGUserService.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AF70214AAB130011BB4F /* XLGUserService.m */; };
-		A020B024214AAB150011BB4F /* XLGWalletService.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AF73214AAB130011BB4F /* XLGWalletService.m */; };
 		A020B025214AAB150011BB4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A020AF76214AAB130011BB4F /* Assets.xcassets */; };
 		A020B026214AAB150011BB4F /* ic_refresh_image_025@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF79214AAB130011BB4F /* ic_refresh_image_025@2x.png */; };
 		A020B027214AAB150011BB4F /* ic_refresh_image_029@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF7A214AAB130011BB4F /* ic_refresh_image_029@2x.png */; };
@@ -124,14 +122,10 @@
 		A020AF68214AAB130011BB4F /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
 		A020AF69214AAB130011BB4F /* UrlConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UrlConfig.m; sourceTree = "<group>"; };
 		A020AF6A214AAB130011BB4F /* CommonRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonRequest.h; sourceTree = "<group>"; };
-		A020AF6C214AAB130011BB4F /* XLGRentalService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGRentalService.m; sourceTree = "<group>"; };
 		A020AF6D214AAB130011BB4F /* BaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseService.m; sourceTree = "<group>"; };
 		A020AF6E214AAB130011BB4F /* ObserverServiceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObserverServiceDelegate.h; sourceTree = "<group>"; };
-		A020AF6F214AAB130011BB4F /* XLGWalletService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLGWalletService.h; sourceTree = "<group>"; };
 		A020AF70214AAB130011BB4F /* XLGUserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGUserService.m; sourceTree = "<group>"; };
-		A020AF71214AAB130011BB4F /* XLGRentalService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLGRentalService.h; sourceTree = "<group>"; };
 		A020AF72214AAB130011BB4F /* BaseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseService.h; sourceTree = "<group>"; };
-		A020AF73214AAB130011BB4F /* XLGWalletService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGWalletService.m; sourceTree = "<group>"; };
 		A020AF74214AAB130011BB4F /* XLGUserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLGUserService.h; sourceTree = "<group>"; };
 		A020AF76214AAB130011BB4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A020AF79214AAB130011BB4F /* ic_refresh_image_025@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_refresh_image_025@2x.png"; sourceTree = "<group>"; };
@@ -324,10 +318,10 @@
 		A020AF5D214AAB130011BB4F /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				A020AF6A214AAB130011BB4F /* CommonRequest.h */,
 				A020AF5E214AAB130011BB4F /* CommonRequest.m */,
 				A020AF5F214AAB130011BB4F /* Util */,
 				A020AF64214AAB130011BB4F /* Config */,
-				A020AF6A214AAB130011BB4F /* CommonRequest.h */,
 				A020AF6B214AAB130011BB4F /* Service */,
 			);
 			path = Network;
@@ -336,9 +330,9 @@
 		A020AF5F214AAB130011BB4F /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				A020AF62214AAB130011BB4F /* NetworkUtil.h */,
 				A020AF60214AAB130011BB4F /* NetworkUtil.m */,
 				A020AF61214AAB130011BB4F /* SignKeyUtil.h */,
-				A020AF62214AAB130011BB4F /* NetworkUtil.h */,
 				A020AF63214AAB130011BB4F /* SignKeyUtil.m */,
 			);
 			path = Util;
@@ -348,10 +342,10 @@
 			isa = PBXGroup;
 			children = (
 				A020AF65214AAB130011BB4F /* Config.h */,
-				A020AF66214AAB130011BB4F /* UrlConfig.h */,
-				A020AF67214AAB130011BB4F /* ActionType.h */,
 				A020AF68214AAB130011BB4F /* Config.m */,
+				A020AF66214AAB130011BB4F /* UrlConfig.h */,
 				A020AF69214AAB130011BB4F /* UrlConfig.m */,
+				A020AF67214AAB130011BB4F /* ActionType.h */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -359,15 +353,11 @@
 		A020AF6B214AAB130011BB4F /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				A020AF6C214AAB130011BB4F /* XLGRentalService.m */,
-				A020AF6D214AAB130011BB4F /* BaseService.m */,
-				A020AF6E214AAB130011BB4F /* ObserverServiceDelegate.h */,
-				A020AF6F214AAB130011BB4F /* XLGWalletService.h */,
-				A020AF70214AAB130011BB4F /* XLGUserService.m */,
-				A020AF71214AAB130011BB4F /* XLGRentalService.h */,
 				A020AF72214AAB130011BB4F /* BaseService.h */,
-				A020AF73214AAB130011BB4F /* XLGWalletService.m */,
+				A020AF6D214AAB130011BB4F /* BaseService.m */,
 				A020AF74214AAB130011BB4F /* XLGUserService.h */,
+				A020AF70214AAB130011BB4F /* XLGUserService.m */,
+				A020AF6E214AAB130011BB4F /* ObserverServiceDelegate.h */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -465,9 +455,9 @@
 			isa = PBXGroup;
 			children = (
 				A020AFA9214AAB130011BB4F /* Utils.h */,
+				A020AFB2214AAB130011BB4F /* Utils.m */,
 				A020AFAA214AAB130011BB4F /* Cache */,
 				A020AFAF214AAB130011BB4F /* Toast */,
-				A020AFB2214AAB130011BB4F /* Utils.m */,
 				A020AFB3214AAB130011BB4F /* OptionsBar */,
 				A020AFB4214AAB130011BB4F /* AlertView */,
 				A020AFB7214AAB130011BB4F /* Lottie */,
@@ -480,10 +470,10 @@
 		A020AFAA214AAB130011BB4F /* Cache */ = {
 			isa = PBXGroup;
 			children = (
-				A020AFAB214AAB130011BB4F /* KeyChainUtil.h */,
 				A020AFAC214AAB130011BB4F /* CacheUtil.h */,
-				A020AFAD214AAB130011BB4F /* KeyChainUtil.m */,
 				A020AFAE214AAB130011BB4F /* CacheUtil.m */,
+				A020AFAB214AAB130011BB4F /* KeyChainUtil.h */,
+				A020AFAD214AAB130011BB4F /* KeyChainUtil.m */,
 			);
 			path = Cache;
 			sourceTree = "<group>";
@@ -491,8 +481,8 @@
 		A020AFAF214AAB130011BB4F /* Toast */ = {
 			isa = PBXGroup;
 			children = (
-				A020AFB0214AAB130011BB4F /* Toast.m */,
 				A020AFB1214AAB130011BB4F /* Toast.h */,
+				A020AFB0214AAB130011BB4F /* Toast.m */,
 			);
 			path = Toast;
 			sourceTree = "<group>";
@@ -507,8 +497,8 @@
 		A020AFB4214AAB130011BB4F /* AlertView */ = {
 			isa = PBXGroup;
 			children = (
-				A020AFB5214AAB130011BB4F /* XLGAlertView.m */,
 				A020AFB6214AAB130011BB4F /* XLGAlertView.h */,
+				A020AFB5214AAB130011BB4F /* XLGAlertView.m */,
 			);
 			path = AlertView;
 			sourceTree = "<group>";
@@ -516,8 +506,8 @@
 		A020AFB7214AAB130011BB4F /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
-				A020AFB8214AAB130011BB4F /* XLGLottie.m */,
 				A020AFB9214AAB130011BB4F /* XLGLottie.h */,
+				A020AFB8214AAB130011BB4F /* XLGLottie.m */,
 			);
 			path = Lottie;
 			sourceTree = "<group>";
@@ -525,8 +515,8 @@
 		A020AFBA214AAB130011BB4F /* RegularPhone */ = {
 			isa = PBXGroup;
 			children = (
-				A020AFBB214AAB130011BB4F /* RegularPhoneTF.m */,
 				A020AFBC214AAB130011BB4F /* RegularPhoneTF.h */,
+				A020AFBB214AAB130011BB4F /* RegularPhoneTF.m */,
 			);
 			path = RegularPhone;
 			sourceTree = "<group>";
@@ -534,8 +524,8 @@
 		A020AFBD214AAB130011BB4F /* ProgressView */ = {
 			isa = PBXGroup;
 			children = (
-				A020AFBE214AAB130011BB4F /* ProgressLoadView.m */,
 				A020AFBF214AAB130011BB4F /* ProgressLoadView.h */,
+				A020AFBE214AAB130011BB4F /* ProgressLoadView.m */,
 			);
 			path = ProgressView;
 			sourceTree = "<group>";
@@ -650,8 +640,8 @@
 			isa = PBXGroup;
 			children = (
 				A020AFED214AAB140011BB4F /* Welcome */,
-				A020AFF1214AAB140011BB4F /* XLGHomeVC.m */,
 				A020AFF2214AAB140011BB4F /* XLGHomeVC.h */,
+				A020AFF1214AAB140011BB4F /* XLGHomeVC.m */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -667,8 +657,8 @@
 		A020AFEE214AAB140011BB4F /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				A020AFEF214AAB140011BB4F /* XLGLoginVC.m */,
 				A020AFF0214AAB140011BB4F /* XLGLoginVC.h */,
+				A020AFEF214AAB140011BB4F /* XLGLoginVC.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -676,18 +666,18 @@
 		A020AFF3214AAB140011BB4F /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				A020AFF4214AAB140011BB4F /* WKDelegateController.m */,
-				A020AFF5214AAB140011BB4F /* BaseScrollView.h */,
-				A020AFF6214AAB140011BB4F /* BaseNavBar.h */,
-				A020AFF7214AAB140011BB4F /* BaseNC.h */,
 				A020AFF8214AAB140011BB4F /* BaseVC.h */,
-				A020AFF9214AAB140011BB4F /* BaseWebVC.h */,
-				A020AFFA214AAB140011BB4F /* WKDelegateController.h */,
 				A020AFFB214AAB140011BB4F /* BaseVC.m */,
+				A020AFF7214AAB140011BB4F /* BaseNC.h */,
 				A020AFFC214AAB140011BB4F /* BaseNC.m */,
+				A020AFF6214AAB140011BB4F /* BaseNavBar.h */,
 				A020AFFD214AAB140011BB4F /* BaseNavBar.m */,
+				A020AFF5214AAB140011BB4F /* BaseScrollView.h */,
 				A020AFFE214AAB140011BB4F /* BaseScrollView.m */,
+				A020AFF9214AAB140011BB4F /* BaseWebVC.h */,
 				A020AFFF214AAB140011BB4F /* BaseWebVC.m */,
+				A020AFFA214AAB140011BB4F /* WKDelegateController.h */,
+				A020AFF4214AAB140011BB4F /* WKDelegateController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -735,12 +725,12 @@
 		A020B015214AAB140011BB4F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A020B016214AAB140011BB4F /* LoginItem.h */,
-				A020B017214AAB140011BB4F /* BaseItem.m */,
-				A020B018214AAB140011BB4F /* UserInfo.m */,
 				A020B019214AAB140011BB4F /* BaseItem.h */,
-				A020B01A214AAB140011BB4F /* LoginItem.m */,
+				A020B017214AAB140011BB4F /* BaseItem.m */,
 				A020B01B214AAB140011BB4F /* UserInfo.h */,
+				A020B018214AAB140011BB4F /* UserInfo.m */,
+				A020B016214AAB140011BB4F /* LoginItem.h */,
+				A020B01A214AAB140011BB4F /* LoginItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -926,7 +916,6 @@
 				A020B05E214AAB150011BB4F /* MEViewController.m in Sources */,
 				A020B070214AAB150011BB4F /* LDNetTraceRoute.m in Sources */,
 				A020B06D214AAB150011BB4F /* BaseNavBar.m in Sources */,
-				A020B024214AAB150011BB4F /* XLGWalletService.m in Sources */,
 				A020B074214AAB150011BB4F /* LDNetGetAddress.m in Sources */,
 				A020B060214AAB150011BB4F /* XLGLoginTestView.m in Sources */,
 				A020B067214AAB150011BB4F /* XLGExternalTestTool.m in Sources */,
@@ -968,7 +957,6 @@
 				A020B069214AAB150011BB4F /* XLGHomeVC.m in Sources */,
 				A020B066214AAB150011BB4F /* XLGExternalCheckDomainVC.m in Sources */,
 				A020B058214AAB150011BB4F /* XLGGroupCarListVC.m in Sources */,
-				A020B021214AAB150011BB4F /* XLGRentalService.m in Sources */,
 				A020B056214AAB150011BB4F /* RegularPhoneTF.m in Sources */,
 				A020B079214AAB150011BB4F /* UserInfo.m in Sources */,
 			);
