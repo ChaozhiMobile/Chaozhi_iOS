@@ -14,6 +14,13 @@
 #pragma mark - 类单例方法
 + (Utils *)share;
 
+#pragma mark - 存取服务器环境【0：测试地址test-aci-api.chaozhiedu.com，1：正式地址：aci-api.chaozhiedu.com】
+// 存放服务器环境
++ (void)setServer:(NSInteger)server;
+
+// 获取服务器环境
++ (NSInteger)getServer;
+
 #pragma mark - 判断网络状态
 + (BOOL)getNetStatus;
 
@@ -50,5 +57,7 @@
 
 #pragma mark - 屏幕快照
 + (UIImage *)snapshotSingleView:(UIView *)view;
+
++ (UIViewController *)getViewController:(NSString *)stordyName WithVCName:(NSString *)name;
 
 @end

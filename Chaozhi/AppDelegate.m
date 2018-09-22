@@ -36,15 +36,13 @@
     //获取用户信息
     [[UserInfo share] getUserInfo];
     
-    //控件宽高、字体适配
-    [self initAutoScaleSize];
-    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = PageColor;
     //暂时把XLGInternalTestVC作为根视图控制器
-    XLGInternalTestVC *testVC = [[XLGInternalTestVC alloc] init];
-    BaseNC *nc = [[BaseNC alloc] initWithRootViewController:testVC];
-    self.window.rootViewController = nc;
+    UIViewController *vc = [Utils getViewController:@"Main" WithVCName:@"XLGLoginVC"];
+//    XLGInternalTestVC *testVC = [[XLGInternalTestVC alloc] init];
+//    BaseNC *nc = [[BaseNC alloc] initWithRootViewController:testVC];
+    self.window.rootViewController = vc;
     [self.window makeKeyAndVisible];
     
     return YES;
@@ -57,22 +55,6 @@
     manager.shouldResignOnTouchOutside = YES;
     manager.shouldToolbarUsesTextFieldTintColor = YES;
     manager.enableAutoToolbar = NO;
-}
-
-#pragma mark - ScaleSize 控件宽高、字体适配【适合在iPhone 6尺寸上调试】
-
-- (void)initAutoScaleSize {
-    
-    _autoSizeScaleW =WIDTH/375;
-    _autoSizeScaleH =HEIGHT/667;
-}
-
-- (CGFloat)autoScaleW:(CGFloat)w {
-    return w * self.autoSizeScaleW;
-}
-
-- (CGFloat)autoScaleH:(CGFloat)h {
-    return h * self.autoSizeScaleH;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

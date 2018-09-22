@@ -10,8 +10,8 @@
 #import <UIKit/UIKit.h>
 #import "BaseNavBar.h"
 #import "XLGUserService.h"
-#import "XLGRentalService.h"
-#import "XLGWalletService.h"
+//#import "XLGRentalService.h"
+//#import "XLGWalletService.h"
 
 @interface BaseVC : UIViewController
 
@@ -21,13 +21,14 @@
 
 //self.isPanForbid = YES; //禁用iOS自带侧滑返回手势(1、手势冲突，比如地图；2、不是继承基类的VC，比如继承UIViewController/UITableViewController/UISearchController),在子类viewDidLoad方法里面调用
 @property (nonatomic,assign) BOOL isPanForbid;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewConstraintH;
 
 @property (nonatomic,retain) UITableView *tableView;
 @property (nonatomic,assign) CGRect tableFrame;
 
 @property (nonatomic,retain) XLGUserService *userService;
-@property (nonatomic,retain) XLGRentalService *rentalService;
-@property (nonatomic,retain) XLGWalletService *walletService;
+//@property (nonatomic,retain) XLGRentalService *rentalService;
+//@property (nonatomic,retain) XLGWalletService *walletService;
 
 /*!
  *  @brief 无网络

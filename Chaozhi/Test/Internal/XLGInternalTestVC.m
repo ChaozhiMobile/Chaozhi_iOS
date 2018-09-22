@@ -144,11 +144,11 @@
     else
     {
         UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 40)];
-        header.backgroundColor = kColorFromRGBHex(0xFFBCBE);
+        header.backgroundColor = RGBValue(0xFFBCBE);
         UILabel *headerLab = [[UILabel alloc] initWithFrame:CGRectMake(40, 0, WIDTH -40, 40)];
         headerLab.text = @"当前网络不可用，请设置您的网络";
         headerLab.font = [UIFont systemFontOfSize:16 ];
-        headerLab.textColor = kColorFromRGBHex(0x030303);
+        headerLab.textColor = RGBValue(0x030303);
         UIImageView *iconView = [[UIImageView alloc] initWithFrame:CGRectMake(5, 5, 30, 30)];
         iconView.image = [UIImage imageNamed:@"NetNotice.png"];
         [header addSubview:iconView];

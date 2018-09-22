@@ -14,7 +14,7 @@
 //Toast到顶端/底端默认距离
 #define ToastSpace 100.0f
 //Toast背景颜色
-#define ToastBackgroundColor kColorFromRGBHex(0x222222)
+#define ToastBackgroundColor RGBValue(0x222222)
 
 @interface Toast ()
 {

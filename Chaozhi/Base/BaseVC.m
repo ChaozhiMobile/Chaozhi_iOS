@@ -10,7 +10,6 @@
 #import "BaseVC.h"
 #import "MJRefresh.h"
 #import "ObserverServiceDelegate.h"
-#import "LogShowView.h"
 #import "XLGExternalTestTool.h"
 
 @interface BaseVC ()<UITextFieldDelegate,UITextViewDelegate,UITabBarDelegate>
@@ -45,12 +44,12 @@
         }
     }
     
-    testTool = [XLGExternalTestTool shareInstance];
+    XLGExternalTestTool *testTool = [XLGExternalTestTool shareInstance];
     UIWindow *myWindow= [[[UIApplication sharedApplication] delegate] window];
     if (![myWindow viewWithTag:10001]&&!KOnline) {
         [myWindow addSubview:testTool];
     }
-    
+    [myWindow bringSubviewToFront:testTool];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -76,9 +75,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    ;
-    self.view.backgroundColor = PageColor;
     
+//    self.view.backgroundColor = PageColor;
+    _viewConstraintH.constant = MIN(autoScaleH(50), 60);
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.navigationController.automaticallyAdjustsScrollViewInsets = NO;
     self.tableFrame = CGRectMake(0, kNavBarH, WIDTH, HEIGHT-kNavBarH);
@@ -99,8 +98,8 @@
 #pragma mark - 初始化接口服务
 - (void)initService {
     self.userService = [[XLGUserService alloc] init];
-    self.rentalService = [[XLGRentalService alloc] init];
-    self.walletService = [[XLGWalletService alloc] init];
+//    self.rentalService = [[XLGRentalService alloc] init];
+//    self.walletService = [[XLGWalletService alloc] init];
 }
 
 //没有网络了
@@ -304,8 +303,8 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self]; //移除通知
     timeout = -1;
     self.userService = nil;
-    self.rentalService = nil;
-    self.walletService = nil;
+//    self.rentalService = nil;
+//    self.walletService = nil;
 }
 
 - (void)didReceiveMemoryWarning {

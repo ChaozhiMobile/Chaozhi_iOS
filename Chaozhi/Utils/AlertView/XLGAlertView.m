@@ -50,7 +50,7 @@
     
     UILabel *titleLab = [[UILabel alloc] initWithFrame:CGRectMake(0, autoScaleH(18), autoScaleW(280), autoScaleW(40))];
     titleLab.text = self.topTitle;
-    titleLab.textColor = kColorFromRGBHex(0x818181);;
+    titleLab.textColor = RGBValue(0x818181);;
     titleLab.font = [UIFont systemFontOfSize:autoScaleW(18)];
     titleLab.textAlignment = NSTextAlignmentCenter;
     [bgView addSubview:titleLab];
@@ -62,7 +62,7 @@
     lab.numberOfLines = 0;
     lab.text = self.textStr;
     lab.font = [UIFont systemFontOfSize:autoScaleW(14)];
-    lab.textColor = kColorFromRGBHex(0xB4B4B4);
+    lab.textColor = RGBValue(0xB4B4B4);
     [bgView addSubview:lab];
     contentHeight += height+5;
     
@@ -70,12 +70,12 @@
     CGFloat offY = CGRectGetMaxY(lab.frame) + 20;
     
     UIView *rowLine = [[UIView alloc] initWithFrame:CGRectMake(0, offY, bgView.frame.size.width, autoScaleH(1))];
-    rowLine.backgroundColor = kColorFromRGBHex(0x979797);
+    rowLine.backgroundColor = RGBValue(0x979797);
     rowLine.alpha = 0.0544;
     [bgView addSubview:rowLine];
     
     UIView *colLine = [[UIView alloc] initWithFrame:CGRectMake(bgView.frame.size.width/2, offY, autoScaleW(1), autoScaleH(48))];
-    colLine.backgroundColor = kColorFromRGBHex(0x979797);
+    colLine.backgroundColor = RGBValue(0x979797);
     colLine.alpha = 0.0544;
     [bgView addSubview:colLine];
     
@@ -85,10 +85,10 @@
         [cancelBtn setFrame:CGRectMake(0, offY, 0, 0)];
     }
     cancelBtn.userInteractionEnabled = YES;
-    cancelBtn.backgroundColor = kColorFromRGBHex(0xF9F9F9);
+    cancelBtn.backgroundColor = RGBValue(0xF9F9F9);
     [cancelBtn setTitle:self.leftTitle forState:UIControlStateNormal];
     cancelBtn.titleLabel.font = [UIFont systemFontOfSize:autoScaleW(16)];
-    [cancelBtn setTitleColor:kColorFromRGBHex(0x9F9F9F) forState:UIControlStateNormal];
+    [cancelBtn setTitleColor:RGBValue(0x9F9F9F) forState:UIControlStateNormal];
     cancelBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
     [cancelBtn addTarget:self action:@selector(cancelAction:) forControlEvents:UIControlEventTouchUpInside];
     [bgView addSubview:cancelBtn];

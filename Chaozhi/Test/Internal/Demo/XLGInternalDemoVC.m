@@ -9,7 +9,6 @@
 
 #import "XLGInternalDemoVC.h"
 #import "XLGLoginTestVC.h"
-#import "XLGGroupCarListVC.h"
 
 #define cellHeight 40.0f
 
@@ -43,13 +42,8 @@
 
 - (NSArray *)titleArr {
     if(_titleArr==nil) {
-        _titleArr = @[@"集团用车",
-                      @"MVVM",
-                      @"扫码",
-                      @"自动认证",
-                      @"地图",
-                      @"蓝牙",
-                      @"长连接"];
+        _titleArr = @[@"H5交互",
+                      @"MVVM"];
     }
     return _titleArr;
 }
@@ -81,34 +75,14 @@
     
     NSString *title = self.titleArr[indexPath.row];
     
-    if ([title isEqualToString:@"集团用车"]) {
-        XLGGroupCarListVC *vc = [[XLGGroupCarListVC alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
+    if ([title isEqualToString:@"H5交互"]) {
+        
+        [Utils showToast:@"H5交互"];
     }
     
     if ([title isEqualToString:@"MVVM"]) {
         XLGLoginTestVC *vc = [[XLGLoginTestVC alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
-    }
-    
-    if ([title isEqualToString:@"扫码"]) {
-        
-    }
-    
-    if ([title isEqualToString:@"自动认证"]) {
-        
-    }
-    
-    if ([title isEqualToString:@"地图"]) {
-        
-    }
-    
-    if ([title isEqualToString:@"蓝牙"]) {
-        
-    }
-    
-    if ([title isEqualToString:@"长连接"]) {
-        
     }
 }
 

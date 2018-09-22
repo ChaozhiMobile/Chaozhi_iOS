@@ -14,7 +14,6 @@ def pods
   pod 'AFNetworking'
   pod 'ReactiveObjC'
   pod 'lottie-ios'
-  pod 'LDNetDiagnoService'
 end
  target 'Chaozhi' do
 

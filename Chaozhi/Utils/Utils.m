@@ -40,6 +40,22 @@ static Utils *_utils = nil;
 }
 
 /**
+ 存放服务器环境
+ */
++ (void)setServer:(NSInteger)server {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setInteger:server forKey:kServerKey];
+}
+
+/**
+ 获取服务器环境
+ */
++ (NSInteger)getServer {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    return [userDefaults integerForKey:kServerKey];
+}
+
+/**
  判断网络状态
 
  @return YES 有网
@@ -242,6 +258,11 @@ static Utils *_utils = nil;
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return image;
+}
+
++(UIViewController *)getViewController:(NSString *)stordyName WithVCName:(NSString *)name{
+    UIStoryboard *story = [UIStoryboard storyboardWithName:stordyName bundle:nil];
+    return [story instantiateViewControllerWithIdentifier:name];
 }
 
 @end

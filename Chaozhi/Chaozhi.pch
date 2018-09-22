@@ -32,12 +32,12 @@
 
 /******************************keys****************************/
 
-//网络请求key
+// 网络请求key
 #define kSignKey        @"ghOwfR7Wz44cbKU93KVSxwYXPGloNu"
 #define kNonceStr       [SignKeyUtil getNonceString]
 
-//cache key
-#define kTestServerKey   @"testServer"
+// cache key
+#define kServerKey   @"ServerKey"
 
 /******************************通知****************************/
 
@@ -56,29 +56,30 @@
 #define IS_IOS_11 ([[[UIDevice currentDevice] systemVersion] floatValue]>=11.0)
 #define IS_IPhoneX (CGSizeEqualToSize(CGSizeMake(375.f, 812.f), [UIScreen mainScreen].bounds.size) || CGSizeEqualToSize(CGSizeMake(812.f, 375.f), [UIScreen mainScreen].bounds.size))
 
-//控件宽高、字体适配
-#define autoScaleW(width) [(AppDelegate *)[UIApplication sharedApplication].delegate autoScaleW:width]
-#define autoScaleH(height) [(AppDelegate *)[UIApplication sharedApplication].delegate autoScaleH:height]
+// 控件宽高、字体适配
+#define autoScaleW(width) (float)width / 375 * WIDTH
+#define autoScaleH(height) (float)height / 667 * HEIGHT
 
 /*****************************颜色*****************************/
 
-#define AEColor(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
-#define kColorFromARGBHex(value,a) [UIColor colorWithRed:((float)((value & 0xFF0000) >> 16))/255.0 green:((float)((value & 0xFF00) >> 8))/255.0 blue:((float)(value & 0xFF))/255.0 alpha:a] //a:透明度
-#define kColorFromRGBHex(value) [UIColor colorWithRed:((float)((value & 0xFF0000) >> 16))/255.0 green:((float)((value & 0xFF00) >> 8))/255.0 blue:((float)(value & 0xFF))/255.0 alpha:1.0]
+#define RGB(r,g,b) [UIColor colorWithRed:(float)r/255.0f green:(float)g/255.0f blue:(float)b/255.0f alpha:1.0f]
+#define RGBA(r,g,b,a) [UIColor colorWithRed:(float)r/255.0f green:(float)g/255.0f blue:(float)b/255.0f alpha:a]
+#define RGBValue(value) [UIColor colorWithRed:((float)((value & 0xFF0000) >> 16))/255.0 green:((float)((value & 0xFF00) >> 8))/255.0 blue:((float)(value & 0xFF))/255.0 alpha:1.0]
+#define RGBAValue(value,a) [UIColor colorWithRed:((float)((value & 0xFF0000) >> 16))/255.0 green:((float)((value & 0xFF00) >> 8))/255.0 blue:((float)(value & 0xFF))/255.0 alpha:a] //a:透明度
 
-#define AppThemeColor kColorFromRGBHex(0x25D880)
-#define PageColor kColorFromRGBHex(0xF7F7F7)
-#define kTitleColor kColorFromRGBHex(0x030303)
-#define kShadowColor kColorFromRGBHex(0x24709C)
-#define kBlueColor kColorFromRGBHex(0x00A8FF)
-#define kGreenColor kColorFromRGBHex(0x7AD300)
+#define AppThemeColor RGBValue(0x25D880)
+#define PageColor RGBValue(0xF7F7F7)
+#define kTitleColor RGBValue(0x030303)
+#define kShadowColor RGBValue(0x24709C)
+#define kBlueColor RGBValue(0x00A8FF)
+#define kGreenColor RGBValue(0x7AD300)
 #define kLightBlackColor [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8]
-#define kLineColor kColorFromRGBHex(0xEEEEEE)
-#define kWhiteColor kColorFromRGBHex(0xFFFFFF)
-#define kBlackColor kColorFromRGBHex(0x000000)
-#define kBorderGrayColor kColorFromRGBHex(0xCCCCCC)
-
-#define OffLineServer [Utils isBlankString:[CacheUtil getCacherWithKey:kTestServerKey]]
+#define kLineColor RGBValue(0xEEEEEE)
+#define kWhiteColor RGBValue(0xFFFFFF)
+#define kBlackColor RGBValue(0x000000)
+#define kBorderGrayColor RGBValue(0xCCCCCC)
+#define TableViewDefaultBGColor RGBValue(0xfafafa) // 默认背景颜色
+#define kSeparatorColor RGB(235,235,235) // 分割线颜色
 
 #ifdef DEBUG
 #define KOnline NO

@@ -1,6 +1,6 @@
 //
 //  XLGExternalTestTool.h
-//  Chaozhi
+//  SharenGo
 //  Notes：外部测试按钮
 //
 //  Created by Jason on 2018/5/10.
@@ -12,5 +12,7 @@
 @interface XLGExternalTestTool: UIButton
 
 + (instancetype)shareInstance;
+
+@property (nonatomic, retain) UITextView *logTextViews;
 
 @end

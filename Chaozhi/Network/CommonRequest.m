@@ -17,12 +17,10 @@
 #import "SignKeyUtil.h"
 #import <YYModel.h>
 #import "AFNetworking.h"
-#import "LogShowView.h"
+#import "XLGExternalTestTool.h"
 #import "ProgressLoadView.h"
 
 @interface CommonRequest()
-
-@property (nonatomic, strong) LogShowView *logShowView;
 
 @end
 
@@ -65,9 +63,9 @@
         
         NSData *jsonData = [NSJSONSerialization dataWithJSONObject:responseObject options:NSJSONWritingPrettyPrinted error:nil];
         NSString *jsonStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-        NSString *content = [NSString stringWithFormat:@"参数%@ %@\n返回结果：%@",urlPath,params,jsonStr];
-        NSLog(@"%@",content)
-        [self inputLogText:content];
+        
+        [self printLogInfoWith:urlPath WithParam:params andResult:jsonStr];
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSString *errorContent = @"网络连接错误，请稍后再试";
         failure(errorContent);
@@ -78,9 +76,8 @@
         if (error.code==-1009) {
             [[NSNotificationCenter defaultCenter] postNotificationName:@"kNetDisAppear" object:nil];
         }
-        NSString *content = [NSString stringWithFormat:@"参数%@ %@\n返回结果：%@",urlPath,params,errorContent];
-        NSLog(@"%@",content)
-        [self inputLogText:content];
+        
+        [self printLogInfoWith:urlPath WithParam:params andResult:errorContent];
     }];
 }
 
@@ -114,9 +111,8 @@
         NSData *jsonData = [NSJSONSerialization dataWithJSONObject:responseObject options:NSJSONWritingPrettyPrinted error:nil];
         NSString *jsonStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
         
-        NSString *content = [NSString stringWithFormat:@"参数%@ %@\n返回结果：%@",urlPath,params,jsonStr];
-        NSLog(@"%@",content)
-        [self inputLogText:content];
+        [self printLogInfoWith:urlPath WithParam:params andResult:jsonStr];
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         //状态栏旁边的菊花停止
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
@@ -128,17 +124,17 @@
         [Utils showToast:errorContent];
         [[ProgressLoadView shareLoadView] stopLoading:NO];
         
-        NSString *content = [NSString stringWithFormat:@"参数%@ %@\n返回结果：%@",urlPath,params,errorContent];
-        NSLog(@"%@",content)
-        [self inputLogText:content];
+        [self printLogInfoWith:urlPath WithParam:params andResult:errorContent];
     }];
 }
 
 //打印接口内容
-- (void)inputLogText:(NSString *)content {
+- (void)printLogInfoWith:(NSString *)url WithParam:(id)param andResult:(id)result {
+    
+    NSLog(@"%@",[NSString stringWithFormat:@"时间：%@\n参数：%@ \n %@\n返回结果：%@",[Utils getCurrentDate],url,param,result]);
     if (!KOnline) {
-        _logShowView = [LogShowView shareInstance];
-        _logShowView.textViews.text = [NSString stringWithFormat:@"时间%@\n%@\n\n\n%@",[Utils getCurrentDate],content,_logShowView.textViews.text];
+        XLGExternalTestTool *tool = [XLGExternalTestTool shareInstance];
+        tool.logTextViews.text = [NSString stringWithFormat:@"时间：%@\n参数：%@ \n %@\n返回结果：%@ \n\n\n%@",[Utils getCurrentDate],url,param,result,tool.logTextViews.text];
     }
 }
 
@@ -243,9 +239,9 @@
         
         NSData *jsonData = [NSJSONSerialization dataWithJSONObject:responseObject options:NSJSONWritingPrettyPrinted error:nil];
         NSString *jsonStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-        NSString *content = [NSString stringWithFormat:@"参数%@ %@\n返回结果：%@",urlPath,params,jsonStr];
-        NSLog(@"%@",content)
-        [self inputLogText:content];
+        
+        [self printLogInfoWith:urlPath WithParam:params andResult:jsonStr];
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         //状态栏旁边的菊花停止
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
@@ -253,9 +249,8 @@
         failure(errorContent);
         [Utils showToast:errorContent];
         [[ProgressLoadView shareLoadView] stopLoading:NO];
-        NSString *content = [NSString stringWithFormat:@"参数%@ %@\n返回结果：%@",urlPath,params,errorContent];
-        NSLog(@"%@",content)
-        [self inputLogText:content];
+        
+        [self printLogInfoWith:urlPath WithParam:params andResult:errorContent];
     }];
 }
 
@@ -343,9 +338,8 @@
         newUrl = [NSString stringWithFormat:@"%@?nonceStr=%@&sign=%@&token=%@",urlPath,[params objectForKey:@"nonceStr"],[params objectForKey:@"sign"],[params objectForKey:@"token"]];
     }
     
-    NSString *content = [NSString stringWithFormat:@"参数%@ %@\n返回结果：%@",urlPath,params,newUrl];
-    NSLog(@"%@",content)
-    [self inputLogText:content];
+    [self printLogInfoWith:urlPath WithParam:params andResult:newUrl];
+    
     return newUrl;
 }
 

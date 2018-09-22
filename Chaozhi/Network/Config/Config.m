@@ -13,14 +13,10 @@
 
 NSString *domainUrl(void){
     
-    NSString *server = [CacheUtil getCacherWithKey:kTestServerKey];
-    
-    if (KOnline) {
-        return @"http://api2.evcoming.com:5131/v3/"; //宁波线上服务器地址
-    } else if ([Utils isBlankString:server]) {
-        return @"http://122.246.11.153:5131/v3/"; //宁波测试服务器地址
+    if (KOnline || [Utils getServer] == 1) {
+        return @"https://aci-api.chaozhiedu.com/"; //正式地址
     } else {
-        return @"http://api2.evcoming.com:5131/v3/"; //宁波线上服务器地址
+        return @"https://test-aci-api.chaozhiedu.com/"; //测试地址
     }
 }
 

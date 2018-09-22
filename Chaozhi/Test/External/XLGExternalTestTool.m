@@ -1,6 +1,6 @@
 //
 //  XLGExternalTestTool.m
-//  Chaozhi
+//  SharenGo
 //  Notes：
 //
 //  Created by Jason on 2018/5/10.
@@ -8,17 +8,19 @@
 //
 
 #import "XLGExternalTestTool.h"
-#import "XLGExternalLogVC.h"
-#import "XLGExternalCheckDomainVC.h"
+#import "XLGChangeServerVC.h"
+#import "XLGLogVC.h"
+#import "XLGInternalTestVC.h"
 
-#define MenuImageName @[@"OnlineIcon",@"LogIcon",@"InternetCheckIcon"]
+#define MenuImageName @[@"ChangeServer",@"LogIcon",@"InternetCheckIcon"]
 #define Radius 150 //半径
 #define SpaceAgle  M_PI/4//60度
 #define SpaceOAgle (M_PI/2 - SpaceAgle)//
 
 @interface XLGExternalTestTool()
 {
-    UIPanGestureRecognizer *panGesture;
+    UIPanGestureRecognizer *panGesture; //拖动手势
+    UITapGestureRecognizer *tapGesture; //点击手势
 }
 @property (nonatomic,retain) UIButton *shadowViewBtn;
 @property (nonatomic,retain) UIButton *logShowBtn;
@@ -51,7 +53,6 @@
     self.clipsToBounds = YES;
     _shadowViewBtn = [[UIButton alloc]initWithFrame:self.frame];
     _shadowViewBtn.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.6];
-    [_shadowViewBtn addTarget:self action:@selector(hiddenView) forControlEvents:UIControlEventTouchUpInside];
     _shadowViewBtn.clipsToBounds = YES;
     [self addSubview:_shadowViewBtn];
     
@@ -68,9 +69,6 @@
         shareBtn.center = _logShowBtn.center;
         shareBtn.titleLabel.font = [UIFont systemFontOfSize:14];
         [shareBtn setImage:[UIImage imageNamed:MenuImageName[i]] forState:UIControlStateNormal];
-        if (!OffLineServer&&i==0) {
-             [shareBtn setImage:[UIImage imageNamed:@"OffLineIcon"] forState:UIControlStateNormal];
-        }
         [shareBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         shareBtn.tag=2000+i;
         [shareBtn addTarget:self action:@selector(buttonIndexClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -84,6 +82,25 @@
     panGesture=[[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(handlePan:)]; //按钮添加拖动手势
     [self setUserInteractionEnabled:YES];//开启图片控件的用户交互
     [self addGestureRecognizer:panGesture];//给图片添加手势
+    
+   [self addPanGestureRecognizer];
+    _shadowViewBtn.enabled = YES;
+    
+    _logTextViews = [[UITextView alloc]initWithFrame:CGRectMake(15, 30, WIDTH-30, HEIGHT-60)];
+}
+
+- (void)addPanGestureRecognizer{
+    panGesture=[[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(handlePan:)]; //按钮添加拖动手势
+    [self addGestureRecognizer:panGesture];//给图片添加手势
+}
+
+- (void)addTapGestureRecognizer{
+    tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hiddenAllView)];
+    [self addGestureRecognizer:tapGesture];//给图片添加手势
+}
+
+- (void)hiddenAllView{
+    [self showMenuView:_logShowBtn];
 }
 
 -(void)handlePan:(UIPanGestureRecognizer *)rec {
@@ -97,46 +114,50 @@
 
 - (void)buttonIndexClick:(UIButton *)sender {
     switch (sender.tag) {
-        case 2000: //切换线上线下环境
-            {
-                NSString *showMessage = @"切换线上环境成功";
-                NSString *imageName = @"";
-                if (OffLineServer) {
-                    [CacheUtil saveCacher:kTestServerKey withValue:@"线上"];
-                    showMessage = @"切换线上环境成功";
-                    imageName = @"OnlineIcon";
-                }else{
-                    [CacheUtil saveCacher:kTestServerKey withValue:@""];
-                    showMessage = @"切换线下环境成功";
-                    imageName = @"OffLineIcon";
-                }
-                [sender setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    exit(0);
-                });
-            }
-            break;
-        case 2001://显示日志输入
+        case 2000: //环境切换
         {
-            XLGExternalLogVC *logShowVC = [[XLGExternalLogVC alloc]init];
+            XLGChangeServerVC *vc = [[XLGChangeServerVC alloc] init];
             [self showMenuView:_logShowBtn];
-            if ([[self getCurrentRootViewController] isKindOfClass:[XLGExternalCheckDomainVC class]]) {
+            
+            if ([[self getCurrentRootViewController] isKindOfClass:[XLGLogVC class]]) {
                 [[self getCurrentRootViewController].navigationController popViewControllerAnimated:NO];
             }
-            if (![[self getCurrentRootViewController] isKindOfClass:[XLGExternalLogVC class]]) {
-                [[self getCurrentRootViewController].navigationController pushViewController:logShowVC animated:YES];
+            if ([[self getCurrentRootViewController] isKindOfClass:[XLGInternalTestVC class]]) {
+                [[self getCurrentRootViewController].navigationController popViewControllerAnimated:NO];
+            }
+            if (![[self getCurrentRootViewController] isKindOfClass:[XLGChangeServerVC class]]) {
+                [[self getCurrentRootViewController].navigationController pushViewController:vc animated:YES];
             }
         }
             break;
-        case 2002://网络监测
+        case 2001: //接口日志
         {
-            XLGExternalCheckDomainVC *vc = [[XLGExternalCheckDomainVC alloc]init];
+            XLGLogVC *vc = [[XLGLogVC alloc] init];
             [self showMenuView:_logShowBtn];
-            if ([[self getCurrentRootViewController] isKindOfClass:[XLGExternalLogVC class]]) {
+            
+            if ([[self getCurrentRootViewController] isKindOfClass:[XLGChangeServerVC class]]) {
                 [[self getCurrentRootViewController].navigationController popViewControllerAnimated:NO];
             }
+            if ([[self getCurrentRootViewController] isKindOfClass:[XLGInternalTestVC class]]) {
+                [[self getCurrentRootViewController].navigationController popViewControllerAnimated:NO];
+            }
+            if (![[self getCurrentRootViewController] isKindOfClass:[XLGLogVC class]]) {
+                [[self getCurrentRootViewController].navigationController pushViewController:vc animated:YES];
+            }
+        }
+            break;
+        case 2002://内部测试
+        {
+            XLGInternalTestVC *vc = [[XLGInternalTestVC alloc] init];
+            [self showMenuView:_logShowBtn];
             
-            if (![[self getCurrentRootViewController] isKindOfClass:[XLGExternalCheckDomainVC class]]) {
+            if ([[self getCurrentRootViewController] isKindOfClass:[XLGChangeServerVC class]]) {
+                [[self getCurrentRootViewController].navigationController popViewControllerAnimated:NO];
+            }
+            if ([[self getCurrentRootViewController] isKindOfClass:[XLGLogVC class]]) {
+                [[self getCurrentRootViewController].navigationController popViewControllerAnimated:NO];
+            }
+            if (![[self getCurrentRootViewController] isKindOfClass:[XLGInternalTestVC class]]) {
                 [[self getCurrentRootViewController].navigationController pushViewController:vc animated:YES];
             }
         }
@@ -157,7 +178,8 @@
         weakSelf.logShowBtn.top = 0;
         weakSelf.shadowViewBtn.hidden = YES;
     }];
-    panGesture.enabled = YES;
+    [self removeGestureRecognizer:tapGesture];
+    [self addPanGestureRecognizer];
 }
 
 - (void)showCurrentView {
@@ -171,7 +193,8 @@
     } completion:^(BOOL finished) {
         
     }];
-    panGesture.enabled = NO;
+    [self removeGestureRecognizer:panGesture];
+    [self addTapGestureRecognizer];
 }
 
 - (void)showMenuView:(UIButton *)sender {

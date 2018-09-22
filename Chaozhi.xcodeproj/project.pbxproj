@@ -67,10 +67,6 @@
 		A020B055214AAB150011BB4F /* XLGLottie.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFB8214AAB130011BB4F /* XLGLottie.m */; };
 		A020B056214AAB150011BB4F /* RegularPhoneTF.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFBB214AAB130011BB4F /* RegularPhoneTF.m */; };
 		A020B057214AAB150011BB4F /* ProgressLoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFBE214AAB130011BB4F /* ProgressLoadView.m */; };
-		A020B058214AAB150011BB4F /* XLGGroupCarListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFC6214AAB140011BB4F /* XLGGroupCarListVC.m */; };
-		A020B059214AAB150011BB4F /* XLGShowTipsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFC7214AAB140011BB4F /* XLGShowTipsVC.m */; };
-		A020B05A214AAB150011BB4F /* XLGGroupCarListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFCC214AAB140011BB4F /* XLGGroupCarListCell.m */; };
-		A020B05B214AAB150011BB4F /* XLGTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFCD214AAB140011BB4F /* XLGTipView.m */; };
 		A020B05C214AAB150011BB4F /* MEViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFD1214AAB140011BB4F /* MEViewModel.m */; };
 		A020B05D214AAB150011BB4F /* MEView.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFD5214AAB140011BB4F /* MEView.m */; };
 		A020B05E214AAB150011BB4F /* MEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFD6214AAB140011BB4F /* MEViewController.m */; };
@@ -79,10 +75,6 @@
 		A020B061214AAB150011BB4F /* XLGLoginTestViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFDB214AAB140011BB4F /* XLGLoginTestViewModel.m */; };
 		A020B062214AAB150011BB4F /* XLGInternalDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFDF214AAB140011BB4F /* XLGInternalDemoVC.m */; };
 		A020B063214AAB150011BB4F /* XLGInternalTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFE0214AAB140011BB4F /* XLGInternalTestVC.m */; };
-		A020B064214AAB150011BB4F /* XLGExternalLogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFE3214AAB140011BB4F /* XLGExternalLogVC.m */; };
-		A020B065214AAB150011BB4F /* LogShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFE9214AAB140011BB4F /* LogShowView.m */; };
-		A020B066214AAB150011BB4F /* XLGExternalCheckDomainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFEA214AAB140011BB4F /* XLGExternalCheckDomainVC.m */; };
-		A020B067214AAB150011BB4F /* XLGExternalTestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFEB214AAB140011BB4F /* XLGExternalTestTool.m */; };
 		A020B068214AAB150011BB4F /* XLGLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFEF214AAB140011BB4F /* XLGLoginVC.m */; };
 		A020B069214AAB150011BB4F /* XLGHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFF1214AAB140011BB4F /* XLGHomeVC.m */; };
 		A020B06A214AAB150011BB4F /* WKDelegateController.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFF4214AAB140011BB4F /* WKDelegateController.m */; };
@@ -103,6 +95,12 @@
 		A020B079214AAB150011BB4F /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B018214AAB140011BB4F /* UserInfo.m */; };
 		A020B07A214AAB150011BB4F /* LoginItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B01A214AAB140011BB4F /* LoginItem.m */; };
 		A020B07C214AAD610011BB4F /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A020B07B214AAD600011BB4F /* libresolv.tbd */; };
+		A020B082214F8F810011BB4F /* CZForgetPswVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B081214F8F810011BB4F /* CZForgetPswVC.m */; };
+		A05999EF2155EC1500D17058 /* XLGExternalTestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A05999E02155EC1500D17058 /* XLGExternalTestTool.m */; };
+		A05999F12155EC1500D17058 /* XLGLogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A05999E62155EC1500D17058 /* XLGLogVC.m */; };
+		A05999F22155EC1500D17058 /* XLGChangeServerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A05999E92155EC1500D17058 /* XLGChangeServerCell.m */; };
+		A05999F32155EC1500D17058 /* XLGChangeServerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A05999EB2155EC1500D17058 /* XLGChangeServerModel.m */; };
+		A05999F42155EC1500D17058 /* XLGChangeServerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A05999EC2155EC1500D17058 /* XLGChangeServerVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -187,14 +185,6 @@
 		A020AFBE214AAB130011BB4F /* ProgressLoadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressLoadView.m; sourceTree = "<group>"; };
 		A020AFBF214AAB130011BB4F /* ProgressLoadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressLoadView.h; sourceTree = "<group>"; };
 		A020AFC3214AAB140011BB4F /* XLGInternalDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLGInternalDemoVC.h; sourceTree = "<group>"; };
-		A020AFC5214AAB140011BB4F /* XLGShowTipsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLGShowTipsVC.h; sourceTree = "<group>"; };
-		A020AFC6214AAB140011BB4F /* XLGGroupCarListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGGroupCarListVC.m; sourceTree = "<group>"; };
-		A020AFC7214AAB140011BB4F /* XLGShowTipsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGShowTipsVC.m; sourceTree = "<group>"; };
-		A020AFC8214AAB140011BB4F /* XLGGroupCarListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLGGroupCarListVC.h; sourceTree = "<group>"; };
-		A020AFCA214AAB140011BB4F /* XLGGroupCarListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLGGroupCarListCell.h; sourceTree = "<group>"; };
-		A020AFCB214AAB140011BB4F /* XLGTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLGTipView.h; sourceTree = "<group>"; };
-		A020AFCC214AAB140011BB4F /* XLGGroupCarListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGGroupCarListCell.m; sourceTree = "<group>"; };
-		A020AFCD214AAB140011BB4F /* XLGTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGTipView.m; sourceTree = "<group>"; };
 		A020AFD0214AAB140011BB4F /* MEViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEViewProtocol.h; sourceTree = "<group>"; };
 		A020AFD1214AAB140011BB4F /* MEViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEViewModel.m; sourceTree = "<group>"; };
 		A020AFD2214AAB140011BB4F /* MEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEViewController.h; sourceTree = "<group>"; };
@@ -213,14 +203,6 @@
 		A020AFDF214AAB140011BB4F /* XLGInternalDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGInternalDemoVC.m; sourceTree = "<group>"; };
 		A020AFE0214AAB140011BB4F /* XLGInternalTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGInternalTestVC.m; sourceTree = "<group>"; };
 		A020AFE1214AAB140011BB4F /* XLGInternalTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLGInternalTestVC.h; sourceTree = "<group>"; };
-		A020AFE3214AAB140011BB4F /* XLGExternalLogVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGExternalLogVC.m; sourceTree = "<group>"; };
-		A020AFE4214AAB140011BB4F /* XLGExternalTestTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLGExternalTestTool.h; sourceTree = "<group>"; };
-		A020AFE5214AAB140011BB4F /* XLGExternalCheckDomainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLGExternalCheckDomainVC.h; sourceTree = "<group>"; };
-		A020AFE6214AAB140011BB4F /* XLGExternalLogVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLGExternalLogVC.h; sourceTree = "<group>"; };
-		A020AFE8214AAB140011BB4F /* LogShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogShowView.h; sourceTree = "<group>"; };
-		A020AFE9214AAB140011BB4F /* LogShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogShowView.m; sourceTree = "<group>"; };
-		A020AFEA214AAB140011BB4F /* XLGExternalCheckDomainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGExternalCheckDomainVC.m; sourceTree = "<group>"; };
-		A020AFEB214AAB140011BB4F /* XLGExternalTestTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGExternalTestTool.m; sourceTree = "<group>"; };
 		A020AFEF214AAB140011BB4F /* XLGLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGLoginVC.m; sourceTree = "<group>"; };
 		A020AFF0214AAB140011BB4F /* XLGLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLGLoginVC.h; sourceTree = "<group>"; };
 		A020AFF1214AAB140011BB4F /* XLGHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGHomeVC.m; sourceTree = "<group>"; };
@@ -262,6 +244,18 @@
 		A020B01A214AAB140011BB4F /* LoginItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginItem.m; sourceTree = "<group>"; };
 		A020B01B214AAB140011BB4F /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		A020B07B214AAD600011BB4F /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		A020B080214F8F810011BB4F /* CZForgetPswVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZForgetPswVC.h; sourceTree = "<group>"; };
+		A020B081214F8F810011BB4F /* CZForgetPswVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZForgetPswVC.m; sourceTree = "<group>"; };
+		A05999E02155EC1500D17058 /* XLGExternalTestTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGExternalTestTool.m; sourceTree = "<group>"; };
+		A05999E52155EC1500D17058 /* XLGLogVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLGLogVC.h; sourceTree = "<group>"; };
+		A05999E62155EC1500D17058 /* XLGLogVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGLogVC.m; sourceTree = "<group>"; };
+		A05999E82155EC1500D17058 /* XLGChangeServerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLGChangeServerModel.h; sourceTree = "<group>"; };
+		A05999E92155EC1500D17058 /* XLGChangeServerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGChangeServerCell.m; sourceTree = "<group>"; };
+		A05999EA2155EC1500D17058 /* XLGChangeServerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLGChangeServerVC.h; sourceTree = "<group>"; };
+		A05999EB2155EC1500D17058 /* XLGChangeServerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGChangeServerModel.m; sourceTree = "<group>"; };
+		A05999EC2155EC1500D17058 /* XLGChangeServerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGChangeServerVC.m; sourceTree = "<group>"; };
+		A05999ED2155EC1500D17058 /* XLGChangeServerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLGChangeServerCell.h; sourceTree = "<group>"; };
+		A05999EE2155EC1500D17058 /* XLGExternalTestTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLGExternalTestTool.h; sourceTree = "<group>"; };
 		B55762E2478093A57AE66667 /* libPods-Chaozhi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Chaozhi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -543,8 +537,8 @@
 			isa = PBXGroup;
 			children = (
 				A020AFC2214AAB140011BB4F /* Demo */,
-				A020AFE0214AAB140011BB4F /* XLGInternalTestVC.m */,
 				A020AFE1214AAB140011BB4F /* XLGInternalTestVC.h */,
+				A020AFE0214AAB140011BB4F /* XLGInternalTestVC.m */,
 			);
 			path = Internal;
 			sourceTree = "<group>";
@@ -553,34 +547,10 @@
 			isa = PBXGroup;
 			children = (
 				A020AFC3214AAB140011BB4F /* XLGInternalDemoVC.h */,
-				A020AFC4214AAB140011BB4F /* GroupCar */,
-				A020AFCE214AAB140011BB4F /* MVVM */,
 				A020AFDF214AAB140011BB4F /* XLGInternalDemoVC.m */,
+				A020AFCE214AAB140011BB4F /* MVVM */,
 			);
 			path = Demo;
-			sourceTree = "<group>";
-		};
-		A020AFC4214AAB140011BB4F /* GroupCar */ = {
-			isa = PBXGroup;
-			children = (
-				A020AFC5214AAB140011BB4F /* XLGShowTipsVC.h */,
-				A020AFC6214AAB140011BB4F /* XLGGroupCarListVC.m */,
-				A020AFC7214AAB140011BB4F /* XLGShowTipsVC.m */,
-				A020AFC8214AAB140011BB4F /* XLGGroupCarListVC.h */,
-				A020AFC9214AAB140011BB4F /* View */,
-			);
-			path = GroupCar;
-			sourceTree = "<group>";
-		};
-		A020AFC9214AAB140011BB4F /* View */ = {
-			isa = PBXGroup;
-			children = (
-				A020AFCA214AAB140011BB4F /* XLGGroupCarListCell.h */,
-				A020AFCB214AAB140011BB4F /* XLGTipView.h */,
-				A020AFCC214AAB140011BB4F /* XLGGroupCarListCell.m */,
-				A020AFCD214AAB140011BB4F /* XLGTipView.m */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		A020AFCE214AAB140011BB4F /* MVVM */ = {
@@ -616,24 +586,12 @@
 		A020AFE2214AAB140011BB4F /* External */ = {
 			isa = PBXGroup;
 			children = (
-				A020AFE3214AAB140011BB4F /* XLGExternalLogVC.m */,
-				A020AFE4214AAB140011BB4F /* XLGExternalTestTool.h */,
-				A020AFE5214AAB140011BB4F /* XLGExternalCheckDomainVC.h */,
-				A020AFE6214AAB140011BB4F /* XLGExternalLogVC.h */,
-				A020AFE7214AAB140011BB4F /* View */,
-				A020AFEA214AAB140011BB4F /* XLGExternalCheckDomainVC.m */,
-				A020AFEB214AAB140011BB4F /* XLGExternalTestTool.m */,
+				A05999EE2155EC1500D17058 /* XLGExternalTestTool.h */,
+				A05999E02155EC1500D17058 /* XLGExternalTestTool.m */,
+				A05999E72155EC1500D17058 /* 环境切换 */,
+				A05999E42155EC1500D17058 /* 接口日志 */,
 			);
 			path = External;
-			sourceTree = "<group>";
-		};
-		A020AFE7214AAB140011BB4F /* View */ = {
-			isa = PBXGroup;
-			children = (
-				A020AFE8214AAB140011BB4F /* LogShowView.h */,
-				A020AFE9214AAB140011BB4F /* LogShowView.m */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		A020AFEC214AAB140011BB4F /* Module */ = {
@@ -659,6 +617,8 @@
 			children = (
 				A020AFF0214AAB140011BB4F /* XLGLoginVC.h */,
 				A020AFEF214AAB140011BB4F /* XLGLoginVC.m */,
+				A020B080214F8F810011BB4F /* CZForgetPswVC.h */,
+				A020B081214F8F810011BB4F /* CZForgetPswVC.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -733,6 +693,28 @@
 				A020B01A214AAB140011BB4F /* LoginItem.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A05999E42155EC1500D17058 /* 接口日志 */ = {
+			isa = PBXGroup;
+			children = (
+				A05999E52155EC1500D17058 /* XLGLogVC.h */,
+				A05999E62155EC1500D17058 /* XLGLogVC.m */,
+			);
+			path = "接口日志";
+			sourceTree = "<group>";
+		};
+		A05999E72155EC1500D17058 /* 环境切换 */ = {
+			isa = PBXGroup;
+			children = (
+				A05999EA2155EC1500D17058 /* XLGChangeServerVC.h */,
+				A05999EC2155EC1500D17058 /* XLGChangeServerVC.m */,
+				A05999ED2155EC1500D17058 /* XLGChangeServerCell.h */,
+				A05999E92155EC1500D17058 /* XLGChangeServerCell.m */,
+				A05999E82155EC1500D17058 /* XLGChangeServerModel.h */,
+				A05999EB2155EC1500D17058 /* XLGChangeServerModel.m */,
+			);
+			path = "环境切换";
 			sourceTree = "<group>";
 		};
 		A7FA9F4632752641B75EA9B4 /* Pods */ = {
@@ -913,16 +895,15 @@
 				A020B078214AAB150011BB4F /* BaseItem.m in Sources */,
 				A020B020214AAB150011BB4F /* UrlConfig.m in Sources */,
 				A020B06B214AAB150011BB4F /* BaseVC.m in Sources */,
+				A05999F32155EC1500D17058 /* XLGChangeServerModel.m in Sources */,
 				A020B05E214AAB150011BB4F /* MEViewController.m in Sources */,
 				A020B070214AAB150011BB4F /* LDNetTraceRoute.m in Sources */,
 				A020B06D214AAB150011BB4F /* BaseNavBar.m in Sources */,
 				A020B074214AAB150011BB4F /* LDNetGetAddress.m in Sources */,
 				A020B060214AAB150011BB4F /* XLGLoginTestView.m in Sources */,
-				A020B067214AAB150011BB4F /* XLGExternalTestTool.m in Sources */,
 				A020B06F214AAB150011BB4F /* BaseWebVC.m in Sources */,
 				A020B053214AAB150011BB4F /* Utils.m in Sources */,
 				A020B073214AAB150011BB4F /* LDNetPing.m in Sources */,
-				A020B05B214AAB150011BB4F /* XLGTipView.m in Sources */,
 				A020B077214AAB150011BB4F /* Reachability.m in Sources */,
 				A020B050214AAB150011BB4F /* KeyChainUtil.m in Sources */,
 				A020B05C214AAB150011BB4F /* MEViewModel.m in Sources */,
@@ -935,28 +916,27 @@
 				A020B054214AAB150011BB4F /* XLGAlertView.m in Sources */,
 				A020B072214AAB150011BB4F /* LDSimplePing.m in Sources */,
 				A020B023214AAB150011BB4F /* XLGUserService.m in Sources */,
+				A05999F12155EC1500D17058 /* XLGLogVC.m in Sources */,
 				A020B01C214AAB150011BB4F /* CommonRequest.m in Sources */,
-				A020B065214AAB150011BB4F /* LogShowView.m in Sources */,
 				A020B076214AAB150011BB4F /* LDNetConnect.m in Sources */,
-				A020B059214AAB150011BB4F /* XLGShowTipsVC.m in Sources */,
+				A05999F42155EC1500D17058 /* XLGChangeServerVC.m in Sources */,
+				A05999F22155EC1500D17058 /* XLGChangeServerCell.m in Sources */,
 				A020B063214AAB150011BB4F /* XLGInternalTestVC.m in Sources */,
 				A020B061214AAB150011BB4F /* XLGLoginTestViewModel.m in Sources */,
+				A05999EF2155EC1500D17058 /* XLGExternalTestTool.m in Sources */,
 				A020B05F214AAB150011BB4F /* XLGLoginTestVC.m in Sources */,
 				A020B022214AAB150011BB4F /* BaseService.m in Sources */,
 				A020B051214AAB150011BB4F /* CacheUtil.m in Sources */,
 				A020B068214AAB150011BB4F /* XLGLoginVC.m in Sources */,
-				A020B064214AAB150011BB4F /* XLGExternalLogVC.m in Sources */,
+				A020B082214F8F810011BB4F /* CZForgetPswVC.m in Sources */,
 				A020B06A214AAB150011BB4F /* WKDelegateController.m in Sources */,
 				A020AF49214AA85B0011BB4F /* AppDelegate.m in Sources */,
-				A020B05A214AAB150011BB4F /* XLGGroupCarListCell.m in Sources */,
 				A020B01D214AAB150011BB4F /* NetworkUtil.m in Sources */,
 				A020B055214AAB150011BB4F /* XLGLottie.m in Sources */,
 				A020B06E214AAB150011BB4F /* BaseScrollView.m in Sources */,
 				A020B04E214AAB150011BB4F /* main.m in Sources */,
 				A020B057214AAB150011BB4F /* ProgressLoadView.m in Sources */,
 				A020B069214AAB150011BB4F /* XLGHomeVC.m in Sources */,
-				A020B066214AAB150011BB4F /* XLGExternalCheckDomainVC.m in Sources */,
-				A020B058214AAB150011BB4F /* XLGGroupCarListVC.m in Sources */,
 				A020B056214AAB150011BB4F /* RegularPhoneTF.m in Sources */,
 				A020B079214AAB150011BB4F /* UserInfo.m in Sources */,
 			);
