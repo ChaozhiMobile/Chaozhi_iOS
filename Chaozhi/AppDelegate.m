@@ -8,16 +8,9 @@
 
 #import "AppDelegate.h"
 #import <IQKeyboardManager.h>
-#import "XLGInternalTestVC.h"
-#import "BaseNC.h"
 #import "NetworkUtil.h"
 
 @interface AppDelegate ()
-
-//当前屏幕与设计尺寸(iPhone6)宽度比例
-@property(nonatomic,assign)CGFloat autoSizeScaleW;
-//当前屏幕与设计尺寸(iPhone6)高度比例
-@property(nonatomic,assign)CGFloat autoSizeScaleH;
 
 @end
 
@@ -38,11 +31,11 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = PageColor;
-    //暂时把XLGInternalTestVC作为根视图控制器
-    UIViewController *vc = [Utils getViewController:@"Main" WithVCName:@"XLGLoginVC"];
-//    XLGInternalTestVC *testVC = [[XLGInternalTestVC alloc] init];
-//    BaseNC *nc = [[BaseNC alloc] initWithRootViewController:testVC];
-    self.window.rootViewController = vc;
+    //第一步：要获取单独控制器所在的UIStoryboard
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    //第二步：获取该控制器的Identifier并赋给你的单独控制器
+    UITabBarController *tabBarController = [story instantiateViewControllerWithIdentifier:@"TabBarController"];
+    self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
     
     return YES;

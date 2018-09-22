@@ -24,6 +24,7 @@
     
         _titleLab = [[UILabel alloc] initWithFrame:CGRectMake(autoScaleW(15), 0, WIDTH-autoScaleW(80), self.height)];
         _titleLab.textAlignment = NSTextAlignmentLeft;
+        _titleLab.font = [UIFont systemFontOfSize:14];
         [self addSubview:_titleLab];
         
         _selectBtn = [[UIButton alloc] initWithFrame:CGRectMake(WIDTH-autoScaleW(35), (self.height-autoScaleW(20))/2.0, autoScaleW(20), autoScaleW(20))];

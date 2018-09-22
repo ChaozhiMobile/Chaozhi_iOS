@@ -33,7 +33,8 @@
       [UIFont systemFontOfSize:17], NSFontAttributeName, nil]];
     //将导航条默认黑线改成阴影
     [self setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-    self.shadowImage = [UIImage imageNamed:@"NavbarShadow"]; //阴影图片
+//    self.shadowImage = [UIImage imageNamed:@"NavbarShadow"]; //阴影图片
+    self.shadowImage = [UIImage imageWithColor:[UIColor clearColor]];
 }
 
 @end

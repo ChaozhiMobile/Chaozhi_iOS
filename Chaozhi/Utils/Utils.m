@@ -10,7 +10,7 @@
 #import "Utils.h"
 #import "Toast.h"
 #import "NetworkUtil.h"
-#import "XLGLoginVC.h"
+#import "CZLoginVC.h"
 
 @interface Utils ()
 {
@@ -125,7 +125,7 @@ static Utils *_utils = nil;
         return YES;
     } else {
         if (isJump==YES) {
-            XLGLoginVC *loginVC = [[XLGLoginVC alloc] init];
+            CZLoginVC *loginVC = [[CZLoginVC alloc] init];
             [[self getCurrentVC] presentViewController:loginVC animated:YES completion:nil];
         }
         return NO;
@@ -142,7 +142,7 @@ static Utils *_utils = nil;
     [[UserInfo share] setUserInfo:nil]; //清除用户信息
     if (isJumpLoginVC==YES) {
         //跳转到登录页面
-        XLGLoginVC *loginVC = [[XLGLoginVC alloc] init];
+        CZLoginVC *loginVC = [[CZLoginVC alloc] init];
         [[self getCurrentVC] presentViewController:loginVC animated:YES completion:nil];
     }
 }

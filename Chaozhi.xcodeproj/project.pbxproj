@@ -75,8 +75,6 @@
 		A020B061214AAB150011BB4F /* XLGLoginTestViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFDB214AAB140011BB4F /* XLGLoginTestViewModel.m */; };
 		A020B062214AAB150011BB4F /* XLGInternalDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFDF214AAB140011BB4F /* XLGInternalDemoVC.m */; };
 		A020B063214AAB150011BB4F /* XLGInternalTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFE0214AAB140011BB4F /* XLGInternalTestVC.m */; };
-		A020B068214AAB150011BB4F /* XLGLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFEF214AAB140011BB4F /* XLGLoginVC.m */; };
-		A020B069214AAB150011BB4F /* XLGHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFF1214AAB140011BB4F /* XLGHomeVC.m */; };
 		A020B06A214AAB150011BB4F /* WKDelegateController.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFF4214AAB140011BB4F /* WKDelegateController.m */; };
 		A020B06B214AAB150011BB4F /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFFB214AAB140011BB4F /* BaseVC.m */; };
 		A020B06C214AAB150011BB4F /* BaseNC.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFFC214AAB140011BB4F /* BaseNC.m */; };
@@ -101,6 +99,12 @@
 		A05999F22155EC1500D17058 /* XLGChangeServerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A05999E92155EC1500D17058 /* XLGChangeServerCell.m */; };
 		A05999F32155EC1500D17058 /* XLGChangeServerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A05999EB2155EC1500D17058 /* XLGChangeServerModel.m */; };
 		A05999F42155EC1500D17058 /* XLGChangeServerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A05999EC2155EC1500D17058 /* XLGChangeServerVC.m */; };
+		A05999FB2156363C00D17058 /* CZInfiniteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A05999FA2156363C00D17058 /* CZInfiniteVC.m */; };
+		A05999FE215636A600D17058 /* CZMineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A05999FD215636A600D17058 /* CZMineVC.m */; };
+		A0599A01215636DB00D17058 /* CZStudyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0599A00215636DB00D17058 /* CZStudyVC.m */; };
+		A0599A04215636F300D17058 /* CZHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0599A03215636F300D17058 /* CZHomeVC.m */; };
+		A0599A072156375300D17058 /* CZLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0599A062156375300D17058 /* CZLoginVC.m */; };
+		A0599A0A215637D100D17058 /* CZRegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0599A09215637D100D17058 /* CZRegisterVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -203,10 +207,6 @@
 		A020AFDF214AAB140011BB4F /* XLGInternalDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGInternalDemoVC.m; sourceTree = "<group>"; };
 		A020AFE0214AAB140011BB4F /* XLGInternalTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGInternalTestVC.m; sourceTree = "<group>"; };
 		A020AFE1214AAB140011BB4F /* XLGInternalTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLGInternalTestVC.h; sourceTree = "<group>"; };
-		A020AFEF214AAB140011BB4F /* XLGLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGLoginVC.m; sourceTree = "<group>"; };
-		A020AFF0214AAB140011BB4F /* XLGLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLGLoginVC.h; sourceTree = "<group>"; };
-		A020AFF1214AAB140011BB4F /* XLGHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGHomeVC.m; sourceTree = "<group>"; };
-		A020AFF2214AAB140011BB4F /* XLGHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLGHomeVC.h; sourceTree = "<group>"; };
 		A020AFF4214AAB140011BB4F /* WKDelegateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKDelegateController.m; sourceTree = "<group>"; };
 		A020AFF5214AAB140011BB4F /* BaseScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseScrollView.h; sourceTree = "<group>"; };
 		A020AFF6214AAB140011BB4F /* BaseNavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavBar.h; sourceTree = "<group>"; };
@@ -256,6 +256,18 @@
 		A05999EC2155EC1500D17058 /* XLGChangeServerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGChangeServerVC.m; sourceTree = "<group>"; };
 		A05999ED2155EC1500D17058 /* XLGChangeServerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLGChangeServerCell.h; sourceTree = "<group>"; };
 		A05999EE2155EC1500D17058 /* XLGExternalTestTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLGExternalTestTool.h; sourceTree = "<group>"; };
+		A05999F92156363C00D17058 /* CZInfiniteVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZInfiniteVC.h; sourceTree = "<group>"; };
+		A05999FA2156363C00D17058 /* CZInfiniteVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZInfiniteVC.m; sourceTree = "<group>"; };
+		A05999FC215636A600D17058 /* CZMineVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZMineVC.h; sourceTree = "<group>"; };
+		A05999FD215636A600D17058 /* CZMineVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZMineVC.m; sourceTree = "<group>"; };
+		A05999FF215636DB00D17058 /* CZStudyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZStudyVC.h; sourceTree = "<group>"; };
+		A0599A00215636DB00D17058 /* CZStudyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZStudyVC.m; sourceTree = "<group>"; };
+		A0599A02215636F300D17058 /* CZHomeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZHomeVC.h; sourceTree = "<group>"; };
+		A0599A03215636F300D17058 /* CZHomeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZHomeVC.m; sourceTree = "<group>"; };
+		A0599A052156375300D17058 /* CZLoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZLoginVC.h; sourceTree = "<group>"; };
+		A0599A062156375300D17058 /* CZLoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZLoginVC.m; sourceTree = "<group>"; };
+		A0599A08215637D100D17058 /* CZRegisterVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZRegisterVC.h; sourceTree = "<group>"; };
+		A0599A09215637D100D17058 /* CZRegisterVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZRegisterVC.m; sourceTree = "<group>"; };
 		B55762E2478093A57AE66667 /* libPods-Chaozhi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Chaozhi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -598,8 +610,6 @@
 			isa = PBXGroup;
 			children = (
 				A020AFED214AAB140011BB4F /* Welcome */,
-				A020AFF2214AAB140011BB4F /* XLGHomeVC.h */,
-				A020AFF1214AAB140011BB4F /* XLGHomeVC.m */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -607,20 +617,26 @@
 		A020AFED214AAB140011BB4F /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
-				A020AFEE214AAB140011BB4F /* Login */,
+				A05999F82156322300D17058 /* Infinite(无限) */,
+				A05999F7215631FB00D17058 /* Mine(我的) */,
+				A05999F6215631F400D17058 /* Study(学习) */,
+				A05999F5215631EC00D17058 /* Home(首页) */,
+				A020AFEE214AAB140011BB4F /* Login(登录) */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
 		};
-		A020AFEE214AAB140011BB4F /* Login */ = {
+		A020AFEE214AAB140011BB4F /* Login(登录) */ = {
 			isa = PBXGroup;
 			children = (
-				A020AFF0214AAB140011BB4F /* XLGLoginVC.h */,
-				A020AFEF214AAB140011BB4F /* XLGLoginVC.m */,
+				A0599A052156375300D17058 /* CZLoginVC.h */,
+				A0599A062156375300D17058 /* CZLoginVC.m */,
+				A0599A08215637D100D17058 /* CZRegisterVC.h */,
+				A0599A09215637D100D17058 /* CZRegisterVC.m */,
 				A020B080214F8F810011BB4F /* CZForgetPswVC.h */,
 				A020B081214F8F810011BB4F /* CZForgetPswVC.m */,
 			);
-			path = Login;
+			path = "Login(登录)";
 			sourceTree = "<group>";
 		};
 		A020AFF3214AAB140011BB4F /* Base */ = {
@@ -717,6 +733,42 @@
 			path = "环境切换";
 			sourceTree = "<group>";
 		};
+		A05999F5215631EC00D17058 /* Home(首页) */ = {
+			isa = PBXGroup;
+			children = (
+				A0599A02215636F300D17058 /* CZHomeVC.h */,
+				A0599A03215636F300D17058 /* CZHomeVC.m */,
+			);
+			path = "Home(首页)";
+			sourceTree = "<group>";
+		};
+		A05999F6215631F400D17058 /* Study(学习) */ = {
+			isa = PBXGroup;
+			children = (
+				A05999FF215636DB00D17058 /* CZStudyVC.h */,
+				A0599A00215636DB00D17058 /* CZStudyVC.m */,
+			);
+			path = "Study(学习)";
+			sourceTree = "<group>";
+		};
+		A05999F7215631FB00D17058 /* Mine(我的) */ = {
+			isa = PBXGroup;
+			children = (
+				A05999FC215636A600D17058 /* CZMineVC.h */,
+				A05999FD215636A600D17058 /* CZMineVC.m */,
+			);
+			path = "Mine(我的)";
+			sourceTree = "<group>";
+		};
+		A05999F82156322300D17058 /* Infinite(无限) */ = {
+			isa = PBXGroup;
+			children = (
+				A05999F92156363C00D17058 /* CZInfiniteVC.h */,
+				A05999FA2156363C00D17058 /* CZInfiniteVC.m */,
+			);
+			path = "Infinite(无限)";
+			sourceTree = "<group>";
+		};
 		A7FA9F4632752641B75EA9B4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -763,8 +815,9 @@
 		A020AF3C214AA85B0011BB4F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = CZ;
 				LastUpgradeCheck = 0940;
-				ORGANIZATIONNAME = Jason_zyl;
+				ORGANIZATIONNAME = Jason_hzb;
 				TargetAttributes = {
 					A020AF43214AA85B0011BB4F = {
 						CreatedOnToolsVersion = 9.4;
@@ -898,14 +951,17 @@
 				A05999F32155EC1500D17058 /* XLGChangeServerModel.m in Sources */,
 				A020B05E214AAB150011BB4F /* MEViewController.m in Sources */,
 				A020B070214AAB150011BB4F /* LDNetTraceRoute.m in Sources */,
+				A0599A072156375300D17058 /* CZLoginVC.m in Sources */,
 				A020B06D214AAB150011BB4F /* BaseNavBar.m in Sources */,
 				A020B074214AAB150011BB4F /* LDNetGetAddress.m in Sources */,
 				A020B060214AAB150011BB4F /* XLGLoginTestView.m in Sources */,
 				A020B06F214AAB150011BB4F /* BaseWebVC.m in Sources */,
+				A0599A01215636DB00D17058 /* CZStudyVC.m in Sources */,
 				A020B053214AAB150011BB4F /* Utils.m in Sources */,
 				A020B073214AAB150011BB4F /* LDNetPing.m in Sources */,
 				A020B077214AAB150011BB4F /* Reachability.m in Sources */,
 				A020B050214AAB150011BB4F /* KeyChainUtil.m in Sources */,
+				A0599A04215636F300D17058 /* CZHomeVC.m in Sources */,
 				A020B05C214AAB150011BB4F /* MEViewModel.m in Sources */,
 				A020B01E214AAB150011BB4F /* SignKeyUtil.m in Sources */,
 				A020B052214AAB150011BB4F /* Toast.m in Sources */,
@@ -927,16 +983,17 @@
 				A020B05F214AAB150011BB4F /* XLGLoginTestVC.m in Sources */,
 				A020B022214AAB150011BB4F /* BaseService.m in Sources */,
 				A020B051214AAB150011BB4F /* CacheUtil.m in Sources */,
-				A020B068214AAB150011BB4F /* XLGLoginVC.m in Sources */,
 				A020B082214F8F810011BB4F /* CZForgetPswVC.m in Sources */,
+				A0599A0A215637D100D17058 /* CZRegisterVC.m in Sources */,
 				A020B06A214AAB150011BB4F /* WKDelegateController.m in Sources */,
 				A020AF49214AA85B0011BB4F /* AppDelegate.m in Sources */,
 				A020B01D214AAB150011BB4F /* NetworkUtil.m in Sources */,
+				A05999FB2156363C00D17058 /* CZInfiniteVC.m in Sources */,
+				A05999FE215636A600D17058 /* CZMineVC.m in Sources */,
 				A020B055214AAB150011BB4F /* XLGLottie.m in Sources */,
 				A020B06E214AAB150011BB4F /* BaseScrollView.m in Sources */,
 				A020B04E214AAB150011BB4F /* main.m in Sources */,
 				A020B057214AAB150011BB4F /* ProgressLoadView.m in Sources */,
-				A020B069214AAB150011BB4F /* XLGHomeVC.m in Sources */,
 				A020B056214AAB150011BB4F /* RegularPhoneTF.m in Sources */,
 				A020B079214AAB150011BB4F /* UserInfo.m in Sources */,
 			);
