@@ -10,4 +10,6 @@
 
 @interface CZMineVC : BaseVC
 
+@property (weak, nonatomic) IBOutlet UITableView *mineTableView;
+
 @end

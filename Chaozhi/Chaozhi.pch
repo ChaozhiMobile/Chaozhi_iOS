@@ -15,6 +15,7 @@
 
 #import "AppDelegate.h"
 #import "BaseVC.h"
+#import "BaseWebVC.h"
 #import <UIImageView+WebCache.h>
 #import <UIButton+WebCache.h>
 #import "Utils.h"

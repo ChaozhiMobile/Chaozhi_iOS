@@ -76,10 +76,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    self.view.backgroundColor = PageColor;
-    _viewConstraintH.constant = MIN(autoScaleH(50), 60);
-    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.view.backgroundColor = PageColor;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationController.automaticallyAdjustsScrollViewInsets = NO;
+    
+    if (@available(iOS 11.0, *)) {
+        UIScrollView.appearance.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
+    
+    _viewConstraintH.constant = MIN(autoScaleH(50), 60);
+    _viewTopY.constant = 44;
     self.tableFrame = CGRectMake(0, kNavBarH, WIDTH, HEIGHT-kNavBarH);
     
     [self setNavBar];

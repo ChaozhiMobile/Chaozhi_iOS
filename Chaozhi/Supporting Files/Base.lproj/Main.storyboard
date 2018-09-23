@@ -14,8 +14,8 @@
             <objects>
                 <viewController storyboardIdentifier="CZLoginVC" id="BYZ-38-t0r" customClass="CZLoginVC" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="T3d-f0-L6c"/>
-                        <viewControllerLayoutGuide type="bottom" id="4YX-My-UBH"/>
+                        <viewControllerLayoutGuide type="top" id="Npi-EE-T97"/>
+                        <viewControllerLayoutGuide type="bottom" id="jJY-C9-I8b"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -130,7 +130,7 @@
                             <constraint firstItem="wCZ-FO-8zr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="21" id="flD-DY-BYG"/>
                             <constraint firstAttribute="trailing" secondItem="aeG-cc-RCZ" secondAttribute="trailing" constant="20" id="gV8-Ci-k9q"/>
                             <constraint firstItem="sua-VY-fzK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="21" id="mqS-C0-Gqg"/>
-                            <constraint firstItem="BWx-4G-sH5" firstAttribute="top" secondItem="T3d-f0-L6c" secondAttribute="bottom" constant="70" id="sdf-vT-bPN"/>
+                            <constraint firstItem="BWx-4G-sH5" firstAttribute="top" secondItem="Npi-EE-T97" secondAttribute="bottom" constant="70" id="sdf-vT-bPN"/>
                             <constraint firstItem="wCZ-FO-8zr" firstAttribute="top" secondItem="sua-VY-fzK" secondAttribute="bottom" constant="30" id="vpG-9i-Tgb"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ubq-8k-QMt" secondAttribute="trailing" constant="20" symbolic="YES" id="xU4-gw-Xca"/>
                             <constraint firstItem="aeG-cc-RCZ" firstAttribute="top" secondItem="wCZ-FO-8zr" secondAttribute="bottom" constant="10" id="z2R-PK-yLB"/>
@@ -150,8 +150,8 @@
             <objects>
                 <viewController storyboardIdentifier="CZForgetPswVC" title="忘记密码" id="oQY-38-l2C" customClass="CZForgetPswVC" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gZ9-QJ-S4w"/>
-                        <viewControllerLayoutGuide type="bottom" id="tkt-ze-srm"/>
+                        <viewControllerLayoutGuide type="top" id="A5z-h7-nPE"/>
+                        <viewControllerLayoutGuide type="bottom" id="eK4-67-wAC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7xJ-UH-uCC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -267,7 +267,7 @@
                             <constraint firstAttribute="trailing" secondItem="GJz-UV-hN4" secondAttribute="trailing" constant="43" id="iDW-UW-Ag6"/>
                             <constraint firstItem="Ml9-32-aHJ" firstAttribute="top" secondItem="9Yx-BW-46h" secondAttribute="bottom" constant="10" id="l9e-1O-9uv"/>
                             <constraint firstAttribute="trailing" secondItem="Mjn-wd-v73" secondAttribute="trailing" constant="21" id="r7a-v9-ulH"/>
-                            <constraint firstItem="GJz-UV-hN4" firstAttribute="top" secondItem="gZ9-QJ-S4w" secondAttribute="bottom" constant="60" id="rHE-mI-odr"/>
+                            <constraint firstItem="GJz-UV-hN4" firstAttribute="top" secondItem="A5z-h7-nPE" secondAttribute="bottom" constant="60" id="rHE-mI-odr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dn1-fZ-yNI"/>
@@ -284,8 +284,8 @@
             <objects>
                 <viewController storyboardIdentifier="CZRegisterVC" id="PyZ-Kw-79a" customClass="CZRegisterVC" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="dTZ-ve-gXI"/>
-                        <viewControllerLayoutGuide type="bottom" id="AQk-17-MiC"/>
+                        <viewControllerLayoutGuide type="top" id="NKG-IJ-tV7"/>
+                        <viewControllerLayoutGuide type="bottom" id="BPd-dJ-NVw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="J0t-eM-rI2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -426,7 +426,7 @@
                             <constraint firstItem="Yi8-7x-oe3" firstAttribute="height" secondItem="bbj-Hj-wbm" secondAttribute="height" id="14D-RY-nXr"/>
                             <constraint firstItem="Hcw-Bj-Gb8" firstAttribute="top" secondItem="bbj-Hj-wbm" secondAttribute="bottom" constant="10" id="2Ur-VX-EOR"/>
                             <constraint firstItem="clg-o4-UuD" firstAttribute="top" secondItem="SL8-oV-kax" secondAttribute="bottom" constant="10" id="4L7-9U-ih3"/>
-                            <constraint firstItem="rAw-9j-7RG" firstAttribute="top" secondItem="dTZ-ve-gXI" secondAttribute="bottom" constant="60" id="Chi-J2-0kw"/>
+                            <constraint firstItem="rAw-9j-7RG" firstAttribute="top" secondItem="NKG-IJ-tV7" secondAttribute="bottom" constant="60" id="Chi-J2-0kw"/>
                             <constraint firstItem="Yi8-7x-oe3" firstAttribute="top" secondItem="clg-o4-UuD" secondAttribute="bottom" constant="10" id="OaO-R7-azI"/>
                             <constraint firstAttribute="trailing" secondItem="rAw-9j-7RG" secondAttribute="trailing" constant="44" id="PLA-a7-F1i"/>
                             <constraint firstAttribute="trailing" secondItem="bbj-Hj-wbm" secondAttribute="trailing" constant="21" id="PQB-Bf-6P8"/>
@@ -519,8 +519,8 @@
             <objects>
                 <viewController storyboardIdentifier="CZStudyVC" id="hqo-Xn-OZU" customClass="CZStudyVC" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="mSN-WJ-Fe5"/>
-                        <viewControllerLayoutGuide type="bottom" id="a75-z0-UMu"/>
+                        <viewControllerLayoutGuide type="top" id="pVN-WI-BNd"/>
+                        <viewControllerLayoutGuide type="bottom" id="hji-lR-egu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="NYa-UP-241">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -555,8 +555,8 @@
             <objects>
                 <viewController storyboardIdentifier="CZInfiniteVC" id="cis-jJ-v4m" customClass="CZInfiniteVC" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ibg-rm-Gof"/>
-                        <viewControllerLayoutGuide type="bottom" id="6t0-F3-2Tf"/>
+                        <viewControllerLayoutGuide type="top" id="nNh-QB-ciN"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Cu-bt-06P"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gLd-jy-ePU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -591,15 +591,35 @@
             <objects>
                 <viewController storyboardIdentifier="CZMineVC" id="jhn-AO-DEl" customClass="CZMineVC" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ya0-mf-4Kc"/>
-                        <viewControllerLayoutGuide type="bottom" id="5Vl-Tr-25m"/>
+                        <viewControllerLayoutGuide type="top" id="Vg0-Bu-K2a"/>
+                        <viewControllerLayoutGuide type="bottom" id="0kS-cy-Zmw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ka0-E4-f1L">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="10" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZTq-or-pqs">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="jhn-AO-DEl" id="lcW-qu-fMT"/>
+                                    <outlet property="delegate" destination="jhn-AO-DEl" id="jaA-5W-hOc"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0kS-cy-Zmw" firstAttribute="top" secondItem="ZTq-or-pqs" secondAttribute="bottom" id="9ov-PT-aT5"/>
+                            <constraint firstAttribute="trailing" secondItem="ZTq-or-pqs" secondAttribute="trailing" id="BzG-6g-Jec"/>
+                            <constraint firstItem="ZTq-or-pqs" firstAttribute="leading" secondItem="Ka0-E4-f1L" secondAttribute="leading" id="HyU-dk-9Bv"/>
+                            <constraint firstItem="ZTq-or-pqs" firstAttribute="top" secondItem="Vg0-Bu-K2a" secondAttribute="bottom" id="P00-FD-YE4"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CYL-z1-kVp"/>
+                    <connections>
+                        <outlet property="mineTableView" destination="ZTq-or-pqs" id="T11-S7-IeV"/>
+                        <outlet property="viewTopY" destination="P00-FD-YE4" id="l5G-lX-PrI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ksd-mf-ogl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -627,8 +647,8 @@
             <objects>
                 <viewController storyboardIdentifier="CZHomeVC" id="Hs7-22-wqW" customClass="CZHomeVC" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="UrF-ZN-4Kw"/>
-                        <viewControllerLayoutGuide type="bottom" id="xup-WM-kBN"/>
+                        <viewControllerLayoutGuide type="top" id="EWe-KZ-P3D"/>
+                        <viewControllerLayoutGuide type="bottom" id="XpC-0U-dMU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="m81-0I-652">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
