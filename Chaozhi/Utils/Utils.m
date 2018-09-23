@@ -10,7 +10,7 @@
 #import "Utils.h"
 #import "Toast.h"
 #import "NetworkUtil.h"
-#import "CZLoginVC.h"
+#import "BaseNC.h"
 
 @interface Utils ()
 {
@@ -125,8 +125,9 @@ static Utils *_utils = nil;
         return YES;
     } else {
         if (isJump==YES) {
-            CZLoginVC *loginVC = [[CZLoginVC alloc] init];
-            [[self getCurrentVC] presentViewController:loginVC animated:YES completion:nil];
+            //跳转到登录页面
+            UIViewController *vc = [Utils getViewController:@"Main" WithVCName:@"CZLoginVC"];
+            [[self getCurrentVC] presentViewController:vc animated:NO completion:nil];
         }
         return NO;
     }
@@ -142,8 +143,8 @@ static Utils *_utils = nil;
     [[UserInfo share] setUserInfo:nil]; //清除用户信息
     if (isJumpLoginVC==YES) {
         //跳转到登录页面
-        CZLoginVC *loginVC = [[CZLoginVC alloc] init];
-        [[self getCurrentVC] presentViewController:loginVC animated:YES completion:nil];
+        UIViewController *vc = [Utils getViewController:@"Main" WithVCName:@"CZLoginVC"];
+        [[self getCurrentVC] presentViewController:vc animated:NO completion:nil];
     }
 }
 

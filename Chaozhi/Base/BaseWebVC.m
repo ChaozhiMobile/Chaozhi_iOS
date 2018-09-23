@@ -46,7 +46,7 @@
 
 - (void)configUI {
     // 进度条
-    _progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, 0)];
+    _progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, kNavBarH, WIDTH, 1)];
     _progressView.hidden = YES;
     _progressView.tintColor = AppThemeColor;
     _progressView.trackTintColor = [UIColor whiteColor];
@@ -56,7 +56,7 @@
     WKWebViewConfiguration * configuration = [[WKWebViewConfiguration alloc]init];
     _userContentController =[[WKUserContentController alloc]init];
     configuration.userContentController = _userContentController;
-    _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT-64) configuration:configuration];
+    _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, kNavBarH, WIDTH, HEIGHT-kNavBarH) configuration:configuration];
     //注册方法
     WKDelegateController *delegateController = [[WKDelegateController alloc]init];
     delegateController.delegate = self;

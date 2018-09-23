@@ -46,6 +46,9 @@
         _headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, autoScaleW(120))];
         _headView.backgroundColor = kWhiteColor;
         
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jumpPersonalCenter)];
+        [_headView addGestureRecognizer:tap];
+        
         _headImgView = [[UIImageView alloc] initWithFrame:CGRectMake(autoScaleW(20), autoScaleW(30), autoScaleW(60), autoScaleW(60))];
         _headImgView.backgroundColor = PageColor;
         _headImgView.layer.cornerRadius = autoScaleW(30);
@@ -63,6 +66,15 @@
         [_headView addSubview:_arrowImgView];
     }
     return _headView;
+}
+
+#pragma mark - methods
+
+// 个人中心
+- (void)jumpPersonalCenter {
+    if ([Utils isLoginWithJump:YES]) {
+        [BaseWebVC showWithContro:self withUrlStr:@"https://www.baidu.com/" withTitle:@"个人中心" isPresent:NO];
+    }
 }
 
 #pragma mark - UITableView 代理
@@ -121,7 +133,7 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    [BaseWebVC showWithContro:self withUrlStr:@"http://www.baidu.com" withTitle:_nameArr[indexPath.row] isPresent:NO];
+    [BaseWebVC showWithContro:self withUrlStr:@"https://www.baidu.com/" withTitle:_nameArr[indexPath.row] isPresent:NO];
 }
 
 - (void)didReceiveMemoryWarning {
