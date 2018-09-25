@@ -28,8 +28,9 @@
     [self createUI];
 }
 
-- (void)navigationLeftButton{
-    [self.navigationController popViewControllerAnimated:YES];
+- (void)backAction {
+//    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 -(void)createUI {

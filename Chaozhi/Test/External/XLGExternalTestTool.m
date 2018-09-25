@@ -120,13 +120,16 @@
             [self showMenuView:_logShowBtn];
             
             if ([[self getCurrentRootViewController] isKindOfClass:[XLGLogVC class]]) {
-                [[self getCurrentRootViewController].navigationController popViewControllerAnimated:NO];
+//                [[self getCurrentRootViewController].navigationController popViewControllerAnimated:NO];
+                [[self getCurrentRootViewController] dismissViewControllerAnimated:NO completion:nil];
             }
             if ([[self getCurrentRootViewController] isKindOfClass:[XLGInternalTestVC class]]) {
-                [[self getCurrentRootViewController].navigationController popViewControllerAnimated:NO];
+//                [[self getCurrentRootViewController].navigationController popViewControllerAnimated:NO];
+                [[self getCurrentRootViewController] dismissViewControllerAnimated:NO completion:nil];
             }
             if (![[self getCurrentRootViewController] isKindOfClass:[XLGChangeServerVC class]]) {
-                [[self getCurrentRootViewController].navigationController pushViewController:vc animated:YES];
+//                [[self getCurrentRootViewController].navigationController pushViewController:vc animated:YES];
+                [[self getCurrentRootViewController] presentViewController:vc animated:NO completion:nil];
             }
         }
             break;
@@ -136,13 +139,16 @@
             [self showMenuView:_logShowBtn];
             
             if ([[self getCurrentRootViewController] isKindOfClass:[XLGChangeServerVC class]]) {
-                [[self getCurrentRootViewController].navigationController popViewControllerAnimated:NO];
+//                [[self getCurrentRootViewController].navigationController popViewControllerAnimated:NO];
+                [[self getCurrentRootViewController] dismissViewControllerAnimated:NO completion:nil];
             }
             if ([[self getCurrentRootViewController] isKindOfClass:[XLGInternalTestVC class]]) {
-                [[self getCurrentRootViewController].navigationController popViewControllerAnimated:NO];
+//                [[self getCurrentRootViewController].navigationController popViewControllerAnimated:NO];
+                [[self getCurrentRootViewController] dismissViewControllerAnimated:NO completion:nil];
             }
             if (![[self getCurrentRootViewController] isKindOfClass:[XLGLogVC class]]) {
-                [[self getCurrentRootViewController].navigationController pushViewController:vc animated:YES];
+//                [[self getCurrentRootViewController].navigationController pushViewController:vc animated:YES];
+                [[self getCurrentRootViewController] presentViewController:vc animated:NO completion:nil];
             }
         }
             break;
@@ -152,13 +158,16 @@
             [self showMenuView:_logShowBtn];
             
             if ([[self getCurrentRootViewController] isKindOfClass:[XLGChangeServerVC class]]) {
-                [[self getCurrentRootViewController].navigationController popViewControllerAnimated:NO];
+//                [[self getCurrentRootViewController].navigationController popViewControllerAnimated:NO];
+                [[self getCurrentRootViewController] dismissViewControllerAnimated:NO completion:nil];
             }
             if ([[self getCurrentRootViewController] isKindOfClass:[XLGLogVC class]]) {
-                [[self getCurrentRootViewController].navigationController popViewControllerAnimated:NO];
+//                [[self getCurrentRootViewController].navigationController popViewControllerAnimated:NO];
+                [[self getCurrentRootViewController] dismissViewControllerAnimated:NO completion:nil];
             }
             if (![[self getCurrentRootViewController] isKindOfClass:[XLGInternalTestVC class]]) {
-                [[self getCurrentRootViewController].navigationController pushViewController:vc animated:YES];
+//                [[self getCurrentRootViewController].navigationController pushViewController:vc animated:YES];
+                [[self getCurrentRootViewController] presentViewController:vc animated:NO completion:nil];
             }
         }
             break;

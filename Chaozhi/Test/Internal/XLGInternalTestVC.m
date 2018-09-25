@@ -91,6 +91,11 @@
 
 #pragma mark - methods
 
+- (void)backAction {
+//    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
+
 //没有网络了
 - (void)netWorkDisappear
 {
