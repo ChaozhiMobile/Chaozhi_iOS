@@ -82,6 +82,9 @@
                                         <real key="value" value="22"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G1R-VW-Wn0"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ubq-8k-QMt">
                                 <rect key="frame" x="21" y="387" width="72" height="40"/>
@@ -138,6 +141,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="g7d-tk-eAc"/>
                     <connections>
+                        <outlet property="forgetPswBtn" destination="Ubq-8k-QMt" id="1kv-Hc-XKQ"/>
+                        <outlet property="loginBtn" destination="wCZ-FO-8zr" id="fB9-tN-LEV"/>
+                        <outlet property="phoneTF" destination="59w-GR-aXq" id="jmQ-gA-GQu"/>
+                        <outlet property="pswTF" destination="nyR-nP-6XJ" id="CBk-Yj-1nF"/>
+                        <outlet property="registerBtn" destination="aeG-cc-RCZ" id="enS-r5-krw"/>
                         <outlet property="viewConstraintH" destination="dYG-Y9-mPS" id="CVS-AP-gJa"/>
                     </connections>
                 </viewController>
@@ -228,6 +236,9 @@
                                                 <real key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="getCodeAction:" destination="oQY-38-l2C" eventType="touchUpInside" id="X9D-IK-8zr"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -249,6 +260,9 @@
                                         <real key="value" value="22"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="changePswAction:" destination="oQY-38-l2C" eventType="touchUpInside" id="TVa-GN-7cA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -272,6 +286,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="dn1-fZ-yNI"/>
                     <connections>
+                        <outlet property="changePswBtn" destination="8no-Wq-Tie" id="J2N-h6-s9z"/>
+                        <outlet property="codeBtn" destination="p6P-Dy-z8f" id="VXJ-8a-YQm"/>
+                        <outlet property="codeTF" destination="5X7-uY-7UA" id="F8w-al-puI"/>
+                        <outlet property="phoneTF" destination="yUw-bf-Vvh" id="NNU-fz-02h"/>
+                        <outlet property="pswNewTF" destination="8lE-bc-VCz" id="cSD-8j-gsh"/>
                         <outlet property="viewConstraintH" destination="aZZ-gX-QnZ" id="xUd-lV-qvp"/>
                     </connections>
                 </viewController>
@@ -362,6 +381,9 @@
                                                 <real key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="getCodeAction:" destination="PyZ-Kw-79a" eventType="touchUpInside" id="XwJ-vT-Fgm"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -419,6 +441,9 @@
                                         <real key="value" value="22"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="registerAction:" destination="PyZ-Kw-79a" eventType="touchUpInside" id="DGc-1a-rQa"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -453,6 +478,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="hae-tg-WOv"/>
                     <connections>
+                        <outlet property="codeBtn" destination="sqj-P5-3QV" id="VVM-Tc-YCZ"/>
+                        <outlet property="codeTF" destination="DWa-zX-F24" id="e0B-FI-tev"/>
+                        <outlet property="nameTF" destination="yNm-dY-wnw" id="GZb-bD-NIV"/>
+                        <outlet property="phoneTF" destination="TBg-BV-gy5" id="d40-qt-4d1"/>
+                        <outlet property="pswTF" destination="WcZ-0s-HUP" id="TNU-Te-Llu"/>
+                        <outlet property="rePswTF" destination="C55-IW-9Xh" id="QOQ-Sr-moz"/>
+                        <outlet property="registerBtn" destination="NAP-uD-dy8" id="ReU-DI-QL3"/>
                         <outlet property="viewConstraintH" destination="Z1F-Ef-2Tw" id="haK-qG-buW"/>
                     </connections>
                 </viewController>

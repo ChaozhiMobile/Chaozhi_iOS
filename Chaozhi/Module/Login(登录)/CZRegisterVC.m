@@ -27,6 +27,17 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+// 获取验证码
+- (IBAction)getCodeAction:(id)sender {
+    
+}
+
+// 注册
+- (IBAction)registerAction:(id)sender {
+    
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

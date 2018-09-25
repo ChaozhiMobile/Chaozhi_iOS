@@ -27,6 +27,16 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+// 获取验证码
+- (IBAction)getCodeAction:(id)sender {
+    
+}
+
+// 修改密码
+- (IBAction)changePswAction:(id)sender {
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
