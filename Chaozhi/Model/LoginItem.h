@@ -12,8 +12,6 @@
 
 @interface LoginItem : BaseItem
 
-@property(nonatomic,copy)NSString *token;
-@property(nonatomic,copy)NSString *areaId;
-@property(nonatomic,copy)NSString *memberId;
+@property (nonatomic, copy) NSString *token;
 
 @end

@@ -9,9 +9,6 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseNavBar.h"
-#import "XLGUserService.h"
-//#import "XLGRentalService.h"
-//#import "XLGWalletService.h"
 
 @interface BaseVC : UIViewController
 
@@ -26,10 +23,6 @@
 
 @property (nonatomic,retain) UITableView *tableView;
 @property (nonatomic,assign) CGRect tableFrame;
-
-@property (nonatomic,retain) XLGUserService *userService;
-//@property (nonatomic,retain) XLGRentalService *rentalService;
-//@property (nonatomic,retain) XLGWalletService *walletService;
 
 /*!
  *  @brief 无网络

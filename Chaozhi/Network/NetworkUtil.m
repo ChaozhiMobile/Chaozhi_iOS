@@ -1,6 +1,6 @@
 //
 //  NetworkUtil.m
-//  Chaozhi
+//  SharenGo
 //  Notes：
 //
 //  Created by Jason on 2018/5/9.
@@ -22,8 +22,8 @@ static NetworkUtil *_instance;
     return _instance;
 }
 
-- (void)listening
-{
+- (void)listening {
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:kReachabilityChangedNotification object:nil];
     NSString *remoteHostName = @"www.apple.com";
     self.hostReachability = [Reachability reachabilityWithHostName:remoteHostName];
@@ -33,7 +33,7 @@ static NetworkUtil *_instance;
 /*!
  * Called by Reachability whenever status changes.
  */
-- (void) reachabilityChanged:(NSNotification *)note
+- (void)reachabilityChanged:(NSNotification *)note
 {
     Reachability *reachability = [note object];
     NSParameterAssert([reachability isKindOfClass:[Reachability class]]);

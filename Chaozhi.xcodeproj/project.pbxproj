@@ -9,13 +9,7 @@
 /* Begin PBXBuildFile section */
 		94DF1E58ABC326A19CE0832D /* libPods-Chaozhi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B55762E2478093A57AE66667 /* libPods-Chaozhi.a */; };
 		A020AF49214AA85B0011BB4F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AF48214AA85B0011BB4F /* AppDelegate.m */; };
-		A020B01C214AAB150011BB4F /* CommonRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AF5E214AAB130011BB4F /* CommonRequest.m */; };
-		A020B01D214AAB150011BB4F /* NetworkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AF60214AAB130011BB4F /* NetworkUtil.m */; };
-		A020B01E214AAB150011BB4F /* SignKeyUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AF63214AAB130011BB4F /* SignKeyUtil.m */; };
 		A020B01F214AAB150011BB4F /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AF68214AAB130011BB4F /* Config.m */; };
-		A020B020214AAB150011BB4F /* UrlConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AF69214AAB130011BB4F /* UrlConfig.m */; };
-		A020B022214AAB150011BB4F /* BaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AF6D214AAB130011BB4F /* BaseService.m */; };
-		A020B023214AAB150011BB4F /* XLGUserService.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AF70214AAB130011BB4F /* XLGUserService.m */; };
 		A020B025214AAB150011BB4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A020AF76214AAB130011BB4F /* Assets.xcassets */; };
 		A020B026214AAB150011BB4F /* ic_refresh_image_025@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF79214AAB130011BB4F /* ic_refresh_image_025@2x.png */; };
 		A020B027214AAB150011BB4F /* ic_refresh_image_029@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF7A214AAB130011BB4F /* ic_refresh_image_029@2x.png */; };
@@ -105,6 +99,12 @@
 		A0599A2221574CAF00D17058 /* CZMineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0599A1621574CAF00D17058 /* CZMineVC.m */; };
 		A0599A2321574CAF00D17058 /* CZHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0599A1921574CAF00D17058 /* CZHomeVC.m */; };
 		A0599A2421574CAF00D17058 /* CZStudyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0599A1C21574CAF00D17058 /* CZStudyVC.m */; };
+		A05FF5CB215B129C00C51E05 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A05FF5C9215B129C00C51E05 /* NetworkManager.m */; };
+		A05FF5CE215B14F100C51E05 /* NetworkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A05FF5CC215B14F100C51E05 /* NetworkUtil.m */; };
+		A05FF5D9215B163400C51E05 /* JHHJCenterBGView.m in Sources */ = {isa = PBXBuildFile; fileRef = A05FF5D2215B163400C51E05 /* JHHJCenterBGView.m */; };
+		A05FF5DA215B163400C51E05 /* JHHJView.m in Sources */ = {isa = PBXBuildFile; fileRef = A05FF5D4215B163400C51E05 /* JHHJView.m */; };
+		A05FF5DB215B163400C51E05 /* JHHJAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A05FF5D5215B163400C51E05 /* JHHJAnimation.m */; };
+		A05FF5DC215B163400C51E05 /* AEIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = A05FF5D8215B163400C51E05 /* AEIndicator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,22 +113,8 @@
 		A020AF44214AA85B0011BB4F /* Chaozhi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chaozhi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A020AF47214AA85B0011BB4F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A020AF48214AA85B0011BB4F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A020AF5E214AAB130011BB4F /* CommonRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonRequest.m; sourceTree = "<group>"; };
-		A020AF60214AAB130011BB4F /* NetworkUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkUtil.m; sourceTree = "<group>"; };
-		A020AF61214AAB130011BB4F /* SignKeyUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignKeyUtil.h; sourceTree = "<group>"; };
-		A020AF62214AAB130011BB4F /* NetworkUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkUtil.h; sourceTree = "<group>"; };
-		A020AF63214AAB130011BB4F /* SignKeyUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignKeyUtil.m; sourceTree = "<group>"; };
 		A020AF65214AAB130011BB4F /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
-		A020AF66214AAB130011BB4F /* UrlConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UrlConfig.h; sourceTree = "<group>"; };
-		A020AF67214AAB130011BB4F /* ActionType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionType.h; sourceTree = "<group>"; };
 		A020AF68214AAB130011BB4F /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
-		A020AF69214AAB130011BB4F /* UrlConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UrlConfig.m; sourceTree = "<group>"; };
-		A020AF6A214AAB130011BB4F /* CommonRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonRequest.h; sourceTree = "<group>"; };
-		A020AF6D214AAB130011BB4F /* BaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseService.m; sourceTree = "<group>"; };
-		A020AF6E214AAB130011BB4F /* ObserverServiceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObserverServiceDelegate.h; sourceTree = "<group>"; };
-		A020AF70214AAB130011BB4F /* XLGUserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGUserService.m; sourceTree = "<group>"; };
-		A020AF72214AAB130011BB4F /* BaseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseService.h; sourceTree = "<group>"; };
-		A020AF74214AAB130011BB4F /* XLGUserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLGUserService.h; sourceTree = "<group>"; };
 		A020AF76214AAB130011BB4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A020AF79214AAB130011BB4F /* ic_refresh_image_025@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_refresh_image_025@2x.png"; sourceTree = "<group>"; };
 		A020AF7A214AAB130011BB4F /* ic_refresh_image_029@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_refresh_image_029@2x.png"; sourceTree = "<group>"; };
@@ -268,6 +254,18 @@
 		A0599A1A21574CAF00D17058 /* CZHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZHomeVC.h; sourceTree = "<group>"; };
 		A0599A1C21574CAF00D17058 /* CZStudyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZStudyVC.m; sourceTree = "<group>"; };
 		A0599A1D21574CAF00D17058 /* CZStudyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZStudyVC.h; sourceTree = "<group>"; };
+		A05FF5C8215B129C00C51E05 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		A05FF5C9215B129C00C51E05 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		A05FF5CC215B14F100C51E05 /* NetworkUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkUtil.m; sourceTree = "<group>"; };
+		A05FF5CD215B14F100C51E05 /* NetworkUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkUtil.h; sourceTree = "<group>"; };
+		A05FF5D1215B163400C51E05 /* JHHJView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHHJView.h; sourceTree = "<group>"; };
+		A05FF5D2215B163400C51E05 /* JHHJCenterBGView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHHJCenterBGView.m; sourceTree = "<group>"; };
+		A05FF5D3215B163400C51E05 /* JHHJAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHHJAnimation.h; sourceTree = "<group>"; };
+		A05FF5D4215B163400C51E05 /* JHHJView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHHJView.m; sourceTree = "<group>"; };
+		A05FF5D5215B163400C51E05 /* JHHJAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHHJAnimation.m; sourceTree = "<group>"; };
+		A05FF5D6215B163400C51E05 /* JHHJCenterBGView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHHJCenterBGView.h; sourceTree = "<group>"; };
+		A05FF5D7215B163400C51E05 /* AEIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEIndicator.h; sourceTree = "<group>"; };
+		A05FF5D8215B163400C51E05 /* AEIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEIndicator.m; sourceTree = "<group>"; };
 		B55762E2478093A57AE66667 /* libPods-Chaozhi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Chaozhi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -308,6 +306,8 @@
 				A020AF47214AA85B0011BB4F /* AppDelegate.h */,
 				A020AF48214AA85B0011BB4F /* AppDelegate.m */,
 				A020B014214AAB140011BB4F /* Chaozhi.pch */,
+				A020AF65214AAB130011BB4F /* Config.h */,
+				A020AF68214AAB130011BB4F /* Config.m */,
 				A020AFC0214AAB140011BB4F /* Test */,
 				A020AF5D214AAB130011BB4F /* Network */,
 				A020AFF3214AAB140011BB4F /* Base */,
@@ -324,48 +324,12 @@
 		A020AF5D214AAB130011BB4F /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				A020AF6A214AAB130011BB4F /* CommonRequest.h */,
-				A020AF5E214AAB130011BB4F /* CommonRequest.m */,
-				A020AF5F214AAB130011BB4F /* Util */,
-				A020AF64214AAB130011BB4F /* Config */,
-				A020AF6B214AAB130011BB4F /* Service */,
+				A05FF5CD215B14F100C51E05 /* NetworkUtil.h */,
+				A05FF5CC215B14F100C51E05 /* NetworkUtil.m */,
+				A05FF5C8215B129C00C51E05 /* NetworkManager.h */,
+				A05FF5C9215B129C00C51E05 /* NetworkManager.m */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		A020AF5F214AAB130011BB4F /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				A020AF62214AAB130011BB4F /* NetworkUtil.h */,
-				A020AF60214AAB130011BB4F /* NetworkUtil.m */,
-				A020AF61214AAB130011BB4F /* SignKeyUtil.h */,
-				A020AF63214AAB130011BB4F /* SignKeyUtil.m */,
-			);
-			path = Util;
-			sourceTree = "<group>";
-		};
-		A020AF64214AAB130011BB4F /* Config */ = {
-			isa = PBXGroup;
-			children = (
-				A020AF65214AAB130011BB4F /* Config.h */,
-				A020AF68214AAB130011BB4F /* Config.m */,
-				A020AF66214AAB130011BB4F /* UrlConfig.h */,
-				A020AF69214AAB130011BB4F /* UrlConfig.m */,
-				A020AF67214AAB130011BB4F /* ActionType.h */,
-			);
-			path = Config;
-			sourceTree = "<group>";
-		};
-		A020AF6B214AAB130011BB4F /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				A020AF72214AAB130011BB4F /* BaseService.h */,
-				A020AF6D214AAB130011BB4F /* BaseService.m */,
-				A020AF74214AAB130011BB4F /* XLGUserService.h */,
-				A020AF70214AAB130011BB4F /* XLGUserService.m */,
-				A020AF6E214AAB130011BB4F /* ObserverServiceDelegate.h */,
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		A020AF75214AAB130011BB4F /* Resource */ = {
@@ -462,6 +426,7 @@
 			children = (
 				A020AFA9214AAB130011BB4F /* Utils.h */,
 				A020AFB2214AAB130011BB4F /* Utils.m */,
+				A05FF5CF215B163400C51E05 /* Indicator(指示器) */,
 				A020AFAA214AAB130011BB4F /* Cache */,
 				A020AFAF214AAB130011BB4F /* Toast */,
 				A020AFB3214AAB130011BB4F /* OptionsBar */,
@@ -761,6 +726,29 @@
 			path = "Study(学习)";
 			sourceTree = "<group>";
 		};
+		A05FF5CF215B163400C51E05 /* Indicator(指示器) */ = {
+			isa = PBXGroup;
+			children = (
+				A05FF5D0215B163400C51E05 /* JHLoadingForHJ */,
+				A05FF5D7215B163400C51E05 /* AEIndicator.h */,
+				A05FF5D8215B163400C51E05 /* AEIndicator.m */,
+			);
+			path = "Indicator(指示器)";
+			sourceTree = "<group>";
+		};
+		A05FF5D0215B163400C51E05 /* JHLoadingForHJ */ = {
+			isa = PBXGroup;
+			children = (
+				A05FF5D1215B163400C51E05 /* JHHJView.h */,
+				A05FF5D2215B163400C51E05 /* JHHJCenterBGView.m */,
+				A05FF5D3215B163400C51E05 /* JHHJAnimation.h */,
+				A05FF5D4215B163400C51E05 /* JHHJView.m */,
+				A05FF5D5215B163400C51E05 /* JHHJAnimation.m */,
+				A05FF5D6215B163400C51E05 /* JHHJCenterBGView.h */,
+			);
+			path = JHLoadingForHJ;
+			sourceTree = "<group>";
+		};
 		A7FA9F4632752641B75EA9B4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -938,8 +926,8 @@
 				A020B01F214AAB150011BB4F /* Config.m in Sources */,
 				A020B071214AAB150011BB4F /* LDNetTimer.m in Sources */,
 				A020B078214AAB150011BB4F /* BaseItem.m in Sources */,
-				A020B020214AAB150011BB4F /* UrlConfig.m in Sources */,
 				A020B06B214AAB150011BB4F /* BaseVC.m in Sources */,
+				A05FF5DB215B163400C51E05 /* JHHJAnimation.m in Sources */,
 				A05999F32155EC1500D17058 /* XLGChangeServerModel.m in Sources */,
 				A020B05E214AAB150011BB4F /* MEViewController.m in Sources */,
 				A0599A2121574CAF00D17058 /* CZForgetPswVC.m in Sources */,
@@ -955,19 +943,18 @@
 				A0599A2321574CAF00D17058 /* CZHomeVC.m in Sources */,
 				A020B050214AAB150011BB4F /* KeyChainUtil.m in Sources */,
 				A020B05C214AAB150011BB4F /* MEViewModel.m in Sources */,
-				A020B01E214AAB150011BB4F /* SignKeyUtil.m in Sources */,
 				A020B052214AAB150011BB4F /* Toast.m in Sources */,
 				A020B05D214AAB150011BB4F /* MEView.m in Sources */,
 				A020B075214AAB150011BB4F /* LDNetDiagnoService.m in Sources */,
 				A020B07A214AAB150011BB4F /* LoginItem.m in Sources */,
 				A020B06C214AAB150011BB4F /* BaseNC.m in Sources */,
 				A020B054214AAB150011BB4F /* XLGAlertView.m in Sources */,
+				A05FF5CE215B14F100C51E05 /* NetworkUtil.m in Sources */,
 				A020B072214AAB150011BB4F /* LDSimplePing.m in Sources */,
-				A020B023214AAB150011BB4F /* XLGUserService.m in Sources */,
 				A05999F12155EC1500D17058 /* XLGLogVC.m in Sources */,
-				A020B01C214AAB150011BB4F /* CommonRequest.m in Sources */,
 				A0599A1F21574CAF00D17058 /* CZLoginVC.m in Sources */,
 				A0599A2421574CAF00D17058 /* CZStudyVC.m in Sources */,
+				A05FF5D9215B163400C51E05 /* JHHJCenterBGView.m in Sources */,
 				A0599A2221574CAF00D17058 /* CZMineVC.m in Sources */,
 				A020B076214AAB150011BB4F /* LDNetConnect.m in Sources */,
 				A05999F42155EC1500D17058 /* XLGChangeServerVC.m in Sources */,
@@ -976,17 +963,18 @@
 				A020B061214AAB150011BB4F /* XLGLoginTestViewModel.m in Sources */,
 				A05999EF2155EC1500D17058 /* XLGExternalTestTool.m in Sources */,
 				A020B05F214AAB150011BB4F /* XLGLoginTestVC.m in Sources */,
-				A020B022214AAB150011BB4F /* BaseService.m in Sources */,
 				A0599A1E21574CAF00D17058 /* CZInfiniteVC.m in Sources */,
 				A020B051214AAB150011BB4F /* CacheUtil.m in Sources */,
 				A020B06A214AAB150011BB4F /* WKDelegateController.m in Sources */,
 				A020AF49214AA85B0011BB4F /* AppDelegate.m in Sources */,
-				A020B01D214AAB150011BB4F /* NetworkUtil.m in Sources */,
 				A020B055214AAB150011BB4F /* XLGLottie.m in Sources */,
 				A020B06E214AAB150011BB4F /* BaseScrollView.m in Sources */,
 				A020B04E214AAB150011BB4F /* main.m in Sources */,
 				A020B057214AAB150011BB4F /* ProgressLoadView.m in Sources */,
+				A05FF5DA215B163400C51E05 /* JHHJView.m in Sources */,
 				A020B056214AAB150011BB4F /* RegularPhoneTF.m in Sources */,
+				A05FF5DC215B163400C51E05 /* AEIndicator.m in Sources */,
+				A05FF5CB215B129C00C51E05 /* NetworkManager.m in Sources */,
 				A020B079214AAB150011BB4F /* UserInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

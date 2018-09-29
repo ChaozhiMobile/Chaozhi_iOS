@@ -24,7 +24,9 @@
 #import "Masonry.h"
 #import <XLGCategory.h>
 #import "UserInfo.h"
-#import "CommonRequest.h"
+#import "Config.h"
+#import "NetworkManager.h"
+#import "JHHJView.h"
 #import "XLGLottie.h"
 
 #endif

@@ -1,6 +1,6 @@
 //
 //  NetworkUtil.h
-//  Chaozhi
+//  SharenGo
 //  Notes：网络监测工具类
 //
 //  Created by Jason on 2018/5/9.

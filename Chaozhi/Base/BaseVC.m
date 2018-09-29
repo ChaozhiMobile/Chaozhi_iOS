@@ -9,7 +9,6 @@
 
 #import "BaseVC.h"
 #import "MJRefresh.h"
-#import "ObserverServiceDelegate.h"
 #import "XLGExternalTestTool.h"
 
 @interface BaseVC ()<UITextFieldDelegate,UITextViewDelegate,UITabBarDelegate>
@@ -93,19 +92,10 @@
     __weak id weakSelf = self;
     self.navigationController.interactivePopGestureRecognizer.delegate = weakSelf;
     
-    [self initService];
-    
     //无网络通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(netWorkDisappear) name:@"kNetDisAppear" object:nil];
     //有网络通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(netWorkAppear) name:@"kNetAppear" object:nil];
-}
-
-#pragma mark - 初始化接口服务
-- (void)initService {
-    self.userService = [[XLGUserService alloc] init];
-//    self.rentalService = [[XLGRentalService alloc] init];
-//    self.walletService = [[XLGWalletService alloc] init];
 }
 
 //没有网络了
@@ -308,9 +298,6 @@
     NSLog(@"释放控制器");
     [[NSNotificationCenter defaultCenter] removeObserver:self]; //移除通知
     timeout = -1;
-    self.userService = nil;
-//    self.rentalService = nil;
-//    self.walletService = nil;
 }
 
 - (void)didReceiveMemoryWarning {

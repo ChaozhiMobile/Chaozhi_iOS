@@ -15,7 +15,7 @@
 
 #define cellHeight 40.0f
 
-@interface XLGInternalTestVC ()<UITableViewDelegate,UITableViewDataSource,ObserverServiceDelegate>
+@interface XLGInternalTestVC ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) NSArray *titleArr;
 
@@ -27,8 +27,6 @@
     [super viewDidLoad];
     
     self.title = @"内部测试";
-    
-    self.userService.delegate = self; //用的时候设置代理
     
     //self.isPanForbid = YES; //禁用iOS自带侧滑返回手势
     
@@ -218,18 +216,25 @@
 #pragma mark - 登录网络请求
     if ([title isEqualToString:@"登录网络请求"]) {
         
-        NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
-        [param setObject:@"15737936517" forKey:@"mobile"];
-        [param setObject:@"000000" forKey:@"vcode"];
-        [param setObject:@"8" forKey:@"areaId"];
-        [self.userService requestLoginWithService:param];
+        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
+                             @"18268686511", @"phone",
+                             @"wang123", @"password",
+                             nil];
+        [[NetworkManager sharedManager] postJSON:URL_Login parameters:dic imageDataArr:nil imageName:nil  completion:^(id responseData, RequestState status, NSError *error) {
+            
+            NSLog(@"%d",status);
+            
+            if (status == Request_Success) {
+                [Utils showToast:@"登录成功"];
+            } else {
+                [Utils showToast:@"登录失败"];
+            }
+        }];
     }
     
 #pragma mark - 参数生成签名
     if ([title isEqualToString:@"参数生成签名"]) {
         
-        NSString *url = @"mobile=11111888888&deviceCode=23B29C74-8E5B-4167-B8A4-DB18FF51F76B&vcode=000000&areaId=&nonceStr=1536567942474d9cb2e21c0989d47b84";
-        NSLog(@"签名值：%@",[SignKeyUtil getSignByStr:url withType:@"post"]);
     }
     
 #pragma mark - 获取用户token
@@ -247,27 +252,6 @@
             [[XLGLottie shared] dismiss];
         });
     }
-}
-
-#pragma mark - ObserverServiceDelegate
-- (void)onSuccess:(id)data withType:(ActionType)type {
-    switch (type) {
-            
-        case _ACTION_LOGIN_:
-        {
-            LoginItem *item = [LoginItem yy_modelWithJSON:(NSDictionary *)data];
-            NSLog(@"用户token1：%@", item.token);
-            NSLog(@"用户token2：%@", [UserInfo share].token);
-        }
-            break;
-            
-        default:
-            break;
-    }
-}
-
-- (void)onFailureWithType:(ActionType)type {
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
