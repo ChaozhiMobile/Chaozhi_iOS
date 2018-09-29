@@ -113,66 +113,37 @@
 }
 
 - (void)buttonIndexClick:(UIButton *)sender {
+    
+    [self showMenuView:_logShowBtn];
+    
+    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+    //如果window已有弹出的视图，会导致界面无法弹出，页面卡死，这里需要先把视图关闭，再弹出
+    if (keyWindow.rootViewController.presentedViewController != nil) {
+        [keyWindow.rootViewController dismissViewControllerAnimated:NO completion:nil];
+    }
+    
     switch (sender.tag) {
         case 2000: //环境切换
         {
             XLGChangeServerVC *vc = [[XLGChangeServerVC alloc] init];
-            [self showMenuView:_logShowBtn];
-            
-            if ([[self getCurrentRootViewController] isKindOfClass:[XLGLogVC class]]) {
-//                [[self getCurrentRootViewController].navigationController popViewControllerAnimated:NO];
-                [[self getCurrentRootViewController] dismissViewControllerAnimated:NO completion:nil];
-            }
-            if ([[self getCurrentRootViewController] isKindOfClass:[XLGInternalTestVC class]]) {
-//                [[self getCurrentRootViewController].navigationController popViewControllerAnimated:NO];
-                [[self getCurrentRootViewController] dismissViewControllerAnimated:NO completion:nil];
-            }
-            if (![[self getCurrentRootViewController] isKindOfClass:[XLGChangeServerVC class]]) {
-//                [[self getCurrentRootViewController].navigationController pushViewController:vc animated:YES];
-                [[self getCurrentRootViewController] presentViewController:vc animated:NO completion:nil];
-            }
+            [keyWindow.rootViewController presentViewController:vc animated:NO completion:nil];
         }
             break;
         case 2001: //接口日志
         {
             XLGLogVC *vc = [[XLGLogVC alloc] init];
-            [self showMenuView:_logShowBtn];
-            
-            if ([[self getCurrentRootViewController] isKindOfClass:[XLGChangeServerVC class]]) {
-//                [[self getCurrentRootViewController].navigationController popViewControllerAnimated:NO];
-                [[self getCurrentRootViewController] dismissViewControllerAnimated:NO completion:nil];
-            }
-            if ([[self getCurrentRootViewController] isKindOfClass:[XLGInternalTestVC class]]) {
-//                [[self getCurrentRootViewController].navigationController popViewControllerAnimated:NO];
-                [[self getCurrentRootViewController] dismissViewControllerAnimated:NO completion:nil];
-            }
-            if (![[self getCurrentRootViewController] isKindOfClass:[XLGLogVC class]]) {
-//                [[self getCurrentRootViewController].navigationController pushViewController:vc animated:YES];
-                [[self getCurrentRootViewController] presentViewController:vc animated:NO completion:nil];
-            }
+            [keyWindow.rootViewController presentViewController:vc animated:NO completion:nil];
         }
             break;
         case 2002://内部测试
         {
             XLGInternalTestVC *vc = [[XLGInternalTestVC alloc] init];
-            [self showMenuView:_logShowBtn];
-            
-            if ([[self getCurrentRootViewController] isKindOfClass:[XLGChangeServerVC class]]) {
-//                [[self getCurrentRootViewController].navigationController popViewControllerAnimated:NO];
-                [[self getCurrentRootViewController] dismissViewControllerAnimated:NO completion:nil];
-            }
-            if ([[self getCurrentRootViewController] isKindOfClass:[XLGLogVC class]]) {
-//                [[self getCurrentRootViewController].navigationController popViewControllerAnimated:NO];
-                [[self getCurrentRootViewController] dismissViewControllerAnimated:NO completion:nil];
-            }
-            if (![[self getCurrentRootViewController] isKindOfClass:[XLGInternalTestVC class]]) {
-//                [[self getCurrentRootViewController].navigationController pushViewController:vc animated:YES];
-                [[self getCurrentRootViewController] presentViewController:vc animated:NO completion:nil];
-            }
+            [keyWindow.rootViewController presentViewController:vc animated:NO completion:nil];
         }
             break;
             
         default:
+        
             break;
     }
 }
@@ -290,21 +261,6 @@
     lineLayer.fillColor = nil; // 默认为blackColor
     
     [self.layer addSublayer:lineLayer];
-}
-
-- (UIViewController *)getCurrentRootViewController {
-    UIViewController * currentVC = [Utils getCurrentVC];
-    if ([currentVC isKindOfClass:[UINavigationController class]]) {
-        UINavigationController *currentNav = (UINavigationController *)currentVC;
-        
-        return currentNav.topViewController;
-    }
-    if ([currentVC isKindOfClass:[UIViewController class]]) {
-        
-        return currentVC;
-    }
-    
-    return nil;
 }
 
 @end
