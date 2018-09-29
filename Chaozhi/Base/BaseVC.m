@@ -79,7 +79,8 @@
     self.view.backgroundColor = PageColor;
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationController.automaticallyAdjustsScrollViewInsets = NO;
-    
+    [self.navigationController setNavigationBarHidden:YES];
+
     if (@available(iOS 11.0, *)) {
         UIScrollView.appearance.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }

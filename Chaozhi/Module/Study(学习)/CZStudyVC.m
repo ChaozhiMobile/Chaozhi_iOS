@@ -12,7 +12,10 @@
 @end
 
 @interface CZStudyVC ()<UITableViewDelegate,UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UIView *topBackView;
+@property (weak, nonatomic) IBOutlet UIView *statusBarView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *statusBarHConstraint;
+
+@property (weak, nonatomic) IBOutlet UIView *topBGBackView;
 @property (weak, nonatomic) IBOutlet UIScrollView *bgScroView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *courseIconImgView;
@@ -25,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *liveCourseTeacherLB;
 @property (weak, nonatomic) IBOutlet UILabel *liveStartTimeLB;
 @property (weak, nonatomic) IBOutlet UITableView *studyTabView;
+@property (weak, nonatomic) IBOutlet UIView *titleView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tabHeightConstraint;
 
 @end
@@ -33,18 +37,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    _tabHeightConstraint.constant = 10*60;
-    self.title = @"学习";
-    self.navBar.backgroundColor = [UIColor clearColor];
+    _tabHeightConstraint.constant = 10*60;
+    _statusBarHConstraint.constant = kStatusBarH;
+//    [_bgScroView addSubview:_titleView];
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
-    gradientLayer.colors = @[(__bridge id)RGBValue(0xC31A1F).CGColor,  (__bridge id)RGBValue(0xF76B1C).CGColor];
+    gradientLayer.colors = @[(__bridge id)RGBValue(0xF76B1C).CGColor,  (__bridge id)RGBValue(0xC31A1F).CGColor];
     gradientLayer.locations = @[@0.0, @1.0];
     gradientLayer.startPoint = CGPointMake(0, 0);
-    gradientLayer.endPoint = CGPointMake(1.0, 0);
-    gradientLayer.frame = _topBackView.bounds;
-    [self.topBackView.layer addSublayer:gradientLayer];
+    gradientLayer.endPoint = CGPointMake(0, 1.0);
+    gradientLayer.frame = _topBGBackView.bounds;
+    [self.topBGBackView.layer addSublayer:gradientLayer];
 
 }
+
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 10;
@@ -54,7 +60,9 @@
     StudyCourseCell *cell = [tableView dequeueReusableCellWithIdentifier:@"homeStudyCourseCellID"];
     return cell;
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
