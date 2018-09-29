@@ -14,6 +14,7 @@ def pods
   pod 'AFNetworking'
   pod 'ReactiveObjC'
   pod 'lottie-ios'
+  pod 'SDCycleScrollView'
 end
  target 'Chaozhi' do
 

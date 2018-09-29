@@ -1,6 +1,6 @@
 //
 //  UILabel+XLGExtension.h
-//  Chaozhi
+//  SharenGo
 //  Notes：UILable 添加一些参数及方法
 //
 //  Created by Jason_hzb on 2018/5/14.

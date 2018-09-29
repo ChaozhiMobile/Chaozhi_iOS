@@ -1,6 +1,6 @@
 //
 //  NSData+XLGExtension.h
-//  Chaozhi
+//  SharenGo
 //  Notes：AES加密、AES解密、NSData转字符串
 //
 //  Created by Jason_hzb on 2018/6/22.

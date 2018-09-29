@@ -1,6 +1,6 @@
 //
 //  NSString+XLGExtension.h
-//  Chaozhi
+//  SharenGo
 //  Notes：添加字符串处理的相关方法
 //
 //  Created by Jason_hzb on 2018/5/7.

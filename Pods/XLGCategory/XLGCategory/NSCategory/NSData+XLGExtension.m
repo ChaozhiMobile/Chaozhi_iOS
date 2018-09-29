@@ -1,6 +1,6 @@
 //
 //  NSData+XLGExtension.m
-//  Chaozhi
+//  SharenGo
 //  Notes：
 //
 //  Created by Jason_hzb on 2018/6/22.

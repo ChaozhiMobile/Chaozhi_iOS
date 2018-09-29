@@ -1,6 +1,6 @@
 //
 //  UITabBar+XLGExtension.h
-//  Chaozhi
+//  SharenGo
 //  Notes：UITabBar 小红点的设置方法
 //
 //  Created by Jason_hzb on 2018/5/14.

@@ -1,6 +1,6 @@
 //
 //  NSObject+XLGExtension.h
-//  Chaozhi
+//  SharenGo
 //  Notes：将所有的NSNull类型转化成@""
 //
 //  Created by Jason_hzb on 2018/5/14.

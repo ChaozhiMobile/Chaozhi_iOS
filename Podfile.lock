@@ -17,12 +17,14 @@ PODS:
   - IQKeyboardManager (6.1.1)
   - lottie-ios (2.5.0)
   - Masonry (1.1.0)
-  - MJRefresh (3.1.15.6)
+  - MJRefresh (3.1.15.7)
   - ReactiveObjC (3.1.0)
+  - SDCycleScrollView (1.75):
+    - SDWebImage (>= 4.0.0)
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
-  - TZImagePickerController (2.2.6)
+  - TZImagePickerController (3.0.8)
   - XLGCategory (1.1.0):
     - XLGCategory/NSCategory (= 1.1.0)
     - XLGCategory/UICategory (= 1.1.0)
@@ -37,6 +39,7 @@ DEPENDENCIES:
   - Masonry
   - MJRefresh
   - ReactiveObjC
+  - SDCycleScrollView
   - SDWebImage
   - TZImagePickerController
   - XLGCategory
@@ -50,6 +53,7 @@ SPEC REPOS:
     - Masonry
     - MJRefresh
     - ReactiveObjC
+    - SDCycleScrollView
     - SDWebImage
     - TZImagePickerController
     - XLGCategory
@@ -60,13 +64,14 @@ SPEC CHECKSUMS:
   IQKeyboardManager: 79c57795f5c2408d259d37b9da2ed07efcbb5225
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MJRefresh: 0efa19656679d70a0f47cbe76e56c2271fe53a97
+  MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
+  SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
-  TZImagePickerController: 3b25b39ba2e28984fb51bbf3ca5187ffccebb239
+  TZImagePickerController: 9092aa0f97af1cb9643c0ea7d7e5a77802ec7245
   XLGCategory: b93fda8378ccd3e04deb87033c02ad3e6dee3c4a
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 7d77b70859815d4f63543cfd8ec1d3773cdde866
+PODFILE CHECKSUM: 70c92a2551a521d4a7d449b120e6f2cadadc77fc
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.5.2

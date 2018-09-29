@@ -1,6 +1,6 @@
 //
 //  UIImage+XLGExtension.h
-//  Chaozhi
+//  SharenGo
 //  Notes：UIImage的一些图片处理方法
 //
 //  Created by Jason_hzb on 2018/5/14.

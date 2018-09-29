@@ -1,6 +1,6 @@
 //
 //  UIDevice+XLGExtension.h
-//  Chaozhi
+//  SharenGo
 //  Notes：获取设备信息
 //
 //  Created by Jason_hzb on 2018/5/7.

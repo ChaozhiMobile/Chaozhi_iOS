@@ -1,6 +1,6 @@
 //
 //  UIView+XLGExtension.h
-//  Chaozhi
+//  SharenGo
 //  Notes：对UIView一些属性和动画的拓展
 //
 //  Created by Jason_hzb on 2018/5/14.

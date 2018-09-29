@@ -1,6 +1,6 @@
 //
 //  XLGCategory.h
-//  Chaozhi
+//  SharenGo
 //  Notes：所有Category的入口，pch文件中import此文件【包含UIKit框架下的类目和Foundation框架下的类目】
 //
 //  Created by Jason_hzb on 2018/5/14.
