@@ -24,6 +24,9 @@
 /** 传入控制器、url、标题 */
 + (void)showWithContro:(UIViewController *)contro withUrlStr:(NSString *)urlStr withTitle:(NSString *)title isPresent:(BOOL)isPresent {
     BaseWebVC *webVC = [[BaseWebVC alloc] init];
+    if (![urlStr containsString:@"http"]) {
+        urlStr = [NSString stringWithFormat:@"%@%@",h5Url(),urlStr];
+    }
     webVC.homeUrl = urlStr;
     webVC.webTitle = title;
     webVC.isPresent = isPresent;
@@ -57,6 +60,24 @@
     _userContentController =[[WKUserContentController alloc]init];
     configuration.userContentController = _userContentController;
     _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, kNavBarH, WIDTH, HEIGHT-kNavBarH) configuration:configuration];
+    
+    // 修改UserAgent，传token等参数给H5
+    NSString *extendStr = @"";
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setObject:[UserInfo share].token forKey:@"token"];
+    extendStr = [dic jsonStringEncoded];
+    
+    [_webView evaluateJavaScript:@"navigator.userAgent" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+        //1、获取默认userAgent
+        NSString *oldUA = result;
+        //2、设置userAgent：添加额外的信息
+        NSString *newUA = [NSString stringWithFormat:@"%@ &&%@", oldUA , extendStr];
+        NSDictionary *dictNU = [NSDictionary dictionaryWithObjectsAndKeys:newUA, @"UserAgent", nil];
+        [[NSUserDefaults standardUserDefaults] registerDefaults:dictNU];
+        
+        NSLog(@"UserAgent：oldUA：%@，newUA：%@",oldUA, newUA);
+    }];
+    
     //注册方法
     WKDelegateController *delegateController = [[WKDelegateController alloc]init];
     delegateController.delegate = self;
@@ -71,7 +92,7 @@
     [_webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:nil];
     [_webView.scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
     
-    [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[_homeUrl urlEncoding]] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30]];
+    [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_homeUrl] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30]];
     
     self.webView.scrollView.decelerationRate = UIScrollViewDecelerationRateNormal;
 }
@@ -106,35 +127,35 @@
     
 }
 
-// 在发送请求之前，决定是否跳转
-- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
-    
-    NSString *url = navigationAction.request.URL.absoluteString;
-    
-    url = [url urlDecoding];
-    
-    NSLog(@"网页链接是否一样：%@\n%@",url,_homeUrl);
-    if (url.length>0) {
-        if (![url isEqualToString:_homeUrl]) {
-            decisionHandler(WKNavigationActionPolicyCancel); //不允许跳转
-            
-            if ([url containsString:@"http"]) {
-                BaseWebVC *webVC = [[BaseWebVC alloc] init];
-                webVC.homeUrl = navigationAction.request.URL.absoluteString;
-                [self.navigationController pushViewController:webVC animated:YES];
-            }
-        } else {
-            decisionHandler(WKNavigationActionPolicyAllow); //允许跳转
-        }
-    }
-    
-}
-
-// 在收到响应后，决定是否跳转
-- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler{
-    
-    decisionHandler(WKNavigationResponsePolicyAllow); //允许跳转
-}
+//// 在发送请求之前，决定是否跳转
+//- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
+//    
+//    NSString *url = navigationAction.request.URL.absoluteString;
+//    
+//    url = [url urlDecoding];
+//    
+//    NSLog(@"网页链接是否一样：%@\n%@",url,_homeUrl);
+//    if (url.length>0) {
+//        if (![url isEqualToString:_homeUrl]) {
+//            decisionHandler(WKNavigationActionPolicyCancel); //不允许跳转
+//            
+//            if ([url containsString:@"http"]) {
+//                BaseWebVC *webVC = [[BaseWebVC alloc] init];
+//                webVC.homeUrl = navigationAction.request.URL.absoluteString;
+//                [self.navigationController pushViewController:webVC animated:YES];
+//            }
+//        } else {
+//            decisionHandler(WKNavigationActionPolicyAllow); //允许跳转
+//        }
+//    }
+//    
+//}
+//
+//// 在收到响应后，决定是否跳转
+//- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler{
+//    
+//    decisionHandler(WKNavigationResponsePolicyAllow); //允许跳转
+//}
 
 #pragma mark - WKNavigationDelegate
 

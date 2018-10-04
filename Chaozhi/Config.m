@@ -11,7 +11,16 @@
 
 @implementation Config
 
-NSString *domainUrl(void){
+NSString *h5Url(void) {
+    if (KOnline || [Utils getServer] == 1) {
+        return @"https://m.chaozhiedu.com/"; //正式地址
+    } else {
+//        return @"http://test.chaozhiedu.com/mobile/"; //测试地址
+        return @"https://www.zhuxb.com/dist/"; //开发地址
+    }
+}
+
+NSString *domainUrl(void) {
     
     if (KOnline || [Utils getServer] == 1) {
         return @"https://aci-api.chaozhiedu.com/"; //正式地址

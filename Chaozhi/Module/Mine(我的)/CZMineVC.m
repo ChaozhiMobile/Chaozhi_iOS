@@ -140,9 +140,9 @@
     }
     
     if (indexPath.row==_nameArr.count-1) {
-        UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 44, WIDTH, 6)];
+        UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 49, WIDTH, 1)];
         lineView.backgroundColor = kWhiteColor;
-        [lineView setViewShadowColor:RGBValue(0xD9E2E9) shadowOpacity:0.5 shadowBlur:autoScaleW(6) shadowOffset:CGSizeMake(0, autoScaleW(3))];
+        [lineView setViewShadowColor:RGBValue(0xD9E2E9) shadowOpacity:0.5 shadowBlur:autoScaleW(1) shadowOffset:CGSizeMake(0, autoScaleW(1))];
         [cell addSubview:lineView];
     } else {
         UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(autoScaleW(15), 49, WIDTH-autoScaleW(30), 1)];
@@ -162,7 +162,29 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    [BaseWebVC showWithContro:self withUrlStr:@"https://www.baidu.com/" withTitle:_nameArr[indexPath.row] isPresent:NO];
+    NSString *str = _nameArr[indexPath.row];
+    
+    if ([str isEqualToString:@"课程订单"]) {
+        [BaseWebVC showWithContro:self withUrlStr:H5_Orders withTitle:_nameArr[indexPath.row] isPresent:NO];
+    }
+    
+    if ([str isEqualToString:@"我的优惠券"]) {
+        [BaseWebVC showWithContro:self withUrlStr:H5_Orders withTitle:_nameArr[indexPath.row] isPresent:NO];
+    }
+    
+    if ([str isEqualToString:@"我的消息"]) {
+        [BaseWebVC showWithContro:self withUrlStr:H5_Orders withTitle:_nameArr[indexPath.row] isPresent:NO];
+    }
+    
+    if ([str isEqualToString:@"问题反馈"]) {
+        [BaseWebVC showWithContro:self withUrlStr:H5_Orders withTitle:_nameArr[indexPath.row] isPresent:NO];
+    }
+    
+    if ([str isEqualToString:@"系统设置"]) {
+        [BaseWebVC showWithContro:self withUrlStr:H5_Orders withTitle:_nameArr[indexPath.row] isPresent:NO];
+    }
+    
+//    [BaseWebVC showWithContro:self withUrlStr:@"http://static.evcoming.com/vin-4-5/" withTitle:_nameArr[indexPath.row] isPresent:NO];
 }
 
 - (void)didReceiveMemoryWarning {

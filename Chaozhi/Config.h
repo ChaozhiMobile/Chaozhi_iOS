@@ -15,7 +15,6 @@
 
 NSString *domainUrl(void);
 
-
 #pragma mark - ---------------接口名称---------------
 
 #define URL_PhoneCaptcha @"api/phone-captcha" //获取验证码
@@ -23,5 +22,14 @@ NSString *domainUrl(void);
 #define URL_Reg @"api/user/reg" //注册
 #define URL_Reset @"api/user/reset" //重置密码
 #define URL_UserInfo @"api/user/info" //用户信息
+
+
+#pragma mark - ---------------H5地址---------------
+
+NSString *h5Url(void);
+
+#pragma mark - ---------------H5名称---------------
+
+#define H5_Orders @"#/hybrid/orders" //我的-课程订单页面
 
 @end
