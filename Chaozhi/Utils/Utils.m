@@ -105,11 +105,19 @@ static Utils *_utils = nil;
     UIView *frontView = [[window subviews] objectAtIndex:0];
     id nextResponder = [frontView nextResponder];
     
-    if ([nextResponder isKindOfClass:[UIViewController class]])
-        result = nextResponder;
-    else
+    if ([nextResponder isKindOfClass:[UIViewController class]]) {
+        if([nextResponder isKindOfClass:[UITabBarController class]]) {
+            UITabBarController *tab = nextResponder;
+            BaseNC *nc = tab.selectedViewController;
+            result = nc.topViewController;
+        } else {
+            result = nextResponder;
+        }
+    }
+    else {
         result = window.rootViewController;
-    
+    }
+
     return result;
 }
 
@@ -127,7 +135,8 @@ static Utils *_utils = nil;
         if (isJump==YES) {
             //跳转到登录页面
             UIViewController *vc = [Utils getViewController:@"Main" WithVCName:@"CZLoginVC"];
-            [[self getCurrentVC] presentViewController:vc animated:NO completion:nil];
+            vc.hidesBottomBarWhenPushed = YES;
+            [[self getCurrentVC].navigationController pushViewController:vc animated:YES];
         }
         return NO;
     }
@@ -189,7 +198,15 @@ static Utils *_utils = nil;
  @param message 提示内容
  */
 + (void)showToast:(NSString *)message {
-    [Toast showBottomWithText:message bottomOffset:100.0 duration:1.5];
+    [Toast showBottomWithText:message bottomOffset:HEIGHT/2 duration:1.5];
+}
+
+// 验证手机号
++ (BOOL)validateMobile:(NSString *)mobile {
+    
+    NSString *mobileRegex = @"^1[0123456789]\\d{9}$";
+    NSPredicate *mobileTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", mobileRegex];
+    return [mobileTest evaluateWithObject:mobile];
 }
 
 /**

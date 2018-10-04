@@ -20,14 +20,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    [[UserInfo share] removeUserInfo];
+    
     //监测网络
     [[NetworkUtil sharedInstance] listening];
     
     //键盘事件
     [self processKeyBoard];
-    
-    //获取用户信息
-    [[UserInfo share] getUserInfo];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = PageColor;
@@ -35,6 +34,7 @@
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     //第二步：获取该控制器的Identifier并赋给你的单独控制器
     UITabBarController *tabBarController = [story instantiateViewControllerWithIdentifier:@"TabBarController"];
+    tabBarController.delegate = self;
     self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
     
@@ -48,6 +48,22 @@
     manager.shouldResignOnTouchOutside = YES;
     manager.shouldToolbarUsesTextFieldTintColor = YES;
     manager.enableAutoToolbar = NO;
+}
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    
+    //这里我判断的是当前点击的tabBarItem的标题
+    NSString *tabBarTitle = viewController.tabBarItem.title;
+    if ([tabBarTitle isEqualToString:@"我的"]) {
+        if ([Utils isLoginWithJump:YES]) {
+            return YES;
+        } else {
+            return NO;
+        }
+    }
+    else {
+        return YES;
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

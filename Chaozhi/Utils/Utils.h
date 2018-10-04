@@ -42,6 +42,9 @@
 #pragma mark - 仿安卓消息提示
 + (void)showToast:(NSString *)message;
 
+#pragma mark - 验证手机号
++ (BOOL)validateMobile:(NSString *)mobile;
+
 #pragma mark - 设置控件阴影
 + (void)setViewShadowStyle:(UIView *)view;
 

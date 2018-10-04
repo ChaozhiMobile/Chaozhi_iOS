@@ -37,7 +37,13 @@ static NetworkManager *_manager = nil;
     
     [JHHJView showLoadingOnTheKeyWindowWithType:JHHJViewTypeSingleLine]; //开始加载
     
-    [self POST:urlStr parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    NSMutableDictionary *paramDic = [parameters mutableCopy];
+    if ([Utils isLoginWithJump:NO]) {
+        NSLog(@"token值：%@",[UserInfo share].token);
+        [paramDic setObject:[UserInfo share].token forKey:@"token"];
+    }
+
+    [self POST:urlStr parameters:paramDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         [JHHJView hideLoading]; //结束加载
         
@@ -133,7 +139,13 @@ static NetworkManager *_manager = nil;
     
     [JHHJView showLoadingOnTheKeyWindowWithType:JHHJViewTypeSingleLine]; //开始加载
     
-    [self POST:urlStr parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+    NSMutableDictionary *paramDic = [parameters mutableCopy];
+    if ([Utils isLoginWithJump:NO]) {
+        NSLog(@"token值：%@",[UserInfo share].token);
+        [paramDic setObject:[UserInfo share].token forKey:@"token"];
+    }
+    
+    [self POST:urlStr parameters:paramDic constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         
         if (imgDataArr.count > 0) {
             //在网络开发中，上传文件时，是文件不允许被覆盖，文件重名。要解决此问题，可以在上传时使用当前的系统事件作为文件名
@@ -195,10 +207,10 @@ static NetworkManager *_manager = nil;
     self.responseSerializer = response;
     self.responseSerializer.acceptableContentTypes =  [NSSet setWithObjects:@"text/json", @"application/json", nil];
     
-    if ([Utils isLoginWithJump:NO]) {
-        NSLog(@"token值：%@",[UserInfo share].token);
-        [self.requestSerializer setValue:[UserInfo share].token forHTTPHeaderField:@"token"];
-    }
+//    if ([Utils isLoginWithJump:NO]) {
+//        NSLog(@"token值：%@",[UserInfo share].token);
+//        [self.requestSerializer setValue:[UserInfo share].token forHTTPHeaderField:@"Token"];
+//    }
 }
 
 //token失效判断

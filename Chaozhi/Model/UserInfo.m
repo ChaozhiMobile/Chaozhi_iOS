@@ -14,34 +14,34 @@ static NSUserDefaults *_defaults = nil;
 
 @implementation UserInfo
 
-+ (instancetype)share
-{
++ (instancetype)share {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _userInfo = [[UserInfo alloc] init];
         _defaults = [NSUserDefaults standardUserDefaults];
     });
+    NSDictionary *infoDic = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserInfo"];
+    if (infoDic.allKeys.count>0) {
+        [_userInfo setValuesForKeysWithDictionary:infoDic];
+    }
     return _userInfo;
 }
 
-- (void)getUserInfo {
-    
-    NSDictionary *userDic = [_defaults objectForKey:@"UserInfo"];
-    if (userDic) {
-        [self loadUserDic:userDic];
+- (void)setUserInfo:(NSMutableDictionary *)userDic {
+    if (userDic.allKeys.count==0) {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"UserInfo"];
+        [CacheUtil saveCacher:@"token" withValue:@""];
     }
+    [[NSUserDefaults standardUserDefaults] setObject:userDic forKey:@"UserInfo"];//存储用户信息
 }
 
-- (void)setUserInfo:(NSDictionary *)userDic {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:userDic forKey:@"UserInfo"];
-    [defaults synchronize];
-    
-    [self loadUserDic:userDic];
+- (void)removeUserInfo {
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"UserInfo"];
+    [CacheUtil saveCacher:@"token" withValue:@""];
 }
 
-- (void)loadUserDic:(NSDictionary *)userDic {
-    self.token = userDic[@"token"];
+- (NSString *)token {
+    return [CacheUtil getCacherWithKey:@"token"];
 }
 
 @end

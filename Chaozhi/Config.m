@@ -16,7 +16,7 @@ NSString *domainUrl(void){
     if (KOnline || [Utils getServer] == 1) {
         return @"https://aci-api.chaozhiedu.com/"; //正式地址
     } else {
-        return @"https://test-aci-api.chaozhiedu.com/"; //测试地址
+        return @"http://test-aci-api.chaozhiedu.com/"; //测试地址
     }
 }
 

@@ -33,6 +33,13 @@
     self.mineTableView.backgroundColor = [UIColor clearColor];
     self.mineTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.mineTableView.tableHeaderView = self.headView;
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginAction) name:kLoginSuccNotification object:nil];
+
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self loginAction];
 }
 
 - (void)getData {
@@ -56,7 +63,6 @@
         [_headView addSubview:_headImgView];
         
         _accountLab = [[UILabel alloc] initWithFrame:CGRectMake(_headImgView.right+autoScaleW(10), autoScaleW(50), WIDTH-autoScaleW(120), autoScaleW(20))];
-        _accountLab.text = @"157 3793 6517";
         _accountLab.textColor = RGBValue(0x4A4A4A);
         _accountLab.font = [UIFont systemFontOfSize:15 weight:UIFontWeightMedium];
         [_headView addSubview:_accountLab];
@@ -64,11 +70,34 @@
         _arrowImgView = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH-autoScaleW(23), autoScaleW(54), autoScaleW(8), autoScaleW(12))];
         _arrowImgView.image = [UIImage imageNamed:@"arrow_more"];
         [_headView addSubview:_arrowImgView];
+        
+        [self.headImgView sd_setImageWithURL:[NSURL URLWithString:[UserInfo share].head_img_url] placeholderImage:[UIImage imageNamed:@"icon_red_wo"]];
+        self.accountLab.text = [UserInfo share].phone;
     }
     return _headView;
 }
 
 #pragma mark - methods
+
+// 登录处理
+- (void)loginAction {
+    
+    NSDictionary *dic = [NSDictionary dictionary];
+    [[NetworkManager sharedManager] postJSON:URL_UserInfo parameters:dic imageDataArr:nil imageName:nil  completion:^(id responseData, RequestState status, NSError *error) {
+        
+        if (status == Request_Success) {
+            NSDictionary *userDic = responseData;
+            [[UserInfo share] setUserInfo:[userDic mutableCopy]];
+            
+//            [self.mineTableView reloadData];
+            
+            [self.headImgView sd_setImageWithURL:[NSURL URLWithString:[UserInfo share].head_img_url] placeholderImage:[UIImage imageNamed:@"icon_red_wo"]];
+            self.accountLab.text = [UserInfo share].phone;
+            
+            [self.mineTableView reloadData];
+        }
+    }];
+}
 
 // 个人中心
 - (void)jumpPersonalCenter {

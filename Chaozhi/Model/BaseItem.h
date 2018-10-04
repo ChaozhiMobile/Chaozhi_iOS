@@ -12,7 +12,7 @@
 
 @interface BaseItem : NSObject<YYModel>
 
-@property(nonatomic,assign)UInt64 status;
-@property(nonatomic,copy)NSString * msg;
+@property (nonatomic, assign) UInt64 code;
+@property (nonatomic, copy) NSString *msg;
 
 @end

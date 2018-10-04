@@ -11,4 +11,8 @@
 
 @implementation BaseItem
 
+- (void)setValue:(nullable id)value forUndefinedKey:(NSString *)key {
+    
+}
+
 @end

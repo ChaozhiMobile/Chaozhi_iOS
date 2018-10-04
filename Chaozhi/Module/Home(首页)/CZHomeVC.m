@@ -31,7 +31,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *goldTeaNameLB2;
 @property (weak, nonatomic) IBOutlet UILabel *goldTeaTypeLB2;
 @property (weak, nonatomic) IBOutlet UITableView *newsTabView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *laseViewHConstraints;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *lastViewHConstraints;
 - (IBAction)showMoreCourseAction:(UIButton *)sender;
 - (IBAction)showPublicCourseAction:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *showMorePublicCourseAction;
@@ -45,7 +45,7 @@
     [super viewDidLoad];
     _bannerView.imageURLStringsGroup = @[@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1538225125394&di=422070ccf9e0a249d5d0691cb9acef8f&imgtype=0&src=http%3A%2F%2Fpic.qiantucdn.com%2F58pic%2F25%2F99%2F58%2F58aa038a167e4_1024.jpg",@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1538225125394&di=422070ccf9e0a249d5d0691cb9acef8f&imgtype=0&src=http%3A%2F%2Fpic.qiantucdn.com%2F58pic%2F25%2F99%2F58%2F58aa038a167e4_1024.jpg",@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1538225125394&di=422070ccf9e0a249d5d0691cb9acef8f&imgtype=0&src=http%3A%2F%2Fpic.qiantucdn.com%2F58pic%2F25%2F99%2F58%2F58aa038a167e4_1024.jpg"];
     self.title = @"首页";
-    _laseViewHConstraints.constant = 5*100+40;
+    _lastViewHConstraints.constant = 5*100+40;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 5;
