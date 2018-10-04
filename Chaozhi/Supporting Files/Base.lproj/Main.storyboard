@@ -1728,6 +1728,11 @@
                                     <constraint firstItem="ISM-Ow-299" firstAttribute="top" secondItem="sqA-q7-gcg" secondAttribute="bottom" constant="10" id="SzZ-kp-OwJ"/>
                                     <constraint firstItem="5ki-fp-RCy" firstAttribute="leading" secondItem="u2m-KK-1Zd" secondAttribute="leading" id="TTa-k9-biC"/>
                                     <constraint firstAttribute="bottom" secondItem="QpZ-0P-gQ5" secondAttribute="bottom" id="UHt-Na-7Ff"/>
+                                    <constraint firstItem="sqA-q7-gcg" firstAttribute="top" secondItem="lpr-xn-mtl" secondAttribute="bottom" constant="10" id="Y7k-hy-w5k"/>
+                                    <constraint firstItem="eo3-sw-2ur" firstAttribute="leading" secondItem="u2m-KK-1Zd" secondAttribute="leading" id="ZmQ-Nb-h4p"/>
+                                    <constraint firstItem="QpZ-0P-gQ5" firstAttribute="top" secondItem="eo3-sw-2ur" secondAttribute="bottom" constant="10" id="bc7-OR-eP9"/>
+                                    <constraint firstItem="ISM-Ow-299" firstAttribute="top" secondItem="sqA-q7-gcg" secondAttribute="bottom" constant="10" id="eb6-Ub-flB"/>
+                                    <constraint firstItem="lpr-xn-mtl" firstAttribute="leading" secondItem="u2m-KK-1Zd" secondAttribute="leading" id="fNS-xi-JLR"/>
                                     <constraint firstItem="QpZ-0P-gQ5" firstAttribute="top" secondItem="eo3-sw-2ur" secondAttribute="bottom" constant="10" id="fck-QR-jS2"/>
                                     <constraint firstAttribute="trailing" secondItem="QpZ-0P-gQ5" secondAttribute="trailing" id="j1d-Ud-jCE"/>
                                     <constraint firstItem="ISM-Ow-299" firstAttribute="leading" secondItem="u2m-KK-1Zd" secondAttribute="leading" id="kpY-df-TLq"/>
@@ -1770,6 +1775,7 @@
                         <outlet property="publicTeaLB" destination="hTK-Yz-iXF" id="OJj-VA-CGX"/>
                         <outlet property="publicTitleLB" destination="fFA-e3-iLu" id="U8k-0w-uvV"/>
                         <outlet property="showMorePublicCourseAction" destination="7Vm-qS-dHQ" id="AqJ-j0-BdP"/>
+                        <outlet property="viewTopY" destination="Ydg-fQ-zGb" id="SD9-dg-Uxw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8b-5z-cy0" userLabel="First Responder" sceneMemberID="firstResponder"/>
