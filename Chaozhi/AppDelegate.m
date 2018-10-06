@@ -54,7 +54,7 @@
     
     //这里我判断的是当前点击的tabBarItem的标题
     NSString *tabBarTitle = viewController.tabBarItem.title;
-    if ([tabBarTitle isEqualToString:@"我的"]) {
+    if ([tabBarTitle isEqualToString:@"我的"] || [tabBarTitle isEqualToString:@"学习"]) {
         if ([Utils isLoginWithJump:YES]) {
             return YES;
         } else {

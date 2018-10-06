@@ -33,19 +33,24 @@
     self.mineTableView.backgroundColor = [UIColor clearColor];
     self.mineTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.mineTableView.tableHeaderView = self.headView;
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginAction) name:kLoginSuccNotification object:nil];
-
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getUserInfo) name:kLoginSuccNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getUserInfo) name:kUserInfoChangeNotification object:nil];
 }
 
--(void)viewWillAppear:(BOOL)animated{
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self loginAction];
+    
+    if (![Utils isLoginWithJump:NO]) {
+        
+    }
 }
 
 - (void)getData {
     
     _imageArr = @[@"icon_课程",@"icon_优惠券",@"icon_消息",@"icon_反馈",@"icon_设置"];
     _nameArr = @[@"课程订单",@"我的优惠券",@"我的消息",@"问题反馈",@"系统设置"];
+    
+    [self getUserInfo]; //获取用户信息
 }
 
 - (UIView *)headView {
@@ -71,32 +76,32 @@
         _arrowImgView.image = [UIImage imageNamed:@"arrow_more"];
         [_headView addSubview:_arrowImgView];
         
-        [self.headImgView sd_setImageWithURL:[NSURL URLWithString:[UserInfo share].head_img_url] placeholderImage:[UIImage imageNamed:@"icon_red_wo"]];
-        self.accountLab.text = [UserInfo share].phone;
+//        [self.headImgView sd_setImageWithURL:[NSURL URLWithString:[UserInfo share].head_img_url] placeholderImage:[UIImage imageNamed:@"icon_red_wo"]];
+//        self.accountLab.text = [UserInfo share].phone;
     }
     return _headView;
 }
 
 #pragma mark - methods
 
-// 登录处理
-- (void)loginAction {
+// 用户信息
+- (void)getUserInfo {
     
-    NSDictionary *dic = [NSDictionary dictionary];
-    [[NetworkManager sharedManager] postJSON:URL_UserInfo parameters:dic imageDataArr:nil imageName:nil  completion:^(id responseData, RequestState status, NSError *error) {
-        
-        if (status == Request_Success) {
-            NSDictionary *userDic = responseData;
-            [[UserInfo share] setUserInfo:[userDic mutableCopy]];
+    if ([Utils isLoginWithJump:YES]) {
+        NSDictionary *dic = [NSDictionary dictionary];
+        [[NetworkManager sharedManager] postJSON:URL_UserInfo parameters:dic imageDataArr:nil imageName:nil  completion:^(id responseData, RequestState status, NSError *error) {
             
-//            [self.mineTableView reloadData];
-            
-            [self.headImgView sd_setImageWithURL:[NSURL URLWithString:[UserInfo share].head_img_url] placeholderImage:[UIImage imageNamed:@"icon_red_wo"]];
-            self.accountLab.text = [UserInfo share].phone;
-            
-            [self.mineTableView reloadData];
-        }
-    }];
+            if (status == Request_Success) {
+                NSDictionary *userDic = responseData;
+                [[UserInfo share] setUserInfo:[userDic mutableCopy]];
+                
+                [self.headImgView sd_setImageWithURL:[NSURL URLWithString:[UserInfo share].head_img_url] placeholderImage:[UIImage imageNamed:@"icon_red_wo"]];
+                self.accountLab.text = [UserInfo share].phone;
+                
+//                [self.mineTableView reloadData];
+            }
+        }];
+    }
 }
 
 // 个人中心
@@ -181,7 +186,9 @@
     }
     
     if ([str isEqualToString:@"系统设置"]) {
-        [BaseWebVC showWithContro:self withUrlStr:H5_Orders withTitle:_nameArr[indexPath.row] isPresent:NO];
+        UIViewController *vc = [Utils getViewController:@"Main" WithVCName:@"CZSettingVC"];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:NO];
     }
     
 //    [BaseWebVC showWithContro:self withUrlStr:@"http://static.evcoming.com/vin-4-5/" withTitle:_nameArr[indexPath.row] isPresent:NO];

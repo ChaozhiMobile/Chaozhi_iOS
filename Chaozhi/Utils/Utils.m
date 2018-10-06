@@ -153,7 +153,8 @@ static Utils *_utils = nil;
     if (isJumpLoginVC==YES) {
         //跳转到登录页面
         UIViewController *vc = [Utils getViewController:@"Main" WithVCName:@"CZLoginVC"];
-        [[self getCurrentVC] presentViewController:vc animated:NO completion:nil];
+        vc.hidesBottomBarWhenPushed = YES;
+        [[self getCurrentVC].navigationController pushViewController:vc animated:YES];
     }
 }
 

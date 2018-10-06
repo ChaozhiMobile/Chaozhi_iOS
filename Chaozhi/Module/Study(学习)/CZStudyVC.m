@@ -12,6 +12,7 @@
 @end
 
 @interface CZStudyVC ()<UITableViewDelegate,UITableViewDataSource>
+
 @property (weak, nonatomic) IBOutlet UIView *statusBarView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *statusBarHConstraint;
 
@@ -37,7 +38,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _tabHeightConstraint.constant = 10*60;
+    
+    _tabHeightConstraint.constant = 3*60;
     _statusBarHConstraint.constant = kStatusBarH;
 //    [_bgScroView addSubview:_titleView];
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
@@ -47,22 +49,21 @@
     gradientLayer.endPoint = CGPointMake(0, 1.0);
     gradientLayer.frame = _topBGBackView.bounds;
     [self.topBGBackView.layer addSublayer:gradientLayer];
-
 }
 
-
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 3;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     StudyCourseCell *cell = [tableView dequeueReusableCellWithIdentifier:@"homeStudyCourseCellID"];
     return cell;
 }
--(void)viewWillAppear:(BOOL)animated{
+
+- (void)viewWillAppear:(BOOL)animated {
     
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
