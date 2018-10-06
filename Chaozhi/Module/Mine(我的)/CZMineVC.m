@@ -169,11 +169,11 @@
     }
     
     if ([str isEqualToString:@"我的优惠券"]) {
-        [BaseWebVC showWithContro:self withUrlStr:H5_Orders withTitle:_nameArr[indexPath.row] isPresent:NO];
+        [BaseWebVC showWithContro:self withUrlStr:H5_Coupon withTitle:_nameArr[indexPath.row] isPresent:NO];
     }
     
     if ([str isEqualToString:@"我的消息"]) {
-        [BaseWebVC showWithContro:self withUrlStr:H5_Orders withTitle:_nameArr[indexPath.row] isPresent:NO];
+        [BaseWebVC showWithContro:self withUrlStr:H5_Message withTitle:_nameArr[indexPath.row] isPresent:NO];
     }
     
     if ([str isEqualToString:@"问题反馈"]) {
