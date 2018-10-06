@@ -56,6 +56,22 @@ static Utils *_utils = nil;
 }
 
 /**
+ 存放是否在非Wifi情况下播放视频状态
+ */
++ (void)setWifi:(BOOL)wifi {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setBool:wifi forKey:kWifiKey];
+}
+
+/**
+ 获取是否在非Wifi情况下播放视频状态
+ */
++ (BOOL)getWifi {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    return [userDefaults boolForKey:kWifiKey];
+}
+
+/**
  判断网络状态
 
  @return YES 有网

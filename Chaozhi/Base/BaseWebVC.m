@@ -44,70 +44,103 @@
     
     self.title = _webTitle;
     
-    [self configUI];
+    [self.view addSubview:self.progressView];
+    [self.view insertSubview:self.webView belowSubview:self.progressView];
+    
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_homeUrl] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30]];
+    
+    [self changeUserAgent];
 }
 
-- (void)configUI {
-    // 进度条
-    _progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, kNavBarH, WIDTH, 1)];
-    _progressView.hidden = YES;
-    _progressView.tintColor = AppThemeColor;
-    _progressView.trackTintColor = [UIColor whiteColor];
-    [self.view addSubview:_progressView];
-    
-    //配置环境
-    WKWebViewConfiguration * configuration = [[WKWebViewConfiguration alloc]init];
-    _userContentController =[[WKUserContentController alloc]init];
-    configuration.userContentController = _userContentController;
-    _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, kNavBarH, WIDTH, HEIGHT-kNavBarH) configuration:configuration];
-    
-    // 修改UserAgent，传token等参数给H5
-    NSString *extendStr = @"";
+#pragma mark - 修改UserAgent，传token等参数给H5
+
+- (void)changeUserAgent {
+
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    [dic setObject:[UserInfo share].token forKey:@"token"];
-    extendStr = [dic jsonStringEncoded];
+    [dic setObject:[NSString isEmpty:[UserInfo share].token]?@"":[UserInfo share].token forKey:@"token"];
+    [dic setObject:[Utils getWifi]==YES?@"1":@"0" forKey:@"wifi"];
+    NSString *extendStr = [dic jsonStringEncoded];
     
-    [_webView evaluateJavaScript:@"navigator.userAgent" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+    [self.webView evaluateJavaScript:@"navigator.userAgent" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
         //1、获取默认userAgent
         NSString *oldUA = result;
+        if ([oldUA containsString:@"&&"]) {
+            NSArray *array = [oldUA componentsSeparatedByString:@"&&"];
+            oldUA = array[0];
+        }
         //2、设置userAgent：添加额外的信息
-        NSString *newUA = [NSString stringWithFormat:@"%@ &&%@", oldUA , extendStr];
+        NSString *newUA = [NSString stringWithFormat:@"%@&&%@", oldUA, extendStr];
         NSDictionary *dictNU = [NSDictionary dictionaryWithObjectsAndKeys:newUA, @"UserAgent", nil];
         [[NSUserDefaults standardUserDefaults] registerDefaults:dictNU];
         
         NSLog(@"UserAgent：oldUA：%@，newUA：%@",oldUA, newUA);
     }];
-    
-    //注册方法
-    WKDelegateController *delegateController = [[WKDelegateController alloc]init];
-    delegateController.delegate = self;
-    _webView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-    _webView.backgroundColor = [UIColor whiteColor];
-    _webView.navigationDelegate = self;
-    _webView.UIDelegate = self;
-    [self.view insertSubview:_webView belowSubview:_progressView];
-    
-    //KVO 进度及title、滑动距离
-    [_webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
-    [_webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:nil];
-    [_webView.scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
-    
-    [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_homeUrl] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30]];
-    
-    self.webView.scrollView.decelerationRate = UIScrollViewDecelerationRateNormal;
+}
+
+#pragma mark - 懒加载
+
+// 进度条
+- (UIProgressView *)progressView {
+    if (!_progressView) {
+        _progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, kNavBarH, WIDTH, 1)];
+        _progressView.hidden = YES;
+        _progressView.tintColor = AppThemeColor;
+        _progressView.trackTintColor = [UIColor whiteColor];
+    }
+    return _progressView;
+}
+
+// WebView
+- (WKWebView *)webView {
+    if (!_webView) {
+        
+        //配置环境
+        WKWebViewConfiguration * configuration = [[WKWebViewConfiguration alloc]init];
+        _userContentController =[[WKUserContentController alloc]init];
+        configuration.userContentController = _userContentController;
+        _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, kNavBarH, WIDTH, HEIGHT-kNavBarH) configuration:configuration];
+        _webView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        _webView.backgroundColor = [UIColor whiteColor];
+        _webView.navigationDelegate = self;
+        _webView.UIDelegate = self;
+        _webView.scrollView.decelerationRate = UIScrollViewDecelerationRateNormal;
+        if (@available(iOS 11.0, *)) {
+            self.webView.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        }
+        
+        //KVO 进度及title、滑动距离
+        [_webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
+        [_webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:nil];
+        [_webView.scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
+
+        //注册方法
+        WKDelegateController *delegateController = [[WKDelegateController alloc]init];
+        delegateController.delegate = self;
+        [_userContentController addScriptMessageHandler:delegateController name:@"return"]; //返回
+        [_userContentController addScriptMessageHandler:delegateController name:@"login"]; //登录
+        [_userContentController addScriptMessageHandler:delegateController name:@"refresh"]; //刷新
+    }
+    return _webView;
 }
 
 #pragma mark - 返回事件
 
 // 返回按钮点击
 - (void)backAction {
-    if ([self.webView canGoBack]) {
-        [self.webView goBack];
-    } else {
+    
+    NSLog(@"打开web页面个数：%lu",(unsigned long)self.webView.backForwardList.backList.count);
+    
+    // 判断网页是否可以后退
+    NSInteger webCount = self.webView.backForwardList.backList.count;
+    if (webCount<=1 || ![self.webView canGoBack]) {
         if (self.isPresent==YES) {
             [self dismissViewControllerAnimated:YES completion:nil];
         } else {
             [self.navigationController popViewControllerAnimated:YES];
+        }
+    } else {
+        if (self.webView.canGoBack) {
+            [self.webView goBack];
         }
     }
 }
@@ -125,53 +158,34 @@
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
     NSLog(@"name:%@\\\\n body:%@\\\\n frameInfo:%@\\\\n",message.name,message.body,message.frameInfo);
     
+    if ([message.name isEqualToString:@"return"]) { //返回
+        
+    }
+    
+    if ([message.name isEqualToString:@"login"]) { //登录
+        
+    }
+    
+    if ([message.name isEqualToString:@"refresh"]) { //刷新
+        [_webView reload];
+    }
 }
-
-//// 在发送请求之前，决定是否跳转
-//- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
-//    
-//    NSString *url = navigationAction.request.URL.absoluteString;
-//    
-//    url = [url urlDecoding];
-//    
-//    NSLog(@"网页链接是否一样：%@\n%@",url,_homeUrl);
-//    if (url.length>0) {
-//        if (![url isEqualToString:_homeUrl]) {
-//            decisionHandler(WKNavigationActionPolicyCancel); //不允许跳转
-//            
-//            if ([url containsString:@"http"]) {
-//                BaseWebVC *webVC = [[BaseWebVC alloc] init];
-//                webVC.homeUrl = navigationAction.request.URL.absoluteString;
-//                [self.navigationController pushViewController:webVC animated:YES];
-//            }
-//        } else {
-//            decisionHandler(WKNavigationActionPolicyAllow); //允许跳转
-//        }
-//    }
-//    
-//}
-//
-//// 在收到响应后，决定是否跳转
-//- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler{
-//    
-//    decisionHandler(WKNavigationResponsePolicyAllow); //允许跳转
-//}
 
 #pragma mark - WKNavigationDelegate
 
 // 页面开始加载时调用
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{
-    
+    [JHHJView showLoadingOnTheKeyWindowWithType:JHHJViewTypeSingleLine]; //开始加载
 }
 
 // 当内容开始返回时调用
 - (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation{
-    
+    [JHHJView hideLoading]; //结束加载
 }
 
 // 页面加载失败时调用
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error {
-    
+    [JHHJView hideLoading]; //结束加载
 }
 
 // 接收到服务器跳转请求之后调用
@@ -260,6 +274,9 @@
     [_webView removeObserver:self forKeyPath:@"estimatedProgress"];
     [_webView removeObserver:self forKeyPath:@"title"];
     [_webView.scrollView removeObserver:self forKeyPath:@"contentOffset"];
+    [_userContentController removeScriptMessageHandlerForName:@"return"];
+    [_userContentController removeScriptMessageHandlerForName:@"login"];
+    [_userContentController removeScriptMessageHandlerForName:@"refresh"];
 }
 
 - (void)didReceiveMemoryWarning {

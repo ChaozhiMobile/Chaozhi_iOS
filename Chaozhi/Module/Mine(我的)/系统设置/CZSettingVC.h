@@ -10,4 +10,9 @@
 
 @interface CZSettingVC : BaseVC
 
+@property (weak, nonatomic) IBOutlet UISwitch *switchBtn;
+@property (weak, nonatomic) IBOutlet UIView *aboutView;
+@property (weak, nonatomic) IBOutlet UIView *changePswView;
+@property (weak, nonatomic) IBOutlet UILabel *versionLab;
+
 @end

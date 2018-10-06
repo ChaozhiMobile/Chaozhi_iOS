@@ -19,10 +19,37 @@
     
     self.title = @"系统设置";
     
+    self.switchBtn.on = [Utils getWifi]==1?YES:NO;
+    self.versionLab.text = AppVersion;
     
+    UITapGestureRecognizer *aboutTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(aboutAction)];
+    [self.aboutView addGestureRecognizer:aboutTap];
+    
+    UITapGestureRecognizer *changePswTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changePswAction)];
+    [self.changePswView addGestureRecognizer:changePswTap];
 }
 
 #pragma mark - methods
+
+- (IBAction)wifiAction:(id)sender {
+    UISwitch *switchBtn = (UISwitch *)sender;
+    if (switchBtn.isOn) {
+        [Utils setWifi:1];
+    } else {
+        [Utils setWifi:0];
+    }
+}
+
+//关于超职教育
+- (void)aboutAction {
+    [BaseWebVC showWithContro:self withUrlStr:@"https://www.baidu.com/" withTitle:@"关于超职教育" isPresent:NO];
+}
+
+//修改密码
+- (void)changePswAction {
+    UIViewController *vc = [Utils getViewController:@"Main" WithVCName:@"CZForgetPswVC"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 //退出登录
 - (IBAction)logoutAction:(id)sender {

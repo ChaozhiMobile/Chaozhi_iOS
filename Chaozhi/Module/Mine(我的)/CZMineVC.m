@@ -47,8 +47,8 @@
 
 - (void)getData {
     
-    _imageArr = @[@"icon_课程",@"icon_优惠券",@"icon_消息",@"icon_反馈",@"icon_设置"];
-    _nameArr = @[@"课程订单",@"我的优惠券",@"我的消息",@"问题反馈",@"系统设置"];
+    _imageArr = @[@"icon_课程",@"icon_消息",@"icon_反馈",@"icon_设置"]; //@"icon_优惠券",
+    _nameArr = @[@"课程订单",@"我的消息",@"问题反馈",@"系统设置"]; //@"我的优惠券",
     
     [self getUserInfo]; //获取用户信息
 }

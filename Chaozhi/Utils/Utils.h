@@ -15,11 +15,14 @@
 + (Utils *)share;
 
 #pragma mark - 存取服务器环境【0：测试地址test-aci-api.chaozhiedu.com，1：正式地址：aci-api.chaozhiedu.com】
-// 存放服务器环境
 + (void)setServer:(NSInteger)server;
 
-// 获取服务器环境
 + (NSInteger)getServer;
+
+#pragma mark - 存取是否在非Wifi情况下播放视频【NO：不可以，YES：可以】
++ (void)setWifi:(BOOL)wifi;
+
++ (BOOL)getWifi;
 
 #pragma mark - 判断网络状态
 + (BOOL)getNetStatus;

@@ -41,6 +41,7 @@
 
 // cache key
 #define kServerKey   @"ServerKey"
+#define kWifiKey   @"WifiKey"
 
 /******************************通知****************************/
 
@@ -63,6 +64,23 @@
 // 控件宽高、字体适配
 #define autoScaleW(width) (float)width / 375 * WIDTH
 #define autoScaleH(height) (float)height / 667 * HEIGHT
+
+/*****************************APP信息***************************/
+
+// app版本
+#define AppVersion      [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+// app build版本
+#define AppBuildVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
+// app名称
+#define AppName         [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"]
+// 当前系统语言
+#define CurrentLanguage ([[NSLocale preferredLanguages] objectAtIndex:0])
+
+#if TARGET_IPHONE_SIMULATOR //模拟器
+#define IS_SIMULATOR YES
+#elif TARGET_OS_IPHONE      //真机
+#define IS_SIMULATOR NO
+#endif
 
 /*****************************颜色*****************************/
 
