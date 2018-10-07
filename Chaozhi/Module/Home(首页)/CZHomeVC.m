@@ -7,11 +7,14 @@
 //
 
 #import "CZHomeVC.h"
+#import "CZSelectCourseVC.h"
 #import <SDCycleScrollView.h>
+
 @implementation DayNewTabCell
 @end
 
 @interface CZHomeVC ()<UITableViewDataSource,UITableViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UIScrollView *bgScrollView;
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *bannerView;
 @property (weak, nonatomic) IBOutlet UIImageView *courseImgView1;
@@ -32,9 +35,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *goldTeaTypeLB2;
 @property (weak, nonatomic) IBOutlet UITableView *newsTabView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *lastViewHConstraints;
+@property (weak, nonatomic) IBOutlet UIButton *showMorePublicCourseAction;
+
 - (IBAction)showMoreCourseAction:(UIButton *)sender;
 - (IBAction)showPublicCourseAction:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *showMorePublicCourseAction;
 - (IBAction)showActivityDetailAction:(id)sender;
 
 @end
@@ -59,7 +63,9 @@
 
 //课程分类
 - (IBAction)selectCourseAction:(id)sender {
-    [Utils showToast:@"课程分类"];
+    CZSelectCourseVC *vc = [[CZSelectCourseVC alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)showMoreCourseAction:(UIButton *)sender {

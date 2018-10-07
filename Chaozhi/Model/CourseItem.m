@@ -1,5 +1,5 @@
 //
-//  LoginItem.m
+//  CourseItem.m
 //  Chaozhi
 //  Notes：
 //
@@ -7,8 +7,8 @@
 //  Copyright © 2018年 小灵狗出行. All rights reserved.
 //
 
-#import "LoginItem.h"
+#import "CourseItem.h"
 
-@implementation LoginItem
+@implementation CourseItem
 
 @end

@@ -10,7 +10,6 @@
 #import "XLGInternalTestVC.h"
 #import "XLGInternalDemoVC.h"
 #import <MJRefresh.h>
-#import "LoginItem.h"
 #import <Lottie/Lottie.h>
 
 #define cellHeight 40.0f
