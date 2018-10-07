@@ -66,7 +66,7 @@
             self.dataArr = [CourseItem mj_objectArrayWithKeyValuesArray:(NSArray *)responseData];
             NSString *selectCourseID = [CacheUtil getCacherWithKey:kSelectCourseIDKey];
             for (int i = 0; i<self.dataArr.count; i++) {
-                CourseItem *model = [[CourseItem alloc] init];
+                CourseItem *model = self.dataArr[i];
                 if ([model.ID isEqualToString:selectCourseID]) {
                     model.selectStatus = YES;
                 } else {
