@@ -20,7 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-//    [[UserInfo share] removeUserInfo];
+//    [CacheUtil saveCacher:kSelectCourseIDKey withValue:@""];
     
     //监测网络
     [[NetworkUtil sharedInstance] listening];

@@ -28,6 +28,7 @@
 #import "NetworkManager.h"
 #import "JHHJView.h"
 #import "XLGLottie.h"
+#import <MJExtension.h>
 
 #endif
 
@@ -40,8 +41,9 @@
 #define kNonceStr       [SignKeyUtil getNonceString]
 
 // cache key
-#define kServerKey   @"ServerKey"
+#define kServerKey @"ServerKey"
 #define kWifiKey   @"WifiKey"
+#define kSelectCourseIDKey   @"SelectCourseIDKey"
 
 /******************************通知****************************/
 

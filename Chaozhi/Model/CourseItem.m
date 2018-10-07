@@ -11,4 +11,10 @@
 
 @implementation CourseItem
 
++ (NSDictionary *)replacedKeyFromPropertyName {
+    return @{
+             @"ID":@"id",
+             };
+}
+
 @end

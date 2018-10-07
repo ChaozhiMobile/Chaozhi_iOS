@@ -17,6 +17,7 @@ PODS:
   - IQKeyboardManager (6.1.1)
   - lottie-ios (2.5.0)
   - Masonry (1.1.0)
+  - MJExtension (3.0.15.1)
   - MJRefresh (3.1.15.7)
   - ReactiveObjC (3.1.0)
   - SDCycleScrollView (1.75):
@@ -37,6 +38,7 @@ DEPENDENCIES:
   - IQKeyboardManager
   - lottie-ios
   - Masonry
+  - MJExtension
   - MJRefresh
   - ReactiveObjC
   - SDCycleScrollView
@@ -51,6 +53,7 @@ SPEC REPOS:
     - IQKeyboardManager
     - lottie-ios
     - Masonry
+    - MJExtension
     - MJRefresh
     - ReactiveObjC
     - SDCycleScrollView
@@ -64,6 +67,7 @@ SPEC CHECKSUMS:
   IQKeyboardManager: 79c57795f5c2408d259d37b9da2ed07efcbb5225
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
@@ -72,6 +76,6 @@ SPEC CHECKSUMS:
   XLGCategory: b93fda8378ccd3e04deb87033c02ad3e6dee3c4a
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 70c92a2551a521d4a7d449b120e6f2cadadc77fc
+PODFILE CHECKSUM: 897d0c9f56e1f50472e02154ab2441007751970b
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.5.3

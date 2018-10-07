@@ -6,6 +6,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 def pods
   pod 'XLGCategory'
   pod 'MJRefresh'
+  pod 'MJExtension'
   pod 'YYModel'
   pod 'Masonry'
   pod 'SDWebImage'

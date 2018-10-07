@@ -7,7 +7,12 @@
 //
 
 #import "BaseVC.h"
+#import "CourseItem.h"
+
+typedef void (^SelectCourseBlock) (CourseItem *item);
 
 @interface CZSelectCourseVC : BaseVC
+
+@property (nonatomic, copy) SelectCourseBlock selectCourseBlock; //选择完课程，回首页
 
 @end
