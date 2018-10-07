@@ -41,24 +41,52 @@
 
 @implementation CZHomeVC
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.navBar.hidden = YES;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     _bannerView.imageURLStringsGroup = @[@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1538225125394&di=422070ccf9e0a249d5d0691cb9acef8f&imgtype=0&src=http%3A%2F%2Fpic.qiantucdn.com%2F58pic%2F25%2F99%2F58%2F58aa038a167e4_1024.jpg",@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1538225125394&di=422070ccf9e0a249d5d0691cb9acef8f&imgtype=0&src=http%3A%2F%2Fpic.qiantucdn.com%2F58pic%2F25%2F99%2F58%2F58aa038a167e4_1024.jpg",@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1538225125394&di=422070ccf9e0a249d5d0691cb9acef8f&imgtype=0&src=http%3A%2F%2Fpic.qiantucdn.com%2F58pic%2F25%2F99%2F58%2F58aa038a167e4_1024.jpg"];
     self.title = @"首页";
     _lastViewHConstraints.constant = 5*100+40;
 }
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+
+#pragma mark - methods
+
+//课程分类
+- (IBAction)selectCourseAction:(id)sender {
+    [Utils showToast:@"课程分类"];
+}
+
+- (IBAction)showMoreCourseAction:(UIButton *)sender {
+    
+}
+
+- (IBAction)showPublicCourseAction:(id)sender {
+
+}
+
+- (IBAction)showActivityDetailAction:(id)sender {
+    
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 5;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DayNewTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DayNewTabCellID"];
     return cell;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 100;
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -74,11 +102,4 @@
 }
 */
 
-- (IBAction)showMoreCourseAction:(UIButton *)sender {
-}
-
-- (IBAction)showPublicCourseAction:(id)sender {
-}
-- (IBAction)showActivityDetailAction:(id)sender {
-}
 @end

@@ -37,13 +37,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getUserInfo) name:kUserInfoChangeNotification object:nil];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    if (![Utils isLoginWithJump:NO]) {
-        
-    }
-}
+#pragma mark - get data
 
 - (void)getData {
     
@@ -52,6 +46,26 @@
     
     [self getUserInfo]; //获取用户信息
 }
+
+// 用户信息
+- (void)getUserInfo {
+    
+    if ([Utils isLoginWithJump:YES]) {
+        NSDictionary *dic = [NSDictionary dictionary];
+        [[NetworkManager sharedManager] postJSON:URL_UserInfo parameters:dic imageDataArr:nil imageName:nil  completion:^(id responseData, RequestState status, NSError *error) {
+            
+            if (status == Request_Success) {
+                NSDictionary *userDic = responseData;
+                [[UserInfo share] setUserInfo:[userDic mutableCopy]];
+                
+                [self.headImgView sd_setImageWithURL:[NSURL URLWithString:[UserInfo share].head_img_url] placeholderImage:[UIImage imageNamed:@"icon_red_wo"]];
+                self.accountLab.text = [UserInfo share].phone;
+            }
+        }];
+    }
+}
+
+#pragma mark - init view
 
 - (UIView *)headView {
     if (!_headView) {
@@ -75,34 +89,11 @@
         _arrowImgView = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH-autoScaleW(23), autoScaleW(54), autoScaleW(8), autoScaleW(12))];
         _arrowImgView.image = [UIImage imageNamed:@"arrow_more"];
         [_headView addSubview:_arrowImgView];
-        
-//        [self.headImgView sd_setImageWithURL:[NSURL URLWithString:[UserInfo share].head_img_url] placeholderImage:[UIImage imageNamed:@"icon_red_wo"]];
-//        self.accountLab.text = [UserInfo share].phone;
     }
     return _headView;
 }
 
 #pragma mark - methods
-
-// 用户信息
-- (void)getUserInfo {
-    
-    if ([Utils isLoginWithJump:YES]) {
-        NSDictionary *dic = [NSDictionary dictionary];
-        [[NetworkManager sharedManager] postJSON:URL_UserInfo parameters:dic imageDataArr:nil imageName:nil  completion:^(id responseData, RequestState status, NSError *error) {
-            
-            if (status == Request_Success) {
-                NSDictionary *userDic = responseData;
-                [[UserInfo share] setUserInfo:[userDic mutableCopy]];
-                
-                [self.headImgView sd_setImageWithURL:[NSURL URLWithString:[UserInfo share].head_img_url] placeholderImage:[UIImage imageNamed:@"icon_red_wo"]];
-                self.accountLab.text = [UserInfo share].phone;
-                
-//                [self.mineTableView reloadData];
-            }
-        }];
-    }
-}
 
 // 个人中心
 - (void)jumpPersonalCenter {

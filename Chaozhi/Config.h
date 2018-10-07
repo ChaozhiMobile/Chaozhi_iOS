@@ -22,6 +22,7 @@ NSString *domainUrl(void);
 #define URL_Reg @"api/user/reg" //注册
 #define URL_Reset @"api/user/reset" //重置密码
 #define URL_UserInfo @"api/user/info" //用户信息
+#define URL_AppHome @"api/app/home" //首页
 
 
 #pragma mark - ---------------H5地址---------------

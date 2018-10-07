@@ -36,10 +36,16 @@
 
 @implementation CZStudyVC
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.navBar.hidden = YES;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _tabHeightConstraint.constant = 3*60;
+    _tabHeightConstraint.constant = 20*60;
     _statusBarHConstraint.constant = kStatusBarH;
 //    [_bgScroView addSubview:_titleView];
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
@@ -52,16 +58,12 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return 20;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     StudyCourseCell *cell = [tableView dequeueReusableCellWithIdentifier:@"homeStudyCourseCellID"];
     return cell;
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    
 }
 
 - (void)didReceiveMemoryWarning {
