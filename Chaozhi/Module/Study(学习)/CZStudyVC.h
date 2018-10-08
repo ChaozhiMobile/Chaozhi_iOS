@@ -9,6 +9,7 @@
 #import "BaseVC.h"
 
 @interface StudyCourseCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UILabel *studyCourseTitleLB;
 @property (weak, nonatomic) IBOutlet UILabel *studycourseTimeLB;
 
