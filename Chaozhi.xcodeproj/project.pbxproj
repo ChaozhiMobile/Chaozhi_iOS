@@ -11,6 +11,7 @@
 		A00FA9D82168C26900F4DA5B /* CZSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9D72168C26900F4DA5B /* CZSettingVC.m */; };
 		A00FA9DC2169DB0000F4DA5B /* CZSelectCourseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9DB2169DB0000F4DA5B /* CZSelectCourseVC.m */; };
 		A00FA9DF2169DCDC00F4DA5B /* CZSelectCourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9DE2169DCDC00F4DA5B /* CZSelectCourseCell.m */; };
+		A00FA9E1216A09EA00F4DA5B /* MyStudyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00FA9E0216A09EA00F4DA5B /* MyStudyView.xib */; };
 		A020AF49214AA85B0011BB4F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AF48214AA85B0011BB4F /* AppDelegate.m */; };
 		A020B01F214AAB150011BB4F /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AF68214AAB130011BB4F /* Config.m */; };
 		A020B025214AAB150011BB4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A020AF76214AAB130011BB4F /* Assets.xcassets */; };
@@ -119,6 +120,7 @@
 		A00FA9DB2169DB0000F4DA5B /* CZSelectCourseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZSelectCourseVC.m; sourceTree = "<group>"; };
 		A00FA9DD2169DCDC00F4DA5B /* CZSelectCourseCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZSelectCourseCell.h; sourceTree = "<group>"; };
 		A00FA9DE2169DCDC00F4DA5B /* CZSelectCourseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZSelectCourseCell.m; sourceTree = "<group>"; };
+		A00FA9E0216A09EA00F4DA5B /* MyStudyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyStudyView.xib; sourceTree = "<group>"; };
 		A020AF44214AA85B0011BB4F /* Chaozhi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chaozhi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A020AF47214AA85B0011BB4F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A020AF48214AA85B0011BB4F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -753,6 +755,7 @@
 			children = (
 				A0599A1D21574CAF00D17058 /* CZStudyVC.h */,
 				A0599A1C21574CAF00D17058 /* CZStudyVC.m */,
+				A00FA9E0216A09EA00F4DA5B /* MyStudyView.xib */,
 			);
 			path = "Study(学习)";
 			sourceTree = "<group>";
@@ -890,6 +893,7 @@
 				A020B025214AAB150011BB4F /* Assets.xcassets in Resources */,
 				A020B032214AAB150011BB4F /* ic_refresh_image_009@2x.png in Resources */,
 				A020B031214AAB150011BB4F /* ic_refresh_image_031@2x.png in Resources */,
+				A00FA9E1216A09EA00F4DA5B /* MyStudyView.xib in Resources */,
 				A020B04B214AAB150011BB4F /* README.md in Resources */,
 				A020B030214AAB150011BB4F /* ic_refresh_image_023@2x.png in Resources */,
 				A020B043214AAB150011BB4F /* ic_refresh_image_014@2x.png in Resources */,
