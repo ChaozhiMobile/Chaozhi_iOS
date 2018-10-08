@@ -727,7 +727,7 @@
                                     <constraint firstAttribute="height" constant="170" id="55D-oQ-QOc"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyy-fo-m0h">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyy-fo-m0h">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ciV-fR-acR">
@@ -1023,10 +1023,10 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="61" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AnO-TB-kEO">
-                                        <rect key="frame" x="0.0" y="460" width="375" height="113"/>
+                                        <rect key="frame" x="0.0" y="460" width="375" height="94"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="113" id="nDt-4l-5TJ"/>
+                                            <constraint firstAttribute="height" constant="94" id="gcD-me-xjF"/>
                                         </constraints>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeStudyCourseCellID" id="gNh-kw-XYs" customClass="StudyCourseCell">
@@ -1075,19 +1075,19 @@
                                     <constraint firstAttribute="trailing" secondItem="Eeo-k9-gbi" secondAttribute="trailing" id="1EY-Xd-NYC"/>
                                     <constraint firstItem="HCh-Oj-sW1" firstAttribute="centerX" secondItem="dyy-fo-m0h" secondAttribute="centerX" id="2DV-kC-MY7"/>
                                     <constraint firstItem="Eeo-k9-gbi" firstAttribute="leading" secondItem="dyy-fo-m0h" secondAttribute="leading" id="5Cv-e6-lN0"/>
-                                    <constraint firstAttribute="trailing" secondItem="AnO-TB-kEO" secondAttribute="trailing" id="6T0-T2-ebW"/>
                                     <constraint firstItem="NNW-zU-Rfi" firstAttribute="leading" secondItem="dyy-fo-m0h" secondAttribute="leading" id="7Ll-oO-Sjy"/>
                                     <constraint firstAttribute="trailing" secondItem="pqj-l2-TTV" secondAttribute="trailing" id="AFn-qf-7sm"/>
                                     <constraint firstItem="NNW-zU-Rfi" firstAttribute="top" secondItem="Eeo-k9-gbi" secondAttribute="bottom" constant="10" id="DK8-Nb-cMP"/>
                                     <constraint firstItem="pqj-l2-TTV" firstAttribute="leading" secondItem="dyy-fo-m0h" secondAttribute="leading" id="Fxz-E2-9DF"/>
-                                    <constraint firstItem="AnO-TB-kEO" firstAttribute="top" secondItem="NNW-zU-Rfi" secondAttribute="bottom" id="GVz-Eh-4fk"/>
-                                    <constraint firstItem="AnO-TB-kEO" firstAttribute="leading" secondItem="dyy-fo-m0h" secondAttribute="leading" id="L6O-3Q-vBi"/>
+                                    <constraint firstItem="AnO-TB-kEO" firstAttribute="top" secondItem="NNW-zU-Rfi" secondAttribute="bottom" id="J4r-VG-ZeS"/>
                                     <constraint firstAttribute="trailing" secondItem="NNW-zU-Rfi" secondAttribute="trailing" id="Wf1-cl-SJT"/>
                                     <constraint firstItem="HCh-Oj-sW1" firstAttribute="top" secondItem="dyy-fo-m0h" secondAttribute="top" constant="10" id="eM9-if-txo"/>
                                     <constraint firstAttribute="trailing" secondItem="HCh-Oj-sW1" secondAttribute="trailing" constant="10" id="fbu-g5-PiU"/>
+                                    <constraint firstItem="AnO-TB-kEO" firstAttribute="leading" secondItem="dyy-fo-m0h" secondAttribute="leading" id="g5G-ch-lXt"/>
                                     <constraint firstItem="Eeo-k9-gbi" firstAttribute="top" secondItem="pqj-l2-TTV" secondAttribute="bottom" constant="10" id="igo-Ry-Fl1"/>
+                                    <constraint firstAttribute="trailing" secondItem="AnO-TB-kEO" secondAttribute="trailing" id="lKM-hH-aMS"/>
                                     <constraint firstItem="HCh-Oj-sW1" firstAttribute="leading" secondItem="dyy-fo-m0h" secondAttribute="leading" constant="10" id="ssS-gU-Him"/>
-                                    <constraint firstAttribute="bottom" secondItem="AnO-TB-kEO" secondAttribute="bottom" constant="-39" id="yKB-zx-FCP"/>
+                                    <constraint firstAttribute="bottom" secondItem="AnO-TB-kEO" secondAttribute="bottom" id="tgs-Ew-3ms"/>
                                     <constraint firstItem="Eeo-k9-gbi" firstAttribute="top" secondItem="pqj-l2-TTV" secondAttribute="bottom" constant="10" id="yQt-Bm-Iyl"/>
                                 </constraints>
                             </scrollView>
@@ -1140,7 +1140,7 @@
                         <outlet property="liveCourseTitleLB" destination="llV-68-mv2" id="zqt-fx-dd6"/>
                         <outlet property="liveStartTimeLB" destination="97C-br-duG" id="8sK-rg-eTA"/>
                         <outlet property="studyTabView" destination="AnO-TB-kEO" id="v5F-yx-QDs"/>
-                        <outlet property="tabHeightConstraint" destination="nDt-4l-5TJ" id="oev-1u-EDP"/>
+                        <outlet property="tabHeightConstraint" destination="gcD-me-xjF" id="kBK-aJ-2M4"/>
                         <outlet property="titleView" destination="5Gq-F3-uMm" id="NLz-zb-uH6"/>
                         <outlet property="topBGBackView" destination="Lkg-q6-pQn" id="ean-rz-6Kc"/>
                         <outlet property="viewTopY" destination="7zG-TP-l27" id="8Yo-w0-2aw"/>
@@ -1347,7 +1347,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u2m-KK-1Zd">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2m-KK-1Zd">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lpr-xn-mtl" customClass="SDCycleScrollView">
