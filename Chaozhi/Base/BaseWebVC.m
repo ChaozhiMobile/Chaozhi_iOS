@@ -47,34 +47,52 @@
     [self.view addSubview:self.progressView];
     [self.view insertSubview:self.webView belowSubview:self.progressView];
     
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_homeUrl] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30]];
-    
     [self changeUserAgent];
+    
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_homeUrl] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30]];
 }
 
-#pragma mark - 修改UserAgent，传token等参数给H5
+#pragma mark - 全局修改UserAgent，传token等参数给H5
 
 - (void)changeUserAgent {
-
+    
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     [dic setObject:[NSString isEmpty:[UserInfo share].token]?@"":[UserInfo share].token forKey:@"token"];
     [dic setObject:[Utils getWifi]==YES?@"1":@"0" forKey:@"wifi"];
     NSString *extendStr = [dic jsonStringEncoded];
     
-    [self.webView evaluateJavaScript:@"navigator.userAgent" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
-        //1、获取默认userAgent
-        NSString *oldUA = result;
+    if (IS_IOS_9) {
+        [self.webView evaluateJavaScript:@"navigator.userAgent" completionHandler:^(id result, NSError *error) {
+            NSString *oldUA = result;
+            if (error) {
+                oldUA = [[[UIWebView alloc] init] stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
+            }
+            NSLog(@"UserAgent：oldUA：%@",oldUA);
+            if ([oldUA containsString:@"&&"]) {
+                NSArray *array = [oldUA componentsSeparatedByString:@"&&"];
+                oldUA = array[0];
+            }
+            NSString *newUA = [NSString stringWithFormat:@"%@&&%@", oldUA, extendStr];
+            [[NSUserDefaults standardUserDefaults] registerDefaults:@{@"UserAgent":newUA, @"User-Agent":newUA}];
+            if (@available(iOS 9.0, *)) {
+                self.webView.customUserAgent = newUA;
+            } else {
+                // Fallback on earlier versions
+            }
+            NSLog(@"UserAgent：newUA：%@",newUA);
+        }];
+    } else {//适配iOS9以下系统，下面的方法不能少
+        NSString *oldUA = [[[UIWebView alloc] init] stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
+        NSLog(@"UserAgent：oldUA：%@",oldUA);
         if ([oldUA containsString:@"&&"]) {
             NSArray *array = [oldUA componentsSeparatedByString:@"&&"];
             oldUA = array[0];
         }
-        //2、设置userAgent：添加额外的信息
         NSString *newUA = [NSString stringWithFormat:@"%@&&%@", oldUA, extendStr];
-        NSDictionary *dictNU = [NSDictionary dictionaryWithObjectsAndKeys:newUA, @"UserAgent", nil];
-        [[NSUserDefaults standardUserDefaults] registerDefaults:dictNU];
-        
-        NSLog(@"UserAgent：oldUA：%@，newUA：%@",oldUA, newUA);
-    }];
+        [[NSUserDefaults standardUserDefaults] registerDefaults:@{@"UserAgent":newUA}];
+        [self.webView setValue:newUA forKey:@"applicationNameForUserAgent"];
+        NSLog(@"UserAgent：newUA：%@",newUA);
+    }
 }
 
 #pragma mark - 懒加载

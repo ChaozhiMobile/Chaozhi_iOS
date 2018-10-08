@@ -173,7 +173,7 @@
     }
     
     if ([str isEqualToString:@"问题反馈"]) {
-        [BaseWebVC showWithContro:self withUrlStr:H5_Orders withTitle:_nameArr[indexPath.row] isPresent:NO];
+        [BaseWebVC showWithContro:self withUrlStr:@"http://static.evcoming.com/vin-4-5/" withTitle:_nameArr[indexPath.row] isPresent:NO];
     }
     
     if ([str isEqualToString:@"系统设置"]) {
