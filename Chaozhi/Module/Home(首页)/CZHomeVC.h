@@ -9,6 +9,7 @@
 #import "BaseVC.h"
 
 @interface DayNewTabCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UIImageView *dayNewIconImgView;
 @property (weak, nonatomic) IBOutlet UILabel *dayNewTitleLB;
 @property (weak, nonatomic) IBOutlet UILabel *dayNewContentLB;

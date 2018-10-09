@@ -24,6 +24,7 @@ NSString *domainUrl(void);
 #define URL_UserInfo @"api/user/info" //用户信息
 #define URL_AppHome @"api/app/home" //首页
 #define URL_CategoryList @"api/category/list" //课程分类
+#define URL_CourseList @"api/course/list" //已购课程列表
 
 #pragma mark - ---------------H5地址---------------
 

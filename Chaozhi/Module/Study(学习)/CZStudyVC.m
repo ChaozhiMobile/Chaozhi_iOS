@@ -46,6 +46,25 @@
     _statusBarHConstraint.constant = kStatusBarH;
     
     [self initView];
+    
+    [self getData];
+}
+
+#pragma mark - get data
+
+// 分类列表
+- (void)getData {
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
+                         @"1", @"is_newest_info",
+                         nil];
+    [[NetworkManager sharedManager] postJSON:URL_CourseList parameters:dic imageDataArr:nil imageName:nil  completion:^(id responseData, RequestState status, NSError *error) {
+        
+        if (status == Request_Success) {
+//            self.dataArr = [CourseItem mj_objectArrayWithKeyValuesArray:(NSArray *)responseData];
+            
+            [self.tableView reloadData];
+        }
+    }];
 }
 
 #pragma mark - init view
