@@ -44,6 +44,10 @@
 #pragma mark - methods
 
 - (void)backAction {
+//    if ([NSString isEmpty:[UserInfo share].token]) {
+//        [super backAction];
+//        return;
+//    }
     NSString *selectCourseID = [CacheUtil getCacherWithKey:kSelectCourseIDKey];
     if ([NSString isEmpty:selectCourseID]) {
         [Utils showToast:@"请先选择您关注的课程"];
@@ -60,7 +64,7 @@
 // 分类列表
 - (void)getData {
     NSDictionary *dic = [NSDictionary dictionary];
-    [[NetworkManager sharedManager] postJSON:URL_CategoryList parameters:dic imageDataArr:nil imageName:nil  completion:^(id responseData, RequestState status, NSError *error) {
+    [[NetworkManager sharedManager] postJSON:URL_CategoryList parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         
         if (status == Request_Success) {
             self.dataArr = [CourseItem mj_objectArrayWithKeyValuesArray:(NSArray *)responseData];
@@ -119,6 +123,7 @@
     
     //刷新tableView
     [self.tableView reloadData];
+    [self backAction];
 }
 
 - (void)didReceiveMemoryWarning {

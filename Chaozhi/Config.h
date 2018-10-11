@@ -23,6 +23,7 @@ NSString *domainUrl(void);
 #define URL_Reset @"api/user/reset" //重置密码
 #define URL_UserInfo @"api/user/info" //用户信息
 #define URL_AppHome @"api/app/home" //首页
+#define URL_Category @"api/app/home-category" //首页分类数据
 #define URL_CategoryList @"api/category/list" //课程分类
 #define URL_CourseList @"api/course/list" //已购课程列表
 

@@ -9,12 +9,17 @@
 #import "CZHomeVC.h"
 #import "CZSelectCourseVC.h"
 #import <SDCycleScrollView.h>
+#import "HomeInfoItem.h"
 
 @implementation DayNewTabCell
 @end
 
 @interface CZHomeVC ()<UITableViewDataSource,UITableViewDelegate>
-
+{
+    
+}
+@property (nonatomic , retain) HomeInfoItem *homeItem;
+@property (nonatomic , retain) HomeCategoryItem *categoryItems;;
 @property (weak, nonatomic) IBOutlet UIScrollView *bgScrollView;
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *bannerView;
 @property (weak, nonatomic) IBOutlet UIImageView *courseImgView1;
@@ -53,19 +58,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    _homeItem = [[HomeInfoItem alloc]init];
+    _categoryItems = [[HomeCategoryItem alloc]init];
     NSString *selectCourseID = [CacheUtil getCacherWithKey:kSelectCourseIDKey];
-    if ([NSString isEmpty:selectCourseID]) {
+    if ([NSString isEmpty:selectCourseID]&&(![NSString isEmpty:[UserInfo share].token])) {
         CZSelectCourseVC *vc = [[CZSelectCourseVC alloc] init];
         vc.hidesBottomBarWhenPushed = YES;
         vc.selectCourseBlock = ^(CourseItem *item) {
             NSLog(@"选择课程ID: %@",item.ID);
-            [self refreshData];
+            [self refreshCourseUI];
         };
         [self.navigationController pushViewController:vc animated:YES];
     }
-    
-    _bannerView.imageURLStringsGroup = @[@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1538225125394&di=422070ccf9e0a249d5d0691cb9acef8f&imgtype=0&src=http%3A%2F%2Fpic.qiantucdn.com%2F58pic%2F25%2F99%2F58%2F58aa038a167e4_1024.jpg",@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1538225125394&di=422070ccf9e0a249d5d0691cb9acef8f&imgtype=0&src=http%3A%2F%2Fpic.qiantucdn.com%2F58pic%2F25%2F99%2F58%2F58aa038a167e4_1024.jpg",@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1538225125394&di=422070ccf9e0a249d5d0691cb9acef8f&imgtype=0&src=http%3A%2F%2Fpic.qiantucdn.com%2F58pic%2F25%2F99%2F58%2F58aa038a167e4_1024.jpg"];
     _lastViewHConstraints.constant = 5*100+40;
     
     [self getData];
@@ -76,25 +80,32 @@
 - (void)getData {
     
     [self getBannerActivityData];
-    [self refreshData];
+    [self refreshCourseUI];
 }
 
 // 获取banner、活动数据
 - (void) getBannerActivityData {
     NSDictionary *dic = [NSDictionary dictionary];
-    [[NetworkManager sharedManager] postJSON:URL_AppHome parameters:dic imageDataArr:nil imageName:nil  completion:^(id responseData, RequestState status, NSError *error) {
-        
-        if (status == Request_Success) {
-//            self.dataArr = [CourseItem mj_objectArrayWithKeyValuesArray:(NSArray *)responseData];
-        }
+    __weak typeof(self) weakSelf = self;
+    [[NetworkManager sharedManager] postJSON:URL_AppHome parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+        weakSelf.homeItem = [HomeInfoItem yy_modelWithJSON:responseData];
+        [weakSelf refreshBannerUI];
+        [weakSelf refreshActivityUI];
     }];
 }
 
+
 // 根据课程ID刷新数据
-- (void)refreshData {
+- (void)refreshCourseUI {
     NSString *selectCourseID = [CacheUtil getCacherWithKey:kSelectCourseIDKey];
     if (![NSString isEmpty:selectCourseID]) {
-        
+        __weak typeof(self) weakSelf = self;
+        [[NetworkManager sharedManager] postJSON:URL_Category parameters:@{@"category_id":selectCourseID} completion:^(id responseData, RequestState status, NSError *error) {
+            weakSelf.categoryItems = [HomeCategoryItem yy_modelWithJSON:responseData];
+            [weakSelf refreshTeacherUI];
+            [weakSelf refreshVedioUI];
+            [weakSelf refreshFeaCourseUI];
+        }];
     }
 }
 
@@ -105,10 +116,79 @@
     CZSelectCourseVC *vc = [[CZSelectCourseVC alloc] init];
     vc.hidesBottomBarWhenPushed = YES;
     vc.selectCourseBlock = ^(CourseItem *item) {
-        NSLog(@"选择课程ID: %@",item.ID);
-        [self refreshData];
+
+        [self refreshCourseUI];
     };
     [self.navigationController pushViewController:vc animated:YES];
+}
+- (void)refreshBannerUI{
+    NSMutableArray *bannerImgUrlArr = [NSMutableArray array];
+    for (NSInteger i = 0; i < _homeItem.banner_list.count; i ++) {
+        HomeBannerItem *item = _homeItem.banner_list[i];
+        NSString *imgUrl = [NSString stringWithFormat:@"http:%@",item.img];
+        //        NSString *imgUrl = [NSString stringWithFormat:@"%@%@",domainUrl(),item.img];
+        [bannerImgUrlArr addObject:imgUrl];
+    }
+    _bannerView.imageURLStringsGroup = bannerImgUrlArr;
+}
+
+- (void)refreshActivityUI{
+    HomeActivityItem *activityItem = [_homeItem.activity_list firstObject];
+    _activityTitleLB.text = activityItem.title;
+    [_activityImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",activityItem.img]]];
+    _activityContentLB.text = activityItem.content;
+}
+
+- (void)refreshTeacherUI{
+    HomeTeacherItem *teacherItem1,*teacherItem2;
+    for (NSInteger i = 0; i < MIN(2, _categoryItems.teacher_list.count); i ++) {
+        switch (i) {
+            case 0:
+                teacherItem1 = [_categoryItems.teacher_list firstObject];
+                [_goldTeaImgView1 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",teacherItem1.photo]]];
+                _goldTeaNameLB1.text = teacherItem1.name;
+                _goldTeaTypeLB1.text = teacherItem1.info;
+                break;
+            case 1:
+                teacherItem2 = _categoryItems.teacher_list[1];
+                [_goldTeaImgView2 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",teacherItem2.photo]]];
+                _goldTeaNameLB2.text = teacherItem2.name;
+                _goldTeaTypeLB2.text = teacherItem2.info;
+                break;
+            default:
+                break;
+        }
+    }
+}
+
+- (void)refreshVedioUI{
+    HomeTryVideoItem *tryVideoItem = [_categoryItems.try_video_list firstObject];
+    if (tryVideoItem) {
+        [_publicCourseImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",tryVideoItem.img]]];
+        _publicTeaLB.text = [NSString stringWithFormat:@"主讲讲师：%@",tryVideoItem.teacher];
+        _publicTitleLB.text = tryVideoItem.title;
+    }
+}
+
+- (void)refreshFeaCourseUI{
+    HomeFeatureProductItem *feaCourseItem1,*feaCourseItem2;
+    for (NSInteger i = 0; i < MIN(2, _categoryItems.feature_product_list.count); i ++) {
+        switch (i) {
+            case 0:
+                feaCourseItem1 = [_categoryItems.feature_product_list firstObject];
+                [_courseImgView1 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",feaCourseItem1.img]]];
+                _courseTeaNameLB1.text = feaCourseItem1.name;
+                break;
+            case 1:
+                feaCourseItem2 = _categoryItems.feature_product_list[1];
+                [_courseImgView2 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",feaCourseItem2.img]]];
+                _courseTeaNameLB2.text = feaCourseItem2.name;
+
+                break;
+            default:
+                break;
+        }
+    }
 }
 
 - (IBAction)showMoreCourseAction:(UIButton *)sender {

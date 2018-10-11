@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		205FDB2F216F20C0001BE2C6 /* HomeInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FDB2E216F20C0001BE2C6 /* HomeInfoItem.m */; };
 		94DF1E58ABC326A19CE0832D /* libPods-Chaozhi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B55762E2478093A57AE66667 /* libPods-Chaozhi.a */; };
 		A00FA9D82168C26900F4DA5B /* CZSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9D72168C26900F4DA5B /* CZSettingVC.m */; };
 		A00FA9DC2169DB0000F4DA5B /* CZSelectCourseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9DB2169DB0000F4DA5B /* CZSelectCourseVC.m */; };
@@ -114,6 +115,8 @@
 /* Begin PBXFileReference section */
 		0AF6FC5BB1D601461F72C62C /* Pods-Chaozhi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chaozhi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chaozhi/Pods-Chaozhi.debug.xcconfig"; sourceTree = "<group>"; };
 		204F3265086F4B67483EF547 /* Pods-Chaozhi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chaozhi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chaozhi/Pods-Chaozhi.release.xcconfig"; sourceTree = "<group>"; };
+		205FDB2D216F20C0001BE2C6 /* HomeInfoItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeInfoItem.h; sourceTree = "<group>"; };
+		205FDB2E216F20C0001BE2C6 /* HomeInfoItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeInfoItem.m; sourceTree = "<group>"; };
 		A00FA9D62168C26900F4DA5B /* CZSettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZSettingVC.h; sourceTree = "<group>"; };
 		A00FA9D72168C26900F4DA5B /* CZSettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZSettingVC.m; sourceTree = "<group>"; };
 		A00FA9DA2169DB0000F4DA5B /* CZSelectCourseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZSelectCourseVC.h; sourceTree = "<group>"; };
@@ -682,6 +685,8 @@
 				A020B018214AAB140011BB4F /* UserInfo.m */,
 				A020B016214AAB140011BB4F /* CourseItem.h */,
 				A020B01A214AAB140011BB4F /* CourseItem.m */,
+				205FDB2D216F20C0001BE2C6 /* HomeInfoItem.h */,
+				205FDB2E216F20C0001BE2C6 /* HomeInfoItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1002,6 +1007,7 @@
 				A0599A1E21574CAF00D17058 /* CZInfiniteVC.m in Sources */,
 				A020B051214AAB150011BB4F /* CacheUtil.m in Sources */,
 				A020B06A214AAB150011BB4F /* WKDelegateController.m in Sources */,
+				205FDB2F216F20C0001BE2C6 /* HomeInfoItem.m in Sources */,
 				A00FA9D82168C26900F4DA5B /* CZSettingVC.m in Sources */,
 				A020AF49214AA85B0011BB4F /* AppDelegate.m in Sources */,
 				A020B055214AAB150011BB4F /* XLGLottie.m in Sources */,
