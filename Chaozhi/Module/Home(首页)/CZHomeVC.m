@@ -39,12 +39,17 @@
 @property (weak, nonatomic) IBOutlet UILabel *goldTeaNameLB2;
 @property (weak, nonatomic) IBOutlet UILabel *goldTeaTypeLB2;
 @property (weak, nonatomic) IBOutlet UITableView *newsTabView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *lastViewHConstraints;
 @property (weak, nonatomic) IBOutlet UIButton *showMorePublicCourseAction;
 
 - (IBAction)showMoreCourseAction:(UIButton *)sender;
 - (IBAction)showPublicCourseAction:(id)sender;
 - (IBAction)showActivityDetailAction:(id)sender;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *courseViewHConstraint;//默认210
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *publicViewHConstraint;//默认170
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *activityViewHContraints;//默认140
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *teacherViewHContraints;//默认220
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *lastViewHConstraints;
 
 @end
 
@@ -61,7 +66,7 @@
     _homeItem = [[HomeInfoItem alloc]init];
     _categoryItems = [[HomeCategoryItem alloc]init];
     NSString *selectCourseID = [CacheUtil getCacherWithKey:kSelectCourseIDKey];
-    if ([NSString isEmpty:selectCourseID]&&(![NSString isEmpty:[UserInfo share].token])) {
+    if ([NSString isEmpty:selectCourseID]) {
         CZSelectCourseVC *vc = [[CZSelectCourseVC alloc] init];
         vc.hidesBottomBarWhenPushed = YES;
         vc.selectCourseBlock = ^(CourseItem *item) {
@@ -102,9 +107,9 @@
         __weak typeof(self) weakSelf = self;
         [[NetworkManager sharedManager] postJSON:URL_Category parameters:@{@"category_id":selectCourseID} completion:^(id responseData, RequestState status, NSError *error) {
             weakSelf.categoryItems = [HomeCategoryItem yy_modelWithJSON:responseData];
-            [weakSelf refreshTeacherUI];
-            [weakSelf refreshVedioUI];
             [weakSelf refreshFeaCourseUI];
+            [weakSelf refreshVedioUI];
+            [weakSelf refreshTeacherUI];
         }];
     }
 }
@@ -116,7 +121,6 @@
     CZSelectCourseVC *vc = [[CZSelectCourseVC alloc] init];
     vc.hidesBottomBarWhenPushed = YES;
     vc.selectCourseBlock = ^(CourseItem *item) {
-
         [self refreshCourseUI];
     };
     [self.navigationController pushViewController:vc animated:YES];
@@ -133,6 +137,11 @@
 }
 
 - (void)refreshActivityUI{
+    if (_homeItem.activity_list.count==0) {
+        _activityViewHContraints.constant = 0;
+        return;
+    }
+    _activityViewHContraints.constant = 140;
     HomeActivityItem *activityItem = [_homeItem.activity_list firstObject];
     _activityTitleLB.text = activityItem.title;
     [_activityImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",activityItem.img]]];
@@ -140,7 +149,18 @@
 }
 
 - (void)refreshTeacherUI{
+    if (_categoryItems.teacher_list.count==0) {
+        _teacherViewHContraints.constant = 0;
+        return;
+    }
+    _teacherViewHContraints.constant = 220;
     HomeTeacherItem *teacherItem1,*teacherItem2;
+    _goldTeaImgView1.image = nil;
+    _goldTeaNameLB1.text = @"";
+    _goldTeaTypeLB1.text = @"";
+    _goldTeaImgView2.image = nil;
+    _goldTeaNameLB2.text = @"";
+    _goldTeaTypeLB2.text = @"";
     for (NSInteger i = 0; i < MIN(2, _categoryItems.teacher_list.count); i ++) {
         switch (i) {
             case 0:
@@ -162,7 +182,15 @@
 }
 
 - (void)refreshVedioUI{
+    if (_categoryItems.try_video_list.count==0) {
+        _publicViewHConstraint.constant = -10;
+        return;
+    }
+    _publicViewHConstraint.constant = 170;
     HomeTryVideoItem *tryVideoItem = [_categoryItems.try_video_list firstObject];
+    _publicCourseImgView.image = nil;
+    _publicTeaLB.text = @"";
+    _publicTitleLB.text = @"";
     if (tryVideoItem) {
         [_publicCourseImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",tryVideoItem.img]]];
         _publicTeaLB.text = [NSString stringWithFormat:@"主讲讲师：%@",tryVideoItem.teacher];
@@ -171,7 +199,16 @@
 }
 
 - (void)refreshFeaCourseUI{
+    if (_categoryItems.feature_product_list.count==0) {
+        _courseViewHConstraint.constant = -10;
+        return;
+    }
+    _courseViewHConstraint.constant = 210;
     HomeFeatureProductItem *feaCourseItem1,*feaCourseItem2;
+    _courseImgView1.image = nil;
+    _courseTeaNameLB1.text = @"";
+    _courseImgView1.image = nil;
+    _courseTeaNameLB1.text = @"";
     for (NSInteger i = 0; i < MIN(2, _categoryItems.feature_product_list.count); i ++) {
         switch (i) {
             case 0:
