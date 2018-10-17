@@ -18,8 +18,11 @@
 {
     
 }
+@property (nonatomic , assign) NSInteger page;
 @property (nonatomic , retain) HomeInfoItem *homeItem;
 @property (nonatomic , retain) HomeCategoryItem *categoryItems;;
+@property (nonatomic , retain) HomeNewsListItem *newsItems;;
+@property (nonatomic , retain) NSMutableArray <HomeNewsItem *> *newsDatsSource;
 @property (weak, nonatomic) IBOutlet UIScrollView *bgScrollView;
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *bannerView;
 @property (weak, nonatomic) IBOutlet UIImageView *courseImgView1;
@@ -65,29 +68,28 @@
     [super viewDidLoad];
     _homeItem = [[HomeInfoItem alloc]init];
     _categoryItems = [[HomeCategoryItem alloc]init];
+    _newsItems = [[HomeNewsListItem alloc]init];
+    _newsDatsSource = [NSMutableArray array];
+    _page = 1;
     NSString *selectCourseID = [CacheUtil getCacherWithKey:kSelectCourseIDKey];
     if ([NSString isEmpty:selectCourseID]) {
         CZSelectCourseVC *vc = [[CZSelectCourseVC alloc] init];
         vc.hidesBottomBarWhenPushed = YES;
+        __weak typeof(self) weakSelf = self;
         vc.selectCourseBlock = ^(CourseItem *item) {
             NSLog(@"选择课程ID: %@",item.ID);
-            [self refreshCourseUI];
+            weakSelf.page = 1;
+            [self requestCourseData];
         };
         [self.navigationController pushViewController:vc animated:YES];
     }
-    _lastViewHConstraints.constant = 5*100+40;
+    _lastViewHConstraints.constant = 40;
     
-    [self getData];
+    [self getBannerActivityData];
+    [self requestCourseData];
 }
 
 #pragma mark - get data
-
-- (void)getData {
-    
-    [self getBannerActivityData];
-    [self refreshCourseUI];
-}
-
 // 获取banner、活动数据
 - (void) getBannerActivityData {
     NSDictionary *dic = [NSDictionary dictionary];
@@ -99,10 +101,11 @@
     }];
 }
 
-
+//
 // 根据课程ID刷新数据
-- (void)refreshCourseUI {
+- (void)requestCourseData {
     NSString *selectCourseID = [CacheUtil getCacherWithKey:kSelectCourseIDKey];
+    self.lastViewHConstraints.constant = 40 ;
     if (![NSString isEmpty:selectCourseID]) {
         __weak typeof(self) weakSelf = self;
         [[NetworkManager sharedManager] postJSON:URL_Category parameters:@{@"category_id":selectCourseID} completion:^(id responseData, RequestState status, NSError *error) {
@@ -111,17 +114,31 @@
             [weakSelf refreshVedioUI];
             [weakSelf refreshTeacherUI];
         }];
+        selectCourseID = @"2";//测试
+        [[NetworkManager sharedManager] postJSON:URL_NewsList parameters:@{@"category_id":selectCourseID,@"p":@(_page),@"offset":@"10",@"news_category_id":@""} completion:^(id responseData, RequestState status, NSError *error) {
+//            NSLog(@"%@",responseData);
+            weakSelf.newsItems = [HomeNewsListItem yy_modelWithJSON:responseData];
+            if (weakSelf.page==1) {
+                [weakSelf.newsDatsSource removeAllObjects];
+            }
+            if (weakSelf.newsDatsSource.count<weakSelf.newsItems.total) {
+                weakSelf.page++;
+                [weakSelf.newsDatsSource addObjectsFromArray:            weakSelf.newsItems.rows];
+            }
+            weakSelf.lastViewHConstraints.constant = 40 + weakSelf.newsDatsSource.count*100;
+            [weakSelf.newsTabView reloadData];
+        }];
     }
 }
 
-#pragma mark - methods
 
+#pragma mark - methods
 //课程分类
 - (IBAction)selectCourseAction:(id)sender {
     CZSelectCourseVC *vc = [[CZSelectCourseVC alloc] init];
     vc.hidesBottomBarWhenPushed = YES;
     vc.selectCourseBlock = ^(CourseItem *item) {
-        [self refreshCourseUI];
+        [self requestCourseData];
     };
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -183,7 +200,7 @@
 
 - (void)refreshVedioUI{
     if (_categoryItems.try_video_list.count==0) {
-        _publicViewHConstraint.constant = -10;
+        _publicViewHConstraint.constant = 0;
         return;
     }
     _publicViewHConstraint.constant = 170;
@@ -241,11 +258,15 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return _newsDatsSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DayNewTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DayNewTabCellID"];
+    HomeNewsItem *item = _newsDatsSource[indexPath.row];
+    [cell.dayNewIconImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",item.img]]];
+    cell.dayNewTitleLB.text = item.title;
+    cell.dayNewContentLB.text = item.content;
     return cell;
 }
 

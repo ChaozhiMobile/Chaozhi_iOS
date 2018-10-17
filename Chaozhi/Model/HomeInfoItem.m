@@ -43,3 +43,13 @@
 
 @end
 
+@implementation  HomeNewsListItem
++ (NSDictionary<NSString *,id> *)modelContainerPropertyGenericClass
+{
+    return @{@"rows":[HomeNewsItem class]};
+}
+@end
+
+@implementation  HomeNewsItem
+@end
+
