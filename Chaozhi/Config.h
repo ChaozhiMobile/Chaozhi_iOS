@@ -2,6 +2,7 @@
 //  Config.h
 //  Chaozhi
 //  Notes：接口地址【文档：http://101.201.222.8/showdoc/web/#/1 密码：abc123】
+//  测试账号：18268686511/15737936517 密码：123456
 //
 //  Created by Jason_hzb on 2018/5/29.
 //  Copyright © 2018年 小灵狗出行. All rights reserved.

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		205FDB2F216F20C0001BE2C6 /* HomeInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FDB2E216F20C0001BE2C6 /* HomeInfoItem.m */; };
+		205FDB3321763DBE001BE2C6 /* CZGuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FDB3221763DBE001BE2C6 /* CZGuideVC.m */; };
 		94DF1E58ABC326A19CE0832D /* libPods-Chaozhi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B55762E2478093A57AE66667 /* libPods-Chaozhi.a */; };
 		A00FA9D82168C26900F4DA5B /* CZSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9D72168C26900F4DA5B /* CZSettingVC.m */; };
 		A00FA9DC2169DB0000F4DA5B /* CZSelectCourseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9DB2169DB0000F4DA5B /* CZSelectCourseVC.m */; };
@@ -117,6 +118,8 @@
 		204F3265086F4B67483EF547 /* Pods-Chaozhi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chaozhi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chaozhi/Pods-Chaozhi.release.xcconfig"; sourceTree = "<group>"; };
 		205FDB2D216F20C0001BE2C6 /* HomeInfoItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeInfoItem.h; sourceTree = "<group>"; };
 		205FDB2E216F20C0001BE2C6 /* HomeInfoItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeInfoItem.m; sourceTree = "<group>"; };
+		205FDB3121763DBE001BE2C6 /* CZGuideVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZGuideVC.h; sourceTree = "<group>"; };
+		205FDB3221763DBE001BE2C6 /* CZGuideVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZGuideVC.m; sourceTree = "<group>"; };
 		A00FA9D62168C26900F4DA5B /* CZSettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZSettingVC.h; sourceTree = "<group>"; };
 		A00FA9D72168C26900F4DA5B /* CZSettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZSettingVC.m; sourceTree = "<group>"; };
 		A00FA9DA2169DB0000F4DA5B /* CZSelectCourseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZSelectCourseVC.h; sourceTree = "<group>"; };
@@ -296,6 +299,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		205FDB3021763D7C001BE2C6 /* Guide(导航) */ = {
+			isa = PBXGroup;
+			children = (
+				205FDB3121763DBE001BE2C6 /* CZGuideVC.h */,
+				205FDB3221763DBE001BE2C6 /* CZGuideVC.m */,
+			);
+			path = "Guide(导航)";
+			sourceTree = "<group>";
+		};
 		A00FA9D52168C22E00F4DA5B /* 系统设置 */ = {
 			isa = PBXGroup;
 			children = (
@@ -608,6 +620,7 @@
 		A020AFEC214AAB140011BB4F /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				205FDB3021763D7C001BE2C6 /* Guide(导航) */,
 				A0599A0E21574CAF00D17058 /* Login(登录) */,
 				A0599A1821574CAF00D17058 /* Home(首页) */,
 				A0599A1B21574CAF00D17058 /* Study(学习) */,
@@ -987,6 +1000,7 @@
 				A020B05D214AAB150011BB4F /* MEView.m in Sources */,
 				A020B075214AAB150011BB4F /* LDNetDiagnoService.m in Sources */,
 				A020B07A214AAB150011BB4F /* CourseItem.m in Sources */,
+				205FDB3321763DBE001BE2C6 /* CZGuideVC.m in Sources */,
 				A020B06C214AAB150011BB4F /* BaseNC.m in Sources */,
 				A020B054214AAB150011BB4F /* XLGAlertView.m in Sources */,
 				A05FF5CE215B14F100C51E05 /* NetworkUtil.m in Sources */,
