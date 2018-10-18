@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <IQKeyboardManager.h>
 #import "NetworkUtil.h"
+#import "CZGuideVC.h"
 
 @interface AppDelegate ()
 
@@ -30,15 +31,39 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = PageColor;
+
+    //判断是否首次进入应用
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"FirstLG"])
+    {
+        //将CZGuideVC作为根视图控制器
+        CZGuideVC *guideVC = [[CZGuideVC alloc] init];
+        self.window.rootViewController = guideVC;
+        
+        //使用block获取点击图片事件
+        [guideVC setDoneBlock:^(){
+            NSLog(@"点击“进入”进入应用");
+            //进入应用主界面
+            self.window.rootViewController =[self setTabBarController] ;
+        }];
+    } else {
+        self.window.rootViewController =[self setTabBarController] ;
+    }
+    
+    [self.window makeKeyAndVisible];
+    
+    return YES;
+}
+
+#pragma mark - 进入首页
+
+- (UITabBarController *)setTabBarController {
     //第一步：要获取单独控制器所在的UIStoryboard
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     //第二步：获取该控制器的Identifier并赋给你的单独控制器
     UITabBarController *tabBarController = [story instantiateViewControllerWithIdentifier:@"TabBarController"];
     tabBarController.delegate = self;
-    self.window.rootViewController = tabBarController;
-    [self.window makeKeyAndVisible];
     
-    return YES;
+    return tabBarController;
 }
 
 - (void)processKeyBoard {

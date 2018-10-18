@@ -11,7 +11,6 @@
 @interface CZGuideVC ()<UIScrollViewDelegate>
 
 @property(nonatomic,strong) UIScrollView *scrollView;
-@property(nonatomic,strong) UIImageView *slogonImg;
 
 @end
 
@@ -20,6 +19,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    self.navBar.hidden = YES;
     
     NSArray *imageArr = @[@"Guide01", @"Guide02", @"Guide03", @"Guide04"];
     self.scrollView.contentSize = CGSizeMake(WIDTH * imageArr.count, HEIGHT);
@@ -34,21 +35,18 @@
         [self.scrollView addSubview:imgView];
         if (i==3) {
             //进入按钮
-            CGFloat btnW = 255*HEIGHT/667;
-            CGFloat btnH = 45*HEIGHT/667;
-            UIImageView *enterImg = [[UIImageView alloc] initWithFrame:CGRectMake((WIDTH-btnW)/2, HEIGHT-btnH*4, btnW, btnH)];
-            enterImg.userInteractionEnabled = YES;
-            enterImg.image = [UIImage imageNamed:@"EnterBtn"];
-            [imgView addSubview:enterImg];
-            
-            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapClick:)];
-            [enterImg addGestureRecognizer:tap];
-            
-            //Slogon
-            _slogonImg = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH/4, HEIGHT/2-100, WIDTH/2, 30*(WIDTH/2)/216)];
-            _slogonImg.image = [UIImage imageNamed:@"Slogon"];
-            _slogonImg.alpha = 0;
-            [imgView addSubview:_slogonImg];
+            CGFloat btnW = autoScaleW(159);
+            CGFloat btnH = autoScaleW(36);
+            UIButton *enterBtn = [[UIButton alloc] initWithFrame:CGRectMake((WIDTH-btnW)/2, HEIGHT-btnH-autoScaleW(30)-kTabBarSafeH, btnW, btnH)];
+            [enterBtn setTitle:@"立即体验" forState:UIControlStateNormal];
+            [enterBtn setTitleColor:RGBValue(0xD0021B) forState:UIControlStateNormal];
+            enterBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+            enterBtn.layer.borderColor = RGBValue(0xD0021B).CGColor;
+            enterBtn.layer.borderWidth = autoScaleW(1);
+            enterBtn.layer.cornerRadius = btnH/2;
+            [enterBtn.layer setMasksToBounds:YES];
+            [enterBtn addTarget:self action:@selector(enterAction) forControlEvents:UIControlEventTouchUpInside];
+            [imgView addSubview:enterBtn];
         }
     }
 }
@@ -65,26 +63,21 @@
     [self.view addSubview:self.scrollView];
 }
 
-- (void)tapClick:(UITapGestureRecognizer*)tap {
+// 立即体验
+- (void)enterAction {
     [UIApplication sharedApplication].statusBarHidden = NO;
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:@"FirstLG"];
     
-    if (self.buttonBlock) {
-        self.buttonBlock();
+    if (self.doneBlock) {
+        self.doneBlock();
     }
 }
 
 #pragma mark - UIScrollViewDelegate协议
 //减速滑动(Decelerating:使减速的)
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    int currentPage = fabs(scrollView.contentOffset.x)/WIDTH; //计算当前页
-    
-    if (currentPage==3) {
-        [UIView animateWithDuration:2 animations:^{
-            _slogonImg.alpha = 1;
-        }];
-    }
+//    int currentPage = fabs(scrollView.contentOffset.x)/WIDTH; //计算当前页
 }
 
 - (void)didReceiveMemoryWarning {

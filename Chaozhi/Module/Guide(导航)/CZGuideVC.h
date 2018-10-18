@@ -10,6 +10,6 @@
 
 @interface CZGuideVC : BaseVC
 
-@property (nonatomic,copy) dispatch_block_t buttonBlock;
+@property (nonatomic,copy) dispatch_block_t doneBlock;
 
 @end
