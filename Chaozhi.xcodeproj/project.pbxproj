@@ -111,6 +111,7 @@
 		A05FF5DA215B163400C51E05 /* JHHJView.m in Sources */ = {isa = PBXBuildFile; fileRef = A05FF5D4215B163400C51E05 /* JHHJView.m */; };
 		A05FF5DB215B163400C51E05 /* JHHJAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A05FF5D5215B163400C51E05 /* JHHJAnimation.m */; };
 		A05FF5DC215B163400C51E05 /* AEIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = A05FF5D8215B163400C51E05 /* AEIndicator.m */; };
+		A091D1302178FAF300CCDAF6 /* StudyInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A091D12F2178FAF300CCDAF6 /* StudyInfoItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -283,6 +284,8 @@
 		A05FF5D6215B163400C51E05 /* JHHJCenterBGView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHHJCenterBGView.h; sourceTree = "<group>"; };
 		A05FF5D7215B163400C51E05 /* AEIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEIndicator.h; sourceTree = "<group>"; };
 		A05FF5D8215B163400C51E05 /* AEIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEIndicator.m; sourceTree = "<group>"; };
+		A091D12E2178FAF300CCDAF6 /* StudyInfoItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudyInfoItem.h; sourceTree = "<group>"; };
+		A091D12F2178FAF300CCDAF6 /* StudyInfoItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyInfoItem.m; sourceTree = "<group>"; };
 		B55762E2478093A57AE66667 /* libPods-Chaozhi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Chaozhi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -700,6 +703,8 @@
 				A020B01A214AAB140011BB4F /* CourseItem.m */,
 				205FDB2D216F20C0001BE2C6 /* HomeInfoItem.h */,
 				205FDB2E216F20C0001BE2C6 /* HomeInfoItem.m */,
+				A091D12E2178FAF300CCDAF6 /* StudyInfoItem.h */,
+				A091D12F2178FAF300CCDAF6 /* StudyInfoItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -997,6 +1002,7 @@
 				A020B050214AAB150011BB4F /* KeyChainUtil.m in Sources */,
 				A020B05C214AAB150011BB4F /* MEViewModel.m in Sources */,
 				A020B052214AAB150011BB4F /* Toast.m in Sources */,
+				A091D1302178FAF300CCDAF6 /* StudyInfoItem.m in Sources */,
 				A020B05D214AAB150011BB4F /* MEView.m in Sources */,
 				A020B075214AAB150011BB4F /* LDNetDiagnoService.m in Sources */,
 				A020B07A214AAB150011BB4F /* CourseItem.m in Sources */,

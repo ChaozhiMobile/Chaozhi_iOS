@@ -7,6 +7,7 @@
 //
 
 #import "CZStudyVC.h"
+#import "StudyInfoItem.h"
 
 @implementation StudyCourseCell
 @end
@@ -29,6 +30,8 @@
 @property (weak, nonatomic) IBOutlet UIView *titleView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tabHeightConstraint;
 
+@property (strong, nonatomic) NSMutableArray *dataArr;
+
 @end
 
 @implementation CZStudyVC
@@ -37,6 +40,8 @@
     [super viewWillAppear:animated];
     
     self.navBar.hidden = YES;
+    
+    [self getData];
 }
 
 - (void)viewDidLoad {
@@ -44,10 +49,6 @@
     
     _tabHeightConstraint.constant = 3*60;
     _statusBarHConstraint.constant = kStatusBarH;
-    
-    [self initView];
-    
-    [self getData];
 }
 
 #pragma mark - get data
@@ -60,8 +61,8 @@
     [[NetworkManager sharedManager] postJSON:URL_CourseList parameters:dic imageDataArr:nil imageName:nil  completion:^(id responseData, RequestState status, NSError *error) {
         
         if (status == Request_Success) {
-//            self.dataArr = [CourseItem mj_objectArrayWithKeyValuesArray:(NSArray *)responseData];
-            
+            self.dataArr = [StudyInfoItem mj_objectArrayWithKeyValuesArray:(NSArray *)responseData];
+            [self initView];
             [self.tableView reloadData];
         }
     }];
@@ -78,32 +79,65 @@
     gradientLayer.frame = _topBGBackView.bounds;
     [self.topBGBackView.layer addSublayer:gradientLayer];
     
-    _courseScrollView.contentSize = CGSizeMake(3*(WIDTH-20), 0);
-    for (NSInteger i = 0; i < 3; i ++) {
+    NSInteger courseCount = self.dataArr.count;
+    
+    _courseScrollView.contentSize = CGSizeMake(courseCount*(WIDTH-20), 0);
+    for (NSInteger i = 0; i < courseCount; i ++) {
+        
+        StudyInfoItem *item = self.dataArr[i];
+        
         UIView *view = [[[NSBundle mainBundle]loadNibNamed:@"MyStudyView" owner:self options:nil]firstObject];
         view.frame = CGRectMake(i*(WIDTH-20), 0, (WIDTH-20), 120);
         view.tag = 120+i;
         [_courseScrollView addSubview:view];
-        UIImageView *courseIconImgView = [view viewWithTag:1];
-        UILabel *courseTitleLB = [view viewWithTag:2];;
-        UILabel *courseTypeLB = [view viewWithTag:3];
-        UILabel *courseDurationLB = [view viewWithTag:4];
-        UILabel *courseSubjectLB =[view viewWithTag:5];
-        UIButton *viewBtn = [view viewWithTag:6];
+        UIImageView *courseIconImgView = [view viewWithTag:2];
+        [courseIconImgView sd_setImageWithURL:[NSURL URLWithString:item.product_img] placeholderImage:[UIImage imageNamed:@""]];
+        UILabel *courseTitleLB = [view viewWithTag:3];
+        courseTitleLB.text = item.product_name;
+        UILabel *courseTypeLB = [view viewWithTag:4];
+        courseTypeLB.text = item.product_sub_name;
+        UILabel *courseDurationLB = [view viewWithTag:5];
+        courseDurationLB.text = [NSString stringWithFormat:@"%@分钟",item.user_time];
+        UILabel *courseSubjectLB =[view viewWithTag:6];
+        courseSubjectLB.text = [NSString stringWithFormat:@"%@道",item.user_question];
+        UIButton *viewBtn = [view viewWithTag:7];
+        viewBtn.tag = 1000+i;
+        [viewBtn addTarget:self action:@selector(courseClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     NSLog(@"%f",_coursePageControl.height);
     
     _coursePageControl.height = 20;
     _coursePageControl.currentPage = 0;
-    _coursePageControl.numberOfPages = 3;
+    _coursePageControl.numberOfPages = courseCount;
+}
+
+#pragma mark - methods
+
+- (void)courseClick:(UIButton *)btn {
+    NSInteger index = btn.tag-1000;
+    StudyInfoItem *item = self.dataArr[index];
+    
 }
 
 #pragma mark - UIScrollViewDelegate协议
-// 滑动结束
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+
+//减速滑动(Decelerating:使减速的)
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     int currentPage = fabs(scrollView.contentOffset.x)/(WIDTH-20); //计算当前页
     _coursePageControl.currentPage = currentPage;
+    
+    NSLog(@"滑动页数：%d",currentPage);
 }
+
+//// 滑动结束
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+//    int currentPage = fabs(scrollView.contentOffset.x)/(WIDTH-20); //计算当前页
+//    _coursePageControl.currentPage = currentPage;
+//
+//    NSLog(@"滑动页数：%d",currentPage);
+//
+////    StudyInfoItem *item = self.dataArr[currentPage];
+//}
 
 #pragma mark - UITableView 代理
 

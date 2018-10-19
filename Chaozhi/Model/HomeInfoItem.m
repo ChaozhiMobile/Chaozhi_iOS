@@ -18,16 +18,20 @@
 @end
 
 @implementation HomeActivityItem
+
 @end
 
 @implementation HomeBannerItem
+
 @end
 
 @implementation HomeCategoryItem
+
 + (NSDictionary<NSString *,id> *)modelContainerPropertyGenericClass
 {
     return @{@"try_video_list":[HomeTryVideoItem class],@"teacher_list":[HomeTeacherItem class],@"feature_product_list":[HomeFeatureProductItem class]};
 }
+
 @end
 
 
@@ -44,12 +48,15 @@
 @end
 
 @implementation  HomeNewsListItem
+
 + (NSDictionary<NSString *,id> *)modelContainerPropertyGenericClass
 {
     return @{@"rows":[HomeNewsItem class]};
 }
+
 @end
 
 @implementation  HomeNewsItem
+
 @end
 
