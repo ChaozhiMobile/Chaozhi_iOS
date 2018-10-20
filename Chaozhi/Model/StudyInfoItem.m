@@ -33,12 +33,13 @@
 
 @implementation NewestInfoItem
 
-+ (NSDictionary *)replacedKeyFromPropertyName {
++ (NSDictionary *)mj_objectClassInArray {
     return @{
              @"live_list":[LiveItem class],
              @"learn_course_list":[LearnCourseItem class],
              };
 }
+
 
 @end
 

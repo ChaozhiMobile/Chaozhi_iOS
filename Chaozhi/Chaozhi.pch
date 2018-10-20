@@ -29,7 +29,7 @@
 #import "JHHJView.h"
 #import "XLGLottie.h"
 #import <MJExtension.h>
-
+#import <MJRefresh.h>
 #endif
 
 #define kCachePath [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]

@@ -8,6 +8,7 @@
 
 #import "BaseItem.h"
 
+@class NewestInfoItem;
 @class LiveItem;
 @class LearnCourseItem;
 
@@ -21,7 +22,7 @@
 @property (nonatomic, copy) NSString *user_time; //上课总时长，单位分钟
 @property (nonatomic, copy) NSString *user_question; //完成总题数
 @property (nonatomic, copy) NSString *product_sub_name; //产品副标题
-@property (nonatomic, copy) NSDictionary *newest_info; //课程最新信息
+@property (nonatomic, retain) NewestInfoItem *newest_info; //课程最新信息
 
 @end
 
@@ -38,6 +39,7 @@
 @property (nonatomic, copy) NSString *ID; //直播id
 @property (nonatomic, copy) NSString *live_id; //直播编号
 @property (nonatomic, copy) NSString *live_name; //直播名称
+@property (nonatomic, copy) NSString *teacher; //直播老师
 @property (nonatomic, copy) NSString *live_st; //直播开始时间
 @property (nonatomic, copy) NSString *live_et; //直播结束时间
 @property (nonatomic, copy) NSString *live_url; //回放地址

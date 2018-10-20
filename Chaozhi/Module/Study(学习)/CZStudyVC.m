@@ -13,7 +13,9 @@
 @end
 
 @interface CZStudyVC ()<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
-
+{
+    NSInteger currentPage;
+}
 @property (weak, nonatomic) IBOutlet UIView *statusBarView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *statusBarHConstraint;
 @property (weak, nonatomic) IBOutlet UIPageControl *coursePageControl;
@@ -30,7 +32,9 @@
 @property (weak, nonatomic) IBOutlet UIView *titleView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tabHeightConstraint;
 
-@property (strong, nonatomic) NSMutableArray *dataArr;
+@property (strong, nonatomic) NSArray <StudyInfoItem *>*dataArr;
+@property (strong, nonatomic) NSArray <LiveItem *>*liveArr;
+@property (strong, nonatomic) NSArray <LearnCourseItem *>*courseArr;
 
 @end
 
@@ -40,30 +44,36 @@
     [super viewWillAppear:animated];
     
     self.navBar.hidden = YES;
-    
     [self getData];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     _tabHeightConstraint.constant = 3*60;
     _statusBarHConstraint.constant = kStatusBarH;
+//    __weak typeof(self) weakSelf = self;
+//    _bgScroView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+//        [weakSelf getData];
+//    }];
 }
 
 #pragma mark - get data
 
 // 分类列表
 - (void)getData {
+    currentPage = 0;
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
                          @"1", @"is_newest_info",
                          nil];
+    __weak typeof(self) weakSelf = self;
     [[NetworkManager sharedManager] postJSON:URL_CourseList parameters:dic imageDataArr:nil imageName:nil  completion:^(id responseData, RequestState status, NSError *error) {
-        
+        if ([weakSelf.bgScroView.mj_header isRefreshing]) {
+            [weakSelf.bgScroView.mj_header endRefreshing];
+        }
         if (status == Request_Success) {
             self.dataArr = [StudyInfoItem mj_objectArrayWithKeyValuesArray:(NSArray *)responseData];
             [self initView];
-            [self.tableView reloadData];
+            [self refreshUI];
         }
     }];
 }
@@ -91,7 +101,7 @@
         view.tag = 120+i;
         [_courseScrollView addSubview:view];
         UIImageView *courseIconImgView = [view viewWithTag:2];
-        [courseIconImgView sd_setImageWithURL:[NSURL URLWithString:item.product_img] placeholderImage:[UIImage imageNamed:@""]];
+        [courseIconImgView sd_setImageWithURL:[NSURL URLWithString:item.product_img] placeholderImage:[UIImage imageNamed:@"default_img"]];
         UILabel *courseTitleLB = [view viewWithTag:3];
         courseTitleLB.text = item.product_name;
         UILabel *courseTypeLB = [view viewWithTag:4];
@@ -104,8 +114,6 @@
         viewBtn.tag = 1000+i;
         [viewBtn addTarget:self action:@selector(courseClick:) forControlEvents:UIControlEventTouchUpInside];
     }
-    NSLog(@"%f",_coursePageControl.height);
-    
     _coursePageControl.height = 20;
     _coursePageControl.currentPage = 0;
     _coursePageControl.numberOfPages = courseCount;
@@ -115,7 +123,9 @@
 
 - (void)courseClick:(UIButton *)btn {
     NSInteger index = btn.tag-1000;
-    StudyInfoItem *item = self.dataArr[index];
+    NSLog(@"点击页数：%ld",(long)index);
+    
+//    StudyInfoItem *item = self.dataArr[index];
     
 }
 
@@ -123,30 +133,42 @@
 
 //减速滑动(Decelerating:使减速的)
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    int currentPage = fabs(scrollView.contentOffset.x)/(WIDTH-20); //计算当前页
-    _coursePageControl.currentPage = currentPage;
     
-    NSLog(@"滑动页数：%d",currentPage);
+    int currentPageTem = fabs(scrollView.contentOffset.x)/(WIDTH-20); //计算当前页
+    _coursePageControl.currentPage = currentPageTem;
+    currentPage = currentPageTem;
+    [self refreshUI];
 }
 
-//// 滑动结束
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    int currentPage = fabs(scrollView.contentOffset.x)/(WIDTH-20); //计算当前页
-//    _coursePageControl.currentPage = currentPage;
-//
-//    NSLog(@"滑动页数：%d",currentPage);
-//
-////    StudyInfoItem *item = self.dataArr[currentPage];
-//}
+- (void)refreshUI{
+    StudyInfoItem *items = _dataArr[currentPage];
+    _liveArr = items.newest_info.live_list;
+    _courseArr = items.newest_info.learn_course_list;
+    LiveItem *liveItems = _liveArr.firstObject;
+    if (liveItems) {
+//        [_liveCourseIconImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",liveItems.]]];
+        _liveCourseIconImgView.image = [UIImage imageNamed:@"default_live"];
+        _liveCourseTitleLB.text = liveItems.live_name;
+        _liveCourseTeacherLB.text = liveItems.teacher;
+        _liveStartTimeLB.text = [NSString stringWithFormat:@"开始时间：%@",liveItems.live_st];
+    }
+    
+    _tabHeightConstraint.constant = (MIN(_courseArr.count, 3))*60;
+    [_studyTabView reloadData];
+}
 
 #pragma mark - UITableView 代理
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return MIN(_courseArr.count, 3);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     StudyCourseCell *cell = [tableView dequeueReusableCellWithIdentifier:@"homeStudyCourseCellID"];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    LearnCourseItem *item = _courseArr[indexPath.row];
+    cell.studyCourseTitleLB.text = item.name;
+    cell.studycourseTimeLB.text = [NSString stringWithFormat:@"学习时间：%@",item.ut];
     return cell;
 }
 
