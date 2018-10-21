@@ -61,6 +61,12 @@
     [dic setObject:[Utils getWifi]==YES?@"1":@"0" forKey:@"wifi"];
     NSString *extendStr = [dic jsonStringEncoded];
     
+    if (@available(iOS 12.0, *)) {
+        NSString *baseAgent = @"Mozilla/5.0 (iPhone; CPU iPhone OS 11_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15F79";
+        NSString *userAgent = [NSString stringWithFormat:@"%@&&%@",baseAgent, extendStr];
+        [self.webView setCustomUserAgent:userAgent];
+    }
+    
     if (IS_IOS_9) {
         [self.webView evaluateJavaScript:@"navigator.userAgent" completionHandler:^(id result, NSError *error) {
             NSString *oldUA = result;

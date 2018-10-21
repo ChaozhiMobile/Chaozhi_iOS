@@ -194,7 +194,7 @@
     _activityViewHContraints.constant = 140;
     HomeActivityItem *activityItem = [_homeItem.activity_list firstObject];
     _activityTitleLB.text = activityItem.title;
-    [_activityImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",activityItem.img]] placeholderImage:[UIImage imageNamed:@"default_img"]];
+    [_activityImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",activityItem.img]] placeholderImage:[UIImage imageNamed:@"default_rectangle_img"]];
     _activityContentLB.text = activityItem.subtitle;
 }
 
@@ -215,13 +215,13 @@
         switch (i) {
             case 0:
                 teacherItem1 = [_categoryItems.teacher_list firstObject];
-                [_goldTeaImgView1 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",teacherItem1.photo]] placeholderImage:[UIImage imageNamed:@"default_img"]];
+                [_goldTeaImgView1 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",teacherItem1.photo]] placeholderImage:[UIImage imageNamed:@"default_rectangle_img"]];
                 _goldTeaNameLB1.text = teacherItem1.name;
                 _goldTeaTypeLB1.text = teacherItem1.info;
                 break;
             case 1:
                 teacherItem2 = _categoryItems.teacher_list[1];
-                [_goldTeaImgView2 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",teacherItem2.photo]] placeholderImage:[UIImage imageNamed:@"default_img"]];
+                [_goldTeaImgView2 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",teacherItem2.photo]] placeholderImage:[UIImage imageNamed:@"default_rectangle_img"]];
                 _goldTeaNameLB2.text = teacherItem2.name;
                 _goldTeaTypeLB2.text = teacherItem2.info;
                 break;
@@ -242,7 +242,7 @@
     _publicTeaLB.text = @"";
     _publicTitleLB.text = @"";
     if (tryVideoItem) {
-        [_publicCourseImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",tryVideoItem.img]] placeholderImage:[UIImage imageNamed:@"default_img"]];
+        [_publicCourseImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",tryVideoItem.img]] placeholderImage:[UIImage imageNamed:@"default_live"]];
         _publicTeaLB.text = [NSString stringWithFormat:@"主讲讲师：%@",tryVideoItem.teacher];
         _publicTitleLB.text = tryVideoItem.title;
     }
@@ -263,12 +263,12 @@
         switch (i) {
             case 0:
                 feaCourseItem1 = [_categoryItems.feature_product_list firstObject];
-                [_courseImgView1 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",feaCourseItem1.img]] placeholderImage:[UIImage imageNamed:@"default_img"]];
+                [_courseImgView1 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",feaCourseItem1.img]] placeholderImage:[UIImage imageNamed:@"default_rectangle_img"]];
                 _courseTeaNameLB1.text = feaCourseItem1.name;
                 break;
             case 1:
                 feaCourseItem2 = _categoryItems.feature_product_list[1];
-                [_courseImgView2 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",feaCourseItem2.img]] placeholderImage:[UIImage imageNamed:@"default_img"]];
+                [_courseImgView2 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",feaCourseItem2.img]] placeholderImage:[UIImage imageNamed:@"default_rectangle_img"]];
                 _courseTeaNameLB2.text = feaCourseItem2.name;
 
                 break;
@@ -297,7 +297,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DayNewTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DayNewTabCellID"];
     HomeNewsItem *item = _newsDatsSource[indexPath.row];
-    [cell.dayNewIconImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",item.img]] placeholderImage:[UIImage imageNamed:@"default_img"]];
+    [cell.dayNewIconImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",item.img]] placeholderImage:[UIImage imageNamed:@"default_square_img"]];
     cell.dayNewTitleLB.text = item.title;
     cell.dayNewContentLB.text = item.subtitle;
     return cell;
