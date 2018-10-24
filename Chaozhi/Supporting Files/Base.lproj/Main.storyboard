@@ -803,7 +803,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="93" height="100"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <connections>
-                                                            <segue destination="FXN-9w-uUS" kind="push" id="g2d-fy-tkg"/>
+                                                            <action selector="luboAction:" destination="hqo-Xn-OZU" eventType="touchUpInside" id="LgO-01-5dH"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -828,7 +828,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="93" height="100"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <connections>
-                                                            <segue destination="xSR-xd-ccb" kind="push" id="iPq-bE-JEk"/>
+                                                            <action selector="zhiboAction:" destination="hqo-Xn-OZU" eventType="touchUpInside" id="qNP-mK-IbK"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -853,7 +853,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="93" height="100"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <connections>
-                                                            <segue destination="zfO-2f-b5v" kind="push" id="Gtk-02-PKK"/>
+                                                            <action selector="ziliaokuAction:" destination="hqo-Xn-OZU" eventType="touchUpInside" id="Qds-dI-RVQ"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -878,7 +878,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="93" height="100"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <connections>
-                                                            <segue destination="gFE-eJ-451" kind="push" id="2Ai-Qj-VlL"/>
+                                                            <action selector="tikuAction:" destination="hqo-Xn-OZU" eventType="touchUpInside" id="YRf-4x-oAe"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -1149,82 +1149,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cpA-mj-waw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="340" y="7.6461769115442282"/>
-        </scene>
-        <!--录播课程-->
-        <scene sceneID="UKO-qB-VCm">
-            <objects>
-                <viewController id="FXN-9w-uUS" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="FMd-UK-GOD"/>
-                        <viewControllerLayoutGuide type="bottom" id="Rfp-yK-s9r"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="3jA-v6-lo7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="录播课程" id="Uzn-Cu-Q42"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kDP-rs-2xe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1228" y="8"/>
-        </scene>
-        <!--直播课程-->
-        <scene sceneID="dgl-Kh-7pm">
-            <objects>
-                <viewController id="xSR-xd-ccb" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="5FU-D7-LzO"/>
-                        <viewControllerLayoutGuide type="bottom" id="CVl-a1-l3J"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Aex-VB-X6q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="直播课程" id="o9P-4u-sIi"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HrO-sJ-VcX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2135" y="8"/>
-        </scene>
-        <!--资料库-->
-        <scene sceneID="ssr-53-Pfj">
-            <objects>
-                <viewController id="zfO-2f-b5v" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="F2H-cJ-PAf"/>
-                        <viewControllerLayoutGuide type="bottom" id="GLf-1W-FDo"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="VYZ-mw-0BG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="资料库" id="72c-Fk-7Mf"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uFZ-kM-5AY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3049" y="8"/>
-        </scene>
-        <!--题库-->
-        <scene sceneID="aEU-4X-kxv">
-            <objects>
-                <viewController id="gFE-eJ-451" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hG0-TV-fd3"/>
-                        <viewControllerLayoutGuide type="bottom" id="iTG-ej-cjm"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="bB0-rg-Phh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="题库" id="Uby-9O-NHE"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="box-Wb-4j4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3999" y="8"/>
         </scene>
         <!--无限-->
         <scene sceneID="zT9-oB-LvC">

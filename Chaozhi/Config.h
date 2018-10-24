@@ -38,6 +38,6 @@ NSString *h5Url(void);
 #define H5_Orders @"#/hybrid/orders" //我的-课程订单页面
 #define H5_Message @"#/hybrid/message" //我的-我的消息
 #define H5_Coupon @"#/hybrid/coupon" //我的-我的优惠券
-#define H5_Question @"#/hybrid/study/question/${id}" //学习-题库
+#define H5_Question @"#/hybrid/study/library" //学习-题库
 
 @end

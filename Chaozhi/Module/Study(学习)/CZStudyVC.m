@@ -64,6 +64,7 @@
     currentPage = 0;
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
                          @"1", @"is_newest_info",
+                         @"1", @"is_progress",
                          nil];
     __weak typeof(self) weakSelf = self;
     [[NetworkManager sharedManager] postJSON:URL_CourseList parameters:dic imageDataArr:nil imageName:nil  completion:^(id responseData, RequestState status, NSError *error) {
@@ -121,12 +122,34 @@
 
 #pragma mark - methods
 
+// 课程点击
 - (void)courseClick:(UIButton *)btn {
     NSInteger index = btn.tag-1000;
     NSLog(@"点击页数：%ld",(long)index);
     
 //    StudyInfoItem *item = self.dataArr[index];
-    
+}
+
+// 录播课程点击
+- (IBAction)luboAction:(id)sender {
+    [Utils showToast:@"录播课程"];
+}
+
+// 直播课程
+- (IBAction)zhiboAction:(id)sender {
+    [Utils showToast:@"直播课程"];
+}
+
+// 资料库
+- (IBAction)ziliaokuAction:(id)sender {
+    [Utils showToast:@"资料库"];
+}
+
+// 题库
+- (IBAction)tikuAction:(id)sender {
+    StudyInfoItem *items = _dataArr[currentPage];
+    NSString *tikuStr = [NSString stringWithFormat:@"%@/${%@}",H5_Question,items.product_id];
+    [BaseWebVC showWithContro:self withUrlStr:tikuStr withTitle:@"" isPresent:NO];
 }
 
 #pragma mark - UIScrollViewDelegate协议
@@ -140,7 +163,7 @@
     [self refreshUI];
 }
 
-- (void)refreshUI{
+- (void)refreshUI {
     StudyInfoItem *items = _dataArr[currentPage];
     _liveArr = items.newest_info.live_list;
     _courseArr = items.newest_info.learn_course_list;
