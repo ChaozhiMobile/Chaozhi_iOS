@@ -148,7 +148,7 @@
 // 题库
 - (IBAction)tikuAction:(id)sender {
     StudyInfoItem *items = _dataArr[currentPage];
-    NSString *tikuStr = [NSString stringWithFormat:@"%@/${%@}",H5_Question,items.product_id];
+    NSString *tikuStr = [NSString stringWithFormat:@"%@/%@",H5_Question,items.product_id];
     [BaseWebVC showWithContro:self withUrlStr:tikuStr withTitle:@"" isPresent:NO];
 }
 

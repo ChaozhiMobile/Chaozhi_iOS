@@ -42,7 +42,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = _webTitle;
+    if ([self.homeUrl containsString:H5_Question]) {
+        self.title = @"";
+        self.isShowWebTitle = YES;
+    } else {
+        self.title = _webTitle;
+    }
     
     [self.view addSubview:self.progressView];
     [self.view insertSubview:self.webView belowSubview:self.progressView];
@@ -200,6 +205,9 @@
 // 页面开始加载时调用
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{
     [JHHJView showLoadingOnTheKeyWindowWithType:JHHJViewTypeSingleLine]; //开始加载
+    
+    NSString *url = webView.URL.absoluteString;
+    NSLog(@"跳转网页地址：%@",url);
 }
 
 // 当内容开始返回时调用
@@ -287,7 +295,9 @@
         }
         
         if ([keyPath isEqualToString:@"title"]) {
-            
+            if (self.isShowWebTitle==YES) {
+                self.title = _webView.title;
+            }
         }
     }
 }

@@ -11,6 +11,7 @@
 
 @interface BaseWebVC : BaseVC
 
+@property (nonatomic, assign) BOOL isShowWebTitle;
 @property (strong, nonatomic) NSString *homeUrl;
 @property (strong, nonatomic) NSString *webTitle;
 @property (assign, nonatomic) BOOL isPresent;
