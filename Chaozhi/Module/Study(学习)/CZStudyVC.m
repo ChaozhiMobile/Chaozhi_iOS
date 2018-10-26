@@ -44,7 +44,6 @@
     [super viewWillAppear:animated];
     
     self.navBar.hidden = YES;
-    [self getData];
 }
 
 - (void)viewDidLoad {
@@ -55,6 +54,8 @@
 //    _bgScroView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
 //        [weakSelf getData];
 //    }];
+    
+    [self getData];
 }
 
 #pragma mark - get data
@@ -132,17 +133,23 @@
 
 // 录播课程点击
 - (IBAction)luboAction:(id)sender {
-    [Utils showToast:@"录播课程"];
+    StudyInfoItem *items = _dataArr[currentPage];
+    NSString *tikuStr = [NSString stringWithFormat:@"%@/%@",H5_Video,items.product_id];
+    [BaseWebVC showWithContro:self withUrlStr:tikuStr withTitle:@"" isPresent:NO];
 }
 
 // 直播课程
 - (IBAction)zhiboAction:(id)sender {
-    [Utils showToast:@"直播课程"];
+    StudyInfoItem *items = _dataArr[currentPage];
+    NSString *tikuStr = [NSString stringWithFormat:@"%@/%@",H5_Live,items.product_id];
+    [BaseWebVC showWithContro:self withUrlStr:tikuStr withTitle:@"" isPresent:NO];
 }
 
 // 资料库
 - (IBAction)ziliaokuAction:(id)sender {
-    [Utils showToast:@"资料库"];
+    StudyInfoItem *items = _dataArr[currentPage];
+    NSString *tikuStr = [NSString stringWithFormat:@"%@/%@",H5_Doc,items.product_id];
+    [BaseWebVC showWithContro:self withUrlStr:tikuStr withTitle:@"" isPresent:NO];
 }
 
 // 题库

@@ -42,7 +42,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if ([self.homeUrl containsString:H5_Question]) {
+    if ([self.homeUrl containsString:H5_Question]
+        || [self.homeUrl containsString:H5_Doc]
+        || [self.homeUrl containsString:H5_Live]
+        || [self.homeUrl containsString:H5_Video]
+        ) {
         self.title = @"";
         self.isShowWebTitle = YES;
     } else {

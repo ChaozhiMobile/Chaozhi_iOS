@@ -98,7 +98,7 @@
 // 个人中心
 - (void)jumpPersonalCenter {
     if ([Utils isLoginWithJump:YES]) {
-        [BaseWebVC showWithContro:self withUrlStr:@"https://www.baidu.com/" withTitle:@"个人中心" isPresent:NO];
+        [BaseWebVC showWithContro:self withUrlStr:H5_MyInfo withTitle:@"个人中心" isPresent:NO];
     }
 }
 
@@ -173,7 +173,7 @@
     }
     
     if ([str isEqualToString:@"问题反馈"]) {
-        [BaseWebVC showWithContro:self withUrlStr:@"http://static.evcoming.com/vin-4-5/" withTitle:_nameArr[indexPath.row] isPresent:NO];
+        [BaseWebVC showWithContro:self withUrlStr:H5_Feedback withTitle:_nameArr[indexPath.row] isPresent:NO];
     }
     
     if ([str isEqualToString:@"系统设置"]) {
