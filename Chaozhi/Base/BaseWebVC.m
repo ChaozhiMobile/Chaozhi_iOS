@@ -42,16 +42,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if ([self.homeUrl containsString:H5_Question]
-        || [self.homeUrl containsString:H5_Doc]
-        || [self.homeUrl containsString:H5_Live]
-        || [self.homeUrl containsString:H5_Video]
-        ) {
-        self.title = @"";
+    if ([NSString isEmpty:_webTitle]) {
         self.isShowWebTitle = YES;
-    } else {
-        self.title = _webTitle;
     }
+    
+    self.title = _webTitle;
     
     [self.view addSubview:self.progressView];
     [self.view insertSubview:self.webView belowSubview:self.progressView];
@@ -152,6 +147,7 @@
         [_userContentController addScriptMessageHandler:delegateController name:@"return"]; //返回
         [_userContentController addScriptMessageHandler:delegateController name:@"login"]; //登录
         [_userContentController addScriptMessageHandler:delegateController name:@"refresh"]; //刷新
+        [_userContentController addScriptMessageHandler:delegateController name:@"open"]; //打开新页面
     }
     return _webView;
 }
@@ -190,6 +186,14 @@
 // WKScriptMessageHandler
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
     NSLog(@"name:%@\\\\n body:%@\\\\n frameInfo:%@\\\\n",message.name,message.body,message.frameInfo);
+    
+    if ([message.name isEqualToString:@"open"]) { //打开新页面
+        NSDictionary *dic = message.body;
+        if ([dic[@"type"] isEqualToString:@"web"]) {
+            NSString *url = dic[@"url"];
+            [BaseWebVC showWithContro:self withUrlStr:url withTitle:@"" isPresent:NO];
+        }
+    }
     
     if ([message.name isEqualToString:@"return"]) { //返回
         
@@ -312,6 +316,7 @@
     [_webView removeObserver:self forKeyPath:@"estimatedProgress"];
     [_webView removeObserver:self forKeyPath:@"title"];
     [_webView.scrollView removeObserver:self forKeyPath:@"contentOffset"];
+    [_userContentController removeScriptMessageHandlerForName:@"open"];
     [_userContentController removeScriptMessageHandlerForName:@"return"];
     [_userContentController removeScriptMessageHandlerForName:@"login"];
     [_userContentController removeScriptMessageHandlerForName:@"refresh"];

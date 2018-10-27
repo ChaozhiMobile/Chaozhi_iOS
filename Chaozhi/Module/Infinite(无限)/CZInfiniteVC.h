@@ -8,6 +8,6 @@
 
 #import "BaseVC.h"
 
-@interface CZInfiniteVC : BaseVC
+@interface CZInfiniteVC : BaseWebVC
 
 @end

@@ -19,6 +19,7 @@
 
 @property (nonatomic, copy) NSString *ID; //id
 @property (nonatomic, copy) NSString *name; //分类名称
+@property (nonatomic, copy) NSString *img; //分类图片
 @property (nonatomic, copy) NSString *pid; //父id
 @property (nonatomic, copy) NSString *subCount; //子分类数量
 @property (nonatomic, strong) NSArray *children; //子分类

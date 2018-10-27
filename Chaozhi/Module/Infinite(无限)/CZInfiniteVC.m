@@ -7,14 +7,23 @@
 //
 
 #import "CZInfiniteVC.h"
+#import <WebKit/WebKit.h>
+#import "BaseWebVC.h"
 
 @interface CZInfiniteVC ()
-
+{
+    NSString *_webUrl;
+}
 @end
 
 @implementation CZInfiniteVC
 
 - (void)viewDidLoad {
+    
+    _webUrl = [NSString stringWithFormat:@"%@%@",h5Url(),H5_Infinite];
+    self.homeUrl = _webUrl;
+    self.webTitle = @"无限";
+    self.isPresent = NO;
     [super viewDidLoad];
     
     self.title = @"无限";

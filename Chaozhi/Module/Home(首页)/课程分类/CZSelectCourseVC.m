@@ -36,7 +36,7 @@
     self.tableView.dataSource = self;
     self.tableView.backgroundColor = TableViewDefaultBGColor;
     self.tableView.separatorColor = RGBValue(0xE0E0E1);
-    self.tableView.separatorInset = UIEdgeInsetsMake(0, 15, 0, 15);
+    self.tableView.separatorInset = UIEdgeInsetsMake(0, autoScaleW(20), 0, autoScaleW(20));
     self.tableView.tableFooterView = [UIView new];
     [self.view addSubview:self.tableView];
 }

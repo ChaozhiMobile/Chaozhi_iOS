@@ -17,4 +17,10 @@
              };
 }
 
+- (void)setImg:(NSString *)img {
+    if (_img != img) {
+        _img = [NSString stringWithFormat:@"http:%@",img];
+    }
+}
+
 @end
