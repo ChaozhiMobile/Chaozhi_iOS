@@ -203,7 +203,7 @@
         _teacherViewHContraints.constant = 0;
         return;
     }
-    _teacherViewHContraints.constant = 370;
+    _teacherViewHContraints.constant = 335;
     HomeTeacherItem *teacherItem1,*teacherItem2;
     _goldTeaImgView1.image = nil;
     _goldTeaNameLB1.text = @"";
