@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		205FDB2F216F20C0001BE2C6 /* HomeInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FDB2E216F20C0001BE2C6 /* HomeInfoItem.m */; };
 		205FDB3321763DBE001BE2C6 /* CZGuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FDB3221763DBE001BE2C6 /* CZGuideVC.m */; };
+		208B695B2185903700B263FB /* TeacherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 208B695A2185903700B263FB /* TeacherView.xib */; };
 		94DF1E58ABC326A19CE0832D /* libPods-Chaozhi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B55762E2478093A57AE66667 /* libPods-Chaozhi.a */; };
 		A00FA9D82168C26900F4DA5B /* CZSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9D72168C26900F4DA5B /* CZSettingVC.m */; };
 		A00FA9DC2169DB0000F4DA5B /* CZSelectCourseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9DB2169DB0000F4DA5B /* CZSelectCourseVC.m */; };
@@ -121,6 +122,7 @@
 		205FDB2E216F20C0001BE2C6 /* HomeInfoItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeInfoItem.m; sourceTree = "<group>"; };
 		205FDB3121763DBE001BE2C6 /* CZGuideVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZGuideVC.h; sourceTree = "<group>"; };
 		205FDB3221763DBE001BE2C6 /* CZGuideVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZGuideVC.m; sourceTree = "<group>"; };
+		208B695A2185903700B263FB /* TeacherView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeacherView.xib; sourceTree = "<group>"; };
 		A00FA9D62168C26900F4DA5B /* CZSettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZSettingVC.h; sourceTree = "<group>"; };
 		A00FA9D72168C26900F4DA5B /* CZSettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZSettingVC.m; sourceTree = "<group>"; };
 		A00FA9DA2169DB0000F4DA5B /* CZSelectCourseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZSelectCourseVC.h; sourceTree = "<group>"; };
@@ -768,6 +770,7 @@
 			children = (
 				A0599A1A21574CAF00D17058 /* CZHomeVC.h */,
 				A0599A1921574CAF00D17058 /* CZHomeVC.m */,
+				208B695A2185903700B263FB /* TeacherView.xib */,
 				A00FA9D92169DAC500F4DA5B /* 课程分类 */,
 			);
 			path = "Home(首页)";
@@ -919,6 +922,7 @@
 				A00FA9E1216A09EA00F4DA5B /* MyStudyView.xib in Resources */,
 				A020B04B214AAB150011BB4F /* README.md in Resources */,
 				A020B030214AAB150011BB4F /* ic_refresh_image_023@2x.png in Resources */,
+				208B695B2185903700B263FB /* TeacherView.xib in Resources */,
 				A020B043214AAB150011BB4F /* ic_refresh_image_014@2x.png in Resources */,
 				A020B04C214AAB150011BB4F /* LaunchScreen.storyboard in Resources */,
 				A020B04A214AAB150011BB4F /* README.md in Resources */,
@@ -1180,8 +1184,9 @@
 			baseConfigurationReference = 0AF6FC5BB1D601461F72C62C /* Pods-Chaozhi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = KPJVYXL9VV;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1196,8 +1201,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.czjy.chaozhi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9deb219c-741b-42b5-bd0c-4d8588c9f1ea";
-				PROVISIONING_PROFILE_SPECIFIER = CZJYDev;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1207,8 +1212,9 @@
 			baseConfigurationReference = 204F3265086F4B67483EF547 /* Pods-Chaozhi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = KPJVYXL9VV;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1223,8 +1229,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.czjy.chaozhi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9deb219c-741b-42b5-bd0c-4d8588c9f1ea";
-				PROVISIONING_PROFILE_SPECIFIER = CZJYDev;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

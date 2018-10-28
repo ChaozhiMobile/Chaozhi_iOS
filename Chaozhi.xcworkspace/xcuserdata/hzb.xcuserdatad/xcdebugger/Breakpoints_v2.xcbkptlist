@@ -106,12 +106,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Chaozhi/Module/Study(&#x5b66;&#x4e60;)/CZStudyVC.m"
-            timestampString = "561734098.820269"
+            timestampString = "562402820.951557"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "144"
             endingLineNumber = "144"
-            landmarkName = "-refreshUI"
+            landmarkName = "-zhiboAction:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

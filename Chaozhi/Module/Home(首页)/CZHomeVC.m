@@ -11,6 +11,8 @@
 #import <SDCycleScrollView.h>
 #import "HomeInfoItem.h"
 
+#define TEACHERNUM 2.1
+
 @implementation DayNewTabCell
 @end
 
@@ -44,6 +46,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *newsTabView;
 @property (weak, nonatomic) IBOutlet UIButton *showMorePublicCourseAction;
 
+@property (weak, nonatomic) IBOutlet UIScrollView *teacherScroView;
 - (IBAction)showMoreCourseAction:(UIButton *)sender;
 - (IBAction)showPublicCourseAction:(id)sender;
 - (IBAction)showActivityDetailAction:(id)sender;
@@ -85,6 +88,7 @@
         vc.selectCourseBlock = ^(CourseItem *item) {
             NSLog(@"选择课程ID: %@",item.ID);
             weakSelf.page = 1;
+            weakSelf.bgScrollView.contentOffset = CGPointMake(0, 0);
             [self requestCourseData];
         };
         [self.navigationController pushViewController:vc animated:YES];
@@ -199,36 +203,59 @@
 }
 
 - (void)refreshTeacherUI{
+    [_teacherScroView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     if (_categoryItems.teacher_list.count==0) {
+//        _teacherScroView.superview.clipsToBounds = YES;
         _teacherViewHContraints.constant = 0;
         return;
     }
-    _teacherViewHContraints.constant = 335;
-    HomeTeacherItem *teacherItem1,*teacherItem2;
-    _goldTeaImgView1.image = nil;
-    _goldTeaNameLB1.text = @"";
-    _goldTeaTypeLB1.text = @"";
-    _goldTeaImgView2.image = nil;
-    _goldTeaNameLB2.text = @"";
-    _goldTeaTypeLB2.text = @"";
-    for (NSInteger i = 0; i < MIN(2, _categoryItems.teacher_list.count); i ++) {
-        switch (i) {
-            case 0:
-                teacherItem1 = [_categoryItems.teacher_list firstObject];
-                [_goldTeaImgView1 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",teacherItem1.photo]] placeholderImage:[UIImage imageNamed:@"default_rectangle_img"]];
-                _goldTeaNameLB1.text = teacherItem1.name;
-                _goldTeaTypeLB1.text = teacherItem1.info;
-                break;
-            case 1:
-                teacherItem2 = _categoryItems.teacher_list[1];
-                [_goldTeaImgView2 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",teacherItem2.photo]] placeholderImage:[UIImage imageNamed:@"default_rectangle_img"]];
-                _goldTeaNameLB2.text = teacherItem2.name;
-                _goldTeaTypeLB2.text = teacherItem2.info;
-                break;
-            default:
-                break;
-        }
+    _teacherScroView.contentOffset = CGPointMake(0, 0);
+    NSInteger count = _categoryItems.teacher_list.count;
+    CGFloat blankSpace = 15;
+    NSInteger num = TEACHERNUM;
+    CGFloat viewWidth = (WIDTH-blankSpace*(num+1))/TEACHERNUM;
+    CGFloat viewHeight = viewWidth*1.176+10+20*5;
+    _teacherViewHContraints.constant = viewHeight+40;
+    _teacherScroView.contentSize = CGSizeMake((blankSpace*(count+1))+viewWidth*count,0);
+    _teacherViewHContraints.constant = viewHeight+40;
+    for (NSInteger i = 0; i < count; i ++) {
+        HomeTeacherItem *teacherItem = _categoryItems.teacher_list[i];
+        UIView *view = [[[NSBundle mainBundle]loadNibNamed:@"TeacherView" owner:self options:nil]firstObject];
+        view.frame = CGRectMake(blankSpace*(i+1)+viewWidth*i, 0, viewWidth, viewHeight);
+        UIImageView *img = [view viewWithTag:1];
+        [img sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",teacherItem.photo]] placeholderImage:[UIImage imageNamed:@"default_rectangle_img"]];
+        UILabel *nameLB = [view viewWithTag:2];
+        nameLB.text = teacherItem.name;
+        UILabel *detailLB = [view viewWithTag:3];
+        detailLB.text = teacherItem.info;
+        [_teacherScroView addSubview:view];
+
     }
+//    HomeTeacherItem *teacherItem1,*teacherItem2;
+//    _goldTeaImgView1.image = nil;
+//    _goldTeaNameLB1.text = @"";
+//    _goldTeaTypeLB1.text = @"";
+//    _goldTeaImgView2.image = nil;
+//    _goldTeaNameLB2.text = @"";
+//    _goldTeaTypeLB2.text = @"";
+//    for (NSInteger i = 0; i < MIN(2, _categoryItems.teacher_list.count); i ++) {
+//        switch (i) {
+//            case 0:
+//                teacherItem1 = [_categoryItems.teacher_list firstObject];
+//                [_goldTeaImgView1 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",teacherItem1.photo]] placeholderImage:[UIImage imageNamed:@"default_rectangle_img"]];
+//                _goldTeaNameLB1.text = teacherItem1.name;
+//                _goldTeaTypeLB1.text = teacherItem1.info;
+//                break;
+//            case 1:
+//                teacherItem2 = _categoryItems.teacher_list[1];
+//                [_goldTeaImgView2 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",teacherItem2.photo]] placeholderImage:[UIImage imageNamed:@"default_rectangle_img"]];
+//                _goldTeaNameLB2.text = teacherItem2.name;
+//                _goldTeaTypeLB2.text = teacherItem2.info;
+//                break;
+//            default:
+//                break;
+//        }
+//    }
 }
 
 - (void)refreshVedioUI{
