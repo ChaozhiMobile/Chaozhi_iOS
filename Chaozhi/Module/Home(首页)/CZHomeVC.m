@@ -11,7 +11,7 @@
 #import <SDCycleScrollView.h>
 #import "HomeInfoItem.h"
 
-#define TEACHERNUM 2.1
+#define TEACHERNUM 2.5
 
 @implementation DayNewTabCell
 @end
