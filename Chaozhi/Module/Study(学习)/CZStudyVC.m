@@ -8,6 +8,7 @@
 
 #import "CZStudyVC.h"
 #import "StudyInfoItem.h"
+#import "CZNotDataView.h"
 
 @implementation StudyCourseCell
 @end
@@ -16,6 +17,9 @@
 {
     NSInteger currentPage;
 }
+
+@property (nonatomic,retain) CZNotDataView *notDataView; //无数据视图
+
 @property (weak, nonatomic) IBOutlet UIView *statusBarView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *statusBarHConstraint;
 @property (weak, nonatomic) IBOutlet UIPageControl *coursePageControl;
@@ -48,14 +52,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     _tabHeightConstraint.constant = 3*60;
     _statusBarHConstraint.constant = kStatusBarH;
+    
 //    __weak typeof(self) weakSelf = self;
 //    _bgScroView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
 //        [weakSelf getData];
 //    }];
     
+    [self blankView];
+    
     [self getData];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getData) name:kLoginSuccNotification object:nil]; //登录成功通知
 }
 
 #pragma mark - get data
@@ -75,16 +85,26 @@
         if (status == Request_Success) {
             self.dataArr = [StudyInfoItem mj_objectArrayWithKeyValuesArray:(NSArray *)responseData];
             if (self.dataArr.count>0) {
+                weakSelf.notDataView.hidden = YES;
+                weakSelf.studyTabView.hidden = NO;
                 [self initView];
                 [self refreshUI];
             } else {
-                
+                weakSelf.studyTabView.hidden = YES;
+                weakSelf.notDataView.hidden = NO;
             }
         }
     }];
 }
 
 #pragma mark - init view
+
+// 无数据视图
+- (void)blankView {
+    _notDataView = [[CZNotDataView alloc] initWithFrame:CGRectMake(0, kNavBarH, WIDTH, HEIGHT-kNavBarH-kTabBarH)];
+    _notDataView.hidden = YES;
+    [self.view addSubview:_notDataView];
+}
 
 - (void)initView {
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
