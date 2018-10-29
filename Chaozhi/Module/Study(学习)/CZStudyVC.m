@@ -74,8 +74,12 @@
         }
         if (status == Request_Success) {
             self.dataArr = [StudyInfoItem mj_objectArrayWithKeyValuesArray:(NSArray *)responseData];
-            [self initView];
-            [self refreshUI];
+            if (self.dataArr.count>0) {
+                [self initView];
+                [self refreshUI];
+            } else {
+                
+            }
         }
     }];
 }
@@ -134,28 +138,28 @@
 // 录播课程点击
 - (IBAction)luboAction:(id)sender {
     StudyInfoItem *items = _dataArr[currentPage];
-    NSString *tikuStr = [NSString stringWithFormat:@"%@/%@",H5_Video,items.product_id];
+    NSString *tikuStr = [NSString stringWithFormat:@"%@%@",H5_Video,items.product_id];
     [BaseWebVC showWithContro:self withUrlStr:tikuStr withTitle:@"" isPresent:NO];
 }
 
 // 直播课程
 - (IBAction)zhiboAction:(id)sender {
     StudyInfoItem *items = _dataArr[currentPage];
-    NSString *tikuStr = [NSString stringWithFormat:@"%@/%@",H5_Live,items.product_id];
+    NSString *tikuStr = [NSString stringWithFormat:@"%@%@",H5_Live,items.product_id];
     [BaseWebVC showWithContro:self withUrlStr:tikuStr withTitle:@"" isPresent:NO];
 }
 
 // 资料库
 - (IBAction)ziliaokuAction:(id)sender {
     StudyInfoItem *items = _dataArr[currentPage];
-    NSString *tikuStr = [NSString stringWithFormat:@"%@/%@",H5_Doc,items.product_id];
+    NSString *tikuStr = [NSString stringWithFormat:@"%@%@",H5_Doc,items.product_id];
     [BaseWebVC showWithContro:self withUrlStr:tikuStr withTitle:@"" isPresent:NO];
 }
 
 // 题库
 - (IBAction)tikuAction:(id)sender {
     StudyInfoItem *items = _dataArr[currentPage];
-    NSString *tikuStr = [NSString stringWithFormat:@"%@/%@",H5_Question,items.product_id];
+    NSString *tikuStr = [NSString stringWithFormat:@"%@%@",H5_Question,items.product_id];
     [BaseWebVC showWithContro:self withUrlStr:tikuStr withTitle:@"" isPresent:NO];
 }
 

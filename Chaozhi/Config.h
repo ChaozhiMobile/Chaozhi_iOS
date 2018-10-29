@@ -40,10 +40,17 @@ NSString *h5Url(void);
 #define H5_Message @"#/hybrid/message" //我的-我的消息
 #define H5_Coupon @"#/hybrid/coupon" //我的-我的优惠券
 #define H5_Feedback @"#/hybrid/feedback" //我的-问题反馈
-#define H5_Question @"#/hybrid/study/library" //学习-题库
-#define H5_Doc @"#/hybrid/study/doc" //学习-资料
-#define H5_Live @"#/hybrid/study/live" //学习-直播
-#define H5_Video @"#/hybrid/study/video" //学习-录播
+
+#define H5_Question @"#/hybrid/study/library/" //学习-题库【学习课程id】
+#define H5_Doc @"#/hybrid/study/doc/" //学习-资料【学习课程id】
+#define H5_Live @"#/hybrid/study/live/" //学习-直播【学习课程id】
+#define H5_Video @"#/hybrid/study/video/" //学习-录播【学习课程id】
+
 #define H5_Infinite @"#/hybrid/Infinite" //无限
+
+#define H5_InfiniteNews @"#/hybrid/infinite/news/" //首页-每日新知【新知id】
+#define H5_StoreProduct @"#/hybrid/store/product/" //首页-课程【课程id】
+#define H5_Store @"#/hybrid/store/" //首页-推荐课程列表【课程分类id】
+#define H5_Demo @"#/hybrid/demo/" //首页-公开课列表【课程分类id】
 
 @end

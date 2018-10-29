@@ -168,7 +168,6 @@
     }
 }
 
-
 #pragma mark - methods
 //课程分类
 - (IBAction)selectCourseAction:(id)sender {
@@ -180,6 +179,8 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+#pragma mark - Banner
+
 - (void)refreshBannerUI{
     NSMutableArray *bannerImgUrlArr = [NSMutableArray array];
     for (NSInteger i = 0; i < _homeItem.banner_list.count; i ++) {
@@ -189,6 +190,8 @@
     }
     _bannerView.imageURLStringsGroup = bannerImgUrlArr;
 }
+
+#pragma mark - 精彩活动
 
 - (void)refreshActivityUI{
     if (_homeItem.activity_list.count==0) {
@@ -202,10 +205,11 @@
     _activityContentLB.text = activityItem.subtitle;
 }
 
+#pragma mark - 金牌讲师
+
 - (void)refreshTeacherUI{
     [_teacherScroView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     if (_categoryItems.teacher_list.count==0) {
-//        _teacherScroView.superview.clipsToBounds = YES;
         _teacherViewHContraints.constant = 0;
         return;
     }
@@ -221,6 +225,7 @@
     for (NSInteger i = 0; i < count; i ++) {
         HomeTeacherItem *teacherItem = _categoryItems.teacher_list[i];
         UIView *view = [[[NSBundle mainBundle]loadNibNamed:@"TeacherView" owner:self options:nil]firstObject];
+        view.tag = 1000+i;
         view.frame = CGRectMake(blankSpace*(i+1)+viewWidth*i, 0, viewWidth, viewHeight);
         UIImageView *img = [view viewWithTag:1];
         [img sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",teacherItem.photo]] placeholderImage:[UIImage imageNamed:@"default_rectangle_img"]];
@@ -229,33 +234,15 @@
         UILabel *detailLB = [view viewWithTag:3];
         detailLB.text = teacherItem.info;
         [_teacherScroView addSubview:view];
-
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jumpTeacherDetail:)];
+        [view addGestureRecognizer:tap];
     }
-//    HomeTeacherItem *teacherItem1,*teacherItem2;
-//    _goldTeaImgView1.image = nil;
-//    _goldTeaNameLB1.text = @"";
-//    _goldTeaTypeLB1.text = @"";
-//    _goldTeaImgView2.image = nil;
-//    _goldTeaNameLB2.text = @"";
-//    _goldTeaTypeLB2.text = @"";
-//    for (NSInteger i = 0; i < MIN(2, _categoryItems.teacher_list.count); i ++) {
-//        switch (i) {
-//            case 0:
-//                teacherItem1 = [_categoryItems.teacher_list firstObject];
-//                [_goldTeaImgView1 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",teacherItem1.photo]] placeholderImage:[UIImage imageNamed:@"default_rectangle_img"]];
-//                _goldTeaNameLB1.text = teacherItem1.name;
-//                _goldTeaTypeLB1.text = teacherItem1.info;
-//                break;
-//            case 1:
-//                teacherItem2 = _categoryItems.teacher_list[1];
-//                [_goldTeaImgView2 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",teacherItem2.photo]] placeholderImage:[UIImage imageNamed:@"default_rectangle_img"]];
-//                _goldTeaNameLB2.text = teacherItem2.name;
-//                _goldTeaTypeLB2.text = teacherItem2.info;
-//                break;
-//            default:
-//                break;
-//        }
-//    }
+}
+
+- (void)jumpTeacherDetail:(UITapGestureRecognizer *)tap {
+    UIView *view = tap.view;
+    NSInteger index = view.tag - 1000;
 }
 
 - (void)refreshVedioUI{
@@ -323,6 +310,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DayNewTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DayNewTabCellID"];
+//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     HomeNewsItem *item = _newsDatsSource[indexPath.row];
     [cell.dayNewIconImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",item.img]] placeholderImage:[UIImage imageNamed:@"default_square_img"]];
     cell.dayNewTitleLB.text = item.title;
@@ -332,6 +320,14 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 100;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    HomeNewsItem *item = _newsDatsSource[indexPath.row];
+    [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_InfiniteNews,item.ID] withTitle:@"" isPresent:NO];
 }
 
 - (void)didReceiveMemoryWarning {

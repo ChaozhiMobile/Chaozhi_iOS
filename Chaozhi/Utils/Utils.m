@@ -166,6 +166,7 @@ static Utils *_utils = nil;
 + (void)logout:(BOOL)isJumpLoginVC {
     
     [[UserInfo share] setUserInfo:nil]; //清除用户信息
+    
     if (isJumpLoginVC==YES) {
         //跳转到登录页面
         UIViewController *vc = [Utils getViewController:@"Main" WithVCName:@"CZLoginVC"];
