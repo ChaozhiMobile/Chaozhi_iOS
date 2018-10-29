@@ -161,7 +161,7 @@
     
     // 判断网页是否可以后退
     NSInteger webCount = self.webView.backForwardList.backList.count;
-    if (webCount<=1 || ![self.webView canGoBack]) {
+    if (webCount<1 || ![self.webView canGoBack]) {
         if (self.isPresent==YES) {
             [self dismissViewControllerAnimated:YES completion:nil];
         } else {
