@@ -191,7 +191,19 @@
         NSDictionary *dic = message.body;
         if ([dic[@"type"] isEqualToString:@"web"]) {
             NSString *url = dic[@"url"];
+            // 跳转新的H5页面
             [BaseWebVC showWithContro:self withUrlStr:url withTitle:@"" isPresent:NO];
+        }
+        if ([dic[@"type"] isEqualToString:@"app"]) {
+            NSString *to = dic[@"to"];
+            if ([to isEqualToString:@"home"]) {
+                // 跳转到首页
+                [self.navigationController popToRootViewControllerAnimated:YES];
+            }
+            if ([to isEqualToString:@"login"]) {
+                // 跳转到登录
+                [Utils isLoginWithJump:YES];
+            }
         }
     }
     
