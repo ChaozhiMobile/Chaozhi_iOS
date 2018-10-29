@@ -1462,6 +1462,9 @@
                                                 <state key="normal" title="查看更多&gt;">
                                                     <color key="titleColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="showMorePublicCourseAction:" destination="Hs7-22-wqW" eventType="touchUpInside" id="7ad-BX-hTN"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1562,7 +1565,7 @@
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eo3-sw-2ur">
                                         <rect key="frame" x="0.0" y="737" width="375" height="335"/>
                                         <subviews>
-                                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LYY-aQ-FKm">
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LYY-aQ-FKm">
                                                 <rect key="frame" x="0.0" y="5" width="375" height="30"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="Od4-HN-7AB">
@@ -1586,7 +1589,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="vqw-5A-cQK"/>
                                                 </constraints>
                                             </view>
-                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kGE-EL-kMR">
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kGE-EL-kMR">
                                                 <rect key="frame" x="0.0" y="40" width="375" height="295"/>
                                             </scrollView>
                                         </subviews>
@@ -1786,6 +1789,8 @@
                         <outlet property="courseTeaNameLB1" destination="3yY-vg-oJN" id="0fw-z7-HZc"/>
                         <outlet property="courseTeaNameLB2" destination="M28-Wh-Wj6" id="fjf-LD-QWI"/>
                         <outlet property="courseViewHConstraint" destination="ODi-td-Egy" id="dB0-GV-atI"/>
+                        <outlet property="favCourseLeftView" destination="vy8-VX-Hc5" id="oo5-vZ-IyL"/>
+                        <outlet property="favCourseRightView" destination="lhN-YN-1l1" id="uti-eC-rks"/>
                         <outlet property="lastViewHConstraints" destination="d3l-5a-Ex9" id="Nk6-qx-I6u"/>
                         <outlet property="newsTabView" destination="nXk-qZ-kct" id="eUg-ie-r2w"/>
                         <outlet property="publicCourseImgView" destination="fMJ-0T-zIJ" id="KQ9-tL-pKI"/>

@@ -25,8 +25,12 @@
 @property (nonatomic , retain) HomeCategoryItem *categoryItems;;
 @property (nonatomic , retain) HomeNewsListItem *newsItems;;
 @property (nonatomic , retain) NSMutableArray <HomeNewsItem *> *newsDatsSource;
+@property (nonatomic , retain) HomeFeatureProductItem *feaCourseItem1,*feaCourseItem2;
+
 @property (weak, nonatomic) IBOutlet UIScrollView *bgScrollView;
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *bannerView;
+@property (weak, nonatomic) IBOutlet UIView *favCourseLeftView;
+@property (weak, nonatomic) IBOutlet UIView *favCourseRightView;
 @property (weak, nonatomic) IBOutlet UIImageView *courseImgView1;
 @property (weak, nonatomic) IBOutlet UILabel *courseTeaNameLB1;
 @property (weak, nonatomic) IBOutlet UIImageView *courseImgView2;
@@ -268,7 +272,6 @@
         return;
     }
     _courseViewHConstraint.constant = 210;
-    HomeFeatureProductItem *feaCourseItem1,*feaCourseItem2;
     _courseImgView1.image = nil;
     _courseTeaNameLB1.text = @"";
     _courseImgView1.image = nil;
@@ -276,15 +279,24 @@
     for (NSInteger i = 0; i < MIN(2, _categoryItems.feature_product_list.count); i ++) {
         switch (i) {
             case 0:
-                feaCourseItem1 = [_categoryItems.feature_product_list firstObject];
-                [_courseImgView1 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",feaCourseItem1.img]] placeholderImage:[UIImage imageNamed:@"default_rectangle_img"]];
-                _courseTeaNameLB1.text = feaCourseItem1.name;
+            {
+                _feaCourseItem1 = [_categoryItems.feature_product_list firstObject];
+                [_courseImgView1 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",_feaCourseItem1.img]] placeholderImage:[UIImage imageNamed:@"default_rectangle_img"]];
+                _courseTeaNameLB1.text = _feaCourseItem1.name;
+                
+                UITapGestureRecognizer *leftTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(favCourseLeftAction)];
+                [_favCourseLeftView addGestureRecognizer:leftTap];
+            }
                 break;
             case 1:
-                feaCourseItem2 = _categoryItems.feature_product_list[1];
-                [_courseImgView2 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",feaCourseItem2.img]] placeholderImage:[UIImage imageNamed:@"default_rectangle_img"]];
-                _courseTeaNameLB2.text = feaCourseItem2.name;
+            {
+                _feaCourseItem2 = _categoryItems.feature_product_list[1];
+                [_courseImgView2 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",_feaCourseItem2.img]] placeholderImage:[UIImage imageNamed:@"default_rectangle_img"]];
+                _courseTeaNameLB2.text = _feaCourseItem2.name;
 
+                UITapGestureRecognizer *rightTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(favCourseRightAction)];
+                [_favCourseRightView addGestureRecognizer:rightTap];
+            }
                 break;
             default:
                 break;
@@ -292,14 +304,35 @@
     }
 }
 
-- (IBAction)showMoreCourseAction:(UIButton *)sender {
-    
+// 推荐课程左点击
+- (void)favCourseLeftAction {
+    [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_StoreProduct,_feaCourseItem1.ID] withTitle:@"" isPresent:NO];
 }
 
+// 推荐课程右点击
+- (void)favCourseRightAction {
+    [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_StoreProduct,_feaCourseItem2.ID] withTitle:@"" isPresent:NO];
+}
+
+// 推荐课程-查看更多
+- (IBAction)showMoreCourseAction:(UIButton *)sender {
+    
+    NSString *selectCourseID = [CacheUtil getCacherWithKey:kSelectCourseIDKey];
+    [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_Store,selectCourseID] withTitle:@"" isPresent:NO];
+}
+
+// 马上试听
 - (IBAction)showPublicCourseAction:(id)sender {
 
 }
 
+// 我们的公开课-查看更多
+- (IBAction)showMorePublicCourseAction:(id)sender {
+    NSString *selectCourseID = [CacheUtil getCacherWithKey:kSelectCourseIDKey];
+    [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_Demo,selectCourseID] withTitle:@"" isPresent:NO];
+}
+
+// 精彩活动
 - (IBAction)showActivityDetailAction:(id)sender {
     
 }
