@@ -148,6 +148,7 @@
         [_userContentController addScriptMessageHandler:delegateController name:@"login"]; //登录
         [_userContentController addScriptMessageHandler:delegateController name:@"refresh"]; //刷新
         [_userContentController addScriptMessageHandler:delegateController name:@"open"]; //打开新页面
+        [_userContentController addScriptMessageHandler:delegateController name:@"close"]; //关闭当前页面
     }
     return _webView;
 }
@@ -204,6 +205,14 @@
                 // 跳转到登录
                 [Utils isLoginWithJump:YES];
             }
+        }
+    }
+    
+    if ([message.name isEqualToString:@"close"]) { //关闭当前页面
+        if (self.isPresent==YES) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        } else {
+            [self.navigationController popViewControllerAnimated:YES];
         }
     }
     
@@ -329,6 +338,7 @@
     [_webView removeObserver:self forKeyPath:@"title"];
     [_webView.scrollView removeObserver:self forKeyPath:@"contentOffset"];
     [_userContentController removeScriptMessageHandlerForName:@"open"];
+    [_userContentController removeScriptMessageHandlerForName:@"close"];
     [_userContentController removeScriptMessageHandlerForName:@"return"];
     [_userContentController removeScriptMessageHandlerForName:@"login"];
     [_userContentController removeScriptMessageHandlerForName:@"refresh"];
