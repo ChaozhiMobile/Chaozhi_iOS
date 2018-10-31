@@ -54,10 +54,10 @@
 - (IBAction)showMoreCourseAction:(UIButton *)sender;
 - (IBAction)showPublicCourseAction:(id)sender;
 - (IBAction)showActivityDetailAction:(id)sender;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *courseViewHConstraint;//默认210
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *publicViewHConstraint;//默认170
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *courseViewHConstraint;//默认220
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *publicViewHConstraint;//默认200
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *activityViewHContraints;//默认140
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *activityViewHContraints;//默认270
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *teacherViewHContraints;//默认220
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *lastViewHConstraints;
 
@@ -200,9 +200,11 @@
 - (void)refreshActivityUI{
     if (_homeItem.activity_list.count==0) {
         _activityViewHContraints.constant = 0;
+        _activityTitleLB.superview.clipsToBounds = YES;
         return;
     }
-    _activityViewHContraints.constant = 140;
+    _activityTitleLB.superview.clipsToBounds = NO;
+    _activityViewHContraints.constant = 270;
     HomeActivityItem *activityItem = [_homeItem.activity_list firstObject];
     _activityTitleLB.text = activityItem.title;
     [_activityImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",activityItem.img]] placeholderImage:[UIImage imageNamed:@"default_rectangle_img"]];
@@ -254,7 +256,7 @@
         _publicViewHConstraint.constant = 0;
         return;
     }
-    _publicViewHConstraint.constant = 170;
+    _publicViewHConstraint.constant = 200;
     HomeTryVideoItem *tryVideoItem = [_categoryItems.try_video_list firstObject];
     _publicCourseImgView.image = nil;
     _publicTeaLB.text = @"";
@@ -271,7 +273,7 @@
         _courseViewHConstraint.constant = -10;
         return;
     }
-    _courseViewHConstraint.constant = 210;
+    _courseViewHConstraint.constant = 220;
     _courseImgView1.image = nil;
     _courseTeaNameLB1.text = @"";
     _courseImgView1.image = nil;
