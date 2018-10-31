@@ -149,7 +149,7 @@
             [weakSelf refreshTeacherUI];
         }];
         
-        [[NetworkManager sharedManager] postJSON:URL_NewsList parameters:@{@"category_id":@"",@"p":@(_page),@"offset":@"5",@"news_category_id":@""} completion:^(id responseData, RequestState status, NSError *error) {
+        [[NetworkManager sharedManager] postJSON:URL_NewsList parameters:@{@"category_id":selectCourseID,@"p":@(_page),@"offset":@"5",@"news_category_id":@""} completion:^(id responseData, RequestState status, NSError *error) {
 
             weakSelf.newsItems = [HomeNewsListItem yy_modelWithJSON:responseData];
             if (weakSelf.page==1) {
@@ -175,9 +175,11 @@
 #pragma mark - methods
 //课程分类
 - (IBAction)selectCourseAction:(id)sender {
+    __weak typeof(self) weakSelf = self;
     CZSelectCourseVC *vc = [[CZSelectCourseVC alloc] init];
     vc.hidesBottomBarWhenPushed = YES;
     vc.selectCourseBlock = ^(CourseItem *item) {
+        weakSelf.page = 1;
         [self requestCourseData];
     };
     [self.navigationController pushViewController:vc animated:YES];
@@ -325,8 +327,9 @@
 
 // 马上试听
 - (IBAction)showPublicCourseAction:(id)sender {
-    NSString *selectCourseID = [CacheUtil getCacherWithKey:kSelectCourseIDKey];
-    [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_Demo,selectCourseID] withTitle:@"" isPresent:NO];
+    
+    HomeTryVideoItem *tryVideoItem = [_categoryItems.try_video_list firstObject];
+    [BaseWebVC showWithContro:self withUrlStr:tryVideoItem.src withTitle:@"" isPresent:NO];
 }
 
 // 我们的公开课-查看更多

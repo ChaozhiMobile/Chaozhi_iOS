@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Chaozhi/Module/Home(&#x9996;&#x9875;)/CZHomeVC.m"
-            timestampString = "562650545.072365"
+            timestampString = "562667659.782289"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321"
+            startingLineNumber = "323"
+            endingLineNumber = "323"
             landmarkName = "-showMoreCourseAction:"
             landmarkType = "7">
          </BreakpointContent>
@@ -36,11 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Chaozhi/Module/Home(&#x9996;&#x9875;)/CZHomeVC.m"
-            timestampString = "562650545.072497"
+            timestampString = "562667659.782433"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "329"
-            endingLineNumber = "329"
+            startingLineNumber = "332"
+            endingLineNumber = "332"
             landmarkName = "-showPublicCourseAction:"
             landmarkType = "7">
          </BreakpointContent>
@@ -52,11 +52,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Chaozhi/Module/Home(&#x9996;&#x9875;)/CZHomeVC.m"
-            timestampString = "562650545.072576"
+            timestampString = "562667659.78254"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "339"
-            endingLineNumber = "339"
+            startingLineNumber = "342"
+            endingLineNumber = "342"
             landmarkName = "-showActivityDetailAction:"
             landmarkType = "7">
          </BreakpointContent>

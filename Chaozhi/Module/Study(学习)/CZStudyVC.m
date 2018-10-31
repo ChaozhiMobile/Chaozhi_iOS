@@ -32,9 +32,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *liveCourseTitleLB;
 @property (weak, nonatomic) IBOutlet UILabel *liveCourseTeacherLB;
 @property (weak, nonatomic) IBOutlet UILabel *liveStartTimeLB;
+@property (weak, nonatomic) IBOutlet UIButton *enterLiveBtn;
 @property (weak, nonatomic) IBOutlet UITableView *studyTabView;
+@property (weak, nonatomic) IBOutlet UILabel *studyCourseTipLab;
+@property (weak, nonatomic) IBOutlet UIView *studyCourseLineView;
 @property (weak, nonatomic) IBOutlet UIView *titleView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tabHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *studyCourseTipConstraint;
 
 @property (strong, nonatomic) NSArray <StudyInfoItem *>*dataArr;
 @property (strong, nonatomic) NSArray <LiveItem *>*liveArr;
@@ -204,6 +208,17 @@
     StudyInfoItem *items = _dataArr[currentPage];
     _liveArr = items.newest_info.live_list;
     _courseArr = items.newest_info.learn_course_list;
+    if (_courseArr.count==0) {
+        _studyCourseTipConstraint.constant = 50;
+        _studyCourseTipLab.text = @"您还没有开始学习，加油噢";
+        _studyCourseTipLab.textAlignment = NSTextAlignmentCenter;
+        _studyCourseLineView.hidden = YES;
+    } else {
+        _studyCourseTipConstraint.constant = 30;
+        _studyCourseTipLab.text = @"最新学习课程";
+        _studyCourseTipLab.textAlignment = NSTextAlignmentLeft;
+        _studyCourseLineView.hidden = NO;
+    }
     LiveItem *liveItems = _liveArr.firstObject;
     if (liveItems) {
 //        [_liveCourseIconImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",liveItems.]]];
@@ -211,6 +226,19 @@
         _liveCourseTitleLB.text = liveItems.live_name;
         _liveCourseTeacherLB.text = liveItems.teacher;
         _liveStartTimeLB.text = [NSString stringWithFormat:@"开始时间：%@",liveItems.live_st];
+        if ([liveItems.status isEqualToString:@"0"]) {
+            _enterLiveBtn.userInteractionEnabled = NO;
+            [_enterLiveBtn setTitle:@"即将开始" forState:UIControlStateNormal];
+            [_enterLiveBtn setTitleColor:RGBValue(0x7c7c7c) forState:UIControlStateNormal];
+            _enterLiveBtn.backgroundColor = kWhiteColor;
+            _enterLiveBtn.borderColor = RGBValue(0xF0F0F0);
+        } else { //进入直播
+            _enterLiveBtn.userInteractionEnabled = YES;
+            [_enterLiveBtn setTitle:@"进入直播" forState:UIControlStateNormal];
+            [_enterLiveBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
+            _enterLiveBtn.backgroundColor = AppThemeColor;
+            _enterLiveBtn.borderColor = [UIColor clearColor];
+        }
     }
     
     _tabHeightConstraint.constant = (MIN(_courseArr.count, 3))*60;
