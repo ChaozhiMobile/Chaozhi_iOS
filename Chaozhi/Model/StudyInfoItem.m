@@ -51,6 +51,12 @@
              };
 }
 
+- (void)setLive_url:(NSString *)live_url {
+    if (_live_url != live_url) {
+        _live_url = [NSString stringWithFormat:@"http:%@",live_url];
+    }
+}
+
 @end
 
 @implementation LearnCourseItem
@@ -59,6 +65,12 @@
     return @{
              @"ID":@"id",
              };
+}
+
+- (void)setView_url:(NSString *)view_url {
+    if (_view_url != view_url) {
+        _view_url = [NSString stringWithFormat:@"http:%@",view_url];
+    }
 }
 
 @end

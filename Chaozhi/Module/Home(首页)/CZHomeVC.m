@@ -55,7 +55,7 @@
 - (IBAction)showPublicCourseAction:(id)sender;
 - (IBAction)showActivityDetailAction:(id)sender;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *courseViewHConstraint;//默认220
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *publicViewHConstraint;//默认165
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *publicViewHConstraint;//默认180
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *activityViewHContraints;//默认270
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *teacherViewHContraints;//默认220
@@ -256,7 +256,7 @@
         _publicViewHConstraint.constant = 0;
         return;
     }
-    _publicViewHConstraint.constant = 165;
+    _publicViewHConstraint.constant = 180;
     HomeTryVideoItem *tryVideoItem = [_categoryItems.try_video_list firstObject];
     _publicCourseImgView.image = nil;
     _publicTeaLB.text = @"";
@@ -336,7 +336,8 @@
 
 // 精彩活动
 - (IBAction)showActivityDetailAction:(id)sender {
-    
+    HomeActivityItem *activityItem = [_homeItem.activity_list firstObject];
+    [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_InfiniteNews,activityItem.ID] withTitle:@"" isPresent:NO];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

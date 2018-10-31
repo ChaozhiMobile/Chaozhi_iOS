@@ -51,6 +51,6 @@ NSString *h5Url(void);
 #define H5_InfiniteNews @"#/hybrid/infinite/news/" //首页-每日新知【新知id】
 #define H5_StoreProduct @"#/hybrid/store/product/" //首页-课程【课程id】
 #define H5_Store @"#/hybrid/store/" //首页-推荐课程列表【课程分类id】
-#define H5_Demo @"#/hybrid/demo/" //首页-公开课列表【课程分类id】
+#define H5_Demo @"#/hybrid/demo/" //首页-公开课开始试听【课程分类id】
 
 @end
