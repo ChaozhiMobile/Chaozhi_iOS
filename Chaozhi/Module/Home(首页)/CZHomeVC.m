@@ -55,7 +55,7 @@
 - (IBAction)showPublicCourseAction:(id)sender;
 - (IBAction)showActivityDetailAction:(id)sender;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *courseViewHConstraint;//默认220
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *publicViewHConstraint;//默认200
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *publicViewHConstraint;//默认165
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *activityViewHContraints;//默认270
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *teacherViewHContraints;//默认220
@@ -256,7 +256,7 @@
         _publicViewHConstraint.constant = 0;
         return;
     }
-    _publicViewHConstraint.constant = 200;
+    _publicViewHConstraint.constant = 165;
     HomeTryVideoItem *tryVideoItem = [_categoryItems.try_video_list firstObject];
     _publicCourseImgView.image = nil;
     _publicTeaLB.text = @"";
@@ -325,13 +325,13 @@
 
 // 马上试听
 - (IBAction)showPublicCourseAction:(id)sender {
-
+    NSString *selectCourseID = [CacheUtil getCacherWithKey:kSelectCourseIDKey];
+    [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_Demo,selectCourseID] withTitle:@"" isPresent:NO];
 }
 
 // 我们的公开课-查看更多
 - (IBAction)showMorePublicCourseAction:(id)sender {
-    NSString *selectCourseID = [CacheUtil getCacherWithKey:kSelectCourseIDKey];
-    [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_Demo,selectCourseID] withTitle:@"" isPresent:NO];
+    
 }
 
 // 精彩活动
