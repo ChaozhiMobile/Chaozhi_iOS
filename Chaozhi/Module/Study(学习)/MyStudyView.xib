@@ -29,7 +29,7 @@
                     <color key="textColor" red="0.54901960780000003" green="0.60392156860000001" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default_ square_img" translatesAutoresizingMaskIntoConstraints="NO" id="4FC-rU-i44">
+                <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default_square_img" translatesAutoresizingMaskIntoConstraints="NO" id="4FC-rU-i44">
                     <rect key="frame" x="14" y="19" width="90" height="90"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -85,6 +85,6 @@
         </view>
     </objects>
     <resources>
-        <image name="default_ square_img" width="160" height="160"/>
+        <image name="default_square_img" width="80" height="80"/>
     </resources>
 </document>
