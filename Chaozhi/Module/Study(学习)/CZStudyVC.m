@@ -226,7 +226,14 @@
         _liveCourseTitleLB.text = liveItems.live_name;
         _liveCourseTeacherLB.text = liveItems.teacher;
         _liveStartTimeLB.text = [NSString stringWithFormat:@"开始时间：%@",liveItems.live_st];
-        if ([liveItems.status isEqualToString:@"0"]) {
+        if ([liveItems.status isEqualToString:@"-1"]) {
+            _enterLiveBtn.userInteractionEnabled = YES;
+            [_enterLiveBtn setTitle:@"查看回放" forState:UIControlStateNormal];
+            [_enterLiveBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
+            _enterLiveBtn.backgroundColor = AppThemeColor;
+            _enterLiveBtn.borderColor = [UIColor clearColor];
+        }
+        else if ([liveItems.status isEqualToString:@"0"]) {
             _enterLiveBtn.userInteractionEnabled = NO;
             [_enterLiveBtn setTitle:@"即将开始" forState:UIControlStateNormal];
             [_enterLiveBtn setTitleColor:RGBValue(0x7c7c7c) forState:UIControlStateNormal];
