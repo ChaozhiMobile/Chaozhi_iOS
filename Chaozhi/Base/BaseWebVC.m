@@ -124,6 +124,7 @@
         
         //配置环境
         WKWebViewConfiguration * configuration = [[WKWebViewConfiguration alloc]init];
+        configuration.allowsInlineMediaPlayback = true;
         _userContentController =[[WKUserContentController alloc]init];
         configuration.userContentController = _userContentController;
         _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, kNavBarH, WIDTH, HEIGHT-kNavBarH) configuration:configuration];
