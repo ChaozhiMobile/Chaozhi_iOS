@@ -54,10 +54,10 @@
 - (IBAction)showMoreCourseAction:(UIButton *)sender;
 - (IBAction)showPublicCourseAction:(id)sender;
 - (IBAction)showActivityDetailAction:(id)sender;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *courseViewHConstraint;//默认230
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *courseViewHConstraint;//默认240
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *publicViewHConstraint;//默认180
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *activityViewHContraints;//默认270
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *activityViewHContraints;//默认315
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *teacherViewHContraints;//默认220
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *lastViewHConstraints;
 
@@ -206,7 +206,7 @@
         return;
     }
     _activityTitleLB.superview.clipsToBounds = NO;
-    _activityViewHContraints.constant = 270;
+    _activityViewHContraints.constant = 315;
     HomeActivityItem *activityItem = [_homeItem.activity_list firstObject];
     _activityTitleLB.text = activityItem.title;
     [_activityImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",activityItem.img]] placeholderImage:[UIImage imageNamed:@"default_rectangle_img"]];
@@ -275,7 +275,7 @@
         _courseViewHConstraint.constant = -10;
         return;
     }
-    _courseViewHConstraint.constant = 230;
+    _courseViewHConstraint.constant = 240;
     _courseImgView1.image = nil;
     _courseTeaNameLB1.text = @"";
     _courseImgView1.image = nil;
