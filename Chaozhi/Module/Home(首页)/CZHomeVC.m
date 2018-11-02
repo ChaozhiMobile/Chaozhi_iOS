@@ -54,7 +54,7 @@
 - (IBAction)showMoreCourseAction:(UIButton *)sender;
 - (IBAction)showPublicCourseAction:(id)sender;
 - (IBAction)showActivityDetailAction:(id)sender;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *courseViewHConstraint;//默认220
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *courseViewHConstraint;//默认230
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *publicViewHConstraint;//默认180
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *activityViewHContraints;//默认270
@@ -275,7 +275,7 @@
         _courseViewHConstraint.constant = -10;
         return;
     }
-    _courseViewHConstraint.constant = 220;
+    _courseViewHConstraint.constant = 230;
     _courseImgView1.image = nil;
     _courseTeaNameLB1.text = @"";
     _courseImgView1.image = nil;
