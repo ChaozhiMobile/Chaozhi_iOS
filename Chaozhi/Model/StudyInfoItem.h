@@ -19,7 +19,7 @@
 @property (nonatomic, copy) NSString *product_name; //产品名称
 @property (nonatomic, copy) NSString *endtime; //支付时间
 @property (nonatomic, copy) NSString *product_img; //产品图片
-@property (nonatomic, copy) NSString *user_time; //上课总时长，单位分钟
+@property (nonatomic, copy) NSString *user_time; //上课节数，单位节
 @property (nonatomic, copy) NSString *user_question; //完成总题数
 @property (nonatomic, copy) NSString *product_sub_name; //产品副标题
 @property (nonatomic, retain) NewestInfoItem *newest_info; //课程最新信息

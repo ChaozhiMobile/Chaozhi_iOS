@@ -137,7 +137,7 @@
         UILabel *courseTypeLB = [view viewWithTag:4];
         courseTypeLB.text = item.product_sub_name;
         UILabel *courseDurationLB = [view viewWithTag:5];
-        courseDurationLB.text = [NSString stringWithFormat:@"%@分钟",item.user_time];
+        courseDurationLB.text = [NSString stringWithFormat:@"%@节",item.user_time];
         UILabel *courseSubjectLB =[view viewWithTag:6];
         courseSubjectLB.text = [NSString stringWithFormat:@"%@道",item.user_question];
         UIButton *viewBtn = [view viewWithTag:7];
