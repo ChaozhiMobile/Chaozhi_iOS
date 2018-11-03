@@ -285,7 +285,7 @@
             case 0:
             {
                 _feaCourseItem1 = [_categoryItems.feature_product_list firstObject];
-                [_courseImgView1 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",_feaCourseItem1.img]] placeholderImage:[UIImage imageNamed:@"default_rectangle_img"]];
+                [_courseImgView1 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",_feaCourseItem1.img]] placeholderImage:[UIImage imageNamed:@"default_course"]];
                 _courseTeaNameLB1.text = _feaCourseItem1.name;
                 
                 UITapGestureRecognizer *leftTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(favCourseLeftAction)];
@@ -295,7 +295,7 @@
             case 1:
             {
                 _feaCourseItem2 = _categoryItems.feature_product_list[1];
-                [_courseImgView2 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",_feaCourseItem2.img]] placeholderImage:[UIImage imageNamed:@"default_rectangle_img"]];
+                [_courseImgView2 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",_feaCourseItem2.img]] placeholderImage:[UIImage imageNamed:@"default_course"]];
                 _courseTeaNameLB2.text = _feaCourseItem2.name;
 
                 UITapGestureRecognizer *rightTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(favCourseRightAction)];
