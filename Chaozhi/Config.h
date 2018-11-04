@@ -40,6 +40,7 @@ NSString *h5Url(void);
 #define H5_Message @"#/hybrid/message" //我的-我的消息
 #define H5_Coupon @"#/hybrid/coupon" //我的-我的优惠券
 #define H5_Feedback @"#/hybrid/feedback" //我的-问题反馈
+#define H5_About @"#/hybrid/chaozhi/about" //我的-关于超职教育
 
 #define H5_Question @"#/hybrid/study/library/" //学习-题库【学习课程id】
 #define H5_Doc @"#/hybrid/study/doc/" //学习-资料【学习课程id】

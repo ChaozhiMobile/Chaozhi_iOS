@@ -42,7 +42,7 @@
 
 //关于超职教育
 - (void)aboutAction {
-    [BaseWebVC showWithContro:self withUrlStr:@"https://www.baidu.com/" withTitle:@"关于超职教育" isPresent:NO];
+    [BaseWebVC showWithContro:self withUrlStr:H5_About withTitle:@"关于超职教育" isPresent:NO];
 }
 
 //修改密码
