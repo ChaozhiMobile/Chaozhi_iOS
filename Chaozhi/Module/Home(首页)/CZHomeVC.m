@@ -166,7 +166,11 @@
             } else {
                 weakSelf.bgScrollView.mj_footer = nil;
             }
-            weakSelf.lastViewHConstraints.constant = 40 + weakSelf.newsDatsSource.count*100;
+            if (weakSelf.newsDatsSource.count>0) {
+                weakSelf.lastViewHConstraints.constant = 40 + weakSelf.newsDatsSource.count*100;
+            } else {
+                weakSelf.lastViewHConstraints.constant = 0;
+            }
             [weakSelf.newsTabView reloadData];
         }];
     }
