@@ -19,9 +19,29 @@
 
 @implementation HomeActivityItem
 
+- (void)setImg:(NSString *)img {
+    if (_img != img) {
+        if ([img containsString:@"http"]) {
+            _img = img;
+        } else {
+            _img = [NSString stringWithFormat:@"http:%@",img];
+        }
+    }
+}
+
 @end
 
 @implementation HomeBannerItem
+
+- (void)setImg:(NSString *)img {
+    if (_img != img) {
+        if ([img containsString:@"http"]) {
+            _img = img;
+        } else {
+            _img = [NSString stringWithFormat:@"http:%@",img];
+        }
+    }
+}
 
 @end
 
@@ -37,6 +57,16 @@
 
 @implementation HomeFeatureProductItem
 
+- (void)setImg:(NSString *)img {
+    if (_img != img) {
+        if ([img containsString:@"http"]) {
+            _img = img;
+        } else {
+            _img = [NSString stringWithFormat:@"http:%@",img];
+        }
+    }
+}
+
 @end
 
 @implementation HomeTryVideoItem
@@ -44,6 +74,16 @@
 @end
 
 @implementation HomeTeacherItem
+
+- (void)setPhoto:(NSString *)photo {
+    if (_photo != photo) {
+        if ([photo containsString:@"http"]) {
+            _photo = photo;
+        } else {
+            _photo = [NSString stringWithFormat:@"http:%@",photo];
+        }
+    }
+}
 
 @end
 
@@ -57,6 +97,16 @@
 @end
 
 @implementation  HomeNewsItem
+
+- (void)setImg:(NSString *)img {
+    if (_img != img) {
+        if ([img containsString:@"http"]) {
+            _img = img;
+        } else {
+            _img = [NSString stringWithFormat:@"http:%@",img];
+        }
+    }
+}
 
 @end
 

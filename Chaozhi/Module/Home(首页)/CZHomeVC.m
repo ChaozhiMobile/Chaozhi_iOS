@@ -195,8 +195,7 @@
     NSMutableArray *bannerImgUrlArr = [NSMutableArray array];
     for (NSInteger i = 0; i < _homeItem.banner_list.count; i ++) {
         HomeBannerItem *item = _homeItem.banner_list[i];
-        NSString *imgUrl = [NSString stringWithFormat:@"http:%@",item.img];
-        [bannerImgUrlArr addObject:imgUrl];
+        [bannerImgUrlArr addObject:item.img];
     }
     _bannerView.imageURLStringsGroup = bannerImgUrlArr;
 }
@@ -213,7 +212,7 @@
     _activityViewHContraints.constant = 315;
     HomeActivityItem *activityItem = [_homeItem.activity_list firstObject];
     _activityTitleLB.text = activityItem.title;
-    [_activityImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",activityItem.img]] placeholderImage:[UIImage imageNamed:@"default_rectangle_img"]];
+    [_activityImgView sd_setImageWithURL:[NSURL URLWithString:activityItem.img] placeholderImage:[UIImage imageNamed:@"default_rectangle_img"]];
     _activityContentLB.text = activityItem.subtitle;
 }
 
@@ -240,7 +239,7 @@
         view.tag = 1000+i;
         view.frame = CGRectMake(blankSpace*(i+1)+viewWidth*i, 0, viewWidth, viewHeight);
         UIImageView *img = [view viewWithTag:1];
-        [img sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",teacherItem.photo]] placeholderImage:[UIImage imageNamed:@"default_rectangle_img"]];
+        [img sd_setImageWithURL:[NSURL URLWithString:teacherItem.photo] placeholderImage:[UIImage imageNamed:@"default_rectangle_img"]];
         UILabel *nameLB = [view viewWithTag:2];
         nameLB.text = teacherItem.name;
         UILabel *detailLB = [view viewWithTag:3];
@@ -289,7 +288,7 @@
             case 0:
             {
                 _feaCourseItem1 = [_categoryItems.feature_product_list firstObject];
-                [_courseImgView1 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",_feaCourseItem1.img]] placeholderImage:[UIImage imageNamed:@"default_course"]];
+                [_courseImgView1 sd_setImageWithURL:[NSURL URLWithString:_feaCourseItem1.img] placeholderImage:[UIImage imageNamed:@"default_course"]];
                 _courseTeaNameLB1.text = _feaCourseItem1.name;
                 
                 UITapGestureRecognizer *leftTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(favCourseLeftAction)];
@@ -299,7 +298,7 @@
             case 1:
             {
                 _feaCourseItem2 = _categoryItems.feature_product_list[1];
-                [_courseImgView2 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",_feaCourseItem2.img]] placeholderImage:[UIImage imageNamed:@"default_course"]];
+                [_courseImgView2 sd_setImageWithURL:[NSURL URLWithString:_feaCourseItem2.img] placeholderImage:[UIImage imageNamed:@"default_course"]];
                 _courseTeaNameLB2.text = _feaCourseItem2.name;
 
                 UITapGestureRecognizer *rightTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(favCourseRightAction)];
@@ -355,7 +354,7 @@
     DayNewTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DayNewTabCellID"];
 //    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     HomeNewsItem *item = _newsDatsSource[indexPath.row];
-    [cell.dayNewIconImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",item.img]] placeholderImage:[UIImage imageNamed:@"default_square_img"]];
+    [cell.dayNewIconImgView sd_setImageWithURL:[NSURL URLWithString:item.img] placeholderImage:[UIImage imageNamed:@"default_square_img"]];
     cell.dayNewTitleLB.text = item.title;
     cell.dayNewContentLB.text = item.subtitle;
     return cell;

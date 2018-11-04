@@ -19,7 +19,11 @@
 
 - (void)setImg:(NSString *)img {
     if (_img != img) {
-        _img = [NSString stringWithFormat:@"http:%@",img];
+        if ([img containsString:@"http"]) {
+            _img = img;
+        } else {
+            _img = [NSString stringWithFormat:@"http:%@",img];
+        }
     }
 }
 

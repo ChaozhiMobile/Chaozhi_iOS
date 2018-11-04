@@ -181,8 +181,6 @@
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:NO];
     }
-    
-//    [BaseWebVC showWithContro:self withUrlStr:@"http://static.evcoming.com/vin-4-5/" withTitle:_nameArr[indexPath.row] isPresent:NO];
 }
 
 - (void)didReceiveMemoryWarning {

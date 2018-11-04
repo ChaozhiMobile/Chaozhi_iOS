@@ -46,7 +46,11 @@ static NSUserDefaults *_defaults = nil;
 
 - (void)setHead_img_url:(NSString *)head_img_url {
     if (_head_img_url != head_img_url) {
-        _head_img_url = [NSString stringWithFormat:@"http:%@",head_img_url];
+        if ([head_img_url containsString:@"http"]) {
+            _head_img_url = head_img_url;
+        } else {
+            _head_img_url = [NSString stringWithFormat:@"http:%@",head_img_url];
+        }
     }
 }
 
