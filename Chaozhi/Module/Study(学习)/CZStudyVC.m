@@ -224,7 +224,7 @@
 //        [_liveCourseIconImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",liveItems.]]];
         _liveCourseIconImgView.image = [UIImage imageNamed:@"default_live"];
         _liveCourseTitleLB.text = liveItems.live_name;
-        _liveCourseTeacherLB.text = liveItems.teacher;
+        _liveCourseTeacherLB.text = [NSString stringWithFormat:@"主讲讲师：%@",liveItems.teacher];
         _liveStartTimeLB.text = [NSString stringWithFormat:@"开始时间：%@",liveItems.live_st];
         if ([liveItems.status isEqualToString:@"-1"]) {
             _enterLiveBtn.userInteractionEnabled = YES;

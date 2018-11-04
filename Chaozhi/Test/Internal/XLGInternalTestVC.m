@@ -216,8 +216,8 @@
     if ([title isEqualToString:@"登录网络请求"]) {
         
         NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
-                             @"18268686511", @"phone",
-                             @"wang123", @"password",
+                             @"15068850958", @"phone",
+                             @"112233", @"password",
                              nil];
         [[NetworkManager sharedManager] postJSON:URL_Login parameters:dic imageDataArr:nil imageName:nil  completion:^(id responseData, RequestState status, NSError *error) {
             
