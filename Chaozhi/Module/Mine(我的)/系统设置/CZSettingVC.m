@@ -10,6 +10,7 @@
 
 @interface CZSettingVC ()
 
+
 @end
 
 @implementation CZSettingVC
@@ -27,6 +28,12 @@
     
     UITapGestureRecognizer *changePswTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changePswAction)];
     [self.changePswView addGestureRecognizer:changePswTap];
+    
+    _versionLab.text = [NSString stringWithFormat:@"V%@",AppVersion];
+    
+    NSMutableAttributedString *str = [[NSMutableAttributedString alloc]initWithString:_callPhoneBtn.titleLabel.text];;
+    [str addAttribute:NSForegroundColorAttributeName value:AppThemeColor range:NSMakeRange(5, _callPhoneBtn.titleLabel.text.length-5)];
+    _callPhoneBtn.titleLabel.attributedText = str;
 }
 
 #pragma mark - methods
@@ -49,6 +56,12 @@
 - (void)changePswAction {
     UIViewController *vc = [Utils getViewController:@"Main" WithVCName:@"CZForgetPswVC"];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+//拨打客服电话
+- (IBAction)callPhoneAction:(UIButton *)sender {
+    NSMutableString* str=[[NSMutableString alloc] initWithFormat:@"tel:%@",@"4006777098"];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
 }
 
 //退出登录
