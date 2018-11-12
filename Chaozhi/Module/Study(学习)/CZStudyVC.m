@@ -28,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UIView *topBGBackView;
 @property (weak, nonatomic) IBOutlet UIScrollView *bgScroView;
 
+@property (weak, nonatomic) IBOutlet UIView *liveCourseView;
 @property (weak, nonatomic) IBOutlet UIImageView *liveCourseIconImgView;
 @property (weak, nonatomic) IBOutlet UILabel *liveCourseTitleLB;
 @property (weak, nonatomic) IBOutlet UILabel *liveCourseTeacherLB;
@@ -39,6 +40,8 @@
 @property (weak, nonatomic) IBOutlet UIView *titleView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tabHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *studyCourseTipConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *liveCourseConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *studyCourseTipTopConstraint;
 
 @property (strong, nonatomic) NSArray <StudyInfoItem *>*dataArr;
 @property (strong, nonatomic) NSArray <LiveItem *>*liveArr;
@@ -209,8 +212,45 @@
     StudyInfoItem *items = _dataArr[currentPage];
     _liveArr = items.newest_info.live_list;
     _courseArr = items.newest_info.learn_course_list;
+    
+    if (_liveArr.count==0) {
+        _liveCourseView.hidden = YES;
+       _studyCourseTipTopConstraint.constant = 0; _liveCourseConstraint.constant = 0;
+    } else {
+        _studyCourseTipTopConstraint.constant = 10;
+        _liveCourseView.hidden = NO;
+        _liveCourseConstraint.constant = 150;
+        LiveItem *liveItems = _liveArr.firstObject;
+        if (liveItems) {
+            _liveCourseIconImgView.image = [UIImage imageNamed:@"default_live"];
+            _liveCourseTitleLB.text = liveItems.live_name;
+            _liveCourseTeacherLB.text = [NSString stringWithFormat:@"主讲讲师：%@",liveItems.teacher];
+            _liveStartTimeLB.text = [NSString stringWithFormat:@"开始时间：%@",liveItems.live_st];
+            if ([liveItems.status isEqualToString:@"-1"]) {
+                _enterLiveBtn.userInteractionEnabled = YES;
+                [_enterLiveBtn setTitle:@"查看回放" forState:UIControlStateNormal];
+                [_enterLiveBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
+                _enterLiveBtn.backgroundColor = AppThemeColor;
+                _enterLiveBtn.borderColor = [UIColor clearColor];
+            }
+            else if ([liveItems.status isEqualToString:@"0"]) {
+                _enterLiveBtn.userInteractionEnabled = NO;
+                [_enterLiveBtn setTitle:@"即将开始" forState:UIControlStateNormal];
+                [_enterLiveBtn setTitleColor:RGBValue(0x7c7c7c) forState:UIControlStateNormal];
+                _enterLiveBtn.backgroundColor = kWhiteColor;
+                _enterLiveBtn.borderColor = RGBValue(0xF0F0F0);
+            } else { //进入直播
+                _enterLiveBtn.userInteractionEnabled = YES;
+                [_enterLiveBtn setTitle:@"进入直播" forState:UIControlStateNormal];
+                [_enterLiveBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
+                _enterLiveBtn.backgroundColor = AppThemeColor;
+                _enterLiveBtn.borderColor = [UIColor clearColor];
+            }
+        }
+    }
     if (_courseArr.count==0) {
         _studyCourseTipConstraint.constant = 50;
+        
         _studyCourseTipLab.text = @"您还没有开始学习，加油噢";
         _studyCourseTipLab.textAlignment = NSTextAlignmentCenter;
         _studyCourseLineView.hidden = YES;
@@ -220,43 +260,14 @@
         _studyCourseTipLab.textAlignment = NSTextAlignmentLeft;
         _studyCourseLineView.hidden = NO;
     }
-    LiveItem *liveItems = _liveArr.firstObject;
-    if (liveItems) {
-//        [_liveCourseIconImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http:%@",liveItems.]]];
-        _liveCourseIconImgView.image = [UIImage imageNamed:@"default_live"];
-        _liveCourseTitleLB.text = liveItems.live_name;
-        _liveCourseTeacherLB.text = [NSString stringWithFormat:@"主讲讲师：%@",liveItems.teacher];
-        _liveStartTimeLB.text = [NSString stringWithFormat:@"开始时间：%@",liveItems.live_st];
-        if ([liveItems.status isEqualToString:@"-1"]) {
-            _enterLiveBtn.userInteractionEnabled = YES;
-            [_enterLiveBtn setTitle:@"查看回放" forState:UIControlStateNormal];
-            [_enterLiveBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
-            _enterLiveBtn.backgroundColor = AppThemeColor;
-            _enterLiveBtn.borderColor = [UIColor clearColor];
-        }
-        else if ([liveItems.status isEqualToString:@"0"]) {
-            _enterLiveBtn.userInteractionEnabled = NO;
-            [_enterLiveBtn setTitle:@"即将开始" forState:UIControlStateNormal];
-            [_enterLiveBtn setTitleColor:RGBValue(0x7c7c7c) forState:UIControlStateNormal];
-            _enterLiveBtn.backgroundColor = kWhiteColor;
-            _enterLiveBtn.borderColor = RGBValue(0xF0F0F0);
-        } else { //进入直播
-            _enterLiveBtn.userInteractionEnabled = YES;
-            [_enterLiveBtn setTitle:@"进入直播" forState:UIControlStateNormal];
-            [_enterLiveBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
-            _enterLiveBtn.backgroundColor = AppThemeColor;
-            _enterLiveBtn.borderColor = [UIColor clearColor];
-        }
-    }
-    
-    _tabHeightConstraint.constant = (MIN(_courseArr.count, 3))*60;
+    _tabHeightConstraint.constant = _courseArr.count*60;
     [_studyTabView reloadData];
 }
 
 #pragma mark - UITableView 代理
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return MIN(_courseArr.count, 3);
+    return _courseArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

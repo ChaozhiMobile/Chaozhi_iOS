@@ -233,7 +233,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QFg-mH-9Df">
                                 <rect key="frame" x="21" y="193" width="333" height="50"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="15068850958" placeholder="输入手机号" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="59w-GR-aXq">
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入手机号" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="59w-GR-aXq">
                                         <rect key="frame" x="15" y="0.0" width="302" height="50"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <nil key="textColor"/>
@@ -378,7 +378,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Yx-BW-46h">
                                 <rect key="frame" x="21" y="204" width="333" height="56"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="15068850958" placeholder="输入注册手机号" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yUw-bf-Vvh">
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入注册手机号" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yUw-bf-Vvh">
                                         <rect key="frame" x="15" y="0.0" width="302" height="56"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <nil key="textColor"/>
@@ -1179,13 +1179,16 @@
                         <outlet property="coursePageControl" destination="kLN-3M-Anl" id="lvx-aO-heq"/>
                         <outlet property="courseScrollView" destination="gPL-tF-5hA" id="IT2-oj-Hrf"/>
                         <outlet property="enterLiveBtn" destination="Ky6-Ad-2ia" id="Q57-XH-NPD"/>
+                        <outlet property="liveCourseConstraint" destination="rIa-fy-b1U" id="e77-Cg-Hcx"/>
                         <outlet property="liveCourseIconImgView" destination="Bd5-hV-vTJ" id="rTT-Dx-yot"/>
                         <outlet property="liveCourseTeacherLB" destination="eMy-MM-Ujb" id="zgT-qN-N1l"/>
                         <outlet property="liveCourseTitleLB" destination="llV-68-mv2" id="zqt-fx-dd6"/>
+                        <outlet property="liveCourseView" destination="Eeo-k9-gbi" id="AeR-6I-pRZ"/>
                         <outlet property="liveStartTimeLB" destination="97C-br-duG" id="8sK-rg-eTA"/>
                         <outlet property="studyCourseLineView" destination="nkR-mN-G37" id="N8U-nD-5yE"/>
                         <outlet property="studyCourseTipConstraint" destination="jDl-ng-3SL" id="l4f-hb-dWA"/>
                         <outlet property="studyCourseTipLab" destination="xQs-UC-OXF" id="Nse-Nv-6t7"/>
+                        <outlet property="studyCourseTipTopConstraint" destination="yQt-Bm-Iyl" id="QND-D2-6Yj"/>
                         <outlet property="studyTabView" destination="AnO-TB-kEO" id="v5F-yx-QDs"/>
                         <outlet property="tabHeightConstraint" destination="gcD-me-xjF" id="kBK-aJ-2M4"/>
                         <outlet property="titleView" destination="5Gq-F3-uMm" id="NLz-zb-uH6"/>
