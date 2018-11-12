@@ -131,7 +131,8 @@
         view.tag = 120+i;
         [_courseScrollView addSubview:view];
         UIImageView *courseIconImgView = [view viewWithTag:2];
-        [courseIconImgView sd_setImageWithURL:[NSURL URLWithString:item.product_img] placeholderImage:[UIImage imageNamed:@"default_square_img"]];
+        courseIconImgView.contentMode = UIViewContentModeCenter;
+        [courseIconImgView sd_setImageWithURL:[NSURL URLWithString:item.product_img] placeholderImage:[UIImage imageNamed:@"default_course"]];
         UILabel *courseTitleLB = [view viewWithTag:3];
         courseTitleLB.text = item.product_name;
         UILabel *courseTypeLB = [view viewWithTag:4];

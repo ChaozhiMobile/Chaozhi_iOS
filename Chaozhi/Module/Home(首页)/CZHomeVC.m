@@ -78,12 +78,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.view.backgroundColor = [UIColor whiteColor];
+    
     _homeItem = [[HomeInfoItem alloc]init];
     _categoryItems = [[HomeCategoryItem alloc]init];
     _newsItems = [[HomeNewsListItem alloc]init];
     _newsDatsSource = [NSMutableArray array];
     _page = 1;
+    _bannerView.backgroundColor = PageColor;
+    _bannerView.placeholderImage = [UIImage imageNamed:@"default_banner"];
+    
     NSString *selectCourseID = [CacheUtil getCacherWithKey:kSelectCourseIDKey];
     __weak typeof(self) weakSelf = self;
     if ([NSString isEmpty:selectCourseID]) {
