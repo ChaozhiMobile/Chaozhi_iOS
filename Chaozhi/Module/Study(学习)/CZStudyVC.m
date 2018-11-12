@@ -52,6 +52,8 @@
     [super viewWillAppear:animated];
     
     self.navBar.hidden = YES;
+    
+    [self getData];
 }
 
 - (void)viewDidLoad {
@@ -67,8 +69,6 @@
     
     [self blankView];
     
-    [self getData];
-    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getData) name:kLoginSuccNotification object:nil]; //登录成功通知
 }
 
@@ -82,7 +82,7 @@
                          @"1", @"is_progress",
                          nil];
     __weak typeof(self) weakSelf = self;
-    [[NetworkManager sharedManager] postJSON:URL_CourseList parameters:dic imageDataArr:nil imageName:nil  completion:^(id responseData, RequestState status, NSError *error) {
+    [[NetworkManager sharedManager] postJSON:URL_CourseList parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
         if ([weakSelf.bgScroView.mj_header isRefreshing]) {
             [weakSelf.bgScroView.mj_header endRefreshing];
         }
