@@ -61,7 +61,10 @@ static NetworkManager *_manager = nil;
         if ([code isEqualToString:@"200"]) { //成功
             id _Nullable dataObject = object[@"data"];
             completion(dataObject,Request_Success,nil);
-        } else {
+        } else if ([code intValue]>=600&&[code intValue]<700) { //重新登录
+            [self reLogin];
+        }
+        else {
             completion(nil,Request_Fail,nil);
             [Utils showToast:object[@"msg"]];
         }
@@ -108,7 +111,10 @@ static NetworkManager *_manager = nil;
             } else {
                 completion(dataObject,Request_Success,nil);
             }
-        } else {
+        } else if ([object[@"code"] intValue]>=600&&[object[@"code"] intValue]<700) { //重新登录
+            [self reLogin];
+        }
+        else {
             completion(nil,Request_Fail,nil);
             [Utils showToast:object[@"msg"]];
         }
@@ -178,7 +184,10 @@ static NetworkManager *_manager = nil;
         if ([code isEqualToString:@"200"]) { //成功
             id _Nullable dataObject = object[@"data"];
             completion(dataObject,Request_Success,nil);
-        } else {
+        } else if ([code intValue]>=600&&[code intValue]<700) { //重新登录
+            [self reLogin];
+        }
+        else {
             completion(nil,Request_Fail,nil);
             [Utils showToast:object[@"msg"]];
         }
@@ -225,18 +234,19 @@ static NetworkManager *_manager = nil;
 //token失效判断
 - (BOOL)isTokenInvalid:(int)statusCode {
     if (statusCode==403) { //token失效或者账号在其它地方登录
-        
-        [Utils showToast:@"登录失效，请重新登录"];
-        
-        [[UserInfo share] setUserInfo:nil]; //清除用户信息
-        
-        //跳转到登录页
-        [Utils isLoginWithJump:YES];
-        
+        [self reLogin];
         return YES;
     } else {
         return NO;
     }
+}
+
+// 重新登录
+- (void)reLogin {
+    [Utils showToast:@"登录失效，请重新登录"];
+    [[UserInfo share] setUserInfo:nil]; //清除用户信息
+    //跳转到登录页
+    [Utils isLoginWithJump:YES];
 }
 
 @end
