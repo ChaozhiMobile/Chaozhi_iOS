@@ -11,6 +11,7 @@
 #import "NetworkUtil.h"
 #import "Utils.h"
 #import "BaseNC.h"
+#import "XLGExternalTestTool.h"
 
 #define TIMEOUT 20;
 
@@ -54,7 +55,7 @@ static NetworkManager *_manager = nil;
         }
         
         id _Nullable object = [NSDictionary changeType:responseObject];
-        NSLog(@"参数%@%@\n返回结果：%@",urlStr,parameters,object);
+        [self printLogInfoWith:urlStr WithParam:parameters andResult:object];
         
         NSString *code = [NSString stringWithFormat:@"%@",object[@"code"]];
         if ([code isEqualToString:@"200"]) { //成功
@@ -73,7 +74,7 @@ static NetworkManager *_manager = nil;
         }
         
         completion(nil,Request_TimeoOut,error);
-        NSLog(@"参数%@%@\n%@请求失败信息：%@错误码：%ld",urlStr,parameters,name,[error localizedDescription],(long)[error code]);
+        [self printLogInfoWith:urlStr WithParam:parameters andResult:[error localizedDescription]];
         [Utils showToast:@"请求超时"];
         [JHHJView hideLoading]; //结束加载
     }];
@@ -111,7 +112,7 @@ static NetworkManager *_manager = nil;
             completion(nil,Request_Fail,nil);
             [Utils showToast:object[@"msg"]];
         }
-        NSLog(@"参数%@%@\n返回结果：%@",urlStr,parameters,object);
+        [self printLogInfoWith:urlStr WithParam:parameters andResult:object];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
         NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
@@ -121,7 +122,7 @@ static NetworkManager *_manager = nil;
         }
         
         completion(nil,Request_TimeoOut,error);
-        NSLog(@"参数%@%@\n%@请求失败信息：%@",urlStr,parameters,name,[error localizedDescription]);
+        [self printLogInfoWith:urlStr WithParam:parameters andResult:[error localizedDescription]];
         [Utils showToast:@"请求超时"];
         [JHHJView hideLoading]; //结束加载
     }];
@@ -171,7 +172,7 @@ static NetworkManager *_manager = nil;
         }
         
         id _Nullable object = [NSDictionary changeType:responseObject];
-        NSLog(@"参数%@%@\n返回结果：%@",urlStr,parameters,object);
+        [self printLogInfoWith:urlStr WithParam:parameters andResult:object];
         
         NSString *code = [NSString stringWithFormat:@"%@",object[@"code"]];
         if ([code isEqualToString:@"200"]) { //成功
@@ -190,10 +191,18 @@ static NetworkManager *_manager = nil;
         }
         
         completion(nil,Request_TimeoOut,error);
-        NSLog(@"参数%@%@\n%@请求失败信息：%@错误码：%ld",urlStr,parameters,name,[error localizedDescription],(long)[error code]);
+        [self printLogInfoWith:urlStr WithParam:parameters andResult:[error localizedDescription]];
         [Utils showToast:@"请求超时"];
         [JHHJView hideLoading]; //结束加载
     }];
+}
+
+- (void)printLogInfoWith:(NSString *)url WithParam:(id)param andResult:(id)result {
+    NSLog(@"%@",[NSString stringWithFormat:@"时间：%@\n参数：%@ \n %@\n返回结果：%@",[Utils getCurrentDate],url,param,result]);
+    if (!KOnline) {
+        XLGExternalTestTool *tool = [XLGExternalTestTool shareInstance];
+        tool.logTextViews.text = [NSString stringWithFormat:@"时间：%@\n参数：%@ \n %@\n返回结果：%@ \n\n\n%@",[Utils getCurrentDate],url,param,result,tool.logTextViews.text];
+    }
 }
 
 //配置请求头
