@@ -11,6 +11,8 @@
 		205FDB3321763DBE001BE2C6 /* CZGuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FDB3221763DBE001BE2C6 /* CZGuideVC.m */; };
 		208B695B2185903700B263FB /* TeacherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 208B695A2185903700B263FB /* TeacherView.xib */; };
 		94DF1E58ABC326A19CE0832D /* libPods-Chaozhi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B55762E2478093A57AE66667 /* libPods-Chaozhi.a */; };
+		A00BE16A219FF6E70042E6ED /* VersionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A00BE169219FF6E70042E6ED /* VersionItem.m */; };
+		A00BE16D219FFB140042E6ED /* CZUpdateView.m in Sources */ = {isa = PBXBuildFile; fileRef = A00BE16C219FFB140042E6ED /* CZUpdateView.m */; };
 		A00FA9D82168C26900F4DA5B /* CZSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9D72168C26900F4DA5B /* CZSettingVC.m */; };
 		A00FA9DC2169DB0000F4DA5B /* CZSelectCourseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9DB2169DB0000F4DA5B /* CZSelectCourseVC.m */; };
 		A00FA9DF2169DCDC00F4DA5B /* CZSelectCourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9DE2169DCDC00F4DA5B /* CZSelectCourseCell.m */; };
@@ -125,6 +127,10 @@
 		205FDB3121763DBE001BE2C6 /* CZGuideVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZGuideVC.h; sourceTree = "<group>"; };
 		205FDB3221763DBE001BE2C6 /* CZGuideVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZGuideVC.m; sourceTree = "<group>"; };
 		208B695A2185903700B263FB /* TeacherView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeacherView.xib; sourceTree = "<group>"; };
+		A00BE168219FF6E70042E6ED /* VersionItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VersionItem.h; sourceTree = "<group>"; };
+		A00BE169219FF6E70042E6ED /* VersionItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VersionItem.m; sourceTree = "<group>"; };
+		A00BE16B219FFB140042E6ED /* CZUpdateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZUpdateView.h; sourceTree = "<group>"; };
+		A00BE16C219FFB140042E6ED /* CZUpdateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZUpdateView.m; sourceTree = "<group>"; };
 		A00FA9D62168C26900F4DA5B /* CZSettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZSettingVC.h; sourceTree = "<group>"; };
 		A00FA9D72168C26900F4DA5B /* CZSettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZSettingVC.m; sourceTree = "<group>"; };
 		A00FA9DA2169DB0000F4DA5B /* CZSelectCourseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZSelectCourseVC.h; sourceTree = "<group>"; };
@@ -714,6 +720,8 @@
 				205FDB2E216F20C0001BE2C6 /* HomeInfoItem.m */,
 				A091D12E2178FAF300CCDAF6 /* StudyInfoItem.h */,
 				A091D12F2178FAF300CCDAF6 /* StudyInfoItem.m */,
+				A00BE168219FF6E70042E6ED /* VersionItem.h */,
+				A00BE169219FF6E70042E6ED /* VersionItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -725,6 +733,8 @@
 				A0462A0C2187459600D12E65 /* CZNotDataView.m */,
 				A0462A052187407600D12E65 /* CZNotNetAvailableVC.h */,
 				A0462A062187407600D12E65 /* CZNotNetAvailableVC.m */,
+				A00BE16B219FFB140042E6ED /* CZUpdateView.h */,
+				A00BE16C219FFB140042E6ED /* CZUpdateView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1006,6 +1016,7 @@
 				A020B01F214AAB150011BB4F /* Config.m in Sources */,
 				A0462A0D2187459600D12E65 /* CZNotDataView.m in Sources */,
 				A020B071214AAB150011BB4F /* LDNetTimer.m in Sources */,
+				A00BE16D219FFB140042E6ED /* CZUpdateView.m in Sources */,
 				A020B078214AAB150011BB4F /* BaseItem.m in Sources */,
 				A020B06B214AAB150011BB4F /* BaseVC.m in Sources */,
 				A05FF5DB215B163400C51E05 /* JHHJAnimation.m in Sources */,
@@ -1039,6 +1050,7 @@
 				A0599A1F21574CAF00D17058 /* CZLoginVC.m in Sources */,
 				A0599A2421574CAF00D17058 /* CZStudyVC.m in Sources */,
 				A05FF5D9215B163400C51E05 /* JHHJCenterBGView.m in Sources */,
+				A00BE16A219FF6E70042E6ED /* VersionItem.m in Sources */,
 				A0599A2221574CAF00D17058 /* CZMineVC.m in Sources */,
 				A020B076214AAB150011BB4F /* LDNetConnect.m in Sources */,
 				A05999F42155EC1500D17058 /* XLGChangeServerVC.m in Sources */,

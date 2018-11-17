@@ -10,17 +10,22 @@
 #import "CZSelectCourseVC.h"
 #import <SDCycleScrollView.h>
 #import "HomeInfoItem.h"
+#import "VersionItem.h"
+#import <StoreKit/StoreKit.h>
+#import "CZUpdateView.h"
 
 #define TEACHERNUM 2.5
 
 @implementation DayNewTabCell
 @end
 
-@interface CZHomeVC ()<UITableViewDataSource,UITableViewDelegate>
-{
-    
+@interface CZHomeVC ()<UITableViewDataSource,UITableViewDelegate,SKStoreProductViewControllerDelegate, UpdateViewDelegate>{
 }
+@property (nonatomic, strong) UIView *BGView;
+@property (nonatomic, strong) CZUpdateView *updateView;
+
 @property (nonatomic , assign) NSInteger page;
+@property (nonatomic , retain) VersionItem *versionItem;
 @property (nonatomic , retain) HomeInfoItem *homeItem;
 @property (nonatomic , retain) HomeCategoryItem *categoryItems;;
 @property (nonatomic , retain) HomeNewsListItem *newsItems;;
@@ -81,9 +86,10 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    _homeItem = [[HomeInfoItem alloc]init];
-    _categoryItems = [[HomeCategoryItem alloc]init];
-    _newsItems = [[HomeNewsListItem alloc]init];
+    _versionItem = [[VersionItem alloc] init];
+    _homeItem = [[HomeInfoItem alloc] init];
+    _categoryItems = [[HomeCategoryItem alloc] init];
+    _newsItems = [[HomeNewsListItem alloc] init];
     _newsDatsSource = [NSMutableArray array];
     _page = 1;
     _bannerView.backgroundColor = PageColor;
@@ -103,7 +109,7 @@
         [self.navigationController pushViewController:vc animated:YES];
     }
     _lastViewHConstraints.constant = 40;
-    [self getData];
+    
     _bgScrollView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         weakSelf.page = 1;
         [weakSelf getData];
@@ -111,14 +117,83 @@
     _bgScrollView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         [weakSelf getData];
     }];
+    
+    [self getData];
+    
+    [self checkVersion];
 }
 
--(void)getData{
+- (void)getData {
     [self getBannerActivityData];
     [self requestCourseData];
 }
 
 #pragma mark - get data
+
+//版本更新
+- (void)checkVersion {
+    [[NetworkManager sharedManager] postJSON:URL_CheckVersion parameters:@{@"device":@"ios",@"version":AppVersion} completion:^(id responseData, RequestState status, NSError *error) {
+        
+        self.versionItem = [VersionItem yy_modelWithJSON:responseData];
+        
+        if ([self.versionItem.grade isEqualToString:@"2"]) { //推荐升级
+            [self handleVersionUpdate:UpdateTypeSelect];
+        }
+        if ([self.versionItem.grade isEqualToString:@"3"]) { //强制升级
+            [self handleVersionUpdate:UpdateTypeForce];
+        }
+    }];
+}
+
+- (void)handleVersionUpdate:(UpdateType)updateType {
+    
+    NSString *updateNote = self.versionItem.note;
+    NSArray *array = [updateNote componentsSeparatedByString:@";"];
+    NSString *formatUpdateNote = @"";
+    for (int i = 0; i < array.count; i ++) {
+        NSString *str = [NSString stringWithFormat:@"%@\n", array[i]];
+        formatUpdateNote = [formatUpdateNote stringByAppendingString:str];
+    }
+    
+    [self.view.window addSubview:self.BGView];
+    _updateView = [[CZUpdateView alloc] initWithBugDetail:formatUpdateNote withType:updateType];
+    _updateView.centerX = self.view.centerX;
+    _updateView.centerY = self.view.centerY+kNavBarH/2;
+    _updateView.delegate = self;
+    [self.BGView addSubview:_updateView];
+}
+
+- (UIView *)BGView {
+    if (!_BGView) {
+        _BGView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
+        _BGView.backgroundColor = RGBA(0, 0, 0, 0.4);
+    }
+    return _BGView;
+}
+
+//取消更新
+- (void)updateRejectBtnClicked {
+    
+    [self.BGView removeFromSuperview];
+    [self.updateView removeFromSuperview];
+}
+
+//更新
+- (void)updateBtnClicked {
+    
+    if ([self.versionItem.grade intValue] == 2) {
+        [self.BGView removeFromSuperview];
+        [self.updateView removeFromSuperview];
+    }
+    
+    if (@available(iOS 10.0, *)) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.versionItem.url] options:@{} completionHandler:^(BOOL success) {
+        }];
+    } else {
+        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:self.versionItem.url]];
+    }
+}
+
 // 获取banner、活动数据
 - (void) getBannerActivityData {
     NSDictionary *dic = [NSDictionary dictionary];

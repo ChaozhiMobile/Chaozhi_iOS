@@ -63,6 +63,8 @@ static NetworkManager *_manager = nil;
             completion(dataObject,Request_Success,nil);
         } else if ([code intValue]>=600&&[code intValue]<700) { //重新登录
             [self reLogin];
+        } else if ([code isEqualToString:@"210"]&&[name isEqualToString:URL_CheckVersion]) {
+            //已经是最新版本
         }
         else {
             completion(nil,Request_Fail,nil);
