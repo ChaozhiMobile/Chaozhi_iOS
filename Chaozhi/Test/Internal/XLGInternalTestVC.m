@@ -30,6 +30,7 @@
     //self.isPanForbid = YES; //禁用iOS自带侧滑返回手势
     
     UIButton *clickBtn = [[UIButton alloc] initWithFrame:CGRectMake(WIDTH-50, kStatusBarH, 40, 40)];
+    clickBtn.hidden = YES;
     clickBtn.titleLabel.font = [UIFont systemFontOfSize:15];
     [clickBtn setTitle:@"Demo" forState:UIControlStateNormal];
     [clickBtn setTitleColor:AppThemeColor forState:UIControlStateNormal];
