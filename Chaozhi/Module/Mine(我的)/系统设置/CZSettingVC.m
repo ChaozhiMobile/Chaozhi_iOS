@@ -29,6 +29,9 @@
     UITapGestureRecognizer *changePswTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changePswAction)];
     [self.changePswView addGestureRecognizer:changePswTap];
     
+    UITapGestureRecognizer *privacyTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(privacyAction)];
+    [self.privacyView addGestureRecognizer:privacyTap];
+    
     _versionLab.text = [NSString stringWithFormat:@"V%@",AppVersion];
     
     NSMutableAttributedString *str = [[NSMutableAttributedString alloc]initWithString:_callPhoneBtn.titleLabel.text];;
@@ -56,6 +59,11 @@
 - (void)changePswAction {
     UIViewController *vc = [Utils getViewController:@"Main" WithVCName:@"CZForgetPswVC"];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+//隐私协议
+- (void)privacyAction {
+    [BaseWebVC showWithContro:self withUrlStr:H5_Privacy withTitle:@"超职教育隐私保护指引" isPresent:NO];
 }
 
 //拨打客服电话

@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UISwitch *switchBtn;
 @property (weak, nonatomic) IBOutlet UIView *aboutView;
 @property (weak, nonatomic) IBOutlet UIView *changePswView;
+@property (weak, nonatomic) IBOutlet UIView *privacyView;
+
 @property (weak, nonatomic) IBOutlet UILabel *versionLab;
 @property (weak, nonatomic) IBOutlet UIButton *callPhoneBtn;
 - (IBAction)callPhoneAction:(UIButton *)sender;

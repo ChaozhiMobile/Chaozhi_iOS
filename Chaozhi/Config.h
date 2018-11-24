@@ -55,4 +55,6 @@ NSString *h5Url(void);
 #define H5_Store @"#/hybrid/store/" //首页-推荐课程列表【课程分类id】
 #define H5_Demo @"#/hybrid/demo/" //首页-公开课开始试听【课程分类id】
 
+#define H5_Privacy @"#/hybrid/chaozhi/privacy" //隐私协议
+
 @end
