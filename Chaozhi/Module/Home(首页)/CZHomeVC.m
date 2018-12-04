@@ -412,7 +412,7 @@
 - (IBAction)showPublicCourseAction:(id)sender {
     
     HomeTryVideoItem *tryVideoItem = [_categoryItems.try_video_list firstObject];
-    [BaseWebVC showWithContro:self withUrlStr:tryVideoItem.src withTitle:@"" isPresent:NO];
+    [BaseWebVC showWithContro:self withUrlStr:tryVideoItem.src withTitle:tryVideoItem.title isPresent:NO];
 }
 
 // 我们的公开课-查看更多

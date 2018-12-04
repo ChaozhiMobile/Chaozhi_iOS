@@ -167,34 +167,34 @@
 - (IBAction)luboAction:(id)sender {
     StudyInfoItem *items = _dataArr[currentPage];
     NSString *tikuStr = [NSString stringWithFormat:@"%@%@",H5_Video,items.product_id];
-    [BaseWebVC showWithContro:self withUrlStr:tikuStr withTitle:@"" isPresent:NO];
+    [BaseWebVC showWithContro:self withUrlStr:tikuStr withTitle:@"录播课程" isPresent:NO];
 }
 
 #pragma mark - 直播课程
 - (IBAction)zhiboAction:(id)sender {
     StudyInfoItem *items = _dataArr[currentPage];
     NSString *tikuStr = [NSString stringWithFormat:@"%@%@",H5_Live,items.product_id];
-    [BaseWebVC showWithContro:self withUrlStr:tikuStr withTitle:@"" isPresent:NO];
+    [BaseWebVC showWithContro:self withUrlStr:tikuStr withTitle:@"直播课程" isPresent:NO];
 }
 
 #pragma mark - 资料库
 - (IBAction)ziliaokuAction:(id)sender {
     StudyInfoItem *items = _dataArr[currentPage];
     NSString *tikuStr = [NSString stringWithFormat:@"%@%@",H5_Doc,items.product_id];
-    [BaseWebVC showWithContro:self withUrlStr:tikuStr withTitle:@"" isPresent:NO];
+    [BaseWebVC showWithContro:self withUrlStr:tikuStr withTitle:@"资料库" isPresent:NO];
 }
 
 #pragma mark - 题库
 - (IBAction)tikuAction:(id)sender {
     StudyInfoItem *items = _dataArr[currentPage];
     NSString *tikuStr = [NSString stringWithFormat:@"%@%@",H5_Question,items.product_id];
-    [BaseWebVC showWithContro:self withUrlStr:tikuStr withTitle:@"" isPresent:NO];
+    [BaseWebVC showWithContro:self withUrlStr:tikuStr withTitle:@"题库" isPresent:NO];
 }
 
 #pragma mark - 直播课程
 - (IBAction)liveCourseAction:(id)sender {
     LiveItem *liveItems = _liveArr.firstObject;
-    [BaseWebVC showWithContro:self withUrlStr:liveItems.live_url withTitle:@"" isPresent:NO];
+    [BaseWebVC showWithContro:self withUrlStr:liveItems.live_url withTitle:liveItems.live_name isPresent:NO];
 }
 
 #pragma mark - UIScrollViewDelegate协议
@@ -284,7 +284,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     LearnCourseItem *item = _courseArr[indexPath.row];
-    [BaseWebVC showWithContro:self withUrlStr:item.view_url withTitle:@"" isPresent:NO];
+    [BaseWebVC showWithContro:self withUrlStr:item.view_url withTitle:item.name isPresent:NO];
 }
 
 - (void)didReceiveMemoryWarning {

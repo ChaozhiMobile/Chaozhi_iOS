@@ -192,9 +192,10 @@
     if ([message.name isEqualToString:@"open"]) { //打开新页面
         NSDictionary *dic = message.body;
         if ([dic[@"type"] isEqualToString:@"web"]) {
+            NSString *title = dic[@"title"];
             NSString *url = dic[@"url"];
             // 跳转新的H5页面
-            [BaseWebVC showWithContro:self withUrlStr:url withTitle:@"" isPresent:NO];
+            [BaseWebVC showWithContro:self withUrlStr:url withTitle:[NSString isEmpty:title]?@"":title isPresent:NO];
         }
         if ([dic[@"type"] isEqualToString:@"app"]) {
             NSString *to = dic[@"to"];
