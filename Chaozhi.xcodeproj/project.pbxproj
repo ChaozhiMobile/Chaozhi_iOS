@@ -56,12 +56,9 @@
 		A020B047214AAB150011BB4F /* ic_refresh_image_008@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF9A214AAB130011BB4F /* ic_refresh_image_008@2x.png */; };
 		A020B048214AAB150011BB4F /* ic_refresh_image_004@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF9B214AAB130011BB4F /* ic_refresh_image_004@2x.png */; };
 		A020B049214AAB150011BB4F /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = A020AF9D214AAB130011BB4F /* loading.json */; };
-		A020B04A214AAB150011BB4F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A020AF9E214AAB130011BB4F /* README.md */; };
-		A020B04B214AAB150011BB4F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A020AFA0214AAB130011BB4F /* README.md */; };
 		A020B04C214AAB150011BB4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A020AFA2214AAB130011BB4F /* LaunchScreen.storyboard */; };
 		A020B04D214AAB150011BB4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A020AFA4214AAB130011BB4F /* Main.storyboard */; };
 		A020B04E214AAB150011BB4F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFA6214AAB130011BB4F /* main.m */; };
-		A020B04F214AAB150011BB4F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A020AFA7214AAB130011BB4F /* Info.plist */; };
 		A020B050214AAB150011BB4F /* KeyChainUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFAD214AAB130011BB4F /* KeyChainUtil.m */; };
 		A020B051214AAB150011BB4F /* CacheUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFAE214AAB130011BB4F /* CacheUtil.m */; };
 		A020B052214AAB150011BB4F /* Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFB0214AAB130011BB4F /* Toast.m */; };
@@ -180,12 +177,9 @@
 		A020AF9A214AAB130011BB4F /* ic_refresh_image_008@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_refresh_image_008@2x.png"; sourceTree = "<group>"; };
 		A020AF9B214AAB130011BB4F /* ic_refresh_image_004@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_refresh_image_004@2x.png"; sourceTree = "<group>"; };
 		A020AF9D214AAB130011BB4F /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
-		A020AF9E214AAB130011BB4F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		A020AFA0214AAB130011BB4F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A020AFA3214AAB130011BB4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A020AFA5214AAB130011BB4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A020AFA6214AAB130011BB4F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A020AFA7214AAB130011BB4F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A020AFA9214AAB130011BB4F /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		A020AFAB214AAB130011BB4F /* KeyChainUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyChainUtil.h; sourceTree = "<group>"; };
 		A020AFAC214AAB130011BB4F /* CacheUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheUtil.h; sourceTree = "<group>"; };
@@ -402,7 +396,6 @@
 				A020AF76214AAB130011BB4F /* Assets.xcassets */,
 				A020AF77214AAB130011BB4F /* Animation */,
 				A020AF9C214AAB130011BB4F /* Json */,
-				A020AF9F214AAB130011BB4F /* Font */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -461,17 +454,8 @@
 			isa = PBXGroup;
 			children = (
 				A020AF9D214AAB130011BB4F /* loading.json */,
-				A020AF9E214AAB130011BB4F /* README.md */,
 			);
 			path = Json;
-			sourceTree = "<group>";
-		};
-		A020AF9F214AAB130011BB4F /* Font */ = {
-			isa = PBXGroup;
-			children = (
-				A020AFA0214AAB130011BB4F /* README.md */,
-			);
-			path = Font;
 			sourceTree = "<group>";
 		};
 		A020AFA1214AAB130011BB4F /* Supporting Files */ = {
@@ -480,7 +464,6 @@
 				A020AFA2214AAB130011BB4F /* LaunchScreen.storyboard */,
 				A020AFA4214AAB130011BB4F /* Main.storyboard */,
 				A020AFA6214AAB130011BB4F /* main.m */,
-				A020AFA7214AAB130011BB4F /* Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -935,7 +918,6 @@
 				A020B035214AAB150011BB4F /* ic_refresh_image_033@2x.png in Resources */,
 				A020B03D214AAB150011BB4F /* ic_refresh_image_034@2x.png in Resources */,
 				A020B02B214AAB150011BB4F /* ic_refresh_image_011@2x.png in Resources */,
-				A020B04F214AAB150011BB4F /* Info.plist in Resources */,
 				A020B049214AAB150011BB4F /* loading.json in Resources */,
 				A020B040214AAB150011BB4F /* ic_refresh_image_030@2x.png in Resources */,
 				A020B042214AAB150011BB4F /* ic_refresh_image_006@2x.png in Resources */,
@@ -948,12 +930,10 @@
 				A020B032214AAB150011BB4F /* ic_refresh_image_009@2x.png in Resources */,
 				A020B031214AAB150011BB4F /* ic_refresh_image_031@2x.png in Resources */,
 				A00FA9E1216A09EA00F4DA5B /* MyStudyView.xib in Resources */,
-				A020B04B214AAB150011BB4F /* README.md in Resources */,
 				A020B030214AAB150011BB4F /* ic_refresh_image_023@2x.png in Resources */,
 				208B695B2185903700B263FB /* TeacherView.xib in Resources */,
 				A020B043214AAB150011BB4F /* ic_refresh_image_014@2x.png in Resources */,
 				A020B04C214AAB150011BB4F /* LaunchScreen.storyboard in Resources */,
-				A020B04A214AAB150011BB4F /* README.md in Resources */,
 				A020B02D214AAB150011BB4F /* ic_refresh_image_007@2x.png in Resources */,
 				A020B03F214AAB150011BB4F /* ic_refresh_image_022@2x.png in Resources */,
 				A020B03C214AAB150011BB4F /* ic_refresh_image_002@2x.png in Resources */,
