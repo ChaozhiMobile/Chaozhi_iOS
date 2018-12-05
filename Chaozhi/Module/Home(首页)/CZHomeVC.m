@@ -334,6 +334,9 @@
 - (void)jumpTeacherDetail:(UITapGestureRecognizer *)tap {
     UIView *view = tap.view;
     NSInteger index = view.tag - 1000;
+    HomeTeacherItem *teacherItem = _categoryItems.teacher_list[index];
+    NSString *str = [NSString stringWithFormat:@"%@%@",H5_TeacherDetail,teacherItem.ID];
+    [BaseWebVC showWithContro:self withUrlStr:str withTitle:teacherItem.name isPresent:NO];
 }
 
 - (void)refreshVedioUI{
