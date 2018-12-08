@@ -379,7 +379,8 @@
                 _feaCourseItem1 = [_categoryItems.feature_product_list firstObject];
                 [_courseImgView1 sd_setImageWithURL:[NSURL URLWithString:_feaCourseItem1.img] placeholderImage:[UIImage imageNamed:@"default_course"]];
                 _coursePriceLB1.text = _feaCourseItem1.price;
-                _courseDiscountPriceLB1.text = _feaCourseItem1.original_price;
+                NSAttributedString *attrStr = [[NSAttributedString alloc] initWithString:_feaCourseItem1.original_price attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:10],NSForegroundColorAttributeName:[UIColor colorWithHexString:@"#b4b4b4"],NSStrikethroughStyleAttributeName:@(NSUnderlineStyleSingle|NSUnderlinePatternSolid),NSStrikethroughColorAttributeName:[UIColor colorWithHexString:@"#b4b4b4"]}];
+                _courseDiscountPriceLB1.attributedText = attrStr;
                 _courseTeaNameLB1.text = _feaCourseItem1.name;
                 _courseCommentCountLB1.text = _feaCourseItem1.review_num;
                 
@@ -393,6 +394,8 @@
                 [_courseImgView2 sd_setImageWithURL:[NSURL URLWithString:_feaCourseItem2.img] placeholderImage:[UIImage imageNamed:@"default_course"]];
                 _coursePriceLB2.text = _feaCourseItem2.price;
                 _courseDiscountPriceLB2.text = _feaCourseItem2.original_price;
+                NSAttributedString *attrStr = [[NSAttributedString alloc] initWithString:_feaCourseItem2.original_price attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:10],NSForegroundColorAttributeName:[UIColor colorWithHexString:@"#b4b4b4"],NSStrikethroughStyleAttributeName:@(NSUnderlineStyleSingle|NSUnderlinePatternSolid),NSStrikethroughColorAttributeName:[UIColor colorWithHexString:@"#b4b4b4"]}];
+                _courseDiscountPriceLB2.attributedText = attrStr;
                 _courseTeaNameLB2.text = _feaCourseItem2.name;
                 _courseCommentCountLB2.text = _feaCourseItem2.review_num;
 
