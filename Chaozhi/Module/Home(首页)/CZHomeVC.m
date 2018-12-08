@@ -13,6 +13,7 @@
 #import "VersionItem.h"
 #import <StoreKit/StoreKit.h>
 #import "CZUpdateView.h"
+#import "CZStarView.h"
 
 #define TEACHERNUM 2.5
 
@@ -370,8 +371,8 @@
     _courseViewHConstraint.constant = 240;
     _courseImgView1.image = nil;
     _courseTeaNameLB1.text = @"";
-    _courseImgView1.image = nil;
-    _courseTeaNameLB1.text = @"";
+    _courseImgView2.image = nil;
+    _courseTeaNameLB2.text = @"";
     for (NSInteger i = 0; i < MIN(2, _categoryItems.feature_product_list.count); i ++) {
         switch (i) {
             case 0:
@@ -383,6 +384,8 @@
                 _courseDiscountPriceLB1.attributedText = attrStr;
                 _courseTeaNameLB1.text = _feaCourseItem1.name;
                 _courseCommentCountLB1.text = _feaCourseItem1.review_num;
+                CZStarView *view = [[CZStarView alloc] initWithFrame:CGRectMake(94, 181, 76, 12) currentScore:[_feaCourseItem1.review_star floatValue] delegate:nil];
+                [_favCourseLeftView addSubview:view];
                 
                 UITapGestureRecognizer *leftTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(favCourseLeftAction)];
                 [_favCourseLeftView addGestureRecognizer:leftTap];
@@ -398,7 +401,9 @@
                 _courseDiscountPriceLB2.attributedText = attrStr;
                 _courseTeaNameLB2.text = _feaCourseItem2.name;
                 _courseCommentCountLB2.text = _feaCourseItem2.review_num;
-
+                CZStarView *view = [[CZStarView alloc] initWithFrame:CGRectMake(94, 181, 76, 12) currentScore:[_feaCourseItem2.review_star floatValue] delegate:nil];
+                [_favCourseRightView addSubview:view];
+                
                 UITapGestureRecognizer *rightTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(favCourseRightAction)];
                 [_favCourseRightView addGestureRecognizer:rightTap];
             }

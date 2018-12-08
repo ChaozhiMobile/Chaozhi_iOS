@@ -114,6 +114,7 @@
 		A05FF5DB215B163400C51E05 /* JHHJAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A05FF5D5215B163400C51E05 /* JHHJAnimation.m */; };
 		A05FF5DC215B163400C51E05 /* AEIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = A05FF5D8215B163400C51E05 /* AEIndicator.m */; };
 		A091D1302178FAF300CCDAF6 /* StudyInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A091D12F2178FAF300CCDAF6 /* StudyInfoItem.m */; };
+		A0C1257321BC021B0026430E /* CZStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C1257221BC021B0026430E /* CZStarView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -294,6 +295,8 @@
 		A05FF5D8215B163400C51E05 /* AEIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEIndicator.m; sourceTree = "<group>"; };
 		A091D12E2178FAF300CCDAF6 /* StudyInfoItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudyInfoItem.h; sourceTree = "<group>"; };
 		A091D12F2178FAF300CCDAF6 /* StudyInfoItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyInfoItem.m; sourceTree = "<group>"; };
+		A0C1257121BC021B0026430E /* CZStarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZStarView.h; sourceTree = "<group>"; };
+		A0C1257221BC021B0026430E /* CZStarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZStarView.m; sourceTree = "<group>"; };
 		B55762E2478093A57AE66667 /* libPods-Chaozhi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Chaozhi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -471,6 +474,7 @@
 		A020AFA8214AAB130011BB4F /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A0C1257021BC01E00026430E /* StarView */,
 				A020AFA9214AAB130011BB4F /* Utils.h */,
 				A020AFB2214AAB130011BB4F /* Utils.m */,
 				A05FF5CF215B163400C51E05 /* Indicator(指示器) */,
@@ -820,6 +824,15 @@
 			path = JHLoadingForHJ;
 			sourceTree = "<group>";
 		};
+		A0C1257021BC01E00026430E /* StarView */ = {
+			isa = PBXGroup;
+			children = (
+				A0C1257121BC021B0026430E /* CZStarView.h */,
+				A0C1257221BC021B0026430E /* CZStarView.m */,
+			);
+			path = StarView;
+			sourceTree = "<group>";
+		};
 		A7FA9F4632752641B75EA9B4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1046,6 +1059,7 @@
 				A0462A072187407600D12E65 /* CZNotNetAvailableVC.m in Sources */,
 				A00FA9D82168C26900F4DA5B /* CZSettingVC.m in Sources */,
 				A020AF49214AA85B0011BB4F /* AppDelegate.m in Sources */,
+				A0C1257321BC021B0026430E /* CZStarView.m in Sources */,
 				A020B055214AAB150011BB4F /* XLGLottie.m in Sources */,
 				A020B06E214AAB150011BB4F /* BaseScrollView.m in Sources */,
 				A00FA9DF2169DCDC00F4DA5B /* CZSelectCourseCell.m in Sources */,
