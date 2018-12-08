@@ -60,7 +60,7 @@
 - (IBAction)showPublicCourseAction:(id)sender;
 - (IBAction)showActivityDetailAction:(id)sender;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *courseViewHConstraint;//默认240
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *publicViewHConstraint;//默认180
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *publicViewHConstraint;//默认186
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *activityViewHContraints;//默认315
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *teacherViewHContraints;//默认220
@@ -344,7 +344,7 @@
         _publicViewHConstraint.constant = 0;
         return;
     }
-    _publicViewHConstraint.constant = 180;
+    _publicViewHConstraint.constant = 186;
     HomeTryVideoItem *tryVideoItem = [_categoryItems.try_video_list firstObject];
     _publicCourseImgView.image = nil;
     _publicTeaLB.text = @"";
