@@ -76,6 +76,7 @@
         [_headView addGestureRecognizer:tap];
         
         _headImgView = [[UIImageView alloc] initWithFrame:CGRectMake(autoScaleW(20), autoScaleW(30), autoScaleW(60), autoScaleW(60))];
+        _headImgView.contentMode = UIViewContentModeScaleAspectFill;
         _headImgView.backgroundColor = PageColor;
         _headImgView.layer.cornerRadius = autoScaleW(30);
         [_headImgView.layer setMasksToBounds:YES];

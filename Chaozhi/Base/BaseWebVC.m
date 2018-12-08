@@ -127,7 +127,7 @@
         configuration.allowsInlineMediaPlayback = true;
         _userContentController =[[WKUserContentController alloc]init];
         configuration.userContentController = _userContentController;
-        _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, kNavBarH, WIDTH, HEIGHT-kNavBarH) configuration:configuration];
+        _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, kNavBarH, WIDTH, HEIGHT-kNavBarH-kTabBarSafeH) configuration:configuration];
         _webView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
         _webView.backgroundColor = [UIColor whiteColor];
         _webView.navigationDelegate = self;
@@ -167,6 +167,9 @@
         if (self.isPresent==YES) {
             [self dismissViewControllerAnimated:YES completion:nil];
         } else {
+            if ([self.webTitle isEqualToString:@"个人中心"]) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:kUserInfoChangeNotification object:nil];
+            }
             [self.navigationController popViewControllerAnimated:YES];
         }
     } else {

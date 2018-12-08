@@ -440,6 +440,7 @@
     [cell.dayNewIconImgView sd_setImageWithURL:[NSURL URLWithString:item.img] placeholderImage:[UIImage imageNamed:@"default_square_img"]];
     cell.dayNewTitleLB.text = item.title;
     cell.dayNewContentLB.text = item.subtitle;
+    cell.dayNewTimeLB.text = item.ct;
     return cell;
 }
 
