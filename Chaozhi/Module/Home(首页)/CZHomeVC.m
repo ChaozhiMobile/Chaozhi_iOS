@@ -37,8 +37,14 @@
 @property (weak, nonatomic) IBOutlet UIView *favCourseLeftView;
 @property (weak, nonatomic) IBOutlet UIView *favCourseRightView;
 @property (weak, nonatomic) IBOutlet UIImageView *courseImgView1;
+@property (weak, nonatomic) IBOutlet UILabel *coursePriceLB1;
+@property (weak, nonatomic) IBOutlet UILabel *courseDiscountPriceLB1;
+@property (weak, nonatomic) IBOutlet UILabel *courseCommentCountLB1;
 @property (weak, nonatomic) IBOutlet UILabel *courseTeaNameLB1;
 @property (weak, nonatomic) IBOutlet UIImageView *courseImgView2;
+@property (weak, nonatomic) IBOutlet UILabel *coursePriceLB2;
+@property (weak, nonatomic) IBOutlet UILabel *courseDiscountPriceLB2;
+@property (weak, nonatomic) IBOutlet UILabel *courseCommentCountLB2;
 @property (weak, nonatomic) IBOutlet UILabel *courseTeaNameLB2;
 @property (weak, nonatomic) IBOutlet UIImageView *publicCourseImgView;
 @property (weak, nonatomic) IBOutlet UILabel *publicTitleLB;
@@ -372,7 +378,10 @@
             {
                 _feaCourseItem1 = [_categoryItems.feature_product_list firstObject];
                 [_courseImgView1 sd_setImageWithURL:[NSURL URLWithString:_feaCourseItem1.img] placeholderImage:[UIImage imageNamed:@"default_course"]];
+                _coursePriceLB1.text = _feaCourseItem1.price;
+                _courseDiscountPriceLB1.text = _feaCourseItem1.original_price;
                 _courseTeaNameLB1.text = _feaCourseItem1.name;
+                _courseCommentCountLB1.text = _feaCourseItem1.review_num;
                 
                 UITapGestureRecognizer *leftTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(favCourseLeftAction)];
                 [_favCourseLeftView addGestureRecognizer:leftTap];
@@ -382,7 +391,10 @@
             {
                 _feaCourseItem2 = _categoryItems.feature_product_list[1];
                 [_courseImgView2 sd_setImageWithURL:[NSURL URLWithString:_feaCourseItem2.img] placeholderImage:[UIImage imageNamed:@"default_course"]];
+                _coursePriceLB2.text = _feaCourseItem2.price;
+                _courseDiscountPriceLB2.text = _feaCourseItem2.original_price;
                 _courseTeaNameLB2.text = _feaCourseItem2.name;
+                _courseCommentCountLB2.text = _feaCourseItem2.review_num;
 
                 UITapGestureRecognizer *rightTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(favCourseRightAction)];
                 [_favCourseRightView addGestureRecognizer:rightTap];

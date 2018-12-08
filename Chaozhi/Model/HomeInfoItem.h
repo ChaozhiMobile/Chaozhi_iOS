@@ -59,8 +59,9 @@
 
 @interface HomeFeatureProductItem : BaseItem
 
-@property (nonatomic , copy) NSString* ID;// : 31,
+@property (nonatomic , copy) NSString* ID ;// : 31,
 @property (nonatomic , copy) NSString* review_num ;//: 5,
+@property (nonatomic , copy) NSString* review_star ;//星级
 @property (nonatomic , copy) NSString* description ;//: <p style="text-align: center; "><img src="//aci-api.chaozhiedu.com/api/file/26841" alt="心理咨询师-VIP火箭班" style="max-width:100%;"><br></p><p><br></p>,
 @property (nonatomic , copy) NSString* status ;//: 1,
 @property (nonatomic , copy) NSString* category_id ;//: 2,
