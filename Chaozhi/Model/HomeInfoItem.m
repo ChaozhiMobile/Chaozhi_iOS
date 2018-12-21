@@ -71,6 +71,16 @@
 
 @implementation HomeTryVideoItem
 
+- (void)setImg:(NSString *)img {
+    if (_img != img) {
+        if ([img containsString:@"http"]) {
+            _img = img;
+        } else {
+            _img = [NSString stringWithFormat:@"http:%@",img];
+        }
+    }
+}
+
 @end
 
 @implementation HomeTeacherItem

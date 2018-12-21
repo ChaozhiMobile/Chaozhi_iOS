@@ -42,6 +42,7 @@ NSString *h5Url(void);
 #define H5_Coupon @"#/hybrid/coupon" //我的-我的优惠券
 #define H5_Feedback @"#/hybrid/feedback" //我的-问题反馈
 #define H5_About @"#/hybrid/chaozhi/about" //我的-关于超职教育
+#define H5_MyFav @"#/hybrid/me/fav" //我的-我的收藏
 
 #define H5_Question @"#/hybrid/study/library/" //学习-题库【学习课程id】
 #define H5_Doc @"#/hybrid/study/doc/" //学习-资料【学习课程id】
@@ -55,6 +56,7 @@ NSString *h5Url(void);
 #define H5_Store @"#/hybrid/store/" //首页-推荐课程列表【课程分类id】
 #define H5_Demo @"#/hybrid/demo/" //首页-公开课开始试听【课程分类id】
 #define H5_TeacherDetail @"#/hybrid/teacher/" //首页-教师详情
+#define H5_StoreFree @"#/hybrid/store/free" //首页-更多公开课
 
 #define H5_Privacy @"#/hybrid/chaozhi/privacy" //隐私协议
 

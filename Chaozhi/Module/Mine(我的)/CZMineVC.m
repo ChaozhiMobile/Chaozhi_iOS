@@ -41,8 +41,8 @@
 
 - (void)getData {
     
-    _imageArr = @[@"icon_课程",@"icon_消息",@"icon_反馈",@"icon_设置"]; //@"icon_优惠券",
-    _nameArr = @[@"课程订单",@"我的消息",@"问题反馈",@"系统设置"]; //@"我的优惠券",
+    _imageArr = @[@"icon_课程",@"icon_消息",@"icon_收藏",@"icon_反馈",@"icon_设置"]; //@"icon_优惠券",
+    _nameArr = @[@"课程订单",@"我的消息",@"我的收藏",@"问题反馈",@"系统设置"]; //@"我的优惠券",
     
     [self getUserInfo]; //获取用户信息
 }
@@ -171,6 +171,10 @@
     
     if ([str isEqualToString:@"我的消息"]) {
         [BaseWebVC showWithContro:self withUrlStr:H5_Message withTitle:_nameArr[indexPath.row] isPresent:NO];
+    }
+    
+    if ([str isEqualToString:@"我的收藏"]) {
+        [BaseWebVC showWithContro:self withUrlStr:H5_MyFav withTitle:_nameArr[indexPath.row] isPresent:NO];
     }
     
     if ([str isEqualToString:@"问题反馈"]) {

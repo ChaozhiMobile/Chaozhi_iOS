@@ -60,7 +60,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *goldTeaNameLB2;
 @property (weak, nonatomic) IBOutlet UILabel *goldTeaTypeLB2;
 @property (weak, nonatomic) IBOutlet UITableView *newsTabView;
-@property (weak, nonatomic) IBOutlet UIButton *showMorePublicCourseAction;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *teacherScroView;
 - (IBAction)showMoreCourseAction:(UIButton *)sender;
@@ -357,7 +356,7 @@
     _publicTeaLB.text = @"";
     _publicTitleLB.text = @"";
     if (tryVideoItem) {
-        [_publicCourseImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",tryVideoItem.img]] placeholderImage:[UIImage imageNamed:@"default_live"]];
+        [_publicCourseImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",tryVideoItem.img]] placeholderImage:[UIImage imageNamed:@"default_course"]];
         _publicTeaLB.text = [NSString stringWithFormat:@"主讲讲师：%@",tryVideoItem.teacher];
         _publicTitleLB.text = tryVideoItem.title;
     }
@@ -424,23 +423,25 @@
     [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_StoreProduct,_feaCourseItem2.ID] withTitle:@"" isPresent:NO];
 }
 
-// 推荐课程-查看更多
+// 更多课程
 - (IBAction)showMoreCourseAction:(UIButton *)sender {
     
     NSString *selectCourseID = [CacheUtil getCacherWithKey:kSelectCourseIDKey];
     [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_Store,selectCourseID] withTitle:@"" isPresent:NO];
 }
 
+// 更多公开课
+- (IBAction)showMorePublicCourseAction:(id)sender {
+    
+    [BaseWebVC showWithContro:self withUrlStr:H5_StoreFree withTitle:@"" isPresent:NO];
+}
+
+
 // 马上试听
 - (IBAction)showPublicCourseAction:(id)sender {
     
     HomeTryVideoItem *tryVideoItem = [_categoryItems.try_video_list firstObject];
     [BaseWebVC showWithContro:self withUrlStr:tryVideoItem.src withTitle:tryVideoItem.title isPresent:NO];
-}
-
-// 我们的公开课-查看更多
-- (IBAction)showMorePublicCourseAction:(id)sender {
-    
 }
 
 // 精彩活动

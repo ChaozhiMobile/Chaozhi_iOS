@@ -1424,7 +1424,7 @@ VIP保障实验班</string>
                                                     </label>
                                                 </subviews>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cuT-JX-Ohu">
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cuT-JX-Ohu">
                                                 <rect key="frame" x="187" y="34" width="1" height="206"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
@@ -1518,6 +1518,17 @@ VIP保障实验班</string>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                         <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A5l-9n-ijg">
+                                                        <rect key="frame" x="165" y="2" width="200" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <state key="normal" title="更多公开课 &gt;">
+                                                            <color key="titleColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="showMorePublicCourseAction:" destination="Hs7-22-wqW" eventType="touchUpInside" id="k2M-XH-A6I"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
@@ -1574,9 +1585,6 @@ VIP保障实验班</string>
                                                 <state key="normal" title="查看更多&gt;">
                                                     <color key="titleColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="showMorePublicCourseAction:" destination="Hs7-22-wqW" eventType="touchUpInside" id="7ad-BX-hTN"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1924,7 +1932,6 @@ VIP保障实验班</string>
                         <outlet property="publicTeaLB" destination="hTK-Yz-iXF" id="OJj-VA-CGX"/>
                         <outlet property="publicTitleLB" destination="fFA-e3-iLu" id="U8k-0w-uvV"/>
                         <outlet property="publicViewHConstraint" destination="rE5-lM-Bv8" id="RGV-rD-X92"/>
-                        <outlet property="showMorePublicCourseAction" destination="7Vm-qS-dHQ" id="AqJ-j0-BdP"/>
                         <outlet property="teacherScroView" destination="kGE-EL-kMR" id="yLb-md-Xwg"/>
                         <outlet property="teacherViewHContraints" destination="Wxn-Tl-2Ex" id="FYI-Up-bvp"/>
                         <outlet property="viewTopY" destination="Ydg-fQ-zGb" id="SD9-dg-Uxw"/>
