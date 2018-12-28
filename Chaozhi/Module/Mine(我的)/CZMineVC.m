@@ -64,7 +64,7 @@
             self.purchaseArr = [self.purchaseItem.chat mutableCopy];
             
             if (self.purchaseItem.is_purchase == 1 && self.purchaseArr.count>0) {
-                [self.imageArr insertObject:@"icon_优惠券" atIndex:0];
+                [self.imageArr insertObject:@"icon_班主任" atIndex:0];
                 [self.nameArr insertObject:@"我的班主任" atIndex:0];
                 [self.mineTableView reloadData];
             }
