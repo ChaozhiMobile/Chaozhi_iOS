@@ -27,8 +27,9 @@ NSString *domainUrl(void);
 #define URL_Category @"api/app/home-category" //首页分类数据
 #define URL_CategoryList @"api/category/list" //课程分类
 #define URL_CourseList @"api/course/list" //已购课程列表
-#define URL_NewsList @"api/news/list"//首页的新知
-#define URL_CheckVersion @"api/app/check-version"//版本更新
+#define URL_NewsList @"api/news/list" //首页的新知
+#define URL_CheckVersion @"api/app/check-version" //版本更新
+#define URL_PurchaseStatus @"api/user/purchase-status" //报班状态
 
 #pragma mark - ---------------H5地址---------------
 

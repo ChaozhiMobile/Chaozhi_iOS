@@ -17,6 +17,7 @@
 		A00FA9DC2169DB0000F4DA5B /* CZSelectCourseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9DB2169DB0000F4DA5B /* CZSelectCourseVC.m */; };
 		A00FA9DF2169DCDC00F4DA5B /* CZSelectCourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9DE2169DCDC00F4DA5B /* CZSelectCourseCell.m */; };
 		A00FA9E1216A09EA00F4DA5B /* MyStudyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00FA9E0216A09EA00F4DA5B /* MyStudyView.xib */; };
+		A010DC6121D6003E007EBA2C /* PurchaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A010DC6021D6003E007EBA2C /* PurchaseItem.m */; };
 		A020AF49214AA85B0011BB4F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AF48214AA85B0011BB4F /* AppDelegate.m */; };
 		A020B01F214AAB150011BB4F /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AF68214AAB130011BB4F /* Config.m */; };
 		A020B025214AAB150011BB4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A020AF76214AAB130011BB4F /* Assets.xcassets */; };
@@ -136,6 +137,8 @@
 		A00FA9DD2169DCDC00F4DA5B /* CZSelectCourseCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZSelectCourseCell.h; sourceTree = "<group>"; };
 		A00FA9DE2169DCDC00F4DA5B /* CZSelectCourseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZSelectCourseCell.m; sourceTree = "<group>"; };
 		A00FA9E0216A09EA00F4DA5B /* MyStudyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyStudyView.xib; sourceTree = "<group>"; };
+		A010DC5F21D6003E007EBA2C /* PurchaseItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PurchaseItem.h; sourceTree = "<group>"; };
+		A010DC6021D6003E007EBA2C /* PurchaseItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurchaseItem.m; sourceTree = "<group>"; };
 		A020AF44214AA85B0011BB4F /* Chaozhi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chaozhi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A020AF47214AA85B0011BB4F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A020AF48214AA85B0011BB4F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -709,6 +712,8 @@
 				A091D12F2178FAF300CCDAF6 /* StudyInfoItem.m */,
 				A00BE168219FF6E70042E6ED /* VersionItem.h */,
 				A00BE169219FF6E70042E6ED /* VersionItem.m */,
+				A010DC5F21D6003E007EBA2C /* PurchaseItem.h */,
+				A010DC6021D6003E007EBA2C /* PurchaseItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1070,6 +1075,7 @@
 				A05FF5DC215B163400C51E05 /* AEIndicator.m in Sources */,
 				A05FF5CB215B129C00C51E05 /* NetworkManager.m in Sources */,
 				A020B079214AAB150011BB4F /* UserInfo.m in Sources */,
+				A010DC6121D6003E007EBA2C /* PurchaseItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1238,7 +1244,7 @@
 			baseConfigurationReference = 204F3265086F4B67483EF547 /* Pods-Chaozhi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = SD4544P5D9;
 				ENABLE_BITCODE = NO;
@@ -1256,7 +1262,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.czjy.chaozhi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "75ee8f25-9458-4b56-892c-73559e6ce7d6";
-				PROVISIONING_PROFILE_SPECIFIER = CZJYDis;
+				PROVISIONING_PROFILE_SPECIFIER = CZJYDev;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

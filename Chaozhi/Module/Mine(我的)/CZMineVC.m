@@ -7,17 +7,22 @@
 //
 
 #import "CZMineVC.h"
+#import "PurchaseItem.h"
 
 @interface CZMineVC ()<UITableViewDelegate,UITableViewDataSource>
-{
-    NSArray *_imageArr;
-    NSArray *_nameArr;
-}
 
 @property (nonatomic,strong) UIView *headView;
 @property (nonatomic,strong) UIImageView *headImgView;
 @property (nonatomic,strong) UILabel *accountLab;
 @property (nonatomic,strong) UIImageView *arrowImgView;
+/** 图片数组 */
+@property (nonatomic,strong) NSMutableArray *imageArr;
+/** 名称数组 */
+@property (nonatomic,strong) NSMutableArray *nameArr;
+/** 报班model */
+@property (nonatomic,strong) PurchaseItem *purchaseItem;
+/** 报班数组 */
+@property (nonatomic,strong) NSMutableArray *purchaseArr;
 
 @end
 
@@ -41,10 +46,30 @@
 
 - (void)getData {
     
-    _imageArr = @[@"icon_课程",@"icon_消息",@"icon_收藏",@"icon_反馈",@"icon_设置"]; //@"icon_优惠券",
-    _nameArr = @[@"课程订单",@"我的消息",@"我的收藏",@"问题反馈",@"系统设置"]; //@"我的优惠券",
+    self.imageArr = [NSMutableArray arrayWithObjects:@"icon_课程",@"icon_消息",@"icon_收藏",@"icon_反馈",@"icon_设置", nil];
+    self.nameArr = [NSMutableArray arrayWithObjects:@"课程订单",@"我的消息",@"我的收藏",@"问题反馈",@"系统设置", nil];
     
+    [self getPurchaseStatus]; //获取报班状态
     [self getUserInfo]; //获取用户信息
+}
+
+// 报班状态
+- (void)getPurchaseStatus {
+    NSDictionary *dic = [NSDictionary dictionary];
+    [[NetworkManager sharedManager] postJSON:URL_PurchaseStatus parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+        
+        if (status == Request_Success) {
+            
+            self.purchaseItem = [PurchaseItem mj_objectWithKeyValues:(NSDictionary *)responseData];
+            self.purchaseArr = [self.purchaseItem.chat mutableCopy];
+            
+            if (self.purchaseItem.is_purchase == 1 && self.purchaseArr.count>0) {
+                [self.imageArr insertObject:@"icon_优惠券" atIndex:0];
+                [self.nameArr insertObject:@"我的班主任" atIndex:0];
+                [self.mineTableView reloadData];
+            }
+        }
+    }];
 }
 
 // 用户信息
@@ -160,6 +185,11 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     NSString *str = _nameArr[indexPath.row];
+    
+    if ([str isEqualToString:@"我的班主任"]) {
+        ChatItem *chatItem = self.purchaseArr[0];
+        [BaseWebVC showWithContro:self withUrlStr:chatItem.chat_url withTitle:_nameArr[indexPath.row] isPresent:NO];
+    }
     
     if ([str isEqualToString:@"课程订单"]) {
         [BaseWebVC showWithContro:self withUrlStr:H5_Orders withTitle:_nameArr[indexPath.row] isPresent:NO];
