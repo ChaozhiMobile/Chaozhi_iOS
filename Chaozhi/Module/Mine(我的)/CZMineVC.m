@@ -66,6 +66,9 @@
             if (self.purchaseItem.is_purchase == 1 && self.purchaseArr.count>0) {
                 [self.imageArr insertObject:@"icon_班主任" atIndex:0];
                 [self.nameArr insertObject:@"我的班主任" atIndex:0];
+                [self.imageArr insertObject:@"icon_报考资料" atIndex:1];
+                [self.nameArr insertObject:@"报考资料" atIndex:1];
+                
                 [self.mineTableView reloadData];
             }
         }
@@ -189,6 +192,10 @@
     if ([str isEqualToString:@"我的班主任"]) {
         ChatItem *chatItem = self.purchaseArr[0];
         [BaseWebVC showWithContro:self withUrlStr:chatItem.chat_url withTitle:_nameArr[indexPath.row] isPresent:NO];
+    }
+    
+    if ([str isEqualToString:@"报考资料"]) {
+        [BaseWebVC showWithContro:self withUrlStr:H5_Apply withTitle:_nameArr[indexPath.row] isPresent:NO];
     }
     
     if ([str isEqualToString:@"课程订单"]) {
