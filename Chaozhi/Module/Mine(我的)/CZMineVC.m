@@ -63,11 +63,15 @@
             self.purchaseItem = [PurchaseItem mj_objectWithKeyValues:(NSDictionary *)responseData];
             self.purchaseArr = [self.purchaseItem.chat mutableCopy];
             
-            if (self.purchaseItem.is_purchase == 1 && self.purchaseArr.count>0) {
-                [self.imageArr insertObject:@"icon_班主任" atIndex:0];
-                [self.nameArr insertObject:@"我的班主任" atIndex:0];
-                [self.imageArr insertObject:@"icon_报考资料" atIndex:1];
-                [self.nameArr insertObject:@"报考资料" atIndex:1];
+            if (self.purchaseItem.is_purchase == 1) {
+                
+                [self.imageArr insertObject:@"icon_报考资料" atIndex:0];
+                [self.nameArr insertObject:@"报考资料" atIndex:0];
+                
+                if (self.purchaseArr.count>0) {
+                    [self.imageArr insertObject:@"icon_班主任" atIndex:0];
+                    [self.nameArr insertObject:@"我的班主任" atIndex:0];
+                }
                 
                 [self.mineTableView reloadData];
             }
