@@ -44,10 +44,6 @@
 #pragma mark - methods
 
 - (void)backAction {
-//    if ([NSString isEmpty:[UserInfo share].token]) {
-//        [super backAction];
-//        return;
-//    }
     NSString *selectCourseID = [CacheUtil getCacherWithKey:kSelectCourseIDKey];
     if ([NSString isEmpty:selectCourseID]) {
         [Utils showToast:@"请先选择您关注的课程"];

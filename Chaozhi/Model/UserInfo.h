@@ -9,6 +9,9 @@
 
 #import <Foundation/Foundation.h>
 #import "BaseItem.h"
+
+@class PurchaseItem;
+
 @interface UserInfo : BaseItem
 
 @property (nonatomic,copy) NSString *token;
@@ -29,6 +32,7 @@
 @property (nonatomic,copy) NSString *autograph; //签名
 @property (nonatomic,copy) NSString *brief; //简介
 @property (nonatomic,copy) NSString *head_img_url; //头像地址
+@property (nonatomic, retain) PurchaseItem *purchase; //报班状态
 
 + (UserInfo *)share;
 

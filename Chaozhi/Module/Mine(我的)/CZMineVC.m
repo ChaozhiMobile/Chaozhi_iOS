@@ -49,37 +49,10 @@
     self.imageArr = [NSMutableArray arrayWithObjects:@"icon_课程",@"icon_消息",@"icon_收藏",@"icon_反馈",@"icon_设置", nil];
     self.nameArr = [NSMutableArray arrayWithObjects:@"课程订单",@"我的消息",@"我的收藏",@"问题反馈",@"系统设置", nil];
     
-    [self getPurchaseStatus]; //获取报班状态
     [self getUserInfo]; //获取用户信息
 }
 
-// 报班状态
-- (void)getPurchaseStatus {
-    NSDictionary *dic = [NSDictionary dictionary];
-    [[NetworkManager sharedManager] postJSON:URL_PurchaseStatus parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
-        
-        if (status == Request_Success) {
-            
-            self.purchaseItem = [PurchaseItem mj_objectWithKeyValues:(NSDictionary *)responseData];
-            self.purchaseArr = [self.purchaseItem.chat mutableCopy];
-            
-            if (self.purchaseItem.is_purchase == 1) {
-                
-                [self.imageArr insertObject:@"icon_报考资料" atIndex:0];
-                [self.nameArr insertObject:@"报考资料" atIndex:0];
-                
-                if (self.purchaseArr.count>0) {
-                    [self.imageArr insertObject:@"icon_班主任" atIndex:0];
-                    [self.nameArr insertObject:@"我的班主任" atIndex:0];
-                }
-                
-                [self.mineTableView reloadData];
-            }
-        }
-    }];
-}
-
-// 用户信息
+// 获取用户信息
 - (void)getUserInfo {
     
     if ([Utils isLoginWithJump:YES]) {
@@ -87,11 +60,34 @@
         [[NetworkManager sharedManager] postJSON:URL_UserInfo parameters:dic imageDataArr:nil imageName:nil  completion:^(id responseData, RequestState status, NSError *error) {
             
             if (status == Request_Success) {
+                
+                //缓存用户信息
                 NSDictionary *userDic = responseData;
                 [[UserInfo share] setUserInfo:[userDic mutableCopy]];
                 
-                [self.headImgView sd_setImageWithURL:[NSURL URLWithString:[UserInfo share].head_img_url] placeholderImage:[UIImage imageNamed:@"icon_red_wo"]];
-                self.accountLab.text = [UserInfo share].phone;
+                //将用户信息解析成model
+                UserInfo *userInfo = [UserInfo mj_objectWithKeyValues:(NSDictionary *)responseData];
+                
+                //头像、账号
+                [self.headImgView sd_setImageWithURL:[NSURL URLWithString:userInfo.head_img_url] placeholderImage:[UIImage imageNamed:@"icon_red_wo"]];
+                self.accountLab.text = userInfo.phone;
+                
+                //报班状态
+                self.purchaseItem = userInfo.purchase;
+                self.purchaseArr = [self.purchaseItem.chat mutableCopy];
+                
+                if (self.purchaseItem.is_purchase == 1) {
+                    
+                    [self.imageArr insertObject:@"icon_报考资料" atIndex:0];
+                    [self.nameArr insertObject:@"报考资料" atIndex:0];
+                    
+                    if (self.purchaseArr.count>0) {
+                        [self.imageArr insertObject:@"icon_班主任" atIndex:0];
+                        [self.nameArr insertObject:@"我的班主任" atIndex:0];
+                    }
+                    
+                    [self.mineTableView reloadData];
+                }
             }
         }];
     }

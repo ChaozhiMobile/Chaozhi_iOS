@@ -8,6 +8,7 @@
 //
 
 #import "UserInfo.h"
+#import "PurchaseItem.h"
 
 static UserInfo *_userInfo = nil;
 static NSUserDefaults *_defaults = nil;
@@ -52,6 +53,13 @@ static NSUserDefaults *_defaults = nil;
             _head_img_url = [NSString stringWithFormat:@"http:%@",head_img_url];
         }
     }
+}
+
++ (NSDictionary *)mj_objectClassInArray
+{
+    return @{
+             @"purchase":[PurchaseItem class]
+             };
 }
 
 @end
