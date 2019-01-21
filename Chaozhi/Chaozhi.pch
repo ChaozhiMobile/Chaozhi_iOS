@@ -30,6 +30,7 @@
 #import "XLGLottie.h"
 #import <MJExtension.h>
 #import <MJRefresh.h>
+#import "XLGAlertView.h"
 #endif
 
 #define kCachePath [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]
@@ -115,6 +116,8 @@
 #define kBorderGrayColor RGBValue(0xCCCCCC)
 #define TableViewDefaultBGColor RGBValue(0xfafafa) // 默认背景颜色
 #define kSeparatorColor RGB(235,235,235) // 分割线颜色
+#define ButtonColor RGBValue(0x00CD07)
+#define kBlack55Color RGBValue(0x555555)
 
 #ifdef DEBUG
 #define KOnline NO

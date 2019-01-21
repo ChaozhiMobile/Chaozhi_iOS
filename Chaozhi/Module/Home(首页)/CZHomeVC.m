@@ -92,6 +92,10 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
+    if (![Utils getNetStatus]) {
+        XLGAlertView *alert = [[XLGAlertView alloc] initWithTitle:@"温馨提醒" content:@"检测到您的网络异常，请检查网络" leftButtonTitle:@"" rightButtonTitle:@"我知道了"];
+    }
+    
     _versionItem = [[VersionItem alloc] init];
     _homeItem = [[HomeInfoItem alloc] init];
     _categoryItems = [[HomeCategoryItem alloc] init];

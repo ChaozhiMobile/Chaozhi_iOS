@@ -1,6 +1,6 @@
 //
 //  XLGAlertView.h
-//  Chaozhi
+//  SharenGo
 //  Notes：封装提醒对话框
 //
 //  Created by Jason_hzb on 2018/5/29.
@@ -20,7 +20,10 @@
 @property (nonatomic,retain) NSString *textStr;
 @property (nonatomic,copy) NSString *leftTitle;
 @property (nonatomic,copy) NSString *rigthTitle;
-
+/**  message */
+@property (nonatomic,retain) UILabel *contentLab;
+/** 正确or错误 */
+@property (nonatomic,assign) BOOL isSucc;
 @property (nonatomic,assign) AShowAnimationStyle animationStyle;
 
 /**
@@ -31,16 +34,26 @@
 /**
  *  构造方法
  *
- *  @param textStr    更新内容
- *  @param leftTitle  左按钮文字
- *  @param rigthTitle 右按钮文字
  *  @param topTitle   标题
+ *  @param textStr    弹框内容
+ *  @param leftBtnTitle  左按钮文字
+ *  @param rigthBtnTitle 右按钮文字
  *
  *  @return id
  */
-- (id)initWithContentText:(NSString *)textStr
-          leftButtonTitle:(NSString *)leftTitle
-         rightButtonTitle:(NSString *)rigthTitle
-           TopButtonTitle:(NSString *)topTitle;
+- (id)initWithTitle:(NSString *)topTitle content:(NSString *)textStr leftButtonTitle:(NSString *)leftBtnTitle rightButtonTitle:(NSString *)rigthBtnTitle;
+
+
+/**
+ 初始化带有成功或者失败的弹框
+
+ @param isSucc YES 成功弹框
+ @param textStr 内容
+ @param leftBtnTitle 左按钮文字
+ @param rigthBtnTitle 右按钮文字
+ @return id
+ */
+- (id)initWithSucc:(BOOL)isSucc content:(NSString *)textStr leftButtonTitle:(NSString *)leftBtnTitle rightButtonTitle:(NSString *)rigthBtnTitle;
+
 
 @end

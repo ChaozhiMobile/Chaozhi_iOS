@@ -1,6 +1,6 @@
 //
 //  XLGAlertView.m
-//  Chaozhi
+//  SharenGo
 //  Notes：
 //
 //  Created by Jason_hzb on 2018/5/29.
@@ -17,24 +17,34 @@
 
 @implementation XLGAlertView
 
-- (id)initWithContentText:(NSString *)textStr
-          leftButtonTitle:(NSString *)leftTitle
-         rightButtonTitle:(NSString *)rigthTitle
-           TopButtonTitle:(NSString *)topTitle{
-    
+- (id)initWithTitle:(NSString *)topTitle content:(NSString *)textStr leftButtonTitle:(NSString *)leftBtnTitle rightButtonTitle:(NSString *)rigthBtnTitle {
     CGRect frame = CGRectMake(0, 0, WIDTH, HEIGHT);
-    
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.2];
         [[UIApplication sharedApplication].keyWindow addSubview:self];
-        
         self.textStr = textStr;
-        self.leftTitle = leftTitle;
-        self.rigthTitle = rigthTitle;
+        self.leftTitle = leftBtnTitle;
+        self.rigthTitle = rigthBtnTitle;
         self.topTitle = topTitle;
-        
-        [self initView]; //初始化视图
+//        [self initView]; //初始化视图
+        [self setupView];//初始化视图（新）
+    }
+    return self;
+}
+
+- (id)initWithSucc:(BOOL)isSucc content:(NSString *)textStr leftButtonTitle:(NSString *)leftBtnTitle rightButtonTitle:(NSString *)rigthBtnTitle {
+    CGRect frame = CGRectMake(0, 0, WIDTH, HEIGHT);
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.2];
+        [[UIApplication sharedApplication].keyWindow addSubview:self];
+        self.textStr = textStr;
+        self.leftTitle = leftBtnTitle;
+        self.rigthTitle = rigthBtnTitle;
+        self.isSucc = isSucc;
+//        [self initView]; //初始化视图
+        [self setupViewWithImage];//初始化视图（新）
     }
     return self;
 }
@@ -50,33 +60,43 @@
     
     UILabel *titleLab = [[UILabel alloc] initWithFrame:CGRectMake(0, autoScaleH(18), autoScaleW(280), autoScaleW(40))];
     titleLab.text = self.topTitle;
-    titleLab.textColor = RGBValue(0x818181);;
+    titleLab.textColor = kBlack55Color;
+//    RGBValue(0x818181);
     titleLab.font = [UIFont systemFontOfSize:autoScaleW(18)];
     titleLab.textAlignment = NSTextAlignmentCenter;
     [bgView addSubview:titleLab];
     
     CGFloat contentHeight = autoScaleH(5);
     CGFloat height = [self.textStr getTextHeightWithFont:[UIFont systemFontOfSize:autoScaleW(14)] width:autoScaleW(226)];
-    UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(autoScaleW(280)/2-autoScaleW(226)/2, titleLab.bottom+contentHeight, autoScaleW(226), height)];
-    [lab setTextAlignment:NSTextAlignmentCenter];
-    lab.numberOfLines = 0;
-    lab.text = self.textStr;
-    lab.font = [UIFont systemFontOfSize:autoScaleW(14)];
-    lab.textColor = RGBValue(0xB4B4B4);
-    [bgView addSubview:lab];
+    _contentLab = [[UILabel alloc] initWithFrame:CGRectMake(autoScaleW(280)/2-autoScaleW(226)/2, titleLab.bottom+contentHeight, autoScaleW(226), height)];
+    if ([self.topTitle isEqualToString:@"车辆上线前请注意以下事项"]) {
+        [_contentLab setTextAlignment:NSTextAlignmentLeft];
+    }
+    else {
+        [_contentLab setTextAlignment:NSTextAlignmentCenter];
+    }
+    
+    _contentLab.numberOfLines = 0;
+    _contentLab.text = self.textStr;
+    _contentLab.font = [UIFont systemFontOfSize:autoScaleW(14)];
+    _contentLab.textColor =  RGBValue(0xB4B4B4);;
+    if (_leftTitle.length==0) {
+        _contentLab.textColor =  ButtonColor;;
+    }
+    [bgView addSubview:_contentLab];
     contentHeight += height+5;
     
     
-    CGFloat offY = CGRectGetMaxY(lab.frame) + 20;
+    CGFloat offY = CGRectGetMaxY(_contentLab.frame) + 20;
     
     UIView *rowLine = [[UIView alloc] initWithFrame:CGRectMake(0, offY, bgView.frame.size.width, autoScaleH(1))];
-    rowLine.backgroundColor = RGBValue(0x979797);
-    rowLine.alpha = 0.0544;
+    rowLine.backgroundColor = kLineColor;
+//    rowLine.alpha = 0.01;
     [bgView addSubview:rowLine];
     
     UIView *colLine = [[UIView alloc] initWithFrame:CGRectMake(bgView.frame.size.width/2, offY, autoScaleW(1), autoScaleH(48))];
-    colLine.backgroundColor = RGBValue(0x979797);
-    colLine.alpha = 0.0544;
+    colLine.backgroundColor = kLineColor;
+//    colLine.alpha = 0.01;
     [bgView addSubview:colLine];
     
     UIButton *cancelBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, offY, bgView.frame.size.width/2, autoScaleH(48))];
@@ -99,7 +119,10 @@
     }
     [doneBtn setTitle:self.rigthTitle forState:UIControlStateNormal];
     doneBtn.titleLabel.font = [UIFont systemFontOfSize:autoScaleH(15)];
-    [doneBtn setTitleColor:kBlueColor forState:UIControlStateNormal];
+    [doneBtn setTitleColor:kBlack55Color forState:UIControlStateNormal];
+    if (self.leftTitle.length>0) {
+        [doneBtn setTitleColor:ButtonColor forState:UIControlStateNormal];
+    }
     doneBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
     [doneBtn addTarget:self action:@selector(doneAction:) forControlEvents:UIControlEventTouchUpInside];
     [bgView addSubview:doneBtn];
@@ -178,5 +201,136 @@
 -(void)setAnimationStyle:(AShowAnimationStyle)animationStyle{
     [bgView setShowAnimationWithStyle:animationStyle];
 }
+
+- (void)setupView {
+    bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, autoScaleW(280) , 0)];
+    bgView.backgroundColor = [UIColor whiteColor];
+    bgView.layer.cornerRadius = 10;
+    bgView.clipsToBounds = YES;
+    [self addSubview:bgView];
+    
+    UILabel *titleLab = [[UILabel alloc] initWithFrame:CGRectMake(10, autoScaleH(18), bgView.width-20, autoScaleW(20))];
+    titleLab.text = self.topTitle;
+    titleLab.textColor = kBlack55Color;
+    titleLab.font = [UIFont systemFontOfSize:16 weight:UIFontWeightMedium];;
+    titleLab.textAlignment = NSTextAlignmentCenter;
+    [bgView addSubview:titleLab];
+    
+    CGFloat height = [self.textStr getTextHeightWithFont:[UIFont systemFontOfSize:autoScaleW(15)] width:bgView.width-10];
+    _contentLab = [[UILabel alloc] initWithFrame:CGRectMake(5, titleLab.bottom+autoScaleW(20), bgView.width-10, height+5)];
+    _contentLab.numberOfLines = 0;
+    _contentLab.textAlignment = NSTextAlignmentCenter;
+    _contentLab.text = self.textStr;
+    _contentLab.font = [UIFont systemFontOfSize:autoScaleW(14.5)];
+    _contentLab.textColor =  RGBValue(0x00CF1F);;
+    [bgView addSubview:_contentLab];
+    
+    CGFloat btnWidth = self.leftTitle.length==0?(bgView.frame.size.width - autoScaleW(18)*2):(bgView.frame.size.width - autoScaleW(18)*3)/2.0;
+    CGFloat leftSpace = autoScaleW(18);
+    UIButton *cancelBtn = [[UIButton alloc] initWithFrame:CGRectMake(leftSpace, _contentLab.bottom+autoScaleW(28), btnWidth, autoScaleW(40))];
+    cancelBtn.userInteractionEnabled = YES;
+    [cancelBtn setTitle:self.leftTitle forState:UIControlStateNormal];
+    cancelBtn.titleLabel.font = [UIFont systemFontOfSize:autoScaleW(15)];
+    [cancelBtn addTarget:self action:@selector(cancelAction:) forControlEvents:UIControlEventTouchUpInside];
+    [cancelBtn setTitleColor:RGBValue(0xB5B5B5) forState:UIControlStateNormal];
+    cancelBtn.layer.borderColor = RGBValue(0xDEDEDE).CGColor;
+    cancelBtn.layer.borderWidth = 1;
+    cancelBtn.layer.cornerRadius = 5;
+    cancelBtn.layer.masksToBounds = YES;
+    [bgView addSubview:cancelBtn];
+    
+    UIButton *doneBtn = [[UIButton alloc] initWithFrame:CGRectMake(cancelBtn.right+leftSpace, cancelBtn.top, btnWidth, cancelBtn.height)];
+    [doneBtn setTitle:self.rigthTitle forState:UIControlStateNormal];
+    doneBtn.titleLabel.font = [UIFont systemFontOfSize:autoScaleW(15)];
+    [doneBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    doneBtn.backgroundColor = ButtonColor;
+    doneBtn.cornerRadius = 5;
+    [doneBtn addTarget:self action:@selector(doneAction:) forControlEvents:UIControlEventTouchUpInside];
+    [bgView addSubview:doneBtn];
+    
+    if (self.leftTitle.length==0) {
+        cancelBtn.width = 0;
+        doneBtn.left = cancelBtn.left;
+    }
+    bgView.height = doneBtn.bottom+autoScaleW(16);
+    bgView.center = self.center;
+    
+    //默认显示动画
+    bgView.alpha = 0;
+    bgView.centerY = self.centerY+30;
+    __weak typeof(self) weakSelf = self;
+    [UIView animateWithDuration:0.3 animations:^{
+        self->bgView.centerY = weakSelf.centerY;
+        self->bgView.alpha = 1;
+    }];
+}
+
+- (void)setupViewWithImage {
+    bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, autoScaleW(280) , 0)];
+    bgView.backgroundColor = [UIColor whiteColor];
+    bgView.layer.cornerRadius = 10;
+    bgView.clipsToBounds = YES;
+    [self addSubview:bgView];
+    
+    UIImageView *succImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, autoScaleH(30), autoScaleW(50), autoScaleW(50))];
+    [bgView addSubview:succImgView];
+    succImgView.centerX = bgView.width/2.0;
+    
+    CGFloat height = [self.textStr getTextHeightWithFont:[UIFont systemFontOfSize:autoScaleW(15)] width:bgView.width-10];
+    _contentLab = [[UILabel alloc] initWithFrame:CGRectMake(5, succImgView.bottom+autoScaleW(20), bgView.width-10, height+5)];
+    _contentLab.numberOfLines = 0;
+    _contentLab.textAlignment = NSTextAlignmentCenter;
+    _contentLab.text = self.textStr;
+    _contentLab.font = [UIFont systemFontOfSize:autoScaleW(14.5)];
+    _contentLab.textColor =  RGBValue(0x00CF1F);;
+    [bgView addSubview:_contentLab];
+    
+    CGFloat btnWidth = self.leftTitle.length==0?(bgView.frame.size.width - autoScaleW(18)*2):(bgView.frame.size.width - autoScaleW(18)*3)/2.0;
+    CGFloat leftSpace = autoScaleW(18);
+    UIButton *cancelBtn = [[UIButton alloc] initWithFrame:CGRectMake(leftSpace, _contentLab.bottom+autoScaleW(28), btnWidth, autoScaleW(40))];
+    cancelBtn.userInteractionEnabled = YES;
+    [cancelBtn setTitle:self.leftTitle forState:UIControlStateNormal];
+    cancelBtn.titleLabel.font = [UIFont systemFontOfSize:autoScaleW(15)];
+    [cancelBtn addTarget:self action:@selector(cancelAction:) forControlEvents:UIControlEventTouchUpInside];
+    [cancelBtn setTitleColor:RGBValue(0xB5B5B5) forState:UIControlStateNormal];
+    cancelBtn.layer.borderColor = RGBValue(0xDEDEDE).CGColor;
+    cancelBtn.layer.borderWidth = 1;
+    cancelBtn.layer.cornerRadius = 5;
+    cancelBtn.layer.masksToBounds = YES;
+    [bgView addSubview:cancelBtn];
+    
+    UIButton *doneBtn = [[UIButton alloc] initWithFrame:CGRectMake(cancelBtn.right+leftSpace, cancelBtn.top, btnWidth, cancelBtn.height)];
+    [doneBtn setTitle:self.rigthTitle forState:UIControlStateNormal];
+    doneBtn.titleLabel.font = [UIFont systemFontOfSize:autoScaleW(15)];
+    [doneBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    doneBtn.backgroundColor = ButtonColor;
+    doneBtn.cornerRadius = 5;
+    [doneBtn addTarget:self action:@selector(doneAction:) forControlEvents:UIControlEventTouchUpInside];
+    [bgView addSubview:doneBtn];
+    if (self.isSucc) {
+        succImgView.image = [UIImage imageNamed:@"app_popup_icon_success"];
+        _contentLab.textColor = ButtonColor;
+    }
+    else {
+        _contentLab.textColor = RGBValue(0xE72828);
+        succImgView.image = [UIImage imageNamed:@"app_popup_icon_fail"];
+    }
+    if (self.leftTitle.length==0) {
+        cancelBtn.width = 0;
+        doneBtn.left = cancelBtn.left;
+    }
+    bgView.height = doneBtn.bottom+autoScaleW(16);
+    bgView.center = self.center;
+    
+    //默认显示动画
+    bgView.alpha = 0;
+    bgView.centerY = self.centerY+30;
+    __weak typeof(self) weakSelf = self;
+    [UIView animateWithDuration:0.3 animations:^{
+        self->bgView.centerY = weakSelf.centerY;
+        self->bgView.alpha = 1;
+    }];
+}
+
 
 @end
