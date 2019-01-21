@@ -68,7 +68,7 @@
 
 //拨打客服电话
 - (IBAction)callPhoneAction:(UIButton *)sender {
-    NSMutableString* str=[[NSMutableString alloc] initWithFormat:@"tel:%@",@"4006777098"];
+    NSMutableString* str=[[NSMutableString alloc] initWithFormat:@"tel:%@",@"010-68979999"];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
 }
 
