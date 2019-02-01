@@ -15,7 +15,7 @@ NSString *h5Url(void) {
     if (KOnline || [Utils getServer] == 1) {
         return @"https://m.chaozhiedu.com/"; //正式地址
     } else {
-        return @"http://test.chaozhiedu.com/mobile/"; //测试地址
+        return @"http://mtest.chaozhiedu.com/mobile/"; //测试地址
 //        return @"https://www.zhuxb.com/dist/"; //开发地址
     }
 }
