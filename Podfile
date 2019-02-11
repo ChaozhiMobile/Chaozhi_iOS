@@ -16,6 +16,7 @@ def pods
   pod 'ReactiveObjC'
   pod 'lottie-ios'
   pod 'SDCycleScrollView'
+  pod 'JPush-iOS-SDK'
 end
  target 'Chaozhi' do
 

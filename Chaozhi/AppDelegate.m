@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "AppDelegate+Push.h"
 #import <IQKeyboardManager.h>
 #import "NetworkUtil.h"
 #import "CZGuideVC.h"
@@ -19,9 +20,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     
 //    [CacheUtil saveCacher:kSelectCourseIDKey withValue:@""];
+    
+    [self registerPush:application options:launchOptions]; //注册激光推送
     
     //监测网络
     [[NetworkUtil sharedInstance] listening];

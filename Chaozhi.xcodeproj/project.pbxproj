@@ -114,6 +114,7 @@
 		A05FF5DA215B163400C51E05 /* JHHJView.m in Sources */ = {isa = PBXBuildFile; fileRef = A05FF5D4215B163400C51E05 /* JHHJView.m */; };
 		A05FF5DB215B163400C51E05 /* JHHJAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A05FF5D5215B163400C51E05 /* JHHJAnimation.m */; };
 		A05FF5DC215B163400C51E05 /* AEIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = A05FF5D8215B163400C51E05 /* AEIndicator.m */; };
+		A070498D2211610300864050 /* AppDelegate+Push.m in Sources */ = {isa = PBXBuildFile; fileRef = A070498C2211610300864050 /* AppDelegate+Push.m */; };
 		A091D1302178FAF300CCDAF6 /* StudyInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A091D12F2178FAF300CCDAF6 /* StudyInfoItem.m */; };
 		A0C1257321BC021B0026430E /* CZStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C1257221BC021B0026430E /* CZStarView.m */; };
 /* End PBXBuildFile section */
@@ -296,6 +297,9 @@
 		A05FF5D6215B163400C51E05 /* JHHJCenterBGView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHHJCenterBGView.h; sourceTree = "<group>"; };
 		A05FF5D7215B163400C51E05 /* AEIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEIndicator.h; sourceTree = "<group>"; };
 		A05FF5D8215B163400C51E05 /* AEIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEIndicator.m; sourceTree = "<group>"; };
+		A070498B2211610100864050 /* AppDelegate+Push.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Push.h"; sourceTree = "<group>"; };
+		A070498C2211610300864050 /* AppDelegate+Push.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Push.m"; sourceTree = "<group>"; };
+		A080B336221172D200F938A7 /* Chaozhi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Chaozhi.entitlements; sourceTree = "<group>"; };
 		A091D12E2178FAF300CCDAF6 /* StudyInfoItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudyInfoItem.h; sourceTree = "<group>"; };
 		A091D12F2178FAF300CCDAF6 /* StudyInfoItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyInfoItem.m; sourceTree = "<group>"; };
 		A0C1257121BC021B0026430E /* CZStarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZStarView.h; sourceTree = "<group>"; };
@@ -366,8 +370,11 @@
 		A020AF46214AA85B0011BB4F /* Chaozhi */ = {
 			isa = PBXGroup;
 			children = (
+				A080B336221172D200F938A7 /* Chaozhi.entitlements */,
 				A020AF47214AA85B0011BB4F /* AppDelegate.h */,
 				A020AF48214AA85B0011BB4F /* AppDelegate.m */,
+				A070498B2211610100864050 /* AppDelegate+Push.h */,
+				A070498C2211610300864050 /* AppDelegate+Push.m */,
 				A020B014214AAB140011BB4F /* Chaozhi.pch */,
 				A020AF65214AAB130011BB4F /* Config.h */,
 				A020AF68214AAB130011BB4F /* Config.m */,
@@ -890,6 +897,11 @@
 				TargetAttributes = {
 					A020AF43214AA85B0011BB4F = {
 						CreatedOnToolsVersion = 9.4;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1051,6 +1063,7 @@
 				A00BE16A219FF6E70042E6ED /* VersionItem.m in Sources */,
 				A0599A2221574CAF00D17058 /* CZMineVC.m in Sources */,
 				A020B076214AAB150011BB4F /* LDNetConnect.m in Sources */,
+				A070498D2211610300864050 /* AppDelegate+Push.m in Sources */,
 				A05999F42155EC1500D17058 /* XLGChangeServerVC.m in Sources */,
 				A05999F22155EC1500D17058 /* XLGChangeServerCell.m in Sources */,
 				A020B063214AAB150011BB4F /* XLGInternalTestVC.m in Sources */,
@@ -1216,6 +1229,7 @@
 			baseConfigurationReference = 0AF6FC5BB1D601461F72C62C /* Pods-Chaozhi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Chaozhi/Chaozhi.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = SD4544P5D9;
@@ -1244,6 +1258,7 @@
 			baseConfigurationReference = 204F3265086F4B67483EF547 /* Pods-Chaozhi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Chaozhi/Chaozhi.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = SD4544P5D9;
