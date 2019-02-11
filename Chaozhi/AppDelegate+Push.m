@@ -117,8 +117,10 @@
     }
     
     if ([type isEqualToString:@"h5_myteacher"]) { //我的班主任
-        NSString *url = [NSString stringWithFormat:@"%@?token=%@",value,[UserInfo share].token];
-        [BaseWebVC showWithContro:self.window.rootViewController withUrlStr:url withTitle:@"我的班主任" isPresent:NO];
+        if ([Utils isLoginWithJump:YES]) {
+            NSString *url = [NSString stringWithFormat:@"%@?token=%@",value,[UserInfo share].token];
+            [BaseWebVC showWithContro:self.window.rootViewController withUrlStr:url withTitle:@"我的班主任" isPresent:YES];
+        }
     }
 }
 

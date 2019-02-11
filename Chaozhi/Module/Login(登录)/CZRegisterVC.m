@@ -7,6 +7,7 @@
 //
 
 #import "CZRegisterVC.h"
+#import "JPUSHService.h"
 
 @interface CZRegisterVC ()
 
@@ -107,6 +108,11 @@
             [CacheUtil saveCacher:@"token" withValue:token];
             
             [[NSNotificationCenter defaultCenter] postNotificationName:kLoginSuccNotification object:nil];
+            
+            // 极光推送绑定别名
+            [JPUSHService setTags:nil alias:[UserInfo share].phone fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias) {
+                
+            }];
             
             // 跳转到首页
             [self.navigationController popToRootViewControllerAnimated:YES];

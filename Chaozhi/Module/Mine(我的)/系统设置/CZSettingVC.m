@@ -7,6 +7,7 @@
 //
 
 #import "CZSettingVC.h"
+#import "JPUSHService.h"
 
 @interface CZSettingVC ()
 
@@ -78,6 +79,11 @@
     self.tabBarController.selectedIndex = 0;
     [self.navigationController popViewControllerAnimated:NO];
     [Utils logout:NO]; //不跳登录页面
+    
+    // 极光推送清除别名
+    [JPUSHService setTags:nil alias:@"" fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
