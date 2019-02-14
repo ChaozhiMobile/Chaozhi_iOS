@@ -8,9 +8,7 @@
 
 #import "NetworkManager.h"
 #import <AFNetworking.h>
-#import "NetworkUtil.h"
 #import "Utils.h"
-#import "BaseNC.h"
 #import "XLGExternalTestTool.h"
 
 #define TIMEOUT 20;

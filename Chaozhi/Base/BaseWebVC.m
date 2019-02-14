@@ -150,6 +150,7 @@
         [_userContentController addScriptMessageHandler:delegateController name:@"refresh"]; //刷新
         [_userContentController addScriptMessageHandler:delegateController name:@"open"]; //打开新页面
         [_userContentController addScriptMessageHandler:delegateController name:@"close"]; //关闭当前页面
+        [_userContentController addScriptMessageHandler:delegateController name:@"tapBack"]; //返回弹窗提示
     }
     return _webView;
 }
@@ -218,6 +219,26 @@
             [self dismissViewControllerAnimated:YES completion:nil];
         } else {
             [self.navigationController popViewControllerAnimated:YES];
+        }
+    }
+    
+    if ([message.name isEqualToString:@"tapBack"]) { //返回弹窗提示
+        NSDictionary *dic = message.body;
+        if ([dic[@"type"] isEqualToString:@"alert"]) {
+            NSString *title = dic[@"title"];
+            NSString *content = dic[@"content"];
+            XLGAlertView *alert = [[XLGAlertView alloc] initWithTitle:title content:content leftButtonTitle:@"" rightButtonTitle:@"确定"];
+            alert.doneBlock = ^{
+                
+            };
+        }
+        if ([dic[@"type"] isEqualToString:@"confirm"]) {
+            NSString *title = dic[@"title"];
+            NSString *content = dic[@"content"];
+            XLGAlertView *alert = [[XLGAlertView alloc] initWithTitle:title content:content leftButtonTitle:@"取消" rightButtonTitle:@"确定"];
+            alert.doneBlock = ^{
+                
+            };
         }
     }
     
@@ -348,6 +369,7 @@
     [_webView.scrollView removeObserver:self forKeyPath:@"contentOffset"];
     [_userContentController removeScriptMessageHandlerForName:@"open"];
     [_userContentController removeScriptMessageHandlerForName:@"close"];
+    [_userContentController removeScriptMessageHandlerForName:@"tapBack"];
     [_userContentController removeScriptMessageHandlerForName:@"return"];
     [_userContentController removeScriptMessageHandlerForName:@"login"];
     [_userContentController removeScriptMessageHandlerForName:@"refresh"];
