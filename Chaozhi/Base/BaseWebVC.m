@@ -172,6 +172,7 @@
                 [self->_webView evaluateJavaScript:@"fn_tapBack();" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
                     NSLog(@"js返回结果%@",result);
                 }];
+                self->_alertDic = nil;
                 [self.navigationController popViewControllerAnimated:YES];
             };
         }
@@ -183,6 +184,7 @@
                 [self->_webView evaluateJavaScript:@"fn_tapBack();" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
                     NSLog(@"js返回结果%@",result);
                 }];
+                self->_alertDic = nil;
                 [self.navigationController popViewControllerAnimated:YES];
             };
         }
