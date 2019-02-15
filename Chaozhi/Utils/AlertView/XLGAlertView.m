@@ -61,7 +61,6 @@
     UILabel *titleLab = [[UILabel alloc] initWithFrame:CGRectMake(0, autoScaleH(18), autoScaleW(280), autoScaleW(40))];
     titleLab.text = self.topTitle;
     titleLab.textColor = kBlack55Color;
-//    RGBValue(0x818181);
     titleLab.font = [UIFont systemFontOfSize:autoScaleW(18)];
     titleLab.textAlignment = NSTextAlignmentCenter;
     [bgView addSubview:titleLab];
@@ -69,12 +68,7 @@
     CGFloat contentHeight = autoScaleH(5);
     CGFloat height = [self.textStr getTextHeightWithFont:[UIFont systemFontOfSize:autoScaleW(14)] width:autoScaleW(226)];
     _contentLab = [[UILabel alloc] initWithFrame:CGRectMake(autoScaleW(280)/2-autoScaleW(226)/2, titleLab.bottom+contentHeight, autoScaleW(226), height)];
-    if ([self.topTitle isEqualToString:@"车辆上线前请注意以下事项"]) {
-        [_contentLab setTextAlignment:NSTextAlignmentLeft];
-    }
-    else {
-        [_contentLab setTextAlignment:NSTextAlignmentCenter];
-    }
+    [_contentLab setTextAlignment:NSTextAlignmentCenter];
     
     _contentLab.numberOfLines = 0;
     _contentLab.text = self.textStr;
@@ -86,17 +80,14 @@
     [bgView addSubview:_contentLab];
     contentHeight += height+5;
     
-    
     CGFloat offY = CGRectGetMaxY(_contentLab.frame) + 20;
     
     UIView *rowLine = [[UIView alloc] initWithFrame:CGRectMake(0, offY, bgView.frame.size.width, autoScaleH(1))];
     rowLine.backgroundColor = kLineColor;
-//    rowLine.alpha = 0.01;
     [bgView addSubview:rowLine];
     
     UIView *colLine = [[UIView alloc] initWithFrame:CGRectMake(bgView.frame.size.width/2, offY, autoScaleW(1), autoScaleH(48))];
     colLine.backgroundColor = kLineColor;
-//    colLine.alpha = 0.01;
     [bgView addSubview:colLine];
     
     UIButton *cancelBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, offY, bgView.frame.size.width/2, autoScaleH(48))];
@@ -155,7 +146,6 @@
         bgView.height = titleLab.bottom+contentHeight+15+autoScaleH(48);
         bgView.center = self.center;
     }
-    
 }
 
 #pragma mark - 取消点击
@@ -331,6 +321,5 @@
         self->bgView.alpha = 1;
     }];
 }
-
 
 @end
