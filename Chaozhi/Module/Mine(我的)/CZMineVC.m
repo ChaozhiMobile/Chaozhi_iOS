@@ -8,6 +8,7 @@
 
 #import "CZMineVC.h"
 #import "PurchaseItem.h"
+#import "NotifyItem.h"
 
 @interface CZMineVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -21,12 +22,22 @@
 @property (nonatomic,strong) NSMutableArray *nameArr;
 /** 报班model */
 @property (nonatomic,strong) PurchaseItem *purchaseItem;
+/** 红点model */
+@property (nonatomic,strong) NotifyItem *notifyItem;
 /** 报班数组 */
 @property (nonatomic,strong) NSMutableArray *purchaseArr;
 
 @end
 
 @implementation CZMineVC
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    if ([Utils isLoginWithJump:YES]) {
+        [self getRedPointInfo];
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -49,50 +60,63 @@
     self.imageArr = [NSMutableArray arrayWithObjects:@"icon_课程",@"icon_消息",@"icon_收藏",@"icon_反馈",@"icon_设置", nil];
     self.nameArr = [NSMutableArray arrayWithObjects:@"课程订单",@"我的消息",@"我的收藏",@"问题反馈",@"系统设置", nil];
     
-    [self getUserInfo]; //获取用户信息
+    if ([Utils isLoginWithJump:YES]) {
+        [self getUserInfo]; //获取用户信息
+    }
 }
 
 // 获取用户信息
 - (void)getUserInfo {
     
-    if ([Utils isLoginWithJump:YES]) {
-        NSDictionary *dic = [NSDictionary dictionary];
-        [[NetworkManager sharedManager] postJSON:URL_UserInfo parameters:dic imageDataArr:nil imageName:nil  completion:^(id responseData, RequestState status, NSError *error) {
+    NSDictionary *dic = [NSDictionary dictionary];
+    [[NetworkManager sharedManager] postJSON:URL_UserInfo parameters:dic imageDataArr:nil imageName:nil  completion:^(id responseData, RequestState status, NSError *error) {
+        
+        if (status == Request_Success) {
             
-            if (status == Request_Success) {
+            //缓存用户信息
+            NSDictionary *userDic = responseData;
+            [[UserInfo share] setUserInfo:[userDic mutableCopy]];
+            
+            //将用户信息解析成model
+            UserInfo *userInfo = [UserInfo mj_objectWithKeyValues:(NSDictionary *)responseData];
+            
+            //头像、账号
+            [self.headImgView sd_setImageWithURL:[NSURL URLWithString:userInfo.head_img_url] placeholderImage:[UIImage imageNamed:@"icon_red_wo"]];
+            self.accountLab.text = userInfo.phone;
+            
+            //报班状态
+            self.purchaseItem = userInfo.purchase;
+            self.purchaseArr = [self.purchaseItem.chat mutableCopy];
+            
+            if (self.purchaseItem.is_purchase == 1
+                && ![self.nameArr containsObject:@"报考资料"]) {
                 
-                //缓存用户信息
-                NSDictionary *userDic = responseData;
-                [[UserInfo share] setUserInfo:[userDic mutableCopy]];
+                [self.imageArr insertObject:@"icon_报考资料" atIndex:0];
+                [self.nameArr insertObject:@"报考资料" atIndex:0];
                 
-                //将用户信息解析成model
-                UserInfo *userInfo = [UserInfo mj_objectWithKeyValues:(NSDictionary *)responseData];
-                
-                //头像、账号
-                [self.headImgView sd_setImageWithURL:[NSURL URLWithString:userInfo.head_img_url] placeholderImage:[UIImage imageNamed:@"icon_red_wo"]];
-                self.accountLab.text = userInfo.phone;
-                
-                //报班状态
-                self.purchaseItem = userInfo.purchase;
-                self.purchaseArr = [self.purchaseItem.chat mutableCopy];
-                
-                if (self.purchaseItem.is_purchase == 1
-                    && ![self.nameArr containsObject:@"报考资料"]) {
-                    
-                    [self.imageArr insertObject:@"icon_报考资料" atIndex:0];
-                    [self.nameArr insertObject:@"报考资料" atIndex:0];
-                    
-                    if (self.purchaseArr.count>0
-                        && ![self.nameArr containsObject:@"我的班主任"]) {
-                        [self.imageArr insertObject:@"icon_班主任" atIndex:0];
-                        [self.nameArr insertObject:@"我的班主任" atIndex:0];
-                    }
-                    
-                    [self.mineTableView reloadData];
+                if (self.purchaseArr.count>0
+                    && ![self.nameArr containsObject:@"我的班主任"]) {
+                    [self.imageArr insertObject:@"icon_班主任" atIndex:0];
+                    [self.nameArr insertObject:@"我的班主任" atIndex:0];
                 }
+                
+                [self.mineTableView reloadData];
             }
-        }];
-    }
+        }
+    }];
+}
+
+//获取小红点数量
+- (void)getRedPointInfo {
+    NSDictionary *dic = [NSDictionary dictionary];
+    [[NetworkManager sharedManager] postJSON:URL_Notify parameters:dic imageDataArr:nil imageName:nil  completion:^(id responseData, RequestState status, NSError *error) {
+        
+        if (status == Request_Success) {
+            
+            self->_notifyItem = [NotifyItem mj_objectWithKeyValues:(NSDictionary *)responseData];
+            [self.mineTableView reloadData];
+        }
+    }];
 }
 
 #pragma mark - init view
@@ -181,6 +205,17 @@
     cell.textLabel.text = _nameArr[indexPath.row];
     cell.textLabel.textColor = RGBValue(0x24253D);
     cell.textLabel.font = [UIFont systemFontOfSize:12 weight:UIFontWeightMedium];
+    
+    if ([_nameArr[indexPath.row] isEqualToString:@"我的班主任"]
+        && ![NSString isEmpty:_notifyItem.teacher_unread]
+        && [_notifyItem.teacher_unread intValue] != 0) {
+        UILabel *numLab = [[UILabel alloc] initWithFrame:CGRectMake(WIDTH-autoScaleW(45), cell.height/2-autoScaleW(4), autoScaleW(8), autoScaleW(8))];
+        numLab.tag = 1000+indexPath.row;
+        numLab.backgroundColor = AppThemeColor;
+        numLab.layer.cornerRadius = numLab.width/2;
+        [numLab.layer setMasksToBounds:YES];
+        [cell addSubview:numLab];
+    }
     
     return cell;
 }

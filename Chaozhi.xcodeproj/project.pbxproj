@@ -115,6 +115,7 @@
 		A05FF5DB215B163400C51E05 /* JHHJAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A05FF5D5215B163400C51E05 /* JHHJAnimation.m */; };
 		A05FF5DC215B163400C51E05 /* AEIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = A05FF5D8215B163400C51E05 /* AEIndicator.m */; };
 		A070498D2211610300864050 /* AppDelegate+Push.m in Sources */ = {isa = PBXBuildFile; fileRef = A070498C2211610300864050 /* AppDelegate+Push.m */; };
+		A071273B2216E7D700DC3C20 /* NotifyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A071273A2216E7D700DC3C20 /* NotifyItem.m */; };
 		A091D1302178FAF300CCDAF6 /* StudyInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A091D12F2178FAF300CCDAF6 /* StudyInfoItem.m */; };
 		A0C1257321BC021B0026430E /* CZStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C1257221BC021B0026430E /* CZStarView.m */; };
 /* End PBXBuildFile section */
@@ -299,6 +300,8 @@
 		A05FF5D8215B163400C51E05 /* AEIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEIndicator.m; sourceTree = "<group>"; };
 		A070498B2211610100864050 /* AppDelegate+Push.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Push.h"; sourceTree = "<group>"; };
 		A070498C2211610300864050 /* AppDelegate+Push.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Push.m"; sourceTree = "<group>"; };
+		A07127392216E7D700DC3C20 /* NotifyItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotifyItem.h; sourceTree = "<group>"; };
+		A071273A2216E7D700DC3C20 /* NotifyItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotifyItem.m; sourceTree = "<group>"; };
 		A080B336221172D200F938A7 /* Chaozhi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Chaozhi.entitlements; sourceTree = "<group>"; };
 		A091D12E2178FAF300CCDAF6 /* StudyInfoItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudyInfoItem.h; sourceTree = "<group>"; };
 		A091D12F2178FAF300CCDAF6 /* StudyInfoItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyInfoItem.m; sourceTree = "<group>"; };
@@ -721,6 +724,8 @@
 				A00BE169219FF6E70042E6ED /* VersionItem.m */,
 				A010DC5F21D6003E007EBA2C /* PurchaseItem.h */,
 				A010DC6021D6003E007EBA2C /* PurchaseItem.m */,
+				A07127392216E7D700DC3C20 /* NotifyItem.h */,
+				A071273A2216E7D700DC3C20 /* NotifyItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1055,6 +1060,7 @@
 				205FDB3321763DBE001BE2C6 /* CZGuideVC.m in Sources */,
 				A020B06C214AAB150011BB4F /* BaseNC.m in Sources */,
 				A020B054214AAB150011BB4F /* XLGAlertView.m in Sources */,
+				A071273B2216E7D700DC3C20 /* NotifyItem.m in Sources */,
 				A05FF5CE215B14F100C51E05 /* NetworkUtil.m in Sources */,
 				A00FA9DC2169DB0000F4DA5B /* CZSelectCourseVC.m in Sources */,
 				A020B072214AAB150011BB4F /* LDSimplePing.m in Sources */,
