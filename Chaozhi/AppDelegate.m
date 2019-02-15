@@ -11,6 +11,7 @@
 #import <IQKeyboardManager.h>
 #import "NetworkUtil.h"
 #import "CZGuideVC.h"
+#import "DoraemonManager.h"
 
 @interface AppDelegate ()
 
@@ -22,6 +23,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
 //    [CacheUtil saveCacher:kSelectCourseIDKey withValue:@""];
+    
+#ifdef DEBUG
+    [[DoraemonManager shareInstance] install];
+#endif
     
     [self registerPush:application options:launchOptions]; //注册激光推送
     

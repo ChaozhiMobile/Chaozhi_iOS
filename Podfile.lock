@@ -14,12 +14,29 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - BSBacktraceLogger (0.0.1)
+  - DoraemonKit (1.1.2):
+    - AFNetworking
+    - BSBacktraceLogger
+    - DoraemonKit/Core (= 1.1.2)
+    - fishhook
+    - PNChart
+    - "UITextView+Placeholder"
+  - DoraemonKit/Core (1.1.2):
+    - AFNetworking
+    - BSBacktraceLogger
+    - fishhook
+    - PNChart
+    - "UITextView+Placeholder"
+  - fishhook (0.2)
   - IQKeyboardManager (6.1.1)
   - JPush-iOS-SDK (3.0.5)
   - lottie-ios (2.5.0)
   - Masonry (1.1.0)
   - MJExtension (3.0.15.1)
   - MJRefresh (3.1.15.7)
+  - PNChart (0.8.9):
+    - UICountingLabel (~> 1.2.0)
   - ReactiveObjC (3.1.0)
   - SDCycleScrollView (1.75):
     - SDWebImage (>= 4.0.0)
@@ -27,6 +44,8 @@ PODS:
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
   - TZImagePickerController (3.0.8)
+  - UICountingLabel (1.2.0)
+  - "UITextView+Placeholder (1.2.1)"
   - XLGCategory (1.1.0):
     - XLGCategory/NSCategory (= 1.1.0)
     - XLGCategory/UICategory (= 1.1.0)
@@ -36,6 +55,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - DoraemonKit (~> 1.1.2)
   - IQKeyboardManager
   - JPush-iOS-SDK
   - lottie-ios
@@ -52,34 +72,46 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - BSBacktraceLogger
+    - DoraemonKit
+    - fishhook
     - IQKeyboardManager
     - JPush-iOS-SDK
     - lottie-ios
     - Masonry
     - MJExtension
     - MJRefresh
+    - PNChart
     - ReactiveObjC
     - SDCycleScrollView
     - SDWebImage
     - TZImagePickerController
+    - UICountingLabel
+    - "UITextView+Placeholder"
     - XLGCategory
     - YYModel
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  BSBacktraceLogger: 06b983ee93a9f87d957960e9c73d660d5966b447
+  DoraemonKit: 5969d9f2b02c0f59f67f1fd27dea6f34e10195b5
+  fishhook: ea19933abfe8f2f52c55fd8b6e2718467d3ebc89
   IQKeyboardManager: 79c57795f5c2408d259d37b9da2ed07efcbb5225
   JPush-iOS-SDK: f80e435b524449fd5101e247b044d4e48174ef5f
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
+  PNChart: 84774d225c2126ded6c93d4dbe6ae98c3a73c2d2
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   TZImagePickerController: 9092aa0f97af1cb9643c0ea7d7e5a77802ec7245
+  UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
+  "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
   XLGCategory: b93fda8378ccd3e04deb87033c02ad3e6dee3c4a
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 1c78d942683dae50cfd5adae3ae5d0f3aef47642
+PODFILE CHECKSUM: 9ce3539bc71d893a29c19cb1e6741c25fa88dc12
 
 COCOAPODS: 1.5.3

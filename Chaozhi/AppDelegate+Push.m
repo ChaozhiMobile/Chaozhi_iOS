@@ -84,17 +84,44 @@
 //处理收到的提醒
 -(void)didRecevieNotification:(NSDictionary *)receiveNotifi andState:(UIApplicationState)state
 {
+    //双标题
+//    {
+//        _j_business : 1,
+//        value : http://test-aci-api.chaozhiedu.com/api/user/teacher,
+//        _j_uid : 22722674451,
+//        _j_msgid : 67553998918834363,
+//        type : h5_myteacher,
+//        aps : {
+//            alert : {
+//                title : title,
+//                body : hello 超职班主任消息96
+//            },
+//            badge : 2,
+//            sound :
+//        }
+//    }
+    
+    //单标题
+//    {
+//        aps : {
+//            alert : hello 超职班主任消息81,
+//            badge : 1,
+//            sound :
+//        },
+//        value : http://test-aci-api.chaozhiedu.com/api/user/teacher,
+//        _j_uid : 22722674451,
+//        _j_msgid : 3279450862,
+//        type : h5_myteacher,
+//        _j_business : 1
+//    }
     NSLog(@"后台推送消息：%@",receiveNotifi);
     
     //在这里做消息处理...
     NSString *type=receiveNotifi[@"type"];
     NSString *value=receiveNotifi[@"value"];
-    NSDictionary *apsDic=receiveNotifi[@"aps"];
-    
-    NSString *message=apsDic[@"alert"];
     
     if (state == UIApplicationStateActive) { //前台运行
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"您有一条新的推送消息" message:message preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"您有一条新的推送消息" message:@"" preferredStyle:UIAlertControllerStyleAlert];
         [alertController addAction:([UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
         }])];
