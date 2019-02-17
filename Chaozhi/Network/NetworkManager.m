@@ -58,7 +58,7 @@ static NetworkManager *_manager = nil;
         }
         
         id _Nullable object = [NSDictionary changeType:responseObject];
-        [self printLogInfoWith:urlStr WithParam:parameters andResult:object];
+        [self printLogInfoWith:urlStr WithParam:paramDic andResult:object];
         
         NSString *code = [NSString stringWithFormat:@"%@",object[@"code"]];
         if ([code isEqualToString:@"200"]) { //成功
@@ -82,7 +82,7 @@ static NetworkManager *_manager = nil;
         }
         
         completion(nil,Request_TimeoOut,error);
-        [self printLogInfoWith:urlStr WithParam:parameters andResult:[error localizedDescription]];
+        [self printLogInfoWith:urlStr WithParam:paramDic andResult:[error localizedDescription]];
         [Utils showToast:@"请求超时"];
         [JHHJView hideLoading]; //结束加载
     }];
@@ -193,7 +193,7 @@ static NetworkManager *_manager = nil;
         }
         
         id _Nullable object = [NSDictionary changeType:responseObject];
-        [self printLogInfoWith:urlStr WithParam:parameters andResult:object];
+        [self printLogInfoWith:urlStr WithParam:paramDic andResult:object];
         
         NSString *code = [NSString stringWithFormat:@"%@",object[@"code"]];
         if ([code isEqualToString:@"200"]) { //成功
@@ -215,7 +215,7 @@ static NetworkManager *_manager = nil;
         }
         
         completion(nil,Request_TimeoOut,error);
-        [self printLogInfoWith:urlStr WithParam:parameters andResult:[error localizedDescription]];
+        [self printLogInfoWith:urlStr WithParam:paramDic andResult:[error localizedDescription]];
         [Utils showToast:@"请求超时"];
         [JHHJView hideLoading]; //结束加载
     }];
