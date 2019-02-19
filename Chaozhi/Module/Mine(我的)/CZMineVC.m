@@ -185,6 +185,16 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
         cell.backgroundColor = kWhiteColor;
         
+        //小红点
+        UILabel *numLab = [[UILabel alloc] initWithFrame:CGRectMake(WIDTH-autoScaleW(45), autoScaleW(21), autoScaleW(8), autoScaleW(8))];
+        numLab.tag = 1000+indexPath.row;
+        numLab.backgroundColor = AppThemeColor;
+        numLab.layer.cornerRadius = numLab.width/2;
+        [numLab.layer setMasksToBounds:YES];
+        numLab.hidden = YES;
+        [cell addSubview:numLab];
+        
+        //箭头
         UIImageView *arrowImgView = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH-autoScaleW(23), autoScaleW(19), autoScaleW(8), autoScaleW(12))];
         arrowImgView.image = [UIImage imageNamed:@"arrow_more"];
         [cell addSubview:arrowImgView];
@@ -206,15 +216,16 @@
     cell.textLabel.textColor = RGBValue(0x24253D);
     cell.textLabel.font = [UIFont systemFontOfSize:12 weight:UIFontWeightMedium];
     
-    if ([_nameArr[indexPath.row] isEqualToString:@"我的班主任"]
-        && ![NSString isEmpty:_notifyItem.teacher_unread]
-        && [_notifyItem.teacher_unread intValue] != 0) {
-        UILabel *numLab = [[UILabel alloc] initWithFrame:CGRectMake(WIDTH-autoScaleW(45), cell.height/2-autoScaleW(4), autoScaleW(8), autoScaleW(8))];
-        numLab.tag = 1000+indexPath.row;
-        numLab.backgroundColor = AppThemeColor;
-        numLab.layer.cornerRadius = numLab.width/2;
-        [numLab.layer setMasksToBounds:YES];
-        [cell addSubview:numLab];
+    if ([_nameArr[indexPath.row] isEqualToString:@"我的班主任"]) {
+        
+        UILabel *numLab = [self.view viewWithTag:1000+indexPath.row];
+        
+        if (![NSString isEmpty:_notifyItem.teacher_unread]
+            && [_notifyItem.teacher_unread intValue] != 0) {
+            numLab.hidden = NO;
+        } else {
+            numLab.hidden = YES;
+        }
     }
     
     return cell;
