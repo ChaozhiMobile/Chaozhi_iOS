@@ -238,14 +238,10 @@
     NSString *str = _nameArr[indexPath.row];
     
     if ([str isEqualToString:@"我的班主任"]) {
-//        ChatItem *chatItem = self.purchaseArr[0];
-//        [BaseWebVC showWithContro:self withUrlStr:chatItem.chat_url withTitle:_nameArr[indexPath.row] isPresent:NO];
+        ChatItem *chatItem = self.purchaseArr[0];
+        [BaseWebVC showWithContro:self withUrlStr:chatItem.chat_url withTitle:_nameArr[indexPath.row] isPresent:NO];
         
-//        [BaseWebVC showWithContro:self withUrlStr:@"https://www.baidu.com/" withTitle:_nameArr[indexPath.row] isPresent:NO];
-        
-//        [BaseWebVC showWithContro:self withUrlStr:@"http://kf-dev.chaozhiedu.com:88/index/index/home?visiter_id=92556&visiter_name=15737936517%28hzb%29&avatar=&business_id=admin&groupid=3&cle_info=eyJuYW1lIjoiMTU3Mzc5MzY1MTcoaHpiKSIsImNsZV9udW0iOjkyNTU2LCJ0ZWwiOiIxNTczNzkzNjUxNyIsImN0eXBlIjoiXHUzMDEwXHU4ODRjXHU2NTNmXHU3YmExXHU3NDA2XHU2NzJjXHU3OWQxXHUzMDExVklQXHU0ZTBkXHU4ZmM3XHU5MDAwXHU4ZDM5XHU3M2VkIn0%3D" withTitle:_nameArr[indexPath.row] isPresent:NO];
-        
-        [BaseWebVC showWithContro:self withUrlStr:@"http://kf-dev.chaozhiedu.com:88/index/index/home?visiter_id=45405&visiter_name=18268686511%28%E7%8E%8B%E5%B0%8F%29&avatar=&business_id=admin&groupid=1&cle_info=eyJuYW1lIjoiMTgyNjg2ODY1MTEoXHU3MzhiXHU1YzBmKSIsImNsZV9udW0iOjQ1NDA1LCJ0ZWwiOiIxODI2ODY4NjUxMSIsImN0eXBlIjoiQUNJXHU2Y2U4XHU1MThjXHU1ZmMzXHU3NDA2XHU1NGE4XHU4YmUyXHU1ZTA4LVx1OWFkOFx1NjU0OFx1NzljMVx1NjU1OVx1NTNkNlx1OGJjMVx1NzNlZCJ9" withTitle:_nameArr[indexPath.row] isPresent:NO];
+//        [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@?token=%@",domainUrl(),URL_MyTeacher,[UserInfo share].token] withTitle:_nameArr[indexPath.row] isPresent:NO];
     }
     
     if ([str isEqualToString:@"报考资料"]) {
