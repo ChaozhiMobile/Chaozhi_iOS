@@ -387,7 +387,8 @@
                 _courseDiscountPriceLB1.attributedText = attrStr;
                 _courseTeaNameLB1.text = _feaCourseItem1.name;
                 _courseCommentCountLB1.text = _feaCourseItem1.review_num;
-                CZStarView *view = [[CZStarView alloc] initWithFrame:CGRectMake(94, 181, 76, 12) currentScore:[_feaCourseItem1.review_star floatValue] delegate:nil];
+                [_favCourseLeftView layoutIfNeeded];
+                CZStarView *view = [[CZStarView alloc] initWithFrame:CGRectMake(_favCourseLeftView.width-76, 181, 76, 12) currentScore:[_feaCourseItem1.review_star floatValue] delegate:nil];
                 [_favCourseLeftView addSubview:view];
                 
                 UITapGestureRecognizer *leftTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(favCourseLeftAction)];
@@ -404,7 +405,8 @@
                 _courseDiscountPriceLB2.attributedText = attrStr;
                 _courseTeaNameLB2.text = _feaCourseItem2.name;
                 _courseCommentCountLB2.text = _feaCourseItem2.review_num;
-                CZStarView *view = [[CZStarView alloc] initWithFrame:CGRectMake(94, 181, 76, 12) currentScore:[_feaCourseItem2.review_star floatValue] delegate:nil];
+                [_favCourseRightView layoutIfNeeded];
+                CZStarView *view = [[CZStarView alloc] initWithFrame:CGRectMake(_favCourseRightView.width-76, 181, 76, 12) currentScore:[_feaCourseItem2.review_star floatValue] delegate:nil];
                 [_favCourseRightView addSubview:view];
                 
                 UITapGestureRecognizer *rightTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(favCourseRightAction)];
