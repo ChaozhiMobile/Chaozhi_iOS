@@ -117,6 +117,8 @@
 		A070498D2211610300864050 /* AppDelegate+Push.m in Sources */ = {isa = PBXBuildFile; fileRef = A070498C2211610300864050 /* AppDelegate+Push.m */; };
 		A071273B2216E7D700DC3C20 /* NotifyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A071273A2216E7D700DC3C20 /* NotifyItem.m */; };
 		A091D1302178FAF300CCDAF6 /* StudyInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A091D12F2178FAF300CCDAF6 /* StudyInfoItem.m */; };
+		A0AC0DEC2220287F002ACE3D /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AC0DEB2220287F002ACE3D /* UserNotifications.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		A0AC0DF222216126002ACE3D /* ContactsPersistence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AC0DF122216126002ACE3D /* ContactsPersistence.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A0C1257321BC021B0026430E /* CZStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C1257221BC021B0026430E /* CZStarView.m */; };
 /* End PBXBuildFile section */
 
@@ -305,6 +307,10 @@
 		A080B336221172D200F938A7 /* Chaozhi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Chaozhi.entitlements; sourceTree = "<group>"; };
 		A091D12E2178FAF300CCDAF6 /* StudyInfoItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudyInfoItem.h; sourceTree = "<group>"; };
 		A091D12F2178FAF300CCDAF6 /* StudyInfoItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyInfoItem.m; sourceTree = "<group>"; };
+		A0AC0DEB2220287F002ACE3D /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		A0AC0DED22215E6A002ACE3D /* ContactsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContactsUI.framework; path = System/Library/Frameworks/ContactsUI.framework; sourceTree = SDKROOT; };
+		A0AC0DEF22215F33002ACE3D /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
+		A0AC0DF122216126002ACE3D /* ContactsPersistence.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContactsPersistence.framework; path = ../../../../../System/Library/PrivateFrameworks/ContactsPersistence.framework; sourceTree = "<group>"; };
 		A0C1257121BC021B0026430E /* CZStarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZStarView.h; sourceTree = "<group>"; };
 		A0C1257221BC021B0026430E /* CZStarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZStarView.m; sourceTree = "<group>"; };
 		B55762E2478093A57AE66667 /* libPods-Chaozhi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Chaozhi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -315,6 +321,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0AC0DF222216126002ACE3D /* ContactsPersistence.framework in Frameworks */,
+				A0AC0DEC2220287F002ACE3D /* UserNotifications.framework in Frameworks */,
 				A020B07C214AAD610011BB4F /* libresolv.tbd in Frameworks */,
 				94DF1E58ABC326A19CE0832D /* libPods-Chaozhi.a in Frameworks */,
 			);
@@ -862,6 +870,10 @@
 		CA884E04D0E50DD4B279DF5D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A0AC0DF122216126002ACE3D /* ContactsPersistence.framework */,
+				A0AC0DEF22215F33002ACE3D /* Contacts.framework */,
+				A0AC0DED22215E6A002ACE3D /* ContactsUI.framework */,
+				A0AC0DEB2220287F002ACE3D /* UserNotifications.framework */,
 				A020B07B214AAD600011BB4F /* libresolv.tbd */,
 				B55762E2478093A57AE66667 /* libPods-Chaozhi.a */,
 			);
@@ -1257,6 +1269,10 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "065790ea-d817-4376-9f63-d632a80ca061";
 				PROVISIONING_PROFILE_SPECIFIER = CZJYDev;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1286,6 +1302,10 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "75ee8f25-9458-4b56-892c-73559e6ce7d6";
 				PROVISIONING_PROFILE_SPECIFIER = CZJYDis;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

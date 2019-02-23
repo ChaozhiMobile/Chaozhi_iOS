@@ -46,6 +46,7 @@ PODS:
   - TZImagePickerController (3.0.8)
   - UICountingLabel (1.2.0)
   - "UITextView+Placeholder (1.2.1)"
+  - UMengAnalytics-NO-IDFA (4.2.5)
   - XLGCategory (1.1.0):
     - XLGCategory/NSCategory (= 1.1.0)
     - XLGCategory/UICategory (= 1.1.0)
@@ -66,6 +67,7 @@ DEPENDENCIES:
   - SDCycleScrollView
   - SDWebImage
   - TZImagePickerController
+  - UMengAnalytics-NO-IDFA
   - XLGCategory
   - YYModel
 
@@ -88,6 +90,7 @@ SPEC REPOS:
     - TZImagePickerController
     - UICountingLabel
     - "UITextView+Placeholder"
+    - UMengAnalytics-NO-IDFA
     - XLGCategory
     - YYModel
 
@@ -109,9 +112,10 @@ SPEC CHECKSUMS:
   TZImagePickerController: 9092aa0f97af1cb9643c0ea7d7e5a77802ec7245
   UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
   "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
+  UMengAnalytics-NO-IDFA: 16666e32edce5be44ae5b14aaaa7f3582e09d6ab
   XLGCategory: b93fda8378ccd3e04deb87033c02ad3e6dee3c4a
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 9ce3539bc71d893a29c19cb1e6741c25fa88dc12
+PODFILE CHECKSUM: 89f93d25d704b7fcc06b04efbb76c526f5e3cbd4
 
 COCOAPODS: 1.5.3

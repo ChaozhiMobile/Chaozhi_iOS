@@ -37,9 +37,12 @@
 
 /******************************keys****************************/
 
+// 友盟key
+#define kUMKey     @"5c710878b465f5fa50000071"
+
 // 网络请求key
-#define kSignKey        @"ghOwfR7Wz44cbKU93KVSxwYXPGloNu"
-#define kNonceStr       [SignKeyUtil getNonceString]
+#define kSignKey   @"ghOwfR7Wz44cbKU93KVSxwYXPGloNu"
+#define kNonceStr  [SignKeyUtil getNonceString]
 
 // cache key
 #define kServerKey @"ServerKey"

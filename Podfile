@@ -19,6 +19,7 @@ def pods
   pod 'JPush-iOS-SDK'
   #全能App研发助手！滴滴开源DoraemonKit
   pod 'DoraemonKit', '~> 1.1.2', :configurations => ['Debug']
+  pod 'UMengAnalytics-NO-IDFA'
 end
  target 'Chaozhi' do
 

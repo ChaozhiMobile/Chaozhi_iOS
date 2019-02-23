@@ -12,6 +12,7 @@
 #import "NetworkUtil.h"
 #import "CZGuideVC.h"
 #import "DoraemonManager.h"
+#import "UMMobClick/MobClick.h"
 
 @interface AppDelegate ()
 
@@ -29,6 +30,8 @@
 #endif
     
     [self registerPush:application options:launchOptions]; //注册激光推送
+    
+    [self registerUMeng]; //注册友盟
     
     //监测网络
     [[NetworkUtil sharedInstance] listening];
@@ -59,6 +62,22 @@
     [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+#pragma mark - 注册友盟
+
+- (void)registerUMeng {
+    //初始化友盟统计
+    UMConfigInstance.appKey = kUMKey;
+    UMConfigInstance.channelId = @"App Store";
+    [MobClick startWithConfigure:UMConfigInstance];//配置以上参数后调用此方法初始化SDK！
+    
+    //应用趋势分析(版本分布)
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    [MobClick setAppVersion:version];
+    
+    //日志加密设置
+    [MobClick setEncryptEnabled:YES]; //加密，默认为NO(不加密)
 }
 
 #pragma mark - 进入首页
