@@ -11,7 +11,7 @@
 #import <IQKeyboardManager.h>
 #import "NetworkUtil.h"
 #import "CZGuideVC.h"
-#import "DoraemonManager.h"
+//#import "DoraemonManager.h"
 #import "UMMobClick/MobClick.h"
 
 @interface AppDelegate ()
@@ -25,9 +25,9 @@
     
 //    [CacheUtil saveCacher:kSelectCourseIDKey withValue:@""];
     
-#ifdef DEBUG
-    [[DoraemonManager shareInstance] install];
-#endif
+//#ifdef DEBUG
+//    [[DoraemonManager shareInstance] install];
+//#endif
     
     [self registerPush:application options:launchOptions]; //注册激光推送
     
