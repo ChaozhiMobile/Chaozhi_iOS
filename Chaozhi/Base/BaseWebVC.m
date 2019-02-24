@@ -17,7 +17,8 @@
 @property (strong, nonatomic) UIProgressView *progressView;
 @property (strong, nonatomic) WKUserContentController *userContentController;
 /** 返回H5弹框 */
-@property (nonatomic,strong) NSDictionary *alertDic;
+//@property (nonatomic,strong) NSDictionary *alertDic;
+@property (nonatomic,assign) BOOL h5TapBack;
 @end
 
 @implementation BaseWebVC
@@ -163,32 +164,40 @@
     
     NSLog(@"打开web页面个数：%lu",(unsigned long)self.webView.backForwardList.backList.count);
     
-    if (_alertDic) {
-        if ([_alertDic[@"type"] isEqualToString:@"alert"]) {
-            NSString *title = _alertDic[@"title"];
-            NSString *content = _alertDic[@"content"];
-            XLGAlertView *alert = [[XLGAlertView alloc] initWithTitle:title content:content leftButtonTitle:@"" rightButtonTitle:@"确定"];
-            alert.doneBlock = ^{
-                [self->_webView evaluateJavaScript:@"fn_tapBack();" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
-                    NSLog(@"js返回结果%@",result);
-                }];
-                self->_alertDic = nil;
-                [self.navigationController popViewControllerAnimated:YES];
-            };
-        }
-        if ([_alertDic[@"type"] isEqualToString:@"confirm"]) {
-            NSString *title = _alertDic[@"title"];
-            NSString *content = _alertDic[@"content"];
-            XLGAlertView *alert = [[XLGAlertView alloc] initWithTitle:title content:content leftButtonTitle:@"取消" rightButtonTitle:@"确定"];
-            alert.doneBlock = ^{
-                [self->_webView evaluateJavaScript:@"fn_tapBack();" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
-                    NSLog(@"js返回结果%@",result);
-                }];
-                self->_alertDic = nil;
-                [self.navigationController popViewControllerAnimated:YES];
-            };
-        }
-    } else {
+//    if (_alertDic) {
+//        if ([_alertDic[@"type"] isEqualToString:@"alert"]) {
+//            NSString *title = _alertDic[@"title"];
+//            NSString *content = _alertDic[@"content"];
+//            XLGAlertView *alert = [[XLGAlertView alloc] initWithTitle:title content:content leftButtonTitle:@"" rightButtonTitle:@"确定"];
+//            alert.doneBlock = ^{
+//                [self->_webView evaluateJavaScript:@"fn_tapBack();" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+//                    NSLog(@"js返回结果%@",result);
+//                }];
+//                self->_alertDic = nil;
+//                [self.navigationController popViewControllerAnimated:YES];
+//            };
+//        }
+//        if ([_alertDic[@"type"] isEqualToString:@"confirm"]) {
+//            NSString *title = _alertDic[@"title"];
+//            NSString *content = _alertDic[@"content"];
+//            XLGAlertView *alert = [[XLGAlertView alloc] initWithTitle:title content:content leftButtonTitle:@"取消" rightButtonTitle:@"确定"];
+//            alert.doneBlock = ^{
+//                [self->_webView evaluateJavaScript:@"fn_tapBack();" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+//                    NSLog(@"js返回结果%@",result);
+//                }];
+//                self->_alertDic = nil;
+//                [self.navigationController popViewControllerAnimated:YES];
+//            };
+//        }
+//    }
+    
+    if (_h5TapBack == YES) {
+        [_webView evaluateJavaScript:@"fn_tapBack();" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+            NSLog(@"js返回结果%@",result);
+        }];
+        _h5TapBack = NO;
+    }
+    else {
         // 判断网页是否可以后退
         NSInteger webCount = self.webView.backForwardList.backList.count;
         if (webCount<1 || ![self.webView canGoBack]) {
@@ -251,7 +260,8 @@
     }
     
     if ([message.name isEqualToString:@"tapBack"]) { //返回弹窗提示
-        _alertDic = message.body;
+        _h5TapBack = YES;
+//        _alertDic = message.body;
     }
     
     if ([message.name isEqualToString:@"return"]) { //返回

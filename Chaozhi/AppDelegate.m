@@ -11,8 +11,8 @@
 #import <IQKeyboardManager.h>
 #import "NetworkUtil.h"
 #import "CZGuideVC.h"
-//#import "DoraemonManager.h"
 #import "UMMobClick/MobClick.h"
+//#import "DoraemonManager.h"
 
 @interface AppDelegate ()
 
