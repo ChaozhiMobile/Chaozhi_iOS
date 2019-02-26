@@ -23,6 +23,13 @@
 
 @implementation BaseWebVC
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [_webView evaluateJavaScript:@"window.activated && window.activated();" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+        NSLog(@"js返回结果%@",result);
+    }];
+}
+
 /** 传入控制器、url、标题 */
 + (void)showWithContro:(UIViewController *)contro withUrlStr:(NSString *)urlStr withTitle:(NSString *)title isPresent:(BOOL)isPresent {
     BaseWebVC *webVC = [[BaseWebVC alloc] init];
