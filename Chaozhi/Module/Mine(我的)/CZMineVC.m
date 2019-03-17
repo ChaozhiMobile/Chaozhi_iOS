@@ -228,6 +228,18 @@
         }
     }
     
+    if ([_nameArr[indexPath.row] isEqualToString:@"我的消息"]) {
+        
+        UILabel *numLab = [self.view viewWithTag:1000+indexPath.row];
+        
+        if (![NSString isEmpty:_notifyItem.msg_unread]
+            && [_notifyItem.msg_unread intValue] != 0) {
+            numLab.hidden = NO;
+        } else {
+            numLab.hidden = YES;
+        }
+    }
+    
     return cell;
 }
 
