@@ -223,6 +223,8 @@
         if (![NSString isEmpty:_notifyItem.teacher_unread]
             && [_notifyItem.teacher_unread intValue] != 0) {
             numLab.hidden = NO;
+            [numLab removeFromSuperview];
+            [cell addSubview:numLab];
         } else {
             numLab.hidden = YES;
         }
@@ -235,6 +237,8 @@
         if (![NSString isEmpty:_notifyItem.msg_unread]
             && [_notifyItem.msg_unread intValue] != 0) {
             numLab.hidden = NO;
+            [numLab removeFromSuperview];
+            [cell addSubview:numLab];
         } else {
             numLab.hidden = YES;
         }
@@ -252,8 +256,6 @@
     if ([str isEqualToString:@"我的班主任"]) {
         ChatItem *chatItem = self.purchaseArr[0];
         [BaseWebVC showWithContro:self withUrlStr:chatItem.chat_url withTitle:_nameArr[indexPath.row] isPresent:NO];
-        
-//        [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@?token=%@",domainUrl(),URL_MyTeacher,[UserInfo share].token] withTitle:_nameArr[indexPath.row] isPresent:NO];
     }
     
     if ([str isEqualToString:@"报考资料"]) {

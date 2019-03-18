@@ -135,7 +135,7 @@
 }
 
 //点击通知页面跳转处理
-- (void)jumpAction:(NSString *)type andValue:value {
+- (void)jumpAction:(NSString *)type andValue:(NSString *)value {
     
     if ([type isEqualToString:@"version"]) { //版本更新
         if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:value]]) {
@@ -147,6 +147,12 @@
         if ([Utils isLoginWithJump:YES]) {
             NSString *url = [NSString stringWithFormat:@"%@?token=%@",value,[UserInfo share].token];
             [BaseWebVC showWithContro:self.window.rootViewController withUrlStr:url withTitle:@"我的班主任" isPresent:YES];
+        }
+    }
+    
+    if ([type isEqualToString:@"h5_message"]) { //我的消息
+        if ([Utils isLoginWithJump:YES]) {
+            [BaseWebVC showWithContro:self.window.rootViewController withUrlStr:value withTitle:@"我的消息" isPresent:YES];
         }
     }
 }
