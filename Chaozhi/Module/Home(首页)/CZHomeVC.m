@@ -480,7 +480,6 @@
     [BaseWebVC showWithContro:self withUrlStr:H5_StoreFree withTitle:@"" isPresent:NO];
 }
 
-
 // 马上试听
 - (IBAction)showPublicCourseAction:(id)sender {
     HomeTryVideoItem *tryVideoItem = [_categoryItems.try_video_list firstObject];
@@ -490,7 +489,7 @@
 // 微课视频详情
 - (void)showWeikeVideoDetail {
     HomeWeikeItem *weikeItem = [_categoryItems.weike_list firstObject];
-    [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_WeikeDetail,weikeItem.ID] withTitle:@"" isPresent:NO];
+    [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_WeikeDetail,weikeItem.ID] withTitle:weikeItem.title isPresent:NO];
 }
 
 // 更多微课视频
