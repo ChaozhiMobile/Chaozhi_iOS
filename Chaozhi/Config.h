@@ -61,6 +61,8 @@ NSString *h5Url(void);
 #define H5_Demo @"#/hybrid/demo/" //首页-公开课开始试听【课程分类id】
 #define H5_TeacherDetail @"#/hybrid/teacher/" //首页-教师详情
 #define H5_StoreFree @"#/hybrid/store/free" //首页-更多公开课
+#define H5_WeikeDetail @"#/hybrid/vike/play/" //首页-微课视频详情
+#define H5_WeikeList @"#/hybrid/vike/list" //首页-更多微信视频
 
 #define H5_Privacy @"#/hybrid/chaozhi/privacy" //隐私协议
 

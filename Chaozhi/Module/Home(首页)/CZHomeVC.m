@@ -33,8 +33,11 @@
 @property (nonatomic , retain) NSMutableArray <HomeNewsItem *> *newsDatsSource;
 @property (nonatomic , retain) HomeFeatureProductItem *feaCourseItem1,*feaCourseItem2;
 
+/** 背景视图 */
 @property (weak, nonatomic) IBOutlet UIScrollView *bgScrollView;
+/** 轮播图 */
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *bannerView;
+/** 推荐课程 */
 @property (weak, nonatomic) IBOutlet UIView *favCourseLeftView;
 @property (weak, nonatomic) IBOutlet UIView *favCourseRightView;
 @property (weak, nonatomic) IBOutlet UIImageView *courseImgView1;
@@ -47,27 +50,33 @@
 @property (weak, nonatomic) IBOutlet UILabel *courseDiscountPriceLB2;
 @property (weak, nonatomic) IBOutlet UILabel *courseCommentCountLB2;
 @property (weak, nonatomic) IBOutlet UILabel *courseTeaNameLB2;
+/** 我们的公开课 */
 @property (weak, nonatomic) IBOutlet UIImageView *publicCourseImgView;
 @property (weak, nonatomic) IBOutlet UILabel *publicTitleLB;
 @property (weak, nonatomic) IBOutlet UILabel *publicTeaLB;
+/** 微课 */
+@property (weak, nonatomic) IBOutlet UIView *weikeBgView;
+@property (weak, nonatomic) IBOutlet UIImageView *weikeImgView;
+@property (weak, nonatomic) IBOutlet UILabel *weikeTitleLB;
+@property (weak, nonatomic) IBOutlet UILabel *weikeTeaLB;
+@property (weak, nonatomic) IBOutlet UILabel *weikeCountLB;
+/** 精彩活动 */
 @property (weak, nonatomic) IBOutlet UIImageView *activityImgView;
 @property (weak, nonatomic) IBOutlet UILabel *activityTitleLB;
 @property (weak, nonatomic) IBOutlet UILabel *activityContentLB;
-@property (weak, nonatomic) IBOutlet UIImageView *goldTeaImgView1;
-@property (weak, nonatomic) IBOutlet UILabel *goldTeaNameLB1;
-@property (weak, nonatomic) IBOutlet UILabel *goldTeaTypeLB1;
-@property (weak, nonatomic) IBOutlet UIImageView *goldTeaImgView2;
-@property (weak, nonatomic) IBOutlet UILabel *goldTeaNameLB2;
-@property (weak, nonatomic) IBOutlet UILabel *goldTeaTypeLB2;
+/** 金牌讲师 */
+@property (weak, nonatomic) IBOutlet UIScrollView *teacherScroView;
+/** 每日新知 */
 @property (weak, nonatomic) IBOutlet UITableView *newsTabView;
 
-@property (weak, nonatomic) IBOutlet UIScrollView *teacherScroView;
 - (IBAction)showMoreCourseAction:(UIButton *)sender;
 - (IBAction)showPublicCourseAction:(id)sender;
+- (IBAction)showMoreVideoAction:(id)sender;
 - (IBAction)showActivityDetailAction:(id)sender;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *courseViewHConstraint;//默认240
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *publicViewHConstraint;//默认186
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *courseViewHConstraint; //默认240
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *publicViewHConstraint; //默认186
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *weikeViewHConstraint; //默认175
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *activityViewHContraints; //默认315
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *teacherViewHContraints; //默认220
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *lastViewHConstraints; //每日新知高度 动态
@@ -350,7 +359,9 @@
     [BaseWebVC showWithContro:self withUrlStr:str withTitle:teacherItem.name isPresent:NO];
 }
 
-- (void)refreshVideoUI{
+#pragma mark - 我们的公开课
+
+- (void)refreshVideoUI {
     if (_categoryItems.try_video_list.count==0) {
         _publicViewHConstraint.constant = 0;
         return;
@@ -367,21 +378,31 @@
     }
 }
 
+#pragma mark - 微课
+
 - (void)refreshWeikeUI{
-//    if (_categoryItems.weike_list.count==0) {
-//        _publicViewHConstraint.constant = 0;
-//        return;
-//    }
-//    _publicViewHConstraint.constant = 186;
-//    HomeTryVideoItem *tryVideoItem = [_categoryItems.try_video_list firstObject];
-//    _publicCourseImgView.image = nil;
-//    _publicTeaLB.text = @"";
-//    _publicTitleLB.text = @"";
-//    if (tryVideoItem) {
-//        [_publicCourseImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",tryVideoItem.img]] placeholderImage:[UIImage imageNamed:@"default_course"]];
-//        _publicTeaLB.text = [NSString stringWithFormat:@"主讲讲师：%@",tryVideoItem.teacher];
-//        _publicTitleLB.text = tryVideoItem.title;
-//    }
+    if (_categoryItems.weike_list.count==0) {
+        _weikeViewHConstraint.constant = 0;
+        return;
+    }
+    _weikeViewHConstraint.constant = 175;
+    HomeWeikeItem *weikeItem = [_categoryItems.weike_list firstObject];
+    _weikeImgView.image = nil;
+    _weikeTitleLB.text = @"";
+    _weikeTeaLB.text = @"";
+    _weikeCountLB.text = @"";
+    
+    if (weikeItem) {
+        [_weikeImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",weikeItem.cover]] placeholderImage:[UIImage imageNamed:@"default_course"]];
+        CGFloat titleH = [weikeItem.title getTextHeightWithFont:[UIFont systemFontOfSize:14] width:autoScaleW(182)];
+        _weikeTitleLB.height = titleH;
+        _weikeTitleLB.text = weikeItem.title;
+        _weikeTeaLB.text = weikeItem.teacher_name;
+        _weikeCountLB.text = [NSString stringWithFormat:@"%@人观看",weikeItem.play_num];
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showWeikeVideoDetail)];
+        [_weikeBgView addGestureRecognizer:tap];
+    }
 }
 
 - (void)refreshFeaCourseUI{
@@ -456,16 +477,25 @@
 
 // 更多公开课
 - (IBAction)showMorePublicCourseAction:(id)sender {
-    
     [BaseWebVC showWithContro:self withUrlStr:H5_StoreFree withTitle:@"" isPresent:NO];
 }
 
 
 // 马上试听
 - (IBAction)showPublicCourseAction:(id)sender {
-    
     HomeTryVideoItem *tryVideoItem = [_categoryItems.try_video_list firstObject];
     [BaseWebVC showWithContro:self withUrlStr:tryVideoItem.src withTitle:tryVideoItem.title isPresent:NO];
+}
+
+// 微课视频详情
+- (void)showWeikeVideoDetail {
+    HomeWeikeItem *weikeItem = [_categoryItems.weike_list firstObject];
+    [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_WeikeDetail,weikeItem.ID] withTitle:@"" isPresent:NO];
+}
+
+// 更多微课视频
+- (IBAction)showMoreVideoAction:(id)sender {
+    [BaseWebVC showWithContro:self withUrlStr:H5_WeikeList withTitle:@"" isPresent:NO];
 }
 
 // 精彩活动
