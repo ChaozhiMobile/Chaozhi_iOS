@@ -68,9 +68,9 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *courseViewHConstraint;//默认240
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *publicViewHConstraint;//默认186
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *activityViewHContraints;//默认315
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *teacherViewHContraints;//默认220
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *lastViewHConstraints;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *activityViewHContraints; //默认315
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *teacherViewHContraints; //默认220
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *lastViewHConstraints; //每日新知高度 动态
 
 @end
 
@@ -235,7 +235,8 @@
             }
             weakSelf.categoryItems = [HomeCategoryItem yy_modelWithJSON:responseData];
             [weakSelf refreshFeaCourseUI];
-            [weakSelf refreshVedioUI];
+            [weakSelf refreshVideoUI];
+            [weakSelf refreshWeikeUI];
             [weakSelf refreshTeacherUI];
         }];
         
@@ -349,7 +350,7 @@
     [BaseWebVC showWithContro:self withUrlStr:str withTitle:teacherItem.name isPresent:NO];
 }
 
-- (void)refreshVedioUI{
+- (void)refreshVideoUI{
     if (_categoryItems.try_video_list.count==0) {
         _publicViewHConstraint.constant = 0;
         return;
@@ -364,6 +365,23 @@
         _publicTeaLB.text = [NSString stringWithFormat:@"主讲讲师：%@",tryVideoItem.teacher];
         _publicTitleLB.text = tryVideoItem.title;
     }
+}
+
+- (void)refreshWeikeUI{
+//    if (_categoryItems.weike_list.count==0) {
+//        _publicViewHConstraint.constant = 0;
+//        return;
+//    }
+//    _publicViewHConstraint.constant = 186;
+//    HomeTryVideoItem *tryVideoItem = [_categoryItems.try_video_list firstObject];
+//    _publicCourseImgView.image = nil;
+//    _publicTeaLB.text = @"";
+//    _publicTitleLB.text = @"";
+//    if (tryVideoItem) {
+//        [_publicCourseImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",tryVideoItem.img]] placeholderImage:[UIImage imageNamed:@"default_course"]];
+//        _publicTeaLB.text = [NSString stringWithFormat:@"主讲讲师：%@",tryVideoItem.teacher];
+//        _publicTitleLB.text = tryVideoItem.title;
+//    }
 }
 
 - (void)refreshFeaCourseUI{

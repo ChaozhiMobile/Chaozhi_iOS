@@ -12,6 +12,7 @@
 @class HomeActivityItem;
 @class HomeFeatureProductItem;
 @class HomeTryVideoItem;
+@class HomeWeikeItem;
 @class HomeTeacherItem;
 @class HomeNewsItem;
 
@@ -53,6 +54,7 @@
 
 @property (nonatomic , retain) NSArray <HomeFeatureProductItem *>*feature_product_list;
 @property (nonatomic , retain) NSArray <HomeTryVideoItem *>*try_video_list;
+@property (nonatomic , retain) NSArray <HomeWeikeItem *>*weike_list;
 @property (nonatomic , retain) NSArray <HomeTeacherItem *>*teacher_list;
 
 @end
@@ -83,6 +85,19 @@
 @property (nonatomic , copy) NSString* title ;//: 婚姻公开课,
 @property (nonatomic , copy) NSString* src ;//: https://open.talk-fun.com/playout/PTk2OigjbipoIi8.html?st=VpPmVb32XJ80sVZcwYVATA&e=1539772257&from=cms101341,
 @property (nonatomic , copy) NSString* time ;//: 43:12
+
+@end
+
+@interface HomeWeikeItem : BaseItem
+
+@property (nonatomic , copy) NSString* ID;//: 13,
+@property (nonatomic , copy) NSString* title;//: 测试咨询1,
+@property (nonatomic , copy) NSString* teacher_id;//: 17,
+@property (nonatomic , copy) NSString* teacher_name;//: 王依蕾,
+@property (nonatomic , copy) NSString* play_url;//: https://outin-5e71f4ec537b11e98d2e00163e1c7426.oss-cn-shanghai.aliyuncs.com/sv/37848961-16a01e307e1/37848961-16a01e307e1.mp4?Expires=1554908328&OSSAccessKeyId=LTAItL9Co9nUDU5r&Signature=%2FAu%2Ba3E8DZgs2%2FxZP7eBlVq6TmY%3D,
+@property (nonatomic , copy) NSString* cover ;//: //test-aci-api.chaozhiedu.com/api/file/11096,
+@property (nonatomic , copy) NSString* video ;//: 4ea2efd8c6634a7dae5c199c0a4c9265
+@property (nonatomic , copy) NSString* play_num ;//: 4
 
 @end
 
