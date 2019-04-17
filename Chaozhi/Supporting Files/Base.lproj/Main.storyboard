@@ -146,7 +146,7 @@
                                     <constraint firstAttribute="height" constant="40" id="iPd-sb-bb4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="联系我们：010-68979999">
+                                <state key="normal" title="联系我们：400-6777-098">
                                     <color key="titleColor" red="0.70588235290000001" green="0.70588235290000001" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>

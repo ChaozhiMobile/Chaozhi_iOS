@@ -69,7 +69,7 @@
 
 //拨打客服电话
 - (IBAction)callPhoneAction:(UIButton *)sender {
-    NSMutableString* str=[[NSMutableString alloc] initWithFormat:@"tel:%@",@"010-68979999"];
+    NSMutableString* str=[[NSMutableString alloc] initWithFormat:@"tel:%@",@"400-6777-098"];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
 }
 
