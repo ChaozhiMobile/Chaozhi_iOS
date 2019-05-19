@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1020"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BDE2C47E2D60AE7740EA60996745639A"
+               BlueprintIdentifier = "CC39AAE571A91ED7E3526D726237352E"
+               BuildableName = "libMJExtension.a"
                BlueprintName = "MJExtension"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libMJExtension.a">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

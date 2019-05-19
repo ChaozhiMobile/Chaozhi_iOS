@@ -12,6 +12,7 @@
 #import "NetworkUtil.h"
 #import "CZGuideVC.h"
 #import "UMMobClick/MobClick.h"
+#import <IAPShare.h>
 //#import "DoraemonManager.h"
 
 @interface AppDelegate ()
@@ -28,6 +29,14 @@
 //#ifdef DEBUG
 //    [[DoraemonManager shareInstance] install];
 //#endif
+    
+    // https://www.jianshu.com/p/d804b7dca7e7
+    // http://www.cocoachina.com/cms/wap.php?action=article&id=25288
+    if(![IAPShare sharedHelper].iap) {
+        NSSet *dataSet = [[NSSet alloc] initWithObjects:@"这里是iap商品id", nil];
+        [IAPShare sharedHelper].iap = [[IAPHelper alloc] initWithProductIdentifiers:dataSet];
+    }
+    [IAPShare sharedHelper].iap.production = NO;
     
     [self registerPush:application options:launchOptions]; //注册激光推送
     

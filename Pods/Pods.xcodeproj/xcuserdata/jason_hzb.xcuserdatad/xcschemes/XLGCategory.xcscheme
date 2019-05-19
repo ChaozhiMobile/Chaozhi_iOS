@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1020"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1019F022F68784CD7EA935AE873A852A"
+               BlueprintIdentifier = "C605D1AF4C163F1914C991BE661627E2"
+               BuildableName = "libXLGCategory.a"
                BlueprintName = "XLGCategory"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libXLGCategory.a">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
