@@ -136,12 +136,13 @@
         configuration.allowsInlineMediaPlayback = true;
         _userContentController =[[WKUserContentController alloc]init];
         configuration.userContentController = _userContentController;
-        _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, kNavBarH, WIDTH, HEIGHT-kNavBarH-kTabBarSafeH) configuration:configuration];
+        _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, kNavBarH, WIDTH, HEIGHT-kNavBarH) configuration:configuration];
         _webView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
         _webView.backgroundColor = [UIColor whiteColor];
         _webView.navigationDelegate = self;
         _webView.UIDelegate = self;
         _webView.scrollView.decelerationRate = UIScrollViewDecelerationRateNormal;
+        _webView.scrollView.showsVerticalScrollIndicator = NO;
         if (@available(iOS 11.0, *)) {
             self.webView.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         }
