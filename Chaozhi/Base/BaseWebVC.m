@@ -8,12 +8,9 @@
 //
 
 #import "BaseWebVC.h"
-#import <WebKit/WebKit.h>
 #import "WKDelegateController.h"
 
 @interface BaseWebVC ()<WKUIDelegate,WKNavigationDelegate,WKDelegate,UITextFieldDelegate>
-
-@property (strong, nonatomic) WKWebView *webView;
 @property (strong, nonatomic) UIProgressView *progressView;
 @property (strong, nonatomic) WKUserContentController *userContentController;
 /** 返回H5弹框 */
@@ -63,6 +60,12 @@
     [self changeUserAgent];
     
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_homeUrl] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30]];
+    
+    __weak typeof(self) weakSelf = self;
+    self.webView.scrollView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakSelf changeUserAgent];
+        [weakSelf.webView reload];
+    }];
 }
 
 #pragma mark - 全局修改UserAgent，传token等参数给H5
@@ -250,7 +253,8 @@
             NSString *to = dic[@"to"];
             if ([to isEqualToString:@"home"]) {
                 // 跳转到首页
-                [self.navigationController popToRootViewControllerAnimated:YES];
+                [self.navigationController popToRootViewControllerAnimated:NO];
+                self.tabBarController.selectedIndex = 0;
             }
             if ([to isEqualToString:@"login"]) {
                 // 跳转到登录
@@ -281,6 +285,7 @@
     }
     
     if ([message.name isEqualToString:@"refresh"]) { //刷新
+        [self changeUserAgent];
         [_webView reload];
     }
 }

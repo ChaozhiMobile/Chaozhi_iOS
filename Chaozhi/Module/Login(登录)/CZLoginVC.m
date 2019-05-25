@@ -25,6 +25,7 @@
 
 // 返回
 - (void)backAction {
+    self.tabBarController.selectedIndex = 0;
     [self.navigationController popViewControllerAnimated:NO];
 }
 
@@ -66,7 +67,9 @@
             }];
             
             // 跳转到首页
-            [self.navigationController popToRootViewControllerAnimated:YES];
+            self.tabBarController.selectedIndex = 0;
+            [self.navigationController popToRootViewControllerAnimated:NO];
+            
         } else {
             [Utils showToast:@"登录失败"];
         }

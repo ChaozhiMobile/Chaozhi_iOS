@@ -115,7 +115,8 @@
             }];
             
             // 跳转到首页
-            [self.navigationController popToRootViewControllerAnimated:YES];
+            [self.navigationController popToRootViewControllerAnimated:NO];
+            self.tabBarController.selectedIndex = 0;
         } else {
             [Utils showToast:@"注册失败"];
         }

@@ -31,7 +31,7 @@
     self.lab1 = [[UILabel alloc] initWithFrame:CGRectMake(0, self.iconImgView.bottom+autoScaleW(18), WIDTH, autoScaleW(20))];
     self.lab1.font = [UIFont systemFontOfSize:12 weight:UIFontWeightMedium];
     self.lab1.textColor = RGBValue(0x565454);
-    self.lab1.text = @"您还没有购买课程";
+    self.lab1.text = @"您还没有开始学习，加油噢";
     self.lab1.textAlignment = NSTextAlignmentCenter;
     [self addSubview:self.lab1];
     

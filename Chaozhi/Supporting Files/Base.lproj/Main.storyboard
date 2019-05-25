@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dlJ-cE-wjy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dlJ-cE-wjy">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -126,7 +126,7 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_black" translatesAutoresizingMaskIntoConstraints="NO" id="YFZ-Bi-KfC">
-                                <rect key="frame" x="137" y="336" width="107" height="122"/>
+                                <rect key="frame" x="137" y="336" width="107.00000000000003" height="122"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="122" id="z0A-OM-3Kf"/>
                                 </constraints>
@@ -744,7 +744,7 @@
             </objects>
             <point key="canvasLocation" x="-612" y="8"/>
         </scene>
-        <!--我的课程-->
+        <!--学习-->
         <scene sceneID="qiK-NX-u3Y">
             <objects>
                 <viewController storyboardIdentifier="CZStudyVC" id="hqo-Xn-OZU" customClass="CZStudyVC" sceneMemberID="viewController">
@@ -1133,7 +1133,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Gq-F3-uMm">
                                 <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="我的课程" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1W-d2-6b9">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="学习" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1W-d2-6b9">
                                         <rect key="frame" x="100" y="0.0" width="175" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -1169,7 +1169,7 @@
                             <constraint firstAttribute="trailing" secondItem="5Gq-F3-uMm" secondAttribute="trailing" id="uRB-MI-6UL"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="我的课程" id="Zbx-ct-4Mp"/>
+                    <navigationItem key="navigationItem" title="学习" id="Zbx-ct-4Mp"/>
                     <connections>
                         <outlet property="bgScroView" destination="dyy-fo-m0h" id="rfF-7u-Pxm"/>
                         <outlet property="coursePageControl" destination="kLN-3M-Anl" id="lvx-aO-heq"/>

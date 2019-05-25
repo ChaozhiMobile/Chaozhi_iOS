@@ -18,15 +18,30 @@
 
 @implementation CZInfiniteVC
 
+//- (void)viewWillAppear:(BOOL)animated {
+//    [super viewWillAppear:animated];
+//
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refresh) name:kLoginSuccNotification object:nil]; //登录成功通知
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refresh) name:kLogoutSuccNotification object:nil]; //退出成功通知
+//}
+
 - (void)viewDidLoad {
     
     _webUrl = [NSString stringWithFormat:@"%@%@",h5Url(),H5_Infinite];
     self.homeUrl = _webUrl;
     self.webTitle = @"无限";
     self.isPresent = NO;
+
     [super viewDidLoad];
     
-    self.title = @"无限";
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refresh) name:kLoginSuccNotification object:nil]; //登录成功通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refresh) name:kLogoutSuccNotification object:nil]; //退出成功通知
+}
+
+#pragma mark - 刷新H5
+- (void)refresh {
+    [self changeUserAgent];
+    [self.webView reload];
 }
 
 - (void)didReceiveMemoryWarning {

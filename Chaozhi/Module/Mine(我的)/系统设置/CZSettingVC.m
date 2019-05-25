@@ -75,17 +75,18 @@
 
 //退出登录
 - (IBAction)logoutAction:(id)sender {
-    [[NSNotificationCenter defaultCenter] postNotificationName:kLogoutSuccNotification object:nil];
-    self.tabBarController.selectedIndex = 0;
-    [self.navigationController popViewControllerAnimated:NO];
-    [Utils logout:NO]; //不跳登录页面
     
+    [Utils logout:NO]; //不跳登录页面
     // 极光推送清除别名
     [JPUSHService setTags:nil alias:@"" fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias) {
         
     }];
-    
     [self cleanCacheAndCookie];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kLogoutSuccNotification object:nil];
+//    [self.navigationController popToRootViewControllerAnimated:NO];
+    [self.navigationController popViewControllerAnimated:NO];
+    self.tabBarController.selectedIndex = 0;
 }
 
 /**清除缓存和cookie*/

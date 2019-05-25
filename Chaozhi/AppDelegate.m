@@ -30,6 +30,7 @@
 //    [[DoraemonManager shareInstance] install];
 //#endif
     
+    // https://cloud.tencent.com/developer/article/1423496
     // https://www.jianshu.com/p/d804b7dca7e7
     // http://www.cocoachina.com/cms/wap.php?action=article&id=25288
     if(![IAPShare sharedHelper].iap) {
@@ -116,7 +117,7 @@
     NSString *tabBarTitle = viewController.tabBarItem.title;
     if ([tabBarTitle isEqualToString:@"我的"]
         || [tabBarTitle isEqualToString:@"学习"]
-        || [tabBarTitle isEqualToString:@"无限"]) {
+        ) { //|| [tabBarTitle isEqualToString:@"无限"]
         if ([Utils isLoginWithJump:YES]) {
             return YES;
         } else {
