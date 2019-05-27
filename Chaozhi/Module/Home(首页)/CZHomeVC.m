@@ -273,6 +273,7 @@
                 weakSelf.bgScrollView.mj_footer = nil;
             }
             if (weakSelf.newsDatsSource.count>0) {
+                weakSelf.newsViewTopContraints.constant = 10;
                 weakSelf.lastViewHConstraints.constant = 40 + weakSelf.newsDatsSource.count*100;
             } else {
                 weakSelf.newsViewTopContraints.constant = 0;
@@ -317,6 +318,7 @@
         return;
     }
     _activityTitleLB.superview.clipsToBounds = NO;
+    _activityViewTopContraints.constant = 10;
     _activityViewHContraints.constant = 315;
     HomeActivityItem *activityItem = [_homeItem.activity_list firstObject];
     _activityTitleLB.text = activityItem.title;
@@ -339,6 +341,7 @@
     NSInteger num = TEACHERNUM;
     CGFloat viewWidth = (WIDTH-blankSpace*(num+1))/TEACHERNUM;
     CGFloat viewHeight = viewWidth*1.176+10+20*5;
+    _teacherViewTopContraints.constant = 10;
     _teacherViewHContraints.constant = viewHeight+40;
     _teacherScroView.contentSize = CGSizeMake((blankSpace*(count+1))+viewWidth*count,0);
     _teacherViewHContraints.constant = viewHeight+40;
@@ -376,6 +379,7 @@
         _publicViewHConstraint.constant = 0;
         return;
     }
+    _publicViewTopConstraint.constant = 10;
     _publicViewHConstraint.constant = 186;
     HomeTryVideoItem *tryVideoItem = [_categoryItems.try_video_list firstObject];
     _publicCourseImgView.image = nil;
@@ -396,6 +400,7 @@
         _weikeViewHConstraint.constant = 0;
         return;
     }
+    _weikeViewTopConstraint.constant = 10;
     _weikeViewHConstraint.constant = 175;
     HomeWeikeItem *weikeItem = [_categoryItems.weike_list firstObject];
     _weikeImgView.image = nil;
@@ -425,6 +430,7 @@
         _courseViewHConstraint.constant = 0;
         return;
     }
+    _courseViewTopConstraint.constant = 10;
     _courseViewHConstraint.constant = 240;
     _courseImgView1.image = nil;
     _courseTeaNameLB1.text = @"";
