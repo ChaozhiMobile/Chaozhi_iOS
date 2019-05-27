@@ -58,7 +58,7 @@
 - (void)getData {
     
     self.imageArr = [NSMutableArray arrayWithObjects:@"icon_课程",@"icon_消息",@"icon_收藏",@"icon_反馈",@"icon_设置", nil];
-    self.nameArr = [NSMutableArray arrayWithObjects:@"课程订单",@"我的消息",@"我的收藏",@"问题反馈",@"系统设置", nil];
+    self.nameArr = [NSMutableArray arrayWithObjects:@"我的订单",@"我的消息",@"我的收藏",@"问题反馈",@"系统设置", nil];
     
     if ([Utils isLoginWithJump:YES]) {
         [self getUserInfo]; //获取用户信息
@@ -262,7 +262,7 @@
         [BaseWebVC showWithContro:self withUrlStr:H5_Apply withTitle:_nameArr[indexPath.row] isPresent:NO];
     }
     
-    if ([str isEqualToString:@"课程订单"]) {
+    if ([str isEqualToString:@"我的订单"]) {
         [BaseWebVC showWithContro:self withUrlStr:H5_Orders withTitle:_nameArr[indexPath.row] isPresent:NO];
     }
     
