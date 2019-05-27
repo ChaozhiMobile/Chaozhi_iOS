@@ -57,8 +57,8 @@
 
 - (void)getData {
     
-    self.imageArr = [NSMutableArray arrayWithObjects:@"icon_课程",@"icon_消息",@"icon_收藏",@"icon_反馈",@"icon_设置", nil];
-    self.nameArr = [NSMutableArray arrayWithObjects:@"我的订单",@"我的消息",@"我的收藏",@"问题反馈",@"系统设置", nil];
+    self.imageArr = [NSMutableArray arrayWithObjects:@"icon_消息",@"icon_收藏",@"icon_反馈",@"icon_设置", nil];
+    self.nameArr = [NSMutableArray arrayWithObjects:@"我的消息",@"我的收藏",@"问题反馈",@"系统设置", nil];
     
     if ([Utils isLoginWithJump:YES]) {
         [self getUserInfo]; //获取用户信息
@@ -87,6 +87,11 @@
             //报班状态
             self.purchaseItem = userInfo.purchase;
             self.purchaseArr = [self.purchaseItem.chat mutableCopy];
+            
+            if (![userInfo.has_order isEqualToString:@"0"]) {
+                [self.imageArr insertObject:@"icon_课程" atIndex:0];
+                [self.nameArr insertObject:@"我的订单" atIndex:0];
+            }
             
             if (self.purchaseItem.is_purchase == 1
                 && ![self.nameArr containsObject:@"报考资料"]) {

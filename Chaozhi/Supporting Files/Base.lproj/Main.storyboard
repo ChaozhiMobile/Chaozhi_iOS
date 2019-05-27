@@ -421,7 +421,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6P-Dy-z8f">
-                                        <rect key="frame" x="224" y="10" width="94" height="34"/>
+                                        <rect key="frame" x="223" y="10" width="95" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" red="0.76470588235294112" green="0.10196078431372549" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -821,11 +821,11 @@
                                         <rect key="frame" x="0.0" y="160" width="375" height="100"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KMp-BO-nNP">
-                                                <rect key="frame" x="0.0" y="0.0" width="92" height="100"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="91" height="100"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_video" translatesAutoresizingMaskIntoConstraints="NO" id="cbN-2e-gqX">
-                                                        <rect key="frame" x="19" y="13" width="53" height="53"/>
+                                                        <rect key="frame" x="18" y="13" width="53" height="53"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="录播课程" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T94-0e-Vwn">
@@ -836,7 +836,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fA9-bY-rUG">
-                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="100"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="92" height="100"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <connections>
                                                             <action selector="luboAction:" destination="hqo-Xn-OZU" eventType="touchUpInside" id="LgO-01-5dH"/>
@@ -846,7 +846,7 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gim-UQ-xiL">
-                                                <rect key="frame" x="92" y="0.0" width="93" height="100"/>
+                                                <rect key="frame" x="91" y="0.0" width="93" height="100"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_live" translatesAutoresizingMaskIntoConstraints="NO" id="fPf-DC-9xF">
@@ -1350,11 +1350,11 @@
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_title_one" translatesAutoresizingMaskIntoConstraints="NO" id="xtZ-YO-OkI">
-                                                        <rect key="frame" x="10" y="9" width="2" height="16"/>
+                                                        <rect key="frame" x="9" y="9" width="2" height="16"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="推荐课程" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewB-na-Nbj">
-                                                        <rect key="frame" x="18" y="7" width="150" height="20"/>
+                                                        <rect key="frame" x="17" y="7" width="150" height="20"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                         <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
@@ -1380,11 +1380,11 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vy8-VX-Hc5">
-                                                <rect key="frame" x="12" y="34" width="162" height="206"/>
+                                                <rect key="frame" x="12" y="34" width="161" height="206"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gd7-38-1lG">
-                                                        <rect key="frame" x="0.0" y="10" width="162" height="100"/>
+                                                        <rect key="frame" x="0.0" y="10" width="161" height="100"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </imageView>
@@ -1396,14 +1396,14 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="￥0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cj3-zz-hDE">
-                                                        <rect key="frame" x="100" y="118" width="62" height="18"/>
+                                                        <rect key="frame" x="99" y="118" width="62" height="18"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <color key="textColor" red="0.70588235294117641" green="0.70588235294117641" blue="0.70588235294117641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yY-vg-oJN">
-                                                        <rect key="frame" x="0.0" y="139" width="162" height="35"/>
+                                                        <rect key="frame" x="0.0" y="139" width="161" height="35"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                         <string key="text">[推荐]ACI国际心理咨询师-
 VIP保障实验班</string>
@@ -1430,11 +1430,11 @@ VIP保障实验班</string>
                                                 <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lhN-YN-1l1">
-                                                <rect key="frame" x="200" y="34" width="162" height="206"/>
+                                                <rect key="frame" x="199" y="34" width="163" height="206"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Ww-xh-F5h">
-                                                        <rect key="frame" x="0.0" y="10" width="162" height="100"/>
+                                                        <rect key="frame" x="0.0" y="10" width="163" height="100"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                                     </imageView>
@@ -1446,14 +1446,14 @@ VIP保障实验班</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="￥0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhs-76-Ipo">
-                                                        <rect key="frame" x="100" y="118" width="62" height="18"/>
+                                                        <rect key="frame" x="101" y="118" width="62" height="18"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <color key="textColor" red="0.70588235290000001" green="0.70588235290000001" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M28-Wh-Wj6">
-                                                        <rect key="frame" x="0.0" y="139" width="156" height="35"/>
+                                                        <rect key="frame" x="0.0" y="139" width="157" height="35"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                         <string key="text">[推荐]ACI国际心理咨询师-
 VIP保障实验班</string>
@@ -1503,11 +1503,11 @@ VIP保障实验班</string>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_title_one" translatesAutoresizingMaskIntoConstraints="NO" id="yY7-gb-fvP">
-                                                        <rect key="frame" x="10" y="9" width="2" height="16"/>
+                                                        <rect key="frame" x="9" y="9" width="2" height="16"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="我们的公开课" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcI-wX-sEM">
-                                                        <rect key="frame" x="18" y="7" width="150" height="20"/>
+                                                        <rect key="frame" x="17" y="7" width="150" height="20"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                         <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
@@ -1533,7 +1533,7 @@ VIP保障实验班</string>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fMJ-0T-zIJ">
-                                                <rect key="frame" x="40" y="60" width="100" height="100"/>
+                                                <rect key="frame" x="39" y="60" width="100" height="100"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1607,11 +1607,11 @@ VIP保障实验班</string>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_title_one" translatesAutoresizingMaskIntoConstraints="NO" id="4M7-KC-Y1S">
-                                                        <rect key="frame" x="10" y="9" width="2" height="16"/>
+                                                        <rect key="frame" x="9" y="9" width="2" height="16"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="微课" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBg-rw-HRo">
-                                                        <rect key="frame" x="18" y="7" width="150" height="20"/>
+                                                        <rect key="frame" x="17" y="7" width="150" height="20"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                         <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
@@ -1698,11 +1698,11 @@ VIP保障实验班</string>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_title_one" translatesAutoresizingMaskIntoConstraints="NO" id="Fqj-rE-hf8">
-                                                        <rect key="frame" x="10" y="9" width="2" height="16"/>
+                                                        <rect key="frame" x="9" y="9" width="2" height="16"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="精彩活动" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxq-DB-Meb">
-                                                        <rect key="frame" x="18" y="7" width="82" height="20"/>
+                                                        <rect key="frame" x="17" y="7" width="82" height="20"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                         <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
@@ -1776,11 +1776,11 @@ VIP保障实验班</string>
                                                 <rect key="frame" x="0.0" y="5" width="375" height="34"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_title_one" translatesAutoresizingMaskIntoConstraints="NO" id="gRk-6j-NvD">
-                                                        <rect key="frame" x="10" y="12" width="2" height="16"/>
+                                                        <rect key="frame" x="9" y="12" width="2" height="16"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="金牌讲师" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cge-wa-BwG">
-                                                        <rect key="frame" x="18" y="10" width="82" height="20"/>
+                                                        <rect key="frame" x="17" y="10" width="82" height="20"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                         <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1832,11 +1832,11 @@ VIP保障实验班</string>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_title_one" translatesAutoresizingMaskIntoConstraints="NO" id="xec-fr-3rg">
-                                                        <rect key="frame" x="10" y="9" width="2" height="16"/>
+                                                        <rect key="frame" x="9" y="9" width="2" height="16"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="每日新知" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7U-LQ-iQe">
-                                                        <rect key="frame" x="18" y="7" width="82" height="20"/>
+                                                        <rect key="frame" x="17" y="7" width="82" height="20"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                         <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
@@ -1928,10 +1928,8 @@ VIP保障实验班</string>
                                     <constraint firstItem="5ki-fp-RCy" firstAttribute="leading" secondItem="u2m-KK-1Zd" secondAttribute="leading" id="TTa-k9-biC"/>
                                     <constraint firstAttribute="bottom" secondItem="QpZ-0P-gQ5" secondAttribute="bottom" id="UHt-Na-7Ff"/>
                                     <constraint firstAttribute="trailing" secondItem="i7O-fS-iLx" secondAttribute="trailing" id="Y0q-u8-3hx"/>
-                                    <constraint firstItem="sqA-q7-gcg" firstAttribute="top" secondItem="lpr-xn-mtl" secondAttribute="bottom" constant="10" id="Y7k-hy-w5k"/>
                                     <constraint firstItem="eo3-sw-2ur" firstAttribute="leading" secondItem="u2m-KK-1Zd" secondAttribute="leading" id="ZmQ-Nb-h4p"/>
                                     <constraint firstItem="QpZ-0P-gQ5" firstAttribute="top" secondItem="eo3-sw-2ur" secondAttribute="bottom" constant="10" id="bc7-OR-eP9"/>
-                                    <constraint firstItem="ISM-Ow-299" firstAttribute="top" secondItem="sqA-q7-gcg" secondAttribute="bottom" constant="10" id="eb6-Ub-flB"/>
                                     <constraint firstItem="lpr-xn-mtl" firstAttribute="leading" secondItem="u2m-KK-1Zd" secondAttribute="leading" id="fNS-xi-JLR"/>
                                     <constraint firstAttribute="trailing" secondItem="QpZ-0P-gQ5" secondAttribute="trailing" id="j1d-Ud-jCE"/>
                                     <constraint firstItem="ISM-Ow-299" firstAttribute="leading" secondItem="u2m-KK-1Zd" secondAttribute="leading" id="kpY-df-TLq"/>
@@ -1994,6 +1992,7 @@ VIP保障实验班</string>
                         <outlet property="activityImgView" destination="f6q-mo-zDp" id="aFF-SO-Yfx"/>
                         <outlet property="activityTitleLB" destination="YUF-CA-fNi" id="gqn-wq-Rkl"/>
                         <outlet property="activityViewHContraints" destination="bhG-f1-j5Z" id="MbK-Wo-Lv3"/>
+                        <outlet property="activityViewTopContraints" destination="zZ4-5f-SUH" id="Mc8-tS-X7M"/>
                         <outlet property="bannerView" destination="lpr-xn-mtl" id="0gF-3c-RVo"/>
                         <outlet property="bgScrollView" destination="u2m-KK-1Zd" id="S69-rQ-fc8"/>
                         <outlet property="courseCommentCountLB1" destination="Kpl-UQ-If7" id="s1z-pY-PFj"/>
@@ -2007,23 +2006,28 @@ VIP保障实验班</string>
                         <outlet property="courseTeaNameLB1" destination="3yY-vg-oJN" id="0fw-z7-HZc"/>
                         <outlet property="courseTeaNameLB2" destination="M28-Wh-Wj6" id="fjf-LD-QWI"/>
                         <outlet property="courseViewHConstraint" destination="ODi-td-Egy" id="dB0-GV-atI"/>
+                        <outlet property="courseViewTopConstraint" destination="3Y2-Js-s0e" id="1uK-bP-GNx"/>
                         <outlet property="favCourseLeftView" destination="vy8-VX-Hc5" id="oo5-vZ-IyL"/>
                         <outlet property="favCourseRightView" destination="lhN-YN-1l1" id="uti-eC-rks"/>
-                        <outlet property="lastViewHConstraints" destination="d3l-5a-Ex9" id="Nk6-qx-I6u"/>
+                        <outlet property="lastViewHConstraints" destination="d3l-5a-Ex9" id="Wjp-Ft-T6O"/>
                         <outlet property="newsTabView" destination="nXk-qZ-kct" id="eUg-ie-r2w"/>
+                        <outlet property="newsViewTopContraints" destination="bc7-OR-eP9" id="ioc-2w-wrc"/>
                         <outlet property="publicCourseImgView" destination="fMJ-0T-zIJ" id="KQ9-tL-pKI"/>
                         <outlet property="publicTeaLB" destination="hTK-Yz-iXF" id="OJj-VA-CGX"/>
                         <outlet property="publicTitleLB" destination="fFA-e3-iLu" id="U8k-0w-uvV"/>
                         <outlet property="publicViewHConstraint" destination="rE5-lM-Bv8" id="RGV-rD-X92"/>
+                        <outlet property="publicViewTopConstraint" destination="SzZ-kp-OwJ" id="fAN-6d-d0v"/>
                         <outlet property="teacherScroView" destination="kGE-EL-kMR" id="yLb-md-Xwg"/>
                         <outlet property="teacherViewHContraints" destination="Wxn-Tl-2Ex" id="FYI-Up-bvp"/>
+                        <outlet property="teacherViewTopContraints" destination="GQ7-d8-nhv" id="dSL-3v-oqG"/>
                         <outlet property="viewTopY" destination="Ydg-fQ-zGb" id="SD9-dg-Uxw"/>
                         <outlet property="weikeBgView" destination="scj-6A-hbb" id="e69-CR-14O"/>
                         <outlet property="weikeCountLB" destination="fRa-F9-QtP" id="xLz-QX-y4y"/>
                         <outlet property="weikeImgView" destination="bcA-O3-84v" id="bak-BP-bPB"/>
                         <outlet property="weikeTeaLB" destination="Gha-c3-o4z" id="bXb-Z5-I3D"/>
                         <outlet property="weikeTitleLB" destination="OQJ-TH-Twk" id="NYx-kw-MvV"/>
-                        <outlet property="weikeViewHConstraint" destination="9zD-Sn-SsQ" id="mWC-SP-qs9"/>
+                        <outlet property="weikeViewHConstraint" destination="9zD-Sn-SsQ" id="aEG-dI-a5n"/>
+                        <outlet property="weikeViewTopConstraint" destination="B1Y-EL-gK3" id="DfD-z8-PQo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8b-5z-cy0" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -33,6 +33,7 @@
 @property (nonatomic,copy) NSString *brief; //简介
 @property (nonatomic,copy) NSString *head_img_url; //头像地址
 @property (nonatomic, retain) PurchaseItem *purchase; //报班状态
+@property (nonatomic,copy) NSString *has_order; //0：无订单
 
 + (UserInfo *)share;
 

@@ -30,15 +30,6 @@
 //    [[DoraemonManager shareInstance] install];
 //#endif
     
-//    // https://cloud.tencent.com/developer/article/1423496
-//    // https://www.jianshu.com/p/d804b7dca7e7
-//    // http://www.cocoachina.com/cms/wap.php?action=article&id=25288
-//    if(![IAPShare sharedHelper].iap) {
-//        NSSet *dataSet = [[NSSet alloc] initWithObjects:@"com.czjy.chaozhi000001", nil];
-//        [IAPShare sharedHelper].iap = [[IAPHelper alloc] initWithProductIdentifiers:dataSet];
-//    }
-//    [IAPShare sharedHelper].iap.production = NO;
-    
     [self registerPush:application options:launchOptions]; //注册激光推送
     
     [self registerUMeng]; //注册友盟

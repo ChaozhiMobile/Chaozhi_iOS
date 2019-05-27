@@ -119,7 +119,6 @@
 		A071273B2216E7D700DC3C20 /* NotifyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A071273A2216E7D700DC3C20 /* NotifyItem.m */; };
 		A091D1302178FAF300CCDAF6 /* StudyInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A091D12F2178FAF300CCDAF6 /* StudyInfoItem.m */; };
 		A0C1257321BC021B0026430E /* CZStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C1257221BC021B0026430E /* CZStarView.m */; };
-		A0F8968222914DBD00F450EB /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F8968122914DBD00F450EB /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -310,7 +309,6 @@
 		A091D12F2178FAF300CCDAF6 /* StudyInfoItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyInfoItem.m; sourceTree = "<group>"; };
 		A0C1257121BC021B0026430E /* CZStarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZStarView.h; sourceTree = "<group>"; };
 		A0C1257221BC021B0026430E /* CZStarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZStarView.m; sourceTree = "<group>"; };
-		A0F8968122914DBD00F450EB /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		B55762E2478093A57AE66667 /* libPods-Chaozhi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Chaozhi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -322,7 +320,6 @@
 				A01E1E5122223F8800435A0E /* UserNotifications.framework in Frameworks */,
 				A020B07C214AAD610011BB4F /* libresolv.tbd in Frameworks */,
 				94DF1E58ABC326A19CE0832D /* libPods-Chaozhi.a in Frameworks */,
-				A0F8968222914DBD00F450EB /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -868,7 +865,6 @@
 		CA884E04D0E50DD4B279DF5D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A0F8968122914DBD00F450EB /* StoreKit.framework */,
 				A01E1E5022223F8800435A0E /* UserNotifications.framework */,
 				A020B07B214AAD600011BB4F /* libresolv.tbd */,
 				B55762E2478093A57AE66667 /* libPods-Chaozhi.a */,
@@ -912,7 +908,7 @@
 						CreatedOnToolsVersion = 9.4;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.Push = {
 								enabled = 1;

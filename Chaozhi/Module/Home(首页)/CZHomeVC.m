@@ -14,7 +14,6 @@
 #import <StoreKit/StoreKit.h>
 #import "CZUpdateView.h"
 #import "CZStarView.h"
-#import <IAPShare.h>
 
 #define TEACHERNUM 2.5
 
@@ -75,11 +74,17 @@
 - (IBAction)showMoreVideoAction:(id)sender;
 - (IBAction)showActivityDetailAction:(id)sender;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *courseViewTopConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *courseViewHConstraint; //默认240
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *publicViewTopConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *publicViewHConstraint; //默认186
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *weikeViewTopConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *weikeViewHConstraint; //默认175
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *activityViewTopContraints;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *activityViewHContraints; //默认315
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *teacherViewTopContraints;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *teacherViewHContraints; //默认220
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *newsViewTopContraints;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *lastViewHConstraints; //每日新知高度 动态
 
 @end
@@ -255,7 +260,7 @@
             weakSelf.newsItems = [HomeNewsListItem yy_modelWithJSON:responseData];
             if (weakSelf.page==1) {
                 [weakSelf.newsDatsSource removeAllObjects];
-                weakSelf.lastViewHConstraints.constant = 40 ;
+                weakSelf.lastViewHConstraints.constant = 40;
             }
             
             if (weakSelf.newsDatsSource.count<weakSelf.newsItems.total) {
@@ -270,6 +275,7 @@
             if (weakSelf.newsDatsSource.count>0) {
                 weakSelf.lastViewHConstraints.constant = 40 + weakSelf.newsDatsSource.count*100;
             } else {
+                weakSelf.newsViewTopContraints.constant = 0;
                 weakSelf.lastViewHConstraints.constant = 0;
             }
             [weakSelf.newsTabView reloadData];
@@ -280,62 +286,6 @@
 #pragma mark - methods
 //课程分类
 - (IBAction)selectCourseAction:(id)sender {
-    
-//    // https://cloud.tencent.com/developer/article/1423496
-//    // https://www.jianshu.com/p/d804b7dca7e7
-//    // http://www.cocoachina.com/cms/wap.php?action=article&id=25288
-//    if(![IAPShare sharedHelper].iap) {
-//        NSSet *dataSet = [[NSSet alloc] initWithObjects:@"com.czjy.chaozhi000001", nil];
-//        [IAPShare sharedHelper].iap = [[IAPHelper alloc] initWithProductIdentifiers:dataSet];
-//    }
-//    [IAPShare sharedHelper].iap.production = NO;
-//    
-//    // 请求商品信息
-//    [[IAPShare sharedHelper].iap requestProductsWithCompletion:^(SKProductsRequest* request,SKProductsResponse* response)
-//     {
-//         if(response.products.count > 0 ) {
-//             SKProduct *product = response.products[0];
-//             
-//             NSLog(@"%@",[product localizedDescription]);
-//             
-//             [[IAPShare sharedHelper].iap buyProduct:product
-//                                        onCompletion:^(SKPaymentTransaction* trans){
-//                                            if(trans.error)
-//                                            {
-//                                                
-//                                            }
-//                                            else if(trans.transactionState == SKPaymentTransactionStatePurchased) {
-//                                                // 到这里购买就成功了，但是因为存在越狱手机下载某些破解内购软件的情况，需要跟苹果服务器的确认是否购买成功
-//                                                // IAPHelper提供了这个方法，验证这步可以写在前端，也可以写在服务器端，这个自己看情况决定吧...
-//                                                
-//                                                //   ！！ 这里有一种情况需要注意。程序走到这里的时候，已经是支付成功的状态。
-//                                                // 此时用户的钱已经被苹果扣掉了，接下来需要做的是验证购买信息。
-//                                                // 但是如果在 '购买成功'——'验证订单' 中间出现问题，断网、App崩溃等问题的话，会出现扣了钱但是充值失败的情况
-//                                                // 所以在这里可以将下文中的验证信息存在本地，验证成功再后删除。验证失败的话，可以在每次App启动时将信息取出来重新验证
-//                                                
-//                                                // 购买验证
-//                                                NSData *receipt = [NSData dataWithContentsOfURL:[[NSBundle mainBundle] appStoreReceiptURL]];
-//                                                //网上的攻略有的比较老，在验证时使用的是trans.transactionReceipt，需要注意trans.transactionReceipt在ios9以后被弃用
-//                                                [[IAPShare sharedHelper].iap checkReceipt:receipt onCompletion:^(NSString *response, NSError *error) {}];
-//                                                
-//                                            }
-//                                            else if(trans.transactionState == SKPaymentTransactionStateFailed) {
-//                                                if (trans.error.code == SKErrorPaymentCancelled) {
-//                                                }else if (trans.error.code == SKErrorClientInvalid) {
-//                                                }else if (trans.error.code == SKErrorPaymentInvalid) {
-//                                                }else if (trans.error.code == SKErrorPaymentNotAllowed) {
-//                                                }else if (trans.error.code == SKErrorStoreProductNotAvailable) {
-//                                                }else{
-//                                                }
-//                                            }
-//                                        }];
-//         } else {
-//             //  ..未获取到商品
-//         }
-//     }];
-//    
-//    return;
-    
     __weak typeof(self) weakSelf = self;
     CZSelectCourseVC *vc = [[CZSelectCourseVC alloc] init];
     vc.hidesBottomBarWhenPushed = YES;
@@ -361,6 +311,7 @@
 
 - (void)refreshActivityUI{
     if (_homeItem.activity_list.count==0) {
+        _activityViewTopContraints.constant = 0;
         _activityViewHContraints.constant = 0;
         _activityTitleLB.superview.clipsToBounds = YES;
         return;
@@ -378,6 +329,7 @@
 - (void)refreshTeacherUI{
     [_teacherScroView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     if (_categoryItems.teacher_list.count==0) {
+        _teacherViewTopContraints.constant = 0;
         _teacherViewHContraints.constant = 0;
         return;
     }
@@ -420,6 +372,7 @@
 
 - (void)refreshVideoUI {
     if (_categoryItems.try_video_list.count==0) {
+        _publicViewTopConstraint.constant = 0;
         _publicViewHConstraint.constant = 0;
         return;
     }
@@ -439,6 +392,7 @@
 
 - (void)refreshWeikeUI{
     if (_categoryItems.weike_list.count==0) {
+        _weikeViewTopConstraint.constant = 0;
         _weikeViewHConstraint.constant = 0;
         return;
     }
@@ -463,8 +417,12 @@
 }
 
 - (void)refreshFeaCourseUI{
+    
+    _categoryItems.feature_product_list = [NSArray array];
+    
     if (_categoryItems.feature_product_list.count==0) {
-        _courseViewHConstraint.constant = -10;
+        _courseViewTopConstraint.constant = 0;
+        _courseViewHConstraint.constant = 0;
         return;
     }
     _courseViewHConstraint.constant = 240;
