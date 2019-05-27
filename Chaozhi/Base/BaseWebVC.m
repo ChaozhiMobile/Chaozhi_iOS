@@ -11,11 +11,11 @@
 #import "WKDelegateController.h"
 
 @interface BaseWebVC ()<WKUIDelegate,WKNavigationDelegate,WKDelegate,UITextFieldDelegate>
+
 @property (strong, nonatomic) UIProgressView *progressView;
 @property (strong, nonatomic) WKUserContentController *userContentController;
-/** 返回H5弹框 */
-//@property (nonatomic,strong) NSDictionary *alertDic;
 @property (nonatomic,assign) BOOL h5TapBack;
+
 @end
 
 @implementation BaseWebVC
@@ -47,25 +47,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     if ([NSString isEmpty:_webTitle]) {
         self.isShowWebTitle = YES;
     }
     
     self.title = _webTitle;
     
-    [self.view addSubview:self.progressView];
-    [self.view insertSubview:self.webView belowSubview:self.progressView];
-    
-    [self changeUserAgent];
-    
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_homeUrl] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30]];
-    
-    __weak typeof(self) weakSelf = self;
-    self.webView.scrollView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [weakSelf changeUserAgent];
-        [weakSelf.webView reload];
-    }];
+    [self initWebView];
 }
 
 #pragma mark - 全局修改UserAgent，传token等参数给H5
@@ -83,38 +72,6 @@
         [self.webView setCustomUserAgent:userAgent];
     }
     
-    if (IS_IOS_9) {
-        [self.webView evaluateJavaScript:@"navigator.userAgent" completionHandler:^(id result, NSError *error) {
-            NSString *oldUA = result;
-            if (error) {
-                oldUA = [[[UIWebView alloc] init] stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
-            }
-            NSLog(@"UserAgent：oldUA：%@",oldUA);
-            if ([oldUA containsString:@"&&"]) {
-                NSArray *array = [oldUA componentsSeparatedByString:@"&&"];
-                oldUA = array[0];
-            }
-            NSString *newUA = [NSString stringWithFormat:@"%@&&%@", oldUA, extendStr];
-            [[NSUserDefaults standardUserDefaults] registerDefaults:@{@"UserAgent":newUA, @"User-Agent":newUA}];
-            if (@available(iOS 9.0, *)) {
-                self.webView.customUserAgent = newUA;
-            } else {
-                // Fallback on earlier versions
-            }
-            NSLog(@"UserAgent：newUA：%@",newUA);
-        }];
-    } else {//适配iOS9以下系统，下面的方法不能少
-        NSString *oldUA = [[[UIWebView alloc] init] stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
-        NSLog(@"UserAgent：oldUA：%@",oldUA);
-        if ([oldUA containsString:@"&&"]) {
-            NSArray *array = [oldUA componentsSeparatedByString:@"&&"];
-            oldUA = array[0];
-        }
-        NSString *newUA = [NSString stringWithFormat:@"%@&&%@", oldUA, extendStr];
-        [[NSUserDefaults standardUserDefaults] registerDefaults:@{@"UserAgent":newUA}];
-        [self.webView setValue:newUA forKey:@"applicationNameForUserAgent"];
-        NSLog(@"UserAgent：newUA：%@",newUA);
-    }
 }
 
 #pragma mark - 懒加载
@@ -131,9 +88,8 @@
 }
 
 // WebView
-- (WKWebView *)webView {
+- (void )initWebView {
     if (!_webView) {
-        
         //配置环境
         WKWebViewConfiguration * configuration = [[WKWebViewConfiguration alloc]init];
         configuration.allowsInlineMediaPlayback = true;
@@ -165,7 +121,16 @@
         [_userContentController addScriptMessageHandler:delegateController name:@"close"]; //关闭当前页面
         [_userContentController addScriptMessageHandler:delegateController name:@"tapBack"]; //返回弹窗提示
     }
-    return _webView;
+    [self.view addSubview:_webView];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_homeUrl] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30]];
+    
+    __weak typeof(self) weakSelf = self;
+    self.webView.scrollView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakSelf.webView reload];
+    }];
+    
+    [self.view addSubview:self.progressView];
+    [self.view insertSubview:self.webView belowSubview:self.progressView];
 }
 
 #pragma mark - 返回事件
@@ -174,33 +139,6 @@
 - (void)backAction {
     
     NSLog(@"打开web页面个数：%lu",(unsigned long)self.webView.backForwardList.backList.count);
-    
-//    if (_alertDic) {
-//        if ([_alertDic[@"type"] isEqualToString:@"alert"]) {
-//            NSString *title = _alertDic[@"title"];
-//            NSString *content = _alertDic[@"content"];
-//            XLGAlertView *alert = [[XLGAlertView alloc] initWithTitle:title content:content leftButtonTitle:@"" rightButtonTitle:@"确定"];
-//            alert.doneBlock = ^{
-//                [self->_webView evaluateJavaScript:@"fn_tapBack();" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
-//                    NSLog(@"js返回结果%@",result);
-//                }];
-//                self->_alertDic = nil;
-//                [self.navigationController popViewControllerAnimated:YES];
-//            };
-//        }
-//        if ([_alertDic[@"type"] isEqualToString:@"confirm"]) {
-//            NSString *title = _alertDic[@"title"];
-//            NSString *content = _alertDic[@"content"];
-//            XLGAlertView *alert = [[XLGAlertView alloc] initWithTitle:title content:content leftButtonTitle:@"取消" rightButtonTitle:@"确定"];
-//            alert.doneBlock = ^{
-//                [self->_webView evaluateJavaScript:@"fn_tapBack();" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
-//                    NSLog(@"js返回结果%@",result);
-//                }];
-//                self->_alertDic = nil;
-//                [self.navigationController popViewControllerAnimated:YES];
-//            };
-//        }
-//    }
     
     if (_h5TapBack == YES) {
         [_webView evaluateJavaScript:@"fn_tapBack();" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
@@ -273,7 +211,6 @@
     
     if ([message.name isEqualToString:@"tapBack"]) { //返回弹窗提示
         _h5TapBack = YES;
-//        _alertDic = message.body;
     }
     
     if ([message.name isEqualToString:@"return"]) { //返回
@@ -285,7 +222,6 @@
     }
     
     if ([message.name isEqualToString:@"refresh"]) { //刷新
-        [self changeUserAgent];
         [_webView reload];
     }
 }
@@ -301,8 +237,11 @@
 }
 
 // 当内容开始返回时调用
-- (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation{
+- (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation {
     [JHHJView hideLoading]; //结束加载
+    if ([self.webView.scrollView.mj_header isRefreshing]) {
+        [self.webView.scrollView.mj_header endRefreshing];
+    }
 }
 
 // 页面加载失败时调用

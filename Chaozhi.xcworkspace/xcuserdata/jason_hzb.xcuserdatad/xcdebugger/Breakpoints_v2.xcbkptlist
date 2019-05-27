@@ -16,16 +16,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Chaozhi/Module/Infinite(&#x65e0;&#x9650;)/CZInfiniteVC.m"
-            timestampString = "580112854.065818"
+            filePath = "Chaozhi/Base/BaseWebVC.m"
+            timestampString = "580658896.135182"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "-refresh"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "-changeUserAgent"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

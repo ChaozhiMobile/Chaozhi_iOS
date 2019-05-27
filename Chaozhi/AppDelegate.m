@@ -30,6 +30,8 @@
 //    [[DoraemonManager shareInstance] install];
 //#endif
     
+    [Utils changeUserAgent]; //WKWebView UA初始化
+    
     [self registerPush:application options:launchOptions]; //注册激光推送
     
     [self registerUMeng]; //注册友盟

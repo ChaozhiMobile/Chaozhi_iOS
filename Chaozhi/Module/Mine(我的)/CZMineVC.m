@@ -88,7 +88,8 @@
             self.purchaseItem = userInfo.purchase;
             self.purchaseArr = [self.purchaseItem.chat mutableCopy];
             
-            if (![userInfo.has_order isEqualToString:@"0"]) {
+            if (![userInfo.has_order isEqualToString:@"0"]
+                && ![self.nameArr containsObject:@"我的订单"]) {
                 [self.imageArr insertObject:@"icon_课程" atIndex:0];
                 [self.nameArr insertObject:@"我的订单" atIndex:0];
             }

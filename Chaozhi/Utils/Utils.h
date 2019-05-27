@@ -66,4 +66,7 @@
 
 + (UIViewController *)getViewController:(NSString *)stordyName WithVCName:(NSString *)name;
 
+#pragma mark - 全局修改UserAgent，传token等参数给H5
++ (void)changeUserAgent;
+
 @end

@@ -16,12 +16,9 @@
 @property (strong, nonatomic) NSString *homeUrl;
 @property (strong, nonatomic) NSString *webTitle;
 @property (assign, nonatomic) BOOL isPresent;
-@property (strong, nonatomic) WKWebView *webView;
-
+@property (retain, nonatomic) WKWebView *webView;
+- (void )initWebView ;
 /** 传入控制器、url、标题 H5获取参数 */
 + (void)showWithContro:(UIViewController *)contro withUrlStr:(NSString *)urlStr withTitle:(NSString *)title isPresent:(BOOL)isPresent;
-
-/** 全局修改UserAgent，传token等参数给H5 */
-- (void)changeUserAgent;
 
 @end

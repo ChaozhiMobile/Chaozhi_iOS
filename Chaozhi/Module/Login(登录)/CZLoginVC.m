@@ -58,8 +58,10 @@
             
             NSString *token = responseData[@"token"];
             [CacheUtil saveCacher:@"token" withValue:token];
-            
+            [Utils changeUserAgent]; //WKWebView UA初始化
+
             [[NSNotificationCenter defaultCenter] postNotificationName:kLoginSuccNotification object:nil];
+            
             
             // 极光推送绑定别名
             [JPUSHService setTags:nil alias:self.phoneTF.text fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias) {
