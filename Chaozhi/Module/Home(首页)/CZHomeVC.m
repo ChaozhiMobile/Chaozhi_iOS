@@ -134,6 +134,8 @@
         [self.navigationController pushViewController:vc animated:YES];
     }
     _lastViewHConstraints.constant = 40;
+    _courseViewTopConstraint.constant = 0;
+    _courseViewHConstraint.constant = 0;
     
     _bgScrollView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         weakSelf.page = 1;
