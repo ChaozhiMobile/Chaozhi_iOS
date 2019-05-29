@@ -18,6 +18,7 @@
 		A00FA9DF2169DCDC00F4DA5B /* CZSelectCourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9DE2169DCDC00F4DA5B /* CZSelectCourseCell.m */; };
 		A00FA9E1216A09EA00F4DA5B /* MyStudyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00FA9E0216A09EA00F4DA5B /* MyStudyView.xib */; };
 		A010DC6121D6003E007EBA2C /* PurchaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A010DC6021D6003E007EBA2C /* PurchaseItem.m */; };
+		A01CCCB8229D71EE00A8408B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01CCCB7229D71EE00A8408B /* StoreKit.framework */; };
 		A01E1E5122223F8800435A0E /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01E1E5022223F8800435A0E /* UserNotifications.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A020AF49214AA85B0011BB4F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AF48214AA85B0011BB4F /* AppDelegate.m */; };
 		A020B01F214AAB150011BB4F /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AF68214AAB130011BB4F /* Config.m */; };
@@ -142,6 +143,7 @@
 		A00FA9E0216A09EA00F4DA5B /* MyStudyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyStudyView.xib; sourceTree = "<group>"; };
 		A010DC5F21D6003E007EBA2C /* PurchaseItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PurchaseItem.h; sourceTree = "<group>"; };
 		A010DC6021D6003E007EBA2C /* PurchaseItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurchaseItem.m; sourceTree = "<group>"; };
+		A01CCCB7229D71EE00A8408B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A01E1E5022223F8800435A0E /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		A020AF44214AA85B0011BB4F /* Chaozhi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chaozhi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A020AF47214AA85B0011BB4F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 				A01E1E5122223F8800435A0E /* UserNotifications.framework in Frameworks */,
 				A020B07C214AAD610011BB4F /* libresolv.tbd in Frameworks */,
 				94DF1E58ABC326A19CE0832D /* libPods-Chaozhi.a in Frameworks */,
+				A01CCCB8229D71EE00A8408B /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -865,6 +868,7 @@
 		CA884E04D0E50DD4B279DF5D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A01CCCB7229D71EE00A8408B /* StoreKit.framework */,
 				A01E1E5022223F8800435A0E /* UserNotifications.framework */,
 				A020B07B214AAD600011BB4F /* libresolv.tbd */,
 				B55762E2478093A57AE66667 /* libPods-Chaozhi.a */,
@@ -908,7 +912,7 @@
 						CreatedOnToolsVersion = 9.4;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
-								enabled = 0;
+								enabled = 1;
 							};
 							com.apple.Push = {
 								enabled = 1;

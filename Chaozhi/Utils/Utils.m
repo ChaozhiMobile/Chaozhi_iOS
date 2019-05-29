@@ -309,6 +309,7 @@ static Utils *_utils = nil;
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     [dic setObject:[NSString isEmpty:[UserInfo share].token]?@"":[UserInfo share].token forKey:@"token"];
     [dic setObject:[Utils getWifi]==YES?@"1":@"0" forKey:@"wifi"];
+    [dic setObject:AppVersion forKey:@"version"];
     NSString *extendStr = [dic jsonStringEncoded];
     
     if (@available(iOS 12.0, *)) {

@@ -18,7 +18,7 @@ def pods
   pod 'SDCycleScrollView'
   pod 'JPush-iOS-SDK'
   pod 'UMengAnalytics-NO-IDFA'
-#  pod 'IAPHelper'
+  pod 'IAPHelper'
   #全能App研发助手！滴滴开源DoraemonKit
 #  pod 'DoraemonKit', '~> 1.1.2', :configurations => ['Debug']
 end
