@@ -292,6 +292,9 @@
     // https://cloud.tencent.com/developer/article/1423496
     // https://www.jianshu.com/p/d804b7dca7e7
     // http://www.cocoachina.com/cms/wap.php?action=article&id=25288
+    
+    [JHHJView showLoadingOnTheKeyWindowWithType:JHHJViewTypeSingleLine]; //开始加载
+    
     if(![IAPShare sharedHelper].iap) {
         NSSet *dataSet = [[NSSet alloc] initWithObjects:@"com.czjy.chaozhi000001", nil];
         [IAPShare sharedHelper].iap = [[IAPHelper alloc] initWithProductIdentifiers:dataSet];
@@ -301,6 +304,8 @@
     // 请求商品信息
     [[IAPShare sharedHelper].iap requestProductsWithCompletion:^(SKProductsRequest* request,SKProductsResponse* response)
      {
+         [JHHJView hideLoading];
+         
          if(response.products.count > 0 ) {
              SKProduct *product = response.products[0];
              
