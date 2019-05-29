@@ -11,7 +11,6 @@
 
 @interface CZSettingVC ()
 
-
 @end
 
 @implementation CZSettingVC
@@ -84,8 +83,11 @@
     [self cleanCacheAndCookie];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:kLogoutSuccNotification object:nil];
-    [self.navigationController popViewControllerAnimated:NO];
-    self.tabBarController.selectedIndex = 0;
+    
+//    [self.navigationController popViewControllerAnimated:NO];
+//    self.tabBarController.selectedIndex = 0;
+    
+    [self setTabBarController]; //重置根控制器
     
     [Utils changeUserAgent]; //WKWebView UA初始化
 }

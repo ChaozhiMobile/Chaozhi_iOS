@@ -69,9 +69,15 @@
  */
 - (void)tableViewNormalFooterWithRefreshingBlock:(void(^)(void)) block;
 
-/**
- *  短信验证码按钮封装
+/*!
+ *  @brief 短信验证码按钮封装
  */
 - (void)startTimeCount:(UIButton *)l_timeButton;
+
+
+/*!
+*  @brief 设置根控制器
+*/
+- (void)setTabBarController;
 
 @end

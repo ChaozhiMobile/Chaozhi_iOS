@@ -11,7 +11,7 @@
 #import "MJRefresh.h"
 #import "XLGExternalTestTool.h"
 
-@interface BaseVC ()<UITextFieldDelegate,UITextViewDelegate,UITabBarDelegate>
+@interface BaseVC ()<UITextFieldDelegate,UITextViewDelegate,UITabBarDelegate,UITabBarControllerDelegate>
 {
     __block int timeout; //倒计时时间
     XLGExternalTestTool *testTool;
@@ -23,6 +23,29 @@
 @end
 
 @implementation BaseVC
+
+- (void)setTabBarController {
+    UITabBarController *tabBarController = [Utils setTabBarController];
+    tabBarController.delegate = self;
+}
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    
+    //这里我判断的是当前点击的tabBarItem的标题
+    NSString *tabBarTitle = viewController.tabBarItem.title;
+    if ([tabBarTitle isEqualToString:@"我的"]
+        || [tabBarTitle isEqualToString:@"学习"]
+        ) {
+        if ([Utils isLoginWithJump:YES]) {
+            return YES;
+        } else {
+            return NO;
+        }
+    }
+    else {
+        return YES;
+    }
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];

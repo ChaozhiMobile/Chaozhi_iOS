@@ -110,15 +110,27 @@
 
             [[NSNotificationCenter defaultCenter] postNotificationName:kLoginSuccNotification object:nil];
             
-            
             // 极光推送绑定别名
             [JPUSHService setTags:nil alias:self.phoneTF.text fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias) {
                 
             }];
             
-            // 跳转到首页
-            [self.navigationController popToRootViewControllerAnimated:NO];
-            self.tabBarController.selectedIndex = 0;
+//            // 跳转到首页
+//            [self.navigationController popToRootViewControllerAnimated:NO];
+//            self.tabBarController.selectedIndex = 0;
+            
+            //获取用户信息
+            NSDictionary *dic = [NSDictionary dictionary];
+            [[NetworkManager sharedManager] postJSON:URL_UserInfo parameters:dic imageDataArr:nil imageName:nil  completion:^(id responseData, RequestState status, NSError *error) {
+                
+                if (status == Request_Success) {
+                    //缓存用户信息
+                    NSDictionary *userDic = responseData;
+                    [[UserInfo share] setUserInfo:[userDic mutableCopy]];
+                    
+                    [self setTabBarController]; //重置根控制器
+                }
+            }];
         } else {
             [Utils showToast:@"注册失败"];
         }

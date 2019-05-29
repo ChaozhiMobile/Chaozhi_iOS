@@ -351,4 +351,67 @@ static Utils *_utils = nil;
     }
 }
 
+#pragma mark - UITabBarController
++ (UITabBarController *)setTabBarController {
+    
+    //步骤1：初始化视图控制器
+    UIViewController *homeVC = [Utils getViewController:@"Main" WithVCName:@"CZHomeVC"]; //首页
+    UIViewController *studyVC = [Utils getViewController:@"Main" WithVCName:@"CZStudyVC"]; //学习
+    UIViewController *infiniteVC = [Utils getViewController:@"Main" WithVCName:@"CZInfiniteVC"]; //无限
+    UIViewController *mineVC = [Utils getViewController:@"Main" WithVCName:@"CZMineVC"]; //我的
+    
+    //步骤2：将视图控制器绑定到导航控制器上
+    BaseNC *nav1C = [[BaseNC alloc] initWithRootViewController:homeVC];
+    BaseNC *nav2C = [[BaseNC alloc] initWithRootViewController:studyVC];
+    BaseNC *nav3C = [[BaseNC alloc] initWithRootViewController:infiniteVC];
+    BaseNC *nav4C = [[BaseNC alloc] initWithRootViewController:mineVC];
+    
+    //步骤3：将导航控制器绑定到TabBar控制器上
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    
+    //改变tabBar的背景颜色
+    UIView *barBgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 49)];
+    barBgView.backgroundColor = [UIColor whiteColor];
+    [tabBarController.tabBar insertSubview:barBgView atIndex:0];
+    tabBarController.tabBar.opaque = YES;
+    
+    NSArray *titles = [NSArray array];
+    NSArray *images = [NSArray array];
+    NSArray *selectedImages = [NSArray array];
+    if ([Utils isLoginWithJump:YES]
+        &&[[UserInfo share].has_order integerValue] == 1) {
+        //需要先绑定viewControllers数据源
+        tabBarController.viewControllers = @[nav1C,nav2C,nav3C,nav4C];
+        //初始化TabBar数据源
+        titles = @[@"首页",@"学习",@"无限",@"我的"];
+        images = @[@"icon_black_cz",@"icon_black_xx",@"icon_black_wx",@"icon_black_wo"];
+        selectedImages = @[@"icon_red_cz",@"icon_red_xx",@"icon_red_wx",@"icon_red_wo"];
+    } else {
+        //需要先绑定viewControllers数据源
+        tabBarController.viewControllers = @[nav1C,nav3C,nav4C];
+        //初始化TabBar数据源
+        titles = @[@"首页",@"无限",@"我的"];
+        images = @[@"icon_black_cz",@"icon_black_wx",@"icon_black_wo"];
+        selectedImages = @[@"icon_red_cz",@"icon_red_wx",@"icon_red_wo"];
+    }
+    
+    //默认选中第几个图标（此步操作在绑定viewControllers数据源之后）
+    tabBarController.selectedIndex = 0;
+    
+    //绑定TabBar数据源
+    for (int i = 0; i<tabBarController.tabBar.items.count; i++) {
+        UITabBarItem *item = (UITabBarItem *)tabBarController.tabBar.items[i];
+        item.title = titles[i];
+        item.image = [[UIImage imageNamed:[images objectAtIndex:i]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        item.selectedImage = [[UIImage imageNamed:[selectedImages objectAtIndex:i]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        
+        tabBarController.tabBar.tintColor = [UIColor orangeColor];
+    }
+    
+    //步骤4：将TabBar控制器作为根视图控制器
+    [UIApplication sharedApplication].keyWindow.rootViewController = tabBarController;
+    
+    return tabBarController;
+}
+
 @end

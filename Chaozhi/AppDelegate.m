@@ -12,7 +12,6 @@
 #import "NetworkUtil.h"
 #import "CZGuideVC.h"
 #import "UMMobClick/MobClick.h"
-//#import <IAPShare.h>
 //#import "DoraemonManager.h"
 
 @interface AppDelegate ()
@@ -29,6 +28,19 @@
 //#ifdef DEBUG
 //    [[DoraemonManager shareInstance] install];
 //#endif
+    
+    if ([Utils isLoginWithJump:YES]) {
+        //获取用户信息
+        NSDictionary *dic = [NSDictionary dictionary];
+        [[NetworkManager sharedManager] postJSON:URL_UserInfo parameters:dic imageDataArr:nil imageName:nil  completion:^(id responseData, RequestState status, NSError *error) {
+            
+            if (status == Request_Success) {
+                //缓存用户信息
+                NSDictionary *userDic = responseData;
+                [[UserInfo share] setUserInfo:[userDic mutableCopy]];
+            }
+        }];
+    }
     
     [Utils changeUserAgent]; //WKWebView UA初始化
     
@@ -56,10 +68,15 @@
         [guideVC setDoneBlock:^(){
             NSLog(@"点击“进入”进入应用");
             //进入应用主界面
-            self.window.rootViewController =[self setTabBarController] ;
+            UITabBarController *tabBarController = [Utils setTabBarController];
+            tabBarController.delegate = self;
+            self.window.rootViewController = tabBarController;
         }];
     } else {
-        self.window.rootViewController =[self setTabBarController] ;
+        //进入应用主界面
+        UITabBarController *tabBarController = [Utils setTabBarController];
+        tabBarController.delegate = self;
+        self.window.rootViewController = tabBarController;
     }
     
     [self.window makeKeyAndVisible];
@@ -83,17 +100,17 @@
     [MobClick setEncryptEnabled:YES]; //加密，默认为NO(不加密)
 }
 
-#pragma mark - 进入首页
-
-- (UITabBarController *)setTabBarController {
-    //第一步：要获取单独控制器所在的UIStoryboard
-    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    //第二步：获取该控制器的Identifier并赋给你的单独控制器
-    UITabBarController *tabBarController = [story instantiateViewControllerWithIdentifier:@"TabBarController"];
-    tabBarController.delegate = self;
-    
-    return tabBarController;
-}
+//#pragma mark - 进入首页
+//
+//- (UITabBarController *)setTabBarController {
+//    //第一步：要获取单独控制器所在的UIStoryboard
+//    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    //第二步：获取该控制器的Identifier并赋给你的单独控制器
+//    UITabBarController *tabBarController = [story instantiateViewControllerWithIdentifier:@"TabBarController"];
+//    tabBarController.delegate = self;
+//
+//    return tabBarController;
+//}
 
 - (void)processKeyBoard {
     
@@ -110,7 +127,7 @@
     NSString *tabBarTitle = viewController.tabBarItem.title;
     if ([tabBarTitle isEqualToString:@"我的"]
         || [tabBarTitle isEqualToString:@"学习"]
-        ) { //|| [tabBarTitle isEqualToString:@"无限"]
+        ) {
         if ([Utils isLoginWithJump:YES]) {
             return YES;
         } else {

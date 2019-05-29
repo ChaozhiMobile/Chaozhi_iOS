@@ -69,4 +69,7 @@
 #pragma mark - 全局修改UserAgent，传token等参数给H5
 + (void)changeUserAgent;
 
+#pragma mark - UITabBarController
++ (UITabBarController *)setTabBarController;
+
 @end
