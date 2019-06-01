@@ -217,9 +217,10 @@
     
     if ([message.name isEqualToString:@"iapBuy"]) { //课程内购
         NSDictionary *dic = message.body;
-        NSString *ipaID = dic[@"ipaID"];
-        NSLog(@"课程内购ID：%@",ipaID);
-        [self iapBuy:ipaID];
+        NSString *iapID = dic[@"iapID"];
+//        NSString *purchase = dic[@"purchase"];
+        NSLog(@"课程内购ID：%@",iapID);
+        [self iapBuy:iapID];
     }
     
     if ([message.name isEqualToString:@"return"]) { //返回
