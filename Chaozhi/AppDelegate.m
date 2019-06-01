@@ -30,6 +30,8 @@
 //    [[DoraemonManager shareInstance] install];
 //#endif
     
+    [self iapCheck]; //内购凭证服务器二次校验，防止漏单
+    
     [Utils changeUserAgent]; //WKWebView UA初始化
     
     [self registerPush:application options:launchOptions]; //注册激光推送
@@ -65,6 +67,23 @@
     [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+#pragma mark - 内购凭证校验
+- (void)iapCheck {
+    NSString *receipt = [CacheUtil getCacherWithKey:kIapCheck];
+    if (![Utils isBlankString:receipt]) {
+        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
+                             receipt, @"receipt",
+                             nil];
+        [[NetworkManager sharedManager] postJSON:URL_IapPayCheck parameters:dic imageDataArr:nil imageName:nil  completion:^(id responseData, RequestState status, NSError *error) {
+            
+            if (status == Request_Success) {
+                [Utils showToast:@"课程购买成功"];
+                [CacheUtil saveCacher:kIapCheck withValue:@""];
+            }
+        }];
+    }
 }
 
 #pragma mark - 注册友盟

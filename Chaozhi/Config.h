@@ -32,6 +32,7 @@ NSString *domainUrl(void);
 #define URL_CheckVersion @"api/app/check-version" //版本更新
 #define URL_Notify @"api/notify/notify" //提醒状态
 #define URL_MyTeacher @"api/user/teacher" //我的班主任 ?token=xxx
+#define URL_IapPayCheck @"api/pay/iap-pay" //内购凭证验证
 
 #pragma mark - ---------------H5地址---------------
 

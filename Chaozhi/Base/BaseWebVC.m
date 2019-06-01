@@ -9,6 +9,7 @@
 
 #import "BaseWebVC.h"
 #import "WKDelegateController.h"
+#import <IAPShare.h>
 
 @interface BaseWebVC ()<WKUIDelegate,WKNavigationDelegate,WKDelegate,UITextFieldDelegate>
 
@@ -120,6 +121,7 @@
         [_userContentController addScriptMessageHandler:delegateController name:@"open"]; //打开新页面
         [_userContentController addScriptMessageHandler:delegateController name:@"close"]; //关闭当前页面
         [_userContentController addScriptMessageHandler:delegateController name:@"tapBack"]; //返回弹窗提示
+        [_userContentController addScriptMessageHandler:delegateController name:@"ipaBuy"]; //课程内购
     }
     [self.view addSubview:_webView];
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_homeUrl] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30]];
@@ -213,6 +215,13 @@
         _h5TapBack = YES;
     }
     
+    if ([message.name isEqualToString:@"ipaBuy"]) { //课程内购
+        NSDictionary *dic = message.body;
+        NSString *ipaID = dic[@"ipaID"];
+        NSLog(@"课程内购ID：%@",ipaID);
+        [self ipaBuy:ipaID];
+    }
+    
     if ([message.name isEqualToString:@"return"]) { //返回
         
     }
@@ -224,6 +233,87 @@
     if ([message.name isEqualToString:@"refresh"]) { //刷新
         [_webView reload];
     }
+}
+
+#pragma mark - 课程内购
+- (void)ipaBuy:(NSString *)ipaID {
+    
+    // https://cloud.tencent.com/developer/article/1423496
+    // https://www.jianshu.com/p/d804b7dca7e7
+    // http://www.cocoachina.com/cms/wap.php?action=article&id=25288
+    
+    [JHHJView showLoadingOnTheKeyWindowWithType:JHHJViewTypeSingleLine]; //开始加载
+    
+    if(![IAPShare sharedHelper].iap) {
+        NSSet *dataSet = [[NSSet alloc] initWithObjects:ipaID, nil];
+        [IAPShare sharedHelper].iap = [[IAPHelper alloc] initWithProductIdentifiers:dataSet];
+    }
+    [IAPShare sharedHelper].iap.production = NO;
+    
+    // 请求商品信息
+    [[IAPShare sharedHelper].iap requestProductsWithCompletion:^(SKProductsRequest* request,SKProductsResponse* response)
+     {
+         [JHHJView hideLoading];
+         
+         if(response.products.count > 0 ) {
+             SKProduct *product = response.products[0];
+             
+             NSLog(@"%@",[product localizedTitle]);
+             
+             [JHHJView showLoadingOnTheKeyWindowWithType:JHHJViewTypeSingleLine]; //开始加载
+             [[IAPShare sharedHelper].iap buyProduct:product
+                                        onCompletion:^(SKPaymentTransaction* trans){
+                                            [JHHJView hideLoading];
+                                            if(trans.error) {
+                                                
+                                            }
+                                            else if(trans.transactionState == SKPaymentTransactionStatePurchased) {
+                                                // 到这里购买就成功了，但是因为存在越狱手机下载某些破解内购软件的情况，需要跟苹果服务器的确认是否购买成功
+                                                // IAPHelper提供了这个方法，验证这步可以写在前端，也可以写在服务器端，这个自己看情况决定吧...
+                                                
+                                                //   ！！ 这里有一种情况需要注意。程序走到这里的时候，已经是支付成功的状态。
+                                                // 此时用户的钱已经被苹果扣掉了，接下来需要做的是验证购买信息。
+                                                // 但是如果在 '购买成功'——'验证订单' 中间出现问题，断网、App崩溃等问题的话，会出现扣了钱但是充值失败的情况
+                                                // 所以在这里可以将下文中的验证信息存在本地，验证成功再后删除。验证失败的话，可以在每次App启动时将信息取出来重新验证
+                                                
+                                                // 购买验证
+                                                NSData *receipt = [NSData dataWithContentsOfURL:[[NSBundle mainBundle] appStoreReceiptURL]];
+                                                NSString *receiptStr = [receipt base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
+                                                [CacheUtil saveCacher:kIapCheck withValue:receiptStr];
+                                                NSLog(@"购买凭证：%@",receiptStr);
+                                                [self iapPayCheck:receiptStr];
+                                                //网上的攻略有的比较老，在验证时使用的是trans.transactionReceipt，需要注意trans.transactionReceipt在ios9以后被弃用
+//                                                [[IAPShare sharedHelper].iap checkReceipt:receipt onCompletion:^(NSString *response, NSError *error) {}];
+                                                
+                                            }
+                                            else if(trans.transactionState == SKPaymentTransactionStateFailed) {
+                                                if (trans.error.code == SKErrorPaymentCancelled) {
+                                                }else if (trans.error.code == SKErrorClientInvalid) {
+                                                }else if (trans.error.code == SKErrorPaymentInvalid) {
+                                                }else if (trans.error.code == SKErrorPaymentNotAllowed) {
+                                                }else if (trans.error.code == SKErrorStoreProductNotAvailable) {
+                                                }else{
+                                                }
+                                            }
+                                        }];
+         } else {
+             //  ..未获取到商品
+             [Utils showToast:@"商品不存在"];
+         }
+     }];
+}
+
+- (void)iapPayCheck:(NSString *)receipt {
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
+                         receipt, @"receipt",
+                         nil];
+    [[NetworkManager sharedManager] postJSON:URL_IapPayCheck parameters:dic imageDataArr:nil imageName:nil  completion:^(id responseData, RequestState status, NSError *error) {
+        
+        if (status == Request_Success) {
+            [Utils showToast:@"课程购买成功"];
+            [CacheUtil saveCacher:kIapCheck withValue:@""];
+        }
+    }];
 }
 
 #pragma mark - WKNavigationDelegate
@@ -344,6 +434,7 @@
     [_userContentController removeScriptMessageHandlerForName:@"open"];
     [_userContentController removeScriptMessageHandlerForName:@"close"];
     [_userContentController removeScriptMessageHandlerForName:@"tapBack"];
+    [_userContentController removeScriptMessageHandlerForName:@"ipaBuy"];
     [_userContentController removeScriptMessageHandlerForName:@"return"];
     [_userContentController removeScriptMessageHandlerForName:@"login"];
     [_userContentController removeScriptMessageHandlerForName:@"refresh"];

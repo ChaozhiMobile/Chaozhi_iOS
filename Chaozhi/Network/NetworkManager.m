@@ -46,6 +46,8 @@ static NetworkManager *_manager = nil;
         NSLog(@"token值：%@",[UserInfo share].token);
         [paramDic setObject:[UserInfo share].token forKey:@"token"];
     }
+    [paramDic setObject:@"ios" forKey:@"device"];
+    [paramDic setObject:AppVersion forKey:@"version"];
 
     [self POST:urlStr parameters:paramDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
@@ -166,6 +168,8 @@ static NetworkManager *_manager = nil;
         NSLog(@"token值：%@",[UserInfo share].token);
         [paramDic setObject:[UserInfo share].token forKey:@"token"];
     }
+    [paramDic setObject:@"ios" forKey:@"device"];
+    [paramDic setObject:AppVersion forKey:@"version"];
     
     [self POST:urlStr parameters:paramDic constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         

@@ -45,6 +45,7 @@
 #define kNonceStr  [SignKeyUtil getNonceString]
 
 // cache key
+#define kIapCheck @"IapCheck"
 #define kServerKey @"ServerKey"
 #define kWifiKey   @"WifiKey"
 #define kSelectCourseIDKey   @"SelectCourseIDKey"
