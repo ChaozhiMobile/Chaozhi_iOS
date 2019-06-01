@@ -264,6 +264,7 @@ static NetworkManager *_manager = nil;
 - (void)reLogin {
     [Utils showToast:@"登录失效，请重新登录"];
     [[UserInfo share] setUserInfo:nil]; //清除用户信息
+    [Utils changeUserAgent]; //WKWebView UA初始化
     //跳转到登录页
     [Utils isLoginWithJump:YES];
 }
