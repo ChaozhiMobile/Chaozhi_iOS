@@ -220,7 +220,10 @@
         NSString *iapID = dic[@"iapID"];
 //        NSString *purchase = dic[@"purchase"];
         NSLog(@"课程内购ID：%@",iapID);
-        [self iapBuy:iapID];
+        
+        if ([Utils isLoginWithJump:YES]) {
+            [self iapBuy:iapID];
+        }
     }
     
     if ([message.name isEqualToString:@"return"]) { //返回
@@ -313,7 +316,6 @@
     [[NetworkManager sharedManager] postJSON:URL_IapPayCheck parameters:dic imageDataArr:nil imageName:nil  completion:^(id responseData, RequestState status, NSError *error) {
         
         if (status == Request_Success) {
-            [Utils showToast:@"课程购买成功"];
             [weakSelf.webView evaluateJavaScript:@"fn_iapBuy();" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
                 NSLog(@"js返回结果%@",result);
             }];
