@@ -303,6 +303,7 @@
      }];
 }
 
+#pragma mark - 内购凭证服务器校验
 - (void)iapPayCheck:(NSString *)receipt {
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
                          receipt, @"receipt",
