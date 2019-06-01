@@ -121,7 +121,7 @@
         [_userContentController addScriptMessageHandler:delegateController name:@"open"]; //打开新页面
         [_userContentController addScriptMessageHandler:delegateController name:@"close"]; //关闭当前页面
         [_userContentController addScriptMessageHandler:delegateController name:@"tapBack"]; //返回弹窗提示
-        [_userContentController addScriptMessageHandler:delegateController name:@"ipaBuy"]; //课程内购
+        [_userContentController addScriptMessageHandler:delegateController name:@"iapBuy"]; //课程内购
     }
     [self.view addSubview:_webView];
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_homeUrl] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30]];
@@ -215,11 +215,11 @@
         _h5TapBack = YES;
     }
     
-    if ([message.name isEqualToString:@"ipaBuy"]) { //课程内购
+    if ([message.name isEqualToString:@"iapBuy"]) { //课程内购
         NSDictionary *dic = message.body;
         NSString *ipaID = dic[@"ipaID"];
         NSLog(@"课程内购ID：%@",ipaID);
-        [self ipaBuy:ipaID];
+        [self iapBuy:ipaID];
     }
     
     if ([message.name isEqualToString:@"return"]) { //返回
@@ -236,7 +236,7 @@
 }
 
 #pragma mark - 课程内购
-- (void)ipaBuy:(NSString *)ipaID {
+- (void)iapBuy:(NSString *)ipaID {
     
     // https://cloud.tencent.com/developer/article/1423496
     // https://www.jianshu.com/p/d804b7dca7e7
@@ -305,6 +305,7 @@
 
 #pragma mark - 内购凭证服务器校验
 - (void)iapPayCheck:(NSString *)receipt {
+    __weak typeof(self) weakSelf = self;
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
                          receipt, @"receipt",
                          nil];
@@ -312,6 +313,9 @@
         
         if (status == Request_Success) {
             [Utils showToast:@"课程购买成功"];
+            [weakSelf.webView evaluateJavaScript:@"fn_iapBuy();" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+                NSLog(@"js返回结果%@",result);
+            }];
             [CacheUtil saveCacher:kIapCheck withValue:@""];
         }
     }];
@@ -435,7 +439,7 @@
     [_userContentController removeScriptMessageHandlerForName:@"open"];
     [_userContentController removeScriptMessageHandlerForName:@"close"];
     [_userContentController removeScriptMessageHandlerForName:@"tapBack"];
-    [_userContentController removeScriptMessageHandlerForName:@"ipaBuy"];
+    [_userContentController removeScriptMessageHandlerForName:@"iapBuy"];
     [_userContentController removeScriptMessageHandlerForName:@"return"];
     [_userContentController removeScriptMessageHandlerForName:@"login"];
     [_userContentController removeScriptMessageHandlerForName:@"refresh"];
