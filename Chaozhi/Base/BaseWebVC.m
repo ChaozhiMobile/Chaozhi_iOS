@@ -248,11 +248,17 @@
     
     [JHHJView showLoadingOnTheKeyWindowWithType:JHHJViewTypeSingleLine]; //开始加载
     
-    if(![IAPShare sharedHelper].iap) {
+//    if(![IAPShare sharedHelper].iap) {
         NSSet *dataSet = [[NSSet alloc] initWithObjects:ipaID, nil];
         [IAPShare sharedHelper].iap = [[IAPHelper alloc] initWithProductIdentifiers:dataSet];
-    }
+//    }
+#ifdef DEBUG
+    // 开发环境
     [IAPShare sharedHelper].iap.production = NO;
+#else
+    // 生产环境
+    [IAPShare sharedHelper].iap.production = YES;
+#endif
     
     // 请求商品信息
     [[IAPShare sharedHelper].iap requestProductsWithCompletion:^(SKProductsRequest* request,SKProductsResponse* response)
