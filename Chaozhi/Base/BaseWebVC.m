@@ -252,13 +252,12 @@
         NSSet *dataSet = [[NSSet alloc] initWithObjects:ipaID, nil];
         [IAPShare sharedHelper].iap = [[IAPHelper alloc] initWithProductIdentifiers:dataSet];
 //    }
-#ifdef DEBUG
-    // 开发环境
-    [IAPShare sharedHelper].iap.production = NO;
-#else
-    // 生产环境
-    [IAPShare sharedHelper].iap.production = YES;
-#endif
+    
+    if (KOnline || [Utils getServer] == 1) {
+        [IAPShare sharedHelper].iap.production = YES; // 生产环境
+    } else {
+        [IAPShare sharedHelper].iap.production = NO; // 开发环境
+    }
     
     // 请求商品信息
     [[IAPShare sharedHelper].iap requestProductsWithCompletion:^(SKProductsRequest* request,SKProductsResponse* response)

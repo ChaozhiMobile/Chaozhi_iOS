@@ -30,13 +30,13 @@
     NSString *pushAppKey=@"4f61ceadf98f55845bf8b36f";
     NSString *pushChanne=@"iOS";
     
-#ifdef DEBUG
-    // 开发环境
-    [JPUSHService setupWithOption:launchOptions appKey:pushAppKey channel:pushChanne apsForProduction:NO];
-#else
-    // 生产环境
-    [JPUSHService setupWithOption:launchOptions appKey:pushAppKey channel:pushChanne apsForProduction:YES];
-#endif
+    if (KOnline || [Utils getServer] == 1) {
+        // 生产环境
+        [JPUSHService setupWithOption:launchOptions appKey:pushAppKey channel:pushChanne apsForProduction:YES];
+    } else {
+        // 开发环境
+        [JPUSHService setupWithOption:launchOptions appKey:pushAppKey channel:pushChanne apsForProduction:NO];
+    }
 
     [JPUSHService setLogOFF]; //关闭日志
 }
