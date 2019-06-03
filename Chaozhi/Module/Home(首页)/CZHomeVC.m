@@ -146,6 +146,13 @@
     [self getData];
     
     [self checkVersion];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeServerSucc) name:kChangeServerSuccNotification object:nil]; //环境切换成功通知
+}
+
+- (void)changeServerSucc {
+    _page = 1;
+    [self getData];
 }
 
 - (void)getData {

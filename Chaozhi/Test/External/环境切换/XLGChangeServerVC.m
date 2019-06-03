@@ -10,6 +10,7 @@
 #import "XLGChangeServerVC.h"
 #import "XLGChangeServerCell.h"
 #import "XLGChangeServerModel.h"
+#import "JPUSHService.h"
 
 @interface XLGChangeServerVC ()<UITableViewDataSource,UITableViewDelegate>
 {
@@ -98,6 +99,35 @@
     
     //刷新tableView
     [_tableView reloadData];
+    
+    [Utils logout:NO]; //不跳登录页面
+    // 极光推送清除别名
+    [JPUSHService setTags:nil alias:@"" fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias) {
+        
+    }];
+    [self cleanCacheAndCookie];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kChangeServerSuccNotification object:nil];
+    [self.navigationController popViewControllerAnimated:NO];
+    self.tabBarController.selectedIndex = 0;
+    
+    [Utils changeUserAgent]; //WKWebView UA初始化
+}
+
+/**清除缓存和cookie*/
+- (void)cleanCacheAndCookie{
+    //清除cookies
+    NSHTTPCookie *cookie;
+    NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    for (cookie in [storage cookies]){
+        [storage deleteCookie:cookie];
+    }
+    //清除UIWebView的缓存
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
+    NSURLCache * cache = [NSURLCache sharedURLCache];
+    [cache removeAllCachedResponses];
+    [cache setDiskCapacity:0];
+    [cache setMemoryCapacity:0];
 }
 
 - (void)didReceiveMemoryWarning {

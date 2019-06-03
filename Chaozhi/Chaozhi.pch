@@ -55,6 +55,7 @@
 #define kLoginSuccNotification  @"kLoginSuccNotification"
 #define kLogoutSuccNotification  @"kLogoutSuccNotification"
 #define kUserInfoChangeNotification  @"kUserInfoChangeNotification"
+#define kChangeServerSuccNotification  @"kChangeServerSuccNotification"
 
 /********************屏幕宽高、系统版本、手机型号******************/
 
