@@ -29,6 +29,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refresh) name:kLoginSuccNotification object:nil]; //登录成功通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refresh) name:kLogoutSuccNotification object:nil]; //退出成功通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refresh) name:kChangeServerSuccNotification object:nil]; //环境切换成功通知
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -37,7 +38,6 @@
         [self initWebView];
     }
 }
-
 
 #pragma mark - 刷新H5
 - (void)refresh {
