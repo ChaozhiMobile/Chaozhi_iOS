@@ -79,7 +79,10 @@
 
 // 分类列表
 - (void)getData {
+    
     currentPage = 0;
+    _courseScrollView.contentOffset = CGPointMake(0, 0);
+    
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
                          @"1", @"is_newest_info",
                          @"1", @"is_progress",
