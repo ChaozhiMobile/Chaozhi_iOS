@@ -72,16 +72,19 @@
     
     [self blankView];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getData) name:kLoginSuccNotification object:nil]; //登录成功通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginSucc) name:kLoginSuccNotification object:nil]; //登录成功通知
+}
+
+- (void)loginSucc {
+    currentPage = 0;
+    _courseScrollView.contentOffset = CGPointMake(0, 0);
+    [self getData];
 }
 
 #pragma mark - get data
 
 // 分类列表
 - (void)getData {
-    
-    currentPage = 0;
-    _courseScrollView.contentOffset = CGPointMake(0, 0);
     
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
                          @"1", @"is_newest_info",
@@ -137,7 +140,7 @@
         view.tag = 120+i;
         [_courseScrollView addSubview:view];
         UIImageView *courseIconImgView = [view viewWithTag:2];
-        courseIconImgView.contentMode = UIViewContentModeCenter;
+        courseIconImgView.contentMode = UIViewContentModeScaleToFill;
         [courseIconImgView sd_setImageWithURL:[NSURL URLWithString:item.product_img] placeholderImage:[UIImage imageNamed:@"default_course"]];
         UILabel *courseTitleLB = [view viewWithTag:3];
         courseTitleLB.text = item.product_name;
@@ -152,7 +155,7 @@
         [viewBtn addTarget:self action:@selector(courseClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     _coursePageControl.height = 20;
-    _coursePageControl.currentPage = 0;
+    _coursePageControl.currentPage = currentPage;
     _coursePageControl.numberOfPages = courseCount;
 }
 
