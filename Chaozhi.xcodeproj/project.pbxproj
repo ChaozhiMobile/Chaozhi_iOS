@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		201DF3D022AE584700904EAF /* CZAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 201DF3CF22AE584700904EAF /* CZAlertView.m */; };
 		205FDB2F216F20C0001BE2C6 /* HomeInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FDB2E216F20C0001BE2C6 /* HomeInfoItem.m */; };
 		205FDB3321763DBE001BE2C6 /* CZGuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FDB3221763DBE001BE2C6 /* CZGuideVC.m */; };
 		208B695B2185903700B263FB /* TeacherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 208B695A2185903700B263FB /* TeacherView.xib */; };
@@ -124,6 +125,8 @@
 
 /* Begin PBXFileReference section */
 		0AF6FC5BB1D601461F72C62C /* Pods-Chaozhi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chaozhi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chaozhi/Pods-Chaozhi.debug.xcconfig"; sourceTree = "<group>"; };
+		201DF3CE22AE584700904EAF /* CZAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZAlertView.h; sourceTree = "<group>"; };
+		201DF3CF22AE584700904EAF /* CZAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZAlertView.m; sourceTree = "<group>"; };
 		204F3265086F4B67483EF547 /* Pods-Chaozhi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chaozhi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chaozhi/Pods-Chaozhi.release.xcconfig"; sourceTree = "<group>"; };
 		205FDB2D216F20C0001BE2C6 /* HomeInfoItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeInfoItem.h; sourceTree = "<group>"; };
 		205FDB2E216F20C0001BE2C6 /* HomeInfoItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeInfoItem.m; sourceTree = "<group>"; };
@@ -745,6 +748,8 @@
 				A0462A062187407600D12E65 /* CZNotNetAvailableVC.m */,
 				A00BE16B219FFB140042E6ED /* CZUpdateView.h */,
 				A00BE16C219FFB140042E6ED /* CZUpdateView.m */,
+				201DF3CE22AE584700904EAF /* CZAlertView.h */,
+				201DF3CF22AE584700904EAF /* CZAlertView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1068,6 +1073,7 @@
 				A020B07A214AAB150011BB4F /* CourseItem.m in Sources */,
 				205FDB3321763DBE001BE2C6 /* CZGuideVC.m in Sources */,
 				A020B06C214AAB150011BB4F /* BaseNC.m in Sources */,
+				201DF3D022AE584700904EAF /* CZAlertView.m in Sources */,
 				A020B054214AAB150011BB4F /* XLGAlertView.m in Sources */,
 				A071273B2216E7D700DC3C20 /* NotifyItem.m in Sources */,
 				A05FF5CE215B14F100C51E05 /* NetworkUtil.m in Sources */,

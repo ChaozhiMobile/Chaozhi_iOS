@@ -23,6 +23,8 @@
 @property (nonatomic, copy) NSString *user_question; //完成总题数
 @property (nonatomic, copy) NSString *product_sub_name; //产品副标题
 @property (nonatomic, retain) NewestInfoItem *newest_info; //课程最新信息
+/** 阅读协议 */
+@property (nonatomic,copy) NSString *is_agreement_confirm;
 
 @end
 

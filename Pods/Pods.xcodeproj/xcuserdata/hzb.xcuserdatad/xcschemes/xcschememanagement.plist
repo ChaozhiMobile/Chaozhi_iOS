@@ -11,12 +11,22 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>IAPHelper.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>13</integer>
+		</dict>
 		<key>IQKeyboardManager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>1</integer>
+		</dict>
+		<key>JPush-iOS-SDK.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>14</integer>
 		</dict>
 		<key>MJExtension.xcscheme</key>
 		<dict>
@@ -26,7 +36,7 @@
 		<key>MJExtension.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>13</integer>
+			<integer>15</integer>
 		</dict>
 		<key>MJRefresh.xcscheme</key>
 		<dict>
@@ -76,6 +86,11 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>9</integer>
+		</dict>
+		<key>UMengAnalytics-NO-IDFA.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>16</integer>
 		</dict>
 		<key>XLGCategory.xcscheme</key>
 		<dict>

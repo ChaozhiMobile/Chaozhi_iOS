@@ -9,6 +9,7 @@
 #import "CZStudyVC.h"
 #import "StudyInfoItem.h"
 #import "CZNotDataView.h"
+#import "CZAlertView.h"
 
 @implementation StudyCourseCell
 @end
@@ -16,6 +17,7 @@
 @interface CZStudyVC ()<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
 {
     NSInteger currentPage;
+    BOOL show;
 }
 
 @property (nonatomic,retain) CZNotDataView *notDataView; //无数据视图
@@ -53,15 +55,19 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-
     self.navBar.hidden = YES;
-
+    show = YES;
     [self getData];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    show = NO;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    show = YES;
     _tabHeightConstraint.constant = 3*60;
     _statusBarHConstraint.constant = kStatusBarH;
     
@@ -69,9 +75,7 @@
 //    _bgScroView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
 //        [weakSelf getData];
 //    }];
-    
     [self blankView];
-    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginSucc) name:kLoginSuccNotification object:nil]; //登录成功通知
 }
 
@@ -129,12 +133,10 @@
     [self.topBGBackView.layer addSublayer:gradientLayer];
     
     NSInteger courseCount = self.dataArr.count;
-    
+    __weak typeof(self) weakSelf = self;
     _courseScrollView.contentSize = CGSizeMake(courseCount*(WIDTH-20), 0);
     for (NSInteger i = 0; i < courseCount; i ++) {
-        
         StudyInfoItem *item = self.dataArr[i];
-        
         UIView *view = [[[NSBundle mainBundle]loadNibNamed:@"MyStudyView" owner:self options:nil]firstObject];
         view.frame = CGRectMake(i*(WIDTH-20), 0, (WIDTH-20), 120);
         view.tag = 120+i;
@@ -153,11 +155,30 @@
         UIButton *viewBtn = [view viewWithTag:7];
         viewBtn.tag = 1000+i;
         [viewBtn addTarget:self action:@selector(courseClick:) forControlEvents:UIControlEventTouchUpInside];
+        if ([item.is_agreement_confirm integerValue]==0&&show) {
+            CZAlertView *alert = [[CZAlertView alloc]initWithTitle:@"温馨提示" content:item.product_name leftButtonTitle:@"不同意" rightButtonTitle:@"同意"];;
+            alert.doneBlock = ^{
+                [weakSelf setConfrimCourse:item.ID];
+            };
+            alert.urlClickBlock = ^{
+                NSString *tikuStr = [NSString stringWithFormat:@"http:www.baidu.com"];
+                [BaseWebVC showWithContro:self withUrlStr:tikuStr withTitle:@"用户服务协议详情" isPresent:NO];
+            };
+        }
     }
     _coursePageControl.height = 20;
     _coursePageControl.currentPage = currentPage;
     _coursePageControl.numberOfPages = courseCount;
 }
+
+
+// 分类列表
+- (void)setConfrimCourse:(NSString *)courceID {
+    NSDictionary *dic = @{@"id":courceID};
+    [[NetworkManager sharedManager] postJSON:URL_ConfirmAgreement parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
+    }];
+}
+
 
 #pragma mark - methods
 
