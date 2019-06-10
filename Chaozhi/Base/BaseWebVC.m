@@ -124,7 +124,12 @@
         [_userContentController addScriptMessageHandler:delegateController name:@"iapBuy"]; //课程内购
     }
     [self.view addSubview:_webView];
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_homeUrl] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30]];
+    
+    if ([_homeUrl containsString:@"http"]) {
+        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_homeUrl] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30]];
+    } else {
+         [self.webView loadHTMLString:_homeUrl baseURL:nil];
+    }
     
     __weak typeof(self) weakSelf = self;
     self.webView.scrollView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{

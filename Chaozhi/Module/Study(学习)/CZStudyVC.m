@@ -10,6 +10,7 @@
 #import "StudyInfoItem.h"
 #import "CZNotDataView.h"
 #import "CZAlertView.h"
+#import "CZProtocalWebVC.h"
 
 @implementation StudyCourseCell
 @end
@@ -19,7 +20,8 @@
     NSInteger currentPage;
     BOOL show;
 }
-
+/** 所有的弹框视图 */
+@property (nonatomic,strong) NSMutableArray *allAlertView;
 @property (nonatomic,retain) CZNotDataView *notDataView; //无数据视图
 
 @property (weak, nonatomic) IBOutlet UIView *statusBarView;
@@ -70,7 +72,7 @@
     show = YES;
     _tabHeightConstraint.constant = 3*60;
     _statusBarHConstraint.constant = kStatusBarH;
-    
+    _allAlertView = [NSMutableArray array];
 //    __weak typeof(self) weakSelf = self;
 //    _bgScroView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
 //        [weakSelf getData];
@@ -83,6 +85,15 @@
     currentPage = 0;
     _courseScrollView.contentOffset = CGPointMake(0, 0);
     [self getData];
+}
+
+- (void)showAlertView {
+    for (CZAlertView *alert in _allAlertView) {
+        if (alert.isRelease==NO) {
+            alert.hidden = NO;
+            break;
+        }
+    }
 }
 
 #pragma mark - get data
@@ -134,6 +145,7 @@
     
     NSInteger courseCount = self.dataArr.count;
     __weak typeof(self) weakSelf = self;
+    [_allAlertView removeAllObjects];;
     _courseScrollView.contentSize = CGSizeMake(courseCount*(WIDTH-20), 0);
     for (NSInteger i = 0; i < courseCount; i ++) {
         StudyInfoItem *item = self.dataArr[i];
@@ -156,29 +168,48 @@
         viewBtn.tag = 1000+i;
         [viewBtn addTarget:self action:@selector(courseClick:) forControlEvents:UIControlEventTouchUpInside];
         if ([item.is_agreement_confirm integerValue]==0&&show) {
-            CZAlertView *alert = [[CZAlertView alloc]initWithTitle:@"温馨提示" content:item.product_name leftButtonTitle:@"不同意" rightButtonTitle:@"同意"];;
+            CZAlertView *alert = [[CZAlertView alloc] initWithTitle:@"温馨提示" content:item.product_name leftButtonTitle:@"不同意" rightButtonTitle:@"已阅读并同意"];
+            alert.hidden = YES;
+            [_allAlertView addObject:alert];
+            alert.cancelBlock = ^{
+                // 跳转到首页
+                self.tabBarController.selectedIndex = 0;
+                [self.navigationController popToRootViewControllerAnimated:NO];
+                for (CZAlertView *view in weakSelf.allAlertView) {
+                    [view removeFromSuperview];
+                }
+            };
             alert.doneBlock = ^{
-                [weakSelf setConfrimCourse:item.ID];
+                NSDictionary *dic = @{@"id":item.ID};
+                [[NetworkManager sharedManager] postJSON:URL_ConfirmAgreement parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
+                    if (status == Request_Success) {
+                        alert.isRelease = YES;
+                        [weakSelf showAlertView];
+                    }
+                }];
             };
             alert.urlClickBlock = ^{
-                NSString *tikuStr = [NSString stringWithFormat:@"http:www.baidu.com"];
-                [BaseWebVC showWithContro:self withUrlStr:tikuStr withTitle:@"用户服务协议详情" isPresent:NO];
+                for (CZAlertView *view in weakSelf.allAlertView) {
+                    [view removeFromSuperview];
+                }
+                NSDictionary *dic = @{@"order_id":item.ID};
+                [[NetworkManager sharedManager] postJSON:URL_OrdersAgreement parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
+                    if (status == Request_Success) {
+                        CZProtocalWebVC *vc = [[CZProtocalWebVC alloc] init];
+                        vc.webTitle = [NSString stringWithFormat:@"《%@·协议》",item.product_name];
+                        vc.homeUrl = [NSString stringWithFormat:@"%@",responseData[@"agreement"]];
+                        vc.hidesBottomBarWhenPushed = YES;
+                        [weakSelf.navigationController pushViewController:vc animated:NO];
+                    }
+                }];
             };
         }
     }
     _coursePageControl.height = 20;
     _coursePageControl.currentPage = currentPage;
     _coursePageControl.numberOfPages = courseCount;
+    [self showAlertView];
 }
-
-
-// 分类列表
-- (void)setConfrimCourse:(NSString *)courceID {
-    NSDictionary *dic = @{@"id":courceID};
-    [[NetworkManager sharedManager] postJSON:URL_ConfirmAgreement parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
-    }];
-}
-
 
 #pragma mark - methods
 

@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CZAlertView : UIView
 
+/** <#object#> */
+@property (nonatomic,assign) BOOL isRelease;
+
 @property (nonatomic,copy) dispatch_block_t cancelBlock;
 @property (nonatomic,copy) dispatch_block_t doneBlock;
 @property (nonatomic,copy) dispatch_block_t urlClickBlock;
