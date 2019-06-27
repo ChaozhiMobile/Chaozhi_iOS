@@ -14,10 +14,13 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - AgoraRtcEngine_iOS (2.3.1)
   - IAPHelper (1.1)
-  - IQKeyboardManager (6.1.1)
+  - IQKeyboardManager (6.2.0)
+  - JFImagePicker (1.0.0)
   - JPush-iOS-SDK (3.0.5)
-  - lottie-ios (2.5.0)
+  - KissXML (5.2.3)
+  - lottie-ios (2.5.2)
   - Masonry (1.1.0)
   - MJExtension (3.0.15.1)
   - MJRefresh (3.1.15.7)
@@ -27,7 +30,11 @@ PODS:
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
-  - TZImagePickerController (3.0.8)
+  - Socket.IO-Client-Swift (13.3.1):
+    - Starscream (~> 3.0.2)
+  - SSZipArchive (2.1.4)
+  - Starscream (3.0.6)
+  - TZImagePickerController (3.1.0)
   - UMengAnalytics-NO-IDFA (4.2.5)
   - XLGCategory (1.1.0):
     - XLGCategory/NSCategory (= 1.1.0)
@@ -38,9 +45,12 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - AgoraRtcEngine_iOS
   - IAPHelper
   - IQKeyboardManager
+  - JFImagePicker
   - JPush-iOS-SDK
+  - KissXML
   - lottie-ios
   - Masonry
   - MJExtension
@@ -48,6 +58,8 @@ DEPENDENCIES:
   - ReactiveObjC
   - SDCycleScrollView
   - SDWebImage
+  - Socket.IO-Client-Swift
+  - SSZipArchive
   - TZImagePickerController
   - UMengAnalytics-NO-IDFA
   - XLGCategory
@@ -56,9 +68,12 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - AgoraRtcEngine_iOS
     - IAPHelper
     - IQKeyboardManager
+    - JFImagePicker
     - JPush-iOS-SDK
+    - KissXML
     - lottie-ios
     - Masonry
     - MJExtension
@@ -66,6 +81,9 @@ SPEC REPOS:
     - ReactiveObjC
     - SDCycleScrollView
     - SDWebImage
+    - Socket.IO-Client-Swift
+    - SSZipArchive
+    - Starscream
     - TZImagePickerController
     - UMengAnalytics-NO-IDFA
     - XLGCategory
@@ -73,21 +91,27 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  AgoraRtcEngine_iOS: b0304fee470e0b88bd3abedf9ce1c4309f4fd722
   IAPHelper: fd74f53b0ac142eed085777b88b86a11746a2dd4
-  IQKeyboardManager: 79c57795f5c2408d259d37b9da2ed07efcbb5225
+  IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
+  JFImagePicker: 2914c69dac80767a98664e768ac50118664e9f04
   JPush-iOS-SDK: f80e435b524449fd5101e247b044d4e48174ef5f
-  lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
+  KissXML: 09f88ff8161fd058d67b70740b8b516687b52823
+  lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
-  TZImagePickerController: 9092aa0f97af1cb9643c0ea7d7e5a77802ec7245
+  Socket.IO-Client-Swift: 79f8f85fa44881838175a20f9bd2c32bef2c9d37
+  SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
+  Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
+  TZImagePickerController: c9584b67b97d5a20b4dbbb58505fa0b6be590255
   UMengAnalytics-NO-IDFA: 16666e32edce5be44ae5b14aaaa7f3582e09d6ab
   XLGCategory: b93fda8378ccd3e04deb87033c02ad3e6dee3c4a
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: dbb5417820d4242d4ffb24efdb8092dd55ee9707
+PODFILE CHECKSUM: 414f75d0aabc23258e212ddbb83b95a4377b92e1
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.7.0.beta.2

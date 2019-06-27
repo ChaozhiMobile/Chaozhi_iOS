@@ -1,0 +1,6 @@
+framework module JFImagePicker {
+  umbrella header "JFImagePicker-umbrella.h"
+
+  export *
+  module * { export * }
+}

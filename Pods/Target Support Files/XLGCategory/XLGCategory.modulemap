@@ -1,0 +1,6 @@
+framework module XLGCategory {
+  umbrella header "XLGCategory-umbrella.h"
+
+  export *
+  module * { export * }
+}
