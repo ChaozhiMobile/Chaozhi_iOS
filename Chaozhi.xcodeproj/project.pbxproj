@@ -10,6 +10,8 @@
 		201DF3D022AE584700904EAF /* CZAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 201DF3CF22AE584700904EAF /* CZAlertView.m */; };
 		20572EE622C36C3600568CDC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20572EE522C36C3600568CDC /* Foundation.framework */; };
 		20572FE022C36F9000568CDC /* SocketIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20572FDF22C36F8F00568CDC /* SocketIO.framework */; };
+		2057300022C472B400568CDC /* TalkfunSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 20572FF322C472B400568CDC /* TalkfunSDK.bundle */; };
+		2057300222C472B400568CDC /* libTalkfunSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20572FFE22C472B400568CDC /* libTalkfunSDK.a */; };
 		205FDB2F216F20C0001BE2C6 /* HomeInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FDB2E216F20C0001BE2C6 /* HomeInfoItem.m */; };
 		205FDB3321763DBE001BE2C6 /* CZGuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FDB3221763DBE001BE2C6 /* CZGuideVC.m */; };
 		208B695B2185903700B263FB /* TeacherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 208B695A2185903700B263FB /* TeacherView.xib */; };
@@ -147,6 +149,17 @@
 		204F3265086F4B67483EF547 /* Pods-Chaozhi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chaozhi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chaozhi/Pods-Chaozhi.release.xcconfig"; sourceTree = "<group>"; };
 		20572EE522C36C3600568CDC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		20572FDF22C36F8F00568CDC /* SocketIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SocketIO.framework; path = "../../../Library/Developer/Xcode/DerivedData/Socket.IO-Client-Swift-eqfvvgttzqzcvmgxhrdeqdsfpjqw/Build/Products/Debug-iphoneos/SocketIO.framework"; sourceTree = "<group>"; };
+		20572FF322C472B400568CDC /* TalkfunSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TalkfunSDK.bundle; sourceTree = "<group>"; };
+		20572FF422C472B400568CDC /* TalkfunSDKPlayback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunSDKPlayback.h; sourceTree = "<group>"; };
+		20572FF722C472B400568CDC /* TalkfunSDKLive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunSDKLive.h; sourceTree = "<group>"; };
+		20572FF822C472B400568CDC /* TalkfunSDKRtc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunSDKRtc.h; sourceTree = "<group>"; };
+		20572FF922C472B400568CDC /* TalkfunWhiteboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunWhiteboard.h; sourceTree = "<group>"; };
+		20572FFA22C472B400568CDC /* TalkfunCacheImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunCacheImage.h; sourceTree = "<group>"; };
+		20572FFB22C472B400568CDC /* TalkfunSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunSDK.h; sourceTree = "<group>"; };
+		20572FFC22C472B400568CDC /* TalkfunSDKRtcPch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunSDKRtcPch.h; sourceTree = "<group>"; };
+		20572FFD22C472B400568CDC /* TalkfunMoviePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunMoviePlayer.h; sourceTree = "<group>"; };
+		20572FFE22C472B400568CDC /* libTalkfunSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTalkfunSDK.a; sourceTree = "<group>"; };
+		20572FFF22C472B400568CDC /* TalkfunDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunDownloadManager.h; sourceTree = "<group>"; };
 		205FDB2D216F20C0001BE2C6 /* HomeInfoItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeInfoItem.h; sourceTree = "<group>"; };
 		205FDB2E216F20C0001BE2C6 /* HomeInfoItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeInfoItem.m; sourceTree = "<group>"; };
 		205FDB3121763DBE001BE2C6 /* CZGuideVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZGuideVC.h; sourceTree = "<group>"; };
@@ -369,6 +382,7 @@
 				20D3D36F22C2283700560A74 /* libiconv.tbd in Frameworks */,
 				20D3D36D22C2282A00560A74 /* libz.tbd in Frameworks */,
 				20D3D3B022C22DD600560A74 /* AudioToolbox.framework in Frameworks */,
+				2057300222C472B400568CDC /* libTalkfunSDK.a in Frameworks */,
 				20D3D3AE22C22DCD00560A74 /* CoreAudio.framework in Frameworks */,
 				20D3D3AC22C22DC500560A74 /* MediaPlayer.framework in Frameworks */,
 				20D3D3AA22C22DBC00560A74 /* OpenGLES.framework in Frameworks */,
@@ -385,6 +399,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20572FF222C472B400568CDC /* 欢拓Library */ = {
+			isa = PBXGroup;
+			children = (
+				20572FF322C472B400568CDC /* TalkfunSDK.bundle */,
+				20572FF422C472B400568CDC /* TalkfunSDKPlayback.h */,
+				20572FF722C472B400568CDC /* TalkfunSDKLive.h */,
+				20572FF822C472B400568CDC /* TalkfunSDKRtc.h */,
+				20572FF922C472B400568CDC /* TalkfunWhiteboard.h */,
+				20572FFA22C472B400568CDC /* TalkfunCacheImage.h */,
+				20572FFB22C472B400568CDC /* TalkfunSDK.h */,
+				20572FFC22C472B400568CDC /* TalkfunSDKRtcPch.h */,
+				20572FFD22C472B400568CDC /* TalkfunMoviePlayer.h */,
+				20572FFE22C472B400568CDC /* libTalkfunSDK.a */,
+				20572FFF22C472B400568CDC /* TalkfunDownloadManager.h */,
+			);
+			path = "欢拓Library";
+			sourceTree = "<group>";
+		};
 		205FDB3021763D7C001BE2C6 /* Guide(导航) */ = {
 			isa = PBXGroup;
 			children = (
@@ -733,6 +765,7 @@
 		A020B000214AAB140011BB4F /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				20572FF222C472B400568CDC /* 欢拓Library */,
 				A020B001214AAB140011BB4F /* LDNetDiagnoService */,
 				A020B011214AAB140011BB4F /* Reachability */,
 			);
@@ -1040,6 +1073,7 @@
 				A020B03E214AAB150011BB4F /* ic_refresh_image_026@2x.png in Resources */,
 				A020B02A214AAB150011BB4F /* ic_refresh_image_027@2x.png in Resources */,
 				A020B037214AAB150011BB4F /* ic_refresh_image_000@2x.png in Resources */,
+				2057300022C472B400568CDC /* TalkfunSDK.bundle in Resources */,
 				A020B045214AAB150011BB4F /* ic_refresh_image_020@2x.png in Resources */,
 				A020B044214AAB150011BB4F /* ic_refresh_image_032@2x.png in Resources */,
 				A020B047214AAB150011BB4F /* ic_refresh_image_008@2x.png in Resources */,
@@ -1349,6 +1383,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Chaozhi/Vendor/Library/Universal",
 					"$(PROJECT_DIR)/Chaozhi/Vendor/Library",
+					"$(PROJECT_DIR)/Chaozhi/Vendor/欢拓Library/Universal",
+					"$(PROJECT_DIR)/Chaozhi/Vendor/欢拓Library",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1440,6 +1476,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Chaozhi/Vendor/Library/Universal",
 					"$(PROJECT_DIR)/Chaozhi/Vendor/Library",
+					"$(PROJECT_DIR)/Chaozhi/Vendor/欢拓Library/Universal",
+					"$(PROJECT_DIR)/Chaozhi/Vendor/欢拓Library",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
