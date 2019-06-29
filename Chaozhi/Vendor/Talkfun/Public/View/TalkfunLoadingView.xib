@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TalkfunLoadingView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oi0-5g-Se3">
+                    <rect key="frame" x="127.5" y="205" width="120" height="120"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="9p8-9E-lFa"/>
+                        <constraint firstAttribute="width" secondItem="Oi0-5g-Se3" secondAttribute="height" multiplier="1:1" id="Kxx-m4-CKt"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdM-pB-5Ab">
+                    <rect key="frame" x="16" y="350" width="343" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="P32-dP-8Wl"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="eUK-3S-i6o"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfM-5M-0W4">
+                    <rect key="frame" x="112.5" y="409" width="150" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="5Xm-pJ-Cen"/>
+                        <constraint firstAttribute="height" constant="40" id="biD-wb-HUF"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="即将进入...">
+                        <color key="titleColor" red="0.63529411764705879" green="0.70588235294117641" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.2196078431372549" green="0.31372549019607843" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="AdM-pB-5Ab" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="1pl-Y0-QBA"/>
+                <constraint firstItem="Oi0-5g-Se3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1xh-TS-Ebm"/>
+                <constraint firstItem="cfM-5M-0W4" firstAttribute="top" secondItem="AdM-pB-5Ab" secondAttribute="bottom" constant="38" id="QL8-0e-uyX"/>
+                <constraint firstItem="AdM-pB-5Ab" firstAttribute="top" secondItem="Oi0-5g-Se3" secondAttribute="bottom" constant="25" id="RnQ-pU-Tab"/>
+                <constraint firstItem="AdM-pB-5Ab" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="hN4-bU-zhz"/>
+                <constraint firstItem="Oi0-5g-Se3" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-68.5" id="nYd-Dd-w83"/>
+                <constraint firstItem="cfM-5M-0W4" firstAttribute="centerX" secondItem="Oi0-5g-Se3" secondAttribute="centerX" id="yeG-Gh-bUq"/>
+            </constraints>
+            <connections>
+                <outlet property="courseNameLabel" destination="AdM-pB-5Ab" id="zPQ-2i-JLH"/>
+                <outlet property="logoImageView" destination="Oi0-5g-Se3" id="szy-YR-PIZ"/>
+                <outlet property="tipsBtn" destination="cfM-5M-0W4" id="PUw-pH-vcy"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="63.5"/>
+        </view>
+    </objects>
+</document>

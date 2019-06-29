@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TalkfunButtonView">
+            <rect key="frame" x="0.0" y="0.0" width="428" height="35"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" tag="500" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3X-BK-FKY" customClass="TalkfunNewButtonViewButton">
+                    <rect key="frame" x="0.0" y="0.0" width="85" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="85" id="TWU-5x-Bn1"/>
+                    </constraints>
+                    <state key="normal" title="聊天" image="聊天-默认.png">
+                        <color key="titleColor" red="0.39995324611663818" green="0.40002685785293579" blue="0.39994865655899048" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="selected" image="聊天-点击.png">
+                        <color key="titleColor" red="0.25851202011108398" green="0.52223694324493408" blue="0.95825082063674927" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" tag="501" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOT-xA-lmq" customClass="TalkfunNewButtonViewButton">
+                    <rect key="frame" x="85" y="0.0" width="85" height="35"/>
+                    <state key="normal" title="提问" image="提问-默认.png">
+                        <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="selected" image="提问-点击.png">
+                        <color key="titleColor" red="0.25851202010000002" green="0.52223694320000003" blue="0.9582508206" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" tag="502" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcq-NL-af4" customClass="TalkfunNewButtonViewButton">
+                    <rect key="frame" x="170" y="0.0" width="85" height="35"/>
+                    <state key="normal" title="公告" image="公告-默认.png">
+                        <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="selected" image="公告-点击.png">
+                        <color key="titleColor" red="0.25851202010000002" green="0.52223694320000003" blue="0.9582508206" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" tag="503" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jI1-TB-C4O" customClass="TalkfunNewButtonViewButton">
+                    <rect key="frame" x="255" y="0.0" width="85" height="35"/>
+                    <state key="normal" title="专辑" image="专辑-默认.png">
+                        <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="selected" image="专辑-点击.png">
+                        <color key="titleColor" red="0.25851202010000002" green="0.52223694320000003" blue="0.9582508206" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tyD-Df-AYc">
+                    <rect key="frame" x="0.0" y="33" width="85" height="2"/>
+                    <color key="backgroundColor" red="0.25851202010000002" green="0.52223694320000003" blue="0.9582508206" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="Ixb-EO-Pd6"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rcircle.png" translatesAutoresizingMaskIntoConstraints="NO" id="ieN-qu-Luf">
+                    <rect key="frame" x="73" y="3" width="7" height="7"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="7" id="LrA-Qu-419"/>
+                        <constraint firstAttribute="height" constant="7" id="gH4-a2-74F"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rcircle.png" translatesAutoresizingMaskIntoConstraints="NO" id="itc-Ye-x5L">
+                    <rect key="frame" x="158" y="3" width="7" height="7"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="7" id="RDV-fU-Q5d"/>
+                        <constraint firstAttribute="height" constant="7" id="bnB-M9-xDM"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rcircle.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tif-Zm-qiw">
+                    <rect key="frame" x="243" y="3" width="7" height="7"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="7" id="W7V-9h-gA0"/>
+                        <constraint firstAttribute="width" constant="7" id="nnH-2V-yjK"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geK-7Z-hm8" customClass="TalkfunNewFunctionButton">
+                    <rect key="frame" x="378" y="0.0" width="50" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="wdr-cV-rs9"/>
+                    </constraints>
+                    <state key="normal" image="下载.png"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Xcq-NL-af4" firstAttribute="leading" secondItem="vOT-xA-lmq" secondAttribute="trailing" id="00B-c2-Xpy"/>
+                <constraint firstItem="Tif-Zm-qiw" firstAttribute="trailing" secondItem="Xcq-NL-af4" secondAttribute="trailing" constant="-5" id="0Uh-yV-yax"/>
+                <constraint firstItem="itc-Ye-x5L" firstAttribute="trailing" secondItem="vOT-xA-lmq" secondAttribute="trailing" constant="-5" id="0nU-dm-MUJ"/>
+                <constraint firstItem="vOT-xA-lmq" firstAttribute="width" secondItem="a3X-BK-FKY" secondAttribute="width" id="3nd-Uj-enb"/>
+                <constraint firstAttribute="bottom" secondItem="geK-7Z-hm8" secondAttribute="bottom" id="8di-Q1-GjN"/>
+                <constraint firstItem="a3X-BK-FKY" firstAttribute="top" secondItem="ieN-qu-Luf" secondAttribute="bottom" constant="-10" id="9Q7-UX-L6q"/>
+                <constraint firstItem="jI1-TB-C4O" firstAttribute="width" secondItem="a3X-BK-FKY" secondAttribute="width" id="Bhg-vO-kF5"/>
+                <constraint firstItem="tyD-Df-AYc" firstAttribute="width" secondItem="a3X-BK-FKY" secondAttribute="width" id="FQe-aL-U6Y"/>
+                <constraint firstItem="Xcq-NL-af4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="G3b-qr-ceO"/>
+                <constraint firstItem="jI1-TB-C4O" firstAttribute="leading" secondItem="Xcq-NL-af4" secondAttribute="trailing" id="MFj-oE-2bT"/>
+                <constraint firstItem="Xcq-NL-af4" firstAttribute="width" secondItem="a3X-BK-FKY" secondAttribute="width" id="QjE-lC-C3c"/>
+                <constraint firstAttribute="bottom" secondItem="vOT-xA-lmq" secondAttribute="bottom" id="RHC-TD-viD"/>
+                <constraint firstItem="jI1-TB-C4O" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Tdv-hK-UQp"/>
+                <constraint firstItem="geK-7Z-hm8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="You-O8-KaG"/>
+                <constraint firstAttribute="bottom" secondItem="tyD-Df-AYc" secondAttribute="bottom" id="ZrJ-4h-bqk"/>
+                <constraint firstItem="vOT-xA-lmq" firstAttribute="leading" secondItem="a3X-BK-FKY" secondAttribute="trailing" id="bS3-on-5KR"/>
+                <constraint firstItem="a3X-BK-FKY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cEj-Ul-gLt"/>
+                <constraint firstItem="vOT-xA-lmq" firstAttribute="top" secondItem="itc-Ye-x5L" secondAttribute="bottom" constant="-10" id="fbx-wz-PT3"/>
+                <constraint firstItem="a3X-BK-FKY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hIE-SY-8gU"/>
+                <constraint firstItem="vOT-xA-lmq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hPV-wd-Y6A"/>
+                <constraint firstAttribute="bottom" secondItem="a3X-BK-FKY" secondAttribute="bottom" id="hiQ-T8-eqr"/>
+                <constraint firstItem="ieN-qu-Luf" firstAttribute="trailing" secondItem="a3X-BK-FKY" secondAttribute="trailing" constant="-5" id="ijh-eZ-9vf"/>
+                <constraint firstItem="Xcq-NL-af4" firstAttribute="top" secondItem="Tif-Zm-qiw" secondAttribute="bottom" constant="-10" id="mh1-7H-82A"/>
+                <constraint firstItem="tyD-Df-AYc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="n3g-n1-YDY"/>
+                <constraint firstAttribute="bottom" secondItem="Xcq-NL-af4" secondAttribute="bottom" id="olW-c8-7wx"/>
+                <constraint firstAttribute="bottom" secondItem="jI1-TB-C4O" secondAttribute="bottom" id="wov-Zn-bv0"/>
+                <constraint firstAttribute="trailing" secondItem="geK-7Z-hm8" secondAttribute="trailing" id="zSz-eT-sT4"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="albumBtn" destination="jI1-TB-C4O" id="dHg-0d-RL1"/>
+                <outlet property="askBtn" destination="vOT-xA-lmq" id="ukW-Ri-2v9"/>
+                <outlet property="askTipsView" destination="itc-Ye-x5L" id="YpZ-Mp-yyk"/>
+                <outlet property="chatBtn" destination="a3X-BK-FKY" id="7le-jZ-T0z"/>
+                <outlet property="chatBtnWidth" destination="TWU-5x-Bn1" id="7i5-9V-Ait"/>
+                <outlet property="chatTipsView" destination="ieN-qu-Luf" id="f1I-pR-csd"/>
+                <outlet property="downloadBtn" destination="geK-7Z-hm8" id="b4H-IM-UMy"/>
+                <outlet property="noticeBtn" destination="Xcq-NL-af4" id="jFf-e8-Xw0"/>
+                <outlet property="noticeTipsView" destination="Tif-Zm-qiw" id="5Rc-H3-cdf"/>
+                <outlet property="selectView" destination="tyD-Df-AYc" id="VkP-G5-CEM"/>
+                <outlet property="selectViewLeadingSpace" destination="n3g-n1-YDY" id="YmI-WQ-qhf"/>
+            </connections>
+            <point key="canvasLocation" x="64" y="-234.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="rcircle.png" width="12" height="12"/>
+        <image name="下载.png" width="64" height="64"/>
+        <image name="专辑-点击.png" width="64" height="64"/>
+        <image name="专辑-默认.png" width="64" height="64"/>
+        <image name="公告-点击.png" width="64" height="64"/>
+        <image name="公告-默认.png" width="64" height="64"/>
+        <image name="提问-点击.png" width="64" height="64"/>
+        <image name="提问-默认.png" width="64" height="64"/>
+        <image name="聊天-点击.png" width="64" height="64"/>
+        <image name="聊天-默认.png" width="64" height="64"/>
+    </resources>
+</document>

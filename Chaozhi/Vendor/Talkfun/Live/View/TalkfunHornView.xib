@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleAspectFit" id="iN0-l3-epB" customClass="TalkfunHornView">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="25"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Awo-qb-aO6">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="25"/>
+                    <color key="backgroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xof-3C-kow">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LRK-af-DkT">
+                    <rect key="frame" x="0.0" y="0.0" width="40" height="25"/>
+                    <color key="backgroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="hYo-Nh-fDW"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_scroller.png" translatesAutoresizingMaskIntoConstraints="NO" id="ilL-Li-BOR">
+                    <rect key="frame" x="0.0" y="6" width="40" height="13"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="13" id="nFm-io-FTI"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bm-c4-dFr">
+                    <rect key="frame" x="250" y="0.0" width="50" height="25"/>
+                    <color key="backgroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="fz8-cT-ccB"/>
+                    </constraints>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="close_button.png" translatesAutoresizingMaskIntoConstraints="NO" id="pud-XY-7EA">
+                    <rect key="frame" x="269" y="6.5" width="12" height="12"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="12" id="0ec-tu-wyf"/>
+                        <constraint firstAttribute="width" constant="12" id="ZDc-vc-ML3"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="7bm-c4-dFr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="1FD-FJ-fas"/>
+                <constraint firstAttribute="trailing" secondItem="Awo-qb-aO6" secondAttribute="trailing" id="29K-sb-6i0"/>
+                <constraint firstItem="ilL-Li-BOR" firstAttribute="centerY" secondItem="LRK-af-DkT" secondAttribute="centerY" id="6Il-Ob-P5D"/>
+                <constraint firstItem="Awo-qb-aO6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="8N6-FV-qXm"/>
+                <constraint firstItem="ilL-Li-BOR" firstAttribute="width" secondItem="LRK-af-DkT" secondAttribute="width" id="CzH-5F-ajf"/>
+                <constraint firstItem="pud-XY-7EA" firstAttribute="centerX" secondItem="7bm-c4-dFr" secondAttribute="centerX" id="FXW-Xn-pxx"/>
+                <constraint firstItem="LRK-af-DkT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="KMK-St-oDo"/>
+                <constraint firstAttribute="bottom" secondItem="7bm-c4-dFr" secondAttribute="bottom" id="Ne4-Q9-BIa"/>
+                <constraint firstItem="pud-XY-7EA" firstAttribute="centerY" secondItem="7bm-c4-dFr" secondAttribute="centerY" id="UkZ-h5-4o8"/>
+                <constraint firstAttribute="bottom" secondItem="Awo-qb-aO6" secondAttribute="bottom" id="bo5-ba-SSp"/>
+                <constraint firstAttribute="trailing" secondItem="7bm-c4-dFr" secondAttribute="trailing" id="iC0-e3-PdB"/>
+                <constraint firstItem="LRK-af-DkT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="knO-4C-Z4u"/>
+                <constraint firstItem="Awo-qb-aO6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mms-09-MLK"/>
+                <constraint firstAttribute="bottom" secondItem="LRK-af-DkT" secondAttribute="bottom" id="msK-Sj-nR4"/>
+                <constraint firstItem="ilL-Li-BOR" firstAttribute="leading" secondItem="LRK-af-DkT" secondAttribute="trailing" constant="-40" id="pkb-uH-IH6"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="closeButton" destination="7bm-c4-dFr" id="sjg-u8-PB8"/>
+                <outlet property="hornButton" destination="Awo-qb-aO6" id="SZx-S2-AjO"/>
+                <outlet property="rollLabel" destination="Xof-3C-kow" id="3xi-Jz-xqZ"/>
+            </connections>
+            <point key="canvasLocation" x="3" y="-150.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="close_button.png" width="34" height="34"/>
+        <image name="ico_scroller.png" width="30" height="24"/>
+    </resources>
+</document>

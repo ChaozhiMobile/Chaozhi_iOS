@@ -8,6 +8,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NetworkUtil.h"
 
 @interface Utils : NSObject
 
@@ -26,6 +27,9 @@
 
 #pragma mark - 判断网络状态
 + (BOOL)getNetStatus;
+
+#pragma mark - 获取网络状态
++ (NetworkStatus)currentNetworkStatus;
 
 #pragma mark - 获取当前时间
 +(NSString *)getCurrentDate;

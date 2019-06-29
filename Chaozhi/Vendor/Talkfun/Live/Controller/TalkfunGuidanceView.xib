@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="plo-yj-WNz" customClass="TalkfunGuidanceView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="引导-手机.png" translatesAutoresizingMaskIntoConstraints="NO" id="A3J-AT-GyY">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bii-ee-KV0">
+                    <rect key="frame" x="102" y="373" width="170" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="170" id="0ff-Y4-GBJ"/>
+                        <constraint firstAttribute="height" constant="45" id="bcF-SJ-W7O"/>
+                    </constraints>
+                    <state key="normal" image="组 97.png"/>
+                    <connections>
+                        <action selector="beginToUseButton:" destination="plo-yj-WNz" eventType="touchUpInside" id="wK5-md-Qo1"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2O-hc-Lbn" customClass="TalkfunGuidenceButton">
+                    <rect key="frame" x="102" y="443" width="170" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="170" id="ISb-xp-NgV"/>
+                        <constraint firstAttribute="height" constant="44" id="LkC-vU-3Of"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="下次不再显示" image="组 102.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="noMoreDisplayButtonClicked:" destination="plo-yj-WNz" eventType="touchUpInside" id="BIf-HD-Jkz"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="A3J-AT-GyY" secondAttribute="bottom" id="3FL-8s-25t"/>
+                <constraint firstAttribute="trailing" secondItem="A3J-AT-GyY" secondAttribute="trailing" id="BYN-ur-dvn"/>
+                <constraint firstItem="Bii-ee-KV0" firstAttribute="centerX" secondItem="A3J-AT-GyY" secondAttribute="centerX" id="G2I-6i-M2J"/>
+                <constraint firstItem="A3J-AT-GyY" firstAttribute="top" secondItem="plo-yj-WNz" secondAttribute="top" id="NJO-R2-SRj"/>
+                <constraint firstItem="A3J-AT-GyY" firstAttribute="leading" secondItem="plo-yj-WNz" secondAttribute="leading" id="gs1-KK-dpG"/>
+                <constraint firstItem="c2O-hc-Lbn" firstAttribute="centerX" secondItem="Bii-ee-KV0" secondAttribute="centerX" id="oJb-Yn-DXQ"/>
+                <constraint firstItem="c2O-hc-Lbn" firstAttribute="top" secondItem="Bii-ee-KV0" secondAttribute="bottom" constant="25" id="pN1-PN-GFG"/>
+                <constraint firstItem="Bii-ee-KV0" firstAttribute="centerY" secondItem="A3J-AT-GyY" secondAttribute="centerY" constant="62" id="rfI-9A-gGp"/>
+            </constraints>
+            <connections>
+                <outlet property="backgroundImageView" destination="A3J-AT-GyY" id="2TF-jq-V4E"/>
+                <outlet property="noMoreDisplayButton" destination="c2O-hc-Lbn" id="GHk-Rj-QJE"/>
+                <outlet property="useButtonCenterY" destination="rfI-9A-gGp" id="xWr-VG-VYy"/>
+            </connections>
+            <point key="canvasLocation" x="162" y="87"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="引导-手机.png" width="750" height="1334"/>
+        <image name="组 102.png" width="32" height="32"/>
+        <image name="组 97.png" width="340" height="90"/>
+    </resources>
+</document>

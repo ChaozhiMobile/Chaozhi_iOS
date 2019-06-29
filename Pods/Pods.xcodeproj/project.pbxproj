@@ -1531,6 +1531,7 @@
 		9E0D02CCA56E4EAB3A564825309DD63D /* RACCommand.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RACCommand.m; path = ReactiveObjC/RACCommand.m; sourceTree = "<group>"; };
 		9E8A944C5BCCF461ED11D8740313B5FC /* KissXML-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "KissXML-Info.plist"; sourceTree = "<group>"; };
 		9FAABA23C552612DA98BE1235DF6ADE8 /* Starscream-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Starscream-dummy.m"; sourceTree = "<group>"; };
+		A0AC071422C4BBEB001832EA /* AgoraRtcEngineKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AgoraRtcEngineKit.framework; sourceTree = "<group>"; };
 		A172E35D1F90C12CFFD99594B0325C77 /* JFImageManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JFImageManager.m; path = JFImagePickerController/JFImagePickerController/JFImageManager.m; sourceTree = "<group>"; };
 		A19CDBFB3043ED9FAC36E733798B8395 /* UIColor+Expanded.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Expanded.m"; path = "lottie-ios/Classes/Extensions/UIColor+Expanded.m"; sourceTree = "<group>"; };
 		A2271E3FFB3923BAB063758FBE64EE9F /* UIImageView+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+WebCache.m"; path = "SDWebImage/UIImageView+WebCache.m"; sourceTree = "<group>"; };
@@ -2799,6 +2800,7 @@
 		7E688393BAED75F5E4C9E042D30A74DD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A0AC071422C4BBEB001832EA /* AgoraRtcEngineKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

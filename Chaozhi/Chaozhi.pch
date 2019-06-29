@@ -31,6 +31,8 @@
 #import <MJExtension.h>
 #import <MJRefresh.h>
 #import "XLGAlertView.h"
+#import "Talkfun.h"
+
 #endif
 
 #define kCachePath [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]

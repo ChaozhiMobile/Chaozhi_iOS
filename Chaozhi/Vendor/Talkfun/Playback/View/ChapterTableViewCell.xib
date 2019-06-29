@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="playbackCell" rowHeight="67" id="KGk-i7-Jjw" customClass="ChapterTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="67"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="66.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4PR-b4-kUC">
+                        <rect key="frame" x="0.0" y="0.0" width="102" height="66"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="102" id="yLb-vM-Hmt"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第1页" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="155" translatesAutoresizingMaskIntoConstraints="NO" id="LwR-58-Z8V">
+                        <rect key="frame" x="110" y="8" width="147" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="1Ti-me-YGE"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="活力激情四射圆圈心形情人节PPT模版-副本" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="155" translatesAutoresizingMaskIntoConstraints="NO" id="DAq-rX-A0G">
+                        <rect key="frame" x="110" y="29" width="147" height="32"/>
+                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="11"/>
+                        <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第1章" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="53" translatesAutoresizingMaskIntoConstraints="NO" id="sOW-JV-JpC">
+                        <rect key="frame" x="261" y="22" width="53" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="9I9-1R-2L0"/>
+                            <constraint firstAttribute="width" constant="53" id="EmB-at-x9b"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o7n-43-n8u">
+                        <rect key="frame" x="0.0" y="66" width="320" height="0.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="Uas-vl-HoN"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="LwR-58-Z8V" firstAttribute="leading" secondItem="4PR-b4-kUC" secondAttribute="trailing" constant="8" id="3VT-RR-vY5"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="DAq-rX-A0G" secondAttribute="bottom" constant="-3" id="9GB-lO-kmN"/>
+                    <constraint firstItem="LwR-58-Z8V" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="DTz-Op-zra"/>
+                    <constraint firstAttribute="bottom" secondItem="o7n-43-n8u" secondAttribute="bottom" id="GTO-zJ-8rF"/>
+                    <constraint firstItem="sOW-JV-JpC" firstAttribute="leading" secondItem="DAq-rX-A0G" secondAttribute="trailing" constant="4" id="Ifb-Ci-I08"/>
+                    <constraint firstItem="4PR-b4-kUC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="NFF-wh-OgO"/>
+                    <constraint firstItem="DAq-rX-A0G" firstAttribute="top" secondItem="LwR-58-Z8V" secondAttribute="bottom" constant="4" id="QYU-Wk-I58"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="sOW-JV-JpC" secondAttribute="trailing" constant="-2" id="aD1-7Z-Jiz"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="4PR-b4-kUC" secondAttribute="bottom" constant="-8" id="gy8-R9-fdW"/>
+                    <constraint firstItem="o7n-43-n8u" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="i0n-fV-XmC"/>
+                    <constraint firstItem="4PR-b4-kUC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="kHo-J4-pJj"/>
+                    <constraint firstAttribute="trailing" secondItem="o7n-43-n8u" secondAttribute="trailing" id="kiR-3G-4bH"/>
+                    <constraint firstItem="sOW-JV-JpC" firstAttribute="leading" secondItem="LwR-58-Z8V" secondAttribute="trailing" constant="4" id="nBE-xX-IXQ"/>
+                    <constraint firstItem="DAq-rX-A0G" firstAttribute="leading" secondItem="LwR-58-Z8V" secondAttribute="leading" id="rZQ-dk-RP1"/>
+                    <constraint firstItem="sOW-JV-JpC" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xUg-KK-QeW"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="LwR-58-Z8V" secondAttribute="trailing" constant="45" id="zCy-GP-PYY"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="zCy-GP-PYY"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="chapter" destination="sOW-JV-JpC" id="4wM-Ve-0Ka"/>
+                <outlet property="course" destination="DAq-rX-A0G" id="W7d-hi-4qP"/>
+                <outlet property="page" destination="LwR-58-Z8V" id="2LV-LH-8Nf"/>
+                <outlet property="thumb" destination="4PR-b4-kUC" id="8HE-ZZ-Z93"/>
+            </connections>
+            <point key="canvasLocation" x="471" y="305.5"/>
+        </tableViewCell>
+    </objects>
+</document>

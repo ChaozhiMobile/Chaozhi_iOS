@@ -11,6 +11,10 @@
 #import "CZNotDataView.h"
 #import "CZAlertView.h"
 #import "CZProtocalWebVC.h"
+#import "TalkfunItem.h"
+#import "XLGTalkfunVC.h"
+#import "XLGTalkfunPlaybackVC.h"
+#import "TalkfunPlaybackViewController.h"
 
 @implementation StudyCourseCell
 @end
@@ -251,8 +255,22 @@
 
 #pragma mark - 直播课程
 - (IBAction)liveCourseAction:(id)sender {
+    
     LiveItem *liveItems = _liveArr.firstObject;
-    [BaseWebVC showWithContro:self withUrlStr:liveItems.live_url withTitle:liveItems.live_name isPresent:NO];
+//    [BaseWebVC showWithContro:self withUrlStr:liveItems.live_url withTitle:liveItems.live_name isPresent:NO];
+    
+    NSDictionary *dic = @{@"type":@"2",@"live_id":liveItems.live_id};
+    [[NetworkManager sharedManager] postJSON:URL_LiveToken parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
+        if (status == Request_Success) {
+            TalkfunItem *item = [TalkfunItem mj_objectWithKeyValues:(NSDictionary *)responseData];
+            TalkfunPlaybackViewController *vc = [[TalkfunPlaybackViewController alloc] init];
+            vc.access_token = item.access_token;
+            vc.titleStr = liveItems.live_name;
+            vc.downloadCompleted = YES;
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+    }];
 }
 
 #pragma mark - UIScrollViewDelegate协议

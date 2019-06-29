@@ -85,6 +85,13 @@ static Utils *_utils = nil;
 }
 
 /**
+ 获取网络状态
+ */
++ (NetworkStatus)currentNetworkStatus {
+    return [NetworkUtil currentNetworkStatus];
+}
+
+/**
  获取当前时间
 
  @return 1990-09-18 12:23:22

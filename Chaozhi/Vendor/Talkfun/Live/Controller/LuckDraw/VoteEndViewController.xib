@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16F60a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VoteEndViewController">
+            <connections>
+                <outlet property="statusImageView" destination="NPA-fj-RV6" id="WyC-xR-n3W"/>
+                <outlet property="successLabel" destination="EvG-g0-aVh" id="8vi-y6-btV"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="voteTitle" destination="rdu-LT-Rl3" id="q2A-ur-ZkL"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.29999999999999999" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AJz-EB-MeJ">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uR2-F8-p4x">
+                    <rect key="frame" x="40" y="178" width="240" height="123"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1aK-WU-IzJ">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="27"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vote.png" translatesAutoresizingMaskIntoConstraints="NO" id="gCB-0a-yPY">
+                                    <rect key="frame" x="12" y="5" width="24" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="Kxn-YV-zFS"/>
+                                        <constraint firstAttribute="width" constant="24" id="bnX-Cy-r0X"/>
+                                    </constraints>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqJ-Ty-k5a">
+                                    <rect key="frame" x="202" y="0.0" width="38" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <connections>
+                                        <action selector="deleteBtnClicked:" destination="-1" eventType="touchUpInside" id="7RU-Cq-TL6"/>
+                                    </connections>
+                                </button>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="delete.png" translatesAutoresizingMaskIntoConstraints="NO" id="qwq-7T-7zH">
+                                    <rect key="frame" x="220" y="11" width="11" height="11"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投票完成" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdu-LT-Rl3">
+                                    <rect key="frame" x="42" y="9" width="157" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="21" id="TXl-17-Sgy"/>
+                                        <constraint firstAttribute="width" constant="157" id="g5r-cx-drb"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="gCB-0a-yPY" firstAttribute="top" secondItem="1aK-WU-IzJ" secondAttribute="top" constant="5" id="4oN-qz-6kA"/>
+                                <constraint firstAttribute="height" constant="27" id="GUf-gf-IkK"/>
+                                <constraint firstItem="rdu-LT-Rl3" firstAttribute="top" secondItem="1aK-WU-IzJ" secondAttribute="top" constant="9" id="HYl-UT-AhD"/>
+                                <constraint firstItem="gCB-0a-yPY" firstAttribute="leading" secondItem="1aK-WU-IzJ" secondAttribute="leading" constant="12" id="UF0-Wf-tyH"/>
+                                <constraint firstItem="rdu-LT-Rl3" firstAttribute="leading" secondItem="gCB-0a-yPY" secondAttribute="trailing" constant="6" id="wYD-GU-Y2Y"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view alpha="0.34999999403953552" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HUQ-YL-WPy">
+                            <rect key="frame" x="0.0" y="31" width="240" height="1"/>
+                            <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="hxU-IL-5zb"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投票成功...03秒后自动关闭页面" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EvG-g0-aVh">
+                            <rect key="frame" x="8" y="96" width="224" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="gjc-8I-Vw7"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="1aK-WU-IzJ" firstAttribute="top" secondItem="uR2-F8-p4x" secondAttribute="top" id="5Vb-W9-kFh"/>
+                        <constraint firstItem="EvG-g0-aVh" firstAttribute="leading" secondItem="uR2-F8-p4x" secondAttribute="leading" constant="8" id="D9z-y4-I4s"/>
+                        <constraint firstItem="HUQ-YL-WPy" firstAttribute="top" secondItem="rdu-LT-Rl3" secondAttribute="bottom" constant="1" id="TE1-4e-HYO"/>
+                        <constraint firstAttribute="width" constant="240" id="bdx-DA-6Lv"/>
+                        <constraint firstItem="1aK-WU-IzJ" firstAttribute="leading" secondItem="uR2-F8-p4x" secondAttribute="leading" id="dG6-GM-Qiu"/>
+                        <constraint firstAttribute="height" constant="123" id="fuW-n9-P2q"/>
+                        <constraint firstAttribute="trailing" secondItem="1aK-WU-IzJ" secondAttribute="trailing" id="gbg-QN-amc"/>
+                        <constraint firstAttribute="trailing" secondItem="HUQ-YL-WPy" secondAttribute="trailing" id="kmt-RD-Hlu"/>
+                        <constraint firstItem="HUQ-YL-WPy" firstAttribute="leading" secondItem="uR2-F8-p4x" secondAttribute="leading" id="tEF-Yi-nvc"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowColor">
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                            <size key="value" width="0.0" height="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" translatesAutoresizingMaskIntoConstraints="NO" id="NPA-fj-RV6">
+                    <rect key="frame" x="139" y="218" width="43" height="43"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="43" id="5X1-O6-N3S"/>
+                        <constraint firstAttribute="height" constant="43" id="S1o-TX-EpK"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="AJz-EB-MeJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Kf6-oO-fp2"/>
+                <constraint firstItem="EvG-g0-aVh" firstAttribute="top" secondItem="NPA-fj-RV6" secondAttribute="bottom" constant="13" id="LIk-Zp-CeR"/>
+                <constraint firstItem="uR2-F8-p4x" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="OvT-uT-xCJ"/>
+                <constraint firstAttribute="trailing" secondItem="AJz-EB-MeJ" secondAttribute="trailing" id="QnV-nR-oSi"/>
+                <constraint firstAttribute="bottom" secondItem="AJz-EB-MeJ" secondAttribute="bottom" id="df6-Wb-w12"/>
+                <constraint firstItem="NPA-fj-RV6" firstAttribute="centerX" secondItem="1aK-WU-IzJ" secondAttribute="centerX" id="mRI-cr-geQ"/>
+                <constraint firstItem="NPA-fj-RV6" firstAttribute="top" secondItem="1aK-WU-IzJ" secondAttribute="bottom" constant="13" id="nSE-2S-Mor"/>
+                <constraint firstItem="uR2-F8-p4x" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="pxJ-wH-4wX"/>
+                <constraint firstItem="AJz-EB-MeJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="t4Y-eZ-HxM"/>
+                <constraint firstItem="EvG-g0-aVh" firstAttribute="centerX" secondItem="NPA-fj-RV6" secondAttribute="centerX" id="tED-pE-XgS"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="delete.png" width="38" height="38"/>
+        <image name="tick.png" width="124" height="124"/>
+        <image name="vote.png" width="40" height="40"/>
+    </resources>
+</document>
