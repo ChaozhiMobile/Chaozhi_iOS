@@ -64,14 +64,6 @@
     [self.navigationController setNavigationBarHidden:NO];
 }
 
-//- (void)viewDidLayoutSubviews {
-//
-//    UIView *view = self.view.subviews[0];
-//    CGRect frame = view.frame;
-//    frame.origin.y = kNavBarH;
-//    view.frame = frame;
-//}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     

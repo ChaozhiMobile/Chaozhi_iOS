@@ -39,6 +39,23 @@
 		A010DC6121D6003E007EBA2C /* PurchaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A010DC6021D6003E007EBA2C /* PurchaseItem.m */; };
 		A01CCCB8229D71EE00A8408B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01CCCB7229D71EE00A8408B /* StoreKit.framework */; };
 		A01E1E5122223F8800435A0E /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01E1E5022223F8800435A0E /* UserNotifications.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		A01F607322CB895F001133C4 /* DownloadListController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F606A22CB895F001133C4 /* DownloadListController.m */; };
+		A01F607422CB8960001133C4 /* DownloadListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F606D22CB895F001133C4 /* DownloadListModel.m */; };
+		A01F607522CB8960001133C4 /* DownloadListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01F607122CB895F001133C4 /* DownloadListTableViewCell.xib */; };
+		A01F607622CB8960001133C4 /* DownloadListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F607222CB895F001133C4 /* DownloadListTableViewCell.m */; };
+		A01F608622CB8CD0001133C4 /* 暂停_点击.png in Resources */ = {isa = PBXBuildFile; fileRef = A01F607922CB8CD0001133C4 /* 暂停_点击.png */; };
+		A01F608722CB8CD0001133C4 /* 删除-默认.png in Resources */ = {isa = PBXBuildFile; fileRef = A01F607A22CB8CD0001133C4 /* 删除-默认.png */; };
+		A01F608822CB8CD0001133C4 /* 等待队列_默认.png in Resources */ = {isa = PBXBuildFile; fileRef = A01F607B22CB8CD0001133C4 /* 等待队列_默认.png */; };
+		A01F608922CB8CD0001133C4 /* 等待队列_点击.png in Resources */ = {isa = PBXBuildFile; fileRef = A01F607C22CB8CD0001133C4 /* 等待队列_点击.png */; };
+		A01F608A22CB8CD0001133C4 /* 删除-点击.png in Resources */ = {isa = PBXBuildFile; fileRef = A01F607D22CB8CD0001133C4 /* 删除-点击.png */; };
+		A01F608B22CB8CD0001133C4 /* 暂停_默认.png in Resources */ = {isa = PBXBuildFile; fileRef = A01F607E22CB8CD0001133C4 /* 暂停_默认.png */; };
+		A01F608C22CB8CD0001133C4 /* 重新_默认.png in Resources */ = {isa = PBXBuildFile; fileRef = A01F607F22CB8CD0001133C4 /* 重新_默认.png */; };
+		A01F608D22CB8CD0001133C4 /* 重新_点击.png in Resources */ = {isa = PBXBuildFile; fileRef = A01F608022CB8CD0001133C4 /* 重新_点击.png */; };
+		A01F608E22CB8CD0001133C4 /* 下载-点击.png in Resources */ = {isa = PBXBuildFile; fileRef = A01F608122CB8CD0001133C4 /* 下载-点击.png */; };
+		A01F608F22CB8CD0001133C4 /* 继续_默认.png in Resources */ = {isa = PBXBuildFile; fileRef = A01F608222CB8CD0001133C4 /* 继续_默认.png */; };
+		A01F609022CB8CD0001133C4 /* 下载-默认.png in Resources */ = {isa = PBXBuildFile; fileRef = A01F608322CB8CD0001133C4 /* 下载-默认.png */; };
+		A01F609122CB8CD0001133C4 /* 继续_点击.png in Resources */ = {isa = PBXBuildFile; fileRef = A01F608422CB8CD0001133C4 /* 继续_点击.png */; };
+		A01F609222CB8CD0001133C4 /* 默认图片.png in Resources */ = {isa = PBXBuildFile; fileRef = A01F608522CB8CD0001133C4 /* 默认图片.png */; };
 		A020AF49214AA85B0011BB4F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AF48214AA85B0011BB4F /* AppDelegate.m */; };
 		A020B01F214AAB150011BB4F /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AF68214AAB130011BB4F /* Config.m */; };
 		A020B025214AAB150011BB4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A020AF76214AAB130011BB4F /* Assets.xcassets */; };
@@ -433,6 +450,26 @@
 		A010DC6021D6003E007EBA2C /* PurchaseItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurchaseItem.m; sourceTree = "<group>"; };
 		A01CCCB7229D71EE00A8408B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A01E1E5022223F8800435A0E /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		A01F606A22CB895F001133C4 /* DownloadListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadListController.m; sourceTree = "<group>"; };
+		A01F606B22CB895F001133C4 /* DownloadListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadListController.h; sourceTree = "<group>"; };
+		A01F606D22CB895F001133C4 /* DownloadListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadListModel.m; sourceTree = "<group>"; };
+		A01F606E22CB895F001133C4 /* DownloadListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadListModel.h; sourceTree = "<group>"; };
+		A01F607022CB895F001133C4 /* DownloadListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadListTableViewCell.h; sourceTree = "<group>"; };
+		A01F607122CB895F001133C4 /* DownloadListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DownloadListTableViewCell.xib; sourceTree = "<group>"; };
+		A01F607222CB895F001133C4 /* DownloadListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadListTableViewCell.m; sourceTree = "<group>"; };
+		A01F607922CB8CD0001133C4 /* 暂停_点击.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "暂停_点击.png"; sourceTree = "<group>"; };
+		A01F607A22CB8CD0001133C4 /* 删除-默认.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "删除-默认.png"; sourceTree = "<group>"; };
+		A01F607B22CB8CD0001133C4 /* 等待队列_默认.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "等待队列_默认.png"; sourceTree = "<group>"; };
+		A01F607C22CB8CD0001133C4 /* 等待队列_点击.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "等待队列_点击.png"; sourceTree = "<group>"; };
+		A01F607D22CB8CD0001133C4 /* 删除-点击.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "删除-点击.png"; sourceTree = "<group>"; };
+		A01F607E22CB8CD0001133C4 /* 暂停_默认.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "暂停_默认.png"; sourceTree = "<group>"; };
+		A01F607F22CB8CD0001133C4 /* 重新_默认.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "重新_默认.png"; sourceTree = "<group>"; };
+		A01F608022CB8CD0001133C4 /* 重新_点击.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "重新_点击.png"; sourceTree = "<group>"; };
+		A01F608122CB8CD0001133C4 /* 下载-点击.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "下载-点击.png"; sourceTree = "<group>"; };
+		A01F608222CB8CD0001133C4 /* 继续_默认.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "继续_默认.png"; sourceTree = "<group>"; };
+		A01F608322CB8CD0001133C4 /* 下载-默认.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "下载-默认.png"; sourceTree = "<group>"; };
+		A01F608422CB8CD0001133C4 /* 继续_点击.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "继续_点击.png"; sourceTree = "<group>"; };
+		A01F608522CB8CD0001133C4 /* 默认图片.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "默认图片.png"; sourceTree = "<group>"; };
 		A020AF44214AA85B0011BB4F /* Chaozhi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chaozhi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A020AF47214AA85B0011BB4F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A020AF48214AA85B0011BB4F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -1017,6 +1054,72 @@
 			path = "课程分类";
 			sourceTree = "<group>";
 		};
+		A01F606822CB895F001133C4 /* Download */ = {
+			isa = PBXGroup;
+			children = (
+				A01F606922CB895F001133C4 /* Controller */,
+				A01F606C22CB895F001133C4 /* Model */,
+				A01F606F22CB895F001133C4 /* View */,
+			);
+			path = Download;
+			sourceTree = "<group>";
+		};
+		A01F606922CB895F001133C4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A01F606B22CB895F001133C4 /* DownloadListController.h */,
+				A01F606A22CB895F001133C4 /* DownloadListController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A01F606C22CB895F001133C4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A01F606E22CB895F001133C4 /* DownloadListModel.h */,
+				A01F606D22CB895F001133C4 /* DownloadListModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A01F606F22CB895F001133C4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A01F607022CB895F001133C4 /* DownloadListTableViewCell.h */,
+				A01F607222CB895F001133C4 /* DownloadListTableViewCell.m */,
+				A01F607122CB895F001133C4 /* DownloadListTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A01F607722CB8CD0001133C4 /* 下载页面 */ = {
+			isa = PBXGroup;
+			children = (
+				A01F607822CB8CD0001133C4 /* icon */,
+			);
+			path = "下载页面";
+			sourceTree = "<group>";
+		};
+		A01F607822CB8CD0001133C4 /* icon */ = {
+			isa = PBXGroup;
+			children = (
+				A01F607C22CB8CD0001133C4 /* 等待队列_点击.png */,
+				A01F607B22CB8CD0001133C4 /* 等待队列_默认.png */,
+				A01F608422CB8CD0001133C4 /* 继续_点击.png */,
+				A01F608222CB8CD0001133C4 /* 继续_默认.png */,
+				A01F608522CB8CD0001133C4 /* 默认图片.png */,
+				A01F607D22CB8CD0001133C4 /* 删除-点击.png */,
+				A01F607A22CB8CD0001133C4 /* 删除-默认.png */,
+				A01F608122CB8CD0001133C4 /* 下载-点击.png */,
+				A01F608322CB8CD0001133C4 /* 下载-默认.png */,
+				A01F607922CB8CD0001133C4 /* 暂停_点击.png */,
+				A01F607E22CB8CD0001133C4 /* 暂停_默认.png */,
+				A01F608022CB8CD0001133C4 /* 重新_点击.png */,
+				A01F607F22CB8CD0001133C4 /* 重新_默认.png */,
+			);
+			path = icon;
+			sourceTree = "<group>";
+		};
 		A020AF3B214AA85B0011BB4F = {
 			isa = PBXGroup;
 			children = (
@@ -1526,9 +1629,10 @@
 		A0AC071522C4BC7C001832EA /* Talkfun */ = {
 			isa = PBXGroup;
 			children = (
-				A0AC071822C4BC7C001832EA /* Library */,
-				A0AC07B222C4BC7C001832EA /* Live */,
 				A0AC077C22C4BC7C001832EA /* Playback */,
+				A0AC07B222C4BC7C001832EA /* Live */,
+				A01F606822CB895F001133C4 /* Download */,
+				A0AC071822C4BC7C001832EA /* Library */,
 				A0AC074822C4BC7C001832EA /* Public */,
 				A0AC082522C4BC7D001832EA /* Resource */,
 				A0AC072622C4BC7C001832EA /* Utils */,
@@ -1997,6 +2101,7 @@
 		A0AC082522C4BC7D001832EA /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A01F607722CB8CD0001133C4 /* 下载页面 */,
 				A0AC088E22C4BC7D001832EA /* 点播界面 */,
 				A0AC084F22C4BC7D001832EA /* 网络状态 */,
 				A0AC082622C4BC7D001832EA /* 直播界面 */,
@@ -2334,8 +2439,10 @@
 				A0AC08DD22C4BC7D001832EA /* TalkfunKuaiJinView.xib in Resources */,
 				A0AC093D22C4BC7E001832EA /* blueProgress.png in Resources */,
 				A0AC08DE22C4BC7D001832EA /* TalkfunPlaybackMessageView.xib in Resources */,
+				A01F608922CB8CD0001133C4 /* 等待队列_点击.png in Resources */,
 				A0AC093422C4BC7E001832EA /* greatwall.png in Resources */,
 				A0AC099122C4BC7E001832EA /* 章节-默认.png in Resources */,
+				A01F608A22CB8CD0001133C4 /* 删除-点击.png in Resources */,
 				A0AC095C22C4BC7E001832EA /* expressionClose.png in Resources */,
 				A0AC097B22C4BC7E001832EA /* 屏幕切换.png in Resources */,
 				A020B028214AAB150011BB4F /* ic_refresh_image_001@2x.png in Resources */,
@@ -2381,10 +2488,12 @@
 				A0AC093122C4BC7E001832EA /* mobile.png in Resources */,
 				A0AC090222C4BC7E001832EA /* TalkfunSignViewController.xib in Resources */,
 				A020B047214AAB150011BB4F /* ic_refresh_image_008@2x.png in Resources */,
+				A01F609022CB8CD0001133C4 /* 下载-默认.png in Resources */,
 				A0AC097622C4BC7E001832EA /* 灰色鲜花.png in Resources */,
 				A0AC098422C4BC7E001832EA /* 组 103.png in Resources */,
 				A020B02E214AAB150011BB4F /* ic_refresh_image_019@2x.png in Resources */,
 				A020B02F214AAB150011BB4F /* ic_refresh_image_015@2x.png in Resources */,
+				A01F609122CB8CD0001133C4 /* 继续_点击.png in Resources */,
 				A0AC092022C4BC7E001832EA /* TalkfunExpressionCell.xib in Resources */,
 				A0AC095222C4BC7E001832EA /* expression.png in Resources */,
 				A0AC095322C4BC7E001832EA /* corner_emo.png in Resources */,
@@ -2397,6 +2506,7 @@
 				20A4ACCC22CAFA2400FA1BC5 /* info.plist in Resources */,
 				A0AC094C22C4BC7E001832EA /* rcircle.png in Resources */,
 				A020B026214AAB150011BB4F /* ic_refresh_image_025@2x.png in Resources */,
+				A01F608B22CB8CD0001133C4 /* 暂停_默认.png in Resources */,
 				A020B048214AAB150011BB4F /* ic_refresh_image_004@2x.png in Resources */,
 				A0AC093822C4BC7E001832EA /* circleSelect.png in Resources */,
 				A0AC08B222C4BC7D001832EA /* TalkfunButtonView.xib in Resources */,
@@ -2417,7 +2527,9 @@
 				A0AC090022C4BC7E001832EA /* LotteryViewController.xib in Resources */,
 				A0AC097222C4BC7E001832EA /* 公告-点击.png in Resources */,
 				A0AC096822C4BC7E001832EA /* close_button.png in Resources */,
+				A01F608622CB8CD0001133C4 /* 暂停_点击.png in Resources */,
 				A020B040214AAB150011BB4F /* ic_refresh_image_030@2x.png in Resources */,
+				A01F608C22CB8CD0001133C4 /* 重新_默认.png in Resources */,
 				A020B042214AAB150011BB4F /* ic_refresh_image_006@2x.png in Resources */,
 				A0AC08E222C4BC7D001832EA /* AlbumCellTableViewCell.xib in Resources */,
 				A0AC093622C4BC7E001832EA /* 直播已结束16_9.png in Resources */,
@@ -2452,6 +2564,7 @@
 				A0AC094822C4BC7E001832EA /* failP.png in Resources */,
 				A0AC093922C4BC7E001832EA /* lottery.png in Resources */,
 				A0AC08E122C4BC7D001832EA /* TalkfunVideoControlView.xib in Resources */,
+				A01F607522CB8960001133C4 /* DownloadListTableViewCell.xib in Resources */,
 				A020B031214AAB150011BB4F /* ic_refresh_image_031@2x.png in Resources */,
 				A0AC099622C4BC7E001832EA /* 专辑-点击.png in Resources */,
 				A0AC097922C4BC7E001832EA /* 键盘.png in Resources */,
@@ -2468,6 +2581,7 @@
 				A0AC098D22C4BC7E001832EA /* 快进.png in Resources */,
 				A0AC097122C4BC7E001832EA /* 提问-默认.png in Resources */,
 				A0AC090922C4BC7E001832EA /* TalkfunHornView.xib in Resources */,
+				A01F608D22CB8CD0001133C4 /* 重新_点击.png in Resources */,
 				A0AC08E422C4BC7D001832EA /* ChatTableViewCell.xib in Resources */,
 				A0AC090A22C4BC7E001832EA /* TalkfunNetworkStatusView.xib in Resources */,
 				208B695B2185903700B263FB /* TeacherView.xib in Resources */,
@@ -2479,6 +2593,8 @@
 				A0AC094922C4BC7E001832EA /* hongbao.png in Resources */,
 				A0AC093522C4BC7E001832EA /* giveFlower.png in Resources */,
 				A020B043214AAB150011BB4F /* ic_refresh_image_014@2x.png in Resources */,
+				A01F609222CB8CD0001133C4 /* 默认图片.png in Resources */,
+				A01F608722CB8CD0001133C4 /* 删除-默认.png in Resources */,
 				A0AC08C122C4BC7D001832EA /* TalkfunNewChatCell.xib in Resources */,
 				A020B04C214AAB150011BB4F /* LaunchScreen.storyboard in Resources */,
 				A020B02D214AAB150011BB4F /* ic_refresh_image_007@2x.png in Resources */,
@@ -2491,7 +2607,10 @@
 				A0AC098C22C4BC7E001832EA /* xxx.png in Resources */,
 				A0AC095B22C4BC7E001832EA /* aha.png in Resources */,
 				A020B02C214AAB150011BB4F /* ic_refresh_image_003@2x.png in Resources */,
+				A01F608F22CB8CD0001133C4 /* 继续_默认.png in Resources */,
 				A0AC098F22C4BC7E001832EA /* pause.png in Resources */,
+				A01F608822CB8CD0001133C4 /* 等待队列_默认.png in Resources */,
+				A01F608E22CB8CD0001133C4 /* 下载-点击.png in Resources */,
 				A0AC094022C4BC7E001832EA /* myDelete.png in Resources */,
 				A0AC08B422C4BC7D001832EA /* TalkfunNewChatTableViewCell.xib in Resources */,
 				A0AC099222C4BC7E001832EA /* 进度1.png in Resources */,
@@ -2563,6 +2682,7 @@
 				A020B071214AAB150011BB4F /* LDNetTimer.m in Sources */,
 				A0AC08B922C4BC7D001832EA /* TalkfunFunctionButton.m in Sources */,
 				A00BE16D219FFB140042E6ED /* CZUpdateView.m in Sources */,
+				A01F607322CB895F001133C4 /* DownloadListController.m in Sources */,
 				A0AC08D022C4BC7D001832EA /* QuestionViewController.m in Sources */,
 				A0AC08B622C4BC7D001832EA /* stopCopyTextView.m in Sources */,
 				A0AC08D722C4BC7D001832EA /* ChapterModel.m in Sources */,
@@ -2574,6 +2694,7 @@
 				A0AC08EA22C4BC7D001832EA /* RootTableViewController.m in Sources */,
 				A0AC091A22C4BC7E001832EA /* TalkfunScoreView.m in Sources */,
 				A05FF5DB215B163400C51E05 /* JHHJAnimation.m in Sources */,
+				A01F607422CB8960001133C4 /* DownloadListModel.m in Sources */,
 				A05999F32155EC1500D17058 /* XLGChangeServerModel.m in Sources */,
 				A0AC08C422C4BC7D001832EA /* UIButton+TalkfunButton.m in Sources */,
 				A0AC091222C4BC7E001832EA /* TalkfunHornView.m in Sources */,
@@ -2613,6 +2734,7 @@
 				A0AC08FA22C4BC7E001832EA /* LotteryViewController.m in Sources */,
 				A0AC08F722C4BC7E001832EA /* MyLotteryViewController.m in Sources */,
 				A0AC092422C4BC7E001832EA /* TalkfunLongTextfieldView.m in Sources */,
+				A01F607622CB8960001133C4 /* DownloadListTableViewCell.m in Sources */,
 				A0AC08F522C4BC7E001832EA /* ChoiceButton.m in Sources */,
 				A0AC08DF22C4BC7D001832EA /* TalkfunVideoControlView.m in Sources */,
 				A091D1302178FAF300CCDAF6 /* StudyInfoItem.m in Sources */,

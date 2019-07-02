@@ -7,6 +7,7 @@
 //
 
 #import "CZMineVC.h"
+#import "DownloadListController.h"
 #import "PurchaseItem.h"
 #import "NotifyItem.h"
 
@@ -57,8 +58,8 @@
 
 - (void)getData {
     
-    self.imageArr = [NSMutableArray arrayWithObjects:@"icon_消息",@"icon_收藏",@"icon_反馈",@"icon_设置", nil];
-    self.nameArr = [NSMutableArray arrayWithObjects:@"我的消息",@"我的收藏",@"问题反馈",@"系统设置", nil];
+    self.imageArr = [NSMutableArray arrayWithObjects:@"icon_消息",@"icon_收藏",@"icon_下载",@"icon_反馈",@"icon_设置", nil];
+    self.nameArr = [NSMutableArray arrayWithObjects:@"我的消息",@"我的收藏",@"我的下载",@"问题反馈",@"系统设置", nil];
     
     if ([Utils isLoginWithJump:YES]) {
         [self getUserInfo]; //获取用户信息
@@ -282,6 +283,12 @@
     
     if ([str isEqualToString:@"我的收藏"]) {
         [BaseWebVC showWithContro:self withUrlStr:H5_MyFav withTitle:_nameArr[indexPath.row] isPresent:NO];
+    }
+    
+    if ([str isEqualToString:@"我的下载"]) {
+        DownloadListController *vc = [[DownloadListController alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
     }
     
     if ([str isEqualToString:@"问题反馈"]) {

@@ -808,9 +808,7 @@ static BOOL fromLandscape = NO;
     }
     //    }
     [APPLICATION setStatusBarHidden:YES];
-    #pragma mark - ---超职修改
-//    self.view.bounds = CGRectMake(0, 0, ScreenSize.width, ScreenSize.height);
-    #pragma mark - 超职修改---
+    self.view.bounds = CGRectMake(0, 0, ScreenSize.width, ScreenSize.height);
     [self orientationPortrait:YES];
     [self updateChrysanthemum];
 }
@@ -895,10 +893,7 @@ static BOOL fromLandscape = NO;
         }];
     }
     //    }
-    #pragma mark - ---超职修改
-//    self.view.bounds = CGRectMake(0, 0, ScreenSize.width, ScreenSize.height);
-    #pragma mark - 超职修改---
-
+    self.view.bounds = CGRectMake(0, 0, ScreenSize.width, ScreenSize.height);
     [self orientationPortrait:NO];
 }
 -(BOOL)gestureRecognizer:(UIGestureRecognizer*)gestureRecognizer shouldReceiveTouch:(UITouch*)touch {

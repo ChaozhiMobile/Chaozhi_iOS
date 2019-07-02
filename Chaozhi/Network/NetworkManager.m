@@ -11,7 +11,7 @@
 #import "Utils.h"
 #import "XLGExternalTestTool.h"
 
-#define TIMEOUT 20;
+#define TIMEOUT 5;
 
 static NetworkManager *_manager = nil;
 
