@@ -523,15 +523,20 @@
         self.alertView = alertView;
         alertView.alertViewStyle = HYAlertViewStyleDefault;
         
+        #pragma mark - ---超职修改
+//        alertView.isOrientationLandscape = self.isOrientationLandscape;
         alertView.isOrientationLandscape = NO;
+        #pragma mark - 超职修改---
         
         WeakSelf
         [alertView showInView:self.view completion:^(HYAlertView *alertView, NSInteger selectIndex) {
             //NSLog(@"点击了%d", (int)selectIndex);
             if (selectIndex == 1) {
                 
-                [TalkfunCourseManagement setPlay:[weakSelf.playbackID  integerValue] progress:weakSelf.playDuration];
+                NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
+                [[UIDevice currentDevice] setValue:value forKey:@"orientation"];;
                 
+                [TalkfunCourseManagement setPlay:[weakSelf.playbackID  integerValue] progress:weakSelf.playDuration];
                 
                 [[NSNotificationCenter defaultCenter] removeObserver:weakSelf];
                 
@@ -763,14 +768,18 @@ static BOOL fromLandscape = NO;
 - (void)fullScreen{
     [self.view endEditing:YES];
     if ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait) {
+        #pragma mark - ---超职修改
         NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationLandscapeRight];
-        [[UIDevice currentDevice]setValue:value forKey:@"orientation"];;
+        [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
+        #pragma mark - 超职修改---
         self.pptsFunctionView.fullScreenBtn.selected = YES;
         [self.pptsFunctionView.fullScreenBtn setImage:[UIImage imageNamed:@"退出全屏"] forState:UIControlStateNormal];
         [self orientationLandscape];
     }else{
+        #pragma mark - ---超职修改
         NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
-        [[UIDevice currentDevice]setValue:value forKey:@"orientation"];;
+        [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
+        #pragma mark - 超职修改---
         self.pptsFunctionView.fullScreenBtn.selected = NO;
         [self.pptsFunctionView.fullScreenBtn setImage:[UIImage imageNamed:@"全屏"] forState:UIControlStateNormal];
         [self orientationPortrait];
@@ -788,21 +797,20 @@ static BOOL fromLandscape = NO;
 - (void)orientationPortrait
 {
     //    if (APPLICATION.statusBarOrientation != UIInterfaceOrientationPortrait) {
-    UIWindow *myWindow= [[[UIApplication sharedApplication] delegate] window];
     if (self.isOrientationLandscape) {
-        CGAffineTransform taa = self.tabBarController.view.transform;
         CGFloat duration = [UIApplication sharedApplication].statusBarOrientationAnimationDuration;
-//        [UIView animateWithDuration:duration animations:^{
+        [UIView animateWithDuration:duration animations:^{
             [APPLICATION setStatusBarOrientation:UIInterfaceOrientationPortrait animated:YES];
-//            myWindow.transform = CGAffineTransformRotate(myWindow.transform, - M_PI_2);
-//            self.tabBarController.view.transform = CGAffineTransformRotate(taa, -M_PI);
-//        }];
+            #pragma mark - ---超职修改
+//            self.view.transform = CGAffineTransformRotate(self.view.transform, - M_PI_2);
+            #pragma mark - 超职修改---
+        }];
     }
     //    }
     [APPLICATION setStatusBarHidden:YES];
-    myWindow.frame = CGRectMake(0, 0, ScreenSize.width, ScreenSize.height);
-    self.tabBarController.view.bounds = CGRectMake(0, 0, ScreenSize.width, ScreenSize.height);
-//    self.tabBarController.view.bounds = myWindow.bounds;
+    #pragma mark - ---超职修改
+//    self.view.bounds = CGRectMake(0, 0, ScreenSize.width, ScreenSize.height);
+    #pragma mark - 超职修改---
     [self orientationPortrait:YES];
     [self updateChrysanthemum];
 }
@@ -822,8 +830,6 @@ static BOOL fromLandscape = NO;
 }
 
 - (void)orientationPortrait:(BOOL)portrait{
-    UIWindow *myWindow= [[[UIApplication sharedApplication] delegate] window];
-    NSLog(@"打印视图 %@\n%@",myWindow,self.tabBarController.view);
     @synchronized (self) {
         self.isOrientationLandscape = !portrait;
         
@@ -878,26 +884,21 @@ static BOOL fromLandscape = NO;
 - (void)orientationLandscape
 {
     //    if (APPLICATION.statusBarOrientation == UIInterfaceOrientationPortrait) {
-    UIWindow *myWindow= [[[UIApplication sharedApplication] delegate] window];
     if (!self.isOrientationLandscape) {
         [APPLICATION setStatusBarHidden:YES];
-        CGAffineTransform taaa = self.tabBarController.view.transform;
         CGFloat duration = [UIApplication sharedApplication].statusBarOrientationAnimationDuration;
         [UIView animateWithDuration:duration animations:^{
             [APPLICATION setStatusBarOrientation:UIInterfaceOrientationLandscapeRight animated:YES];
-//            myWindow.transform = CGAffineTransformRotate(myWindow.transform, M_PI_2);
-//            self.tabBarController.view.transform = CGAffineTransformRotate(taaa, M_PI_4);
+            #pragma mark - ---超职修改
+//            self.view.transform = CGAffineTransformRotate(self.view.transform, M_PI_2);
+            #pragma mark - 超职修改---
         }];
     }
     //    }
-    myWindow.frame = CGRectMake(0, 0, ScreenSize.width, ScreenSize.height);
-    self.tabBarController.view.bounds = myWindow.bounds;
-    self.view.bounds = CGRectMake(0, 0, ScreenSize.width, ScreenSize.height);
-    //判断系统版本
-    double version = [[UIDevice currentDevice].systemVersion doubleValue];
-    if (version < 8.0) {
-        myWindow.bounds = CGRectMake(0, 0, ScreenSize.height, ScreenSize.width);
-    }
+    #pragma mark - ---超职修改
+//    self.view.bounds = CGRectMake(0, 0, ScreenSize.width, ScreenSize.height);
+    #pragma mark - 超职修改---
+
     [self orientationPortrait:NO];
 }
 -(BOOL)gestureRecognizer:(UIGestureRecognizer*)gestureRecognizer shouldReceiveTouch:(UITouch*)touch {

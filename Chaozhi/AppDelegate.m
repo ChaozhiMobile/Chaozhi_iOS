@@ -21,18 +21,6 @@
 
 @implementation AppDelegate
 
-- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
-    //    return UIInterfaceOrientationMaskAllButUpsideDown;
-    //    if (application.statusBarOrientation == UIInterfaceOrientationPortrait) {
-    //        return UIInterfaceOrientationMaskPortrait;
-    //    }else{
-    //        return UIInterfaceOrientationMaskLandscape;
-    //    }
-    //=======
-    return UIInterfaceOrientationMaskAll;
-    
-}
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
 //    [CacheUtil saveCacher:kSelectCourseIDKey withValue:@""];
@@ -40,8 +28,6 @@
 //#ifdef DEBUG
 //    [[DoraemonManager shareInstance] install];
 //#endif
-    
-    [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationPortrait animated:NO];
     
     [self iapCheck]; //内购凭证服务器二次校验，防止漏单
     
@@ -57,8 +43,7 @@
     //键盘事件
     [self processKeyBoard];
     
-    self.window = [[UIWindow alloc] init];;
-    self.window.frame = [UIScreen mainScreen].bounds;
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = PageColor;
 
     //判断是否首次进入应用
