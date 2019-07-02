@@ -13,6 +13,7 @@
 		205FDB2F216F20C0001BE2C6 /* HomeInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FDB2E216F20C0001BE2C6 /* HomeInfoItem.m */; };
 		205FDB3321763DBE001BE2C6 /* CZGuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FDB3221763DBE001BE2C6 /* CZGuideVC.m */; };
 		208B695B2185903700B263FB /* TeacherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 208B695A2185903700B263FB /* TeacherView.xib */; };
+		20A4ACCC22CAFA2400FA1BC5 /* info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20A4ACCB22CAFA2400FA1BC5 /* info.plist */; };
 		20D3D36922C2280E00560A74 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D36822C2280E00560A74 /* libsqlite3.0.tbd */; };
 		20D3D36B22C2281C00560A74 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D36A22C2281C00560A74 /* Accelerate.framework */; };
 		20D3D36D22C2282A00560A74 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D36C22C2282A00560A74 /* libz.tbd */; };
@@ -399,6 +400,7 @@
 		205FDB3121763DBE001BE2C6 /* CZGuideVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZGuideVC.h; sourceTree = "<group>"; };
 		205FDB3221763DBE001BE2C6 /* CZGuideVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZGuideVC.m; sourceTree = "<group>"; };
 		208B695A2185903700B263FB /* TeacherView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeacherView.xib; sourceTree = "<group>"; };
+		20A4ACCB22CAFA2400FA1BC5 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		20D3D36822C2280E00560A74 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		20D3D36A22C2281C00560A74 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		20D3D36C22C2282A00560A74 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -1144,6 +1146,7 @@
 				A020AFA2214AAB130011BB4F /* LaunchScreen.storyboard */,
 				A020AFA4214AAB130011BB4F /* Main.storyboard */,
 				A020AFA6214AAB130011BB4F /* main.m */,
+				20A4ACCB22CAFA2400FA1BC5 /* info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -2391,6 +2394,7 @@
 				A0AC094222C4BC7E001832EA /* delete.png in Resources */,
 				A0AC095A22C4BC7E001832EA /* pitiful.png in Resources */,
 				A0AC097722C4BC7E001832EA /* 关闭摄像头.png in Resources */,
+				20A4ACCC22CAFA2400FA1BC5 /* info.plist in Resources */,
 				A0AC094C22C4BC7E001832EA /* rcircle.png in Resources */,
 				A020B026214AAB150011BB4F /* ic_refresh_image_025@2x.png in Resources */,
 				A020B048214AAB150011BB4F /* ic_refresh_image_004@2x.png in Resources */,
@@ -2857,7 +2861,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Chaozhi/Chaozhi.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SD4544P5D9;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2934,7 +2938,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.czjy.chaozhi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "065790ea-d817-4376-9f63-d632a80ca061";
-				PROVISIONING_PROFILE_SPECIFIER = CZJYDev;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRIP_SWIFT_SYMBOLS = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2947,8 +2951,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Chaozhi/Chaozhi.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SD4544P5D9;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3025,7 +3029,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.czjy.chaozhi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "75ee8f25-9458-4b56-892c-73559e6ce7d6";
-				PROVISIONING_PROFILE_SPECIFIER = CZJYDis;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRIP_SWIFT_SYMBOLS = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;

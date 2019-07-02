@@ -523,7 +523,7 @@
         self.alertView = alertView;
         alertView.alertViewStyle = HYAlertViewStyleDefault;
         
-        alertView.isOrientationLandscape = self.isOrientationLandscape;
+        alertView.isOrientationLandscape = NO;
         
         WeakSelf
         [alertView showInView:self.view completion:^(HYAlertView *alertView, NSInteger selectIndex) {
@@ -763,10 +763,14 @@ static BOOL fromLandscape = NO;
 - (void)fullScreen{
     [self.view endEditing:YES];
     if ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait) {
+        NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationLandscapeRight];
+        [[UIDevice currentDevice]setValue:value forKey:@"orientation"];;
         self.pptsFunctionView.fullScreenBtn.selected = YES;
         [self.pptsFunctionView.fullScreenBtn setImage:[UIImage imageNamed:@"退出全屏"] forState:UIControlStateNormal];
         [self orientationLandscape];
     }else{
+        NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
+        [[UIDevice currentDevice]setValue:value forKey:@"orientation"];;
         self.pptsFunctionView.fullScreenBtn.selected = NO;
         [self.pptsFunctionView.fullScreenBtn setImage:[UIImage imageNamed:@"全屏"] forState:UIControlStateNormal];
         [self orientationPortrait];
@@ -780,21 +784,25 @@ static BOOL fromLandscape = NO;
     }
 }
 
-#pragma mark - 横竖屏的适配
+#pragma mark - 竖屏的适配
 - (void)orientationPortrait
 {
     //    if (APPLICATION.statusBarOrientation != UIInterfaceOrientationPortrait) {
+    UIWindow *myWindow= [[[UIApplication sharedApplication] delegate] window];
     if (self.isOrientationLandscape) {
+        CGAffineTransform taa = self.tabBarController.view.transform;
         CGFloat duration = [UIApplication sharedApplication].statusBarOrientationAnimationDuration;
-        [UIView animateWithDuration:duration animations:^{
+//        [UIView animateWithDuration:duration animations:^{
             [APPLICATION setStatusBarOrientation:UIInterfaceOrientationPortrait animated:YES];
-            self.view.transform = CGAffineTransformRotate(self.view.transform, - M_PI_2);
-        }];
+//            myWindow.transform = CGAffineTransformRotate(myWindow.transform, - M_PI_2);
+//            self.tabBarController.view.transform = CGAffineTransformRotate(taa, -M_PI);
+//        }];
     }
     //    }
     [APPLICATION setStatusBarHidden:YES];
-    self.view.bounds = CGRectMake(0, 0, ScreenSize.width, ScreenSize.height);
-    
+    myWindow.frame = CGRectMake(0, 0, ScreenSize.width, ScreenSize.height);
+    self.tabBarController.view.bounds = CGRectMake(0, 0, ScreenSize.width, ScreenSize.height);
+//    self.tabBarController.view.bounds = myWindow.bounds;
     [self orientationPortrait:YES];
     [self updateChrysanthemum];
 }
@@ -814,6 +822,8 @@ static BOOL fromLandscape = NO;
 }
 
 - (void)orientationPortrait:(BOOL)portrait{
+    UIWindow *myWindow= [[[UIApplication sharedApplication] delegate] window];
+    NSLog(@"打印视图 %@\n%@",myWindow,self.tabBarController.view);
     @synchronized (self) {
         self.isOrientationLandscape = !portrait;
         
@@ -868,20 +878,25 @@ static BOOL fromLandscape = NO;
 - (void)orientationLandscape
 {
     //    if (APPLICATION.statusBarOrientation == UIInterfaceOrientationPortrait) {
+    UIWindow *myWindow= [[[UIApplication sharedApplication] delegate] window];
     if (!self.isOrientationLandscape) {
         [APPLICATION setStatusBarHidden:YES];
+        CGAffineTransform taaa = self.tabBarController.view.transform;
         CGFloat duration = [UIApplication sharedApplication].statusBarOrientationAnimationDuration;
         [UIView animateWithDuration:duration animations:^{
             [APPLICATION setStatusBarOrientation:UIInterfaceOrientationLandscapeRight animated:YES];
-            self.view.transform = CGAffineTransformRotate(self.view.transform, M_PI_2);
+//            myWindow.transform = CGAffineTransformRotate(myWindow.transform, M_PI_2);
+//            self.tabBarController.view.transform = CGAffineTransformRotate(taaa, M_PI_4);
         }];
     }
     //    }
+    myWindow.frame = CGRectMake(0, 0, ScreenSize.width, ScreenSize.height);
+    self.tabBarController.view.bounds = myWindow.bounds;
     self.view.bounds = CGRectMake(0, 0, ScreenSize.width, ScreenSize.height);
     //判断系统版本
     double version = [[UIDevice currentDevice].systemVersion doubleValue];
     if (version < 8.0) {
-        self.view.bounds = CGRectMake(0, 0, ScreenSize.height, ScreenSize.width);
+        myWindow.bounds = CGRectMake(0, 0, ScreenSize.height, ScreenSize.width);
     }
     [self orientationPortrait:NO];
 }

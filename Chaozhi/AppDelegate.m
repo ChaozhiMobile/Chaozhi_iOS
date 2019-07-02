@@ -57,7 +57,8 @@
     //键盘事件
     [self processKeyBoard];
     
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window = [[UIWindow alloc] init];;
+    self.window.frame = [UIScreen mainScreen].bounds;
     self.window.backgroundColor = PageColor;
 
     //判断是否首次进入应用
