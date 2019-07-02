@@ -21,6 +21,17 @@
 
 @implementation AppDelegate
 
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+    //    return UIInterfaceOrientationMaskAllButUpsideDown;
+    //    if (application.statusBarOrientation == UIInterfaceOrientationPortrait) {
+    //        return UIInterfaceOrientationMaskPortrait;
+    //    }else{
+    //        return UIInterfaceOrientationMaskLandscape;
+    //    }
+    //=======
+    return UIInterfaceOrientationMaskAll;
+    
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -29,6 +40,8 @@
 //#ifdef DEBUG
 //    [[DoraemonManager shareInstance] install];
 //#endif
+    
+    [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationPortrait animated:NO];
     
     [self iapCheck]; //内购凭证服务器二次校验，防止漏单
     

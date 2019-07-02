@@ -385,8 +385,6 @@
 		A0AC099622C4BC7E001832EA /* 专辑-点击.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC089E22C4BC7D001832EA /* 专辑-点击.png */; };
 		A0C1257321BC021B0026430E /* CZStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C1257221BC021B0026430E /* CZStarView.m */; };
 		A0CB7CB922C65D8800069B34 /* TalkfunItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CB7CB822C65D8800069B34 /* TalkfunItem.m */; };
-		A0CB7CBE22C718E700069B34 /* XLGTalkfunVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CB7CBC22C718E700069B34 /* XLGTalkfunVC.m */; };
-		A0CB7CBF22C718E700069B34 /* XLGTalkfunPlaybackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CB7CBD22C718E700069B34 /* XLGTalkfunPlaybackVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -953,10 +951,6 @@
 		A0C1257221BC021B0026430E /* CZStarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZStarView.m; sourceTree = "<group>"; };
 		A0CB7CB722C65D8800069B34 /* TalkfunItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TalkfunItem.h; sourceTree = "<group>"; };
 		A0CB7CB822C65D8800069B34 /* TalkfunItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TalkfunItem.m; sourceTree = "<group>"; };
-		A0CB7CBA22C718E700069B34 /* XLGTalkfunVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLGTalkfunVC.h; sourceTree = "<group>"; };
-		A0CB7CBB22C718E700069B34 /* XLGTalkfunPlaybackVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLGTalkfunPlaybackVC.h; sourceTree = "<group>"; };
-		A0CB7CBC22C718E700069B34 /* XLGTalkfunVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGTalkfunVC.m; sourceTree = "<group>"; };
-		A0CB7CBD22C718E700069B34 /* XLGTalkfunPlaybackVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGTalkfunPlaybackVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1529,10 +1523,6 @@
 		A0AC071522C4BC7C001832EA /* Talkfun */ = {
 			isa = PBXGroup;
 			children = (
-				A0CB7CBB22C718E700069B34 /* XLGTalkfunPlaybackVC.h */,
-				A0CB7CBD22C718E700069B34 /* XLGTalkfunPlaybackVC.m */,
-				A0CB7CBA22C718E700069B34 /* XLGTalkfunVC.h */,
-				A0CB7CBC22C718E700069B34 /* XLGTalkfunVC.m */,
 				A0AC071822C4BC7C001832EA /* Library */,
 				A0AC07B222C4BC7C001832EA /* Live */,
 				A0AC077C22C4BC7C001832EA /* Playback */,
@@ -2611,7 +2601,6 @@
 				A0599A2321574CAF00D17058 /* CZHomeVC.m in Sources */,
 				A0AC08E322C4BC7D001832EA /* AlbumCellTableViewCell.m in Sources */,
 				A020B050214AAB150011BB4F /* KeyChainUtil.m in Sources */,
-				A0CB7CBF22C718E700069B34 /* XLGTalkfunPlaybackVC.m in Sources */,
 				A020B05C214AAB150011BB4F /* MEViewModel.m in Sources */,
 				A0AC08B822C4BC7D001832EA /* UIView+TalkfunView.m in Sources */,
 				A0AC08A822C4BC7D001832EA /* NSString+Hashing.m in Sources */,
@@ -2657,7 +2646,6 @@
 				A0AC08F922C4BC7E001832EA /* VoteEndViewController.m in Sources */,
 				A0599A2421574CAF00D17058 /* CZStudyVC.m in Sources */,
 				A05FF5D9215B163400C51E05 /* JHHJCenterBGView.m in Sources */,
-				A0CB7CBE22C718E700069B34 /* XLGTalkfunVC.m in Sources */,
 				A0AC08E822C4BC7D001832EA /* QuestionTableViewController.m in Sources */,
 				A0AC08F422C4BC7E001832EA /* NetworkModel.m in Sources */,
 				A0CB7CB922C65D8800069B34 /* TalkfunItem.m in Sources */,

@@ -12,8 +12,6 @@
 #import "CZAlertView.h"
 #import "CZProtocalWebVC.h"
 #import "TalkfunItem.h"
-#import "XLGTalkfunVC.h"
-#import "XLGTalkfunPlaybackVC.h"
 #import "TalkfunPlaybackViewController.h"
 
 @implementation StudyCourseCell
@@ -265,8 +263,7 @@
             TalkfunItem *item = [TalkfunItem mj_objectWithKeyValues:(NSDictionary *)responseData];
             TalkfunPlaybackViewController *vc = [[TalkfunPlaybackViewController alloc] init];
             vc.access_token = item.access_token;
-            vc.titleStr = liveItems.live_name;
-            vc.downloadCompleted = YES;
+//            vc.downloadCompleted = YES;
             vc.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
         }

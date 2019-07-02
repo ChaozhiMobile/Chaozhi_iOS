@@ -106,8 +106,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = self.titleStr;
-    
     self.view.backgroundColor = [UIColor whiteColor];
     [APPLICATION setStatusBarHidden:YES];
     self.isOrientationLandscape = NO;
@@ -127,6 +125,12 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self addLoadingView];
+    self.navigationController.navigationBar.hidden = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBar.hidden = NO;
 }
 
 - (void)addLoadingView{
@@ -1570,4 +1574,3 @@ static BOOL fromLandscape = NO;
     return _playbackChat;
 }
 @end
-
