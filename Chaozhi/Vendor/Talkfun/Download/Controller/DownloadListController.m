@@ -16,6 +16,8 @@
 #import "MJExtension.h"
 #import <SDWebImage/SDWebImageManager.h>
 //#import "TalkfunSmallClassPlayBackController.h"
+#import "DBManager.h"
+#import "VideoItem.h"
 
 #define FilePath [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Caches/ImageCaches"]
 
@@ -69,16 +71,17 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sdkError:) name:TalkfunErrorNotification object:nil];
     
-    NSArray * playbackList = self.downloadManager.getDownloadList;
-    
-    [self.dataSource addObjectsFromArray:[DownloadListModel mj_objectArrayWithKeyValuesArray:playbackList]];
-    
-    for (int i = 0; i<self.dataSource.count; i++) {
-        DownloadListModel *model = self.dataSource[i];
-        NSLog(@"视频标题：%@",model.title);
-        NSArray *titleArr = [model.title componentsSeparatedByString:@";"];
-        if (![titleArr[0] isEqualToString:[UserInfo share].phone]) {
-            [self.dataSource removeObject:model];
+    [self.dataSource removeAllObjects];
+    [self.videoArr removeAllObjects];
+    NSArray *playbackList = self.downloadManager.getDownloadList;
+    NSMutableArray *arr = [[DownloadListModel mj_objectArrayWithKeyValuesArray:playbackList] mutableCopy];
+    NSMutableArray *dbArr = [[DBManager shareManager] getAllVideo];
+    for (VideoItem *dbItem in dbArr) {
+        for (DownloadListModel *item in arr) {
+            if ([dbItem.live_id isEqualToString:item.playbackID]) {
+                [self.dataSource addObject:item];
+                [self.videoArr addObject:dbItem];
+            }
         }
     }
     
@@ -555,8 +558,7 @@
         }
     });
     
-    NSArray *titleArr = [model.title componentsSeparatedByString:@";"];
-    cell.fileName.text = titleArr[1];
+    cell.fileName.text = model.title;
     if (model.totalSize) {
         if (model.downloadedSize) {
             cell.progressLabel.text = [NSString stringWithFormat:@"%0.2lf/%0.2lfMB",[model.downloadedSize floatValue]/1024/1024,[model.totalSize floatValue]/1024/1024];
@@ -796,6 +798,14 @@
         _dataSource = [NSMutableArray new];
     }
     return _dataSource;
+}
+
+- (NSMutableArray *)videoArr
+{
+    if (!_videoArr) {
+        _videoArr = [NSMutableArray new];
+    }
+    return _videoArr;
 }
 
 - (NSMutableArray *)selectedArray

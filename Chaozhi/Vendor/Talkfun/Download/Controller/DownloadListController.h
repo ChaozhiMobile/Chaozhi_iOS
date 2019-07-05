@@ -11,6 +11,7 @@
 @interface DownloadListController : UITableViewController
 
 @property (nonatomic,strong) NSMutableArray * dataSource;
+@property (nonatomic,strong) NSMutableArray * videoArr;
 @property (nonatomic,copy  ) void (^controlBtnBlock)(NSString * playbackID,NSString *fileName,NSInteger btnNum,BOOL pauseDownload);
 
 @end
