@@ -18,6 +18,7 @@ target 'Chaozhi' do
   pod 'JPush-iOS-SDK'
   pod 'UMengAnalytics-NO-IDFA'
   pod 'IAPHelper'
+  pod 'FMDB'
   #欢拓SDK Talkfun
   pod 'Socket.IO-Client-Swift'
   pod 'JFImagePicker'
