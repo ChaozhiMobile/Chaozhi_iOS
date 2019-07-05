@@ -523,10 +523,10 @@
         self.alertView = alertView;
         alertView.alertViewStyle = HYAlertViewStyleDefault;
         
-        #pragma mark - ---超职修改
-//        alertView.isOrientationLandscape = self.isOrientationLandscape;
+#pragma mark - ---超职修改
+        //        alertView.isOrientationLandscape = self.isOrientationLandscape;
         alertView.isOrientationLandscape = NO;
-        #pragma mark - 超职修改---
+#pragma mark - 超职修改---
         
         WeakSelf
         [alertView showInView:self.view completion:^(HYAlertView *alertView, NSInteger selectIndex) {
@@ -703,7 +703,11 @@
     }else{
         BOOL contains = [self.downloadManager containsPlaybackID:self.playbackID];
         if (contains) {
-            [self.view downloadToast:@"该回放已下载" position:CGPointMake(ScreenSize.width - 70, CGRectGetMaxY(self.buttonView.frame)-5+19)];
+            NSString * token = _res[@"data"][@"access_token"];
+            NSString * title = [NSString stringWithFormat:@"%@;%@",[UserInfo share].phone,_res[@"data"][@"title"]];
+            [self.downloadManager appendDownloadWithAccessToken:token playbackID:self.playbackID title:title];
+            [self.downloadManager startDownload:self.playbackID];
+            [self.view downloadToast:@"该回放已下载，请到我的下载中查看" position:CGPointMake(ScreenSize.width - 70, CGRectGetMaxY(self.buttonView.frame)-5+19)];
             //            [self.view toast:@"已在下载列表中" position:ToastPosition];
             return;
         }
@@ -725,10 +729,11 @@
         }else
         {
             NSString * token = _res[@"data"][@"access_token"];
-            [self.downloadManager appendDownloadWithAccessToken:token playbackID:self.playbackID title:nil];
+            NSString * title = [NSString stringWithFormat:@"%@;%@",[UserInfo share].phone,_res[@"data"][@"title"]];
+            [self.downloadManager appendDownloadWithAccessToken:token playbackID:self.playbackID title:title];
             [self.downloadManager startDownload:self.playbackID];
-            //            [self.view toast:@"已添加到下载列表" position:ToastPosition];
-            [self.view downloadToast:@"已开始下载" position:CGPointMake(ScreenSize.width - 70, CGRectGetMaxY(self.buttonView.frame)-5+19)];
+            PERFORM_IN_MAIN_QUEUE([self.view toast:@"已添加到下载列表" position:ToastPosition];)
+            //            [self.view downloadToast:@"已开始下载" position:CGPointMake(ScreenSize.width - 70, CGRectGetMaxY(self.buttonView.frame)-5+19)];
         }
     }
 }
@@ -768,18 +773,18 @@ static BOOL fromLandscape = NO;
 - (void)fullScreen{
     [self.view endEditing:YES];
     if ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait) {
-        #pragma mark - ---超职修改
+#pragma mark - ---超职修改
         NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationLandscapeRight];
         [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
-        #pragma mark - 超职修改---
+#pragma mark - 超职修改---
         self.pptsFunctionView.fullScreenBtn.selected = YES;
         [self.pptsFunctionView.fullScreenBtn setImage:[UIImage imageNamed:@"退出全屏"] forState:UIControlStateNormal];
         [self orientationLandscape];
     }else{
-        #pragma mark - ---超职修改
+#pragma mark - ---超职修改
         NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
         [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
-        #pragma mark - 超职修改---
+#pragma mark - 超职修改---
         self.pptsFunctionView.fullScreenBtn.selected = NO;
         [self.pptsFunctionView.fullScreenBtn setImage:[UIImage imageNamed:@"全屏"] forState:UIControlStateNormal];
         [self orientationPortrait];
@@ -801,9 +806,9 @@ static BOOL fromLandscape = NO;
         CGFloat duration = [UIApplication sharedApplication].statusBarOrientationAnimationDuration;
         [UIView animateWithDuration:duration animations:^{
             [APPLICATION setStatusBarOrientation:UIInterfaceOrientationPortrait animated:YES];
-            #pragma mark - ---超职修改
-//            self.view.transform = CGAffineTransformRotate(self.view.transform, - M_PI_2);
-            #pragma mark - 超职修改---
+#pragma mark - ---超职修改
+            //            self.view.transform = CGAffineTransformRotate(self.view.transform, - M_PI_2);
+#pragma mark - 超职修改---
         }];
     }
     //    }
@@ -863,7 +868,7 @@ static BOOL fromLandscape = NO;
             if (i == 0 || i == 1) {
                 [tableViewVC recalculateCellHeight];
             }else
-                [tableViewVC.tableView reloadData];
+            [tableViewVC.tableView reloadData];
         }
         
         self.shadowView.frame = self.scrollView.frame;
@@ -887,9 +892,9 @@ static BOOL fromLandscape = NO;
         CGFloat duration = [UIApplication sharedApplication].statusBarOrientationAnimationDuration;
         [UIView animateWithDuration:duration animations:^{
             [APPLICATION setStatusBarOrientation:UIInterfaceOrientationLandscapeRight animated:YES];
-            #pragma mark - ---超职修改
-//            self.view.transform = CGAffineTransformRotate(self.view.transform, M_PI_2);
-            #pragma mark - 超职修改---
+#pragma mark - ---超职修改
+            //            self.view.transform = CGAffineTransformRotate(self.view.transform, M_PI_2);
+#pragma mark - 超职修改---
         }];
     }
     //    }
@@ -899,12 +904,12 @@ static BOOL fromLandscape = NO;
 -(BOOL)gestureRecognizer:(UIGestureRecognizer*)gestureRecognizer shouldReceiveTouch:(UITouch*)touch {
     
     if([touch.view isKindOfClass:[UISlider class]])
-        
-        return NO;
+    
+    return NO;
     
     else
-        
-        return YES;
+    
+    return YES;
     
 }
 #pragma mark - 加手势
@@ -1232,7 +1237,8 @@ static BOOL fromLandscape = NO;
     WeakSelf
     NSString * token = _res[@"data"][@"access_token"];
     [self.view alertStyle:UIAlertControllerStyleAlert title:@"提示" message:@"确定使用蜂窝流量下载?" action:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [weakSelf.downloadManager appendDownloadWithAccessToken:token?token:weakSelf.access_token playbackID:weakSelf.playbackID title:nil];
+        NSString * title = [NSString stringWithFormat:@"%@%@",[UserInfo share].phone,weakSelf.res[@"data"][@"title"]];
+        [weakSelf.downloadManager appendDownloadWithAccessToken:token?token:weakSelf.access_token playbackID:weakSelf.playbackID title:title];
         [weakSelf.downloadManager startDownload:weakSelf.playbackID];
         PERFORM_IN_MAIN_QUEUE([weakSelf.view toast:@"已添加到下载列表" position:ToastPosition];)
     }]];

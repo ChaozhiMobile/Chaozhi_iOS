@@ -10,6 +10,7 @@
 
 @interface DownloadListTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *downloadImageViewOffX;
 
 @property (weak, nonatomic) IBOutlet UIImageView *downloadImageView;
 @property (weak, nonatomic) IBOutlet UILabel *fileName;

@@ -12,7 +12,7 @@
 #import "NetworkUtil.h"
 #import "CZGuideVC.h"
 #import "UMMobClick/MobClick.h"
-//#import <IAPShare.h>
+#import "DBManager.h"
 //#import "DoraemonManager.h"
 
 @interface AppDelegate ()
@@ -28,6 +28,8 @@
 //#ifdef DEBUG
 //    [[DoraemonManager shareInstance] install];
 //#endif
+    
+    [[DBManager shareManager] createDBAndTable];
     
     [self iapCheck]; //内购凭证服务器二次校验，防止漏单
     

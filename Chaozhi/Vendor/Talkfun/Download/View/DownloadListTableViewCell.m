@@ -10,6 +10,31 @@
 
 @implementation DownloadListTableViewCell
 
+// 修改TableViewCell在编辑模式下选中按钮的颜色
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    for (UIControl *control in self.subviews) {
+        if (![control isMemberOfClass:NSClassFromString(@"UITableViewCellEditControl")]){
+            continue;
+        }
+        
+        for (UIView *subView in control.subviews) {
+            if (![subView isKindOfClass: [UIImageView class]]) {
+                continue;
+            }
+            
+            UIImageView *imageView = (UIImageView *)subView;
+            if (self.selected) {
+                // KVC修改
+                [imageView setValue:AppThemeColor forKey:@"tintColor"];   // 选中时的颜色
+            } else {
+                [imageView setValue:kLineColor forKey:@"tintColor"]; // 未选中时的颜色(貌似没用？)
+            }
+        }
+    }
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code

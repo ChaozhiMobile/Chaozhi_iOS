@@ -403,6 +403,8 @@
 		A0AC099622C4BC7E001832EA /* 专辑-点击.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC089E22C4BC7D001832EA /* 专辑-点击.png */; };
 		A0C1257321BC021B0026430E /* CZStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C1257221BC021B0026430E /* CZStarView.m */; };
 		A0CB7CB922C65D8800069B34 /* TalkfunItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CB7CB822C65D8800069B34 /* TalkfunItem.m */; };
+		A0E8981D22CF22C600DB09BA /* VideoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E8981B22CF22C600DB09BA /* VideoItem.m */; };
+		A0E8982122CF265800DB09BA /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E8982022CF265800DB09BA /* DBManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -990,6 +992,10 @@
 		A0C1257221BC021B0026430E /* CZStarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZStarView.m; sourceTree = "<group>"; };
 		A0CB7CB722C65D8800069B34 /* TalkfunItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TalkfunItem.h; sourceTree = "<group>"; };
 		A0CB7CB822C65D8800069B34 /* TalkfunItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TalkfunItem.m; sourceTree = "<group>"; };
+		A0E8981B22CF22C600DB09BA /* VideoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoItem.m; sourceTree = "<group>"; };
+		A0E8981C22CF22C600DB09BA /* VideoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoItem.h; sourceTree = "<group>"; };
+		A0E8981F22CF265800DB09BA /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		A0E8982022CF265800DB09BA /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1408,6 +1414,7 @@
 		A020AFEC214AAB140011BB4F /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				A0E8981E22CF265800DB09BA /* FMDB */,
 				A05CD23922AE8C2A00CBE4F5 /* H5 */,
 				205FDB3021763D7C001BE2C6 /* Guide(导航) */,
 				A0599A0E21574CAF00D17058 /* Login(登录) */,
@@ -1500,6 +1507,8 @@
 				A071273A2216E7D700DC3C20 /* NotifyItem.m */,
 				A0CB7CB722C65D8800069B34 /* TalkfunItem.h */,
 				A0CB7CB822C65D8800069B34 /* TalkfunItem.m */,
+				A0E8981C22CF22C600DB09BA /* VideoItem.h */,
+				A0E8981B22CF22C600DB09BA /* VideoItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2313,6 +2322,15 @@
 			path = StarView;
 			sourceTree = "<group>";
 		};
+		A0E8981E22CF265800DB09BA /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				A0E8981F22CF265800DB09BA /* DBManager.h */,
+				A0E8982022CF265800DB09BA /* DBManager.m */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
 		A7FA9F4632752641B75EA9B4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -2742,6 +2760,7 @@
 				A0AC090B22C4BC7E001832EA /* TalkfunExpressionCloseButton.m in Sources */,
 				A020B05D214AAB150011BB4F /* MEView.m in Sources */,
 				A0AC08CA22C4BC7D001832EA /* UIScrollView+TalkfunScrollView.m in Sources */,
+				A0E8981D22CF22C600DB09BA /* VideoItem.m in Sources */,
 				A0AC08A322C4BC7D001832EA /* UITextField+HTtext.m in Sources */,
 				A020B075214AAB150011BB4F /* LDNetDiagnoService.m in Sources */,
 				A0AC08D622C4BC7D001832EA /* AlbumModel.m in Sources */,
@@ -2761,6 +2780,7 @@
 				A071273B2216E7D700DC3C20 /* NotifyItem.m in Sources */,
 				A0AC091722C4BC7E001832EA /* TalkfunReplyTipsView.m in Sources */,
 				A05FF5CE215B14F100C51E05 /* NetworkUtil.m in Sources */,
+				A0E8982122CF265800DB09BA /* DBManager.m in Sources */,
 				A00FA9DC2169DB0000F4DA5B /* CZSelectCourseVC.m in Sources */,
 				A0AC08AD22C4BC7D001832EA /* TalkfunModulation.m in Sources */,
 				A0AC091122C4BC7E001832EA /* TalkfunGuidenceButton.m in Sources */,

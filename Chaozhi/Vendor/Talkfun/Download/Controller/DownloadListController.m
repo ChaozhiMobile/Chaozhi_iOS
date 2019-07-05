@@ -73,6 +73,15 @@
     
     [self.dataSource addObjectsFromArray:[DownloadListModel mj_objectArrayWithKeyValuesArray:playbackList]];
     
+    for (int i = 0; i<self.dataSource.count; i++) {
+        DownloadListModel *model = self.dataSource[i];
+        NSLog(@"视频标题：%@",model.title);
+        NSArray *titleArr = [model.title componentsSeparatedByString:@";"];
+        if (![titleArr[0] isEqualToString:[UserInfo share].phone]) {
+            [self.dataSource removeObject:model];
+        }
+    }
+    
     self.tableView.backgroundColor = PageColor;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.allowsSelectionDuringEditing = YES;
@@ -397,7 +406,7 @@
             playbackVC.playbackID = model.playbackID;
             playbackVC.res = @{@"data":@{@"access_token":model.access_token},TalkfunPlaybackID:model.playbackID};
             playbackVC.downloadCompleted = YES;//下载完成
-            [self presentViewController:playbackVC animated:NO completion:nil];
+            [self.navigationController pushViewController:playbackVC animated:YES];
         }else if ([videoType isEqualToString:@"2"]) {
             
             //            //TODO:原生模式的点播
@@ -546,7 +555,8 @@
         }
     });
     
-    cell.fileName.text = model.title;
+    NSArray *titleArr = [model.title componentsSeparatedByString:@";"];
+    cell.fileName.text = titleArr[1];
     if (model.totalSize) {
         if (model.downloadedSize) {
             cell.progressLabel.text = [NSString stringWithFormat:@"%0.2lf/%0.2lfMB",[model.downloadedSize floatValue]/1024/1024,[model.totalSize floatValue]/1024/1024];

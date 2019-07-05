@@ -75,10 +75,10 @@
     _tabHeightConstraint.constant = 3*60;
     _statusBarHConstraint.constant = kStatusBarH;
     _allAlertView = [NSMutableArray array];
-//    __weak typeof(self) weakSelf = self;
-//    _bgScroView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-//        [weakSelf getData];
-//    }];
+    //    __weak typeof(self) weakSelf = self;
+    //    _bgScroView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+    //        [weakSelf getData];
+    //    }];
     [self blankView];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginSucc) name:kLoginSuccNotification object:nil]; //登录成功通知
 }
@@ -220,7 +220,7 @@
     NSInteger index = btn.tag-1000;
     NSLog(@"点击页数：%ld",(long)index);
     
-//    StudyInfoItem *item = self.dataArr[index];
+    //    StudyInfoItem *item = self.dataArr[index];
 }
 
 #pragma mark - 录播课程点击
@@ -255,7 +255,7 @@
 - (IBAction)liveCourseAction:(id)sender {
     
     LiveItem *liveItems = _liveArr.firstObject;
-//    [BaseWebVC showWithContro:self withUrlStr:liveItems.live_url withTitle:liveItems.live_name isPresent:NO];
+    //    [BaseWebVC showWithContro:self withUrlStr:liveItems.live_url withTitle:liveItems.live_name isPresent:NO];
     
     NSDictionary *dic = @{@"type":@"2",@"live_id":liveItems.live_id};
     [[NetworkManager sharedManager] postJSON:URL_LiveToken parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
@@ -263,9 +263,9 @@
             TalkfunItem *item = [TalkfunItem mj_objectWithKeyValues:(NSDictionary *)responseData];
             TalkfunPlaybackViewController *vc = [[TalkfunPlaybackViewController alloc] init];
             vc.access_token = item.access_token;
-            vc.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":item.access_token},@"data", nil];
+            vc.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":item.access_token,@"title":liveItems.live_name},@"data", nil];
             vc.playbackID = liveItems.live_id;
-//            vc.downloadCompleted = YES;
+            //            vc.downloadCompleted = YES;
             vc.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
         }
@@ -290,7 +290,7 @@
     
     if (_liveArr.count==0) {
         _liveCourseView.hidden = YES;
-       _studyCourseTipTopConstraint.constant = 0; _liveCourseConstraint.constant = 0;
+        _studyCourseTipTopConstraint.constant = 0; _liveCourseConstraint.constant = 0;
     } else {
         _studyCourseTipTopConstraint.constant = 10;
         _liveCourseView.hidden = NO;
