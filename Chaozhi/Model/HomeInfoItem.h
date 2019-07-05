@@ -85,6 +85,8 @@
 @property (nonatomic , copy) NSString* title ;//: 婚姻公开课,
 @property (nonatomic , copy) NSString* src ;//: https://open.talk-fun.com/playout/PTk2OigjbipoIi8.html?st=VpPmVb32XJ80sVZcwYVATA&e=1539772257&from=cms101341,
 @property (nonatomic , copy) NSString* time ;//: 43:12
+@property (nonatomic , copy) NSString* live_id;
+@property (nonatomic , copy) NSString* access_token;
 
 @end
 

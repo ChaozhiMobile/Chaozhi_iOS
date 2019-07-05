@@ -14,6 +14,9 @@
 #import <StoreKit/StoreKit.h>
 #import "CZUpdateView.h"
 #import "CZStarView.h"
+#import "DBManager.h"
+#import "VideoItem.h"
+#import "TalkfunPlaybackViewController.h"
 
 #define TEACHERNUM 2.5
 
@@ -511,7 +514,16 @@
 // 马上试听
 - (IBAction)showPublicCourseAction:(id)sender {
     HomeTryVideoItem *tryVideoItem = [_categoryItems.try_video_list firstObject];
-    [BaseWebVC showWithContro:self withUrlStr:tryVideoItem.src withTitle:tryVideoItem.title isPresent:NO];
+    VideoItem *item = [[VideoItem alloc] init];
+    item.live_id = tryVideoItem.live_id;
+    item.product_id = @"0";
+    item.type = @"1";
+    TalkfunPlaybackViewController *vc = [[TalkfunPlaybackViewController alloc] init];
+    vc.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":tryVideoItem.access_token,@"type":item.type,@"product_id":item.product_id},@"data", nil];
+    vc.playbackID = item.live_id;
+    vc.videoItem = item;
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 // 微课视频详情

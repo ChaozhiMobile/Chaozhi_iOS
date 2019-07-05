@@ -21,15 +21,15 @@
 #import "UIImageView+WebCache.h"
 #import "TalkfunLoadingView.h"
 #import "TalkfunWatermark.h"
-
 #import "TalkfunCourseManagement.h"
-
 #import "TalkfunModulation.h"
 #import "BulletView.h"
 #import "TalkfunDownloadManager.h"
 #define ButtonViewHeight 35
 #define KIsiPhoneX  @available(iOS 11.0, *) && UIApplication.sharedApplication.keyWindow.safeAreaInsets.bottom > 0.0
 #import "AppDelegate.h"
+#import "DBManager.h"
+
 @interface TalkfunPlaybackViewController ()<UIScrollViewDelegate,TalkfunSDKPlaybackDelegate,UIAlertViewDelegate,UIGestureRecognizerDelegate>
 
 //SDK
@@ -105,6 +105,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.isPanForbid = YES; //禁用侧滑返回
+    
+    if ([[DBManager shareManager] existVideo:self.videoItem]) {
+        self.downloadCompleted = YES;
+    }
     
     self.view.backgroundColor = [UIColor whiteColor];
     [APPLICATION setStatusBarHidden:YES];

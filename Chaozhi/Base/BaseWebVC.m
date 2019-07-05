@@ -10,6 +10,7 @@
 #import "BaseWebVC.h"
 #import "WKDelegateController.h"
 #import <IAPShare.h>
+#import "DBManager.h"
 #import "VideoItem.h"
 #import "TalkfunItem.h"
 #import "TalkfunViewController.h"
@@ -261,15 +262,16 @@
         if ([item.type isEqualToString:@"1"]
             || [item.type isEqualToString:@"2"]) {
             TalkfunPlaybackViewController *vc = [[TalkfunPlaybackViewController alloc] init];
-            vc.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":item.token},@"data", nil];
+            vc.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":item.token,@"type":item.type,@"product_id":item.product_id},@"data", nil];
             vc.playbackID = item.live_id;
+            vc.videoItem = item;
             vc.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
         }
         if ([item.type isEqualToString:@"3"]) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 TalkfunViewController *myVC = [[TalkfunViewController alloc] init];
-                myVC.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":item.token,@"title":item.title},@"data",@"0",@"code", nil];;
+                myVC.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":item.token,@"live_id":item.live_id,@"product_id":item.product_id},@"data",@"0",@"code", nil];;
                 [self.navigationController pushViewController:myVC animated:YES];
             });
         }
@@ -282,15 +284,16 @@
                 if ([item.type isEqualToString:@"1"]
                     || [item.type isEqualToString:@"2"]) {
                     TalkfunPlaybackViewController *vc = [[TalkfunPlaybackViewController alloc] init];
-                    vc.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":talkfunItem.access_token},@"data", nil];
+                    vc.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":talkfunItem.access_token,@"type":item.type,@"product_id":item.product_id},@"data", nil];
                     vc.playbackID = item.live_id;
+                    vc.videoItem = item;
                     vc.hidesBottomBarWhenPushed = YES;
                     [self.navigationController pushViewController:vc animated:YES];
                 }
                 if ([item.type isEqualToString:@"3"]) {
                     dispatch_async(dispatch_get_main_queue(), ^{
                         TalkfunViewController *myVC = [[TalkfunViewController alloc] init];
-                        myVC.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":talkfunItem.access_token,@"title":item.title},@"data",@"0",@"code", nil];;
+                        myVC.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":talkfunItem.access_token,@"live_id":item.live_id,@"product_id":item.product_id},@"data",@"0",@"code", nil];;
                         [self.navigationController pushViewController:myVC animated:YES];
                     });
                 }

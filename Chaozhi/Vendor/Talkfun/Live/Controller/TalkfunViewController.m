@@ -214,6 +214,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.isPanForbid = YES; //禁用侧滑返回
+    
     //防止横屏进来
     CGFloat width =  (viewSize.width>viewSize.height)?viewSize.height:viewSize.width;
     CGFloat height = (viewSize.width>viewSize.height)?viewSize.width:viewSize.height;

@@ -1089,7 +1089,7 @@
                                                             <color key="textColor" red="0.70588235294117641" green="0.70588235294117641" blue="0.70588235294117641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzd-vG-guo">
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzd-vG-guo">
                                                             <rect key="frame" x="310" y="0.0" width="60" height="61"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
                                                             <state key="normal" image="icon_vgo"/>
@@ -1946,7 +1946,7 @@ VIP保障实验班</string>
                                 <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_home" translatesAutoresizingMaskIntoConstraints="NO" id="ZqU-DZ-2Ja">
-                                        <rect key="frame" x="158" y="0.0" width="59" height="44"/>
+                                        <rect key="frame" x="179.5" y="0.0" width="16" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="gE5-p2-Yyt"/>
                                         </constraints>

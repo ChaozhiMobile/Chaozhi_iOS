@@ -11,7 +11,10 @@
 #import "CZNotDataView.h"
 #import "CZAlertView.h"
 #import "CZProtocalWebVC.h"
+#import "DBManager.h"
+#import "VideoItem.h"
 #import "TalkfunItem.h"
+#import "TalkfunViewController.h"
 #import "TalkfunPlaybackViewController.h"
 
 @implementation StudyCourseCell
@@ -215,7 +218,7 @@
 
 #pragma mark - methods
 
-#pragma mark - 课程点击
+#pragma mark - 顶部课程
 - (void)courseClick:(UIButton *)btn {
     NSInteger index = btn.tag-1000;
     NSLog(@"点击页数：%ld",(long)index);
@@ -223,7 +226,7 @@
     //    StudyInfoItem *item = self.dataArr[index];
 }
 
-#pragma mark - 录播课程点击
+#pragma mark - 录播课程
 - (IBAction)luboAction:(id)sender {
     StudyInfoItem *items = _dataArr[currentPage];
     NSString *tikuStr = [NSString stringWithFormat:@"%@%@",H5_Video,items.product_id];
@@ -249,25 +252,6 @@
     StudyInfoItem *items = _dataArr[currentPage];
     NSString *tikuStr = [NSString stringWithFormat:@"%@%@",H5_Question,items.product_id];
     [BaseWebVC showWithContro:self withUrlStr:tikuStr withTitle:@"题库" isPresent:NO];
-}
-
-#pragma mark - 直播课程
-- (IBAction)liveCourseAction:(id)sender {
-    
-    LiveItem *liveItems = _liveArr.firstObject;
-    //    [BaseWebVC showWithContro:self withUrlStr:liveItems.live_url withTitle:liveItems.live_name isPresent:NO];
-    
-    NSDictionary *dic = @{@"type":@"2",@"live_id":liveItems.live_id};
-    [[NetworkManager sharedManager] postJSON:URL_LiveToken parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
-        if (status == Request_Success) {
-            TalkfunItem *item = [TalkfunItem mj_objectWithKeyValues:(NSDictionary *)responseData];
-            TalkfunPlaybackViewController *vc = [[TalkfunPlaybackViewController alloc] init];
-            vc.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":item.access_token,@"title":liveItems.live_name},@"data", nil];
-            vc.playbackID = liveItems.live_id;
-            vc.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:vc animated:YES];
-        }
-    }];
 }
 
 #pragma mark - UIScrollViewDelegate协议
@@ -352,12 +336,59 @@
     return cell;
 }
 
-// 学习课程点击
+#pragma mark - 最新学习课程
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     LearnCourseItem *item = _courseArr[indexPath.row];
-    [BaseWebVC showWithContro:self withUrlStr:item.view_url withTitle:item.name isPresent:NO];
+    VideoItem *videoItem = [[VideoItem alloc] init];
+    videoItem.type = item.type;;
+    videoItem.live_id = item.live_id;
+    StudyInfoItem *items = _dataArr[currentPage];
+    videoItem.product_id = items.product_id;
+    [self talkfunVideo:videoItem];
+}
+
+#pragma mark - 最新直播课程
+- (IBAction)liveCourseAction:(id)sender {
+    
+    LiveItem *liveItem = _liveArr.firstObject;
+    VideoItem *videoItem = [[VideoItem alloc] init];
+    videoItem.type = [liveItem.status isEqualToString:@"1"]?@"3":@"2";
+    videoItem.live_id = liveItem.live_id;
+    StudyInfoItem *items = _dataArr[currentPage];
+    videoItem.product_id = items.product_id;
+    [self talkfunVideo:videoItem];
+}
+
+#pragma mark - 欢拓原生视频
+/**
+ * 播放视频。类型1:录播; 2:回放; 3:直播 (后台回放和直播都是2，本地需要区分下)
+ */
+- (void)talkfunVideo:(VideoItem *)item {
+    NSString *type = [item.type isEqualToString:@"1"]?@"1":@"2";
+    NSDictionary *dic = @{@"type":type,@"live_id":item.live_id};
+    [[NetworkManager sharedManager] postJSON:URL_LiveToken parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
+        if (status == Request_Success) {
+            TalkfunItem *talkfunItem = [TalkfunItem mj_objectWithKeyValues:(NSDictionary *)responseData];
+            if ([item.type isEqualToString:@"1"]
+                || [item.type isEqualToString:@"2"]) {
+                TalkfunPlaybackViewController *vc = [[TalkfunPlaybackViewController alloc] init];
+                vc.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":talkfunItem.access_token,@"type":item.type,@"product_id":item.product_id},@"data", nil];
+                vc.playbackID = item.live_id;
+                vc.videoItem = item;
+                vc.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+            if ([item.type isEqualToString:@"3"]) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    TalkfunViewController *myVC = [[TalkfunViewController alloc] init];
+                    myVC.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":talkfunItem.access_token,@"live_id":item.live_id,@"product_id":item.product_id},@"data",@"0",@"code", nil];;
+                    [self.navigationController pushViewController:myVC animated:YES];
+                });
+            }
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -56,5 +56,7 @@
 @property (nonatomic, copy) NSString *name; //课程名称
 @property (nonatomic, copy) NSString *view_url; //课程观看地址
 @property (nonatomic, copy) NSString *ut; //课程学习时间
+@property (nonatomic, copy) NSString *live_id; //视频id playbackID
+@property (nonatomic, copy) NSString *type; //类型 1录播 2回放/直播
 
 @end
