@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TalkfunViewController : UIViewController
+@interface TalkfunViewController : BaseVC
 
 @property (nonatomic,strong) NSDictionary * res;
 

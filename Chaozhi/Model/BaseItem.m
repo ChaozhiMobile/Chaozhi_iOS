@@ -15,7 +15,11 @@
     
 }
 
-+ (NSDictionary<NSString *,id> *)modelCustomPropertyMapper{
++ (NSDictionary<NSString *,id> *)modelCustomPropertyMapper {
+    return @{@"ID":@"id"};
+}
+
++ (NSDictionary *)replacedKeyFromPropertyName {
     return @{@"ID":@"id"};
 }
 

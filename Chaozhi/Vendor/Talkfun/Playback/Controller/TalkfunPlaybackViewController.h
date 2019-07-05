@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TalkfunPlaybackViewController : UIViewController
+@interface TalkfunPlaybackViewController : BaseVC
 
 @property (nonatomic,strong) NSDictionary * res;
 //@property (nonatomic,assign) BOOL isProtrait;

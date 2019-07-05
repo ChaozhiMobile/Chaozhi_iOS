@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 
 @property (nonatomic, copy) NSString *access_key;
-@property (nonatomic, copy) NSString *access_token;
+@property (nonatomic, copy) NSString *access_token; //欢拓视频访问token
 @property (nonatomic, copy) NSString *miniprogramUrl;
 @property (nonatomic, copy) NSString *liveUrl;
 @property (nonatomic, copy) NSString *liveVideoUrl;

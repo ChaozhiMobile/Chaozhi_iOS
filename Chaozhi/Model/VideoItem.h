@@ -12,7 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface VideoItem : BaseItem
 
-@property (nonatomic, copy) NSString *type; //类型 1录播 2直播
+@property (nonatomic, copy) NSString *title; //标题
+@property (nonatomic, copy) NSString *token; //欢拓视频访问token
+@property (nonatomic, copy) NSString *type; //类型 1录播 2回放/直播
 @property (nonatomic, copy) NSString *product_id; //产品id
 @property (nonatomic, copy) NSString *live_id; //视频id playbackID
 @property (nonatomic, copy) NSString *time; //播放进度时长，单位秒

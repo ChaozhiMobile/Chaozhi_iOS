@@ -262,10 +262,8 @@
         if (status == Request_Success) {
             TalkfunItem *item = [TalkfunItem mj_objectWithKeyValues:(NSDictionary *)responseData];
             TalkfunPlaybackViewController *vc = [[TalkfunPlaybackViewController alloc] init];
-            vc.access_token = item.access_token;
             vc.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":item.access_token,@"title":liveItems.live_name},@"data", nil];
             vc.playbackID = liveItems.live_id;
-            //            vc.downloadCompleted = YES;
             vc.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
         }

@@ -122,15 +122,16 @@
     //    [self.networkDetector networkcheck];
 }
 
+#pragma mark StatusBarHidden
+
+- (BOOL)prefersStatusBarHidden{
+    return YES;
+}
+
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self addLoadingView];
-    self.navigationController.navigationBar.hidden = YES;
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    self.navigationController.navigationBar.hidden = NO;
+    self.navBar.hidden = YES;
 }
 
 - (void)addLoadingView{
@@ -704,11 +705,9 @@
         BOOL contains = [self.downloadManager containsPlaybackID:self.playbackID];
         if (contains) {
             NSString * token = _res[@"data"][@"access_token"];
-            NSString * title = [NSString stringWithFormat:@"%@;%@",[UserInfo share].phone,_res[@"data"][@"title"]];
-            [self.downloadManager appendDownloadWithAccessToken:token playbackID:self.playbackID title:title];
+            [self.downloadManager appendDownloadWithAccessToken:token playbackID:self.playbackID title:nil];
             [self.downloadManager startDownload:self.playbackID];
             [self.view downloadToast:@"该回放已下载，请到我的下载中查看" position:CGPointMake(ScreenSize.width - 70, CGRectGetMaxY(self.buttonView.frame)-5+19)];
-            //            [self.view toast:@"已在下载列表中" position:ToastPosition];
             return;
         }
         
@@ -729,8 +728,7 @@
         }else
         {
             NSString * token = _res[@"data"][@"access_token"];
-            NSString * title = [NSString stringWithFormat:@"%@;%@",[UserInfo share].phone,_res[@"data"][@"title"]];
-            [self.downloadManager appendDownloadWithAccessToken:token playbackID:self.playbackID title:title];
+            [self.downloadManager appendDownloadWithAccessToken:token playbackID:self.playbackID title:nil];
             [self.downloadManager startDownload:self.playbackID];
             PERFORM_IN_MAIN_QUEUE([self.view toast:@"已添加到下载列表" position:ToastPosition];)
             //            [self.view downloadToast:@"已开始下载" position:CGPointMake(ScreenSize.width - 70, CGRectGetMaxY(self.buttonView.frame)-5+19)];

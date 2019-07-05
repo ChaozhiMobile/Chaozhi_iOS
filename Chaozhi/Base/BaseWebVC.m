@@ -10,6 +10,10 @@
 #import "BaseWebVC.h"
 #import "WKDelegateController.h"
 #import <IAPShare.h>
+#import "VideoItem.h"
+#import "TalkfunItem.h"
+#import "TalkfunViewController.h"
+#import "TalkfunPlaybackViewController.h"
 
 @interface BaseWebVC ()<WKUIDelegate,WKNavigationDelegate,WKDelegate,UITextFieldDelegate>
 
@@ -206,6 +210,11 @@
                 [Utils isLoginWithJump:YES];
             }
         }
+        if ([dic[@"type"] isEqualToString:@"video"]) {
+            NSDictionary *videoDic = dic[@"data"];
+            VideoItem *item = [VideoItem mj_objectWithKeyValues:videoDic];
+            [self talkfunVideo:item];
+        }
     }
     
     if ([message.name isEqualToString:@"close"]) { //关闭当前页面
@@ -223,7 +232,6 @@
     if ([message.name isEqualToString:@"iapBuy"]) { //课程内购
         NSDictionary *dic = message.body;
         NSString *iapID = dic[@"iapID"];
-//        NSString *purchase = dic[@"purchase"];
         NSLog(@"课程内购ID：%@",iapID);
         
         if ([Utils isLoginWithJump:YES]) {
@@ -241,6 +249,53 @@
     
     if ([message.name isEqualToString:@"refresh"]) { //刷新
         [_webView reload];
+    }
+}
+
+#pragma mark - 欢拓原生视频
+/**
+ * 播放视频。类型1:录播; 2:回放; 3:直播 (后台回放和直播都是2，本地需要区分下)
+ */
+- (void)talkfunVideo:(VideoItem *)item {
+    if (![NSString isEmpty:item.token]) { //公开课视频token是H5传过来的
+        if ([item.type isEqualToString:@"1"]
+            || [item.type isEqualToString:@"2"]) {
+            TalkfunPlaybackViewController *vc = [[TalkfunPlaybackViewController alloc] init];
+            vc.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":item.token},@"data", nil];
+            vc.playbackID = item.live_id;
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        if ([item.type isEqualToString:@"3"]) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                TalkfunViewController *myVC = [[TalkfunViewController alloc] init];
+                myVC.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":item.token,@"title":item.title},@"data",@"0",@"code", nil];;
+                [self.navigationController pushViewController:myVC animated:YES];
+            });
+        }
+    } else {
+        NSString *type = [item.type isEqualToString:@"1"]?@"1":@"2";
+        NSDictionary *dic = @{@"type":type,@"live_id":item.live_id};
+        [[NetworkManager sharedManager] postJSON:URL_LiveToken parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
+            if (status == Request_Success) {
+                TalkfunItem *talkfunItem = [TalkfunItem mj_objectWithKeyValues:(NSDictionary *)responseData];
+                if ([item.type isEqualToString:@"1"]
+                    || [item.type isEqualToString:@"2"]) {
+                    TalkfunPlaybackViewController *vc = [[TalkfunPlaybackViewController alloc] init];
+                    vc.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":talkfunItem.access_token},@"data", nil];
+                    vc.playbackID = item.live_id;
+                    vc.hidesBottomBarWhenPushed = YES;
+                    [self.navigationController pushViewController:vc animated:YES];
+                }
+                if ([item.type isEqualToString:@"3"]) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        TalkfunViewController *myVC = [[TalkfunViewController alloc] init];
+                        myVC.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":talkfunItem.access_token,@"title":item.title},@"data",@"0",@"code", nil];;
+                        [self.navigationController pushViewController:myVC animated:YES];
+                    });
+                }
+            }
+        }];
     }
 }
 

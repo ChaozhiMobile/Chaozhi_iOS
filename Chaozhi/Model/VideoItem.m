@@ -10,4 +10,8 @@
 
 @implementation VideoItem
 
++ (NSDictionary *)replacedKeyFromPropertyName {
+    return @{@"live_id":@"id"};
+}
+
 @end

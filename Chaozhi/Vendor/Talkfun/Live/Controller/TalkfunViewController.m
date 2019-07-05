@@ -258,10 +258,18 @@
     
 }
 
+#pragma mark StatusBarHidden
+
+- (BOOL)prefersStatusBarHidden{
+    return YES;
+}
+
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self addLoadingView];
+    self.navBar.hidden = YES;
 }
+
 - (NSString*)dictionaryToJson:(NSDictionary *)dic
 
 {
