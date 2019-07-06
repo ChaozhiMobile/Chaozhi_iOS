@@ -157,7 +157,6 @@
 		A091D1302178FAF300CCDAF6 /* StudyInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A091D12F2178FAF300CCDAF6 /* StudyInfoItem.m */; };
 		A0AC089F22C4BC7D001832EA /* TalkfunSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A0AC071922C4BC7C001832EA /* TalkfunSDK.bundle */; };
 		A0AC08A022C4BC7D001832EA /* libTalkfunSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AC071C22C4BC7C001832EA /* libTalkfunSDK.a */; };
-		A0AC08A122C4BC7D001832EA /* libTalkfunSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AC072422C4BC7C001832EA /* libTalkfunSDK.a */; };
 		A0AC08A222C4BC7D001832EA /* TalkfunHttpTools.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC072B22C4BC7C001832EA /* TalkfunHttpTools.m */; };
 		A0AC08A322C4BC7D001832EA /* UITextField+HTtext.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC072D22C4BC7C001832EA /* UITextField+HTtext.m */; };
 		A0AC08A422C4BC7D001832EA /* NetworkDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC072F22C4BC7C001832EA /* NetworkDetector.m */; };
@@ -403,6 +402,8 @@
 		A0AC099622C4BC7E001832EA /* 专辑-点击.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC089E22C4BC7D001832EA /* 专辑-点击.png */; };
 		A0C1257321BC021B0026430E /* CZStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C1257221BC021B0026430E /* CZStarView.m */; };
 		A0CB7CB922C65D8800069B34 /* TalkfunItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CB7CB822C65D8800069B34 /* TalkfunItem.m */; };
+		A0E0D3CC22D0E3A100296851 /* TalkfunMultifunctionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E0D3C922D0E3A100296851 /* TalkfunMultifunctionTool.m */; };
+		A0E0D3CD22D0E3A100296851 /* TalkfunMultifunctionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E0D3CA22D0E3A100296851 /* TalkfunMultifunctionButton.m */; };
 		A0E8981D22CF22C600DB09BA /* VideoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E8981B22CF22C600DB09BA /* VideoItem.m */; };
 		A0E8982122CF265800DB09BA /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E8982022CF265800DB09BA /* DBManager.m */; };
 /* End PBXBuildFile section */
@@ -648,7 +649,6 @@
 		A0AC072122C4BC7C001832EA /* TalkfunSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunSDK.h; sourceTree = "<group>"; };
 		A0AC072222C4BC7C001832EA /* TalkfunSDKRtcPch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunSDKRtcPch.h; sourceTree = "<group>"; };
 		A0AC072322C4BC7C001832EA /* TalkfunMoviePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunMoviePlayer.h; sourceTree = "<group>"; };
-		A0AC072422C4BC7C001832EA /* libTalkfunSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTalkfunSDK.a; sourceTree = "<group>"; };
 		A0AC072522C4BC7C001832EA /* TalkfunDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunDownloadManager.h; sourceTree = "<group>"; };
 		A0AC072822C4BC7C001832EA /* TalkfunModulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunModulation.h; sourceTree = "<group>"; };
 		A0AC072A22C4BC7C001832EA /* TalkfunHttpTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunHttpTools.h; sourceTree = "<group>"; };
@@ -992,6 +992,10 @@
 		A0C1257221BC021B0026430E /* CZStarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZStarView.m; sourceTree = "<group>"; };
 		A0CB7CB722C65D8800069B34 /* TalkfunItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TalkfunItem.h; sourceTree = "<group>"; };
 		A0CB7CB822C65D8800069B34 /* TalkfunItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TalkfunItem.m; sourceTree = "<group>"; };
+		A0E0D3C822D0E3A100296851 /* TalkfunMultifunctionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunMultifunctionButton.h; sourceTree = "<group>"; };
+		A0E0D3C922D0E3A100296851 /* TalkfunMultifunctionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunMultifunctionTool.m; sourceTree = "<group>"; };
+		A0E0D3CA22D0E3A100296851 /* TalkfunMultifunctionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunMultifunctionButton.m; sourceTree = "<group>"; };
+		A0E0D3CB22D0E3A100296851 /* TalkfunMultifunctionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunMultifunctionTool.h; sourceTree = "<group>"; };
 		A0E8981B22CF22C600DB09BA /* VideoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoItem.m; sourceTree = "<group>"; };
 		A0E8981C22CF22C600DB09BA /* VideoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoItem.h; sourceTree = "<group>"; };
 		A0E8981F22CF265800DB09BA /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
@@ -1013,7 +1017,6 @@
 				20D3D36F22C2283700560A74 /* libiconv.tbd in Frameworks */,
 				20D3D36D22C2282A00560A74 /* libz.tbd in Frameworks */,
 				20D3D3B022C22DD600560A74 /* AudioToolbox.framework in Frameworks */,
-				A0AC08A122C4BC7D001832EA /* libTalkfunSDK.a in Frameworks */,
 				20D3D3AE22C22DCD00560A74 /* CoreAudio.framework in Frameworks */,
 				20D3D3AC22C22DC500560A74 /* MediaPlayer.framework in Frameworks */,
 				20D3D3AA22C22DBC00560A74 /* OpenGLES.framework in Frameworks */,
@@ -1652,7 +1655,6 @@
 		A0AC071822C4BC7C001832EA /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				A0AC072422C4BC7C001832EA /* libTalkfunSDK.a */,
 				A0AC072022C4BC7C001832EA /* TalkfunCacheImage.h */,
 				A0AC072522C4BC7C001832EA /* TalkfunDownloadManager.h */,
 				A0AC072322C4BC7C001832EA /* TalkfunMoviePlayer.h */,
@@ -1936,6 +1938,7 @@
 			children = (
 				A0AC07B322C4BC7C001832EA /* Controller */,
 				A0AC07E722C4BC7C001832EA /* View */,
+				A0E0D3C722D0E37700296851 /* Model */,
 			);
 			path = Live;
 			sourceTree = "<group>";
@@ -2320,6 +2323,17 @@
 				A0C1257221BC021B0026430E /* CZStarView.m */,
 			);
 			path = StarView;
+			sourceTree = "<group>";
+		};
+		A0E0D3C722D0E37700296851 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A0E0D3C822D0E3A100296851 /* TalkfunMultifunctionButton.h */,
+				A0E0D3CA22D0E3A100296851 /* TalkfunMultifunctionButton.m */,
+				A0E0D3CB22D0E3A100296851 /* TalkfunMultifunctionTool.h */,
+				A0E0D3C922D0E3A100296851 /* TalkfunMultifunctionTool.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		A0E8981E22CF265800DB09BA /* FMDB */ = {
@@ -2761,6 +2775,7 @@
 				A020B05D214AAB150011BB4F /* MEView.m in Sources */,
 				A0AC08CA22C4BC7D001832EA /* UIScrollView+TalkfunScrollView.m in Sources */,
 				A0E8981D22CF22C600DB09BA /* VideoItem.m in Sources */,
+				A0E0D3CC22D0E3A100296851 /* TalkfunMultifunctionTool.m in Sources */,
 				A0AC08A322C4BC7D001832EA /* UITextField+HTtext.m in Sources */,
 				A020B075214AAB150011BB4F /* LDNetDiagnoService.m in Sources */,
 				A0AC08D622C4BC7D001832EA /* AlbumModel.m in Sources */,
@@ -2783,6 +2798,7 @@
 				A0E8982122CF265800DB09BA /* DBManager.m in Sources */,
 				A00FA9DC2169DB0000F4DA5B /* CZSelectCourseVC.m in Sources */,
 				A0AC08AD22C4BC7D001832EA /* TalkfunModulation.m in Sources */,
+				A0E0D3CD22D0E3A100296851 /* TalkfunMultifunctionButton.m in Sources */,
 				A0AC091122C4BC7E001832EA /* TalkfunGuidenceButton.m in Sources */,
 				A0AC08D422C4BC7D001832EA /* TalkfunCourseManagement.m in Sources */,
 				A0AC08FE22C4BC7E001832EA /* ckickUILabel.m in Sources */,
@@ -3004,7 +3020,7 @@
 				CODE_SIGN_ENTITLEMENTS = Chaozhi/Chaozhi.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = SD4544P5D9;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3080,7 +3096,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.czjy.chaozhi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "065790ea-d817-4376-9f63-d632a80ca061";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = CZJYDev;
 				STRIP_SWIFT_SYMBOLS = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -3093,9 +3109,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Chaozhi/Chaozhi.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = SD4544P5D9;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3171,7 +3187,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.czjy.chaozhi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "75ee8f25-9458-4b56-892c-73559e6ce7d6";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = CZJYDis;
 				STRIP_SWIFT_SYMBOLS = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;

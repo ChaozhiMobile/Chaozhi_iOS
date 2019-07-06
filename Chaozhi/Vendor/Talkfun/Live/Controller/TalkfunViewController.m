@@ -47,6 +47,7 @@
 #import "TalkfunScoreView.h"
 #import "TalkfunWatermark.h"
 #import "TalkfunModulation.h"
+#import "TalkfunMultifunctionTool.h"
 #define TrailingValue 40
 #define NetworkStatusViewWidth 147
 #define ButtonViewHeight 35
@@ -617,11 +618,14 @@
             weakSelf.tipsLabel = nil;
             
         });
-        
-        
-        
     }];
     
+    //TODO:直播时长
+    [self.talkfunSDK on:TALKFUN_EVENT_LIVE_DURATION callback:^(id obj) {
+        
+        NSString *duration = [TalkfunMultifunctionTool getLiveDuration:obj];
+        NSLog(@"源数据%@ 直播时长========%@",obj,duration);
+    }];
     
     //投票
     //投票开始

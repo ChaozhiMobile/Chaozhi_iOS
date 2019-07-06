@@ -82,6 +82,8 @@ typedef enum: NSUInteger{
 //观看端:叫代理 对象从本地获取 图片, 然后通过 返回
 - (UIImage*)getImageWithUrl:(NSString*)URL;
 
+//画板当前页的白板与ppt的frame
+- (void)whiteboardPageFrame:(CGRect)frame;
 @end
 
 
@@ -97,6 +99,12 @@ typedef enum: NSUInteger{
 
 /** 代理对象 */
 @property (nonatomic, weak) id<TalkfunWhiteboardDelegate> delegate;
+
+
+
+//whiteboardBackgroundColor 要用RGB色值
+//[UIColor colorWithRed:255/255 green:255/255 blue:255/255 alpha:1];
+
 /** 新建画板的背景色 */
 @property(nonatomic,strong)UIColor *whiteboardBackgroundColor;
 //画板类型

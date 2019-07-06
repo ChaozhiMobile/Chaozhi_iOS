@@ -85,9 +85,9 @@ extern NSString * const TALKFUN_EVENT_VOD_MESSAGE_REFRESH;  //刷新聊天列表
 extern NSString * const TALKFUN_EVENT_VOD_MESSAGE_SCROOL;   //获得聊天滚动的索引，必须使用TALKFUN_EVENT_VOD_MESSAGE_REFRESH获得的数据列表
 extern NSString * const TALKFUN_EVENT_VOD_CHAPTER_LIST;     //章节列表
 
+extern NSString * const TALKFUN_EVENT_WHITEOARD_PAGE_FRAME;     //画板当前页的白板与ppt的frame
 
-
-
+extern NSString * const TALKFUN_EVENT_SCORE_CONFIG;   //评分配置
 /**
  *  用户事件（download）
  */
