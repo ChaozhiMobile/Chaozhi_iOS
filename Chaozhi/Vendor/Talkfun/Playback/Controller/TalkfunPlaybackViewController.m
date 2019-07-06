@@ -708,10 +708,16 @@
         [self.buttonView selectButton:(TalkfunNewButtonViewButton *)button];
         [self.scrollView setContentOffset:CGPointMake(self.scrollView.frame.size.width * (button.tag - 500), 0) animated:NO];
     }else{
+        
+        if (![Utils isLoginWithJump:NO]) {
+            [Utils showToast:@"请先登录后下载"];
+            return;
+        }
+        
         BOOL contains = [self.downloadManager containsPlaybackID:self.playbackID];
         if (contains) {
-            [self.view downloadToast:@"该回放已下载" position:CGPointMake(ScreenSize.width - 70, CGRectGetMaxY(self.buttonView.frame)-5+19)];
-            //            [self.view toast:@"已在下载列表中" position:ToastPosition];
+            [[DBManager shareManager] insertVideo:self.videoItem];
+            [self.view downloadToast:@"该回放已下载，请到我的下载中查看" position:CGPointMake(ScreenSize.width - 70, CGRectGetMaxY(self.buttonView.frame)-5+19)];
             return;
         }
         
@@ -1242,7 +1248,8 @@ static BOOL fromLandscape = NO;
         NSString * title = [NSString stringWithFormat:@"%@%@",[UserInfo share].phone,weakSelf.res[@"data"][@"title"]];
         [weakSelf.downloadManager appendDownloadWithAccessToken:token?token:weakSelf.access_token playbackID:weakSelf.playbackID title:title];
         [weakSelf.downloadManager startDownload:weakSelf.playbackID];
-        PERFORM_IN_MAIN_QUEUE([weakSelf.view toast:@"已添加到下载列表" position:ToastPosition];)
+        [[DBManager shareManager] insertVideo:self.videoItem];
+        PERFORM_IN_MAIN_QUEUE([self.view toast:@"已开始下载，请到我的下载中查看" position:ToastPosition];)
     }]];
 }
 #pragma mark - 旋转

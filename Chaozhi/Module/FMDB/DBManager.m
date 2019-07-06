@@ -104,6 +104,9 @@ static DBManager *_manager = nil;
  @param item 视频model
  */
 - (void)insertVideo:(VideoItem *)item {
+    if ([[DBManager shareManager] existVideo:item]) {
+        return;
+    }
     BOOL result = [self.db executeUpdate:@"insert into t_video (type,product_id,live_id,user_id) values (?,?,?,?)",item.type,item.product_id,item.live_id,[UserInfo share].ID];
     if (result) {
         NSLog(@"新增视频数据成功");

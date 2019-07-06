@@ -396,7 +396,8 @@
     if (tag> self.dataSource.count) {
         return;
     }
-    DownloadListModel * model = self.dataSource[tag];
+    DownloadListModel *model = self.dataSource[tag];
+    VideoItem *item = self.videoArr[tag];
     if ([btn.titleLabel.text isEqualToString:@"下载"] || [btn.titleLabel.text isEqualToString:@"继续下载"] || [btn.titleLabel.text isEqualToString:@"重新下载"] || [btn.titleLabel.text isEqualToString:@"下载错误"]) {
         [self.downloadManager startDownload:model.playbackID];
     }
@@ -409,6 +410,7 @@
             playbackVC.playbackID = model.playbackID;
             playbackVC.res = @{@"data":@{@"access_token":model.access_token},TalkfunPlaybackID:model.playbackID};
             playbackVC.downloadCompleted = YES;//下载完成
+            playbackVC.videoItem = item;
             [self.navigationController pushViewController:playbackVC animated:YES];
         }else if ([videoType isEqualToString:@"2"]) {
             
