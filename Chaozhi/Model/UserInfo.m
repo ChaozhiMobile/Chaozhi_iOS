@@ -23,7 +23,7 @@ static NSUserDefaults *_defaults = nil;
     });
     NSDictionary *infoDic = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserInfo"];
     if (infoDic.allKeys.count>0) {
-        [_userInfo setValuesForKeysWithDictionary:infoDic];
+        _userInfo = [UserInfo mj_objectWithKeyValues:(NSDictionary *)infoDic];
     }
     return _userInfo;
 }

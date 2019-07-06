@@ -49,7 +49,7 @@ static DBManager *_manager = nil;
     NSInteger oldVersion = [[NSUserDefaults standardUserDefaults] integerForKey:kdbManagerVersion];
     if (oldVersion >= DB_MANAGER_VER) {
         if ([self.db open]) {
-            BOOL result = [self.db executeUpdate:@"create table if not exists t_video (id integer primary key autoincrement,type text,product_id text,live_id text,user_id text)"];
+            BOOL result = [self.db executeUpdate:@"create table if not exists t_video (type text,product_id text,live_id text,user_id text)"];
             if (result) {
                 NSLog(@"t_video表创建成功");
             } else {
