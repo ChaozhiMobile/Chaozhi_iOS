@@ -519,7 +519,7 @@
     item.product_id = @"0";
     item.type = @"1";
     TalkfunPlaybackViewController *vc = [[TalkfunPlaybackViewController alloc] init];
-    vc.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":tryVideoItem.access_token,@"type":item.type,@"product_id":item.product_id},@"data", nil];
+    vc.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":tryVideoItem.access_token},@"data", nil];
     vc.playbackID = item.live_id;
     vc.videoItem = item;
     vc.hidesBottomBarWhenPushed = YES;

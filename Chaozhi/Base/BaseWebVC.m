@@ -214,6 +214,9 @@
         if ([dic[@"type"] isEqualToString:@"video"]) {
             NSDictionary *videoDic = dic[@"data"];
             VideoItem *item = [VideoItem mj_objectWithKeyValues:videoDic];
+            if ([NSString isEmpty:item.product_id]) {
+                item.product_id = @"0";
+            }
             [self talkfunVideo:item];
         }
     }
@@ -262,7 +265,7 @@
         if ([item.type isEqualToString:@"1"]
             || [item.type isEqualToString:@"2"]) {
             TalkfunPlaybackViewController *vc = [[TalkfunPlaybackViewController alloc] init];
-            vc.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":item.token,@"type":item.type,@"product_id":item.product_id},@"data", nil];
+            vc.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":item.token},@"data", nil];
             vc.playbackID = item.live_id;
             vc.videoItem = item;
             vc.hidesBottomBarWhenPushed = YES;
@@ -271,7 +274,8 @@
         if ([item.type isEqualToString:@"3"]) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 TalkfunViewController *myVC = [[TalkfunViewController alloc] init];
-                myVC.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":item.token,@"live_id":item.live_id,@"product_id":item.product_id},@"data",@"0",@"code", nil];;
+                myVC.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":item.token},@"data",@"0",@"code", nil];
+                myVC.videoItem = item;
                 [self.navigationController pushViewController:myVC animated:YES];
             });
         }
@@ -284,7 +288,7 @@
                 if ([item.type isEqualToString:@"1"]
                     || [item.type isEqualToString:@"2"]) {
                     TalkfunPlaybackViewController *vc = [[TalkfunPlaybackViewController alloc] init];
-                    vc.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":talkfunItem.access_token,@"type":item.type,@"product_id":item.product_id},@"data", nil];
+                    vc.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":talkfunItem.access_token},@"data", nil];
                     vc.playbackID = item.live_id;
                     vc.videoItem = item;
                     vc.hidesBottomBarWhenPushed = YES;
@@ -293,7 +297,8 @@
                 if ([item.type isEqualToString:@"3"]) {
                     dispatch_async(dispatch_get_main_queue(), ^{
                         TalkfunViewController *myVC = [[TalkfunViewController alloc] init];
-                        myVC.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":talkfunItem.access_token,@"live_id":item.live_id,@"product_id":item.product_id},@"data",@"0",@"code", nil];;
+                        myVC.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":talkfunItem.access_token},@"data",@"0",@"code", nil];
+                        myVC.videoItem = item;
                         [self.navigationController pushViewController:myVC animated:YES];
                     });
                 }

@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VideoItem.h"
 
 @interface TalkfunViewController : BaseVC
+
+/** 视频model */
+@property (nonatomic,retain) VideoItem *videoItem;
 
 @property (nonatomic,strong) NSDictionary * res;
 

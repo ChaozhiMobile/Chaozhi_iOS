@@ -272,6 +272,11 @@
     self.navBar.hidden = YES;
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self uploadProgress]; //上传视频进度到后台
+}
+
 - (NSString*)dictionaryToJson:(NSDictionary *)dic
 
 {
@@ -2416,6 +2421,17 @@ static CGRect originPPTFrame;
     
     QUITCONTROLLER(self)
 }
+
+#pragma mark - 上传视频进度到后台
+- (void)uploadProgress {
+    NSDictionary *dic = @{@"type":self.videoItem.type,@"product_id":self.videoItem.product_id,@"live_id":self.videoItem.live_id,@"time":@"0",@"total_time":@"0"};
+    [[NetworkManager sharedManager] postJSON:URL_LiveProgress parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
+        if (status == Request_Success) {
+            
+        }
+    }];
+}
+
 - (void)timerInvalidate
 {
     dispatch_async(dispatch_get_main_queue(), ^{

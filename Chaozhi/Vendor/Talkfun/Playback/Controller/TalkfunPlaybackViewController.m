@@ -140,6 +140,11 @@
     self.navBar.hidden = YES;
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self uploadProgress]; //上传视频进度到后台
+}
+
 - (void)addLoadingView{
     
     if (self.isLoading) {
@@ -406,7 +411,7 @@
         if (weakSelf.btnNames.count > 3) {
             //[[NSNotificationCenter defaultCenter] postNotificationName:@"VodStop" object:nil];
         }
-        
+        [self uploadProgress]; //上传视频进度到后台
     }];
     //监测视频播放进度
     [self.talkfunSDK on:TALKFUN_EVENT_VOD_DURATION callback:^(id obj) {
@@ -507,6 +512,20 @@
     
 }
 
+#pragma mark - ***上传视频进度到后台***
+- (void)uploadProgress {
+    if ([self.videoItem.product_id isEqualToString:@"0"]) { //首页公开课不上传进度
+        return;
+    }
+    self.videoItem.time = [NSString stringWithFormat:@"%d",(int)self.playDuration];
+    self.videoItem.total_time = [NSString stringWithFormat:@"%d",(int)self.liveLong];
+    NSDictionary *dic = @{@"type":self.videoItem.type,@"product_id":self.videoItem.product_id,@"live_id":self.videoItem.live_id,@"time":self.videoItem.time,@"total_time":self.videoItem.total_time};
+    [[NetworkManager sharedManager] postJSON:URL_LiveProgress parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
+        if (status == Request_Success) {
+            
+        }
+    }];
+}
 
 #pragma mark - 按钮点击事件
 - (void)pptsButtonClicked:(UIButton *)button
@@ -554,7 +573,6 @@
                 [weakSelf.talkfunSDK destroy];
                 [weakSelf timerInvalidate];
                 QUITCONTROLLER(weakSelf)
-                
             }
         }];
         //        }
