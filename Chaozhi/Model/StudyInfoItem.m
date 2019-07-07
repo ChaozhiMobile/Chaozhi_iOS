@@ -86,3 +86,20 @@
 }
 
 @end
+
+@implementation YuekaoItem
+
++ (NSDictionary *)replacedKeyFromPropertyName {
+    return @{
+             @"ID":@"id",
+             };
+}
+
++ (NSDictionary *)mj_objectClassInArray
+{
+    return @{
+             @"exam_month":[YuekaoItem class]
+             };
+}
+
+@end

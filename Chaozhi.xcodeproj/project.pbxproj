@@ -404,6 +404,7 @@
 		A0CB7CB922C65D8800069B34 /* TalkfunItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CB7CB822C65D8800069B34 /* TalkfunItem.m */; };
 		A0E0D3CC22D0E3A100296851 /* TalkfunMultifunctionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E0D3C922D0E3A100296851 /* TalkfunMultifunctionTool.m */; };
 		A0E0D3CD22D0E3A100296851 /* TalkfunMultifunctionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E0D3CA22D0E3A100296851 /* TalkfunMultifunctionButton.m */; };
+		A0E0D3D022D2299800296851 /* protocol.css in Resources */ = {isa = PBXBuildFile; fileRef = A0E0D3CF22D2299800296851 /* protocol.css */; };
 		A0E8981D22CF22C600DB09BA /* VideoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E8981B22CF22C600DB09BA /* VideoItem.m */; };
 		A0E8982122CF265800DB09BA /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E8982022CF265800DB09BA /* DBManager.m */; };
 /* End PBXBuildFile section */
@@ -996,6 +997,7 @@
 		A0E0D3C922D0E3A100296851 /* TalkfunMultifunctionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunMultifunctionTool.m; sourceTree = "<group>"; };
 		A0E0D3CA22D0E3A100296851 /* TalkfunMultifunctionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunMultifunctionButton.m; sourceTree = "<group>"; };
 		A0E0D3CB22D0E3A100296851 /* TalkfunMultifunctionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunMultifunctionTool.h; sourceTree = "<group>"; };
+		A0E0D3CF22D2299800296851 /* protocol.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = protocol.css; sourceTree = "<group>"; };
 		A0E8981B22CF22C600DB09BA /* VideoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoItem.m; sourceTree = "<group>"; };
 		A0E8981C22CF22C600DB09BA /* VideoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoItem.h; sourceTree = "<group>"; };
 		A0E8981F22CF265800DB09BA /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
@@ -1188,6 +1190,7 @@
 			isa = PBXGroup;
 			children = (
 				A020AF76214AAB130011BB4F /* Assets.xcassets */,
+				A0E0D3CE22D2295D00296851 /* H5 */,
 				A020AF77214AAB130011BB4F /* Animation */,
 				A020AF9C214AAB130011BB4F /* Json */,
 			);
@@ -2336,6 +2339,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		A0E0D3CE22D2295D00296851 /* H5 */ = {
+			isa = PBXGroup;
+			children = (
+				A0E0D3CF22D2299800296851 /* protocol.css */,
+			);
+			path = H5;
+			sourceTree = "<group>";
+		};
 		A0E8981E22CF265800DB09BA /* FMDB */ = {
 			isa = PBXGroup;
 			children = (
@@ -2522,6 +2533,7 @@
 				A0AC090222C4BC7E001832EA /* TalkfunSignViewController.xib in Resources */,
 				A020B047214AAB150011BB4F /* ic_refresh_image_008@2x.png in Resources */,
 				A01F609022CB8CD0001133C4 /* 下载-默认.png in Resources */,
+				A0E0D3D022D2299800296851 /* protocol.css in Resources */,
 				A0AC097622C4BC7E001832EA /* 灰色鲜花.png in Resources */,
 				A0AC098422C4BC7E001832EA /* 组 103.png in Resources */,
 				A020B02E214AAB150011BB4F /* ic_refresh_image_019@2x.png in Resources */,

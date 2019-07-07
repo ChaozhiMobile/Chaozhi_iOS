@@ -19,6 +19,9 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = kWhiteColor;
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(aboutAction)];
+    [self.loginIconImgView addGestureRecognizer:tap];
 }
 
 #pragma mark - methods
@@ -27,6 +30,11 @@
 - (void)backAction {
     self.tabBarController.selectedIndex = 0;
     [self.navigationController popViewControllerAnimated:NO];
+}
+
+// 关于超职教育
+- (void)aboutAction {
+    [BaseWebVC showWithContro:self withUrlStr:H5_About withTitle:@"关于超职教育" isPresent:NO];
 }
 
 // 登录

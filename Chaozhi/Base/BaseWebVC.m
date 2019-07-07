@@ -276,6 +276,7 @@
                 TalkfunViewController *myVC = [[TalkfunViewController alloc] init];
                 myVC.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":item.token},@"data",@"0",@"code", nil];
                 myVC.videoItem = item;
+                myVC.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:myVC animated:YES];
             });
         }
@@ -299,6 +300,7 @@
                         TalkfunViewController *myVC = [[TalkfunViewController alloc] init];
                         myVC.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":talkfunItem.access_token},@"data",@"0",@"code", nil];
                         myVC.videoItem = item;
+                        myVC.hidesBottomBarWhenPushed = YES;
                         [self.navigationController pushViewController:myVC animated:YES];
                     });
                 }

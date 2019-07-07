@@ -11,6 +11,7 @@
 @class NewestInfoItem;
 @class LiveItem;
 @class LearnCourseItem;
+@class YuekaoItem;
 
 @interface StudyInfoItem : BaseItem
 
@@ -32,6 +33,7 @@
 
 @property (nonatomic,retain) NSArray *live_list; //直播数组
 @property (nonatomic,retain) NSArray *learn_course_list; //最新学习课程数组
+@property (nonatomic,retain) YuekaoItem *exam_month; //月考信息
 
 @end
 
@@ -58,5 +60,21 @@
 @property (nonatomic, copy) NSString *ut; //课程学习时间
 @property (nonatomic, copy) NSString *live_id; //视频id playbackID
 @property (nonatomic, copy) NSString *type; //类型 1录播 2回放/直播
+
+@end
+
+@interface YuekaoItem : BaseItem
+
+@property (nonatomic, copy) NSString *status; //0 未考试 1已考试
+@property (nonatomic, copy) NSString *score; //考试得分 -1代表未参加考试
+@property (nonatomic, copy) NSString *course_id; //课程id
+@property (nonatomic, copy) NSString *ID; //月考id
+@property (nonatomic, copy) NSString *month; //月
+@property (nonatomic, copy) NSString *difficulty; //1
+@property (nonatomic, copy) NSString *rank; //2
+@property (nonatomic, copy) NSString *date; //日期
+@property (nonatomic, copy) NSString *question_num; //月考题数
+@property (nonatomic, copy) NSString *year; //年
+@property (nonatomic, copy) NSString *name; //月考名称
 
 @end

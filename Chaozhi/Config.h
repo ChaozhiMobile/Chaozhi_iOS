@@ -72,4 +72,8 @@ NSString *h5Url(void);
 
 #define H5_Privacy @"#/hybrid/chaozhi/privacy" //隐私协议
 
+#define H5_MonthlyResult @"#/hybrid/study/library/monthly/result/" //月考考试结果
+#define H5_MonthlyAnswer @"#/hybrid/study/library/monthly/answer/" //月考考试
+#define H5_MonthlyList @"#/hybrid/study/library/monthly/" //月考列表
+
 @end

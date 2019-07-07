@@ -10,6 +10,7 @@
 
 @interface CZLoginVC : BaseVC
 
+@property (weak, nonatomic) IBOutlet UIImageView *loginIconImgView;
 @property (weak, nonatomic) IBOutlet UITextField *phoneTF;
 @property (weak, nonatomic) IBOutlet UITextField *pswTF;
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;

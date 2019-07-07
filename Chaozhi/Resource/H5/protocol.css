@@ -1,0 +1,8 @@
+.dialog-agreement {
+  overflow-y: auto;
+  position: relative;
+}
+.dialog-agreement-content {
+  background: url("file:///android_asset/protocol.png") no-repeat 80% bottom;
+  background-size: 200px;
+}

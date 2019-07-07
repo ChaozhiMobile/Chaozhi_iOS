@@ -37,6 +37,13 @@
 @property (weak, nonatomic) IBOutlet UIView *topBGBackView;
 @property (weak, nonatomic) IBOutlet UIScrollView *bgScroView;
 
+@property (weak, nonatomic) IBOutlet UIView *yuekaoView;
+@property (weak, nonatomic) IBOutlet UIImageView *yuekaoIconImgView;
+@property (weak, nonatomic) IBOutlet UIButton *yuekaoTitleBtn;
+@property (weak, nonatomic) IBOutlet UILabel *yuekaoTimeLab;
+@property (weak, nonatomic) IBOutlet UILabel *yuekaoScoreLab;
+@property (weak, nonatomic) IBOutlet UIButton *yuekaoEnterBtn;
+
 @property (weak, nonatomic) IBOutlet UIView *liveCourseView;
 @property (weak, nonatomic) IBOutlet UIImageView *liveCourseIconImgView;
 @property (weak, nonatomic) IBOutlet UILabel *liveCourseTitleLB;
@@ -47,14 +54,19 @@
 @property (weak, nonatomic) IBOutlet UILabel *studyCourseTipLab;
 @property (weak, nonatomic) IBOutlet UIView *studyCourseLineView;
 @property (weak, nonatomic) IBOutlet UIView *titleView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tabHeightConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *studyCourseTipConstraint;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *yuekaoConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *yuekaoTopConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *liveCourseConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *liveCourseTopConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *studyCourseTipConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *studyCourseTipTopConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tabHeightConstraint;
 
 @property (strong, nonatomic) NSArray <StudyInfoItem *>*dataArr;
 @property (strong, nonatomic) NSArray <LiveItem *>*liveArr;
 @property (strong, nonatomic) NSArray <LearnCourseItem *>*courseArr;
+@property (strong, nonatomic) YuekaoItem *yuekaoItem;
 
 @end
 
@@ -254,6 +266,66 @@
     [BaseWebVC showWithContro:self withUrlStr:tikuStr withTitle:@"题库" isPresent:NO];
 }
 
+#pragma mark - 最新月考
+/** 更多月考成绩 */
+- (IBAction)showMoreYuekaoAction:(id)sender {
+    [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_MonthlyList,_yuekaoItem.course_id] withTitle:@"我的月考" isPresent:NO];
+}
+
+/** 月考结果页 */
+- (IBAction)yuekaoResultAction:(id)sender {
+    [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@/%@",H5_MonthlyResult,_yuekaoItem.course_id,_yuekaoItem.ID] withTitle:@"" isPresent:NO];
+}
+
+/** 月考参加考试/再做一遍 */
+- (IBAction)yuekaoAction:(id)sender {
+    [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@/%@",H5_MonthlyAnswer,_yuekaoItem.course_id,_yuekaoItem.ID] withTitle:@"" isPresent:NO];
+}
+
+#pragma mark - 最新直播课程
+- (IBAction)liveCourseAction:(id)sender {
+    
+    LiveItem *liveItem = _liveArr.firstObject;
+    VideoItem *videoItem = [[VideoItem alloc] init];
+    videoItem.type = [liveItem.status isEqualToString:@"1"]?@"3":@"2";
+    videoItem.live_id = liveItem.live_id;
+    StudyInfoItem *items = _dataArr[currentPage];
+    videoItem.product_id = items.product_id;
+    [self talkfunVideo:videoItem];
+}
+
+#pragma mark - 欢拓原生视频
+/**
+ * 播放视频。类型1:录播; 2:回放; 3:直播 (后台回放和直播都是2，本地需要区分下)
+ */
+- (void)talkfunVideo:(VideoItem *)item {
+    NSString *type = [item.type isEqualToString:@"1"]?@"1":@"2";
+    NSDictionary *dic = @{@"type":type,@"live_id":item.live_id};
+    [[NetworkManager sharedManager] postJSON:URL_LiveToken parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
+        if (status == Request_Success) {
+            TalkfunItem *talkfunItem = [TalkfunItem mj_objectWithKeyValues:(NSDictionary *)responseData];
+            if ([item.type isEqualToString:@"1"]
+                || [item.type isEqualToString:@"2"]) {
+                TalkfunPlaybackViewController *vc = [[TalkfunPlaybackViewController alloc] init];
+                vc.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":talkfunItem.access_token},@"data", nil];
+                vc.playbackID = item.live_id;
+                vc.videoItem = item;
+                vc.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+            if ([item.type isEqualToString:@"3"]) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    TalkfunViewController *myVC = [[TalkfunViewController alloc] init];
+                    myVC.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":talkfunItem.access_token},@"data",@"0",@"code", nil];
+                    myVC.videoItem = item;
+                    myVC.hidesBottomBarWhenPushed = YES;
+                    [self.navigationController pushViewController:myVC animated:YES];
+                });
+            }
+        }
+    }];
+}
+
 #pragma mark - UIScrollViewDelegate协议
 
 //减速滑动(Decelerating:使减速的)
@@ -269,14 +341,40 @@
     StudyInfoItem *items = _dataArr[currentPage];
     _liveArr = items.newest_info.live_list;
     _courseArr = items.newest_info.learn_course_list;
+    _yuekaoItem = items.newest_info.exam_month;
     
+    if (!_yuekaoItem) {
+        _yuekaoView.hidden = YES;
+        _yuekaoTopConstraint.constant = 0;
+        _yuekaoConstraint.constant = 0;
+    } else {
+        _yuekaoView.hidden = NO;
+        _yuekaoTopConstraint.constant = 10;
+        _yuekaoConstraint.constant = 124;
+        
+        [_yuekaoTitleBtn setTitle:_yuekaoItem.name forState:UIControlStateNormal];
+        _yuekaoTimeLab.text = [NSString stringWithFormat:@"月考时间：%@",_yuekaoItem.date];
+        if ([_yuekaoItem.status isEqualToString:@"0"]) { //未考试
+            _yuekaoTitleBtn.userInteractionEnabled = NO;
+            _yuekaoScoreLab.text = @"我的成绩：还未完成";
+            [_yuekaoEnterBtn setTitle:@"参加考试" forState:UIControlStateNormal];
+        } else {
+            _yuekaoTitleBtn.userInteractionEnabled = YES;
+            _yuekaoScoreLab.text = [NSString stringWithFormat:@"我的成绩：%@分",_yuekaoItem.score];
+            [_yuekaoEnterBtn setTitle:@"再做一遍" forState:UIControlStateNormal];
+        }
+    }
     if (_liveArr.count==0) {
         _liveCourseView.hidden = YES;
-        _studyCourseTipTopConstraint.constant = 0; _liveCourseConstraint.constant = 0;
+        _liveCourseTopConstraint.constant = 0;
+        _liveCourseConstraint.constant = 0;
+        _studyCourseTipTopConstraint.constant = 0;
     } else {
-        _studyCourseTipTopConstraint.constant = 10;
         _liveCourseView.hidden = NO;
+        _liveCourseTopConstraint.constant = 10;
         _liveCourseConstraint.constant = 150;
+        _studyCourseTipTopConstraint.constant = 10;
+        
         LiveItem *liveItems = _liveArr.firstObject;
         if (liveItems) {
             _liveCourseIconImgView.image = [UIImage imageNamed:@"default_live"];
@@ -347,49 +445,6 @@
     StudyInfoItem *items = _dataArr[currentPage];
     videoItem.product_id = items.product_id;
     [self talkfunVideo:videoItem];
-}
-
-#pragma mark - 最新直播课程
-- (IBAction)liveCourseAction:(id)sender {
-    
-    LiveItem *liveItem = _liveArr.firstObject;
-    VideoItem *videoItem = [[VideoItem alloc] init];
-    videoItem.type = [liveItem.status isEqualToString:@"1"]?@"3":@"2";
-    videoItem.live_id = liveItem.live_id;
-    StudyInfoItem *items = _dataArr[currentPage];
-    videoItem.product_id = items.product_id;
-    [self talkfunVideo:videoItem];
-}
-
-#pragma mark - 欢拓原生视频
-/**
- * 播放视频。类型1:录播; 2:回放; 3:直播 (后台回放和直播都是2，本地需要区分下)
- */
-- (void)talkfunVideo:(VideoItem *)item {
-    NSString *type = [item.type isEqualToString:@"1"]?@"1":@"2";
-    NSDictionary *dic = @{@"type":type,@"live_id":item.live_id};
-    [[NetworkManager sharedManager] postJSON:URL_LiveToken parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
-        if (status == Request_Success) {
-            TalkfunItem *talkfunItem = [TalkfunItem mj_objectWithKeyValues:(NSDictionary *)responseData];
-            if ([item.type isEqualToString:@"1"]
-                || [item.type isEqualToString:@"2"]) {
-                TalkfunPlaybackViewController *vc = [[TalkfunPlaybackViewController alloc] init];
-                vc.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":talkfunItem.access_token},@"data", nil];
-                vc.playbackID = item.live_id;
-                vc.videoItem = item;
-                vc.hidesBottomBarWhenPushed = YES;
-                [self.navigationController pushViewController:vc animated:YES];
-            }
-            if ([item.type isEqualToString:@"3"]) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    TalkfunViewController *myVC = [[TalkfunViewController alloc] init];
-                    myVC.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":talkfunItem.access_token},@"data",@"0",@"code", nil];
-                    myVC.videoItem = item;
-                    [self.navigationController pushViewController:myVC animated:YES];
-                });
-            }
-        }
-    }];
 }
 
 - (void)didReceiveMemoryWarning {
