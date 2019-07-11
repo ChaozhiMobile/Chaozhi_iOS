@@ -1285,6 +1285,7 @@ static BOOL fromLandscape = NO;
 }
 - (void)onUIApplicationDidEnterBackgroundNotification:(NSNotification *)notification{
     //    [self.pptsFunctionView play:YES];
+    [self uploadProgress]; //上传视频进度到后台
 }
 - (void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self];

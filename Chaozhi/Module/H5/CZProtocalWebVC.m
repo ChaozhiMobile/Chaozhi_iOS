@@ -22,6 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = kWhiteColor;
+    
     self.title = self.webTitle;
     
     [self initWebView];
@@ -33,7 +35,7 @@
         //配置环境
         WKWebViewConfiguration * configuration = [[WKWebViewConfiguration alloc]init];
         configuration.allowsInlineMediaPlayback = true;
-        _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, kNavBarH, WIDTH, HEIGHT-kNavBarH) configuration:configuration];
+        _webView = [[WKWebView alloc] initWithFrame:CGRectMake(autoScaleW(8), kNavBarH, WIDTH-autoScaleW(16), HEIGHT-kNavBarH) configuration:configuration];
         _webView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
         _webView.backgroundColor = [UIColor whiteColor];
         _webView.navigationDelegate = self;

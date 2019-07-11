@@ -69,6 +69,9 @@
 #define viewSize self.view.frame.size
 @interface TalkfunViewController ()<UIScrollViewDelegate,UITextFieldDelegate,UIAlertViewDelegate,TalkfunSDKLiveDelegate>
 
+/** 直播时长 */
+@property (nonatomic,assign) NSInteger liveTime;
+
 //SDK
 @property (nonatomic,strong) TalkfunSDKLive * talkfunSDK;
 @property (nonatomic,strong) UIView * pptView;
@@ -623,8 +626,10 @@
     //TODO:直播时长
     [self.talkfunSDK on:TALKFUN_EVENT_LIVE_DURATION callback:^(id obj) {
         
-        NSString *duration = [TalkfunMultifunctionTool getLiveDuration:obj];
-        NSLog(@"源数据%@ 直播时长========%@",obj,duration);
+        self.liveTime = [obj[@"hour"] integerValue]*60*60 + [obj[@"minute"] integerValue]*60 + [obj[@"second"] integerValue];
+        
+//        NSString *duration = [TalkfunMultifunctionTool getLiveDuration:obj];
+//        NSLog(@"源数据%@ 直播时长========%@",obj,duration);
     }];
     
     //投票
@@ -2428,7 +2433,8 @@ static CGRect originPPTFrame;
 
 #pragma mark - 上传视频进度到后台
 - (void)uploadProgress {
-    NSDictionary *dic = @{@"type":self.videoItem.type,@"product_id":self.videoItem.product_id,@"live_id":self.videoItem.live_id,@"time":@"0",@"total_time":@"0"};
+    
+    NSDictionary *dic = @{@"type":self.videoItem.type,@"product_id":self.videoItem.product_id,@"live_id":self.videoItem.live_id,@"time":[NSString stringWithFormat:@"%ld",(long)self.liveTime],@"total_time":@"0"};
     [[NetworkManager sharedManager] postJSON:URL_LiveProgress parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
         if (status == Request_Success) {
             
