@@ -131,6 +131,7 @@
 		A020B078214AAB150011BB4F /* BaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B017214AAB140011BB4F /* BaseItem.m */; };
 		A020B079214AAB150011BB4F /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B018214AAB140011BB4F /* UserInfo.m */; };
 		A020B07A214AAB150011BB4F /* CourseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B01A214AAB140011BB4F /* CourseItem.m */; };
+		A03BB01022D6246700B3A9D8 /* protocol.png in Resources */ = {isa = PBXBuildFile; fileRef = A03BB00F22D6246700B3A9D8 /* protocol.png */; };
 		A0462A072187407600D12E65 /* CZNotNetAvailableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0462A062187407600D12E65 /* CZNotNetAvailableVC.m */; };
 		A0462A0D2187459600D12E65 /* CZNotDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0462A0C2187459600D12E65 /* CZNotDataView.m */; };
 		A05999EF2155EC1500D17058 /* XLGExternalTestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A05999E02155EC1500D17058 /* XLGExternalTestTool.m */; };
@@ -591,6 +592,7 @@
 		A020B01A214AAB140011BB4F /* CourseItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseItem.m; sourceTree = "<group>"; };
 		A020B01B214AAB140011BB4F /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		A020B07B214AAD600011BB4F /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		A03BB00F22D6246700B3A9D8 /* protocol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = protocol.png; sourceTree = "<group>"; };
 		A0462A052187407600D12E65 /* CZNotNetAvailableVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZNotNetAvailableVC.h; sourceTree = "<group>"; };
 		A0462A062187407600D12E65 /* CZNotNetAvailableVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZNotNetAvailableVC.m; sourceTree = "<group>"; };
 		A0462A0B2187459600D12E65 /* CZNotDataView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZNotDataView.h; sourceTree = "<group>"; };
@@ -2342,6 +2344,7 @@
 		A0E0D3CE22D2295D00296851 /* H5 */ = {
 			isa = PBXGroup;
 			children = (
+				A03BB00F22D6246700B3A9D8 /* protocol.png */,
 				A0E0D3CF22D2299800296851 /* protocol.css */,
 			);
 			path = H5;
@@ -2607,6 +2610,7 @@
 				A0AC098E22C4BC7E001832EA /* 章节-点击.png in Resources */,
 				A0AC094822C4BC7E001832EA /* failP.png in Resources */,
 				A0AC093922C4BC7E001832EA /* lottery.png in Resources */,
+				A03BB01022D6246700B3A9D8 /* protocol.png in Resources */,
 				A0AC08E122C4BC7D001832EA /* TalkfunVideoControlView.xib in Resources */,
 				A01F607522CB8960001133C4 /* DownloadListTableViewCell.xib in Resources */,
 				A020B031214AAB150011BB4F /* ic_refresh_image_031@2x.png in Resources */,

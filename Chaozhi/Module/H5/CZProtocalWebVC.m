@@ -44,12 +44,31 @@
     [self.view addSubview:_webView];
     
     [JHHJView showLoadingOnTheKeyWindowWithType:JHHJViewTypeSingleLine]; //开始加载
-    [self.webView loadHTMLString:self.homeUrl baseURL:nil];
+    NSURL *baseURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] resourcePath]];
+    [self.webView loadHTMLString:self.homeUrl baseURL:baseURL];
 }
 
 // 页面加载完成之后调用
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
     [JHHJView hideLoading]; //结束加载
+    
+    //协议盖章
+    NSString *cssPath = [[NSBundle mainBundle] pathForResource:@"protocol" ofType:@"css"];
+    NSString *jsSeal = [NSString stringWithFormat:@"<html> \ <head> \ <link rel=\"stylesheet\" type=\"text/css\" href=\"%@\"/> \
+                                     <style type=\"text/css\"> \
+                                     body {font-size:15px;}\
+                                     </style> \
+                                     </head> \
+                                     <body> \
+                                     <div class=\"dialog-agreement\"> \
+                                     <div class=\"dialog-agreement-content\">%s</div> \
+                                     </div> \
+                                     </body> \
+                                     </html>%@",cssPath];
+    
+    [_webView evaluateJavaScript:jsSeal completionHandler:^(id item, NSError * _Nullable error) {
+        // 执行结果回调
+    }];
 }
 
 /*

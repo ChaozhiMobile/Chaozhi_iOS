@@ -269,17 +269,20 @@
 #pragma mark - 最新月考
 /** 更多月考成绩 */
 - (IBAction)showMoreYuekaoAction:(id)sender {
-    [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_MonthlyList,_yuekaoItem.course_id] withTitle:@"我的月考" isPresent:NO];
+    StudyInfoItem *items = _dataArr[currentPage];
+    [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_MonthlyList,items.product_id] withTitle:@"我的月考" isPresent:NO];
 }
 
 /** 月考结果页 */
 - (IBAction)yuekaoResultAction:(id)sender {
-    [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@/%@",H5_MonthlyResult,_yuekaoItem.course_id,_yuekaoItem.ID] withTitle:@"" isPresent:NO];
+    StudyInfoItem *items = _dataArr[currentPage];
+    [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@/%@",H5_MonthlyResult,items.product_id,_yuekaoItem.ID] withTitle:@"" isPresent:NO];
 }
 
 /** 月考参加考试/再做一遍 */
 - (IBAction)yuekaoAction:(id)sender {
-    [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@/%@",H5_MonthlyAnswer,_yuekaoItem.course_id,_yuekaoItem.ID] withTitle:@"" isPresent:NO];
+    StudyInfoItem *items = _dataArr[currentPage];
+    [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@/%@",H5_MonthlyAnswer,items.product_id,_yuekaoItem.ID] withTitle:@"" isPresent:NO];
 }
 
 #pragma mark - 最新直播课程
