@@ -12,6 +12,9 @@
 
 @property (retain, nonatomic) WKWebView *webView;
 
+/** 网页实际高度 */
+@property (nonatomic,assign) CGFloat wbContentHeight;
+
 @end
 
 @implementation CZProtocalWebVC
@@ -45,30 +48,64 @@
     
     [JHHJView showLoadingOnTheKeyWindowWithType:JHHJViewTypeSingleLine]; //开始加载
     NSURL *baseURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] resourcePath]];
-    [self.webView loadHTMLString:self.homeUrl baseURL:baseURL];
+    
+    //协议盖章
+    NSString *cssPath = [[NSBundle mainBundle] pathForResource:@"protocol" ofType:@"css"];
+    
+    NSMutableString *htmlString =[[NSMutableString alloc]initWithString:@"<html>"];
+    
+    [htmlString appendString:@"<head>"];
+    
+    [htmlString appendString:@"<link rel =\"stylesheet\"  href = \" "];
+    
+    [htmlString appendString:cssPath];
+    
+    [htmlString appendString:@"\" type=\"text/css\" />"];
+    
+    [htmlString appendString:@"</head>"];
+    
+    [htmlString appendString:@"<body>"];
+    
+    [htmlString appendString:@"<div class=\"dialog-agreement\"> \n"];
+    
+    [htmlString appendString:[NSString stringWithFormat:@"<div class=\"dialog-agreement-content\">%@</div> \n",self.homeUrl]];
+    
+    [htmlString appendString:@"</div> \n"];
+    
+    [htmlString appendString:@"</body>"];
+    
+    [htmlString appendString:@"</html>"];
+    
+    [self.webView loadHTMLString:htmlString baseURL:baseURL];
+
 }
 
 // 页面加载完成之后调用
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
     [JHHJView hideLoading]; //结束加载
+//    [webView evaluateJavaScript:@"document.body.scrollWidth"completionHandler:^(id _Nullable result,NSError * _Nullable error){
+//
+//        CGFloat ratio =  CGRectGetWidth(webView.frame) /[result floatValue];
+//        NSLog(@"scrollWidth高度：%.2f",[result floatValue]);
+//
+//        [webView evaluateJavaScript:@"document.body.scrollHeight"completionHandler:^(id _Nullable result,NSError * _Nullable error){
+//
+//            self.wbContentHeight = [result floatValue]*ratio;
+//            [self addZhangImgView];
+//
+//        }];
+//
+//    }];
     
-    //协议盖章
-    NSString *cssPath = [[NSBundle mainBundle] pathForResource:@"protocol" ofType:@"css"];
-    NSString *jsSeal = [NSString stringWithFormat:@"<html> \ <head> \ <link rel=\"stylesheet\" type=\"text/css\" href=\"%@\"/> \
-                                     <style type=\"text/css\"> \
-                                     body {font-size:15px;}\
-                                     </style> \
-                                     </head> \
-                                     <body> \
-                                     <div class=\"dialog-agreement\"> \
-                                     <div class=\"dialog-agreement-content\">%s</div> \
-                                     </div> \
-                                     </body> \
-                                     </html>%@",cssPath];
-    
-    [_webView evaluateJavaScript:jsSeal completionHandler:^(id item, NSError * _Nullable error) {
-        // 执行结果回调
-    }];
+}
+
+- (void)addZhangImgView {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        UIImageView *img = [[UIImageView alloc]initWithFrame:CGRectMake(0, self.wbContentHeight-autoScaleW(100), autoScaleW(80), autoScaleW(80))];
+        img.image = [UIImage imageNamed:@"protocol.png"];
+        [self.webView.scrollView addSubview:img];
+        [self.webView bringSubviewToFront:img];
+    });
 }
 
 /*
