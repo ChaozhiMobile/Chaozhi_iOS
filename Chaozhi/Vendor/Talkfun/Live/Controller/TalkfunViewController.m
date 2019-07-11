@@ -2434,7 +2434,7 @@ static CGRect originPPTFrame;
 #pragma mark - 上传视频进度到后台
 - (void)uploadProgress {
     
-    NSDictionary *dic = @{@"type":self.videoItem.type,@"product_id":self.videoItem.product_id,@"live_id":self.videoItem.live_id,@"time":[NSString stringWithFormat:@"%ld",(long)self.liveTime],@"total_time":@"0"};
+    NSDictionary *dic = @{@"type":@"2",@"product_id":self.videoItem.product_id,@"live_id":self.videoItem.live_id,@"time":[NSString stringWithFormat:@"%ld",(long)self.liveTime],@"total_time":@"0"};
     [[NetworkManager sharedManager] postJSON:URL_LiveProgress parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
         if (status == Request_Success) {
             
