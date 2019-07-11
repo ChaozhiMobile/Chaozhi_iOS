@@ -38,6 +38,7 @@ NSString *domainUrl(void);
 #define URL_OrdersAgreement @"api/orders/agreement" //订单协议
 #define URL_LiveToken @"api/userlive/token" //视频token接口
 #define URL_LiveProgress @"api/userlive/progress" //视频进度更新接口
+#define URL_ResetAnswer @"api/question/reset-answer" //月考重置答案
 
 #pragma mark - ---------------H5地址---------------
 

@@ -38,6 +38,7 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *bgScroView;
 
 @property (weak, nonatomic) IBOutlet UIView *yuekaoView;
+@property (weak, nonatomic) IBOutlet UIButton *yuekaoBtn;
 @property (weak, nonatomic) IBOutlet UIImageView *yuekaoIconImgView;
 @property (weak, nonatomic) IBOutlet UIButton *yuekaoTitleBtn;
 @property (weak, nonatomic) IBOutlet UILabel *yuekaoTimeLab;
@@ -281,6 +282,23 @@
 
 /** 月考参加考试/再做一遍 */
 - (IBAction)yuekaoAction:(id)sender {
+    
+    if ([_yuekaoEnterBtn.titleLabel.text isEqualToString:@"再做一遍"]) {
+        __weak typeof(self) weakSelf = self;
+        StudyInfoItem *items = _dataArr[currentPage];
+        NSDictionary *dic = @{@"type":@"3",@"id":_yuekaoItem.ID,@"product_id":items.product_id};
+        [[NetworkManager sharedManager] postJSON:URL_ResetAnswer parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
+            if (status == Request_Success) {
+                [weakSelf yuekaoExamAction];
+            }
+        }];
+    } else { //参加考试
+        [self yuekaoExamAction];
+    }
+}
+
+/** 月考考试 */
+- (void)yuekaoExamAction {
     StudyInfoItem *items = _dataArr[currentPage];
     [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@/%@",H5_MonthlyAnswer,items.product_id,_yuekaoItem.ID] withTitle:@"" isPresent:NO];
 }
@@ -356,13 +374,13 @@
         _yuekaoConstraint.constant = 124;
         
         [_yuekaoTitleBtn setTitle:_yuekaoItem.name forState:UIControlStateNormal];
-        _yuekaoTimeLab.text = [NSString stringWithFormat:@"月考时间：%@",_yuekaoItem.date];
+        _yuekaoTimeLab.text = [NSString stringWithFormat:@"月考时间：%@",[NSString stringWithFormat:@"%@年%@月",_yuekaoItem.year,_yuekaoItem.month]];
         if ([_yuekaoItem.status isEqualToString:@"0"]) { //未考试
-            _yuekaoTitleBtn.userInteractionEnabled = NO;
+            _yuekaoBtn.userInteractionEnabled = NO;
             _yuekaoScoreLab.text = @"我的成绩：还未完成";
             [_yuekaoEnterBtn setTitle:@"参加考试" forState:UIControlStateNormal];
         } else {
-            _yuekaoTitleBtn.userInteractionEnabled = YES;
+            _yuekaoBtn.userInteractionEnabled = YES;
             _yuekaoScoreLab.text = [NSString stringWithFormat:@"我的成绩：%@分",_yuekaoItem.score];
             [_yuekaoEnterBtn setTitle:@"再做一遍" forState:UIControlStateNormal];
         }
