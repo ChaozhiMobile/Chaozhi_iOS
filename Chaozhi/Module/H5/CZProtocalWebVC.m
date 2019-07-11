@@ -47,56 +47,33 @@
     [self.view addSubview:_webView];
     
     [JHHJView showLoadingOnTheKeyWindowWithType:JHHJViewTypeSingleLine]; //开始加载
-    NSURL *baseURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] resourcePath]];
     
     //协议盖章
     NSString *cssPath = [[NSBundle mainBundle] pathForResource:@"protocol" ofType:@"css"];
     
-    NSMutableString *htmlString =[[NSMutableString alloc]initWithString:@"<html>"];
-    
-    [htmlString appendString:@"<head>"];
-    
-    [htmlString appendString:@"<link rel =\"stylesheet\"  href = \" "];
-    
+    NSMutableString *htmlString =[[NSMutableString alloc]initWithString:@"<html> \n"];
+    [htmlString appendString:@"<head> \n"];
+    [htmlString appendString:@"<link rel=\"stylesheet\" type=\"text/css\" href=\" "];
     [htmlString appendString:cssPath];
-    
-    [htmlString appendString:@"\" type=\"text/css\" />"];
-    
-    [htmlString appendString:@"</head>"];
-    
-    [htmlString appendString:@"<body>"];
-    
+    [htmlString appendString:@"\"/> \n"];
+    [htmlString appendString:@"<style type=\"text/css\"> \n"];
+    [htmlString appendString:@"body {font-size:30px;} \n"];
+    [htmlString appendString:@"</style> \n"];
+    [htmlString appendString:@"</head> \n"];
+    [htmlString appendString:@"<body> \n"];
     [htmlString appendString:@"<div class=\"dialog-agreement\"> \n"];
-    
     [htmlString appendString:[NSString stringWithFormat:@"<div class=\"dialog-agreement-content\">%@</div> \n",self.homeUrl]];
-    
     [htmlString appendString:@"</div> \n"];
-    
-    [htmlString appendString:@"</body>"];
-    
+    [htmlString appendString:@"</body> \n"];
     [htmlString appendString:@"</html>"];
     
+    NSURL *baseURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] resourcePath]];
     [self.webView loadHTMLString:htmlString baseURL:baseURL];
-
 }
 
 // 页面加载完成之后调用
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
     [JHHJView hideLoading]; //结束加载
-//    [webView evaluateJavaScript:@"document.body.scrollWidth"completionHandler:^(id _Nullable result,NSError * _Nullable error){
-//
-//        CGFloat ratio =  CGRectGetWidth(webView.frame) /[result floatValue];
-//        NSLog(@"scrollWidth高度：%.2f",[result floatValue]);
-//
-//        [webView evaluateJavaScript:@"document.body.scrollHeight"completionHandler:^(id _Nullable result,NSError * _Nullable error){
-//
-//            self.wbContentHeight = [result floatValue]*ratio;
-//            [self addZhangImgView];
-//
-//        }];
-//
-//    }];
-    
 }
 
 - (void)addZhangImgView {
