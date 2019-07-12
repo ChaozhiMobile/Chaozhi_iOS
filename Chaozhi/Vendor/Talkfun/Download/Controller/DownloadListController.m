@@ -404,14 +404,14 @@
     else if ([btn.titleLabel.text isEqualToString:@"播放"]) {
         //1：普通大班回放，2：纯视频类型回放
         NSString *videoType =  [self.downloadManager getVideoType:model.playbackID];
-        if ([videoType isEqualToString:@"1"]) {
+        if ([videoType isEqualToString:@"1"]) {     
             //TODO:原生模式的点播
-            TalkfunPlaybackViewController * playbackVC = [TalkfunPlaybackViewController new];
-            playbackVC.playbackID = model.playbackID;
-            playbackVC.res = @{@"data":@{@"access_token":model.access_token},TalkfunPlaybackID:model.playbackID};
-            playbackVC.downloadCompleted = YES;//下载完成
-            playbackVC.videoItem = item;
-            [self.navigationController pushViewController:playbackVC animated:YES];
+            TalkfunPlaybackViewController *vc = [[TalkfunPlaybackViewController alloc] init];
+            vc.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":model.access_token},@"data", nil];
+            vc.playbackID = model.playbackID;
+            vc.videoItem = item;
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
         }else if ([videoType isEqualToString:@"2"]) {
             
             //            //TODO:原生模式的点播
