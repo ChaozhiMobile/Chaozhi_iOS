@@ -22,7 +22,6 @@
 
 @interface CZStudyVC ()<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
 {
-    NSInteger currentPage;
     BOOL show;
 }
 /** 所有的弹框视图 */
@@ -64,6 +63,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *studyCourseTipTopConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tabHeightConstraint;
 
+@property (assign, nonatomic) NSInteger currentPage;
 @property (strong, nonatomic) NSArray <StudyInfoItem *>*dataArr;
 @property (strong, nonatomic) NSArray <LiveItem *>*liveArr;
 @property (strong, nonatomic) NSArray <LearnCourseItem *>*courseArr;
@@ -100,7 +100,7 @@
 }
 
 - (void)loginSucc {
-    currentPage = 0;
+    _currentPage = 0;
     _courseScrollView.contentOffset = CGPointMake(0, 0);
     [self getData];
 }
@@ -224,7 +224,7 @@
         }
     }
     _coursePageControl.height = 20;
-    _coursePageControl.currentPage = currentPage;
+    _coursePageControl.currentPage = _currentPage;
     _coursePageControl.numberOfPages = courseCount;
     [self showAlertView];
 }
@@ -241,28 +241,28 @@
 
 #pragma mark - 录播课程
 - (IBAction)luboAction:(id)sender {
-    StudyInfoItem *items = _dataArr[currentPage];
+    StudyInfoItem *items = _dataArr[_currentPage];
     NSString *tikuStr = [NSString stringWithFormat:@"%@%@",H5_Video,items.product_id];
     [BaseWebVC showWithContro:self withUrlStr:tikuStr withTitle:@"录播课程" isPresent:NO];
 }
 
 #pragma mark - 直播课程
 - (IBAction)zhiboAction:(id)sender {
-    StudyInfoItem *items = _dataArr[currentPage];
+    StudyInfoItem *items = _dataArr[_currentPage];
     NSString *tikuStr = [NSString stringWithFormat:@"%@%@",H5_Live,items.product_id];
     [BaseWebVC showWithContro:self withUrlStr:tikuStr withTitle:@"直播课程" isPresent:NO];
 }
 
 #pragma mark - 资料库
 - (IBAction)ziliaokuAction:(id)sender {
-    StudyInfoItem *items = _dataArr[currentPage];
+    StudyInfoItem *items = _dataArr[_currentPage];
     NSString *tikuStr = [NSString stringWithFormat:@"%@%@",H5_Doc,items.product_id];
     [BaseWebVC showWithContro:self withUrlStr:tikuStr withTitle:@"资料库" isPresent:NO];
 }
 
 #pragma mark - 题库
 - (IBAction)tikuAction:(id)sender {
-    StudyInfoItem *items = _dataArr[currentPage];
+    StudyInfoItem *items = _dataArr[_currentPage];
     NSString *tikuStr = [NSString stringWithFormat:@"%@%@",H5_Question,items.product_id];
     [BaseWebVC showWithContro:self withUrlStr:tikuStr withTitle:@"题库" isPresent:NO];
 }
@@ -270,13 +270,13 @@
 #pragma mark - 最新月考
 /** 更多月考成绩 */
 - (IBAction)showMoreYuekaoAction:(id)sender {
-    StudyInfoItem *items = _dataArr[currentPage];
+    StudyInfoItem *items = _dataArr[_currentPage];
     [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_MonthlyList,items.product_id] withTitle:@"我的月考" isPresent:NO];
 }
 
 /** 月考结果页 */
 - (IBAction)yuekaoResultAction:(id)sender {
-    StudyInfoItem *items = _dataArr[currentPage];
+    StudyInfoItem *items = _dataArr[_currentPage];
     [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@/%@",H5_MonthlyResult,items.product_id,_yuekaoItem.ID] withTitle:@"" isPresent:NO];
 }
 
@@ -285,13 +285,16 @@
     
     if ([_yuekaoEnterBtn.titleLabel.text isEqualToString:@"再做一遍"]) {
         __weak typeof(self) weakSelf = self;
-        StudyInfoItem *items = _dataArr[currentPage];
-        NSDictionary *dic = @{@"type":@"3",@"id":_yuekaoItem.ID,@"product_id":items.product_id};
-        [[NetworkManager sharedManager] postJSON:URL_ResetAnswer parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
-            if (status == Request_Success) {
-                [weakSelf yuekaoExamAction];
-            }
-        }];
+        XLGAlertView *alert = [[XLGAlertView alloc] initWithTitle:@"温馨提示" content:@"重新答题将删除您之前的做题记录" leftButtonTitle:@"取消" rightButtonTitle:@"确认重做"];
+        alert.doneBlock = ^{
+            StudyInfoItem *items = weakSelf.dataArr[weakSelf.currentPage];
+            NSDictionary *dic = @{@"type":@"3",@"id":weakSelf.yuekaoItem.ID,@"product_id":items.product_id};
+            [[NetworkManager sharedManager] postJSON:URL_ResetAnswer parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
+                if (status == Request_Success) {
+                    [weakSelf yuekaoExamAction];
+                }
+            }];
+        };
     } else { //参加考试
         [self yuekaoExamAction];
     }
@@ -299,7 +302,7 @@
 
 /** 月考考试 */
 - (void)yuekaoExamAction {
-    StudyInfoItem *items = _dataArr[currentPage];
+    StudyInfoItem *items = _dataArr[_currentPage];
     [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@/%@",H5_MonthlyAnswer,items.product_id,_yuekaoItem.ID] withTitle:@"" isPresent:NO];
 }
 
@@ -310,7 +313,7 @@
     VideoItem *videoItem = [[VideoItem alloc] init];
     videoItem.type = [liveItem.status isEqualToString:@"1"]?@"3":@"2";
     videoItem.live_id = liveItem.live_id;
-    StudyInfoItem *items = _dataArr[currentPage];
+    StudyInfoItem *items = _dataArr[_currentPage];
     videoItem.product_id = items.product_id;
     [self talkfunVideo:videoItem];
 }
@@ -354,12 +357,12 @@
     
     int currentPageTem = fabs(scrollView.contentOffset.x)/(WIDTH-20); //计算当前页
     _coursePageControl.currentPage = currentPageTem;
-    currentPage = currentPageTem;
+    _currentPage = currentPageTem;
     [self refreshUI];
 }
 
 - (void)refreshUI {
-    StudyInfoItem *items = _dataArr[currentPage];
+    StudyInfoItem *items = _dataArr[_currentPage];
     _liveArr = items.newest_info.live_list;
     _courseArr = items.newest_info.learn_course_list;
     _yuekaoItem = items.newest_info.exam_month;
@@ -463,7 +466,7 @@
     VideoItem *videoItem = [[VideoItem alloc] init];
     videoItem.type = item.type;;
     videoItem.live_id = item.live_id;
-    StudyInfoItem *items = _dataArr[currentPage];
+    StudyInfoItem *items = _dataArr[_currentPage];
     videoItem.product_id = items.product_id;
     [self talkfunVideo:videoItem];
 }

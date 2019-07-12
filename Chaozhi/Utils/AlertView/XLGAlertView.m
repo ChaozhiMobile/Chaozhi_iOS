@@ -66,8 +66,8 @@
     [bgView addSubview:titleLab];
     
     CGFloat contentHeight = autoScaleH(5);
-    CGFloat height = [self.textStr getTextHeightWithFont:[UIFont systemFontOfSize:autoScaleW(14)] width:autoScaleW(226)];
-    _contentLab = [[UILabel alloc] initWithFrame:CGRectMake(autoScaleW(280)/2-autoScaleW(226)/2, titleLab.bottom+contentHeight, autoScaleW(226), height)];
+    CGFloat height = [self.textStr getTextHeightWithFont:[UIFont systemFontOfSize:autoScaleW(14)] width:autoScaleW(220)];
+    _contentLab = [[UILabel alloc] initWithFrame:CGRectMake(autoScaleW(280)/2-autoScaleW(220)/2, titleLab.bottom+contentHeight, autoScaleW(220), height)];
     [_contentLab setTextAlignment:NSTextAlignmentCenter];
     
     _contentLab.numberOfLines = 0;
@@ -75,7 +75,7 @@
     _contentLab.font = [UIFont systemFontOfSize:autoScaleW(14)];
     _contentLab.textColor =  RGBValue(0xB4B4B4);;
     if (_leftTitle.length==0) {
-        _contentLab.textColor =  ButtonColor;;
+        _contentLab.textColor = AppThemeColor;
     }
     [bgView addSubview:_contentLab];
     contentHeight += height+5;
@@ -112,7 +112,7 @@
     doneBtn.titleLabel.font = [UIFont systemFontOfSize:autoScaleH(15)];
     [doneBtn setTitleColor:kBlack55Color forState:UIControlStateNormal];
     if (self.leftTitle.length>0) {
-        [doneBtn setTitleColor:ButtonColor forState:UIControlStateNormal];
+        [doneBtn setTitleColor:AppThemeColor forState:UIControlStateNormal];
     }
     doneBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
     [doneBtn addTarget:self action:@selector(doneAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -206,13 +206,13 @@
     titleLab.textAlignment = NSTextAlignmentCenter;
     [bgView addSubview:titleLab];
     
-    CGFloat height = [self.textStr getTextHeightWithFont:[UIFont systemFontOfSize:autoScaleW(15)] width:bgView.width-10];
-    _contentLab = [[UILabel alloc] initWithFrame:CGRectMake(5, titleLab.bottom+autoScaleW(20), bgView.width-10, height+5)];
+    CGFloat height = [self.textStr getTextHeightWithFont:[UIFont systemFontOfSize:autoScaleW(15)] width:bgView.width-16];
+    _contentLab = [[UILabel alloc] initWithFrame:CGRectMake(8, titleLab.bottom+autoScaleW(20), bgView.width-16, height+5)];
     _contentLab.numberOfLines = 0;
     _contentLab.textAlignment = NSTextAlignmentCenter;
     _contentLab.text = self.textStr;
     _contentLab.font = [UIFont systemFontOfSize:autoScaleW(14.5)];
-    _contentLab.textColor =  RGBValue(0x00CF1F);;
+    _contentLab.textColor = AppThemeColor;
     [bgView addSubview:_contentLab];
     
     CGFloat btnWidth = self.leftTitle.length==0?(bgView.frame.size.width - autoScaleW(18)*2):(bgView.frame.size.width - autoScaleW(18)*3)/2.0;
@@ -233,7 +233,7 @@
     [doneBtn setTitle:self.rigthTitle forState:UIControlStateNormal];
     doneBtn.titleLabel.font = [UIFont systemFontOfSize:autoScaleW(15)];
     [doneBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    doneBtn.backgroundColor = ButtonColor;
+    doneBtn.backgroundColor = AppThemeColor;
     doneBtn.cornerRadius = 5;
     [doneBtn addTarget:self action:@selector(doneAction:) forControlEvents:UIControlEventTouchUpInside];
     [bgView addSubview:doneBtn];
@@ -266,13 +266,13 @@
     [bgView addSubview:succImgView];
     succImgView.centerX = bgView.width/2.0;
     
-    CGFloat height = [self.textStr getTextHeightWithFont:[UIFont systemFontOfSize:autoScaleW(15)] width:bgView.width-10];
-    _contentLab = [[UILabel alloc] initWithFrame:CGRectMake(5, succImgView.bottom+autoScaleW(20), bgView.width-10, height+5)];
+    CGFloat height = [self.textStr getTextHeightWithFont:[UIFont systemFontOfSize:autoScaleW(15)] width:bgView.width-16];
+    _contentLab = [[UILabel alloc] initWithFrame:CGRectMake(8, succImgView.bottom+autoScaleW(20), bgView.width-16, height+5)];
     _contentLab.numberOfLines = 0;
     _contentLab.textAlignment = NSTextAlignmentCenter;
     _contentLab.text = self.textStr;
     _contentLab.font = [UIFont systemFontOfSize:autoScaleW(14.5)];
-    _contentLab.textColor =  RGBValue(0x00CF1F);;
+    _contentLab.textColor =  AppThemeColor;
     [bgView addSubview:_contentLab];
     
     CGFloat btnWidth = self.leftTitle.length==0?(bgView.frame.size.width - autoScaleW(18)*2):(bgView.frame.size.width - autoScaleW(18)*3)/2.0;
@@ -293,13 +293,13 @@
     [doneBtn setTitle:self.rigthTitle forState:UIControlStateNormal];
     doneBtn.titleLabel.font = [UIFont systemFontOfSize:autoScaleW(15)];
     [doneBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    doneBtn.backgroundColor = ButtonColor;
+    doneBtn.backgroundColor = AppThemeColor;
     doneBtn.cornerRadius = 5;
     [doneBtn addTarget:self action:@selector(doneAction:) forControlEvents:UIControlEventTouchUpInside];
     [bgView addSubview:doneBtn];
     if (self.isSucc) {
         succImgView.image = [UIImage imageNamed:@"app_popup_icon_success"];
-        _contentLab.textColor = ButtonColor;
+        _contentLab.textColor = AppThemeColor;
     }
     else {
         _contentLab.textColor = RGBValue(0xE72828);
