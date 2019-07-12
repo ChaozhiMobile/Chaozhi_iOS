@@ -407,10 +407,9 @@
         if ([videoType isEqualToString:@"1"]) {     
             //TODO:原生模式的点播
             TalkfunPlaybackViewController *vc = [[TalkfunPlaybackViewController alloc] init];
-            vc.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":model.access_token},@"data", nil];
             vc.playbackID = model.playbackID;
+            vc.res = @{@"data":@{@"access_token":model.access_token},TalkfunPlaybackID:model.playbackID};
             vc.videoItem = item;
-            vc.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
         }else if ([videoType isEqualToString:@"2"]) {
             
