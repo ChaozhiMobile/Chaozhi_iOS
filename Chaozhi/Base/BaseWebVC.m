@@ -15,6 +15,7 @@
 #import "TalkfunItem.h"
 #import "TalkfunViewController.h"
 #import "TalkfunPlaybackViewController.h"
+#import "XLGExternalTestTool.h"
 
 @interface BaseWebVC ()<WKUIDelegate,WKNavigationDelegate,WKDelegate,UITextFieldDelegate>
 
@@ -407,6 +408,11 @@
     
     NSString *url = webView.URL.absoluteString;
     NSLog(@"跳转网页地址：%@",url);
+    
+    if (!KOnline) {
+        XLGExternalTestTool *tool = [XLGExternalTestTool shareInstance];
+        tool.logTextViews.text = [NSString stringWithFormat:@"跳转网页地址：%@ \n\n\n%@",webView.URL.absoluteString,tool.logTextViews.text];
+    }
 }
 
 // 当内容开始返回时调用
