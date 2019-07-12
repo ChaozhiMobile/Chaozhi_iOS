@@ -35,6 +35,8 @@
 
 #endif
 
+// AppDelegate
+#define CZAppDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
 #define kCachePath [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]
 
 /******************************keys****************************/

@@ -494,15 +494,18 @@
         
         NSMutableArray *modelArray = [NSMutableArray array];
         
-        for (NSIndexPath * indexPath  in self.selectedArray) {
+        for (NSIndexPath *indexPath in self.selectedArray) {
             
-            DownloadListModel * model = self.dataSource[indexPath.row];
+            DownloadListModel *model = self.dataSource[indexPath.row];
+            VideoItem *item = self.videoArr[indexPath.row];
             
             [modelArray addObject:model];
             
             NSMutableString *mutableCopyString = [model.playbackID mutableCopy];
-            
-            [self.downloadManager deleteDownload:mutableCopyString success:nil];
+
+            [self.downloadManager deleteDownload:mutableCopyString success:^(id result) {
+                [[DBManager shareManager] deleteVideo:item];
+            }];
         }
         
         for (DownloadListModel * model in modelArray) {
@@ -738,9 +741,10 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        DownloadListModel * model = self.dataSource[indexPath.row];
+        DownloadListModel *model = self.dataSource[indexPath.row];
+        VideoItem *item = self.videoArr[indexPath.row];
         [self.downloadManager deleteDownload:model.playbackID success:^(id result) {
-            
+            [[DBManager shareManager] deleteVideo:item];
         }];
         if(self.dataSource.count>indexPath.row){
             [self.dataSource removeObjectAtIndex:indexPath.row];

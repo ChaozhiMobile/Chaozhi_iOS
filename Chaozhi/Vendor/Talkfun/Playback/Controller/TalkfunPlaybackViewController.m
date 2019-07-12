@@ -1263,8 +1263,7 @@ static BOOL fromLandscape = NO;
     WeakSelf
     NSString * token = _res[@"data"][@"access_token"];
     [self.view alertStyle:UIAlertControllerStyleAlert title:@"提示" message:@"确定使用蜂窝流量下载?" action:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        NSString * title = [NSString stringWithFormat:@"%@%@",[UserInfo share].phone,weakSelf.res[@"data"][@"title"]];
-        [weakSelf.downloadManager appendDownloadWithAccessToken:token?token:weakSelf.access_token playbackID:weakSelf.playbackID title:title];
+        [weakSelf.downloadManager appendDownloadWithAccessToken:token?token:weakSelf.access_token playbackID:weakSelf.playbackID title:nil];
         [weakSelf.downloadManager startDownload:weakSelf.playbackID];
         [[DBManager shareManager] insertVideo:self.videoItem];
         PERFORM_IN_MAIN_QUEUE([self.view toast:@"已开始下载，请到我的下载中查看" position:ToastPosition];)

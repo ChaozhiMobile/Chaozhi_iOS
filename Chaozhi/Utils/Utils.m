@@ -11,6 +11,7 @@
 #import "Toast.h"
 #import "NetworkUtil.h"
 #import "BaseNC.h"
+#import "CZLoginVC.h"
 
 @interface Utils ()
 {
@@ -156,10 +157,13 @@ static Utils *_utils = nil;
         return YES;
     } else {
         if (isJump==YES) {
-            //跳转到登录页面
-            UIViewController *vc = [Utils getViewController:@"Main" WithVCName:@"CZLoginVC"];
-            vc.hidesBottomBarWhenPushed = YES;
-            [[self getCurrentVC].navigationController pushViewController:vc animated:YES];
+            BaseNC *nc = CZAppDelegate.tabVC.selectedViewController;
+            if (![[nc topViewController] isKindOfClass:[CZLoginVC class]]) {
+                //跳转到登录页面
+                UIViewController *vc = [Utils getViewController:@"Main" WithVCName:@"CZLoginVC"];
+                vc.hidesBottomBarWhenPushed = YES;
+                [[self getCurrentVC].navigationController pushViewController:vc animated:YES];
+            }
         }
         return NO;
     }
@@ -175,10 +179,13 @@ static Utils *_utils = nil;
     [[UserInfo share] setUserInfo:nil]; //清除用户信息
     
     if (isJumpLoginVC==YES) {
-        //跳转到登录页面
-        UIViewController *vc = [Utils getViewController:@"Main" WithVCName:@"CZLoginVC"];
-        vc.hidesBottomBarWhenPushed = YES;
-        [[self getCurrentVC].navigationController pushViewController:vc animated:YES];
+        BaseNC *nc = CZAppDelegate.tabVC.selectedViewController;
+        if (![[nc topViewController] isKindOfClass:[CZLoginVC class]]) {
+            //跳转到登录页面
+            UIViewController *vc = [Utils getViewController:@"Main" WithVCName:@"CZLoginVC"];
+            vc.hidesBottomBarWhenPushed = YES;
+            [[self getCurrentVC].navigationController pushViewController:vc animated:YES];
+        }
     }
 }
 

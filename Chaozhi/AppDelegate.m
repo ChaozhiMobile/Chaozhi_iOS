@@ -59,10 +59,10 @@
         [guideVC setDoneBlock:^(){
             NSLog(@"点击“进入”进入应用");
             //进入应用主界面
-            self.window.rootViewController =[self setTabBarController] ;
+            self.window.rootViewController = [self setTabBarController];
         }];
     } else {
-        self.window.rootViewController =[self setTabBarController] ;
+        self.window.rootViewController = [self setTabBarController];
     }
     
     [self.window makeKeyAndVisible];
@@ -109,10 +109,10 @@
     //第一步：要获取单独控制器所在的UIStoryboard
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     //第二步：获取该控制器的Identifier并赋给你的单独控制器
-    UITabBarController *tabBarController = [story instantiateViewControllerWithIdentifier:@"TabBarController"];
-    tabBarController.delegate = self;
+    _tabVC = [story instantiateViewControllerWithIdentifier:@"TabBarController"];
+    _tabVC.delegate = self;
     
-    return tabBarController;
+    return _tabVC;
 }
 
 - (void)processKeyBoard {
