@@ -21,7 +21,8 @@
 
 @property (strong, nonatomic) UIProgressView *progressView;
 @property (strong, nonatomic) WKUserContentController *userContentController;
-@property (nonatomic,assign) BOOL h5TapBack;
+@property (nonatomic, assign) BOOL h5TapBack;
+@property (nonatomic, copy) NSString *showPullRefresh;
 
 @end
 
@@ -128,6 +129,7 @@
         [_userContentController addScriptMessageHandler:delegateController name:@"close"]; //关闭当前页面
         [_userContentController addScriptMessageHandler:delegateController name:@"tapBack"]; //返回弹窗提示
         [_userContentController addScriptMessageHandler:delegateController name:@"iapBuy"]; //课程内购
+        [_userContentController addScriptMessageHandler:delegateController name:@"setPullRefresh"]; //下拉刷新
     }
     [self.view addSubview:_webView];
     
@@ -136,11 +138,6 @@
     } else {
          [self.webView loadHTMLString:_homeUrl baseURL:nil];
     }
-    
-    __weak typeof(self) weakSelf = self;
-    self.webView.scrollView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [weakSelf.webView reload];
-    }];
     
     [self.view addSubview:self.progressView];
     [self.view insertSubview:self.webView belowSubview:self.progressView];
@@ -254,6 +251,19 @@
     
     if ([message.name isEqualToString:@"refresh"]) { //刷新
         [_webView reload];
+    }
+    
+    if ([message.name isEqualToString:@"setPullRefresh"]) { //下拉刷新
+        NSDictionary *dic = message.body;
+        _showPullRefresh = dic[@"showPullRefresh"];
+        if ([_showPullRefresh isEqualToString:@"1"]) { //显示
+            __weak typeof(self) weakSelf = self;
+            self.webView.scrollView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+                [weakSelf.webView reload];
+            }];
+        } else { //隐藏
+            self.webView.scrollView.mj_header = nil;
+        }
     }
 }
 
@@ -418,8 +428,10 @@
 // 当内容开始返回时调用
 - (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation {
     [JHHJView hideLoading]; //结束加载
-    if ([self.webView.scrollView.mj_header isRefreshing]) {
-        [self.webView.scrollView.mj_header endRefreshing];
+    if ([_showPullRefresh isEqualToString:@"1"]) { //显示
+        if ([self.webView.scrollView.mj_header isRefreshing]) {
+            [self.webView.scrollView.mj_header endRefreshing];
+        }
     }
 }
 
@@ -527,6 +539,7 @@
     [_userContentController removeScriptMessageHandlerForName:@"return"];
     [_userContentController removeScriptMessageHandlerForName:@"login"];
     [_userContentController removeScriptMessageHandlerForName:@"refresh"];
+    [_userContentController removeScriptMessageHandlerForName:@"setPullRefresh"];
 }
 
 - (void)didReceiveMemoryWarning {
