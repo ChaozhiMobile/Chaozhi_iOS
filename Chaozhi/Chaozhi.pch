@@ -19,6 +19,7 @@
 #import <UIImageView+WebCache.h>
 #import <UIButton+WebCache.h>
 #import "Utils.h"
+#import "TargetsUtils.h"
 #import "CacheUtil.h"
 #import "ReactiveObjC.h"
 #import "Masonry.h"
@@ -42,7 +43,9 @@
 /******************************keys****************************/
 
 // 友盟key
-#define kUMKey     @"5c710878b465f5fa50000071"
+#define kUMKey     [TargetsUtils getUMKey]
+// 极光key
+#define kPushKey   [TargetsUtils getPushKey]
 
 // 网络请求key
 #define kSignKey   @"ghOwfR7Wz44cbKU93KVSxwYXPGloNu"
@@ -96,6 +99,8 @@
 #define AppBuildVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
 // app名称
 #define AppName         [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"]
+// appChannel  1超职 2学智
+#define AppChannel      [[[NSBundle mainBundle] infoDictionary] objectForKey:@"channel"]
 // 当前系统语言
 #define CurrentLanguage ([[NSLocale preferredLanguages] objectAtIndex:0])
 
@@ -112,7 +117,7 @@
 #define RGBValue(value) [UIColor colorWithRed:((float)((value & 0xFF0000) >> 16))/255.0 green:((float)((value & 0xFF00) >> 8))/255.0 blue:((float)(value & 0xFF))/255.0 alpha:1.0]
 #define RGBAValue(value,a) [UIColor colorWithRed:((float)((value & 0xFF0000) >> 16))/255.0 green:((float)((value & 0xFF00) >> 8))/255.0 blue:((float)(value & 0xFF))/255.0 alpha:a] //a:透明度
 
-#define AppThemeColor RGBValue(0xC31A1F)
+#define AppThemeColor [TargetsUtils getAppThemeColor]
 #define PageColor RGBValue(0xF5F5F5)
 #define kTitleColor RGBValue(0x030303)
 #define kShadowColor RGBValue(0x24709C)

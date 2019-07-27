@@ -131,6 +131,411 @@
 		A020B079214AAB150011BB4F /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B018214AAB140011BB4F /* UserInfo.m */; };
 		A020B07A214AAB150011BB4F /* CourseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B01A214AAB140011BB4F /* CourseItem.m */; };
 		A03BB01022D6246700B3A9D8 /* protocol.png in Resources */ = {isa = PBXBuildFile; fileRef = A03BB00F22D6246700B3A9D8 /* protocol.png */; };
+		A045501B22EC4FCA00E17406 /* ChaozhiAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A045501A22EC4FCA00E17406 /* ChaozhiAssets.xcassets */; };
+		A045501E22EC528500E17406 /* TargetsUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A045501D22EC528500E17406 /* TargetsUtils.m */; };
+		A045507322EC8DFA00E17406 /* XLGInternalDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFDF214AAB140011BB4F /* XLGInternalDemoVC.m */; };
+		A045507422EC8DFA00E17406 /* TalkfunSignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07E522C4BC7C001832EA /* TalkfunSignViewController.m */; };
+		A045507522EC8DFA00E17406 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AF68214AAB130011BB4F /* Config.m */; };
+		A045507622EC8DFA00E17406 /* TalkfunUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC073522C4BC7C001832EA /* TalkfunUtils.m */; };
+		A045507722EC8DFA00E17406 /* TalkfunTextfieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC081F22C4BC7D001832EA /* TalkfunTextfieldView.m */; };
+		A045507822EC8DFA00E17406 /* CZNotDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0462A0C2187459600D12E65 /* CZNotDataView.m */; };
+		A045507922EC8DFA00E17406 /* LDNetTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B005214AAB140011BB4F /* LDNetTimer.m */; };
+		A045507A22EC8DFA00E17406 /* TalkfunFunctionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC075A22C4BC7C001832EA /* TalkfunFunctionButton.m */; };
+		A045507B22EC8DFA00E17406 /* CZUpdateView.m in Sources */ = {isa = PBXBuildFile; fileRef = A00BE16C219FFB140042E6ED /* CZUpdateView.m */; };
+		A045507C22EC8DFA00E17406 /* DownloadListController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F606A22CB895F001133C4 /* DownloadListController.m */; };
+		A045507D22EC8DFA00E17406 /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC078722C4BC7C001832EA /* QuestionViewController.m */; };
+		A045507E22EC8DFA00E17406 /* stopCopyTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC075722C4BC7C001832EA /* stopCopyTextView.m */; };
+		A045507F22EC8DFA00E17406 /* ChapterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC079722C4BC7C001832EA /* ChapterModel.m */; };
+		A045508022EC8DFA00E17406 /* TalkfunCourseProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC078D22C4BC7C001832EA /* TalkfunCourseProgress.m */; };
+		A045508122EC8DFA00E17406 /* TalkfunGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC075422C4BC7C001832EA /* TalkfunGradientView.m */; };
+		A045508222EC8DFA00E17406 /* TalkfunExpressionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07C522C4BC7C001832EA /* TalkfunExpressionViewController.m */; };
+		A045508322EC8DFA00E17406 /* BaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B017214AAB140011BB4F /* BaseItem.m */; };
+		A045508422EC8DFA00E17406 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFFB214AAB140011BB4F /* BaseVC.m */; };
+		A045508522EC8DFA00E17406 /* RootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07B722C4BC7C001832EA /* RootTableViewController.m */; };
+		A045508622EC8DFA00E17406 /* TalkfunScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC081222C4BC7D001832EA /* TalkfunScoreView.m */; };
+		A045508722EC8DFA00E17406 /* JHHJAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A05FF5D5215B163400C51E05 /* JHHJAnimation.m */; };
+		A045508822EC8DFA00E17406 /* DownloadListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F606D22CB895F001133C4 /* DownloadListModel.m */; };
+		A045508922EC8DFA00E17406 /* XLGChangeServerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A05999EB2155EC1500D17058 /* XLGChangeServerModel.m */; };
+		A045508A22EC8DFA00E17406 /* UIButton+TalkfunButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC076B22C4BC7C001832EA /* UIButton+TalkfunButton.m */; };
+		A045508B22EC8DFA00E17406 /* TalkfunHornView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC080422C4BC7D001832EA /* TalkfunHornView.m */; };
+		A045508C22EC8DFA00E17406 /* MEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFD6214AAB140011BB4F /* MEViewController.m */; };
+		A045508D22EC8DFA00E17406 /* TalkfunNoticeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07EC22C4BC7C001832EA /* TalkfunNoticeCell.m */; };
+		A045508E22EC8DFA00E17406 /* CZForgetPswVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0599A1421574CAF00D17058 /* CZForgetPswVC.m */; };
+		A045508F22EC8DFA00E17406 /* LDNetTraceRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B004214AAB140011BB4F /* LDNetTraceRoute.m */; };
+		A045509022EC8DFA00E17406 /* TalkFunTextLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC074122C4BC7C001832EA /* TalkFunTextLayer.m */; };
+		A045509122EC8DFA00E17406 /* evaluateView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC081522C4BC7D001832EA /* evaluateView.m */; };
+		A045509222EC8DFA00E17406 /* ChapterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC078022C4BC7C001832EA /* ChapterViewController.m */; };
+		A045509322EC8DFA00E17406 /* BaseNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFFD214AAB140011BB4F /* BaseNavBar.m */; };
+		A045509422EC8DFA00E17406 /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC078422C4BC7C001832EA /* AlbumViewController.m */; };
+		A045509522EC8DFA00E17406 /* TalkfunNewButtonViewButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC075E22C4BC7C001832EA /* TalkfunNewButtonViewButton.m */; };
+		A045509622EC8DFA00E17406 /* LDNetGetAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B00B214AAB140011BB4F /* LDNetGetAddress.m */; };
+		A045509722EC8DFA00E17406 /* UILabel+TalkfunLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC080922C4BC7D001832EA /* UILabel+TalkfunLabel.m */; };
+		A045509822EC8DFA00E17406 /* HYAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC075F22C4BC7C001832EA /* HYAlertView.m */; };
+		A045509922EC8DFA00E17406 /* XLGLoginTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFDA214AAB140011BB4F /* XLGLoginTestView.m */; };
+		A045509A22EC8DFA00E17406 /* TalkfunButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC076A22C4BC7C001832EA /* TalkfunButtonView.m */; };
+		A045509B22EC8DFA00E17406 /* CZRegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0599A1221574CAF00D17058 /* CZRegisterVC.m */; };
+		A045509C22EC8DFA00E17406 /* BaseWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFFF214AAB140011BB4F /* BaseWebVC.m */; };
+		A045509D22EC8DFA00E17406 /* QuestionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC074C22C4BC7C001832EA /* QuestionModel.m */; };
+		A045509E22EC8DFA00E17406 /* TalkfunNetworkStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC080122C4BC7D001832EA /* TalkfunNetworkStatusView.m */; };
+		A045509F22EC8DFA00E17406 /* TalkfunNewFunctionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC077822C4BC7C001832EA /* TalkfunNewFunctionView.m */; };
+		A04550A022EC8DFA00E17406 /* TalkfunPlaybackMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07A822C4BC7C001832EA /* TalkfunPlaybackMessageView.m */; };
+		A04550A122EC8DFA00E17406 /* NetworkDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC072F22C4BC7C001832EA /* NetworkDetector.m */; };
+		A04550A222EC8DFA00E17406 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFB2214AAB130011BB4F /* Utils.m */; };
+		A04550A322EC8DFA00E17406 /* LDNetPing.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B009214AAB140011BB4F /* LDNetPing.m */; };
+		A04550A422EC8DFA00E17406 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B012214AAB140011BB4F /* Reachability.m */; };
+		A04550A522EC8DFA00E17406 /* CZHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0599A1921574CAF00D17058 /* CZHomeVC.m */; };
+		A04550A622EC8DFA00E17406 /* AlbumCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07AD22C4BC7C001832EA /* AlbumCellTableViewCell.m */; };
+		A04550A722EC8DFA00E17406 /* KeyChainUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFAD214AAB130011BB4F /* KeyChainUtil.m */; };
+		A04550A822EC8DFA00E17406 /* MEViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFD1214AAB140011BB4F /* MEViewModel.m */; };
+		A04550A922EC8DFA00E17406 /* UIView+TalkfunView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC075922C4BC7C001832EA /* UIView+TalkfunView.m */; };
+		A04550AA22EC8DFA00E17406 /* NSString+Hashing.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC073922C4BC7C001832EA /* NSString+Hashing.m */; };
+		A04550AB22EC8DFA00E17406 /* Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFB0214AAB130011BB4F /* Toast.m */; };
+		A04550AC22EC8DFA00E17406 /* BulletManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC073F22C4BC7C001832EA /* BulletManager.m */; };
+		A04550AD22EC8DFA00E17406 /* LotteryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07D422C4BC7C001832EA /* LotteryViewController.m */; };
+		A04550AE22EC8DFA00E17406 /* MyLotteryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07D122C4BC7C001832EA /* MyLotteryViewController.m */; };
+		A04550AF22EC8DFA00E17406 /* TalkfunLongTextfieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC082022C4BC7D001832EA /* TalkfunLongTextfieldView.m */; };
+		A04550B022EC8DFA00E17406 /* DownloadListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F607222CB895F001133C4 /* DownloadListTableViewCell.m */; };
+		A04550B122EC8DFA00E17406 /* ChoiceButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07CE22C4BC7C001832EA /* ChoiceButton.m */; };
+		A04550B222EC8DFA00E17406 /* TalkfunVideoControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07A722C4BC7C001832EA /* TalkfunVideoControlView.m */; };
+		A04550B322EC8DFA00E17406 /* StudyInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A091D12F2178FAF300CCDAF6 /* StudyInfoItem.m */; };
+		A04550B422EC8DFA00E17406 /* barrageSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC081A22C4BC7D001832EA /* barrageSwitch.m */; };
+		A04550B522EC8DFA00E17406 /* TalkfunExpressionCloseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07F822C4BC7D001832EA /* TalkfunExpressionCloseButton.m */; };
+		A04550B622EC8DFA00E17406 /* MEView.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFD5214AAB140011BB4F /* MEView.m */; };
+		A04550B722EC8DFA00E17406 /* UIScrollView+TalkfunScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC077922C4BC7C001832EA /* UIScrollView+TalkfunScrollView.m */; };
+		A04550B822EC8DFA00E17406 /* VideoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E8981B22CF22C600DB09BA /* VideoItem.m */; };
+		A04550B922EC8DFA00E17406 /* TalkfunMultifunctionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E0D3C922D0E3A100296851 /* TalkfunMultifunctionTool.m */; };
+		A04550BA22EC8DFA00E17406 /* UITextField+HTtext.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC072D22C4BC7C001832EA /* UITextField+HTtext.m */; };
+		A04550BB22EC8DFA00E17406 /* LDNetDiagnoService.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B00C214AAB140011BB4F /* LDNetDiagnoService.m */; };
+		A04550BC22EC8DFA00E17406 /* AlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC079322C4BC7C001832EA /* AlbumModel.m */; };
+		A04550BD22EC8DFA00E17406 /* TalkfunNewTextfieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC080022C4BC7D001832EA /* TalkfunNewTextfieldView.m */; };
+		A04550BE22EC8DFA00E17406 /* CourseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B01A214AAB140011BB4F /* CourseItem.m */; };
+		A04550BF22EC8DFA00E17406 /* CZGuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FDB3221763DBE001BE2C6 /* CZGuideVC.m */; };
+		A04550C022EC8DFA00E17406 /* TalkfunNetworkLines.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC079A22C4BC7C001832EA /* TalkfunNetworkLines.m */; };
+		A04550C122EC8DFA00E17406 /* BaseNC.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFFC214AAB140011BB4F /* BaseNC.m */; };
+		A04550C222EC8DFA00E17406 /* CZProtocalWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A05CD23B22AE8C8E00CBE4F5 /* CZProtocalWebVC.m */; };
+		A04550C322EC8DFA00E17406 /* CZAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 201DF3CF22AE584700904EAF /* CZAlertView.m */; };
+		A04550C422EC8DFA00E17406 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC078322C4BC7C001832EA /* ChatViewController.m */; };
+		A04550C522EC8DFA00E17406 /* UTLHelpper.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC073322C4BC7C001832EA /* UTLHelpper.m */; };
+		A04550C622EC8DFA00E17406 /* ChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07FD22C4BC7D001832EA /* ChatCell.m */; };
+		A04550C722EC8DFA00E17406 /* TalkfunNewChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC076222C4BC7C001832EA /* TalkfunNewChatCell.m */; };
+		A04550C822EC8DFA00E17406 /* TalkfunGuidanceView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07C422C4BC7C001832EA /* TalkfunGuidanceView.m */; };
+		A04550C922EC8DFA00E17406 /* XLGAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFB5214AAB130011BB4F /* XLGAlertView.m */; };
+		A04550CA22EC8DFA00E17406 /* NotifyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A071273A2216E7D700DC3C20 /* NotifyItem.m */; };
+		A04550CB22EC8DFA00E17406 /* TalkfunReplyTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC080E22C4BC7D001832EA /* TalkfunReplyTipsView.m */; };
+		A04550CC22EC8DFA00E17406 /* NetworkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A05FF5CC215B14F100C51E05 /* NetworkUtil.m */; };
+		A04550CD22EC8DFA00E17406 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E8982022CF265800DB09BA /* DBManager.m */; };
+		A04550CE22EC8DFA00E17406 /* CZSelectCourseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9DB2169DB0000F4DA5B /* CZSelectCourseVC.m */; };
+		A04550CF22EC8DFA00E17406 /* TalkfunModulation.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC074522C4BC7C001832EA /* TalkfunModulation.m */; };
+		A04550D022EC8DFA00E17406 /* TalkfunMultifunctionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E0D3CA22D0E3A100296851 /* TalkfunMultifunctionButton.m */; };
+		A04550D122EC8DFA00E17406 /* TalkfunGuidenceButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC080222C4BC7D001832EA /* TalkfunGuidenceButton.m */; };
+		A04550D222EC8DFA00E17406 /* TalkfunCourseManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC078F22C4BC7C001832EA /* TalkfunCourseManagement.m */; };
+		A04550D322EC8DFA00E17406 /* ckickUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07D822C4BC7C001832EA /* ckickUILabel.m */; };
+		A04550D422EC8DFA00E17406 /* LDSimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B006214AAB140011BB4F /* LDSimplePing.m */; };
+		A04550D522EC8DFA00E17406 /* XLGLogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A05999E62155EC1500D17058 /* XLGLogVC.m */; };
+		A04550D622EC8DFA00E17406 /* CZLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0599A0F21574CAF00D17058 /* CZLoginVC.m */; };
+		A04550D722EC8DFA00E17406 /* VoteEndViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07D322C4BC7C001832EA /* VoteEndViewController.m */; };
+		A04550D822EC8DFA00E17406 /* CZStudyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0599A1C21574CAF00D17058 /* CZStudyVC.m */; };
+		A04550D922EC8DFA00E17406 /* JHHJCenterBGView.m in Sources */ = {isa = PBXBuildFile; fileRef = A05FF5D2215B163400C51E05 /* JHHJCenterBGView.m */; };
+		A04550DA22EC8DFA00E17406 /* QuestionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07B522C4BC7C001832EA /* QuestionTableViewController.m */; };
+		A04550DB22EC8DFA00E17406 /* NetworkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07CC22C4BC7C001832EA /* NetworkModel.m */; };
+		A04550DC22EC8DFA00E17406 /* TalkfunItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CB7CB822C65D8800069B34 /* TalkfunItem.m */; };
+		A04550DD22EC8DFA00E17406 /* QuestionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07AF22C4BC7C001832EA /* QuestionTableViewCell.m */; };
+		A04550DE22EC8DFA00E17406 /* VersionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A00BE169219FF6E70042E6ED /* VersionItem.m */; };
+		A04550DF22EC8DFA00E17406 /* QuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC080F22C4BC7D001832EA /* QuestionCell.m */; };
+		A04550E022EC8DFA00E17406 /* CZMineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0599A1621574CAF00D17058 /* CZMineVC.m */; };
+		A04550E122EC8DFA00E17406 /* LDNetConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B010214AAB140011BB4F /* LDNetConnect.m */; };
+		A04550E222EC8DFA00E17406 /* AppDelegate+Push.m in Sources */ = {isa = PBXBuildFile; fileRef = A070498C2211610300864050 /* AppDelegate+Push.m */; };
+		A04550E322EC8DFA00E17406 /* TalkfunCloseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07EF22C4BC7C001832EA /* TalkfunCloseButton.m */; };
+		A04550E422EC8DFA00E17406 /* XLGChangeServerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A05999EC2155EC1500D17058 /* XLGChangeServerVC.m */; };
+		A04550E522EC8DFA00E17406 /* XLGChangeServerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A05999E92155EC1500D17058 /* XLGChangeServerCell.m */; };
+		A04550E622EC8DFA00E17406 /* NetworkSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07CA22C4BC7C001832EA /* NetworkSelectionViewController.m */; };
+		A04550E722EC8DFA00E17406 /* XLGInternalTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFE0214AAB140011BB4F /* XLGInternalTestVC.m */; };
+		A04550E822EC8DFA00E17406 /* TalkfunExpressionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07F222C4BC7C001832EA /* TalkfunExpressionCell.m */; };
+		A04550E922EC8DFA00E17406 /* XLGLoginTestViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFDB214AAB140011BB4F /* XLGLoginTestViewModel.m */; };
+		A04550EA22EC8DFA00E17406 /* XLGExternalTestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A05999E02155EC1500D17058 /* XLGExternalTestTool.m */; };
+		A04550EB22EC8DFA00E17406 /* PlaybackChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC079122C4BC7C001832EA /* PlaybackChatModel.m */; };
+		A04550EC22EC8DFA00E17406 /* TalkfunNewQuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC076322C4BC7C001832EA /* TalkfunNewQuestionCell.m */; };
+		A04550ED22EC8DFA00E17406 /* XLGLoginTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFD9214AAB140011BB4F /* XLGLoginTestVC.m */; };
+		A04550EE22EC8DFA00E17406 /* TalkfunNewFunctionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC076822C4BC7C001832EA /* TalkfunNewFunctionButton.m */; };
+		A04550EF22EC8DFA00E17406 /* BulletView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC074222C4BC7C001832EA /* BulletView.m */; };
+		A04550F022EC8DFA00E17406 /* CZInfiniteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0599A0D21574CAF00D17058 /* CZInfiniteVC.m */; };
+		A04550F122EC8DFA00E17406 /* CacheUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFAE214AAB130011BB4F /* CacheUtil.m */; };
+		A04550F222EC8DFA00E17406 /* TalkfunMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC082122C4BC7D001832EA /* TalkfunMessageView.m */; };
+		A04550F322EC8DFA00E17406 /* ChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC074D22C4BC7C001832EA /* ChatModel.m */; };
+		A04550F422EC8DFA00E17406 /* PlaybackQuestionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC078E22C4BC7C001832EA /* PlaybackQuestionModel.m */; };
+		A04550F522EC8DFA00E17406 /* WKDelegateController.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFF4214AAB140011BB4F /* WKDelegateController.m */; };
+		A04550F622EC8DFA00E17406 /* HomeInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FDB2E216F20C0001BE2C6 /* HomeInfoItem.m */; };
+		A04550F722EC8DFA00E17406 /* CZNotNetAvailableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0462A062187407600D12E65 /* CZNotNetAvailableVC.m */; };
+		A04550F822EC8DFA00E17406 /* UIImageView+Exten.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC074622C4BC7C001832EA /* UIImageView+Exten.m */; };
+		A04550F922EC8DFA00E17406 /* CZSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9D72168C26900F4DA5B /* CZSettingVC.m */; };
+		A04550FA22EC8DFA00E17406 /* ChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC079922C4BC7C001832EA /* ChatTableViewCell.m */; };
+		A04550FB22EC8DFA00E17406 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AF48214AA85B0011BB4F /* AppDelegate.m */; };
+		A04550FC22EC8DFA00E17406 /* ChapterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07B122C4BC7C001832EA /* ChapterTableViewCell.m */; };
+		A04550FD22EC8DFA00E17406 /* CZStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C1257221BC021B0026430E /* CZStarView.m */; };
+		A04550FE22EC8DFA00E17406 /* TalkfunKuaiJinView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07A222C4BC7C001832EA /* TalkfunKuaiJinView.m */; };
+		A04550FF22EC8DFA00E17406 /* TargetsUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A045501D22EC528500E17406 /* TargetsUtils.m */; };
+		A045510022EC8DFA00E17406 /* XLGLottie.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFB8214AAB130011BB4F /* XLGLottie.m */; };
+		A045510122EC8DFA00E17406 /* NoticeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07BF22C4BC7C001832EA /* NoticeTableViewController.m */; };
+		A045510222EC8DFA00E17406 /* TalkfunMoveLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC074422C4BC7C001832EA /* TalkfunMoveLabel.m */; };
+		A045510322EC8DFA00E17406 /* TalkfunWatermark.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07FE22C4BC7D001832EA /* TalkfunWatermark.m */; };
+		A045510422EC8DFA00E17406 /* TalkfunPlaybackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC078A22C4BC7C001832EA /* TalkfunPlaybackViewController.m */; };
+		A045510522EC8DFA00E17406 /* VoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07D522C4BC7C001832EA /* VoteViewController.m */; };
+		A045510622EC8DFA00E17406 /* BaseScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFFE214AAB140011BB4F /* BaseScrollView.m */; };
+		A045510722EC8DFA00E17406 /* GroupChatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07B822C4BC7C001832EA /* GroupChatTableViewController.m */; };
+		A045510822EC8DFA00E17406 /* UIView+TalkfunActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC073622C4BC7C001832EA /* UIView+TalkfunActivityIndicator.m */; };
+		A045510922EC8DFA00E17406 /* CZSelectCourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9DE2169DCDC00F4DA5B /* CZSelectCourseCell.m */; };
+		A045510A22EC8DFA00E17406 /* TalkfunReplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC076022C4BC7C001832EA /* TalkfunReplyCell.m */; };
+		A045510B22EC8DFA00E17406 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFA6214AAB130011BB4F /* main.m */; };
+		A045510C22EC8DFA00E17406 /* LotteryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07D222C4BC7C001832EA /* LotteryCell.m */; };
+		A045510D22EC8DFA00E17406 /* UITextField+TalkfunTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC080722C4BC7D001832EA /* UITextField+TalkfunTextField.m */; };
+		A045510E22EC8DFA00E17406 /* GroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07C022C4BC7C001832EA /* GroupTableViewController.m */; };
+		A045510F22EC8DFA00E17406 /* ProgressLoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFBE214AAB130011BB4F /* ProgressLoadView.m */; };
+		A045511022EC8DFA00E17406 /* TalkfunLEEStarRating.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC081622C4BC7D001832EA /* TalkfunLEEStarRating.m */; };
+		A045511122EC8DFA00E17406 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC078122C4BC7C001832EA /* BaseTableViewController.m */; };
+		A045511222EC8DFA00E17406 /* TalkfunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07C622C4BC7C001832EA /* TalkfunViewController.m */; };
+		A045511322EC8DFA00E17406 /* JHHJView.m in Sources */ = {isa = PBXBuildFile; fileRef = A05FF5D4215B163400C51E05 /* JHHJView.m */; };
+		A045511422EC8DFA00E17406 /* TalkfunHttpTools.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC072B22C4BC7C001832EA /* TalkfunHttpTools.m */; };
+		A045511522EC8DFA00E17406 /* RegularPhoneTF.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFBB214AAB130011BB4F /* RegularPhoneTF.m */; };
+		A045511622EC8DFA00E17406 /* ChatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07B622C4BC7C001832EA /* ChatTableViewController.m */; };
+		A045511722EC8DFA00E17406 /* AEIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = A05FF5D8215B163400C51E05 /* AEIndicator.m */; };
+		A045511822EC8DFA00E17406 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A05FF5C9215B129C00C51E05 /* NetworkManager.m */; };
+		A045511922EC8DFA00E17406 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B018214AAB140011BB4F /* UserInfo.m */; };
+		A045511A22EC8DFA00E17406 /* videoDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC075022C4BC7C001832EA /* videoDefinition.m */; };
+		A045511B22EC8DFA00E17406 /* PurchaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A010DC6021D6003E007EBA2C /* PurchaseItem.m */; };
+		A045511C22EC8DFA00E17406 /* TalkfunFunctionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC075B22C4BC7C001832EA /* TalkfunFunctionView.m */; };
+		A045511D22EC8DFA00E17406 /* TalkfunLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC075222C4BC7C001832EA /* TalkfunLoadingView.m */; };
+		A045511E22EC8DFA00E17406 /* UIImageView+TalkfunImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC080822C4BC7D001832EA /* UIImageView+TalkfunImageView.m */; };
+		A045511F22EC8DFA00E17406 /* TalkfunNewChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC077122C4BC7C001832EA /* TalkfunNewChatTableViewCell.m */; };
+		A045512122EC8DFA00E17406 /* SocketIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20572FDF22C36F8F00568CDC /* SocketIO.framework */; };
+		A045512222EC8DFA00E17406 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20572EE522C36C3600568CDC /* Foundation.framework */; };
+		A045512322EC8DFA00E17406 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D3B922C22E2000560A74 /* SystemConfiguration.framework */; };
+		A045512422EC8DFA00E17406 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D3B722C22E1900560A74 /* MobileCoreServices.framework */; };
+		A045512522EC8DFA00E17406 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D3B522C22E1200560A74 /* VideoToolbox.framework */; };
+		A045512622EC8DFA00E17406 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D3B322C22E0A00560A74 /* CoreMedia.framework */; };
+		A045512722EC8DFA00E17406 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D3B122C22DFC00560A74 /* AVFoundation.framework */; };
+		A045512822EC8DFA00E17406 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D36E22C2283700560A74 /* libiconv.tbd */; };
+		A045512922EC8DFA00E17406 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D36C22C2282A00560A74 /* libz.tbd */; };
+		A045512A22EC8DFA00E17406 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D3AF22C22DD500560A74 /* AudioToolbox.framework */; };
+		A045512B22EC8DFA00E17406 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D3AD22C22DCD00560A74 /* CoreAudio.framework */; };
+		A045512C22EC8DFA00E17406 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D3AB22C22DC500560A74 /* MediaPlayer.framework */; };
+		A045512D22EC8DFA00E17406 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D3A922C22DBC00560A74 /* OpenGLES.framework */; };
+		A045512E22EC8DFA00E17406 /* libTalkfunSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AC071C22C4BC7C001832EA /* libTalkfunSDK.a */; };
+		A045512F22EC8DFA00E17406 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D3A722C22DB300560A74 /* QuartzCore.framework */; };
+		A045513022EC8DFA00E17406 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D36A22C2281C00560A74 /* Accelerate.framework */; };
+		A045513122EC8DFA00E17406 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D37022C2284800560A74 /* libsqlite3.tbd */; };
+		A045513222EC8DFA00E17406 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D36822C2280E00560A74 /* libsqlite3.0.tbd */; };
+		A045513322EC8DFA00E17406 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01E1E5022223F8800435A0E /* UserNotifications.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		A045513422EC8DFA00E17406 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01CCCB7229D71EE00A8408B /* StoreKit.framework */; };
+		A045513522EC8DFA00E17406 /* Pods_Chaozhi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3429E05D3D88CA2DC3F14BB0 /* Pods_Chaozhi.framework */; };
+		A045513622EC8DFA00E17406 /* Pods_Chaozhi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3429E05D3D88CA2DC3F14BB0 /* Pods_Chaozhi.framework */; };
+		A045513822EC8DFA00E17406 /* TalkfunTextfieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07F122C4BC7C001832EA /* TalkfunTextfieldView.xib */; };
+		A045513922EC8DFA00E17406 /* vote.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC083B22C4BC7D001832EA /* vote.png */; };
+		A045513A22EC8DFA00E17406 /* 错误.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC081922C4BC7D001832EA /* 错误.png */; };
+		A045513B22EC8DFA00E17406 /* 平板竖屏 - 引导1.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC088822C4BC7D001832EA /* 平板竖屏 - 引导1.png */; };
+		A045513C22EC8DFA00E17406 /* tick.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC083A22C4BC7D001832EA /* tick.png */; };
+		A045513D22EC8DFA00E17406 /* icon_operation_04.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC085822C4BC7D001832EA /* icon_operation_04.png */; };
+		A045513E22EC8DFA00E17406 /* ic_refresh_image_013@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF7C214AAB130011BB4F /* ic_refresh_image_013@2x.png */; };
+		A045513F22EC8DFA00E17406 /* good.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC085D22C4BC7D001832EA /* good.png */; };
+		A045514022EC8DFA00E17406 /* icon_operation_10.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC085922C4BC7D001832EA /* icon_operation_10.png */; };
+		A045514122EC8DFA00E17406 /* ic_refresh_image_010@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF8E214AAB130011BB4F /* ic_refresh_image_010@2x.png */; };
+		A045514222EC8DFA00E17406 /* 网络提示2.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC086A22C4BC7D001832EA /* 网络提示2.png */; };
+		A045514322EC8DFA00E17406 /* 引导-手机.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC088922C4BC7D001832EA /* 引导-手机.png */; };
+		A045514422EC8DFA00E17406 /* 开启摄像头.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC087922C4BC7D001832EA /* 开启摄像头.png */; };
+		A045514522EC8DFA00E17406 /* zhubo.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC083622C4BC7D001832EA /* zhubo.png */; };
+		A045514622EC8DFA00E17406 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A020AFA4214AAB130011BB4F /* Main.storyboard */; };
+		A045514722EC8DFA00E17406 /* 刷新.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC087122C4BC7D001832EA /* 刷新.png */; };
+		A045514822EC8DFA00E17406 /* ChapterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC079F22C4BC7C001832EA /* ChapterTableViewCell.xib */; };
+		A045514922EC8DFA00E17406 /* TalkfunKuaiJinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07A422C4BC7C001832EA /* TalkfunKuaiJinView.xib */; };
+		A045514A22EC8DFA00E17406 /* blueProgress.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC083D22C4BC7D001832EA /* blueProgress.png */; };
+		A045514B22EC8DFA00E17406 /* TalkfunPlaybackMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07A522C4BC7C001832EA /* TalkfunPlaybackMessageView.xib */; };
+		A045514C22EC8DFA00E17406 /* 等待队列_点击.png in Resources */ = {isa = PBXBuildFile; fileRef = A01F607C22CB8CD0001133C4 /* 等待队列_点击.png */; };
+		A045514D22EC8DFA00E17406 /* greatwall.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC083322C4BC7D001832EA /* greatwall.png */; };
+		A045514E22EC8DFA00E17406 /* 章节-默认.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC089922C4BC7D001832EA /* 章节-默认.png */; };
+		A045514F22EC8DFA00E17406 /* 删除-点击.png in Resources */ = {isa = PBXBuildFile; fileRef = A01F607D22CB8CD0001133C4 /* 删除-点击.png */; };
+		A045515022EC8DFA00E17406 /* expressionClose.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC086022C4BC7D001832EA /* expressionClose.png */; };
+		A045515122EC8DFA00E17406 /* 屏幕切换.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC088122C4BC7D001832EA /* 屏幕切换.png */; };
+		A045515222EC8DFA00E17406 /* ic_refresh_image_001@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF7B214AAB130011BB4F /* ic_refresh_image_001@2x.png */; };
+		A045515322EC8DFA00E17406 /* 鲜花.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC087322C4BC7D001832EA /* 鲜花.png */; };
+		A045515422EC8DFA00E17406 /* 暂停1.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC088F22C4BC7D001832EA /* 暂停1.png */; };
+		A045515522EC8DFA00E17406 /* 开启弹幕.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC087222C4BC7D001832EA /* 开启弹幕.png */; };
+		A045515622EC8DFA00E17406 /* new delete.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC087522C4BC7D001832EA /* new delete.png */; };
+		A045515722EC8DFA00E17406 /* badStatus.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC085122C4BC7D001832EA /* badStatus.png */; };
+		A045515822EC8DFA00E17406 /* 下载.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC089122C4BC7D001832EA /* 下载.png */; };
+		A045515922EC8DFA00E17406 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC089D22C4BC7D001832EA /* play.png */; };
+		A045515A22EC8DFA00E17406 /* 网络提示1.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC086B22C4BC7D001832EA /* 网络提示1.png */; };
+		A045515B22EC8DFA00E17406 /* inLottery.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC084522C4BC7D001832EA /* inLottery.png */; };
+		A045515C22EC8DFA00E17406 /* ic_refresh_image_024@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF8C214AAB130011BB4F /* ic_refresh_image_024@2x.png */; };
+		A045515D22EC8DFA00E17406 /* 表情.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC087022C4BC7D001832EA /* 表情.png */; };
+		A045515E22EC8DFA00E17406 /* ic_refresh_image_016@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF99214AAB130011BB4F /* ic_refresh_image_016@2x.png */; };
+		A045515F22EC8DFA00E17406 /* TalkfunMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC081E22C4BC7D001832EA /* TalkfunMessageView.xib */; };
+		A045516022EC8DFA00E17406 /* TalkfunReplyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC077022C4BC7C001832EA /* TalkfunReplyCell.xib */; };
+		A045516122EC8DFA00E17406 /* 全屏.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC087622C4BC7D001832EA /* 全屏.png */; };
+		A045516222EC8DFA00E17406 /* broadcast.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC084722C4BC7D001832EA /* broadcast.png */; };
+		A045516322EC8DFA00E17406 /* ic_refresh_image_012@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF8B214AAB130011BB4F /* ic_refresh_image_012@2x.png */; };
+		A045516422EC8DFA00E17406 /* ic_refresh_image_026@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF91214AAB130011BB4F /* ic_refresh_image_026@2x.png */; };
+		A045516522EC8DFA00E17406 /* 组 97.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC088C22C4BC7D001832EA /* 组 97.png */; };
+		A045516622EC8DFA00E17406 /* TalkfunLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC075822C4BC7C001832EA /* TalkfunLoadingView.xib */; };
+		A045516722EC8DFA00E17406 /* ic_refresh_image_027@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF7D214AAB130011BB4F /* ic_refresh_image_027@2x.png */; };
+		A045516822EC8DFA00E17406 /* circleUnselect.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC084322C4BC7D001832EA /* circleUnselect.png */; };
+		A045516922EC8DFA00E17406 /* netcom.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC082F22C4BC7D001832EA /* netcom.png */; };
+		A045516A22EC8DFA00E17406 /* TalkfunLongTextfieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC081D22C4BC7D001832EA /* TalkfunLongTextfieldView.xib */; };
+		A045516B22EC8DFA00E17406 /* TalkfunGuidanceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07CF22C4BC7C001832EA /* TalkfunGuidanceView.xib */; };
+		A045516C22EC8DFA00E17406 /* blackboard.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC089C22C4BC7D001832EA /* blackboard.png */; };
+		A045516D22EC8DFA00E17406 /* education.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC083122C4BC7D001832EA /* education.png */; };
+		A045516E22EC8DFA00E17406 /* ic_refresh_image_000@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF8A214AAB130011BB4F /* ic_refresh_image_000@2x.png */; };
+		A045516F22EC8DFA00E17406 /* TalkfunSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A0AC071922C4BC7C001832EA /* TalkfunSDK.bundle */; };
+		A045517022EC8DFA00E17406 /* flower.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC086522C4BC7D001832EA /* flower.png */; };
+		A045517122EC8DFA00E17406 /* generalStatus.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC085222C4BC7D001832EA /* generalStatus.png */; };
+		A045517222EC8DFA00E17406 /* ic_refresh_image_020@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF98214AAB130011BB4F /* ic_refresh_image_020@2x.png */; };
+		A045517322EC8DFA00E17406 /* 直播未开始.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC084D22C4BC7D001832EA /* 直播未开始.png */; };
+		A045517422EC8DFA00E17406 /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC082322C4BC7D001832EA /* QuestionCell.xib */; };
+		A045517522EC8DFA00E17406 /* 星.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC081122C4BC7D001832EA /* 星.png */; };
+		A045517622EC8DFA00E17406 /* 聊天-点击.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC088022C4BC7D001832EA /* 聊天-点击.png */; };
+		A045517722EC8DFA00E17406 /* ic_refresh_image_032@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF97214AAB130011BB4F /* ic_refresh_image_032@2x.png */; };
+		A045517822EC8DFA00E17406 /* icon_operation_08.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC085A22C4BC7D001832EA /* icon_operation_08.png */; };
+		A045517922EC8DFA00E17406 /* TalkfunFunctionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC076C22C4BC7C001832EA /* TalkfunFunctionView.xib */; };
+		A045517A22EC8DFA00E17406 /* mobile.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC083022C4BC7D001832EA /* mobile.png */; };
+		A045517B22EC8DFA00E17406 /* TalkfunSignViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07E422C4BC7C001832EA /* TalkfunSignViewController.xib */; };
+		A045517C22EC8DFA00E17406 /* ic_refresh_image_008@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF9A214AAB130011BB4F /* ic_refresh_image_008@2x.png */; };
+		A045517D22EC8DFA00E17406 /* 下载-默认.png in Resources */ = {isa = PBXBuildFile; fileRef = A01F608322CB8CD0001133C4 /* 下载-默认.png */; };
+		A045517E22EC8DFA00E17406 /* protocol.css in Resources */ = {isa = PBXBuildFile; fileRef = A0E0D3CF22D2299800296851 /* protocol.css */; };
+		A045517F22EC8DFA00E17406 /* 灰色鲜花.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC087C22C4BC7D001832EA /* 灰色鲜花.png */; };
+		A045518022EC8DFA00E17406 /* 组 103.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC088B22C4BC7D001832EA /* 组 103.png */; };
+		A045518122EC8DFA00E17406 /* ic_refresh_image_019@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF81214AAB130011BB4F /* ic_refresh_image_019@2x.png */; };
+		A045518222EC8DFA00E17406 /* ic_refresh_image_015@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF82214AAB130011BB4F /* ic_refresh_image_015@2x.png */; };
+		A045518322EC8DFA00E17406 /* 继续_点击.png in Resources */ = {isa = PBXBuildFile; fileRef = A01F608422CB8CD0001133C4 /* 继续_点击.png */; };
+		A045518422EC8DFA00E17406 /* TalkfunExpressionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC081B22C4BC7D001832EA /* TalkfunExpressionCell.xib */; };
+		A045518522EC8DFA00E17406 /* expression.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC085422C4BC7D001832EA /* expression.png */; };
+		A045518622EC8DFA00E17406 /* corner_emo.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC085522C4BC7D001832EA /* corner_emo.png */; };
+		A045518722EC8DFA00E17406 /* hard.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC086622C4BC7D001832EA /* hard.png */; };
+		A045518822EC8DFA00E17406 /* MyLotteryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07D722C4BC7C001832EA /* MyLotteryViewController.xib */; };
+		A045518922EC8DFA00E17406 /* 倒退.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC089222C4BC7D001832EA /* 倒退.png */; };
+		A045518A22EC8DFA00E17406 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC084222C4BC7D001832EA /* delete.png */; };
+		A045518B22EC8DFA00E17406 /* pitiful.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC085E22C4BC7D001832EA /* pitiful.png */; };
+		A045518C22EC8DFA00E17406 /* 关闭摄像头.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC087D22C4BC7D001832EA /* 关闭摄像头.png */; };
+		A045518D22EC8DFA00E17406 /* rcircle.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC084C22C4BC7D001832EA /* rcircle.png */; };
+		A045518E22EC8DFA00E17406 /* ic_refresh_image_025@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF79214AAB130011BB4F /* ic_refresh_image_025@2x.png */; };
+		A045518F22EC8DFA00E17406 /* 暂停_默认.png in Resources */ = {isa = PBXBuildFile; fileRef = A01F607E22CB8CD0001133C4 /* 暂停_默认.png */; };
+		A045519022EC8DFA00E17406 /* ic_refresh_image_004@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF9B214AAB130011BB4F /* ic_refresh_image_004@2x.png */; };
+		A045519122EC8DFA00E17406 /* circleSelect.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC083822C4BC7D001832EA /* circleSelect.png */; };
+		A045519222EC8DFA00E17406 /* TalkfunButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC075122C4BC7C001832EA /* TalkfunButtonView.xib */; };
+		A045519322EC8DFA00E17406 /* love.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC086822C4BC7D001832EA /* love.png */; };
+		A045519422EC8DFA00E17406 /* 退出全屏.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC088522C4BC7D001832EA /* 退出全屏.png */; };
+		A045519522EC8DFA00E17406 /* TalkfunReplyTipsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07FF22C4BC7D001832EA /* TalkfunReplyTipsView.xib */; };
+		A045519622EC8DFA00E17406 /* ic_refresh_image_033@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF88214AAB130011BB4F /* ic_refresh_image_033@2x.png */; };
+		A045519722EC8DFA00E17406 /* X.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC083C22C4BC7D001832EA /* X.png */; };
+		A045519822EC8DFA00E17406 /* ic_refresh_image_034@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF90214AAB130011BB4F /* ic_refresh_image_034@2x.png */; };
+		A045519922EC8DFA00E17406 /* 网络.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC087422C4BC7D001832EA /* 网络.png */; };
+		A045519A22EC8DFA00E17406 /* ic_refresh_image_011@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF7E214AAB130011BB4F /* ic_refresh_image_011@2x.png */; };
+		A045519B22EC8DFA00E17406 /* 直播已结束.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC084E22C4BC7D001832EA /* 直播已结束.png */; };
+		A045519C22EC8DFA00E17406 /* amaz.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC086122C4BC7D001832EA /* amaz.png */; };
+		A045519D22EC8DFA00E17406 /* TalkfunNetworkLines.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07B022C4BC7C001832EA /* TalkfunNetworkLines.xib */; };
+		A045519E22EC8DFA00E17406 /* fullscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC085722C4BC7D001832EA /* fullscreen.png */; };
+		A045519F22EC8DFA00E17406 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = A020AF9D214AAB130011BB4F /* loading.json */; };
+		A04551A022EC8DFA00E17406 /* openBullet.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC084A22C4BC7D001832EA /* openBullet.png */; };
+		A04551A122EC8DFA00E17406 /* LotteryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07DA22C4BC7C001832EA /* LotteryViewController.xib */; };
+		A04551A222EC8DFA00E17406 /* 公告-点击.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC087822C4BC7D001832EA /* 公告-点击.png */; };
+		A04551A422EC8DFA00E17406 /* close_button.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC086C22C4BC7D001832EA /* close_button.png */; };
+		A04551A522EC8DFA00E17406 /* 暂停_点击.png in Resources */ = {isa = PBXBuildFile; fileRef = A01F607922CB8CD0001133C4 /* 暂停_点击.png */; };
+		A04551A622EC8DFA00E17406 /* ic_refresh_image_030@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF93214AAB130011BB4F /* ic_refresh_image_030@2x.png */; };
+		A04551A722EC8DFA00E17406 /* 重新_默认.png in Resources */ = {isa = PBXBuildFile; fileRef = A01F607F22CB8CD0001133C4 /* 重新_默认.png */; };
+		A04551A822EC8DFA00E17406 /* ic_refresh_image_006@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF95214AAB130011BB4F /* ic_refresh_image_006@2x.png */; };
+		A04551A922EC8DFA00E17406 /* AlbumCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07AC22C4BC7C001832EA /* AlbumCellTableViewCell.xib */; };
+		A04551AA22EC8DFA00E17406 /* 直播已结束16_9.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC083522C4BC7D001832EA /* 直播已结束16_9.png */; };
+		A04551AB22EC8DFA00E17406 /* ic_refresh_image_028@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF8D214AAB130011BB4F /* ic_refresh_image_028@2x.png */; };
+		A04551AC22EC8DFA00E17406 /* 组 102.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC088A22C4BC7D001832EA /* 组 102.png */; };
+		A04551AD22EC8DFA00E17406 /* cool.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC086422C4BC7D001832EA /* cool.png */; };
+		A04551AE22EC8DFA00E17406 /* 提问-点击.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC087B22C4BC7D001832EA /* 提问-点击.png */; };
+		A04551AF22EC8DFA00E17406 /* xx.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC083222C4BC7D001832EA /* xx.png */; };
+		A04551B022EC8DFA00E17406 /* ic_refresh_image_018@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF94214AAB130011BB4F /* ic_refresh_image_018@2x.png */; };
+		A04551B122EC8DFA00E17406 /* 关闭弹幕.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC087E22C4BC7D001832EA /* 关闭弹幕.png */; };
+		A04551B222EC8DFA00E17406 /* notification.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC084622C4BC7D001832EA /* notification.png */; };
+		A04551B322EC8DFA00E17406 /* S_FLOWER.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC086322C4BC7D001832EA /* S_FLOWER.png */; };
+		A04551B422EC8DFA00E17406 /* 专辑-默认.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC089B22C4BC7D001832EA /* 专辑-默认.png */; };
+		A04551B522EC8DFA00E17406 /* telecom.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC082E22C4BC7D001832EA /* telecom.png */; };
+		A04551B622EC8DFA00E17406 /* rectUnselect.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC083F22C4BC7D001832EA /* rectUnselect.png */; };
+		A04551B722EC8DFA00E17406 /* bye.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC086722C4BC7D001832EA /* bye.png */; };
+		A04551B822EC8DFA00E17406 /* ic_refresh_image_021@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF89214AAB130011BB4F /* ic_refresh_image_021@2x.png */; };
+		A04551B922EC8DFA00E17406 /* TalkfunNewFunctionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC076122C4BC7C001832EA /* TalkfunNewFunctionView.xib */; };
+		A04551BA22EC8DFA00E17406 /* 聊天-默认.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC088422C4BC7D001832EA /* 聊天-默认.png */; };
+		A04551BB22EC8DFA00E17406 /* 直播未开始16_9.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC084B22C4BC7D001832EA /* 直播未开始16_9.png */; };
+		A04551BC22EC8DFA00E17406 /* cttnet.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC082C22C4BC7D001832EA /* cttnet.png */; };
+		A04551BD22EC8DFA00E17406 /* ic_refresh_image_017@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF86214AAB130011BB4F /* ic_refresh_image_017@2x.png */; };
+		A04551BE22EC8DFA00E17406 /* ic_refresh_image_005@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF87214AAB130011BB4F /* ic_refresh_image_005@2x.png */; };
+		A04551BF22EC8DFA00E17406 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A020AF76214AAB130011BB4F /* Assets.xcassets */; };
+		A04551C022EC8DFA00E17406 /* rose.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC086E22C4BC7D001832EA /* rose.png */; };
+		A04551C122EC8DFA00E17406 /* TalkfunExpressionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07C322C4BC7C001832EA /* TalkfunExpressionViewController.xib */; };
+		A04551C222EC8DFA00E17406 /* VoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07D622C4BC7C001832EA /* VoteViewController.xib */; };
+		A04551C322EC8DFA00E17406 /* ic_refresh_image_009@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF85214AAB130011BB4F /* ic_refresh_image_009@2x.png */; };
+		A04551C422EC8DFA00E17406 /* QuestionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC079D22C4BC7C001832EA /* QuestionTableViewCell.xib */; };
+		A04551C522EC8DFA00E17406 /* LotteryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07E022C4BC7C001832EA /* LotteryCell.xib */; };
+		A04551C622EC8DFA00E17406 /* 章节-点击.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC089622C4BC7D001832EA /* 章节-点击.png */; };
+		A04551C722EC8DFA00E17406 /* failP.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC084822C4BC7D001832EA /* failP.png */; };
+		A04551C822EC8DFA00E17406 /* lottery.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC083922C4BC7D001832EA /* lottery.png */; };
+		A04551C922EC8DFA00E17406 /* protocol.png in Resources */ = {isa = PBXBuildFile; fileRef = A03BB00F22D6246700B3A9D8 /* protocol.png */; };
+		A04551CA22EC8DFA00E17406 /* TalkfunVideoControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07A922C4BC7C001832EA /* TalkfunVideoControlView.xib */; };
+		A04551CB22EC8DFA00E17406 /* DownloadListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01F607122CB895F001133C4 /* DownloadListTableViewCell.xib */; };
+		A04551CC22EC8DFA00E17406 /* ic_refresh_image_031@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF84214AAB130011BB4F /* ic_refresh_image_031@2x.png */; };
+		A04551CD22EC8DFA00E17406 /* 专辑-点击.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC089E22C4BC7D001832EA /* 专辑-点击.png */; };
+		A04551CE22EC8DFA00E17406 /* 键盘.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC087F22C4BC7D001832EA /* 键盘.png */; };
+		A04551CF22EC8DFA00E17406 /* 播放1.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC089022C4BC7D001832EA /* 播放1.png */; };
+		A04551D022EC8DFA00E17406 /* 答复提示.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC088622C4BC7D001832EA /* 答复提示.png */; };
+		A04551D122EC8DFA00E17406 /* goodStatus.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC085022C4BC7D001832EA /* goodStatus.png */; };
+		A04551D222EC8DFA00E17406 /* 进度2.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC089822C4BC7D001832EA /* 进度2.png */; };
+		A04551D322EC8DFA00E17406 /* MyStudyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00FA9E0216A09EA00F4DA5B /* MyStudyView.xib */; };
+		A04551D422EC8DFA00E17406 /* TalkfunNewQuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC077422C4BC7C001832EA /* TalkfunNewQuestionCell.xib */; };
+		A04551D522EC8DFA00E17406 /* 返回.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC088322C4BC7D001832EA /* 返回.png */; };
+		A04551D622EC8DFA00E17406 /* grayProgress.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC084122C4BC7D001832EA /* grayProgress.png */; };
+		A04551D722EC8DFA00E17406 /* networkSelectImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC082D22C4BC7D001832EA /* networkSelectImage.png */; };
+		A04551D822EC8DFA00E17406 /* ic_refresh_image_023@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF83214AAB130011BB4F /* ic_refresh_image_023@2x.png */; };
+		A04551D922EC8DFA00E17406 /* 快进.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC089522C4BC7D001832EA /* 快进.png */; };
+		A04551DA22EC8DFA00E17406 /* 提问-默认.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC087722C4BC7D001832EA /* 提问-默认.png */; };
+		A04551DB22EC8DFA00E17406 /* TalkfunHornView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07F322C4BC7D001832EA /* TalkfunHornView.xib */; };
+		A04551DC22EC8DFA00E17406 /* 重新_点击.png in Resources */ = {isa = PBXBuildFile; fileRef = A01F608022CB8CD0001133C4 /* 重新_点击.png */; };
+		A04551DD22EC8DFA00E17406 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07AE22C4BC7C001832EA /* ChatTableViewCell.xib */; };
+		A04551DE22EC8DFA00E17406 /* TalkfunNetworkStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07F422C4BC7D001832EA /* TalkfunNetworkStatusView.xib */; };
+		A04551DF22EC8DFA00E17406 /* TeacherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 208B695A2185903700B263FB /* TeacherView.xib */; };
+		A04551E022EC8DFA00E17406 /* myLottery.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC084422C4BC7D001832EA /* myLottery.png */; };
+		A04551E122EC8DFA00E17406 /* renshu.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC082922C4BC7D001832EA /* renshu.png */; };
+		A04551E222EC8DFA00E17406 /* TalkfunNoticeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC080522C4BC7D001832EA /* TalkfunNoticeCell.xib */; };
+		A04551E322EC8DFA00E17406 /* 公告-默认.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC087A22C4BC7D001832EA /* 公告-默认.png */; };
+		A04551E422EC8DFA00E17406 /* teletron.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC082B22C4BC7D001832EA /* teletron.png */; };
+		A04551E522EC8DFA00E17406 /* hongbao.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC084922C4BC7D001832EA /* hongbao.png */; };
+		A04551E622EC8DFA00E17406 /* giveFlower.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC083422C4BC7D001832EA /* giveFlower.png */; };
+		A04551E722EC8DFA00E17406 /* ic_refresh_image_014@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF96214AAB130011BB4F /* ic_refresh_image_014@2x.png */; };
+		A04551E822EC8DFA00E17406 /* 默认图片.png in Resources */ = {isa = PBXBuildFile; fileRef = A01F608522CB8CD0001133C4 /* 默认图片.png */; };
+		A04551E922EC8DFA00E17406 /* 删除-默认.png in Resources */ = {isa = PBXBuildFile; fileRef = A01F607A22CB8CD0001133C4 /* 删除-默认.png */; };
+		A04551EA22EC8DFA00E17406 /* TalkfunNewChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC076622C4BC7C001832EA /* TalkfunNewChatCell.xib */; };
+		A04551EB22EC8DFA00E17406 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A020AFA2214AAB130011BB4F /* LaunchScreen.storyboard */; };
+		A04551EC22EC8DFA00E17406 /* ic_refresh_image_007@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF80214AAB130011BB4F /* ic_refresh_image_007@2x.png */; };
+		A04551ED22EC8DFA00E17406 /* send.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC088222C4BC7D001832EA /* send.png */; };
+		A04551EE22EC8DFA00E17406 /* NetworkSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07C922C4BC7C001832EA /* NetworkSelectionViewController.xib */; };
+		A04551EF22EC8DFA00E17406 /* rectSelect.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC083E22C4BC7D001832EA /* rectSelect.png */; };
+		A04551F022EC8DFA00E17406 /* ic_refresh_image_022@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF92214AAB130011BB4F /* ic_refresh_image_022@2x.png */; };
+		A04551F122EC8DFA00E17406 /* ic_refresh_image_002@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF8F214AAB130011BB4F /* ic_refresh_image_002@2x.png */; };
+		A04551F222EC8DFA00E17406 /* goback.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC086922C4BC7D001832EA /* goback.png */; };
+		A04551F322EC8DFA00E17406 /* xxx.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC089422C4BC7D001832EA /* xxx.png */; };
+		A04551F422EC8DFA00E17406 /* aha.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC085F22C4BC7D001832EA /* aha.png */; };
+		A04551F522EC8DFA00E17406 /* ic_refresh_image_003@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF7F214AAB130011BB4F /* ic_refresh_image_003@2x.png */; };
+		A04551F622EC8DFA00E17406 /* 继续_默认.png in Resources */ = {isa = PBXBuildFile; fileRef = A01F608222CB8CD0001133C4 /* 继续_默认.png */; };
+		A04551F722EC8DFA00E17406 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC089722C4BC7D001832EA /* pause.png */; };
+		A04551F822EC8DFA00E17406 /* 等待队列_默认.png in Resources */ = {isa = PBXBuildFile; fileRef = A01F607B22CB8CD0001133C4 /* 等待队列_默认.png */; };
+		A04551F922EC8DFA00E17406 /* 下载-点击.png in Resources */ = {isa = PBXBuildFile; fileRef = A01F608122CB8CD0001133C4 /* 下载-点击.png */; };
+		A04551FA22EC8DFA00E17406 /* myDelete.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC084022C4BC7D001832EA /* myDelete.png */; };
+		A04551FB22EC8DFA00E17406 /* TalkfunNewChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC075322C4BC7C001832EA /* TalkfunNewChatTableViewCell.xib */; };
+		A04551FC22EC8DFA00E17406 /* 进度1.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC089A22C4BC7D001832EA /* 进度1.png */; };
+		A04551FD22EC8DFA00E17406 /* why.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC086222C4BC7D001832EA /* why.png */; };
+		A04551FE22EC8DFA00E17406 /* VoteEndViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07D922C4BC7C001832EA /* VoteEndViewController.xib */; };
+		A04551FF22EC8DFA00E17406 /* ic_refresh_image_029@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF7A214AAB130011BB4F /* ic_refresh_image_029@2x.png */; };
+		A045520022EC8DFA00E17406 /* ChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC082222C4BC7D001832EA /* ChatCell.xib */; };
+		A045520122EC8DFA00E17406 /* ico_scroller.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC082722C4BC7D001832EA /* ico_scroller.png */; };
+		A045520222EC8DFA00E17406 /* 进度O.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC089322C4BC7D001832EA /* 进度O.png */; };
+		A045520322EC8DFA00E17406 /* camara change.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC085B22C4BC7D001832EA /* camara change.png */; };
+		A045520422EC8DFA00E17406 /* TalkfunNewTextfieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07ED22C4BC7C001832EA /* TalkfunNewTextfieldView.xib */; };
+		A045520522EC8DFA00E17406 /* evaluateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC081322C4BC7D001832EA /* evaluateView.xib */; };
+		A045520622EC8DFA00E17406 /* closeBullet.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC082822C4BC7D001832EA /* closeBullet.png */; };
+		A045520722EC8DFA00E17406 /* 平板竖屏 - 引导效果.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC088D22C4BC7D001832EA /* 平板竖屏 - 引导效果.png */; };
+		A045520D22EC940A00E17406 /* XuezhiAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A045501822EC4F2B00E17406 /* XuezhiAssets.xcassets */; };
 		A0462A072187407600D12E65 /* CZNotNetAvailableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0462A062187407600D12E65 /* CZNotNetAvailableVC.m */; };
 		A0462A0D2187459600D12E65 /* CZNotDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0462A0C2187459600D12E65 /* CZNotDataView.m */; };
 		A05999EF2155EC1500D17058 /* XLGExternalTestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A05999E02155EC1500D17058 /* XLGExternalTestTool.m */; };
@@ -407,13 +812,13 @@
 		A0E0D3D022D2299800296851 /* protocol.css in Resources */ = {isa = PBXBuildFile; fileRef = A0E0D3CF22D2299800296851 /* protocol.css */; };
 		A0E8981D22CF22C600DB09BA /* VideoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E8981B22CF22C600DB09BA /* VideoItem.m */; };
 		A0E8982122CF265800DB09BA /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E8982022CF265800DB09BA /* DBManager.m */; };
+		C0E8EB6B016115D195593C73 /* Pods_Chaozhi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3429E05D3D88CA2DC3F14BB0 /* Pods_Chaozhi.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0AF6FC5BB1D601461F72C62C /* Pods-Chaozhi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chaozhi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chaozhi/Pods-Chaozhi.debug.xcconfig"; sourceTree = "<group>"; };
+		16348408E265BA9234A49C3D /* Pods-Chaozhi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chaozhi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chaozhi/Pods-Chaozhi.debug.xcconfig"; sourceTree = "<group>"; };
 		201DF3CE22AE584700904EAF /* CZAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZAlertView.h; sourceTree = "<group>"; };
 		201DF3CF22AE584700904EAF /* CZAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZAlertView.m; sourceTree = "<group>"; };
-		204F3265086F4B67483EF547 /* Pods-Chaozhi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chaozhi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chaozhi/Pods-Chaozhi.release.xcconfig"; sourceTree = "<group>"; };
 		20572EE522C36C3600568CDC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		20572FDF22C36F8F00568CDC /* SocketIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SocketIO.framework; path = "../../../Library/Developer/Xcode/DerivedData/Socket.IO-Client-Swift-eqfvvgttzqzcvmgxhrdeqdsfpjqw/Build/Products/Debug-iphoneos/SocketIO.framework"; sourceTree = "<group>"; };
 		205FDB2D216F20C0001BE2C6 /* HomeInfoItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeInfoItem.h; sourceTree = "<group>"; };
@@ -438,6 +843,7 @@
 		20D3D3B722C22E1900560A74 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		20D3D3B922C22E2000560A74 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3429E05D3D88CA2DC3F14BB0 /* Pods_Chaozhi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chaozhi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5213687D02D00729C4F7FA09 /* Pods-Chaozhi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chaozhi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chaozhi/Pods-Chaozhi.release.xcconfig"; sourceTree = "<group>"; };
 		A00BE168219FF6E70042E6ED /* VersionItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VersionItem.h; sourceTree = "<group>"; };
 		A00BE169219FF6E70042E6ED /* VersionItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VersionItem.m; sourceTree = "<group>"; };
 		A00BE16B219FFB140042E6ED /* CZUpdateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZUpdateView.h; sourceTree = "<group>"; };
@@ -591,6 +997,12 @@
 		A020B01B214AAB140011BB4F /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		A020B07B214AAD600011BB4F /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		A03BB00F22D6246700B3A9D8 /* protocol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = protocol.png; sourceTree = "<group>"; };
+		A045501522EC4ACB00E17406 /* Xuezhi.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Xuezhi.entitlements; sourceTree = "<group>"; };
+		A045501822EC4F2B00E17406 /* XuezhiAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = XuezhiAssets.xcassets; sourceTree = "<group>"; };
+		A045501A22EC4FCA00E17406 /* ChaozhiAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ChaozhiAssets.xcassets; sourceTree = "<group>"; };
+		A045501C22EC528500E17406 /* TargetsUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TargetsUtils.h; sourceTree = "<group>"; };
+		A045501D22EC528500E17406 /* TargetsUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TargetsUtils.m; sourceTree = "<group>"; };
+		A045520C22EC8DFA00E17406 /* Xuezhi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xuezhi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0462A052187407600D12E65 /* CZNotNetAvailableVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZNotNetAvailableVC.h; sourceTree = "<group>"; };
 		A0462A062187407600D12E65 /* CZNotNetAvailableVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZNotNetAvailableVC.m; sourceTree = "<group>"; };
 		A0462A0B2187459600D12E65 /* CZNotDataView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZNotDataView.h; sourceTree = "<group>"; };
@@ -1030,6 +1442,36 @@
 				A01E1E5122223F8800435A0E /* UserNotifications.framework in Frameworks */,
 				A01CCCB8229D71EE00A8408B /* StoreKit.framework in Frameworks */,
 				85401F932D5D75079941DDCE /* Pods_Chaozhi.framework in Frameworks */,
+				C0E8EB6B016115D195593C73 /* Pods_Chaozhi.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A045512022EC8DFA00E17406 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A045512122EC8DFA00E17406 /* SocketIO.framework in Frameworks */,
+				A045512222EC8DFA00E17406 /* Foundation.framework in Frameworks */,
+				A045512322EC8DFA00E17406 /* SystemConfiguration.framework in Frameworks */,
+				A045512422EC8DFA00E17406 /* MobileCoreServices.framework in Frameworks */,
+				A045512522EC8DFA00E17406 /* VideoToolbox.framework in Frameworks */,
+				A045512622EC8DFA00E17406 /* CoreMedia.framework in Frameworks */,
+				A045512722EC8DFA00E17406 /* AVFoundation.framework in Frameworks */,
+				A045512822EC8DFA00E17406 /* libiconv.tbd in Frameworks */,
+				A045512922EC8DFA00E17406 /* libz.tbd in Frameworks */,
+				A045512A22EC8DFA00E17406 /* AudioToolbox.framework in Frameworks */,
+				A045512B22EC8DFA00E17406 /* CoreAudio.framework in Frameworks */,
+				A045512C22EC8DFA00E17406 /* MediaPlayer.framework in Frameworks */,
+				A045512D22EC8DFA00E17406 /* OpenGLES.framework in Frameworks */,
+				A045512E22EC8DFA00E17406 /* libTalkfunSDK.a in Frameworks */,
+				A045512F22EC8DFA00E17406 /* QuartzCore.framework in Frameworks */,
+				A045513022EC8DFA00E17406 /* Accelerate.framework in Frameworks */,
+				A045513122EC8DFA00E17406 /* libsqlite3.tbd in Frameworks */,
+				A045513222EC8DFA00E17406 /* libsqlite3.0.tbd in Frameworks */,
+				A045513322EC8DFA00E17406 /* UserNotifications.framework in Frameworks */,
+				A045513422EC8DFA00E17406 /* StoreKit.framework in Frameworks */,
+				A045513522EC8DFA00E17406 /* Pods_Chaozhi.framework in Frameworks */,
+				A045513622EC8DFA00E17406 /* Pods_Chaozhi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1134,6 +1576,7 @@
 		A020AF3B214AA85B0011BB4F = {
 			isa = PBXGroup;
 			children = (
+				A045501422EC4ACB00E17406 /* Xuezhi */,
 				A020AF46214AA85B0011BB4F /* Chaozhi */,
 				A020AF45214AA85B0011BB4F /* Products */,
 				A7FA9F4632752641B75EA9B4 /* Pods */,
@@ -1145,6 +1588,7 @@
 			isa = PBXGroup;
 			children = (
 				A020AF44214AA85B0011BB4F /* Chaozhi.app */,
+				A045520C22EC8DFA00E17406 /* Xuezhi.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1192,6 +1636,8 @@
 			isa = PBXGroup;
 			children = (
 				A020AF76214AAB130011BB4F /* Assets.xcassets */,
+				A045501A22EC4FCA00E17406 /* ChaozhiAssets.xcassets */,
+				A045501822EC4F2B00E17406 /* XuezhiAssets.xcassets */,
 				A0E0D3CE22D2295D00296851 /* H5 */,
 				A020AF77214AAB130011BB4F /* Animation */,
 				A020AF9C214AAB130011BB4F /* Json */,
@@ -1262,6 +1708,8 @@
 			children = (
 				A020AFA9214AAB130011BB4F /* Utils.h */,
 				A020AFB2214AAB130011BB4F /* Utils.m */,
+				A045501C22EC528500E17406 /* TargetsUtils.h */,
+				A045501D22EC528500E17406 /* TargetsUtils.m */,
 				A0C1257021BC01E00026430E /* StarView */,
 				A05FF5CF215B163400C51E05 /* Indicator(指示器) */,
 				A020AFAA214AAB130011BB4F /* Cache */,
@@ -1508,6 +1956,14 @@
 				A0E8981B22CF22C600DB09BA /* VideoItem.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A045501422EC4ACB00E17406 /* Xuezhi */ = {
+			isa = PBXGroup;
+			children = (
+				A045501522EC4ACB00E17406 /* Xuezhi.entitlements */,
+			);
+			path = Xuezhi;
 			sourceTree = "<group>";
 		};
 		A0462A042187402D00D12E65 /* View */ = {
@@ -2351,8 +2807,8 @@
 		A7FA9F4632752641B75EA9B4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0AF6FC5BB1D601461F72C62C /* Pods-Chaozhi.debug.xcconfig */,
-				204F3265086F4B67483EF547 /* Pods-Chaozhi.release.xcconfig */,
+				16348408E265BA9234A49C3D /* Pods-Chaozhi.debug.xcconfig */,
+				5213687D02D00729C4F7FA09 /* Pods-Chaozhi.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -2408,6 +2864,25 @@
 			productReference = A020AF44214AA85B0011BB4F /* Chaozhi.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A045507022EC8DFA00E17406 /* Xuezhi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A045520922EC8DFA00E17406 /* Build configuration list for PBXNativeTarget "Xuezhi" */;
+			buildPhases = (
+				A045507122EC8DFA00E17406 /* [CP] Check Pods Manifest.lock */,
+				A045507222EC8DFA00E17406 /* Sources */,
+				A045512022EC8DFA00E17406 /* Frameworks */,
+				A045513722EC8DFA00E17406 /* Resources */,
+				A045520822EC8DFA00E17406 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Xuezhi;
+			productName = Chaozhi;
+			productReference = A045520C22EC8DFA00E17406 /* Xuezhi.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -2445,6 +2920,7 @@
 			projectRoot = "";
 			targets = (
 				A020AF43214AA85B0011BB4F /* Chaozhi */,
+				A045507022EC8DFA00E17406 /* Xuezhi */,
 			);
 		};
 /* End PBXProject section */
@@ -2561,6 +3037,7 @@
 				A0AC094A22C4BC7E001832EA /* openBullet.png in Resources */,
 				A0AC090022C4BC7E001832EA /* LotteryViewController.xib in Resources */,
 				A0AC097222C4BC7E001832EA /* 公告-点击.png in Resources */,
+				A045501B22EC4FCA00E17406 /* ChaozhiAssets.xcassets in Resources */,
 				A0AC096822C4BC7E001832EA /* close_button.png in Resources */,
 				A01F608622CB8CD0001133C4 /* 暂停_点击.png in Resources */,
 				A020B040214AAB150011BB4F /* ic_refresh_image_030@2x.png in Resources */,
@@ -2664,9 +3141,259 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A045513722EC8DFA00E17406 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A045520D22EC940A00E17406 /* XuezhiAssets.xcassets in Resources */,
+				A045513822EC8DFA00E17406 /* TalkfunTextfieldView.xib in Resources */,
+				A045513922EC8DFA00E17406 /* vote.png in Resources */,
+				A045513A22EC8DFA00E17406 /* 错误.png in Resources */,
+				A045513B22EC8DFA00E17406 /* 平板竖屏 - 引导1.png in Resources */,
+				A045513C22EC8DFA00E17406 /* tick.png in Resources */,
+				A045513D22EC8DFA00E17406 /* icon_operation_04.png in Resources */,
+				A045513E22EC8DFA00E17406 /* ic_refresh_image_013@2x.png in Resources */,
+				A045513F22EC8DFA00E17406 /* good.png in Resources */,
+				A045514022EC8DFA00E17406 /* icon_operation_10.png in Resources */,
+				A045514122EC8DFA00E17406 /* ic_refresh_image_010@2x.png in Resources */,
+				A045514222EC8DFA00E17406 /* 网络提示2.png in Resources */,
+				A045514322EC8DFA00E17406 /* 引导-手机.png in Resources */,
+				A045514422EC8DFA00E17406 /* 开启摄像头.png in Resources */,
+				A045514522EC8DFA00E17406 /* zhubo.png in Resources */,
+				A045514622EC8DFA00E17406 /* Main.storyboard in Resources */,
+				A045514722EC8DFA00E17406 /* 刷新.png in Resources */,
+				A045514822EC8DFA00E17406 /* ChapterTableViewCell.xib in Resources */,
+				A045514922EC8DFA00E17406 /* TalkfunKuaiJinView.xib in Resources */,
+				A045514A22EC8DFA00E17406 /* blueProgress.png in Resources */,
+				A045514B22EC8DFA00E17406 /* TalkfunPlaybackMessageView.xib in Resources */,
+				A045514C22EC8DFA00E17406 /* 等待队列_点击.png in Resources */,
+				A045514D22EC8DFA00E17406 /* greatwall.png in Resources */,
+				A045514E22EC8DFA00E17406 /* 章节-默认.png in Resources */,
+				A045514F22EC8DFA00E17406 /* 删除-点击.png in Resources */,
+				A045515022EC8DFA00E17406 /* expressionClose.png in Resources */,
+				A045515122EC8DFA00E17406 /* 屏幕切换.png in Resources */,
+				A045515222EC8DFA00E17406 /* ic_refresh_image_001@2x.png in Resources */,
+				A045515322EC8DFA00E17406 /* 鲜花.png in Resources */,
+				A045515422EC8DFA00E17406 /* 暂停1.png in Resources */,
+				A045515522EC8DFA00E17406 /* 开启弹幕.png in Resources */,
+				A045515622EC8DFA00E17406 /* new delete.png in Resources */,
+				A045515722EC8DFA00E17406 /* badStatus.png in Resources */,
+				A045515822EC8DFA00E17406 /* 下载.png in Resources */,
+				A045515922EC8DFA00E17406 /* play.png in Resources */,
+				A045515A22EC8DFA00E17406 /* 网络提示1.png in Resources */,
+				A045515B22EC8DFA00E17406 /* inLottery.png in Resources */,
+				A045515C22EC8DFA00E17406 /* ic_refresh_image_024@2x.png in Resources */,
+				A045515D22EC8DFA00E17406 /* 表情.png in Resources */,
+				A045515E22EC8DFA00E17406 /* ic_refresh_image_016@2x.png in Resources */,
+				A045515F22EC8DFA00E17406 /* TalkfunMessageView.xib in Resources */,
+				A045516022EC8DFA00E17406 /* TalkfunReplyCell.xib in Resources */,
+				A045516122EC8DFA00E17406 /* 全屏.png in Resources */,
+				A045516222EC8DFA00E17406 /* broadcast.png in Resources */,
+				A045516322EC8DFA00E17406 /* ic_refresh_image_012@2x.png in Resources */,
+				A045516422EC8DFA00E17406 /* ic_refresh_image_026@2x.png in Resources */,
+				A045516522EC8DFA00E17406 /* 组 97.png in Resources */,
+				A045516622EC8DFA00E17406 /* TalkfunLoadingView.xib in Resources */,
+				A045516722EC8DFA00E17406 /* ic_refresh_image_027@2x.png in Resources */,
+				A045516822EC8DFA00E17406 /* circleUnselect.png in Resources */,
+				A045516922EC8DFA00E17406 /* netcom.png in Resources */,
+				A045516A22EC8DFA00E17406 /* TalkfunLongTextfieldView.xib in Resources */,
+				A045516B22EC8DFA00E17406 /* TalkfunGuidanceView.xib in Resources */,
+				A045516C22EC8DFA00E17406 /* blackboard.png in Resources */,
+				A045516D22EC8DFA00E17406 /* education.png in Resources */,
+				A045516E22EC8DFA00E17406 /* ic_refresh_image_000@2x.png in Resources */,
+				A045516F22EC8DFA00E17406 /* TalkfunSDK.bundle in Resources */,
+				A045517022EC8DFA00E17406 /* flower.png in Resources */,
+				A045517122EC8DFA00E17406 /* generalStatus.png in Resources */,
+				A045517222EC8DFA00E17406 /* ic_refresh_image_020@2x.png in Resources */,
+				A045517322EC8DFA00E17406 /* 直播未开始.png in Resources */,
+				A045517422EC8DFA00E17406 /* QuestionCell.xib in Resources */,
+				A045517522EC8DFA00E17406 /* 星.png in Resources */,
+				A045517622EC8DFA00E17406 /* 聊天-点击.png in Resources */,
+				A045517722EC8DFA00E17406 /* ic_refresh_image_032@2x.png in Resources */,
+				A045517822EC8DFA00E17406 /* icon_operation_08.png in Resources */,
+				A045517922EC8DFA00E17406 /* TalkfunFunctionView.xib in Resources */,
+				A045517A22EC8DFA00E17406 /* mobile.png in Resources */,
+				A045517B22EC8DFA00E17406 /* TalkfunSignViewController.xib in Resources */,
+				A045517C22EC8DFA00E17406 /* ic_refresh_image_008@2x.png in Resources */,
+				A045517D22EC8DFA00E17406 /* 下载-默认.png in Resources */,
+				A045517E22EC8DFA00E17406 /* protocol.css in Resources */,
+				A045517F22EC8DFA00E17406 /* 灰色鲜花.png in Resources */,
+				A045518022EC8DFA00E17406 /* 组 103.png in Resources */,
+				A045518122EC8DFA00E17406 /* ic_refresh_image_019@2x.png in Resources */,
+				A045518222EC8DFA00E17406 /* ic_refresh_image_015@2x.png in Resources */,
+				A045518322EC8DFA00E17406 /* 继续_点击.png in Resources */,
+				A045518422EC8DFA00E17406 /* TalkfunExpressionCell.xib in Resources */,
+				A045518522EC8DFA00E17406 /* expression.png in Resources */,
+				A045518622EC8DFA00E17406 /* corner_emo.png in Resources */,
+				A045518722EC8DFA00E17406 /* hard.png in Resources */,
+				A045518822EC8DFA00E17406 /* MyLotteryViewController.xib in Resources */,
+				A045518922EC8DFA00E17406 /* 倒退.png in Resources */,
+				A045518A22EC8DFA00E17406 /* delete.png in Resources */,
+				A045518B22EC8DFA00E17406 /* pitiful.png in Resources */,
+				A045518C22EC8DFA00E17406 /* 关闭摄像头.png in Resources */,
+				A045518D22EC8DFA00E17406 /* rcircle.png in Resources */,
+				A045518E22EC8DFA00E17406 /* ic_refresh_image_025@2x.png in Resources */,
+				A045518F22EC8DFA00E17406 /* 暂停_默认.png in Resources */,
+				A045519022EC8DFA00E17406 /* ic_refresh_image_004@2x.png in Resources */,
+				A045519122EC8DFA00E17406 /* circleSelect.png in Resources */,
+				A045519222EC8DFA00E17406 /* TalkfunButtonView.xib in Resources */,
+				A045519322EC8DFA00E17406 /* love.png in Resources */,
+				A045519422EC8DFA00E17406 /* 退出全屏.png in Resources */,
+				A045519522EC8DFA00E17406 /* TalkfunReplyTipsView.xib in Resources */,
+				A045519622EC8DFA00E17406 /* ic_refresh_image_033@2x.png in Resources */,
+				A045519722EC8DFA00E17406 /* X.png in Resources */,
+				A045519822EC8DFA00E17406 /* ic_refresh_image_034@2x.png in Resources */,
+				A045519922EC8DFA00E17406 /* 网络.png in Resources */,
+				A045519A22EC8DFA00E17406 /* ic_refresh_image_011@2x.png in Resources */,
+				A045519B22EC8DFA00E17406 /* 直播已结束.png in Resources */,
+				A045519C22EC8DFA00E17406 /* amaz.png in Resources */,
+				A045519D22EC8DFA00E17406 /* TalkfunNetworkLines.xib in Resources */,
+				A045519E22EC8DFA00E17406 /* fullscreen.png in Resources */,
+				A045519F22EC8DFA00E17406 /* loading.json in Resources */,
+				A04551A022EC8DFA00E17406 /* openBullet.png in Resources */,
+				A04551A122EC8DFA00E17406 /* LotteryViewController.xib in Resources */,
+				A04551A222EC8DFA00E17406 /* 公告-点击.png in Resources */,
+				A04551A422EC8DFA00E17406 /* close_button.png in Resources */,
+				A04551A522EC8DFA00E17406 /* 暂停_点击.png in Resources */,
+				A04551A622EC8DFA00E17406 /* ic_refresh_image_030@2x.png in Resources */,
+				A04551A722EC8DFA00E17406 /* 重新_默认.png in Resources */,
+				A04551A822EC8DFA00E17406 /* ic_refresh_image_006@2x.png in Resources */,
+				A04551A922EC8DFA00E17406 /* AlbumCellTableViewCell.xib in Resources */,
+				A04551AA22EC8DFA00E17406 /* 直播已结束16_9.png in Resources */,
+				A04551AB22EC8DFA00E17406 /* ic_refresh_image_028@2x.png in Resources */,
+				A04551AC22EC8DFA00E17406 /* 组 102.png in Resources */,
+				A04551AD22EC8DFA00E17406 /* cool.png in Resources */,
+				A04551AE22EC8DFA00E17406 /* 提问-点击.png in Resources */,
+				A04551AF22EC8DFA00E17406 /* xx.png in Resources */,
+				A04551B022EC8DFA00E17406 /* ic_refresh_image_018@2x.png in Resources */,
+				A04551B122EC8DFA00E17406 /* 关闭弹幕.png in Resources */,
+				A04551B222EC8DFA00E17406 /* notification.png in Resources */,
+				A04551B322EC8DFA00E17406 /* S_FLOWER.png in Resources */,
+				A04551B422EC8DFA00E17406 /* 专辑-默认.png in Resources */,
+				A04551B522EC8DFA00E17406 /* telecom.png in Resources */,
+				A04551B622EC8DFA00E17406 /* rectUnselect.png in Resources */,
+				A04551B722EC8DFA00E17406 /* bye.png in Resources */,
+				A04551B822EC8DFA00E17406 /* ic_refresh_image_021@2x.png in Resources */,
+				A04551B922EC8DFA00E17406 /* TalkfunNewFunctionView.xib in Resources */,
+				A04551BA22EC8DFA00E17406 /* 聊天-默认.png in Resources */,
+				A04551BB22EC8DFA00E17406 /* 直播未开始16_9.png in Resources */,
+				A04551BC22EC8DFA00E17406 /* cttnet.png in Resources */,
+				A04551BD22EC8DFA00E17406 /* ic_refresh_image_017@2x.png in Resources */,
+				A04551BE22EC8DFA00E17406 /* ic_refresh_image_005@2x.png in Resources */,
+				A04551BF22EC8DFA00E17406 /* Assets.xcassets in Resources */,
+				A04551C022EC8DFA00E17406 /* rose.png in Resources */,
+				A04551C122EC8DFA00E17406 /* TalkfunExpressionViewController.xib in Resources */,
+				A04551C222EC8DFA00E17406 /* VoteViewController.xib in Resources */,
+				A04551C322EC8DFA00E17406 /* ic_refresh_image_009@2x.png in Resources */,
+				A04551C422EC8DFA00E17406 /* QuestionTableViewCell.xib in Resources */,
+				A04551C522EC8DFA00E17406 /* LotteryCell.xib in Resources */,
+				A04551C622EC8DFA00E17406 /* 章节-点击.png in Resources */,
+				A04551C722EC8DFA00E17406 /* failP.png in Resources */,
+				A04551C822EC8DFA00E17406 /* lottery.png in Resources */,
+				A04551C922EC8DFA00E17406 /* protocol.png in Resources */,
+				A04551CA22EC8DFA00E17406 /* TalkfunVideoControlView.xib in Resources */,
+				A04551CB22EC8DFA00E17406 /* DownloadListTableViewCell.xib in Resources */,
+				A04551CC22EC8DFA00E17406 /* ic_refresh_image_031@2x.png in Resources */,
+				A04551CD22EC8DFA00E17406 /* 专辑-点击.png in Resources */,
+				A04551CE22EC8DFA00E17406 /* 键盘.png in Resources */,
+				A04551CF22EC8DFA00E17406 /* 播放1.png in Resources */,
+				A04551D022EC8DFA00E17406 /* 答复提示.png in Resources */,
+				A04551D122EC8DFA00E17406 /* goodStatus.png in Resources */,
+				A04551D222EC8DFA00E17406 /* 进度2.png in Resources */,
+				A04551D322EC8DFA00E17406 /* MyStudyView.xib in Resources */,
+				A04551D422EC8DFA00E17406 /* TalkfunNewQuestionCell.xib in Resources */,
+				A04551D522EC8DFA00E17406 /* 返回.png in Resources */,
+				A04551D622EC8DFA00E17406 /* grayProgress.png in Resources */,
+				A04551D722EC8DFA00E17406 /* networkSelectImage.png in Resources */,
+				A04551D822EC8DFA00E17406 /* ic_refresh_image_023@2x.png in Resources */,
+				A04551D922EC8DFA00E17406 /* 快进.png in Resources */,
+				A04551DA22EC8DFA00E17406 /* 提问-默认.png in Resources */,
+				A04551DB22EC8DFA00E17406 /* TalkfunHornView.xib in Resources */,
+				A04551DC22EC8DFA00E17406 /* 重新_点击.png in Resources */,
+				A04551DD22EC8DFA00E17406 /* ChatTableViewCell.xib in Resources */,
+				A04551DE22EC8DFA00E17406 /* TalkfunNetworkStatusView.xib in Resources */,
+				A04551DF22EC8DFA00E17406 /* TeacherView.xib in Resources */,
+				A04551E022EC8DFA00E17406 /* myLottery.png in Resources */,
+				A04551E122EC8DFA00E17406 /* renshu.png in Resources */,
+				A04551E222EC8DFA00E17406 /* TalkfunNoticeCell.xib in Resources */,
+				A04551E322EC8DFA00E17406 /* 公告-默认.png in Resources */,
+				A04551E422EC8DFA00E17406 /* teletron.png in Resources */,
+				A04551E522EC8DFA00E17406 /* hongbao.png in Resources */,
+				A04551E622EC8DFA00E17406 /* giveFlower.png in Resources */,
+				A04551E722EC8DFA00E17406 /* ic_refresh_image_014@2x.png in Resources */,
+				A04551E822EC8DFA00E17406 /* 默认图片.png in Resources */,
+				A04551E922EC8DFA00E17406 /* 删除-默认.png in Resources */,
+				A04551EA22EC8DFA00E17406 /* TalkfunNewChatCell.xib in Resources */,
+				A04551EB22EC8DFA00E17406 /* LaunchScreen.storyboard in Resources */,
+				A04551EC22EC8DFA00E17406 /* ic_refresh_image_007@2x.png in Resources */,
+				A04551ED22EC8DFA00E17406 /* send.png in Resources */,
+				A04551EE22EC8DFA00E17406 /* NetworkSelectionViewController.xib in Resources */,
+				A04551EF22EC8DFA00E17406 /* rectSelect.png in Resources */,
+				A04551F022EC8DFA00E17406 /* ic_refresh_image_022@2x.png in Resources */,
+				A04551F122EC8DFA00E17406 /* ic_refresh_image_002@2x.png in Resources */,
+				A04551F222EC8DFA00E17406 /* goback.png in Resources */,
+				A04551F322EC8DFA00E17406 /* xxx.png in Resources */,
+				A04551F422EC8DFA00E17406 /* aha.png in Resources */,
+				A04551F522EC8DFA00E17406 /* ic_refresh_image_003@2x.png in Resources */,
+				A04551F622EC8DFA00E17406 /* 继续_默认.png in Resources */,
+				A04551F722EC8DFA00E17406 /* pause.png in Resources */,
+				A04551F822EC8DFA00E17406 /* 等待队列_默认.png in Resources */,
+				A04551F922EC8DFA00E17406 /* 下载-点击.png in Resources */,
+				A04551FA22EC8DFA00E17406 /* myDelete.png in Resources */,
+				A04551FB22EC8DFA00E17406 /* TalkfunNewChatTableViewCell.xib in Resources */,
+				A04551FC22EC8DFA00E17406 /* 进度1.png in Resources */,
+				A04551FD22EC8DFA00E17406 /* why.png in Resources */,
+				A04551FE22EC8DFA00E17406 /* VoteEndViewController.xib in Resources */,
+				A04551FF22EC8DFA00E17406 /* ic_refresh_image_029@2x.png in Resources */,
+				A045520022EC8DFA00E17406 /* ChatCell.xib in Resources */,
+				A045520122EC8DFA00E17406 /* ico_scroller.png in Resources */,
+				A045520222EC8DFA00E17406 /* 进度O.png in Resources */,
+				A045520322EC8DFA00E17406 /* camara change.png in Resources */,
+				A045520422EC8DFA00E17406 /* TalkfunNewTextfieldView.xib in Resources */,
+				A045520522EC8DFA00E17406 /* evaluateView.xib in Resources */,
+				A045520622EC8DFA00E17406 /* closeBullet.png in Resources */,
+				A045520722EC8DFA00E17406 /* 平板竖屏 - 引导效果.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		A045507122EC8DFA00E17406 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Chaozhi-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A045520822EC8DFA00E17406 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Chaozhi/Pods-Chaozhi-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Chaozhi/Pods-Chaozhi-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Chaozhi/Pods-Chaozhi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C974483B2951098C6ADA4EC9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2849,6 +3576,7 @@
 				A0AC08E722C4BC7D001832EA /* ChapterTableViewCell.m in Sources */,
 				A0C1257321BC021B0026430E /* CZStarView.m in Sources */,
 				A0AC08DC22C4BC7D001832EA /* TalkfunKuaiJinView.m in Sources */,
+				A045501E22EC528500E17406 /* TargetsUtils.m in Sources */,
 				A020B055214AAB150011BB4F /* XLGLottie.m in Sources */,
 				A0AC08EC22C4BC7D001832EA /* NoticeTableViewController.m in Sources */,
 				A0AC08AC22C4BC7D001832EA /* TalkfunMoveLabel.m in Sources */,
@@ -2881,6 +3609,186 @@
 				A0AC08B322C4BC7D001832EA /* TalkfunLoadingView.m in Sources */,
 				A0AC091522C4BC7E001832EA /* UIImageView+TalkfunImageView.m in Sources */,
 				A0AC08C722C4BC7D001832EA /* TalkfunNewChatTableViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A045507222EC8DFA00E17406 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A045507322EC8DFA00E17406 /* XLGInternalDemoVC.m in Sources */,
+				A045507422EC8DFA00E17406 /* TalkfunSignViewController.m in Sources */,
+				A045507522EC8DFA00E17406 /* Config.m in Sources */,
+				A045507622EC8DFA00E17406 /* TalkfunUtils.m in Sources */,
+				A045507722EC8DFA00E17406 /* TalkfunTextfieldView.m in Sources */,
+				A045507822EC8DFA00E17406 /* CZNotDataView.m in Sources */,
+				A045507922EC8DFA00E17406 /* LDNetTimer.m in Sources */,
+				A045507A22EC8DFA00E17406 /* TalkfunFunctionButton.m in Sources */,
+				A045507B22EC8DFA00E17406 /* CZUpdateView.m in Sources */,
+				A045507C22EC8DFA00E17406 /* DownloadListController.m in Sources */,
+				A045507D22EC8DFA00E17406 /* QuestionViewController.m in Sources */,
+				A045507E22EC8DFA00E17406 /* stopCopyTextView.m in Sources */,
+				A045507F22EC8DFA00E17406 /* ChapterModel.m in Sources */,
+				A045508022EC8DFA00E17406 /* TalkfunCourseProgress.m in Sources */,
+				A045508122EC8DFA00E17406 /* TalkfunGradientView.m in Sources */,
+				A045508222EC8DFA00E17406 /* TalkfunExpressionViewController.m in Sources */,
+				A045508322EC8DFA00E17406 /* BaseItem.m in Sources */,
+				A045508422EC8DFA00E17406 /* BaseVC.m in Sources */,
+				A045508522EC8DFA00E17406 /* RootTableViewController.m in Sources */,
+				A045508622EC8DFA00E17406 /* TalkfunScoreView.m in Sources */,
+				A045508722EC8DFA00E17406 /* JHHJAnimation.m in Sources */,
+				A045508822EC8DFA00E17406 /* DownloadListModel.m in Sources */,
+				A045508922EC8DFA00E17406 /* XLGChangeServerModel.m in Sources */,
+				A045508A22EC8DFA00E17406 /* UIButton+TalkfunButton.m in Sources */,
+				A045508B22EC8DFA00E17406 /* TalkfunHornView.m in Sources */,
+				A045508C22EC8DFA00E17406 /* MEViewController.m in Sources */,
+				A045508D22EC8DFA00E17406 /* TalkfunNoticeCell.m in Sources */,
+				A045508E22EC8DFA00E17406 /* CZForgetPswVC.m in Sources */,
+				A045508F22EC8DFA00E17406 /* LDNetTraceRoute.m in Sources */,
+				A045509022EC8DFA00E17406 /* TalkFunTextLayer.m in Sources */,
+				A045509122EC8DFA00E17406 /* evaluateView.m in Sources */,
+				A045509222EC8DFA00E17406 /* ChapterViewController.m in Sources */,
+				A045509322EC8DFA00E17406 /* BaseNavBar.m in Sources */,
+				A045509422EC8DFA00E17406 /* AlbumViewController.m in Sources */,
+				A045509522EC8DFA00E17406 /* TalkfunNewButtonViewButton.m in Sources */,
+				A045509622EC8DFA00E17406 /* LDNetGetAddress.m in Sources */,
+				A045509722EC8DFA00E17406 /* UILabel+TalkfunLabel.m in Sources */,
+				A045509822EC8DFA00E17406 /* HYAlertView.m in Sources */,
+				A045509922EC8DFA00E17406 /* XLGLoginTestView.m in Sources */,
+				A045509A22EC8DFA00E17406 /* TalkfunButtonView.m in Sources */,
+				A045509B22EC8DFA00E17406 /* CZRegisterVC.m in Sources */,
+				A045509C22EC8DFA00E17406 /* BaseWebVC.m in Sources */,
+				A045509D22EC8DFA00E17406 /* QuestionModel.m in Sources */,
+				A045509E22EC8DFA00E17406 /* TalkfunNetworkStatusView.m in Sources */,
+				A045509F22EC8DFA00E17406 /* TalkfunNewFunctionView.m in Sources */,
+				A04550A022EC8DFA00E17406 /* TalkfunPlaybackMessageView.m in Sources */,
+				A04550A122EC8DFA00E17406 /* NetworkDetector.m in Sources */,
+				A04550A222EC8DFA00E17406 /* Utils.m in Sources */,
+				A04550A322EC8DFA00E17406 /* LDNetPing.m in Sources */,
+				A04550A422EC8DFA00E17406 /* Reachability.m in Sources */,
+				A04550A522EC8DFA00E17406 /* CZHomeVC.m in Sources */,
+				A04550A622EC8DFA00E17406 /* AlbumCellTableViewCell.m in Sources */,
+				A04550A722EC8DFA00E17406 /* KeyChainUtil.m in Sources */,
+				A04550A822EC8DFA00E17406 /* MEViewModel.m in Sources */,
+				A04550A922EC8DFA00E17406 /* UIView+TalkfunView.m in Sources */,
+				A04550AA22EC8DFA00E17406 /* NSString+Hashing.m in Sources */,
+				A04550AB22EC8DFA00E17406 /* Toast.m in Sources */,
+				A04550AC22EC8DFA00E17406 /* BulletManager.m in Sources */,
+				A04550AD22EC8DFA00E17406 /* LotteryViewController.m in Sources */,
+				A04550AE22EC8DFA00E17406 /* MyLotteryViewController.m in Sources */,
+				A04550AF22EC8DFA00E17406 /* TalkfunLongTextfieldView.m in Sources */,
+				A04550B022EC8DFA00E17406 /* DownloadListTableViewCell.m in Sources */,
+				A04550B122EC8DFA00E17406 /* ChoiceButton.m in Sources */,
+				A04550B222EC8DFA00E17406 /* TalkfunVideoControlView.m in Sources */,
+				A04550B322EC8DFA00E17406 /* StudyInfoItem.m in Sources */,
+				A04550B422EC8DFA00E17406 /* barrageSwitch.m in Sources */,
+				A04550B522EC8DFA00E17406 /* TalkfunExpressionCloseButton.m in Sources */,
+				A04550B622EC8DFA00E17406 /* MEView.m in Sources */,
+				A04550B722EC8DFA00E17406 /* UIScrollView+TalkfunScrollView.m in Sources */,
+				A04550B822EC8DFA00E17406 /* VideoItem.m in Sources */,
+				A04550B922EC8DFA00E17406 /* TalkfunMultifunctionTool.m in Sources */,
+				A04550BA22EC8DFA00E17406 /* UITextField+HTtext.m in Sources */,
+				A04550BB22EC8DFA00E17406 /* LDNetDiagnoService.m in Sources */,
+				A04550BC22EC8DFA00E17406 /* AlbumModel.m in Sources */,
+				A04550BD22EC8DFA00E17406 /* TalkfunNewTextfieldView.m in Sources */,
+				A04550BE22EC8DFA00E17406 /* CourseItem.m in Sources */,
+				A04550BF22EC8DFA00E17406 /* CZGuideVC.m in Sources */,
+				A04550C022EC8DFA00E17406 /* TalkfunNetworkLines.m in Sources */,
+				A04550C122EC8DFA00E17406 /* BaseNC.m in Sources */,
+				A04550C222EC8DFA00E17406 /* CZProtocalWebVC.m in Sources */,
+				A04550C322EC8DFA00E17406 /* CZAlertView.m in Sources */,
+				A04550C422EC8DFA00E17406 /* ChatViewController.m in Sources */,
+				A04550C522EC8DFA00E17406 /* UTLHelpper.m in Sources */,
+				A04550C622EC8DFA00E17406 /* ChatCell.m in Sources */,
+				A04550C722EC8DFA00E17406 /* TalkfunNewChatCell.m in Sources */,
+				A04550C822EC8DFA00E17406 /* TalkfunGuidanceView.m in Sources */,
+				A04550C922EC8DFA00E17406 /* XLGAlertView.m in Sources */,
+				A04550CA22EC8DFA00E17406 /* NotifyItem.m in Sources */,
+				A04550CB22EC8DFA00E17406 /* TalkfunReplyTipsView.m in Sources */,
+				A04550CC22EC8DFA00E17406 /* NetworkUtil.m in Sources */,
+				A04550CD22EC8DFA00E17406 /* DBManager.m in Sources */,
+				A04550CE22EC8DFA00E17406 /* CZSelectCourseVC.m in Sources */,
+				A04550CF22EC8DFA00E17406 /* TalkfunModulation.m in Sources */,
+				A04550D022EC8DFA00E17406 /* TalkfunMultifunctionButton.m in Sources */,
+				A04550D122EC8DFA00E17406 /* TalkfunGuidenceButton.m in Sources */,
+				A04550D222EC8DFA00E17406 /* TalkfunCourseManagement.m in Sources */,
+				A04550D322EC8DFA00E17406 /* ckickUILabel.m in Sources */,
+				A04550D422EC8DFA00E17406 /* LDSimplePing.m in Sources */,
+				A04550D522EC8DFA00E17406 /* XLGLogVC.m in Sources */,
+				A04550D622EC8DFA00E17406 /* CZLoginVC.m in Sources */,
+				A04550D722EC8DFA00E17406 /* VoteEndViewController.m in Sources */,
+				A04550D822EC8DFA00E17406 /* CZStudyVC.m in Sources */,
+				A04550D922EC8DFA00E17406 /* JHHJCenterBGView.m in Sources */,
+				A04550DA22EC8DFA00E17406 /* QuestionTableViewController.m in Sources */,
+				A04550DB22EC8DFA00E17406 /* NetworkModel.m in Sources */,
+				A04550DC22EC8DFA00E17406 /* TalkfunItem.m in Sources */,
+				A04550DD22EC8DFA00E17406 /* QuestionTableViewCell.m in Sources */,
+				A04550DE22EC8DFA00E17406 /* VersionItem.m in Sources */,
+				A04550DF22EC8DFA00E17406 /* QuestionCell.m in Sources */,
+				A04550E022EC8DFA00E17406 /* CZMineVC.m in Sources */,
+				A04550E122EC8DFA00E17406 /* LDNetConnect.m in Sources */,
+				A04550E222EC8DFA00E17406 /* AppDelegate+Push.m in Sources */,
+				A04550E322EC8DFA00E17406 /* TalkfunCloseButton.m in Sources */,
+				A04550E422EC8DFA00E17406 /* XLGChangeServerVC.m in Sources */,
+				A04550E522EC8DFA00E17406 /* XLGChangeServerCell.m in Sources */,
+				A04550E622EC8DFA00E17406 /* NetworkSelectionViewController.m in Sources */,
+				A04550E722EC8DFA00E17406 /* XLGInternalTestVC.m in Sources */,
+				A04550E822EC8DFA00E17406 /* TalkfunExpressionCell.m in Sources */,
+				A04550E922EC8DFA00E17406 /* XLGLoginTestViewModel.m in Sources */,
+				A04550EA22EC8DFA00E17406 /* XLGExternalTestTool.m in Sources */,
+				A04550EB22EC8DFA00E17406 /* PlaybackChatModel.m in Sources */,
+				A04550EC22EC8DFA00E17406 /* TalkfunNewQuestionCell.m in Sources */,
+				A04550ED22EC8DFA00E17406 /* XLGLoginTestVC.m in Sources */,
+				A04550EE22EC8DFA00E17406 /* TalkfunNewFunctionButton.m in Sources */,
+				A04550EF22EC8DFA00E17406 /* BulletView.m in Sources */,
+				A04550F022EC8DFA00E17406 /* CZInfiniteVC.m in Sources */,
+				A04550F122EC8DFA00E17406 /* CacheUtil.m in Sources */,
+				A04550F222EC8DFA00E17406 /* TalkfunMessageView.m in Sources */,
+				A04550F322EC8DFA00E17406 /* ChatModel.m in Sources */,
+				A04550F422EC8DFA00E17406 /* PlaybackQuestionModel.m in Sources */,
+				A04550F522EC8DFA00E17406 /* WKDelegateController.m in Sources */,
+				A04550F622EC8DFA00E17406 /* HomeInfoItem.m in Sources */,
+				A04550F722EC8DFA00E17406 /* CZNotNetAvailableVC.m in Sources */,
+				A04550F822EC8DFA00E17406 /* UIImageView+Exten.m in Sources */,
+				A04550F922EC8DFA00E17406 /* CZSettingVC.m in Sources */,
+				A04550FA22EC8DFA00E17406 /* ChatTableViewCell.m in Sources */,
+				A04550FB22EC8DFA00E17406 /* AppDelegate.m in Sources */,
+				A04550FC22EC8DFA00E17406 /* ChapterTableViewCell.m in Sources */,
+				A04550FD22EC8DFA00E17406 /* CZStarView.m in Sources */,
+				A04550FE22EC8DFA00E17406 /* TalkfunKuaiJinView.m in Sources */,
+				A04550FF22EC8DFA00E17406 /* TargetsUtils.m in Sources */,
+				A045510022EC8DFA00E17406 /* XLGLottie.m in Sources */,
+				A045510122EC8DFA00E17406 /* NoticeTableViewController.m in Sources */,
+				A045510222EC8DFA00E17406 /* TalkfunMoveLabel.m in Sources */,
+				A045510322EC8DFA00E17406 /* TalkfunWatermark.m in Sources */,
+				A045510422EC8DFA00E17406 /* TalkfunPlaybackViewController.m in Sources */,
+				A045510522EC8DFA00E17406 /* VoteViewController.m in Sources */,
+				A045510622EC8DFA00E17406 /* BaseScrollView.m in Sources */,
+				A045510722EC8DFA00E17406 /* GroupChatTableViewController.m in Sources */,
+				A045510822EC8DFA00E17406 /* UIView+TalkfunActivityIndicator.m in Sources */,
+				A045510922EC8DFA00E17406 /* CZSelectCourseCell.m in Sources */,
+				A045510A22EC8DFA00E17406 /* TalkfunReplyCell.m in Sources */,
+				A045510B22EC8DFA00E17406 /* main.m in Sources */,
+				A045510C22EC8DFA00E17406 /* LotteryCell.m in Sources */,
+				A045510D22EC8DFA00E17406 /* UITextField+TalkfunTextField.m in Sources */,
+				A045510E22EC8DFA00E17406 /* GroupTableViewController.m in Sources */,
+				A045510F22EC8DFA00E17406 /* ProgressLoadView.m in Sources */,
+				A045511022EC8DFA00E17406 /* TalkfunLEEStarRating.m in Sources */,
+				A045511122EC8DFA00E17406 /* BaseTableViewController.m in Sources */,
+				A045511222EC8DFA00E17406 /* TalkfunViewController.m in Sources */,
+				A045511322EC8DFA00E17406 /* JHHJView.m in Sources */,
+				A045511422EC8DFA00E17406 /* TalkfunHttpTools.m in Sources */,
+				A045511522EC8DFA00E17406 /* RegularPhoneTF.m in Sources */,
+				A045511622EC8DFA00E17406 /* ChatTableViewController.m in Sources */,
+				A045511722EC8DFA00E17406 /* AEIndicator.m in Sources */,
+				A045511822EC8DFA00E17406 /* NetworkManager.m in Sources */,
+				A045511922EC8DFA00E17406 /* UserInfo.m in Sources */,
+				A045511A22EC8DFA00E17406 /* videoDefinition.m in Sources */,
+				A045511B22EC8DFA00E17406 /* PurchaseItem.m in Sources */,
+				A045511C22EC8DFA00E17406 /* TalkfunFunctionView.m in Sources */,
+				A045511D22EC8DFA00E17406 /* TalkfunLoadingView.m in Sources */,
+				A045511E22EC8DFA00E17406 /* UIImageView+TalkfunImageView.m in Sources */,
+				A045511F22EC8DFA00E17406 /* TalkfunNewChatTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3018,7 +3926,7 @@
 		};
 		A020AF5B214AA85C0011BB4F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0AF6FC5BB1D601461F72C62C /* Pods-Chaozhi.debug.xcconfig */;
+			baseConfigurationReference = 16348408E265BA9234A49C3D /* Pods-Chaozhi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Chaozhi/Chaozhi.entitlements;
@@ -3109,7 +4017,7 @@
 		};
 		A020AF5C214AA85C0011BB4F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 204F3265086F4B67483EF547 /* Pods-Chaozhi.release.xcconfig */;
+			baseConfigurationReference = 5213687D02D00729C4F7FA09 /* Pods-Chaozhi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Chaozhi/Chaozhi.entitlements;
@@ -3198,6 +4106,188 @@
 			};
 			name = Release;
 		};
+		A045520A22EC8DFA00E17406 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16348408E265BA9234A49C3D /* Pods-Chaozhi.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Chaozhi/Chaozhi.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = SD4544P5D9;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PREFIX_HEADER = Chaozhi/Chaozhi.pch;
+				INFOPLIST_FILE = Xuezhi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Chaozhi/Vendor/Talkfun/Library/Universal",
+					"$(PROJECT_DIR)/Chaozhi/Vendor/Talkfun/Library",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"jcore-ios-1.1.1\"",
+					"-l\"jpush-ios-3.0.3\"",
+					"-l\"resolv\"",
+					"-l\"sqlite3\"",
+					"-l\"xml2\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"AgoraRtcEngineKit\"",
+					"-framework",
+					"\"AssetsLibrary\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Photos\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"UMMobClick\"",
+					"-framework",
+					"\"UserNotifications\"",
+					"-framework",
+					"\"VideoToolbox\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.xzjy.xuezhi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "065790ea-d817-4376-9f63-d632a80ca061";
+				PROVISIONING_PROFILE_SPECIFIER = XZJYDev;
+				STRIP_SWIFT_SYMBOLS = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		A045520B22EC8DFA00E17406 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5213687D02D00729C4F7FA09 /* Pods-Chaozhi.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Chaozhi/Chaozhi.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = SD4544P5D9;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PREFIX_HEADER = Chaozhi/Chaozhi.pch;
+				INFOPLIST_FILE = Xuezhi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Chaozhi/Vendor/Talkfun/Library/Universal",
+					"$(PROJECT_DIR)/Chaozhi/Vendor/Talkfun/Library",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"jcore-ios-1.1.1\"",
+					"-l\"jpush-ios-3.0.3\"",
+					"-l\"resolv\"",
+					"-l\"sqlite3\"",
+					"-l\"xml2\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"AgoraRtcEngineKit\"",
+					"-framework",
+					"\"AssetsLibrary\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Photos\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"UMMobClick\"",
+					"-framework",
+					"\"UserNotifications\"",
+					"-framework",
+					"\"VideoToolbox\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.xzjy.xuezhi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "75ee8f25-9458-4b56-892c-73559e6ce7d6";
+				PROVISIONING_PROFILE_SPECIFIER = XZJYDis;
+				STRIP_SWIFT_SYMBOLS = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -3215,6 +4305,15 @@
 			buildConfigurations = (
 				A020AF5B214AA85C0011BB4F /* Debug */,
 				A020AF5C214AA85C0011BB4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A045520922EC8DFA00E17406 /* Build configuration list for PBXNativeTarget "Xuezhi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A045520A22EC8DFA00E17406 /* Debug */,
+				A045520B22EC8DFA00E17406 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

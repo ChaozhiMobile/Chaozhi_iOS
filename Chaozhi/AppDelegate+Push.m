@@ -27,8 +27,8 @@
                                                       UIUserNotificationTypeAlert)
                                           categories:nil];
     
-    NSString *pushAppKey=@"4f61ceadf98f55845bf8b36f";
-    NSString *pushChanne=@"iOS";
+    NSString *pushAppKey = kPushKey;
+    NSString *pushChanne = @"iOS";
     
     if (KOnline || [Utils getServer] == 1) {
         // 生产环境
