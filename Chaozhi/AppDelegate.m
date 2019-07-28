@@ -8,12 +8,12 @@
 
 #import "AppDelegate.h"
 #import "AppDelegate+Push.h"
+#import "XZTabBarVC.h"
 #import <IQKeyboardManager.h>
 #import "NetworkUtil.h"
 #import "CZGuideVC.h"
 #import "UMMobClick/MobClick.h"
 #import "DBManager.h"
-//#import "DoraemonManager.h"
 
 @interface AppDelegate ()
 
@@ -23,16 +23,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-//    [CacheUtil saveCacher:kSelectCourseIDKey withValue:@""];
-    
-//#ifdef DEBUG
-//    [[DoraemonManager shareInstance] install];
-//#endif
-    
     [[DBManager shareManager] createDBAndTable];
     
-    [self iapCheck]; //内购凭证服务器二次校验，防止漏单
-    
+    if ([AppChannel isEqualToString:@"1"]) { //超职
+        [self iapCheck]; //内购凭证服务器二次校验，防止漏单
+    }
+
     [Utils changeUserAgent]; //WKWebView UA初始化
     
     [self registerPush:application options:launchOptions]; //注册激光推送
@@ -106,10 +102,15 @@
 #pragma mark - 进入首页
 
 - (UITabBarController *)setTabBarController {
-    //第一步：要获取单独控制器所在的UIStoryboard
-    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    //第二步：获取该控制器的Identifier并赋给你的单独控制器
-    _tabVC = [story instantiateViewControllerWithIdentifier:@"TabBarController"];
+    if ([AppChannel isEqualToString:@"1"]) { //超职
+        //第一步：要获取单独控制器所在的UIStoryboard
+        UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        //第二步：获取该控制器的Identifier并赋给你的单独控制器
+        _tabVC = [story instantiateViewControllerWithIdentifier:@"TabBarController"];
+    }
+    if ([AppChannel isEqualToString:@"2"]) { //学智
+        _tabVC = [[XZTabBarVC alloc] init];
+    }
     _tabVC.delegate = self;
     
     return _tabVC;

@@ -7,7 +7,6 @@
 //
 
 #import "MEView.h"
-#import "AppDelegate.h"
 
 @implementation MEView
 

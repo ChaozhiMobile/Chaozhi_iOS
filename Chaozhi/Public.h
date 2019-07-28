@@ -120,6 +120,7 @@
 #define TableViewDefaultBGColor RGBValue(0xfafafa) // 默认背景颜色
 #define kSeparatorColor RGB(235,235,235) // 分割线颜色
 #define kBlack55Color RGBValue(0x555555)
+#define kGrayB5Color RGBValue(0xB5B5B5)
 
 #ifdef DEBUG
 #define KOnline NO

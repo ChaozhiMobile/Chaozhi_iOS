@@ -98,7 +98,7 @@
             if (self.purchaseItem.is_purchase == 1
                 && ![self.nameArr containsObject:@"报考资料"]) {
                 
-                if (![AppName isEqualToString:@"学智教育"]) {
+                if ([AppChannel isEqualToString:@"1"]) { //超职
                     [self.imageArr insertObject:@"icon_报考资料" atIndex:0];
                     [self.nameArr insertObject:@"报考资料" atIndex:0];
                 }

@@ -41,7 +41,7 @@ static DBManager *_manager = nil;
     
     NSString * path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     //拼接文件名
-    NSString * sqlitPath = [path stringByAppendingPathComponent:@"CZDataBase.sqlite"];
+    NSString * sqlitPath = [path stringByAppendingPathComponent:kDBName];
     NSLog(@"数据库路径:%@",sqlitPath);
     //创建数据库,加入到队列中
     self.db = [FMDatabase databaseWithPath:sqlitPath];

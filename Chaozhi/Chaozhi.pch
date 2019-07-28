@@ -21,5 +21,9 @@
 #define kPushKey   @"4f61ceadf98f55845bf8b36f"
 // APP名字简称
 #define kAppName   @"超职"
+// 数据库名字
+#define kDBName    @"CZDataBase.sqlite"
+// 公司盖章图片
+#define kZhangPicUrl "http://www.chaozhiedu.com/static/images/zhang.png"
 
 #endif /* Chaozhi_pch */

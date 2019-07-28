@@ -27,7 +27,6 @@
 #import "TalkfunDownloadManager.h"
 #define ButtonViewHeight 35
 #define KIsiPhoneX  @available(iOS 11.0, *) && UIApplication.sharedApplication.keyWindow.safeAreaInsets.bottom > 0.0
-#import "AppDelegate.h"
 #import "DBManager.h"
 
 @interface TalkfunPlaybackViewController ()<UIScrollViewDelegate,TalkfunSDKPlaybackDelegate,UIAlertViewDelegate,UIGestureRecognizerDelegate>

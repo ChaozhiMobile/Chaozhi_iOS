@@ -10,7 +10,6 @@
 #import "DownloadListTableViewCell.h"
 #import "DownloadListModel.h"
 //#import "TalkfunSDK.h"
-#import "AppDelegate.h"
 #import "TalkfunPlaybackViewController.h"
 #import "NSString+Hashing.h"
 #import "MJExtension.h"
