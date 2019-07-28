@@ -39,7 +39,7 @@
         self.tag = 9999;
         self.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.3];
         [[UIApplication sharedApplication].keyWindow addSubview:self];
-        self.textStr = [NSString stringWithFormat:@"感谢您加入超职教育大家庭！\n我们依据相关的法律法规要求，特向您推送本提示。超职教育一直致力于为学员提供良好的服务和品质的教学。为了更好的确认服务的内容和双方的权利、义务，您需要阅读我们完整的《%@·协议》\n(点击链接)，谢谢配合。",textStr];
+        self.textStr = [NSString stringWithFormat:@"感谢您加入%@大家庭！\n我们依据相关的法律法规要求，特向您推送本提示。%@一直致力于为学员提供良好的服务和品质的教学。为了更好的确认服务的内容和双方的权利、义务，您需要阅读我们完整的《%@·协议》\n(点击链接)，谢谢配合。",AppName,AppName,textStr];
         self.leftTitle = leftBtnTitle;
         self.rigthTitle = rigthBtnTitle;
         self.topTitle = topTitle;

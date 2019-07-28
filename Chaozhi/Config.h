@@ -71,8 +71,6 @@ NSString *h5Url(void);
 #define H5_WeikeDetail @"#/hybrid/vike/play/" //首页-微课视频详情
 #define H5_WeikeList @"#/hybrid/vike/list" //首页-更多微信视频
 
-#define H5_Privacy [TargetsUtils getPrivacyProtocolUrl] //隐私协议
-
 #define H5_MonthlyResult @"#/hybrid/study/library/monthly/result/" //月考考试结果
 #define H5_MonthlyAnswer @"#/hybrid/study/library/monthly/answer/" //月考考试
 #define H5_MonthlyList @"#/hybrid/study/library/monthly/" //月考列表

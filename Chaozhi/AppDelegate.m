@@ -130,7 +130,7 @@
     NSString *tabBarTitle = viewController.tabBarItem.title;
     if ([tabBarTitle isEqualToString:@"我的"]
         || [tabBarTitle isEqualToString:@"学习"]
-        ) { //|| [tabBarTitle isEqualToString:@"无限"]
+        ) {
         if ([Utils isLoginWithJump:YES]) {
             return YES;
         } else {

@@ -19,6 +19,7 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = kWhiteColor;
+    self.titleLab.text = [NSString stringWithFormat:@"注册%@账号",kAppName];
 }
 
 #pragma mark - methods

@@ -34,7 +34,7 @@
 
 // 关于超职教育
 - (void)aboutAction {
-    [BaseWebVC showWithContro:self withUrlStr:H5_About withTitle:@"关于超职教育" isPresent:NO];
+    [BaseWebVC showWithContro:self withUrlStr:H5_About withTitle:[NSString stringWithFormat:@"关于%@",AppName] isPresent:NO];
 }
 
 // 登录

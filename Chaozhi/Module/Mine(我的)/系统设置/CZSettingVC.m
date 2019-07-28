@@ -23,6 +23,8 @@
     
     self.switchBtn.on = [Utils getWifi]==1?YES:NO;
     self.versionLab.text = AppVersion;
+    self.aboutTitleLab.text = [NSString stringWithFormat:@"关于%@",AppName];
+    self.privacyTitleLab.text = [NSString stringWithFormat:@"%@隐私保护指引",AppName];
     
     UITapGestureRecognizer *aboutTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(aboutAction)];
     [self.aboutView addGestureRecognizer:aboutTap];
@@ -53,7 +55,7 @@
 
 //关于超职教育
 - (void)aboutAction {
-    [BaseWebVC showWithContro:self withUrlStr:H5_About withTitle:@"关于超职教育" isPresent:NO];
+    [BaseWebVC showWithContro:self withUrlStr:H5_About withTitle:self.aboutTitleLab.text isPresent:NO];
 }
 
 //修改密码
@@ -64,7 +66,7 @@
 
 //隐私协议
 - (void)privacyAction {
-    [BaseWebVC showWithContro:self withUrlStr:H5_Privacy withTitle:@"超职教育隐私保护指引" isPresent:NO];
+    [BaseWebVC showWithContro:self withUrlStr:H5_Privacy withTitle:self.privacyTitleLab.text isPresent:NO];
 }
 
 //拨打客服电话

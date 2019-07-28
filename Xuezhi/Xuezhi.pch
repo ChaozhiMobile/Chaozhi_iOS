@@ -1,0 +1,24 @@
+//
+//  Xuezhi.pch
+//  Xuezhi
+//
+//  Created by Jason_zyl on 2019/7/28.
+//  Copyright © 2019 Jason_hzb. All rights reserved.
+//
+
+#ifndef Xuezhi_pch
+#define Xuezhi_pch
+
+#import "Public.h"
+#import "XZConfig.h"
+
+// 主题色
+#define AppThemeColor RGBValue(0x42AFD9)
+// 友盟key
+#define kUMKey     @"5c710878b465f5fa50000071"
+// 极光key
+#define kPushKey   @"4f61ceadf98f55845bf8b36f"
+// APP名字简称
+#define kAppName   @"学智"
+
+#endif /* Xuezhi_pch */
