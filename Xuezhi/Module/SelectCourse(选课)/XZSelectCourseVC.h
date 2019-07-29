@@ -11,6 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface XZSelectCourseVC : BaseVC
+@property (weak, nonatomic) IBOutlet UIView *titleLineView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *lineViewLeft;
+- (IBAction)titleClickAction:(UIButton *)sender;
 
 @end
 

@@ -87,7 +87,7 @@
     
     UILabel *bgTitleLab = [[UILabel alloc]initWithFrame:CGRectMake(0, 17, 200, 30)];
     bgTitleLab.font = [UIFont systemFontOfSize:22 weight:UIFontWeightBold];
-    bgTitleLab.text = @"PART TWO";
+    bgTitleLab.text = @"PART ONE";
     bgTitleLab.textColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Rectangle"]];
     bgTitleLab.textAlignment = NSTextAlignmentCenter;
     bgTitleLab.centerX = bgView.width/2.0;
@@ -111,12 +111,12 @@
     [moreBtn setTitleColor:AppThemeColor forState:UIControlStateNormal];
     moreBtn.titleLabel.font = [UIFont systemFontOfSize:14];
     moreBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
-    moreBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 20);
+    moreBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 10);
     moreBtn.centerY = titleLab.centerY;
     [bgView addSubview:moreBtn];
     
-    UIImageView *imgView = [[UIImageView alloc]initWithFrame:CGRectMake(moreBtn.width-10, 15, 10, 10)];;
-    imgView.image = [UIImage imageNamed:@"arrow_more"];
+    UIImageView *imgView = [[UIImageView alloc]initWithFrame:CGRectMake(moreBtn.width-6, 14, 6, 12)];;
+    imgView.image = [UIImage imageNamed:@"home_more"];
     [moreBtn addSubview:imgView];
     
     return bgView;

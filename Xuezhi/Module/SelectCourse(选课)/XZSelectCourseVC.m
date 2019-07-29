@@ -18,6 +18,9 @@
     [super viewDidLoad];
     
     self.title = @"选课";
+    UIButton *sender = [self.view viewWithTag:100];
+    [self titleClickAction:sender];
+    
 }
 
 /*
@@ -30,4 +33,21 @@
 }
 */
 
+- (IBAction)titleClickAction:(UIButton *)sender {
+    sender.selected = YES;
+    [sender setTitleColor:AppThemeColor forState:UIControlStateSelected];
+    for (NSInteger tag = 100; tag<103; tag++) {
+        UIButton *btn = [self.view viewWithTag:tag];
+        if (![btn isEqual:sender]) {
+            btn.selected = NO;
+        }
+        [btn setTitleColor:AppThemeColor forState:UIControlStateSelected];
+    }
+    [sender.superview layoutIfNeeded];
+    [UIView animateWithDuration:0.2 animations:^{
+         self.lineViewLeft.constant = sender.left;
+         [sender.superview layoutIfNeeded]; // Called on parent view
+     }];
+
+}
 @end
