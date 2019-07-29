@@ -18,6 +18,13 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>AgoraRtcEngine_iOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>24</integer>
+		</dict>
 		<key>FLAnimatedImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -25,12 +32,26 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>FLAnimatedImage.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>25</integer>
+		</dict>
 		<key>FMDB.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>3</integer>
+		</dict>
+		<key>FMDB.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>26</integer>
 		</dict>
 		<key>IAPHelper.xcscheme</key>
 		<dict>
@@ -53,6 +74,13 @@
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
+		<key>JFImagePicker.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>27</integer>
+		</dict>
 		<key>JPush-iOS-SDK.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -66,6 +94,13 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>8</integer>
+		</dict>
+		<key>KissXML.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>28</integer>
 		</dict>
 		<key>MJExtension.xcscheme</key>
 		<dict>
@@ -123,6 +158,13 @@
 			<key>orderHint</key>
 			<integer>18</integer>
 		</dict>
+		<key>SSZipArchive.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>30</integer>
+		</dict>
 		<key>Socket.IO-Client-Swift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -130,12 +172,26 @@
 			<key>orderHint</key>
 			<integer>17</integer>
 		</dict>
+		<key>Socket.IO-Client-Swift.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>29</integer>
+		</dict>
 		<key>Starscream.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>19</integer>
+		</dict>
+		<key>Starscream.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>31</integer>
 		</dict>
 		<key>TZImagePickerController.xcscheme</key>
 		<dict>
