@@ -2118,11 +2118,14 @@ VIP保障实验班</string>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Ic0-5E-nx5" firstAttribute="centerY" secondItem="k6G-v1-cQe" secondAttribute="centerY" id="CCH-pO-6nZ"/>
+                                    <constraint firstItem="aoy-9i-fZT" firstAttribute="leading" secondItem="k6G-v1-cQe" secondAttribute="leading" id="Dqf-Om-mqZ"/>
                                     <constraint firstAttribute="trailing" secondItem="PIh-h2-crd" secondAttribute="trailing" id="FaY-Z2-9hX"/>
                                     <constraint firstItem="Ic0-5E-nx5" firstAttribute="centerX" secondItem="k6G-v1-cQe" secondAttribute="centerX" id="IiQ-2G-2Lk"/>
                                     <constraint firstAttribute="height" constant="44" id="IjC-S6-SAp"/>
                                     <constraint firstAttribute="bottom" secondItem="PIh-h2-crd" secondAttribute="bottom" id="JNS-0n-1eH"/>
                                     <constraint firstItem="PIh-h2-crd" firstAttribute="top" secondItem="k6G-v1-cQe" secondAttribute="top" id="PIR-MJ-KD1"/>
+                                    <constraint firstAttribute="trailing" secondItem="aoy-9i-fZT" secondAttribute="trailing" id="Sdm-9O-rUu"/>
+                                    <constraint firstAttribute="bottom" secondItem="aoy-9i-fZT" secondAttribute="bottom" id="th9-X3-cQh"/>
                                 </constraints>
                             </view>
                         </subviews>
