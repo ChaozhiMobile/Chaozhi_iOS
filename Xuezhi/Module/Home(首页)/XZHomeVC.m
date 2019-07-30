@@ -138,6 +138,7 @@
     UILabel *titleLab = [[UILabel alloc]initWithFrame:CGRectMake(5, imgView.bottom+10, vv.width-10, 36)];
     titleLab.textColor = RGBValue(0x6C7787);
     titleLab.text = @"心理咨询";
+    titleLab.textAlignment = NSTextAlignmentCenter;
     titleLab.font = [UIFont systemFontOfSize:12 ];
     [vv addSubview:titleLab];
     
