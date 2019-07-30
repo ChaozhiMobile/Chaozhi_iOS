@@ -13,6 +13,19 @@
 #import "Public.h"
 #import "CZConfig.h"
 
+/****************************环境地址**************************/
+
+// 接口正式地址
+#define BASE_URL    @"https://aci-api.chaozhiedu.com/"
+// 接口测试地址
+#define BASE_URL_D  @"http://test-aci-api.chaozhiedu.com/"
+// H5正式地址
+#define H5_URL      @"https://m.chaozhiedu.com/"
+// H5测试地址
+#define H5_URL_D    @"http://mtest.chaozhiedu.com/"
+
+/****************************配置项**************************/
+
 // 主题色
 #define AppThemeColor RGBValue(0xC31A1F)
 // 友盟key

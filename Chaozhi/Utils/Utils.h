@@ -15,7 +15,7 @@
 #pragma mark - 类单例方法
 + (Utils *)share;
 
-#pragma mark - 存取服务器环境【0：测试地址test-aci-api.chaozhiedu.com，1：正式地址：aci-api.chaozhiedu.com】
+#pragma mark - 存取服务器环境【0：测试地址，1：正式地址】
 + (void)setServer:(NSInteger)server;
 
 + (NSInteger)getServer;

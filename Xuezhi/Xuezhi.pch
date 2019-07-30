@@ -12,6 +12,19 @@
 #import "Public.h"
 #import "XZConfig.h"
 
+/****************************环境地址**************************/
+
+// 接口正式地址
+#define BASE_URL    @"https://aci-api.xuezhiwang.com/"
+// 接口测试地址
+#define BASE_URL_D  @"https://aci-api.xuezhiwang.com/"
+// H5正式地址
+#define H5_URL      @"http://m.dingdang58.com/"
+// H5测试地址
+#define H5_URL_D    @"http://m.dingdang58.com/"
+
+/****************************配置项**************************/
+
 // 主题色
 #define AppThemeColor RGBValue(0x42AFD9)
 // 友盟key
