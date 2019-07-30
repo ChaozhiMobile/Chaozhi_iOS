@@ -7,35 +7,130 @@
 //
 
 #import "XZHomeVC.h"
+#import "VersionItem.h"
+#import <StoreKit/StoreKit.h>
+#import "CZUpdateView.h"
 
 #define lineCount 5
 
-@interface XZHomeVC ()
+@interface XZHomeVC ()<UITableViewDataSource,UITableViewDelegate,SKStoreProductViewControllerDelegate, UpdateViewDelegate>
+
+/** 版本更新 */
+@property (nonatomic, strong) UIView *BGView;
+@property (nonatomic, strong) CZUpdateView *updateView;
+@property (nonatomic, retain) VersionItem *versionItem;
 
 @end
 
 @implementation XZHomeVC
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.navBar.hidden = YES;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navBar.hidden = YES;
-    self.view.backgroundColor = kWhiteColor;
+    
+    if (![Utils getNetStatus]) {
+        XLGAlertView *alert = [[XLGAlertView alloc] initWithTitle:@"温馨提醒" content:@"检测到您的网络异常，请检查网络" leftButtonTitle:@"" rightButtonTitle:@"我知道了"];
+    }
+    
+    [self getData];
+    
+    [self checkVersion];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeServerSucc) name:kChangeServerSuccNotification object:nil]; //环境切换成功通知
+    
+    _versionItem = [[VersionItem alloc] init];
     _bannerView.imageURLStringsGroup = @[@"http://static.699pic.com/images/newActivities/5d15f0f091d1f.jpg",@"http://static.699pic.com/images/newActivities/5d15f0f091d1f.jpg"];
     
     CGFloat viewLeft = 0;
-    for (NSInteger index = 0; index <5; index++) {
+    for (NSInteger index = 0; index <8; index++) {
         UIView *view = [self createMenuView];
         view.left = viewLeft;
-        [_menScrollView addSubview:view];
+        [_courseScrollView addSubview:view];
         viewLeft = view.right;
     }
-    _menScrollView.contentSize = CGSizeMake(viewLeft, 0);
+    _courseScrollView.contentSize = CGSizeMake(viewLeft, 0);
 }
+
+- (void)changeServerSucc {
+    [self getData];
+}
+
+#pragma mark - get data
+
+#pragma mark - 版本更新
+- (void)checkVersion {
+    [[NetworkManager sharedManager] postJSON:URL_CheckVersion parameters:@{@"device":@"ios",@"version":AppVersion} completion:^(id responseData, RequestState status, NSError *error) {
+        
+        self.versionItem = [VersionItem yy_modelWithJSON:responseData];
+        
+        if ([self.versionItem.grade isEqualToString:@"2"]) { //推荐升级
+            [self handleVersionUpdate:UpdateTypeSelect];
+        }
+        if ([self.versionItem.grade isEqualToString:@"3"]) { //强制升级
+            [self handleVersionUpdate:UpdateTypeForce];
+        }
+    }];
+}
+
+- (void)handleVersionUpdate:(UpdateType)updateType {
+    
+    NSString *updateNote = self.versionItem.note;
+    NSArray *array = [updateNote componentsSeparatedByString:@";"];
+    NSString *formatUpdateNote = @"";
+    for (int i = 0; i < array.count; i ++) {
+        NSString *str = [NSString stringWithFormat:@"%@\n", array[i]];
+        formatUpdateNote = [formatUpdateNote stringByAppendingString:str];
+    }
+    
+    [self.view.window addSubview:self.BGView];
+    _updateView = [[CZUpdateView alloc] initWithBugDetail:formatUpdateNote withType:updateType];
+    _updateView.centerX = self.view.centerX;
+    _updateView.centerY = self.view.centerY+kNavBarH/2;
+    _updateView.delegate = self;
+    [self.BGView addSubview:_updateView];
+}
+
+- (UIView *)BGView {
+    if (!_BGView) {
+        _BGView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
+        _BGView.backgroundColor = RGBA(0, 0, 0, 0.4);
+    }
+    return _BGView;
+}
+
+//取消更新
+- (void)updateRejectBtnClicked {
+    
+    [self.BGView removeFromSuperview];
+    [self.updateView removeFromSuperview];
+}
+
+//更新
+- (void)updateBtnClicked {
+    
+    if ([self.versionItem.grade intValue] == 2) {
+        [self.BGView removeFromSuperview];
+        [self.updateView removeFromSuperview];
+    }
+    
+    if (@available(iOS 10.0, *)) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.versionItem.url] options:@{} completionHandler:^(BOOL success) {
+        }];
+    } else {
+        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:self.versionItem.url]];
+    }
+}
+
+#pragma mark - UITableView Delegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 3;
 }
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section==0) {

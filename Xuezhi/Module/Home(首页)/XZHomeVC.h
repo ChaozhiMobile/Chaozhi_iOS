@@ -11,14 +11,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface XZHomeVC : BaseVC<UITableViewDataSource,UITableViewDelegate>
+@interface XZHomeVC : BaseVC
+
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *bannerView;
-@property (weak, nonatomic) IBOutlet UIScrollView *menScrollView;
+@property (weak, nonatomic) IBOutlet UIScrollView *courseScrollView;
 @property (weak, nonatomic) IBOutlet UITableView *mainTabView;
 
 @end
 
 @interface XZHomeTabCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UIView *leftView;
 @property (weak, nonatomic) IBOutlet UIView *rightView;
 @property (weak, nonatomic) IBOutlet UIImageView *thumbImgView;

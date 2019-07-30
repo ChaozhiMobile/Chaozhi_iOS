@@ -19,9 +19,9 @@
 // 接口测试地址
 #define BASE_URL_D  @"https://aci-api.xuezhiwang.com/"
 // H5正式地址
-#define H5_URL      @"http://m.dingdang58.com/"
+#define H5_URL      @"https://m.xuezhiwang.com/"
 // H5测试地址
-#define H5_URL_D    @"http://m.dingdang58.com/"
+#define H5_URL_D    @"http://mtest.xuezhiwang.com/"
 
 /****************************配置项**************************/
 

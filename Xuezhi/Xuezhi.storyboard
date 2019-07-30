@@ -18,7 +18,7 @@
                         <viewControllerLayoutGuide type="bottom" id="HRh-OF-JSi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0Aa-bl-tdg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iwq-Ve-af7" userLabel="Nav View">
@@ -52,7 +52,7 @@
                                     <constraint firstAttribute="trailing" secondItem="qvl-PN-EIF" secondAttribute="trailing" id="4P8-u3-eBa"/>
                                     <constraint firstAttribute="bottom" secondItem="qvl-PN-EIF" secondAttribute="bottom" id="B4U-a4-kDp"/>
                                     <constraint firstItem="jmZ-AZ-zgu" firstAttribute="top" secondItem="iwq-Ve-af7" secondAttribute="top" id="C7x-5e-Ffn"/>
-                                    <constraint firstAttribute="trailing" secondItem="jmZ-AZ-zgu" secondAttribute="trailing" id="Hzj-If-THc"/>
+                                    <constraint firstAttribute="trailing" secondItem="jmZ-AZ-zgu" secondAttribute="trailing" constant="5" id="Hzj-If-THc"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="Rzv-k4-ieH"/>
                                     <constraint firstItem="ad5-KI-JDD" firstAttribute="top" secondItem="iwq-Ve-af7" secondAttribute="top" id="VKm-If-tAg"/>
                                     <constraint firstItem="ad5-KI-JDD" firstAttribute="centerX" secondItem="iwq-Ve-af7" secondAttribute="centerX" id="d7K-1r-QK4"/>
@@ -438,8 +438,8 @@
                     <size key="freeformSize" width="375" height="900"/>
                     <connections>
                         <outlet property="bannerView" destination="UeA-G9-pg8" id="Wom-94-axi"/>
+                        <outlet property="courseScrollView" destination="2Dc-Ok-US3" id="OJC-8V-YOk"/>
                         <outlet property="mainTabView" destination="tHR-Dd-EfS" id="m4C-s2-XD6"/>
-                        <outlet property="menScrollView" destination="2Dc-Ok-US3" id="peb-h4-xK2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ul-rW-XOl" userLabel="First Responder" sceneMemberID="firstResponder"/>

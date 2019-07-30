@@ -31,8 +31,8 @@
 @property (nonatomic , assign) NSInteger page;
 @property (nonatomic , retain) VersionItem *versionItem;
 @property (nonatomic , retain) HomeInfoItem *homeItem;
-@property (nonatomic , retain) HomeCategoryItem *categoryItems;;
-@property (nonatomic , retain) HomeNewsListItem *newsItems;;
+@property (nonatomic , retain) HomeCategoryItem *categoryItems;
+@property (nonatomic , retain) HomeNewsListItem *newsItems;
 @property (nonatomic , retain) NSMutableArray <HomeNewsItem *> *newsDatsSource;
 @property (nonatomic , retain) HomeFeatureProductItem *feaCourseItem1,*feaCourseItem2;
 
