@@ -147,6 +147,7 @@
         CourseItem *item = self.dataArr[0];
         _currentCategoryID = item.ID;
         [self getNewList];
+        [self getCourseData];
     }
 }
 
@@ -255,7 +256,7 @@
     else if (section==1) {
         return self.categoryItems.try_video_list.count;
     }
-    else if (section==1) {
+    else if (section==2) {
         return _newsDatsSource.count;
     }
     return 1;
@@ -268,6 +269,10 @@
     }
     else if (indexPath.section==1) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"XZHomeTabCell2"];
+        HomeTryVideoItem *item = self.categoryItems.try_video_list[indexPath.row];
+        [cell.thumbImgView sd_setImageWithURL:[NSURL URLWithString:item.img] placeholderImage:nil];
+        cell.titleLab.text = item.title;
+        cell.teacherName.text = item.teacher;
     }
     else if (indexPath.section==2) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"XZHomeTabCell3"];
@@ -303,7 +308,7 @@
             return 1;
         }
     }
-    else if (section==1) {
+    else if (section==2) {
         if (self.newsDatsSource.count==0) {
             return 1;
         }
