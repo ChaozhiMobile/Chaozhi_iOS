@@ -2007,7 +2007,7 @@ VIP保障实验班</string>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gdk-Tr-CBh">
                                                                     <rect key="frame" x="12" y="10" width="80" height="80"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                                    <color key="backgroundColor" red="0.73725490199999999" green="0.93333333330000001" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2018AC心里咨询师都好好订婚的" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xaf-dT-5ev">
                                                                     <rect key="frame" x="102" y="10" width="261" height="20"/>
@@ -2079,11 +2079,22 @@ VIP保障实验班</string>
                                     <constraint firstItem="5ki-fp-RCy" firstAttribute="top" secondItem="i7O-fS-iLx" secondAttribute="bottom" constant="10" id="zZ4-5f-SUH"/>
                                 </constraints>
                             </scrollView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k6G-v1-cQe" userLabel="Nav View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wTi-cS-NJd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="1Ce-NT-OXO"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k6G-v1-cQe" userLabel="Nav View">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_home" translatesAutoresizingMaskIntoConstraints="NO" id="Ic0-5E-nx5">
-                                        <rect key="frame" x="126.5" y="2" width="97" height="40"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_home" translatesAutoresizingMaskIntoConstraints="NO" id="Ic0-5E-nx5">
+                                        <rect key="frame" x="148.5" y="9" width="78" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="26" id="AMQ-xB-b6C"/>
+                                            <constraint firstAttribute="width" constant="78" id="L25-76-pNn"/>
+                                        </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PIh-h2-crd">
                                         <rect key="frame" x="331" y="0.0" width="44" height="44"/>
@@ -2096,7 +2107,7 @@ VIP保障实验班</string>
                                             <action selector="selectCourseAction:" destination="Hs7-22-wqW" eventType="touchUpInside" id="FIa-pN-f1b"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aoy-9i-fZT">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aoy-9i-fZT">
                                         <rect key="frame" x="0.0" y="43" width="375" height="1"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="0.20547945209999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -2104,32 +2115,34 @@ VIP保障实验班</string>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.76470588240000004" green="0.1019607843" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="aoy-9i-fZT" secondAttribute="trailing" id="9ou-Lh-VQX"/>
-                                    <constraint firstAttribute="bottom" secondItem="aoy-9i-fZT" secondAttribute="bottom" id="EQN-3C-Ivw"/>
-                                    <constraint firstAttribute="height" constant="44" id="ERS-HN-df6"/>
-                                    <constraint firstItem="aoy-9i-fZT" firstAttribute="leading" secondItem="k6G-v1-cQe" secondAttribute="leading" id="Fq8-QC-grh"/>
-                                    <constraint firstItem="Ic0-5E-nx5" firstAttribute="centerY" secondItem="k6G-v1-cQe" secondAttribute="centerY" id="eZw-U5-QFB"/>
-                                    <constraint firstItem="PIh-h2-crd" firstAttribute="top" secondItem="k6G-v1-cQe" secondAttribute="top" id="stV-lz-VyJ"/>
-                                    <constraint firstItem="Ic0-5E-nx5" firstAttribute="centerX" secondItem="k6G-v1-cQe" secondAttribute="centerX" id="vul-3f-zCv"/>
-                                    <constraint firstAttribute="trailing" secondItem="PIh-h2-crd" secondAttribute="trailing" id="zaJ-wP-E1Z"/>
+                                    <constraint firstItem="Ic0-5E-nx5" firstAttribute="centerY" secondItem="k6G-v1-cQe" secondAttribute="centerY" id="CCH-pO-6nZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="PIh-h2-crd" secondAttribute="trailing" id="FaY-Z2-9hX"/>
+                                    <constraint firstItem="Ic0-5E-nx5" firstAttribute="centerX" secondItem="k6G-v1-cQe" secondAttribute="centerX" id="IiQ-2G-2Lk"/>
+                                    <constraint firstAttribute="height" constant="44" id="IjC-S6-SAp"/>
+                                    <constraint firstAttribute="bottom" secondItem="PIh-h2-crd" secondAttribute="bottom" id="JNS-0n-1eH"/>
+                                    <constraint firstItem="PIh-h2-crd" firstAttribute="top" secondItem="k6G-v1-cQe" secondAttribute="top" id="PIR-MJ-KD1"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="u2m-KK-1Zd" secondAttribute="bottom" id="Bb4-za-gWH"/>
-                            <constraint firstItem="u2m-KK-1Zd" firstAttribute="leading" secondItem="m81-0I-652" secondAttribute="leading" id="DEI-4h-K4r"/>
-                            <constraint firstItem="u2m-KK-1Zd" firstAttribute="top" secondItem="k6G-v1-cQe" secondAttribute="bottom" id="bcB-Mb-wgl"/>
-                            <constraint firstAttribute="trailing" secondItem="u2m-KK-1Zd" secondAttribute="trailing" id="gJ2-Ot-UxK"/>
-                            <constraint firstAttribute="trailing" secondItem="k6G-v1-cQe" secondAttribute="trailing" id="jVD-gQ-8QL"/>
-                            <constraint firstItem="k6G-v1-cQe" firstAttribute="top" secondItem="EWe-KZ-P3D" secondAttribute="bottom" id="tqL-74-Mtb"/>
-                            <constraint firstItem="k6G-v1-cQe" firstAttribute="leading" secondItem="m81-0I-652" secondAttribute="leading" id="wHY-Fm-EhE"/>
+                            <constraint firstAttribute="trailing" secondItem="k6G-v1-cQe" secondAttribute="trailing" id="3ru-HU-9dv"/>
+                            <constraint firstItem="u2m-KK-1Zd" firstAttribute="top" secondItem="k6G-v1-cQe" secondAttribute="bottom" id="5nb-p6-DXw"/>
+                            <constraint firstItem="u2m-KK-1Zd" firstAttribute="leading" secondItem="m81-0I-652" secondAttribute="leading" id="792-aa-jXf"/>
+                            <constraint firstAttribute="trailing" secondItem="u2m-KK-1Zd" secondAttribute="trailing" id="Dh5-LH-SK4"/>
+                            <constraint firstAttribute="trailing" secondItem="wTi-cS-NJd" secondAttribute="trailing" id="FDo-nK-Zj2"/>
+                            <constraint firstItem="wTi-cS-NJd" firstAttribute="top" secondItem="m81-0I-652" secondAttribute="top" id="Fdw-mE-BHr"/>
+                            <constraint firstItem="k6G-v1-cQe" firstAttribute="leading" secondItem="m81-0I-652" secondAttribute="leading" id="L44-Wr-lHi"/>
+                            <constraint firstItem="k6G-v1-cQe" firstAttribute="top" secondItem="EWe-KZ-P3D" secondAttribute="bottom" id="Xh6-na-G7v"/>
+                            <constraint firstAttribute="bottom" secondItem="u2m-KK-1Zd" secondAttribute="bottom" id="jWl-zx-viG"/>
+                            <constraint firstItem="wTi-cS-NJd" firstAttribute="leading" secondItem="m81-0I-652" secondAttribute="leading" id="wJG-6z-fdE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="超职" id="IpE-T7-LU3"/>
                     <value key="contentSizeForViewInPopover" type="size" width="375" height="667"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="activityContentLB" destination="H0v-eB-vLP" id="4aE-E9-6fS"/>
@@ -2161,6 +2174,7 @@ VIP保障实验班</string>
                         <outlet property="publicTitleLB" destination="fFA-e3-iLu" id="U8k-0w-uvV"/>
                         <outlet property="publicViewHConstraint" destination="rE5-lM-Bv8" id="RGV-rD-X92"/>
                         <outlet property="publicViewTopConstraint" destination="SzZ-kp-OwJ" id="fAN-6d-d0v"/>
+                        <outlet property="statusH" destination="1Ce-NT-OXO" id="OLL-NE-UNg"/>
                         <outlet property="teacherScroView" destination="kGE-EL-kMR" id="yLb-md-Xwg"/>
                         <outlet property="teacherViewHContraints" destination="Wxn-Tl-2Ex" id="FYI-Up-bvp"/>
                         <outlet property="teacherViewTopContraints" destination="GQ7-d8-nhv" id="dSL-3v-oqG"/>

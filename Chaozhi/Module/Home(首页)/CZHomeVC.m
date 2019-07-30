@@ -110,6 +110,8 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
+    _statusH.constant = kStatusBarH;
+    
     if (![Utils getNetStatus]) {
         XLGAlertView *alert = [[XLGAlertView alloc] initWithTitle:@"温馨提醒" content:@"检测到您的网络异常，请检查网络" leftButtonTitle:@"" rightButtonTitle:@"我知道了"];
     }

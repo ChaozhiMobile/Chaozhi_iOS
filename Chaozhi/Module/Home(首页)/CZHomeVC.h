@@ -18,5 +18,6 @@
 @end
 
 @interface CZHomeVC : BaseVC
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *statusH;
 
 @end
