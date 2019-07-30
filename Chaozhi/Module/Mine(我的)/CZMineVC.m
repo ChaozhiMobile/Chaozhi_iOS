@@ -82,7 +82,7 @@
             UserInfo *userInfo = [UserInfo mj_objectWithKeyValues:(NSDictionary *)responseData];
             
             //头像、账号
-            [self.headImgView sd_setImageWithURL:[NSURL URLWithString:userInfo.head_img_url] placeholderImage:[UIImage imageNamed:@"icon_red_wo"]];
+            [self.headImgView sd_setImageWithURL:[NSURL URLWithString:userInfo.head_img_url] placeholderImage:[UIImage imageNamed:@"icon_mine_selected"]];
             self.accountLab.text = userInfo.phone;
             
             //报班状态

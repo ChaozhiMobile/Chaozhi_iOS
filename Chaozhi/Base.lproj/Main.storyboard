@@ -746,7 +746,7 @@
         <scene sceneID="yga-Uh-k6T">
             <objects>
                 <navigationController id="JmR-YS-nCW" customClass="BaseNC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="学习" image="icon_black_xx" selectedImage="icon_red_xx" id="5W5-Rg-K02"/>
+                    <tabBarItem key="tabBarItem" title="学习" image="icon_study_normal" selectedImage="icon_study_selected" id="5W5-Rg-K02"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zlB-MU-hhp">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1332,7 +1332,7 @@
         <scene sceneID="zT9-oB-LvC">
             <objects>
                 <navigationController id="Abx-ch-goK" customClass="BaseNC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="无限" image="icon_black_wx" selectedImage="icon_red_wx" id="LsM-oJ-VCD"/>
+                    <tabBarItem key="tabBarItem" title="无限" image="icon_infinite_normal" selectedImage="icon_infinite_selected" id="LsM-oJ-VCD"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nQD-bg-CKD">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1368,7 +1368,7 @@
         <scene sceneID="yCo-8b-ip4">
             <objects>
                 <navigationController id="jY3-kB-Jul" customClass="BaseNC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我的" image="icon_black_wo" selectedImage="icon_red_wo" id="1SE-aD-QmU"/>
+                    <tabBarItem key="tabBarItem" title="我的" image="icon_mine_normal" selectedImage="icon_mine_selected" id="1SE-aD-QmU"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JdH-hX-lyC">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1424,7 +1424,7 @@
         <scene sceneID="p3o-Hd-rap">
             <objects>
                 <navigationController id="IiP-lI-iPM" customClass="BaseNC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="超职" image="icon_black_cz" selectedImage="icon_red_cz" id="ZQC-l5-DDl"/>
+                    <tabBarItem key="tabBarItem" title="超职" image="icon_home_normal" selectedImage="icon_home_selected" id="ZQC-l5-DDl"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Lfj-tc-QZX">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -2079,18 +2079,53 @@ VIP保障实验班</string>
                                     <constraint firstItem="5ki-fp-RCy" firstAttribute="top" secondItem="i7O-fS-iLx" secondAttribute="bottom" constant="10" id="zZ4-5f-SUH"/>
                                 </constraints>
                             </scrollView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OhI-0s-cx0">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k6G-v1-cQe" userLabel="Nav View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_home" translatesAutoresizingMaskIntoConstraints="NO" id="Ic0-5E-nx5">
+                                        <rect key="frame" x="126.5" y="2" width="97" height="40"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PIh-h2-crd">
+                                        <rect key="frame" x="331" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="EBU-md-DmT"/>
+                                            <constraint firstAttribute="height" constant="44" id="Hs2-qk-iqQ"/>
+                                        </constraints>
+                                        <state key="normal" image="icon_class"/>
+                                        <connections>
+                                            <action selector="selectCourseAction:" destination="Hs7-22-wqW" eventType="touchUpInside" id="FIa-pN-f1b"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aoy-9i-fZT">
+                                        <rect key="frame" x="0.0" y="43" width="375" height="1"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="0.20547945209999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="QTE-J3-3M5"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.76470588240000004" green="0.1019607843" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="aoy-9i-fZT" secondAttribute="trailing" id="9ou-Lh-VQX"/>
+                                    <constraint firstAttribute="bottom" secondItem="aoy-9i-fZT" secondAttribute="bottom" id="EQN-3C-Ivw"/>
+                                    <constraint firstAttribute="height" constant="44" id="ERS-HN-df6"/>
+                                    <constraint firstItem="aoy-9i-fZT" firstAttribute="leading" secondItem="k6G-v1-cQe" secondAttribute="leading" id="Fq8-QC-grh"/>
+                                    <constraint firstItem="Ic0-5E-nx5" firstAttribute="centerY" secondItem="k6G-v1-cQe" secondAttribute="centerY" id="eZw-U5-QFB"/>
+                                    <constraint firstItem="PIh-h2-crd" firstAttribute="top" secondItem="k6G-v1-cQe" secondAttribute="top" id="stV-lz-VyJ"/>
+                                    <constraint firstItem="Ic0-5E-nx5" firstAttribute="centerX" secondItem="k6G-v1-cQe" secondAttribute="centerX" id="vul-3f-zCv"/>
+                                    <constraint firstAttribute="trailing" secondItem="PIh-h2-crd" secondAttribute="trailing" id="zaJ-wP-E1Z"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="u2m-KK-1Zd" secondAttribute="bottom" id="Bb4-za-gWH"/>
                             <constraint firstItem="u2m-KK-1Zd" firstAttribute="leading" secondItem="m81-0I-652" secondAttribute="leading" id="DEI-4h-K4r"/>
-                            <constraint firstItem="u2m-KK-1Zd" firstAttribute="top" secondItem="EWe-KZ-P3D" secondAttribute="bottom" id="Ydg-fQ-zGb"/>
+                            <constraint firstItem="u2m-KK-1Zd" firstAttribute="top" secondItem="k6G-v1-cQe" secondAttribute="bottom" id="bcB-Mb-wgl"/>
                             <constraint firstAttribute="trailing" secondItem="u2m-KK-1Zd" secondAttribute="trailing" id="gJ2-Ot-UxK"/>
+                            <constraint firstAttribute="trailing" secondItem="k6G-v1-cQe" secondAttribute="trailing" id="jVD-gQ-8QL"/>
+                            <constraint firstItem="k6G-v1-cQe" firstAttribute="top" secondItem="EWe-KZ-P3D" secondAttribute="bottom" id="tqL-74-Mtb"/>
+                            <constraint firstItem="k6G-v1-cQe" firstAttribute="leading" secondItem="m81-0I-652" secondAttribute="leading" id="wHY-Fm-EhE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="超职" id="IpE-T7-LU3"/>
@@ -2129,7 +2164,6 @@ VIP保障实验班</string>
                         <outlet property="teacherScroView" destination="kGE-EL-kMR" id="yLb-md-Xwg"/>
                         <outlet property="teacherViewHContraints" destination="Wxn-Tl-2Ex" id="FYI-Up-bvp"/>
                         <outlet property="teacherViewTopContraints" destination="GQ7-d8-nhv" id="dSL-3v-oqG"/>
-                        <outlet property="viewTopY" destination="Ydg-fQ-zGb" id="SD9-dg-Uxw"/>
                         <outlet property="weikeBgView" destination="scj-6A-hbb" id="e69-CR-14O"/>
                         <outlet property="weikeCountLB" destination="fRa-F9-QtP" id="xLz-QX-y4y"/>
                         <outlet property="weikeImgView" destination="bcA-O3-84v" id="bak-BP-bPB"/>
@@ -2141,24 +2175,25 @@ VIP保障实验班</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8b-5z-cy0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="340" y="-821"/>
+            <point key="canvasLocation" x="340" y="-821.73913043478262"/>
         </scene>
     </scenes>
     <resources>
         <image name="arrow_more" width="6" height="10"/>
         <image name="home_title_one" width="2" height="16"/>
-        <image name="icon_black_cz" width="20" height="21"/>
-        <image name="icon_black_wo" width="24" height="24"/>
-        <image name="icon_black_wx" width="24" height="24"/>
-        <image name="icon_black_xx" width="24" height="24"/>
+        <image name="icon_class" width="18" height="18"/>
         <image name="icon_database" width="52" height="52"/>
         <image name="icon_home_comment" width="14" height="14"/>
+        <image name="icon_home_normal" width="24" height="23"/>
+        <image name="icon_home_selected" width="24" height="23"/>
+        <image name="icon_infinite_normal" width="24" height="24"/>
+        <image name="icon_infinite_selected" width="24" height="24"/>
         <image name="icon_live" width="52" height="52"/>
+        <image name="icon_mine_normal" width="22" height="22"/>
+        <image name="icon_mine_selected" width="22" height="22"/>
         <image name="icon_question" width="52" height="52"/>
-        <image name="icon_red_cz" width="24" height="24"/>
-        <image name="icon_red_wo" width="24" height="24"/>
-        <image name="icon_red_wx" width="24" height="24"/>
-        <image name="icon_red_xx" width="24" height="24"/>
+        <image name="icon_study_normal" width="24" height="19"/>
+        <image name="icon_study_selected" width="24" height="19"/>
         <image name="icon_vgo" width="22" height="22"/>
         <image name="icon_video" width="52" height="52"/>
         <image name="logo_black" width="115" height="110"/>
