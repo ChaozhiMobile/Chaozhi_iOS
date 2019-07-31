@@ -409,7 +409,7 @@
                 _enterLiveBtn.userInteractionEnabled = YES;
                 [_enterLiveBtn setTitle:@"查看回放" forState:UIControlStateNormal];
                 [_enterLiveBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
-                _enterLiveBtn.backgroundColor = AppThemeColor;
+                _enterLiveBtn.backgroundColor = RGBValue(0xC31A1F);
                 _enterLiveBtn.borderColor = [UIColor clearColor];
             }
             else if ([liveItems.status isEqualToString:@"0"]) {

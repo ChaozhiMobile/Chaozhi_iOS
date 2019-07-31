@@ -12,6 +12,8 @@
 #import "CZUpdateView.h"
 #import "HomeInfoItem.h"
 #import "CourseItem.h"
+#import "VideoItem.h"
+#import "TalkfunPlaybackViewController.h"
 
 #define lineCount 5
 
@@ -305,7 +307,17 @@
         }
     }
     else if (indexPath.section==1) {
-        
+        HomeTryVideoItem *tryVideoItem = [_categoryItems.try_video_list firstObject];
+        VideoItem *item = [[VideoItem alloc] init];
+        item.live_id = tryVideoItem.live_id;
+        item.product_id = @"0";
+        item.type = @"1";
+        TalkfunPlaybackViewController *vc = [[TalkfunPlaybackViewController alloc] init];
+        vc.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":tryVideoItem.access_token},@"data", nil];
+        vc.playbackID = item.live_id;
+        vc.videoItem = item;
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
     }
     else if (indexPath.section==2) {
         HomeNewsItem *item = _newsDatsSource[indexPath.row];
@@ -346,6 +358,9 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    if (section==1) {
+        return 10;
+    }
     return CGFLOAT_MIN;
 }
 
@@ -375,12 +390,14 @@
     [bgView addSubview:lineView];
     
     UIButton *moreBtn = [[UIButton alloc]initWithFrame:CGRectMake(bgView.width-100-16, 0, 100, 40)];
+    moreBtn.tag = 1000+section;
     [moreBtn setTitle:@"更多课程" forState:UIControlStateNormal];
     [moreBtn setTitleColor:AppThemeColor forState:UIControlStateNormal];
     moreBtn.titleLabel.font = [UIFont systemFontOfSize:14];
     moreBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     moreBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 10);
     moreBtn.centerY = titleLab.centerY;
+    [moreBtn addTarget:self action:@selector(moreClickAction:) forControlEvents:UIControlEventTouchUpInside];
     [bgView addSubview:moreBtn];
     
     UIImageView *imgView = [[UIImageView alloc]initWithFrame:CGRectMake(moreBtn.width-6, 14, 6, 12)];;
@@ -392,6 +409,17 @@
     }
     
     return bgView;
+}
+
+#pragma mark - 更多课程
+- (void)moreClickAction:(UIButton *)btn {
+    NSInteger index = btn.tag - 1000;
+    if (index == 0) { //更多畅销好课
+        [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_StoreProduct,@"0"] withTitle:@"" isPresent:NO];
+    }
+    if (index == 1) { //更多公开课
+        [BaseWebVC showWithContro:self withUrlStr:H5_StoreFree withTitle:@"" isPresent:NO];
+    }
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
