@@ -16,21 +16,18 @@
 #define lineCount 5
 
 @interface XZHomeVC ()<UITableViewDataSource,UITableViewDelegate,SKStoreProductViewControllerDelegate, UpdateViewDelegate>
-{
-    NSArray *titleArr;
-}
+
 /** 版本更新 */
 @property (nonatomic, strong) UIView *BGView;
 @property (nonatomic, strong) CZUpdateView *updateView;
 @property (nonatomic, retain) VersionItem *versionItem;
-@property (nonatomic , retain) HomeInfoItem *homeItem;
-@property (nonatomic , retain) HomeNewsListItem *newsItems;
-@property (nonatomic , retain) NSMutableArray <CourseItem *>*dataArr; 
-@property (nonatomic , retain) NSMutableArray <HomeNewsItem *> *newsDatsSource;
-@property (nonatomic , retain) HomeCategoryItem *categoryItems;
-/** 当前类目ID */
-@property (nonatomic,copy) NSString *currentCategoryID;
-@property (nonatomic , assign) NSInteger page;
+@property (nonatomic, retain) HomeInfoItem *homeItem;
+@property (nonatomic, retain) HomeNewsListItem *newsItems;
+@property (nonatomic, retain) NSMutableArray <CourseItem *>*dataArr;
+@property (nonatomic, retain) NSMutableArray <HomeNewsItem *> *newsDatsSource;
+@property (nonatomic, retain) HomeCategoryItem *categoryItems;
+@property (nonatomic, assign) NSInteger page;
+@property (nonatomic, retain) NSArray *titleArr;
 
 @end
 
@@ -51,49 +48,45 @@
         XLGAlertView *alert = [[XLGAlertView alloc] initWithTitle:@"温馨提醒" content:@"检测到您的网络异常，请检查网络" leftButtonTitle:@"" rightButtonTitle:@"我知道了"];
     }
     
-    self.page = 1;
-    titleArr = @[@{@"title":@"畅销好课",@"titleEN":@"PART ONE"},@{@"title":@"公开课",@"titleEN":@"PART TWO"},@{@"title":@"行业资讯",@"titleEN":@"PART THREE"}];
-    [self getData];
-    
-    [self checkVersion];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeServerSucc) name:kChangeServerSuccNotification object:nil]; //环境切换成功通知
-    
     _versionItem = [[VersionItem alloc] init];
+    _homeItem = [[HomeInfoItem alloc] init];
+    _categoryItems = [[HomeCategoryItem alloc] init];
+    _newsItems = [[HomeNewsListItem alloc] init];
+    _newsDatsSource = [NSMutableArray array];
+    _page = 1;
+    _bannerView.backgroundColor = PageColor;
+    _bannerView.placeholderImage = [UIImage imageNamed:@"default_banner"];
+    _titleArr = @[@{@"title":@"畅销好课",@"titleEN":@"PART ONE"},@{@"title":@"公开课",@"titleEN":@"PART TWO"},@{@"title":@"行业资讯",@"titleEN":@"PART THREE"}];
     
     _mainTabView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         self.page = 1;
         [self getData];
     }];
+    _mainTabView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        [self getNewList];
+    }];
+    
+    [self getData];
+    
+    [self checkVersion];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeServerSucc) name:kChangeServerSuccNotification object:nil]; //环境切换成功通知
 }
 
 - (void)changeServerSucc {
     [self getData];
 }
 
+#pragma mark - get data
+
 - (void)getData {
     [self getBannerActivityData];
     [self getCategoryList];
+    [self getCourseData];
+    [self getNewList];
 }
 
-#pragma mark - get data
-
-#pragma mark - 版本更新
-- (void)checkVersion {
-    [[NetworkManager sharedManager] postJSON:URL_CheckVersion parameters:@{@"device":@"ios",@"version":AppVersion} completion:^(id responseData, RequestState status, NSError *error) {
-        
-        self.versionItem = [VersionItem yy_modelWithJSON:responseData];
-        
-        if ([self.versionItem.grade isEqualToString:@"2"]) { //推荐升级
-            [self handleVersionUpdate:UpdateTypeSelect];
-        }
-        if ([self.versionItem.grade isEqualToString:@"3"]) { //强制升级
-            [self handleVersionUpdate:UpdateTypeForce];
-        }
-    }];
-}
-
-#pragma mark - 获取轮播图
+#pragma mark - 轮播图
 - (void) getBannerActivityData {
     NSDictionary *dic = [NSDictionary dictionary];
     __weak typeof(self) weakSelf = self;
@@ -102,9 +95,6 @@
         [weakSelf refreshBannerUI];
         if ([weakSelf.mainTabView.mj_header isRefreshing]) {
             [weakSelf.mainTabView.mj_header endRefreshing];
-        }
-        if ([weakSelf.mainTabView.mj_footer isRefreshing]) {
-            [weakSelf.mainTabView.mj_footer endRefreshing];
         }
     }];
 }
@@ -118,7 +108,7 @@
     _bannerView.imageURLStringsGroup = bannerImgUrlArr;
 }
 
-#pragma mark - 分类列表
+#pragma mark - 课程分类
 - (void)getCategoryList {
     __weak typeof(self) weakSelf = self;
     NSDictionary *dic = [NSDictionary dictionary];
@@ -129,14 +119,12 @@
         if ([weakSelf.mainTabView.mj_header isRefreshing]) {
             [weakSelf.mainTabView.mj_header endRefreshing];
         }
-        if ([weakSelf.mainTabView.mj_footer isRefreshing]) {
-            [weakSelf.mainTabView.mj_footer endRefreshing];
-        }
         [weakSelf refreshCategoryUI];
     }];
 }
 
 - (void)refreshCategoryUI {
+    [_courseScrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)]; //移除所有子视图
     CGFloat viewLeft = 0;
     for (NSInteger index = 0; index <self.dataArr.count; index++) {
         CourseItem *item = self.dataArr[index];
@@ -150,35 +138,34 @@
         titleLab.text = item.name;
     }
     _courseScrollView.contentSize = CGSizeMake(viewLeft, 0);
-    if (self.dataArr.count>0) {
-        CourseItem *item = self.dataArr[0];
-        _currentCategoryID = item.ID;
-        [self getNewList];
-        [self getCourseData];
-    }
 }
 
+#pragma mark - 畅销好课、公开课
 - (void)getCourseData {
     __weak typeof(self) weakSelf = self;
-    [[NetworkManager sharedManager] postJSON:URL_Category parameters:@{@"category_id":_currentCategoryID} completion:^(id responseData, RequestState status, NSError *error) {
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"52",@"category_id", nil];
+    [[NetworkManager sharedManager] postJSON:URL_Category parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+        if ([weakSelf.mainTabView.mj_header isRefreshing]) {
+            [weakSelf.mainTabView.mj_header endRefreshing];
+        }
+        weakSelf.categoryItems = nil;
+        if (status == Request_Success) {
+            weakSelf.categoryItems = [HomeCategoryItem yy_modelWithJSON:responseData];
+        }
+        [weakSelf.mainTabView reloadData];
+    }];
+}
+
+#pragma mark - 行业资讯
+- (void)getNewList {
+    __weak typeof(self) weakSelf = self;
+    [[NetworkManager sharedManager] postJSON:URL_NewsList parameters:@{@"category_id":@"63",@"p":@(_page),@"offset":@"10"} completion:^(id responseData, RequestState status, NSError *error) {
         if ([weakSelf.mainTabView.mj_header isRefreshing]) {
             [weakSelf.mainTabView.mj_header endRefreshing];
         }
         if ([weakSelf.mainTabView.mj_footer isRefreshing]) {
             [weakSelf.mainTabView.mj_footer endRefreshing];
         }
-        weakSelf.categoryItems = nil;
-        if (status == Request_Success) {
-        weakSelf.categoryItems = [HomeCategoryItem yy_modelWithJSON:responseData];
-        }
-        [weakSelf.mainTabView reloadData];
-    }];
-}
-
-- (void)getNewList {
-    __weak typeof(self) weakSelf = self;
-    [[NetworkManager sharedManager] postJSON:URL_NewsList parameters:@{@"category_id":_currentCategoryID,@"p":@(_page),@"offset":@"5",@"news_category_id":@""} completion:^(id responseData, RequestState status, NSError *error) {
-        
         weakSelf.newsItems = [HomeNewsListItem yy_modelWithJSON:responseData];
         if (weakSelf.page==1) {
             [weakSelf.newsDatsSource removeAllObjects];
@@ -187,12 +174,27 @@
             weakSelf.page++;
             [weakSelf.newsDatsSource addObjectsFromArray:            weakSelf.newsItems.rows];
             weakSelf.mainTabView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-                [weakSelf getData];
+                [weakSelf getNewList];
             }];
         } else {
             weakSelf.mainTabView.mj_footer = nil;
         }
         [weakSelf.mainTabView reloadData];
+    }];
+}
+
+#pragma mark - 版本更新
+- (void)checkVersion {
+    [[NetworkManager sharedManager] postJSON:URL_CheckVersion parameters:@{@"device":@"ios",@"version":AppVersion} completion:^(id responseData, RequestState status, NSError *error) {
+        
+        self.versionItem = [VersionItem yy_modelWithJSON:responseData];
+        
+        if ([self.versionItem.grade isEqualToString:@"2"]) { //推荐升级
+            [self handleVersionUpdate:UpdateTypeSelect];
+        }
+        if ([self.versionItem.grade isEqualToString:@"3"]) { //强制升级
+            [self handleVersionUpdate:UpdateTypeForce];
+        }
     }];
 }
 
@@ -272,6 +274,7 @@
     XZHomeTabCell *cell;
     if (indexPath.section==0) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"XZHomeTabCell1"];
+        
     }
     else if (indexPath.section==1) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"XZHomeTabCell2"];
@@ -285,9 +288,29 @@
         HomeNewsItem *item = _newsDatsSource[indexPath.row];
         [cell.thumbImgView sd_setImageWithURL:[NSURL URLWithString:item.img] placeholderImage:nil];
         cell.titleLab.text = item.title;
-        cell.timeLab.text = item.time;
+        cell.timeLab.text = item.ct;
+        cell.readCountLab.text = [NSString stringWithFormat:@"0人阅读"];
     }
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.section==0) {
+        BOOL line = self.categoryItems.feature_product_list.count%2==0;
+        if (line) {
+            
+        }
+    }
+    else if (indexPath.section==1) {
+        
+    }
+    else if (indexPath.section==2) {
+        HomeNewsItem *item = _newsDatsSource[indexPath.row];
+        [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_InfiniteNews,item.ID] withTitle:@"" isPresent:NO];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -306,31 +329,31 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if (section==0) {
         if (self.categoryItems.feature_product_list.count==0) {
-            return 1;
+            return CGFLOAT_MIN;
         }
     }
     else if (section==1) {
         if (self.categoryItems.try_video_list.count==0) {
-            return 1;
+            return CGFLOAT_MIN;
         }
     }
     else if (section==2) {
         if (self.newsDatsSource.count==0) {
-            return 1;
+            return CGFLOAT_MIN;
         }
     }
     return 80;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 20;
+    return CGFLOAT_MIN;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *bgView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 80)];
     bgView.clipsToBounds = YES;
     
-    NSDictionary *dic = titleArr[section];
+    NSDictionary *dic = _titleArr[section];
     UILabel *bgTitleLab = [[UILabel alloc]initWithFrame:CGRectMake(0, 17, 200, 30)];
     bgTitleLab.font = [UIFont systemFontOfSize:22 weight:UIFontWeightBold];
     bgTitleLab.text = dic[@"titleEN"];
@@ -345,7 +368,6 @@
     titleLab.textAlignment = NSTextAlignmentCenter;
     titleLab.font = [UIFont systemFontOfSize:18 weight:UIFontWeightBold];
     [bgView addSubview:titleLab];
-    
     
     UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, titleLab.bottom+3, 30, 3)];
     lineView.backgroundColor = AppThemeColor;
@@ -364,6 +386,10 @@
     UIImageView *imgView = [[UIImageView alloc]initWithFrame:CGRectMake(moreBtn.width-6, 14, 6, 12)];;
     imgView.image = [UIImage imageNamed:@"home_more"];
     [moreBtn addSubview:imgView];
+    
+    if ([dic[@"title"] isEqualToString:@"行业资讯"]) {
+        moreBtn.hidden = YES;
+    }
     
     return bgView;
 }
@@ -391,7 +417,6 @@
     
     return vv;
 }
-
 
 /*
 #pragma mark - Navigation
