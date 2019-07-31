@@ -60,6 +60,11 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeServerSucc) name:kChangeServerSuccNotification object:nil]; //环境切换成功通知
     
     _versionItem = [[VersionItem alloc] init];
+    
+    _mainTabView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        self.page = 1;
+        [self getData];
+    }];
 }
 
 - (void)changeServerSucc {
