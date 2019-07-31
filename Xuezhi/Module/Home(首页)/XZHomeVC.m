@@ -143,7 +143,6 @@
         [imgView sd_setImageWithURL:[NSURL URLWithString:item.img] placeholderImage:nil];
         UILabel *titleLab = [view viewWithTag:1001];
         titleLab.text = item.name;
-
     }
     _courseScrollView.contentSize = CGSizeMake(viewLeft, 0);
     if (self.dataArr.count>0) {
@@ -191,7 +190,6 @@
         [weakSelf.mainTabView reloadData];
     }];
 }
-
 
 - (void)handleVersionUpdate:(UpdateType)updateType {
     
