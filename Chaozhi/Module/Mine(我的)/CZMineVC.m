@@ -197,7 +197,7 @@
         //小红点
         UILabel *numLab = [[UILabel alloc] initWithFrame:CGRectMake(WIDTH-autoScaleW(45), autoScaleW(21), autoScaleW(8), autoScaleW(8))];
         numLab.tag = 1000+indexPath.row;
-        numLab.backgroundColor = AppThemeColor;
+        numLab.backgroundColor = RGBValue(0xC31A1F);
         numLab.layer.cornerRadius = numLab.width/2;
         [numLab.layer setMasksToBounds:YES];
         numLab.hidden = YES;

@@ -14,7 +14,6 @@
 #import <StoreKit/StoreKit.h>
 #import "CZUpdateView.h"
 #import "CZStarView.h"
-#import "DBManager.h"
 #import "VideoItem.h"
 #import "TalkfunPlaybackViewController.h"
 
