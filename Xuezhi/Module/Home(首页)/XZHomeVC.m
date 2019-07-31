@@ -64,9 +64,6 @@
         self.page = 1;
         [self getData];
     }];
-    _mainTabView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        [self getNewList];
-    }];
     
     [self getData];
     
