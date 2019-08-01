@@ -19,16 +19,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface XZHomeTabCell : UITableViewCell
-
-@property (weak, nonatomic) IBOutlet UIView *leftView;
-@property (weak, nonatomic) IBOutlet UIView *rightView;
-@property (weak, nonatomic) IBOutlet UIImageView *thumbImgView;
-@property (weak, nonatomic) IBOutlet UILabel *titleLab;
-@property (weak, nonatomic) IBOutlet UILabel *teacherName;
-@property (weak, nonatomic) IBOutlet UILabel *timeLab;
-@property (weak, nonatomic) IBOutlet UILabel *readCountLab;
-
-@end
-
 NS_ASSUME_NONNULL_END

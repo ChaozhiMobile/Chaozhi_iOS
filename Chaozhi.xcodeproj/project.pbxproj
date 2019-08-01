@@ -547,6 +547,13 @@
 		A045521B22ED46E500E17406 /* UIButton+XLGColor.m in Sources */ = {isa = PBXBuildFile; fileRef = A045521922ED46E500E17406 /* UIButton+XLGColor.m */; };
 		A0462A072187407600D12E65 /* CZNotNetAvailableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0462A062187407600D12E65 /* CZNotNetAvailableVC.m */; };
 		A0462A0D2187459600D12E65 /* CZNotDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0462A0C2187459600D12E65 /* CZNotDataView.m */; };
+		A0541F9D22F2893B00D961B3 /* XZHomeTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0541F9C22F2893A00D961B3 /* XZHomeTabCell.m */; };
+		A0541FA522F2C69C00D961B3 /* UIButton+CenterImageAndTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = A0541F9F22F2C69C00D961B3 /* UIButton+CenterImageAndTitle.m */; };
+		A0541FA622F2C69C00D961B3 /* UIButton+CenterImageAndTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = A0541F9F22F2C69C00D961B3 /* UIButton+CenterImageAndTitle.m */; };
+		A0541FA722F2C69C00D961B3 /* UIButton+ButtonStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = A0541FA122F2C69C00D961B3 /* UIButton+ButtonStyle.m */; };
+		A0541FA822F2C69C00D961B3 /* UIButton+ButtonStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = A0541FA122F2C69C00D961B3 /* UIButton+ButtonStyle.m */; };
+		A0541FA922F2C69C00D961B3 /* XLGCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A0541FA322F2C69C00D961B3 /* XLGCustomButton.m */; };
+		A0541FAA22F2C69C00D961B3 /* XLGCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A0541FA322F2C69C00D961B3 /* XLGCustomButton.m */; };
 		A05999EF2155EC1500D17058 /* XLGExternalTestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A05999E02155EC1500D17058 /* XLGExternalTestTool.m */; };
 		A05999F12155EC1500D17058 /* XLGLogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A05999E62155EC1500D17058 /* XLGLogVC.m */; };
 		A05999F22155EC1500D17058 /* XLGChangeServerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A05999E92155EC1500D17058 /* XLGChangeServerCell.m */; };
@@ -1029,6 +1036,14 @@
 		A0462A062187407600D12E65 /* CZNotNetAvailableVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZNotNetAvailableVC.m; sourceTree = "<group>"; };
 		A0462A0B2187459600D12E65 /* CZNotDataView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZNotDataView.h; sourceTree = "<group>"; };
 		A0462A0C2187459600D12E65 /* CZNotDataView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZNotDataView.m; sourceTree = "<group>"; };
+		A0541F9B22F2893A00D961B3 /* XZHomeTabCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZHomeTabCell.h; sourceTree = "<group>"; };
+		A0541F9C22F2893A00D961B3 /* XZHomeTabCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XZHomeTabCell.m; sourceTree = "<group>"; };
+		A0541F9F22F2C69C00D961B3 /* UIButton+CenterImageAndTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CenterImageAndTitle.m"; sourceTree = "<group>"; };
+		A0541FA022F2C69C00D961B3 /* XLGCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLGCustomButton.h; sourceTree = "<group>"; };
+		A0541FA122F2C69C00D961B3 /* UIButton+ButtonStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ButtonStyle.m"; sourceTree = "<group>"; };
+		A0541FA222F2C69C00D961B3 /* UIButton+CenterImageAndTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CenterImageAndTitle.h"; sourceTree = "<group>"; };
+		A0541FA322F2C69C00D961B3 /* XLGCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGCustomButton.m; sourceTree = "<group>"; };
+		A0541FA422F2C69C00D961B3 /* UIButton+ButtonStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ButtonStyle.h"; sourceTree = "<group>"; };
 		A05999E02155EC1500D17058 /* XLGExternalTestTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGExternalTestTool.m; sourceTree = "<group>"; };
 		A05999E52155EC1500D17058 /* XLGLogVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLGLogVC.h; sourceTree = "<group>"; };
 		A05999E62155EC1500D17058 /* XLGLogVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGLogVC.m; sourceTree = "<group>"; };
@@ -1538,6 +1553,7 @@
 			children = (
 				A007090322EDD59C00C70CEE /* XZHomeVC.h */,
 				A007090422EDD59C00C70CEE /* XZHomeVC.m */,
+				A007091822F288D600C70CEE /* View */,
 			);
 			path = "Home(首页)";
 			sourceTree = "<group>";
@@ -1548,6 +1564,15 @@
 				A007090A22EDE09800C70CEE /* XuezhiAssets.xcassets */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		A007091822F288D600C70CEE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A0541F9B22F2893A00D961B3 /* XZHomeTabCell.h */,
+				A0541F9C22F2893A00D961B3 /* XZHomeTabCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		A00FA9D52168C22E00F4DA5B /* 系统设置 */ = {
@@ -1774,6 +1799,7 @@
 			children = (
 				A020AFA9214AAB130011BB4F /* Utils.h */,
 				A020AFB2214AAB130011BB4F /* Utils.m */,
+				A0541F9E22F2C69C00D961B3 /* CustomButton */,
 				A0C1257021BC01E00026430E /* StarView */,
 				A05FF5CF215B163400C51E05 /* Indicator(指示器) */,
 				A020AFAA214AAB130011BB4F /* Cache */,
@@ -2064,6 +2090,19 @@
 				201DF3CF22AE584700904EAF /* CZAlertView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A0541F9E22F2C69C00D961B3 /* CustomButton */ = {
+			isa = PBXGroup;
+			children = (
+				A0541FA422F2C69C00D961B3 /* UIButton+ButtonStyle.h */,
+				A0541FA122F2C69C00D961B3 /* UIButton+ButtonStyle.m */,
+				A0541FA222F2C69C00D961B3 /* UIButton+CenterImageAndTitle.h */,
+				A0541F9F22F2C69C00D961B3 /* UIButton+CenterImageAndTitle.m */,
+				A0541FA022F2C69C00D961B3 /* XLGCustomButton.h */,
+				A0541FA322F2C69C00D961B3 /* XLGCustomButton.m */,
+			);
+			path = CustomButton;
 			sourceTree = "<group>";
 		};
 		A05999E42155EC1500D17058 /* 接口日志 */ = {
@@ -3543,10 +3582,12 @@
 				A020B06B214AAB150011BB4F /* BaseVC.m in Sources */,
 				A0AC08EA22C4BC7D001832EA /* RootTableViewController.m in Sources */,
 				A0AC091A22C4BC7E001832EA /* TalkfunScoreView.m in Sources */,
+				A0541FA722F2C69C00D961B3 /* UIButton+ButtonStyle.m in Sources */,
 				A05FF5DB215B163400C51E05 /* JHHJAnimation.m in Sources */,
 				A01F607422CB8960001133C4 /* DownloadListModel.m in Sources */,
 				A05999F32155EC1500D17058 /* XLGChangeServerModel.m in Sources */,
 				A0AC08C422C4BC7D001832EA /* UIButton+TalkfunButton.m in Sources */,
+				A0541FA922F2C69C00D961B3 /* XLGCustomButton.m in Sources */,
 				A0AC091222C4BC7E001832EA /* TalkfunHornView.m in Sources */,
 				A020B05E214AAB150011BB4F /* MEViewController.m in Sources */,
 				A0AC090422C4BC7E001832EA /* TalkfunNoticeCell.m in Sources */,
@@ -3611,6 +3652,7 @@
 				A0AC090C22C4BC7E001832EA /* ChatCell.m in Sources */,
 				A0AC08BF22C4BC7D001832EA /* TalkfunNewChatCell.m in Sources */,
 				A0AC08EF22C4BC7D001832EA /* TalkfunGuidanceView.m in Sources */,
+				A0541FA522F2C69C00D961B3 /* UIButton+CenterImageAndTitle.m in Sources */,
 				A020B054214AAB150011BB4F /* XLGAlertView.m in Sources */,
 				A071273B2216E7D700DC3C20 /* NotifyItem.m in Sources */,
 				A0AC091722C4BC7E001832EA /* TalkfunReplyTipsView.m in Sources */,
@@ -3738,9 +3780,11 @@
 				A045509022EC8DFA00E17406 /* TalkFunTextLayer.m in Sources */,
 				A045509122EC8DFA00E17406 /* evaluateView.m in Sources */,
 				A045509222EC8DFA00E17406 /* ChapterViewController.m in Sources */,
+				A0541F9D22F2893B00D961B3 /* XZHomeTabCell.m in Sources */,
 				A045521722ED44ED00E17406 /* UILabel+XLGColor.m in Sources */,
 				A045509322EC8DFA00E17406 /* BaseNavBar.m in Sources */,
 				A045509422EC8DFA00E17406 /* AlbumViewController.m in Sources */,
+				A0541FA622F2C69C00D961B3 /* UIButton+CenterImageAndTitle.m in Sources */,
 				A045509522EC8DFA00E17406 /* TalkfunNewButtonViewButton.m in Sources */,
 				A045509622EC8DFA00E17406 /* LDNetGetAddress.m in Sources */,
 				A045509722EC8DFA00E17406 /* UILabel+TalkfunLabel.m in Sources */,
@@ -3811,6 +3855,7 @@
 				A04550D522EC8DFA00E17406 /* XLGLogVC.m in Sources */,
 				A04550D622EC8DFA00E17406 /* CZLoginVC.m in Sources */,
 				A04550D722EC8DFA00E17406 /* VoteEndViewController.m in Sources */,
+				A0541FAA22F2C69C00D961B3 /* XLGCustomButton.m in Sources */,
 				A04550D822EC8DFA00E17406 /* CZStudyVC.m in Sources */,
 				A04550D922EC8DFA00E17406 /* JHHJCenterBGView.m in Sources */,
 				A04550DA22EC8DFA00E17406 /* QuestionTableViewController.m in Sources */,
@@ -3831,6 +3876,7 @@
 				A04550E922EC8DFA00E17406 /* XLGLoginTestViewModel.m in Sources */,
 				A04550EA22EC8DFA00E17406 /* XLGExternalTestTool.m in Sources */,
 				A04550EB22EC8DFA00E17406 /* PlaybackChatModel.m in Sources */,
+				A0541FA822F2C69C00D961B3 /* UIButton+ButtonStyle.m in Sources */,
 				A04550EC22EC8DFA00E17406 /* TalkfunNewQuestionCell.m in Sources */,
 				A04550ED22EC8DFA00E17406 /* XLGLoginTestVC.m in Sources */,
 				A04550EE22EC8DFA00E17406 /* TalkfunNewFunctionButton.m in Sources */,

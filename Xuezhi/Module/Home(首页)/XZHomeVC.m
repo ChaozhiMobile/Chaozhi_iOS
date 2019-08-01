@@ -7,13 +7,14 @@
 //
 
 #import "XZHomeVC.h"
-#import "VersionItem.h"
 #import <StoreKit/StoreKit.h>
 #import "CZUpdateView.h"
+#import "VersionItem.h"
 #import "HomeInfoItem.h"
 #import "CourseItem.h"
 #import "VideoItem.h"
 #import "TalkfunPlaybackViewController.h"
+#import "XZHomeTabCell.h"
 
 #define lineCount 5
 
@@ -272,23 +273,23 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     XZHomeTabCell *cell;
     if (indexPath.section==0) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"XZHomeTabCell1"];
-        
+        cell = [tableView dequeueReusableCellWithIdentifier:@"XZHomeTabCellGoodsCourse"];
+        HomeFeatureProductItem *leftItem = self.categoryItems.feature_product_list[indexPath.row*2];
+        [cell setItem:leftItem withView:cell.leftView];
+        if (self.categoryItems.feature_product_list.count%2==0) {
+            HomeFeatureProductItem *rightItem = self.categoryItems.feature_product_list[indexPath.row*2+1];
+            [cell setItem:rightItem withView:cell.rightView];
+        }
     }
     else if (indexPath.section==1) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"XZHomeTabCell2"];
+        cell = [tableView dequeueReusableCellWithIdentifier:@"XZHomeTabCellPublicCourse"];
         HomeTryVideoItem *item = self.categoryItems.try_video_list[indexPath.row];
-        [cell.thumbImgView sd_setImageWithURL:[NSURL URLWithString:item.img] placeholderImage:nil];
-        cell.titleLab.text = item.title;
-        cell.teacherName.text = item.teacher;
+        cell.publicItem = item;
     }
     else if (indexPath.section==2) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"XZHomeTabCell3"];
+        cell = [tableView dequeueReusableCellWithIdentifier:@"XZHomeTabCellNews"];
         HomeNewsItem *item = _newsDatsSource[indexPath.row];
-        [cell.thumbImgView sd_setImageWithURL:[NSURL URLWithString:item.img] placeholderImage:nil];
-        cell.titleLab.text = item.title;
-        cell.timeLab.text = item.ct;
-        cell.readCountLab.text = [NSString stringWithFormat:@"0人阅读"];
+        cell.newsItem = item;
     }
     return cell;
 }
@@ -297,13 +298,7 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if (indexPath.section==0) {
-        BOOL line = self.categoryItems.feature_product_list.count%2==0;
-        if (line) {
-            
-        }
-    }
-    else if (indexPath.section==1) {
+    if (indexPath.section==1) {
         HomeTryVideoItem *tryVideoItem = [_categoryItems.try_video_list firstObject];
         VideoItem *item = [[VideoItem alloc] init];
         item.live_id = tryVideoItem.live_id;
@@ -412,7 +407,8 @@
 - (void)moreClickAction:(UIButton *)btn {
     NSInteger index = btn.tag - 1000;
     if (index == 0) { //更多畅销好课
-        [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_StoreProduct,@"0"] withTitle:@"" isPresent:NO];
+//        [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_Store,@"0"] withTitle:@"" isPresent:NO];
+        CZAppDelegate.tabVC.selectedIndex = 2;
     }
     if (index == 1) { //更多公开课
         [BaseWebVC showWithContro:self withUrlStr:H5_StoreFree withTitle:@"" isPresent:NO];
@@ -452,9 +448,5 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-@end
-
-@implementation XZHomeTabCell
 
 @end
