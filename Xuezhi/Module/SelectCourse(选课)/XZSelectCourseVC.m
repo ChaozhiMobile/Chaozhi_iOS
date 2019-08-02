@@ -7,13 +7,15 @@
 //
 
 #import "XZSelectCourseVC.h"
+#import "XZSelectCourseTabCell.h"
+#import "CourseItem.h"
 
-#define LineMaxCount 4.5
+#define LineMaxCount 5
 
 @interface XZSelectCourseVC ()
-{
-    NSArray *titleArr;
-}
+
+@property (nonatomic, retain) NSMutableArray <CourseItem *>*titleArr;
+
 @end
 
 @implementation XZSelectCourseVC
@@ -22,14 +24,33 @@
     [super viewDidLoad];
     
     self.title = @"选课";
-    titleArr = @[@"教师资格证",@"教师招聘",@"公开课",@"教师资格证",@"教师招聘",@"公开课"];
-    CGFloat viewW = WIDTH/(MIN(titleArr.count, LineMaxCount));
+    
+    [self getCategoryList];
+}
+
+#pragma mark - 课程分类
+- (void)getCategoryList {
+    __weak typeof(self) weakSelf = self;
+    NSDictionary *dic = [NSDictionary dictionary];
+    [[NetworkManager sharedManager] postJSON:URL_CategoryList parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+        if (status == Request_Success) {
+            weakSelf.titleArr = [CourseItem mj_objectArrayWithKeyValuesArray:(NSArray *)responseData];
+            [weakSelf initView];
+        }
+    }];
+}
+
+#pragma mark - init view
+
+- (void)initView {
+    CGFloat viewW = WIDTH/(MIN(_titleArr.count, LineMaxCount));
     CGFloat viewLeft = 0;
-    for (NSInteger index = 0; index<titleArr.count; index++) {
-        UIButton *sender = [[UIButton alloc]initWithFrame:CGRectMake(viewLeft, 0, viewW, 50)];
+    for (NSInteger index = 0; index<_titleArr.count; index++) {
+        CourseItem *item = _titleArr[index];
+        UIButton *sender = [[UIButton alloc] initWithFrame:CGRectMake(viewLeft, 0, viewW, autoScaleW(50))];
         viewLeft = sender.right;
         sender.titleLabel.font = [UIFont systemFontOfSize:14];
-        [sender setTitle:titleArr[index] forState:UIControlStateNormal];
+        [sender setTitle:item.name forState:UIControlStateNormal];
         [sender setTitleColor:kBlackColor forState:UIControlStateNormal];
         [sender setTitleColor:AppThemeColor forState:UIControlStateSelected];
         [sender addTarget:self action:@selector(titleClickAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -43,31 +64,13 @@
     _mainTabView.tableFooterView = [[UIView alloc]init];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    return 1;
-}
+#pragma mark - methods
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    XZSelectCourseTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"XZSelectCourseTabCell"];
-    return cell;
-}
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
+/** 标题点击 */
 - (IBAction)titleClickAction:(UIButton *)sender {
     sender.selected = YES;
     [sender setTitleColor:AppThemeColor forState:UIControlStateSelected];
-    for (NSInteger tag = 0; tag<titleArr.count; tag++) {
+    for (NSInteger tag = 0; tag<_titleArr.count; tag++) {
         UIButton *btn = [self.view viewWithTag:tag+1000];
         if (![btn isEqual:sender]) {
             btn.selected = NO;
@@ -78,8 +81,33 @@
         self.titleLineView.centerX = sender.centerX;
     }];
 }
-@end
 
-@implementation XZSelectCourseTabCell
+#pragma mark - UITableView Delegate
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    XZSelectCourseTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"XZSelectCourseTabCell"];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

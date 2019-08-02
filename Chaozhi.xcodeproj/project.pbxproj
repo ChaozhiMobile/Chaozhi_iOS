@@ -554,6 +554,19 @@
 		A0541FA822F2C69C00D961B3 /* UIButton+ButtonStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = A0541FA122F2C69C00D961B3 /* UIButton+ButtonStyle.m */; };
 		A0541FA922F2C69C00D961B3 /* XLGCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A0541FA322F2C69C00D961B3 /* XLGCustomButton.m */; };
 		A0541FAA22F2C69C00D961B3 /* XLGCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A0541FA322F2C69C00D961B3 /* XLGCustomButton.m */; };
+		A0541FC022F3E2A100D961B3 /* OptionBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0541FB922F3E2A000D961B3 /* OptionBarController.m */; };
+		A0541FC122F3E2A100D961B3 /* OptionBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0541FB922F3E2A000D961B3 /* OptionBarController.m */; };
+		A0541FC222F3E2A100D961B3 /* BottomLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0541FBA22F3E2A000D961B3 /* BottomLineView.m */; };
+		A0541FC322F3E2A100D961B3 /* BottomLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0541FBA22F3E2A000D961B3 /* BottomLineView.m */; };
+		A0541FC422F3E2A100D961B3 /* OptionsBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0541FBB22F3E2A000D961B3 /* OptionsBarView.m */; };
+		A0541FC522F3E2A100D961B3 /* OptionsBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0541FBB22F3E2A000D961B3 /* OptionsBarView.m */; };
+		A0541FC622F3E2A100D961B3 /* sline_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0541FBC22F3E2A000D961B3 /* sline_@2x.png */; };
+		A0541FC722F3E2A100D961B3 /* sline_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0541FBC22F3E2A000D961B3 /* sline_@2x.png */; };
+		A0541FC822F3E2A100D961B3 /* sline_@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0541FBD22F3E2A000D961B3 /* sline_@3x.png */; };
+		A0541FC922F3E2A100D961B3 /* sline_@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0541FBD22F3E2A000D961B3 /* sline_@3x.png */; };
+		A0541FCA22F3E2A100D961B3 /* OptionsBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0541FBE22F3E2A000D961B3 /* OptionsBarItem.m */; };
+		A0541FCB22F3E2A100D961B3 /* OptionsBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0541FBE22F3E2A000D961B3 /* OptionsBarItem.m */; };
+		A0541FDF22F4163F00D961B3 /* XZSelectCourseTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0541FDE22F4163F00D961B3 /* XZSelectCourseTabCell.m */; };
 		A05999EF2155EC1500D17058 /* XLGExternalTestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A05999E02155EC1500D17058 /* XLGExternalTestTool.m */; };
 		A05999F12155EC1500D17058 /* XLGLogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A05999E62155EC1500D17058 /* XLGLogVC.m */; };
 		A05999F22155EC1500D17058 /* XLGChangeServerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A05999E92155EC1500D17058 /* XLGChangeServerCell.m */; };
@@ -1044,6 +1057,18 @@
 		A0541FA222F2C69C00D961B3 /* UIButton+CenterImageAndTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CenterImageAndTitle.h"; sourceTree = "<group>"; };
 		A0541FA322F2C69C00D961B3 /* XLGCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGCustomButton.m; sourceTree = "<group>"; };
 		A0541FA422F2C69C00D961B3 /* UIButton+ButtonStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ButtonStyle.h"; sourceTree = "<group>"; };
+		A0541FB622F3E2A000D961B3 /* OptionsBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsBarView.h; sourceTree = "<group>"; };
+		A0541FB722F3E2A000D961B3 /* BottomLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomLineView.h; sourceTree = "<group>"; };
+		A0541FB822F3E2A000D961B3 /* OptionsBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsBarItem.h; sourceTree = "<group>"; };
+		A0541FB922F3E2A000D961B3 /* OptionBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionBarController.m; sourceTree = "<group>"; };
+		A0541FBA22F3E2A000D961B3 /* BottomLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomLineView.m; sourceTree = "<group>"; };
+		A0541FBB22F3E2A000D961B3 /* OptionsBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsBarView.m; sourceTree = "<group>"; };
+		A0541FBC22F3E2A000D961B3 /* sline_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sline_@2x.png"; sourceTree = "<group>"; };
+		A0541FBD22F3E2A000D961B3 /* sline_@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sline_@3x.png"; sourceTree = "<group>"; };
+		A0541FBE22F3E2A000D961B3 /* OptionsBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsBarItem.m; sourceTree = "<group>"; };
+		A0541FBF22F3E2A000D961B3 /* OptionBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionBarController.h; sourceTree = "<group>"; };
+		A0541FDD22F4163F00D961B3 /* XZSelectCourseTabCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZSelectCourseTabCell.h; sourceTree = "<group>"; };
+		A0541FDE22F4163F00D961B3 /* XZSelectCourseTabCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XZSelectCourseTabCell.m; sourceTree = "<group>"; };
 		A05999E02155EC1500D17058 /* XLGExternalTestTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGExternalTestTool.m; sourceTree = "<group>"; };
 		A05999E52155EC1500D17058 /* XLGLogVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLGLogVC.h; sourceTree = "<group>"; };
 		A05999E62155EC1500D17058 /* XLGLogVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGLogVC.m; sourceTree = "<group>"; };
@@ -1544,6 +1569,7 @@
 			children = (
 				A00708FB22ED973B00C70CEE /* XZSelectCourseVC.h */,
 				A00708FC22ED973B00C70CEE /* XZSelectCourseVC.m */,
+				A0541FDC22F414CA00D961B3 /* View */,
 			);
 			path = "SelectCourse(选课)";
 			sourceTree = "<group>";
@@ -1802,9 +1828,9 @@
 				A0541F9E22F2C69C00D961B3 /* CustomButton */,
 				A0C1257021BC01E00026430E /* StarView */,
 				A05FF5CF215B163400C51E05 /* Indicator(指示器) */,
+				A0541FB522F3E2A000D961B3 /* OptionsBar(切换卡) */,
 				A020AFAA214AAB130011BB4F /* Cache */,
 				A020AFAF214AAB130011BB4F /* Toast */,
-				A020AFB3214AAB130011BB4F /* OptionsBar */,
 				A020AFB4214AAB130011BB4F /* AlertView */,
 				A020AFB7214AAB130011BB4F /* Lottie */,
 				A020AFBA214AAB130011BB4F /* RegularPhone */,
@@ -1831,13 +1857,6 @@
 				A020AFB0214AAB130011BB4F /* Toast.m */,
 			);
 			path = Toast;
-			sourceTree = "<group>";
-		};
-		A020AFB3214AAB130011BB4F /* OptionsBar */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = OptionsBar;
 			sourceTree = "<group>";
 		};
 		A020AFB4214AAB130011BB4F /* AlertView */ = {
@@ -2103,6 +2122,32 @@
 				A0541FA322F2C69C00D961B3 /* XLGCustomButton.m */,
 			);
 			path = CustomButton;
+			sourceTree = "<group>";
+		};
+		A0541FB522F3E2A000D961B3 /* OptionsBar(切换卡) */ = {
+			isa = PBXGroup;
+			children = (
+				A0541FB722F3E2A000D961B3 /* BottomLineView.h */,
+				A0541FBA22F3E2A000D961B3 /* BottomLineView.m */,
+				A0541FBF22F3E2A000D961B3 /* OptionBarController.h */,
+				A0541FB922F3E2A000D961B3 /* OptionBarController.m */,
+				A0541FB822F3E2A000D961B3 /* OptionsBarItem.h */,
+				A0541FBE22F3E2A000D961B3 /* OptionsBarItem.m */,
+				A0541FB622F3E2A000D961B3 /* OptionsBarView.h */,
+				A0541FBB22F3E2A000D961B3 /* OptionsBarView.m */,
+				A0541FBC22F3E2A000D961B3 /* sline_@2x.png */,
+				A0541FBD22F3E2A000D961B3 /* sline_@3x.png */,
+			);
+			path = "OptionsBar(切换卡)";
+			sourceTree = "<group>";
+		};
+		A0541FDC22F414CA00D961B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A0541FDD22F4163F00D961B3 /* XZSelectCourseTabCell.h */,
+				A0541FDE22F4163F00D961B3 /* XZSelectCourseTabCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		A05999E42155EC1500D17058 /* 接口日志 */ = {
@@ -3055,6 +3100,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0AC090722C4BC7E001832EA /* TalkfunTextfieldView.xib in Resources */,
+				A0541FC622F3E2A100D961B3 /* sline_@2x.png in Resources */,
 				A0AC093B22C4BC7E001832EA /* vote.png in Resources */,
 				A0AC091E22C4BC7E001832EA /* 错误.png in Resources */,
 				A0AC098122C4BC7E001832EA /* 平板竖屏 - 引导1.png in Resources */,
@@ -3204,6 +3250,7 @@
 				A01F607522CB8960001133C4 /* DownloadListTableViewCell.xib in Resources */,
 				A020B031214AAB150011BB4F /* ic_refresh_image_031@2x.png in Resources */,
 				A0AC099622C4BC7E001832EA /* 专辑-点击.png in Resources */,
+				A0541FC822F3E2A100D961B3 /* sline_@3x.png in Resources */,
 				A0AC097922C4BC7E001832EA /* 键盘.png in Resources */,
 				A0AC098822C4BC7E001832EA /* 播放1.png in Resources */,
 				A0AC098022C4BC7E001832EA /* 答复提示.png in Resources */,
@@ -3345,6 +3392,7 @@
 				A045518122EC8DFA00E17406 /* ic_refresh_image_019@2x.png in Resources */,
 				A045518222EC8DFA00E17406 /* ic_refresh_image_015@2x.png in Resources */,
 				A045518322EC8DFA00E17406 /* 继续_点击.png in Resources */,
+				A0541FC722F3E2A100D961B3 /* sline_@2x.png in Resources */,
 				A045518422EC8DFA00E17406 /* TalkfunExpressionCell.xib in Resources */,
 				A045518522EC8DFA00E17406 /* expression.png in Resources */,
 				A045518622EC8DFA00E17406 /* corner_emo.png in Resources */,
@@ -3478,6 +3526,7 @@
 				A045520522EC8DFA00E17406 /* evaluateView.xib in Resources */,
 				A045520622EC8DFA00E17406 /* closeBullet.png in Resources */,
 				A045520722EC8DFA00E17406 /* 平板竖屏 - 引导效果.png in Resources */,
+				A0541FC922F3E2A100D961B3 /* sline_@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3582,6 +3631,7 @@
 				A020B06B214AAB150011BB4F /* BaseVC.m in Sources */,
 				A0AC08EA22C4BC7D001832EA /* RootTableViewController.m in Sources */,
 				A0AC091A22C4BC7E001832EA /* TalkfunScoreView.m in Sources */,
+				A0541FC022F3E2A100D961B3 /* OptionBarController.m in Sources */,
 				A0541FA722F2C69C00D961B3 /* UIButton+ButtonStyle.m in Sources */,
 				A05FF5DB215B163400C51E05 /* JHHJAnimation.m in Sources */,
 				A01F607422CB8960001133C4 /* DownloadListModel.m in Sources */,
@@ -3665,6 +3715,7 @@
 				A0AC08D422C4BC7D001832EA /* TalkfunCourseManagement.m in Sources */,
 				A0AC08FE22C4BC7E001832EA /* ckickUILabel.m in Sources */,
 				A020B072214AAB150011BB4F /* LDSimplePing.m in Sources */,
+				A0541FC222F3E2A100D961B3 /* BottomLineView.m in Sources */,
 				A05999F12155EC1500D17058 /* XLGLogVC.m in Sources */,
 				A0599A1F21574CAF00D17058 /* CZLoginVC.m in Sources */,
 				A0AC08F922C4BC7E001832EA /* VoteEndViewController.m in Sources */,
@@ -3706,6 +3757,7 @@
 				A0AC08D822C4BC7D001832EA /* ChatTableViewCell.m in Sources */,
 				A020AF49214AA85B0011BB4F /* AppDelegate.m in Sources */,
 				A0AC08E722C4BC7D001832EA /* ChapterTableViewCell.m in Sources */,
+				A0541FC422F3E2A100D961B3 /* OptionsBarView.m in Sources */,
 				A0C1257321BC021B0026430E /* CZStarView.m in Sources */,
 				A0AC08DC22C4BC7D001832EA /* TalkfunKuaiJinView.m in Sources */,
 				A020B055214AAB150011BB4F /* XLGLottie.m in Sources */,
@@ -3713,6 +3765,7 @@
 				A0AC08AC22C4BC7D001832EA /* TalkfunMoveLabel.m in Sources */,
 				A045521222ED42EB00E17406 /* UIView+XLGColor.m in Sources */,
 				A0AC090D22C4BC7E001832EA /* TalkfunWatermark.m in Sources */,
+				A0541FCA22F3E2A100D961B3 /* OptionsBarItem.m in Sources */,
 				A0AC08D122C4BC7D001832EA /* TalkfunPlaybackViewController.m in Sources */,
 				A0AC08FB22C4BC7E001832EA /* VoteViewController.m in Sources */,
 				A020B06E214AAB150011BB4F /* BaseScrollView.m in Sources */,
@@ -3757,11 +3810,13 @@
 				A045507922EC8DFA00E17406 /* LDNetTimer.m in Sources */,
 				A045507A22EC8DFA00E17406 /* TalkfunFunctionButton.m in Sources */,
 				A045507B22EC8DFA00E17406 /* CZUpdateView.m in Sources */,
+				A0541FC322F3E2A100D961B3 /* BottomLineView.m in Sources */,
 				A045507C22EC8DFA00E17406 /* DownloadListController.m in Sources */,
 				A045507D22EC8DFA00E17406 /* QuestionViewController.m in Sources */,
 				A045507E22EC8DFA00E17406 /* stopCopyTextView.m in Sources */,
 				A045507F22EC8DFA00E17406 /* ChapterModel.m in Sources */,
 				A045508022EC8DFA00E17406 /* TalkfunCourseProgress.m in Sources */,
+				A0541FC522F3E2A100D961B3 /* OptionsBarView.m in Sources */,
 				A045508122EC8DFA00E17406 /* TalkfunGradientView.m in Sources */,
 				A045508222EC8DFA00E17406 /* TalkfunExpressionViewController.m in Sources */,
 				A045508322EC8DFA00E17406 /* BaseItem.m in Sources */,
@@ -3785,6 +3840,7 @@
 				A045509322EC8DFA00E17406 /* BaseNavBar.m in Sources */,
 				A045509422EC8DFA00E17406 /* AlbumViewController.m in Sources */,
 				A0541FA622F2C69C00D961B3 /* UIButton+CenterImageAndTitle.m in Sources */,
+				A0541FCB22F3E2A100D961B3 /* OptionsBarItem.m in Sources */,
 				A045509522EC8DFA00E17406 /* TalkfunNewButtonViewButton.m in Sources */,
 				A045509622EC8DFA00E17406 /* LDNetGetAddress.m in Sources */,
 				A045509722EC8DFA00E17406 /* UILabel+TalkfunLabel.m in Sources */,
@@ -3794,6 +3850,7 @@
 				A045509B22EC8DFA00E17406 /* CZRegisterVC.m in Sources */,
 				A007090022EDD48D00C70CEE /* XZTabBarVC.m in Sources */,
 				A045509C22EC8DFA00E17406 /* BaseWebVC.m in Sources */,
+				A0541FDF22F4163F00D961B3 /* XZSelectCourseTabCell.m in Sources */,
 				A045509D22EC8DFA00E17406 /* QuestionModel.m in Sources */,
 				A045509E22EC8DFA00E17406 /* TalkfunNetworkStatusView.m in Sources */,
 				A045509F22EC8DFA00E17406 /* TalkfunNewFunctionView.m in Sources */,
@@ -3846,6 +3903,7 @@
 				A04550CC22EC8DFA00E17406 /* NetworkUtil.m in Sources */,
 				A04550CD22EC8DFA00E17406 /* DBManager.m in Sources */,
 				A04550CE22EC8DFA00E17406 /* CZSelectCourseVC.m in Sources */,
+				A0541FC122F3E2A100D961B3 /* OptionBarController.m in Sources */,
 				A04550CF22EC8DFA00E17406 /* TalkfunModulation.m in Sources */,
 				A04550D022EC8DFA00E17406 /* TalkfunMultifunctionButton.m in Sources */,
 				A04550D122EC8DFA00E17406 /* TalkfunGuidenceButton.m in Sources */,
