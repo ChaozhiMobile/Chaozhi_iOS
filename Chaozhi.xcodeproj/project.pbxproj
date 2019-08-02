@@ -135,7 +135,7 @@
 		A020B077214AAB150011BB4F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B012214AAB140011BB4F /* Reachability.m */; };
 		A020B078214AAB150011BB4F /* BaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B017214AAB140011BB4F /* BaseItem.m */; };
 		A020B079214AAB150011BB4F /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B018214AAB140011BB4F /* UserInfo.m */; };
-		A020B07A214AAB150011BB4F /* CourseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B01A214AAB140011BB4F /* CourseItem.m */; };
+		A020B07A214AAB150011BB4F /* CourseCategoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B01A214AAB140011BB4F /* CourseCategoryItem.m */; };
 		A03BB01022D6246700B3A9D8 /* protocol.png in Resources */ = {isa = PBXBuildFile; fileRef = A03BB00F22D6246700B3A9D8 /* protocol.png */; };
 		A045501B22EC4FCA00E17406 /* ChaozhiAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A045501A22EC4FCA00E17406 /* ChaozhiAssets.xcassets */; };
 		A045507322EC8DFA00E17406 /* XLGInternalDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFDF214AAB140011BB4F /* XLGInternalDemoVC.m */; };
@@ -213,7 +213,7 @@
 		A04550BB22EC8DFA00E17406 /* LDNetDiagnoService.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B00C214AAB140011BB4F /* LDNetDiagnoService.m */; };
 		A04550BC22EC8DFA00E17406 /* AlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC079322C4BC7C001832EA /* AlbumModel.m */; };
 		A04550BD22EC8DFA00E17406 /* TalkfunNewTextfieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC080022C4BC7D001832EA /* TalkfunNewTextfieldView.m */; };
-		A04550BE22EC8DFA00E17406 /* CourseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B01A214AAB140011BB4F /* CourseItem.m */; };
+		A04550BE22EC8DFA00E17406 /* CourseCategoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B01A214AAB140011BB4F /* CourseCategoryItem.m */; };
 		A04550BF22EC8DFA00E17406 /* CZGuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FDB3221763DBE001BE2C6 /* CZGuideVC.m */; };
 		A04550C022EC8DFA00E17406 /* TalkfunNetworkLines.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC079A22C4BC7C001832EA /* TalkfunNetworkLines.m */; };
 		A04550C122EC8DFA00E17406 /* BaseNC.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFFC214AAB140011BB4F /* BaseNC.m */; };
@@ -567,6 +567,8 @@
 		A0541FCA22F3E2A100D961B3 /* OptionsBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0541FBE22F3E2A000D961B3 /* OptionsBarItem.m */; };
 		A0541FCB22F3E2A100D961B3 /* OptionsBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0541FBE22F3E2A000D961B3 /* OptionsBarItem.m */; };
 		A0541FDF22F4163F00D961B3 /* XZSelectCourseTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0541FDE22F4163F00D961B3 /* XZSelectCourseTabCell.m */; };
+		A0541FE222F41F1400D961B3 /* CourseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0541FE122F41F1400D961B3 /* CourseItem.m */; };
+		A0541FE322F41F1400D961B3 /* CourseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0541FE122F41F1400D961B3 /* CourseItem.m */; };
 		A05999EF2155EC1500D17058 /* XLGExternalTestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A05999E02155EC1500D17058 /* XLGExternalTestTool.m */; };
 		A05999F12155EC1500D17058 /* XLGLogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A05999E62155EC1500D17058 /* XLGLogVC.m */; };
 		A05999F22155EC1500D17058 /* XLGChangeServerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A05999E92155EC1500D17058 /* XLGChangeServerCell.m */; };
@@ -1028,11 +1030,11 @@
 		A020B012214AAB140011BB4F /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		A020B013214AAB140011BB4F /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		A020B014214AAB140011BB4F /* Chaozhi.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chaozhi.pch; sourceTree = "<group>"; };
-		A020B016214AAB140011BB4F /* CourseItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseItem.h; sourceTree = "<group>"; };
+		A020B016214AAB140011BB4F /* CourseCategoryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseCategoryItem.h; sourceTree = "<group>"; };
 		A020B017214AAB140011BB4F /* BaseItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseItem.m; sourceTree = "<group>"; };
 		A020B018214AAB140011BB4F /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 		A020B019214AAB140011BB4F /* BaseItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseItem.h; sourceTree = "<group>"; };
-		A020B01A214AAB140011BB4F /* CourseItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseItem.m; sourceTree = "<group>"; };
+		A020B01A214AAB140011BB4F /* CourseCategoryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseCategoryItem.m; sourceTree = "<group>"; };
 		A020B01B214AAB140011BB4F /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		A020B07B214AAD600011BB4F /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		A03BB00F22D6246700B3A9D8 /* protocol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = protocol.png; sourceTree = "<group>"; };
@@ -1069,6 +1071,8 @@
 		A0541FBF22F3E2A000D961B3 /* OptionBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionBarController.h; sourceTree = "<group>"; };
 		A0541FDD22F4163F00D961B3 /* XZSelectCourseTabCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZSelectCourseTabCell.h; sourceTree = "<group>"; };
 		A0541FDE22F4163F00D961B3 /* XZSelectCourseTabCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XZSelectCourseTabCell.m; sourceTree = "<group>"; };
+		A0541FE022F41F1400D961B3 /* CourseItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CourseItem.h; sourceTree = "<group>"; };
+		A0541FE122F41F1400D961B3 /* CourseItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CourseItem.m; sourceTree = "<group>"; };
 		A05999E02155EC1500D17058 /* XLGExternalTestTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGExternalTestTool.m; sourceTree = "<group>"; };
 		A05999E52155EC1500D17058 /* XLGLogVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLGLogVC.h; sourceTree = "<group>"; };
 		A05999E62155EC1500D17058 /* XLGLogVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLGLogVC.m; sourceTree = "<group>"; };
@@ -2047,8 +2051,10 @@
 				A020B017214AAB140011BB4F /* BaseItem.m */,
 				A020B01B214AAB140011BB4F /* UserInfo.h */,
 				A020B018214AAB140011BB4F /* UserInfo.m */,
-				A020B016214AAB140011BB4F /* CourseItem.h */,
-				A020B01A214AAB140011BB4F /* CourseItem.m */,
+				A020B016214AAB140011BB4F /* CourseCategoryItem.h */,
+				A020B01A214AAB140011BB4F /* CourseCategoryItem.m */,
+				A0541FE022F41F1400D961B3 /* CourseItem.h */,
+				A0541FE122F41F1400D961B3 /* CourseItem.m */,
 				205FDB2D216F20C0001BE2C6 /* HomeInfoItem.h */,
 				205FDB2E216F20C0001BE2C6 /* HomeInfoItem.m */,
 				A091D12E2178FAF300CCDAF6 /* StudyInfoItem.h */,
@@ -3667,6 +3673,7 @@
 				A020B077214AAB150011BB4F /* Reachability.m in Sources */,
 				A0599A2321574CAF00D17058 /* CZHomeVC.m in Sources */,
 				A0AC08E322C4BC7D001832EA /* AlbumCellTableViewCell.m in Sources */,
+				A0541FE222F41F1400D961B3 /* CourseItem.m in Sources */,
 				A020B050214AAB150011BB4F /* KeyChainUtil.m in Sources */,
 				A020B05C214AAB150011BB4F /* MEViewModel.m in Sources */,
 				A0AC08B822C4BC7D001832EA /* UIView+TalkfunView.m in Sources */,
@@ -3690,7 +3697,7 @@
 				A020B075214AAB150011BB4F /* LDNetDiagnoService.m in Sources */,
 				A0AC08D622C4BC7D001832EA /* AlbumModel.m in Sources */,
 				A0AC090F22C4BC7E001832EA /* TalkfunNewTextfieldView.m in Sources */,
-				A020B07A214AAB150011BB4F /* CourseItem.m in Sources */,
+				A020B07A214AAB150011BB4F /* CourseCategoryItem.m in Sources */,
 				A07E4E9722ED82E4000ABD86 /* CZConfig.m in Sources */,
 				205FDB3321763DBE001BE2C6 /* CZGuideVC.m in Sources */,
 				A0AC08D922C4BC7D001832EA /* TalkfunNetworkLines.m in Sources */,
@@ -3807,6 +3814,7 @@
 				A045507622EC8DFA00E17406 /* TalkfunUtils.m in Sources */,
 				A045507722EC8DFA00E17406 /* TalkfunTextfieldView.m in Sources */,
 				A045507822EC8DFA00E17406 /* CZNotDataView.m in Sources */,
+				A0541FE322F41F1400D961B3 /* CourseItem.m in Sources */,
 				A045507922EC8DFA00E17406 /* LDNetTimer.m in Sources */,
 				A045507A22EC8DFA00E17406 /* TalkfunFunctionButton.m in Sources */,
 				A045507B22EC8DFA00E17406 /* CZUpdateView.m in Sources */,
@@ -3886,7 +3894,7 @@
 				A04550BC22EC8DFA00E17406 /* AlbumModel.m in Sources */,
 				A04550BD22EC8DFA00E17406 /* TalkfunNewTextfieldView.m in Sources */,
 				A00708FD22ED973B00C70CEE /* XZSelectCourseVC.m in Sources */,
-				A04550BE22EC8DFA00E17406 /* CourseItem.m in Sources */,
+				A04550BE22EC8DFA00E17406 /* CourseCategoryItem.m in Sources */,
 				A04550BF22EC8DFA00E17406 /* CZGuideVC.m in Sources */,
 				A04550C022EC8DFA00E17406 /* TalkfunNetworkLines.m in Sources */,
 				A04550C122EC8DFA00E17406 /* BaseNC.m in Sources */,

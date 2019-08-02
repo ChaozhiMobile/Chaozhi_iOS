@@ -33,7 +33,7 @@
 @property (nonatomic , retain) HomeCategoryItem *categoryItems;
 @property (nonatomic , retain) HomeNewsListItem *newsItems;
 @property (nonatomic , retain) NSMutableArray <HomeNewsItem *> *newsDatsSource;
-@property (nonatomic , retain) HomeFeatureProductItem *feaCourseItem1,*feaCourseItem2;
+@property (nonatomic , retain) CourseItem *feaCourseItem1,*feaCourseItem2;
 
 /** 背景视图 */
 @property (weak, nonatomic) IBOutlet UIScrollView *bgScrollView;
@@ -129,7 +129,7 @@
     if ([NSString isEmpty:selectCourseID]) {
         CZSelectCourseVC *vc = [[CZSelectCourseVC alloc] init];
         vc.hidesBottomBarWhenPushed = YES;
-        vc.selectCourseBlock = ^(CourseItem *item) {
+        vc.selectCourseBlock = ^(CourseCategoryItem *item) {
             NSLog(@"选择课程ID: %@",item.ID);
             weakSelf.page = 1;
             weakSelf.bgScrollView.contentOffset = CGPointMake(0, 0);
@@ -301,7 +301,7 @@
     __weak typeof(self) weakSelf = self;
     CZSelectCourseVC *vc = [[CZSelectCourseVC alloc] init];
     vc.hidesBottomBarWhenPushed = YES;
-    vc.selectCourseBlock = ^(CourseItem *item) {
+    vc.selectCourseBlock = ^(CourseCategoryItem *item) {
         weakSelf.page = 1;
         [self requestCourseData];
     };

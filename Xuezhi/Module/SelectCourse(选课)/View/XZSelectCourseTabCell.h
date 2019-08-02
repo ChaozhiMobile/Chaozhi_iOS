@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CourseItem.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *titleLab;
 @property (weak, nonatomic) IBOutlet UILabel *currentPriceLab;
 @property (weak, nonatomic) IBOutlet UILabel *oldPriceLab;
+
+/** 课程model */
+@property (nonatomic,retain) CourseItem *item;
 
 @end
 

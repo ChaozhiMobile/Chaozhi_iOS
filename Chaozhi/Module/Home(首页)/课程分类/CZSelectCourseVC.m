@@ -12,7 +12,7 @@
 @interface CZSelectCourseVC ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,strong) NSMutableArray *dataArr;
-@property (nonatomic,strong) CourseItem *selectItem;
+@property (nonatomic,strong) CourseCategoryItem *selectItem;
 
 @end
 
@@ -63,10 +63,10 @@
     [[NetworkManager sharedManager] postJSON:URL_CategoryList parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         
         if (status == Request_Success) {
-            self.dataArr = [CourseItem mj_objectArrayWithKeyValuesArray:(NSArray *)responseData];
+            self.dataArr = [CourseCategoryItem mj_objectArrayWithKeyValuesArray:(NSArray *)responseData];
             NSString *selectCourseID = [CacheUtil getCacherWithKey:kSelectCourseIDKey];
             for (int i = 0; i<self.dataArr.count; i++) {
-                CourseItem *model = self.dataArr[i];
+                CourseCategoryItem *model = self.dataArr[i];
                 if ([model.ID isEqualToString:selectCourseID]) {
                     model.selectStatus = YES;
                 } else {
@@ -96,7 +96,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    CourseItem *model = _dataArr[indexPath.row];
+    CourseCategoryItem *model = _dataArr[indexPath.row];
     [cell setContentWithModel:model];
     
     return cell;
@@ -109,7 +109,7 @@
     
     //改变数据源
     for (int i = 0; i<_dataArr.count; i++) {
-        CourseItem *model = _dataArr[i];
+        CourseCategoryItem *model = _dataArr[i];
         if (i==indexPath.row) {
             model.selectStatus = YES;
         } else {

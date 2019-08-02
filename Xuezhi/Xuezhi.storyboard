@@ -18,7 +18,7 @@
                         <viewControllerLayoutGuide type="bottom" id="HRh-OF-JSi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0Aa-bl-tdg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iwq-Ve-af7" userLabel="Nav View">
@@ -581,7 +581,7 @@
                             <constraint firstItem="cEQ-fR-v6Y" firstAttribute="top" secondItem="ZsJ-Wr-1TI" secondAttribute="bottom" id="3od-Dv-xs6"/>
                             <constraint firstAttribute="trailing" secondItem="rzX-8J-lcx" secondAttribute="trailing" id="AYS-8x-Hbr"/>
                             <constraint firstItem="rzX-8J-lcx" firstAttribute="leading" secondItem="KAi-Ts-rVW" secondAttribute="leading" id="ITV-Ln-prX"/>
-                            <constraint firstItem="ZsJ-Wr-1TI" firstAttribute="top" secondItem="rzX-8J-lcx" secondAttribute="bottom" id="aGG-e6-cqH"/>
+                            <constraint firstItem="ZsJ-Wr-1TI" firstAttribute="top" secondItem="rzX-8J-lcx" secondAttribute="bottom" constant="10" id="aGG-e6-cqH"/>
                             <constraint firstItem="rzX-8J-lcx" firstAttribute="top" secondItem="7FX-YU-u1S" secondAttribute="bottom" constant="44" id="c26-m3-J4a"/>
                             <constraint firstAttribute="trailing" secondItem="ZsJ-Wr-1TI" secondAttribute="trailing" id="jDs-1E-5bP"/>
                             <constraint firstItem="ZsJ-Wr-1TI" firstAttribute="leading" secondItem="KAi-Ts-rVW" secondAttribute="leading" id="jPn-VL-GgE"/>

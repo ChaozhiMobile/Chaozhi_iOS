@@ -7,9 +7,9 @@
 //
 
 #import "BaseVC.h"
-#import "CourseItem.h"
+#import "CourseCategoryItem.h"
 
-typedef void (^SelectCourseBlock) (CourseItem *item);
+typedef void (^SelectCourseBlock) (CourseCategoryItem *item);
 
 @interface CZSelectCourseVC : BaseVC
 

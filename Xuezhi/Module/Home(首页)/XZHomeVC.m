@@ -11,7 +11,7 @@
 #import "CZUpdateView.h"
 #import "VersionItem.h"
 #import "HomeInfoItem.h"
-#import "CourseItem.h"
+#import "CourseCategoryItem.h"
 #import "VideoItem.h"
 #import "TalkfunPlaybackViewController.h"
 #import "XZHomeTabCell.h"
@@ -26,7 +26,7 @@
 @property (nonatomic, retain) VersionItem *versionItem;
 @property (nonatomic, retain) HomeInfoItem *homeItem;
 @property (nonatomic, retain) HomeNewsListItem *newsItems;
-@property (nonatomic, retain) NSMutableArray <CourseItem *>*dataArr;
+@property (nonatomic, retain) NSMutableArray <CourseCategoryItem *>*dataArr;
 @property (nonatomic, retain) NSMutableArray <HomeNewsItem *> *newsDatsSource;
 @property (nonatomic, retain) HomeCategoryItem *categoryItems;
 @property (nonatomic, assign) NSInteger page;
@@ -114,7 +114,7 @@
     NSDictionary *dic = [NSDictionary dictionary];
     [[NetworkManager sharedManager] postJSON:URL_CategoryList parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         if (status == Request_Success) {
-            weakSelf.dataArr = [CourseItem mj_objectArrayWithKeyValuesArray:(NSArray *)responseData];
+            weakSelf.dataArr = [CourseCategoryItem mj_objectArrayWithKeyValuesArray:(NSArray *)responseData];
         }
         if ([weakSelf.mainTabView.mj_header isRefreshing]) {
             [weakSelf.mainTabView.mj_header endRefreshing];
@@ -127,7 +127,7 @@
     [_courseScrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)]; //移除所有子视图
     CGFloat viewLeft = 0;
     for (NSInteger index = 0; index <self.dataArr.count; index++) {
-        CourseItem *item = self.dataArr[index];
+        CourseCategoryItem *item = self.dataArr[index];
         UIView *view = [self createMenuView];
         view.left = viewLeft;
         [_courseScrollView addSubview:view];
@@ -274,10 +274,10 @@
     XZHomeTabCell *cell;
     if (indexPath.section==0) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"XZHomeTabCellGoodsCourse"];
-        HomeFeatureProductItem *leftItem = self.categoryItems.feature_product_list[indexPath.row*2];
+        CourseItem *leftItem = self.categoryItems.feature_product_list[indexPath.row*2];
         [cell setItem:leftItem withView:cell.leftView];
         if (self.categoryItems.feature_product_list.count%2==0) {
-            HomeFeatureProductItem *rightItem = self.categoryItems.feature_product_list[indexPath.row*2+1];
+            CourseItem *rightItem = self.categoryItems.feature_product_list[indexPath.row*2+1];
             [cell setItem:rightItem withView:cell.rightView];
         }
     }

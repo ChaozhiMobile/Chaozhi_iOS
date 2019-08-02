@@ -49,22 +49,7 @@
 
 + (NSDictionary<NSString *,id> *)modelContainerPropertyGenericClass
 {
-    return @{@"try_video_list":[HomeTryVideoItem class],@"weike_list":[HomeWeikeItem class],@"teacher_list":[HomeTeacherItem class],@"feature_product_list":[HomeFeatureProductItem class]};
-}
-
-@end
-
-
-@implementation HomeFeatureProductItem
-
-- (void)setImg:(NSString *)img {
-    if (_img != img) {
-        if ([img containsString:@"http"]) {
-            _img = img;
-        } else {
-            _img = [NSString stringWithFormat:@"http:%@",img];
-        }
-    }
+    return @{@"try_video_list":[HomeTryVideoItem class],@"weike_list":[HomeWeikeItem class],@"teacher_list":[HomeTeacherItem class],@"feature_product_list":[CourseItem class]};
 }
 
 @end

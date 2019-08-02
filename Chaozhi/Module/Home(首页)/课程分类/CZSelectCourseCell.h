@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CourseItem.h"
+#import "CourseCategoryItem.h"
 
 @interface CZSelectCourseCell : UITableViewCell
 
-- (void)setContentWithModel:(CourseItem *)model;
+- (void)setContentWithModel:(CourseCategoryItem *)model;
 
 @end

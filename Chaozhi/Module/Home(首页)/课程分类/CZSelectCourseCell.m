@@ -39,7 +39,7 @@
     return self;
 }
 
-- (void)setContentWithModel:(CourseItem *)model {
+- (void)setContentWithModel:(CourseCategoryItem *)model {
     
     [_iconImgView sd_setImageWithURL:[NSURL URLWithString:model.img] placeholderImage:[UIImage imageNamed:@"default_square_img"]];
     

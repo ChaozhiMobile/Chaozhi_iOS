@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "HomeInfoItem.h"
+#import "CourseItem.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *readCountLab;
 
 /** 畅销好课model */
-- (void)setItem:(HomeFeatureProductItem *)item withView:(UIView *)view;
+- (void)setItem:(CourseItem *)item withView:(UIView *)view;
 /** 公开课model */
 @property (nonatomic,strong) HomeTryVideoItem *publicItem;
 /** 行业资讯model */

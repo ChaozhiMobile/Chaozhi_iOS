@@ -12,7 +12,7 @@
 @implementation XZHomeTabCell
 
 /** 畅销好课model */
-- (void)setItem:(HomeFeatureProductItem *)item withView:(UIView *)view {
+- (void)setItem:(CourseItem *)item withView:(UIView *)view {
     
     UIImageView *imgView = [view viewWithTag:101];
     UILabel *nameLab = [view viewWithTag:102];
@@ -30,7 +30,7 @@
 
 #pragma mark - 畅销好课课程点击
 - (void)clickAction:(XLGBaseButton *)btn {
-    HomeFeatureProductItem *item = btn.dataSource;
+    CourseItem *item = btn.dataSource;
     UINavigationController *nv = CZAppDelegate.tabVC.selectedViewController;
     [BaseWebVC showWithContro:nv.topViewController withUrlStr:[NSString stringWithFormat:@"%@%@",H5_StoreProduct,item.ID] withTitle:@"" isPresent:NO];
 }

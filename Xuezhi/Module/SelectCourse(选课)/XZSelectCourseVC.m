@@ -8,13 +8,18 @@
 
 #import "XZSelectCourseVC.h"
 #import "XZSelectCourseTabCell.h"
+#import "CourseCategoryItem.h"
 #import "CourseItem.h"
 
 #define LineMaxCount 5
+#define PageSize @"10"
 
 @interface XZSelectCourseVC ()
 
-@property (nonatomic, retain) NSMutableArray <CourseItem *>*titleArr;
+@property (nonatomic, retain) NSMutableArray <CourseCategoryItem *>*titleArr;
+@property (nonatomic, assign) NSInteger currentPage;
+@property (nonatomic, retain) CourseCategoryItem *categoryItem;
+@property (nonatomic, retain) NSMutableArray *dataArr;
 
 @end
 
@@ -25,17 +30,22 @@
     
     self.title = @"选课";
     
-    [self getCategoryList];
+    self.dataArr = [NSMutableArray array];
+    
+    [self getCategoryList]; //获取课程分类
 }
 
 #pragma mark - 课程分类
 - (void)getCategoryList {
-    __weak typeof(self) weakSelf = self;
     NSDictionary *dic = [NSDictionary dictionary];
     [[NetworkManager sharedManager] postJSON:URL_CategoryList parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         if (status == Request_Success) {
-            weakSelf.titleArr = [CourseItem mj_objectArrayWithKeyValuesArray:(NSArray *)responseData];
-            [weakSelf initView];
+            self.titleArr = [CourseCategoryItem mj_objectArrayWithKeyValuesArray:(NSArray *)responseData];
+            if (self.titleArr.count>0) {
+                self.categoryItem = self.titleArr[0];
+                [self initView];
+                [self loadData];
+            }
         }
     }];
 }
@@ -46,10 +56,16 @@
     CGFloat viewW = WIDTH/(MIN(_titleArr.count, LineMaxCount));
     CGFloat viewLeft = 0;
     for (NSInteger index = 0; index<_titleArr.count; index++) {
-        CourseItem *item = _titleArr[index];
-        UIButton *sender = [[UIButton alloc] initWithFrame:CGRectMake(viewLeft, 0, viewW, autoScaleW(50))];
+        CourseCategoryItem *item = _titleArr[index];
+        viewW = [item.name getTextWidthWithFont:[UIFont systemFontOfSize:15] height:50]+40;
+        UIButton *sender = [[UIButton alloc] initWithFrame:CGRectMake(viewLeft, 0, viewW, 50)];
         viewLeft = sender.right;
-        sender.titleLabel.font = [UIFont systemFontOfSize:14];
+        if (index == 0) {
+            _titleLineView = [[UIView alloc]initWithFrame:CGRectMake(0, 47, viewW, 3)];
+            _titleLineView.backgroundColor = AppThemeColor;
+            [_titleBgScrollView addSubview:_titleLineView];
+        }
+        sender.titleLabel.font = [UIFont systemFontOfSize:15];
         [sender setTitle:item.name forState:UIControlStateNormal];
         [sender setTitleColor:kBlackColor forState:UIControlStateNormal];
         [sender setTitleColor:AppThemeColor forState:UIControlStateSelected];
@@ -58,39 +74,96 @@
         [_titleBgScrollView addSubview:sender];
     }
     _titleBgScrollView.contentSize = CGSizeMake(viewLeft, 0);
-    _titleLineView = [[UIView alloc]initWithFrame:CGRectMake(0, 47, viewW, 3)];
-    _titleLineView.backgroundColor = AppThemeColor;
-    [_titleBgScrollView addSubview:_titleLineView];
-    _mainTabView.tableFooterView = [[UIView alloc]init];
+    
+    _mainTabView.tableFooterView = [[UIView alloc] init];
+    _mainTabView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        //下拉刷新要做的操作
+        [self loadData];
+    }];
 }
 
 #pragma mark - methods
 
 /** 标题点击 */
 - (IBAction)titleClickAction:(UIButton *)sender {
+    
     sender.selected = YES;
-    [sender setTitleColor:AppThemeColor forState:UIControlStateSelected];
     for (NSInteger tag = 0; tag<_titleArr.count; tag++) {
         UIButton *btn = [self.view viewWithTag:tag+1000];
         if (![btn isEqual:sender]) {
             btn.selected = NO;
         }
-        [btn setTitleColor:AppThemeColor forState:UIControlStateSelected];
     }
+    
     [UIView animateWithDuration:0.3 animations:^{
+        self.titleLineView.width = sender.width;
         self.titleLineView.centerX = sender.centerX;
+        CGFloat right = sender.right;
+        int count = right/WIDTH;
+        if (right<WIDTH) {
+            self.titleBgScrollView.contentOffset = CGPointMake(0, 0);
+        }
+        if (right>WIDTH) {
+            self.titleBgScrollView.contentOffset = CGPointMake(self.titleBgScrollView.contentSize.width-WIDTH*count, 0);
+        }
     }];
+}
+
+#pragma mark - 课程列表
+
+/** 获取课程列表数据 */
+- (void)loadData {
+    
+    if (_currentPage == 1) {
+        [_dataArr removeAllObjects];
+    }
+    
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
+                         [NSString stringWithFormat:@"%ld", _currentPage], @"p",
+                         PageSize, @"offset",
+                         _categoryItem.ID, @"category_id",
+                         nil];
+    [[NetworkManager sharedManager] postJSON:URL_ProductList parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+
+        [self.mainTabView.mj_header endRefreshing];
+        [self.mainTabView.mj_footer endRefreshing];
+
+        if (status == Request_Success) {
+
+            NSArray *array = [CourseItem mj_objectArrayWithKeyValuesArray:responseData[@"rows"]];
+            [self.dataArr addObjectsFromArray:array];
+
+            NSString *total = responseData[@"total"];
+            if (self.dataArr.count == [total integerValue]) {
+                self.tableView.mj_footer = nil;
+            } else {
+                self.mainTabView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+                    //上拉加载需要做的操作
+                    [self loadMoreData];
+                }];
+            }
+
+            [self.mainTabView reloadData];
+        }
+    }];
+}
+
+/** 加载更多数据 */
+- (void)loadMoreData {
+    _currentPage++;
+    [self loadData];
 }
 
 #pragma mark - UITableView Delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 1;
+    return _dataArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     XZSelectCourseTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"XZSelectCourseTabCell"];
+    cell.item = _dataArr[indexPath.row];
     return cell;
 }
 
