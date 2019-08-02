@@ -25,6 +25,15 @@
 
 @implementation XZSelectCourseVC
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    NSString *selectIndexStr = [CacheUtil getCacherWithKey:kCourseCategoryKey];
+    if (![NSString isEmpty:selectIndexStr]) {
+        [self getCategoryList]; //获取课程分类
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -32,7 +41,10 @@
     
     self.dataArr = [NSMutableArray array];
     
-    [self getCategoryList]; //获取课程分类
+    NSString *selectIndexStr = [CacheUtil getCacherWithKey:kCourseCategoryKey];
+    if ([NSString isEmpty:selectIndexStr]) {
+        [self getCategoryList]; //获取课程分类
+    }
 }
 
 #pragma mark - 课程分类
@@ -44,8 +56,15 @@
             if (self.titleArr.count>0) {
                 self.categoryItem = self.titleArr[0];
                 [self initView];
-                self.currentPage = 1;
-                [self loadData];
+                NSString *selectIndexStr = [CacheUtil getCacherWithKey:kCourseCategoryKey];
+                if (![NSString isEmpty:selectIndexStr]) {
+                    UIButton *btn = [self.titleBgScrollView viewWithTag:1000+[selectIndexStr integerValue]];
+                    [self titleClickAction:btn];
+                    [CacheUtil saveCacher:kCourseCategoryKey withValue:@""];
+                } else {
+                    UIButton *btn = [self.titleBgScrollView viewWithTag:1000];
+                    [self titleClickAction:btn];
+                }
             }
         }
     }];
@@ -54,18 +73,15 @@
 #pragma mark - init view
 
 - (void)initView {
+    
+    [_titleBgScrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)]; //移除所有子视图
+    
     CGFloat viewW = WIDTH/(MIN(_titleArr.count, LineMaxCount));
     CGFloat viewLeft = 0;
     for (NSInteger index = 0; index<_titleArr.count; index++) {
         CourseCategoryItem *item = _titleArr[index];
         viewW = [item.name getTextWidthWithFont:[UIFont systemFontOfSize:15] height:50]+40;
         UIButton *sender = [[UIButton alloc] initWithFrame:CGRectMake(viewLeft, 0, viewW, 50)];
-        viewLeft = sender.right;
-        if (index == 0) {
-            _titleLineView = [[UIView alloc]initWithFrame:CGRectMake(0, 47, viewW, 3)];
-            _titleLineView.backgroundColor = AppThemeColor;
-            [_titleBgScrollView addSubview:_titleLineView];
-        }
         sender.titleLabel.font = [UIFont systemFontOfSize:15];
         [sender setTitle:item.name forState:UIControlStateNormal];
         [sender setTitleColor:kBlackColor forState:UIControlStateNormal];
@@ -73,6 +89,12 @@
         [sender addTarget:self action:@selector(titleClickAction:) forControlEvents:UIControlEventTouchUpInside];
         sender.tag = 1000+index;
         [_titleBgScrollView addSubview:sender];
+        
+        _titleLineView = [[UIView alloc]initWithFrame:CGRectMake(0, 47, 0, 3)];
+        _titleLineView.backgroundColor = AppThemeColor;
+        [_titleBgScrollView addSubview:_titleLineView];
+        
+        viewLeft = sender.right;
     }
     _titleBgScrollView.contentSize = CGSizeMake(viewLeft, 0);
     
@@ -145,7 +167,7 @@
 
             NSString *total = responseData[@"total"];
             if (self.dataArr.count == [total integerValue]) {
-                self.tableView.mj_footer = nil;
+                self.mainTabView.mj_footer = nil;
             } else {
                 self.mainTabView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
                     //上拉加载需要做的操作

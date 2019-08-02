@@ -15,6 +15,7 @@
 #import "VideoItem.h"
 #import "TalkfunPlaybackViewController.h"
 #import "XZHomeTabCell.h"
+#import "XLGCustomButton.h"
 
 #define lineCount 5
 
@@ -128,16 +129,23 @@
     CGFloat viewLeft = 0;
     for (NSInteger index = 0; index <self.dataArr.count; index++) {
         CourseCategoryItem *item = self.dataArr[index];
-        UIView *view = [self createMenuView];
-        view.left = viewLeft;
-        [_courseScrollView addSubview:view];
-        viewLeft = view.right;
-        UIImageView *imgView = [view viewWithTag:1000];
+        XLGCustomButton *btn = [self createMenuView];
+        btn.dataSource = [NSString stringWithFormat:@"%ld",(long)index];
+        [btn addTarget:self action:@selector(categoryAction:) forControlEvents:UIControlEventTouchUpInside];
+        btn.left = viewLeft;
+        [_courseScrollView addSubview:btn];
+        viewLeft = btn.right;
+        UIImageView *imgView = [btn viewWithTag:1000];
         [imgView sd_setImageWithURL:[NSURL URLWithString:item.img] placeholderImage:nil];
-        UILabel *titleLab = [view viewWithTag:1001];
+        UILabel *titleLab = [btn viewWithTag:1001];
         titleLab.text = item.name;
     }
     _courseScrollView.contentSize = CGSizeMake(viewLeft, 0);
+}
+
+- (void)categoryAction:(XLGCustomButton *)btn {
+    [CacheUtil saveCacher:kCourseCategoryKey withValue:btn.dataSource];
+    CZAppDelegate.tabVC.selectedIndex = 2;
 }
 
 #pragma mark - 畅销好课、公开课
@@ -419,24 +427,24 @@
     return [[UIView alloc] init];
 }
 
-- (UIView *)createMenuView {
+- (XLGCustomButton *)createMenuView {
     CGFloat viewW = WIDTH/lineCount;
-    UIView *vv = [[UIView alloc]initWithFrame:CGRectMake(0, 0, viewW, 120)];
+    XLGCustomButton *btn = [[XLGCustomButton alloc] initWithFrame:CGRectMake(0, 0, viewW, 120)];
     
-    UIImageView *imgView = [[UIImageView alloc]initWithFrame:CGRectMake((vv.width-autoScaleW(44))/2.0, 26, autoScaleW(44), autoScaleW(44))];
+    UIImageView *imgView = [[UIImageView alloc]initWithFrame:CGRectMake((btn.width-autoScaleW(44))/2.0, 26, autoScaleW(44), autoScaleW(44))];
     imgView.cornerRadius = imgView.width/2.0;
     imgView.tag = 1000;
-    [vv addSubview:imgView];
+    [btn addSubview:imgView];
     
-    UILabel *titleLab = [[UILabel alloc]initWithFrame:CGRectMake(5, imgView.bottom+10, vv.width-10, 36)];
+    UILabel *titleLab = [[UILabel alloc]initWithFrame:CGRectMake(5, imgView.bottom+10, btn.width-10, 36)];
     titleLab.textColor = RGBValue(0x6C7787);
     titleLab.text = @"心理咨询";
     titleLab.textAlignment = NSTextAlignmentCenter;
     titleLab.font = [UIFont systemFontOfSize:12 ];
     titleLab.tag = 1001;
-    [vv addSubview:titleLab];
+    [btn addSubview:titleLab];
     
-    return vv;
+    return btn;
 }
 
 /*
