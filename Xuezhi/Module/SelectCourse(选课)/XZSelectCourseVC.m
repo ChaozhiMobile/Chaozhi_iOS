@@ -44,6 +44,7 @@
             if (self.titleArr.count>0) {
                 self.categoryItem = self.titleArr[0];
                 [self initView];
+                self.currentPage = 1;
                 [self loadData];
             }
         }
@@ -78,6 +79,7 @@
     _mainTabView.tableFooterView = [[UIView alloc] init];
     _mainTabView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         //下拉刷新要做的操作
+        self.currentPage = 1;
         [self loadData];
     }];
 }
@@ -86,6 +88,11 @@
 
 /** 标题点击 */
 - (IBAction)titleClickAction:(UIButton *)sender {
+    
+    NSInteger index = sender.tag-1000;
+    self.categoryItem = self.titleArr[index];
+    _currentPage = 1;
+    [self loadData];
     
     sender.selected = YES;
     for (NSInteger tag = 0; tag<_titleArr.count; tag++) {
@@ -99,12 +106,15 @@
         self.titleLineView.width = sender.width;
         self.titleLineView.centerX = sender.centerX;
         CGFloat right = sender.right;
-        int count = right/WIDTH;
         if (right<WIDTH) {
             self.titleBgScrollView.contentOffset = CGPointMake(0, 0);
         }
         if (right>WIDTH) {
-            self.titleBgScrollView.contentOffset = CGPointMake(self.titleBgScrollView.contentSize.width-WIDTH*count, 0);
+            if (index<self.titleArr.count-1) {
+                self.titleBgScrollView.contentOffset = CGPointMake(right-WIDTH+35, 0);
+            } else {
+                self.titleBgScrollView.contentOffset = CGPointMake(right-WIDTH, 0);
+            }
         }
     }];
 }
