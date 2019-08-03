@@ -38,6 +38,8 @@
 #define AppThemeColor RGBValue(0x42AFD9)
 // 学习导航背景色
 #define kStudyNavBgColor RGBValue(0x42AFD9)
+// 学习PageControl颜色
+#define kPageControlColor RGBAValue(0x42AFD9,0.5)
 // 友盟key
 #define kUMKey     @"5c710878b465f5fa50000071"
 // 极光key

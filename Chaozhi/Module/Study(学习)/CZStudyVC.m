@@ -224,6 +224,8 @@
             };
         }
     }
+    _coursePageControl.currentPageIndicatorTintColor = AppThemeColor;
+    _coursePageControl.pageIndicatorTintColor = kPageControlColor;
     _coursePageControl.height = 20;
     _coursePageControl.currentPage = _currentPage;
     _coursePageControl.numberOfPages = courseCount;
