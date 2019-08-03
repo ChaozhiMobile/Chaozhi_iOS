@@ -18,7 +18,7 @@
                         <viewControllerLayoutGuide type="bottom" id="HRh-OF-JSi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0Aa-bl-tdg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iwq-Ve-af7" userLabel="Nav View">
@@ -37,7 +37,26 @@
                                             <constraint firstAttribute="width" constant="44" id="jSP-Fc-eex"/>
                                         </constraints>
                                         <state key="normal" image="home_message"/>
+                                        <connections>
+                                            <action selector="messageAction:" destination="wVP-L3-OYb" eventType="touchUpInside" id="DH4-lD-e8i"/>
+                                        </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5f-Lj-aRi">
+                                        <rect key="frame" x="166" y="0.0" width="20" height="20"/>
+                                        <color key="backgroundColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="16" id="FAX-MZ-yVg"/>
+                                            <constraint firstAttribute="height" constant="16" id="ZJn-HB-Wej"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qvl-PN-EIF">
                                         <rect key="frame" x="0.0" y="43" width="375" height="1"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="0.20547945205479451" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -51,8 +70,10 @@
                                     <constraint firstAttribute="height" constant="44" id="3hi-9H-tiA"/>
                                     <constraint firstAttribute="trailing" secondItem="qvl-PN-EIF" secondAttribute="trailing" id="4P8-u3-eBa"/>
                                     <constraint firstAttribute="bottom" secondItem="qvl-PN-EIF" secondAttribute="bottom" id="B4U-a4-kDp"/>
+                                    <constraint firstAttribute="trailing" secondItem="i5f-Lj-aRi" secondAttribute="trailing" constant="11" id="Bxd-3D-ZdL"/>
                                     <constraint firstItem="jmZ-AZ-zgu" firstAttribute="top" secondItem="iwq-Ve-af7" secondAttribute="top" id="C7x-5e-Ffn"/>
                                     <constraint firstAttribute="trailing" secondItem="jmZ-AZ-zgu" secondAttribute="trailing" constant="5" id="Hzj-If-THc"/>
+                                    <constraint firstItem="i5f-Lj-aRi" firstAttribute="top" secondItem="iwq-Ve-af7" secondAttribute="top" constant="6" id="Pbw-vI-OW2"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="Rzv-k4-ieH"/>
                                     <constraint firstItem="ad5-KI-JDD" firstAttribute="top" secondItem="iwq-Ve-af7" secondAttribute="top" id="VKm-If-tAg"/>
                                     <constraint firstItem="ad5-KI-JDD" firstAttribute="centerX" secondItem="iwq-Ve-af7" secondAttribute="centerX" id="d7K-1r-QK4"/>
@@ -124,13 +145,13 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" userInteractionEnabled="NO" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TrR-rF-Pfo">
-                                                            <rect key="frame" x="136.5" y="156" width="22" height="15"/>
+                                                            <rect key="frame" x="134.5" y="155.5" width="24" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <state key="normal" title="0" image="icon_home_comment">
                                                                 <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
                                                         </button>
-                                                        <button opaque="NO" tag="105" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7X-K8-mob" customClass="XLGBaseButton">
+                                                        <button opaque="NO" tag="105" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7X-K8-mob" customClass="XLGBaseButton">
                                                             <rect key="frame" x="0.0" y="0.0" width="164.5" height="180"/>
                                                         </button>
                                                     </subviews>
@@ -199,7 +220,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" userInteractionEnabled="NO" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9V-pG-AWZ">
-                                                            <rect key="frame" x="136.5" y="156" width="22" height="15"/>
+                                                            <rect key="frame" x="134.5" y="155.5" width="24" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <state key="normal" title="0" image="icon_home_comment">
                                                                 <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -295,10 +316,10 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_teacher" translatesAutoresizingMaskIntoConstraints="NO" id="Ima-KU-CRG">
-                                                            <rect key="frame" x="168" y="87" width="14" height="14"/>
+                                                            <rect key="frame" x="168" y="85" width="16" height="16"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="陈晓晓老师" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ksj-x6-F7g">
-                                                            <rect key="frame" x="187" y="86" width="62" height="15"/>
+                                                            <rect key="frame" x="189" y="86" width="62" height="15"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" red="0.63529411764705879" green="0.63529411764705879" blue="0.63529411764705879" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -454,6 +475,7 @@
                         <outlet property="bannerView" destination="UeA-G9-pg8" id="Wom-94-axi"/>
                         <outlet property="courseScrollView" destination="2Dc-Ok-US3" id="OJC-8V-YOk"/>
                         <outlet property="mainTabView" destination="tHR-Dd-EfS" id="m4C-s2-XD6"/>
+                        <outlet property="redPointLab" destination="i5f-Lj-aRi" id="IQd-Bx-Gu2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ul-rW-XOl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -480,7 +502,7 @@
                                 </constraints>
                             </scrollView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZsJ-Wr-1TI">
-                                <rect key="frame" x="0.0" y="114" width="375" height="553"/>
+                                <rect key="frame" x="0.0" y="124" width="375" height="543"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="XZSelectCourseTabCell" rowHeight="140" id="oKp-Qs-fU2" customClass="XZSelectCourseTabCell">

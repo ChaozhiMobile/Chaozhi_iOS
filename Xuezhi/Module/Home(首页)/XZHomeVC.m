@@ -16,6 +16,7 @@
 #import "TalkfunPlaybackViewController.h"
 #import "XZHomeTabCell.h"
 #import "XLGCustomButton.h"
+#import "NotifyItem.h"
 
 #define lineCount 5
 
@@ -41,6 +42,10 @@
     [super viewWillAppear:animated];
 
     self.navBar.hidden = YES;
+    
+    if ([Utils isLoginWithJump:NO]) {
+        [self getRedPointInfo];
+    }
 }
 
 - (void)viewDidLoad {
@@ -78,7 +83,31 @@
     [self getData];
 }
 
+#pragma mark - 消息
+- (IBAction)messageAction:(id)sender {
+    if ([Utils isLoginWithJump:YES]) {
+        [BaseWebVC showWithContro:self withUrlStr:H5_Message withTitle:@"我的消息" isPresent:NO];
+    }
+}
+
 #pragma mark - get data
+
+//获取小红点数量
+- (void)getRedPointInfo {
+    NSDictionary *dic = [NSDictionary dictionary];
+    [[NetworkManager sharedManager] postJSON:URL_Notify parameters:dic imageDataArr:nil imageName:nil  completion:^(id responseData, RequestState status, NSError *error) {
+        if (status == Request_Success) {
+            NotifyItem *item = [NotifyItem mj_objectWithKeyValues:(NSDictionary *)responseData];
+            if (![NSString isEmpty:item.msg_unread]
+                && [item.msg_unread intValue] != 0) {
+                self.redPointLab.hidden = NO;
+                self.redPointLab.text = item.msg_unread;
+            } else {
+                self.redPointLab.hidden = YES;
+            }
+        }
+    }];
+}
 
 - (void)getData {
     [self getBannerActivityData];
