@@ -49,7 +49,11 @@
     if (newsItem.ct.length>=10) {
         self.timeLab.text = [newsItem.ct substringToIndex:10];
     }
-    self.readCountLab.text = [NSString stringWithFormat:@"%@人阅读",newsItem.read];
+    if ([NSString isEmpty:newsItem.read]) {
+        self.readCountLab.text = @"0人阅读";
+    } else {
+        self.readCountLab.text = [NSString stringWithFormat:@"%@人阅读",newsItem.read];
+    }
 }
 
 @end

@@ -203,6 +203,8 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    CourseItem *item = _dataArr[indexPath.row];
+    [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_StoreProduct,item.ID] withTitle:@"" isPresent:NO];
 }
 
 /*
