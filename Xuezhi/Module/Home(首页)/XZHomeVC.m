@@ -213,8 +213,16 @@
             weakSelf.mainTabView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
                 [weakSelf getNewList];
             }];
+            weakSelf.mainTabView.tableFooterView = nil;
         } else {
+            UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, WIDTH, autoScaleW(48))];
+            lab.backgroundColor = PageColor;
+            lab.text = @"我也是有底线的~";
+            lab.textColor = RGBValue(0xBDBBBB);
+            lab.textAlignment = NSTextAlignmentCenter;
+            lab.font = [UIFont systemFontOfSize:12 weight:UIFontWeightMedium];
             weakSelf.mainTabView.mj_footer = nil;
+            weakSelf.mainTabView.tableFooterView = lab;
         }
         [weakSelf.mainTabView reloadData];
     }];
