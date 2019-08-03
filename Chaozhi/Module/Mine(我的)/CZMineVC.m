@@ -108,9 +108,9 @@
                     [self.imageArr insertObject:@"icon_班主任" atIndex:0];
                     [self.nameArr insertObject:@"我的班主任" atIndex:0];
                 }
-                
-                [self.mineTableView reloadData];
             }
+            
+            [self.mineTableView reloadData];
         }
     }];
 }
