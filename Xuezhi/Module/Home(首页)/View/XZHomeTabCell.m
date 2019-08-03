@@ -46,8 +46,10 @@
 - (void)setNewsItem:(HomeNewsItem *)newsItem {
     [self.thumbImgView sd_setImageWithURL:[NSURL URLWithString:newsItem.img] placeholderImage:nil];
     self.titleLab.text = newsItem.title;
-    self.timeLab.text = newsItem.ct;
-    self.readCountLab.text = [NSString stringWithFormat:@"0人阅读"];
+    if (newsItem.ct.length>=10) {
+        self.timeLab.text = [newsItem.ct substringToIndex:10];
+    }
+    self.readCountLab.text = [NSString stringWithFormat:@"%@人阅读",newsItem.read];
 }
 
 @end

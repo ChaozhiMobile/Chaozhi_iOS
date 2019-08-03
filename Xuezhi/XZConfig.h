@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #define H5_Privacy @"#/hybrid/chaozhi/privacy" //隐私协议
 
-#define URL_Category @"api/app/home-category" //首页分类数据
+#define URL_Category @"api/app/home-category2" //首页分类数据
 
 @end
 

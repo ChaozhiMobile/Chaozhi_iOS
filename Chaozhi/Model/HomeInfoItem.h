@@ -113,6 +113,7 @@
 @property (nonatomic , copy) NSString* ut ;//: 2018-08-28 14:47:24,
 @property (nonatomic , copy) NSString* subtitle ;//: 广西防城港一男子参加开海节后就发生了一件怪事，他驾车在斑马线前停了半个多小时不肯走，说斑马线上有行人，这是发生了什么事呢？　　8月18号，是防城港市2018年北部湾开海节，为了确保活动期间道路畅通有序,
 @property (nonatomic , copy) NSString* news_category_id ;//: 1
+@property (nonatomic , copy) NSString* read ;//: 1
 
 @end
 

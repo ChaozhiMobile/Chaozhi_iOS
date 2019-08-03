@@ -180,7 +180,7 @@
 #pragma mark - 畅销好课、公开课
 - (void)getCourseData {
     __weak typeof(self) weakSelf = self;
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"52",@"category_id", nil];
+    NSDictionary *dic = [NSDictionary dictionary];
     [[NetworkManager sharedManager] postJSON:URL_Category parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         if ([weakSelf.mainTabView.mj_header isRefreshing]) {
             [weakSelf.mainTabView.mj_header endRefreshing];
@@ -196,7 +196,7 @@
 #pragma mark - 行业资讯
 - (void)getNewList {
     __weak typeof(self) weakSelf = self;
-    [[NetworkManager sharedManager] postJSON:URL_NewsList parameters:@{@"category_id":@"63",@"p":@(_page),@"offset":@"10"} completion:^(id responseData, RequestState status, NSError *error) {
+    [[NetworkManager sharedManager] postJSON:URL_NewsList parameters:@{@"p":@(_page),@"offset":@"10"} completion:^(id responseData, RequestState status, NSError *error) {
         if ([weakSelf.mainTabView.mj_header isRefreshing]) {
             [weakSelf.mainTabView.mj_header endRefreshing];
         }
@@ -445,6 +445,7 @@
     NSInteger index = btn.tag - 1000;
     if (index == 0) { //更多畅销好课
 //        [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_Store,@"0"] withTitle:@"" isPresent:NO];
+        [CacheUtil saveCacher:kCourseCategoryKey withValue:@"0"];
         CZAppDelegate.tabVC.selectedIndex = 2;
     }
     if (index == 1) { //更多公开课
