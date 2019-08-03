@@ -95,6 +95,7 @@
     //    _bgScroView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
     //        [weakSelf getData];
     //    }];
+    self.topBGBackView.backgroundColor = kStudyNavBgColor;
     [self blankView];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginSucc) name:kLoginSuccNotification object:nil]; //登录成功通知
 }
@@ -154,7 +155,7 @@
 
 - (void)initView {
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
-    gradientLayer.colors = @[(__bridge id)RGBValue(0xF76B1C).CGColor,  (__bridge id)RGBValue(0xC31A1F).CGColor];
+    gradientLayer.colors = @[(__bridge id)kStudyNavBgColor.CGColor,  (__bridge id)AppThemeColor.CGColor];
     gradientLayer.locations = @[@0.0, @1.0];
     gradientLayer.startPoint = CGPointMake(0, 0);
     gradientLayer.endPoint = CGPointMake(0, 1.0);
@@ -409,7 +410,7 @@
                 _enterLiveBtn.userInteractionEnabled = YES;
                 [_enterLiveBtn setTitle:@"查看回放" forState:UIControlStateNormal];
                 [_enterLiveBtn setTitleColor:kWhiteColor forState:UIControlStateNormal];
-                _enterLiveBtn.backgroundColor = RGBValue(0xC31A1F);
+                _enterLiveBtn.backgroundColor = AppThemeColor;
                 _enterLiveBtn.borderColor = [UIColor clearColor];
             }
             else if ([liveItems.status isEqualToString:@"0"]) {

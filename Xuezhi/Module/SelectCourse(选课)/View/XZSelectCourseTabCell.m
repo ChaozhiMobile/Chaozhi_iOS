@@ -13,8 +13,8 @@
 - (void)setItem:(CourseItem *)item {
     [_thumbImgView sd_setImageWithURL:[NSURL URLWithString:item.img] placeholderImage:[UIImage imageNamed:@"default_course"]];
     _titleLab.text = item.name;
-    _currentPriceLab.text = [NSString stringWithFormat:@"￥%@",item.price];
-    _oldPriceLab.text = [NSString stringWithFormat:@"￥%@",item.price];
+    _currentPriceLab.text = [NSString stringWithFormat:@"%@",item.price];
+    _oldPriceLab.text = [NSString stringWithFormat:@"%@",item.price];
 }
 
 @end

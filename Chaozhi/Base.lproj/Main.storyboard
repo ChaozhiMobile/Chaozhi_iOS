@@ -1033,6 +1033,11 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" red="0.76470588240000004" green="0.1019607843" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="textThemeColor">
+                                                        <color key="value" red="0.76470588235294112" green="0.10196078431372549" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1H-VY-Joi">
                                                 <rect key="frame" x="275" y="65" width="90" height="28"/>
@@ -1050,6 +1055,9 @@
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                         <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="textThemeColor">
+                                                        <color key="value" red="0.76470588235294112" green="0.10196078431372549" blue="0.12156862745098039" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -1110,6 +1118,11 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" red="0.76470588240000004" green="0.1019607843" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="textThemeColor">
+                                                        <color key="value" red="0.76470588240000004" green="0.1019607843" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="开始时间：08月19日 19:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="97C-br-duG">
                                                 <rect key="frame" x="182" y="85" width="190" height="20"/>
@@ -2107,7 +2120,7 @@ VIP保障实验班</string>
                                             <action selector="selectCourseAction:" destination="Hs7-22-wqW" eventType="touchUpInside" id="FIa-pN-f1b"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aoy-9i-fZT">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aoy-9i-fZT">
                                         <rect key="frame" x="0.0" y="43" width="375" height="1"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="0.20547945209999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>

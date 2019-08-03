@@ -14,28 +14,30 @@
 
 /****************************环境地址**************************/
 
-//// 接口正式地址
-//#define BASE_URL    @"https://aci-api.chaozhiedu.com/"
-//// 接口测试地址
-//#define BASE_URL_D  @"http://test-aci-api.chaozhiedu.com/"
-//// H5正式地址
-//#define H5_URL      @"https://m.chaozhiedu.com/"
-//// H5测试地址
-//#define H5_URL_D    @"http://mtest.chaozhiedu.com/"
-
 // 接口正式地址
-#define BASE_URL    @"https://aci-api.xuezhiwang.com/"
+#define BASE_URL    @"https://aci-api.chaozhiedu.com/"
 // 接口测试地址
-#define BASE_URL_D  @"https://aci-api.xuezhiwang.com/"
+#define BASE_URL_D  @"http://test-aci-api.chaozhiedu.com/"
 // H5正式地址
-#define H5_URL      @"https://m.xuezhiwang.com/"
+#define H5_URL      @"https://m.chaozhiedu.com/"
 // H5测试地址
-#define H5_URL_D    @"https://m.xuezhiwang.com/"
+#define H5_URL_D    @"http://mtest.chaozhiedu.com/"
+
+//// 接口正式地址
+//#define BASE_URL    @"https://aci-api.xuezhiwang.com/"
+//// 接口测试地址
+//#define BASE_URL_D  @"https://aci-api.xuezhiwang.com/"
+//// H5正式地址
+//#define H5_URL      @"https://m.xuezhiwang.com/"
+//// H5测试地址
+//#define H5_URL_D    @"https://m.xuezhiwang.com/"
 
 /****************************配置项**************************/
 
 // 主题色
 #define AppThemeColor RGBValue(0x42AFD9)
+// 学习导航背景色
+#define kStudyNavBgColor RGBValue(0x42AFD9)
 // 友盟key
 #define kUMKey     @"5c710878b465f5fa50000071"
 // 极光key
