@@ -117,9 +117,7 @@
         
         if (status == Request_Success) {
             self.notifyItem = [NotifyItem mj_objectWithKeyValues:(NSDictionary *)responseData];
-            self.notifyItem.msg_unread = @"3";
         }
-        
         [self.mineTableView reloadData];
     }];
 }
