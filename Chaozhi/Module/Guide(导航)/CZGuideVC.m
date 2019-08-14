@@ -37,11 +37,18 @@
             //进入按钮
             CGFloat btnW = autoScaleW(159);
             CGFloat btnH = autoScaleW(36);
-            UIButton *enterBtn = [[UIButton alloc] initWithFrame:CGRectMake((WIDTH-btnW)/2, HEIGHT-btnH-autoScaleW(30)-kTabBarSafeH, btnW, btnH)];
+            CGFloat offY = autoScaleW(30)+kTabBarSafeH;
+            if ([AppChannel isEqualToString:@"1"]) { //超职
+                offY = autoScaleH(40);
+            }
+            if ([AppChannel isEqualToString:@"2"]) { //学智
+                offY = autoScaleH(80);
+            }
+            UIButton *enterBtn = [[UIButton alloc] initWithFrame:CGRectMake((WIDTH-btnW)/2, HEIGHT-btnH-offY, btnW, btnH)];
             [enterBtn setTitle:@"立即体验" forState:UIControlStateNormal];
-            [enterBtn setTitleColor:RGBValue(0xD0021B) forState:UIControlStateNormal];
+            [enterBtn setTitleColor:AppThemeColor forState:UIControlStateNormal];
             enterBtn.titleLabel.font = [UIFont systemFontOfSize:15];
-            enterBtn.layer.borderColor = RGBValue(0xD0021B).CGColor;
+            enterBtn.layer.borderColor = AppThemeColor.CGColor;
             enterBtn.layer.borderWidth = autoScaleW(1);
             enterBtn.layer.cornerRadius = btnH/2;
             [enterBtn.layer setMasksToBounds:YES];

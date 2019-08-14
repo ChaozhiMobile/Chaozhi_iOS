@@ -20,7 +20,7 @@
     UIButton *commentBtn = [view viewWithTag:104];
     XLGCustomButton *clickBtn = [view viewWithTag:105];
     
-    [imgView sd_setImageWithURL:[NSURL URLWithString:item.img] placeholderImage:[UIImage imageNamed:@"default_course"]];
+    [imgView sd_setImageWithURL:[NSURL URLWithString:item.img] placeholderImage:[UIImage imageNamed:@"default_live"]];
     nameLab.text = item.name;
     priceLab.text = [NSString stringWithFormat:@"￥%@",item.price];
     [commentBtn setTitle:item.review_num forState:UIControlStateNormal];

@@ -38,6 +38,10 @@
 #define kPushKey   @"4f61ceadf98f55845bf8b36f"
 // APP名字简称
 #define kAppName   @"超职"
+// 客服电话
+#define kCustomerPhone   @"400-6777-098"
+// 启动页文字
+#define kLaunchWord   @"超职教育 成就超值人生"
 // 数据库名字
 #define kDBName    @"CZDataBase.sqlite"
 // 公司盖章图片

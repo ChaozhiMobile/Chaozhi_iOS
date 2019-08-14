@@ -20,6 +20,8 @@
     
     self.view.backgroundColor = kWhiteColor;
     
+    self.phoneTF.text = [CacheUtil getCacherWithKey:@"loginPhone"];
+    
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(aboutAction)];
     [self.loginIconImgView addGestureRecognizer:tap];
 }
@@ -66,6 +68,7 @@
             
             NSString *token = responseData[@"token"];
             [CacheUtil saveCacher:@"token" withValue:token];
+            [CacheUtil saveCacher:@"loginPhone" withValue:self.phoneTF.text];
             [Utils changeUserAgent]; //WKWebView UA初始化
 
             [[NSNotificationCenter defaultCenter] postNotificationName:kLoginSuccNotification object:nil];

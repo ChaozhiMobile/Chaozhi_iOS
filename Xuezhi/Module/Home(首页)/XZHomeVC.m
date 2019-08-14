@@ -45,6 +45,8 @@
     
     if ([Utils isLoginWithJump:NO]) {
         [self getRedPointInfo];
+    } else {
+        self.redPointLab.hidden = YES;
     }
 }
 

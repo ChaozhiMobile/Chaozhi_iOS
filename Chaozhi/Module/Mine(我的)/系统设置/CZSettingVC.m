@@ -25,6 +25,7 @@
     self.versionLab.text = AppVersion;
     self.aboutTitleLab.text = [NSString stringWithFormat:@"关于%@",AppName];
     self.privacyTitleLab.text = [NSString stringWithFormat:@"%@隐私保护指引",AppName];
+    [self.callPhoneBtn setTitle:[NSString stringWithFormat:@"联系我们：%@",kCustomerPhone] forState:UIControlStateNormal];
     
     UITapGestureRecognizer *aboutTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(aboutAction)];
     [self.aboutView addGestureRecognizer:aboutTap];
@@ -71,7 +72,7 @@
 
 //拨打客服电话
 - (IBAction)callPhoneAction:(UIButton *)sender {
-    NSMutableString* str=[[NSMutableString alloc] initWithFormat:@"tel:%@",@"400-6777-098"];
+    NSMutableString* str=[[NSMutableString alloc] initWithFormat:@"tel:%@",kCustomerPhone];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
 }
 
