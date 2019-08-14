@@ -36,7 +36,7 @@
     [super viewWillAppear:animated];
     
     if ([Utils isLoginWithJump:YES]) {
-        [self getRedPointInfo];
+        [self getUserInfo];
     }
 }
 
@@ -47,9 +47,8 @@
     
     [self getData];
     
-    self.mineTableView.backgroundColor = [UIColor clearColor];
-    self.mineTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.mineTableView.tableHeaderView = self.headView;
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getUserInfo) name:kLoginSuccNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getUserInfo) name:kUserInfoChangeNotification object:nil];
 }
@@ -60,10 +59,6 @@
     
     self.imageArr = [NSMutableArray arrayWithObjects:@"icon_消息",@"icon_收藏",@"icon_下载",@"icon_反馈",@"icon_设置", nil];
     self.nameArr = [NSMutableArray arrayWithObjects:@"我的消息",@"我的收藏",@"我的下载",@"问题反馈",@"系统设置", nil];
-    
-    if ([Utils isLoginWithJump:YES]) {
-        [self getUserInfo]; //获取用户信息
-    }
 }
 
 // 获取用户信息
@@ -110,7 +105,7 @@
                 }
             }
             
-            [self.mineTableView reloadData];
+            [self getRedPointInfo]; //获取小红点数量
         }
     }];
 }
@@ -121,10 +116,11 @@
     [[NetworkManager sharedManager] postJSON:URL_Notify parameters:dic imageDataArr:nil imageName:nil  completion:^(id responseData, RequestState status, NSError *error) {
         
         if (status == Request_Success) {
-            
-            self->_notifyItem = [NotifyItem mj_objectWithKeyValues:(NSDictionary *)responseData];
-            [self.mineTableView reloadData];
+            self.notifyItem = [NotifyItem mj_objectWithKeyValues:(NSDictionary *)responseData];
+            self.notifyItem.msg_unread = @"3";
         }
+        
+        [self.mineTableView reloadData];
     }];
 }
 
@@ -209,12 +205,7 @@
         [cell addSubview:arrowImgView];
     }
     
-    if (indexPath.row==_nameArr.count-1) {
-        UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 49, WIDTH, 1)];
-        lineView.backgroundColor = kWhiteColor;
-        [lineView setViewShadowColor:RGBValue(0xD9E2E9) shadowOpacity:0.5 shadowBlur:autoScaleW(1) shadowOffset:CGSizeMake(0, autoScaleW(1))];
-        [cell addSubview:lineView];
-    } else {
+    if (indexPath.row != _nameArr.count-1) {
         UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(autoScaleW(15), 49, WIDTH-autoScaleW(30), 1)];
         lineView.backgroundColor = RGBValue(0xE0E0E1);
         [cell addSubview:lineView];

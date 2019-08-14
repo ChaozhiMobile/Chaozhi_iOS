@@ -1406,9 +1406,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="10" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZTq-or-pqs">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="ZTq-or-pqs">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="jhn-AO-DEl" id="lcW-qu-fMT"/>
                                     <outlet property="delegate" destination="jhn-AO-DEl" id="jaA-5W-hOc"/>
@@ -2212,20 +2213,20 @@ VIP保障实验班</string>
         <image name="arrow_more" width="6" height="10"/>
         <image name="home_title_one" width="2" height="16"/>
         <image name="icon_class" width="18" height="18"/>
-        <image name="icon_database" width="52" height="52"/>
+        <image name="icon_database" width="60" height="60"/>
         <image name="icon_home_comment" width="14" height="14"/>
         <image name="icon_home_normal" width="24" height="23"/>
         <image name="icon_home_selected" width="24" height="23"/>
         <image name="icon_infinite_normal" width="24" height="24"/>
         <image name="icon_infinite_selected" width="24" height="24"/>
-        <image name="icon_live" width="52" height="52"/>
+        <image name="icon_live" width="60" height="60"/>
         <image name="icon_mine_normal" width="22" height="22"/>
         <image name="icon_mine_selected" width="22" height="22"/>
-        <image name="icon_question" width="52" height="52"/>
+        <image name="icon_question" width="60" height="60"/>
         <image name="icon_study_normal" width="24" height="19"/>
         <image name="icon_study_selected" width="24" height="19"/>
-        <image name="icon_vgo" width="22" height="22"/>
-        <image name="icon_video" width="52" height="52"/>
+        <image name="icon_vgo" width="20" height="20"/>
+        <image name="icon_video" width="60" height="60"/>
         <image name="logo_black" width="115" height="110"/>
         <image name="logo_home" width="122" height="30"/>
         <image name="study_examination_icon" width="60" height="60"/>
