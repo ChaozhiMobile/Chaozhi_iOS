@@ -3071,7 +3071,20 @@
 					A020AF43214AA85B0011BB4F = {
 						CreatedOnToolsVersion = 9.4;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+					A045507022EC8DFA00E17406 = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
 							com.apple.Push = {
@@ -4319,7 +4332,7 @@
 			baseConfigurationReference = 16348408E265BA9234A49C3D /* Pods-Chaozhi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Chaozhi/Chaozhi.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Xuezhi/Xuezhi.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8C7422FTH9;
@@ -4410,7 +4423,7 @@
 			baseConfigurationReference = 5213687D02D00729C4F7FA09 /* Pods-Chaozhi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Chaozhi/Chaozhi.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Xuezhi/Xuezhi.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8C7422FTH9;

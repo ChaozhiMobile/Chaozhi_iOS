@@ -45,6 +45,10 @@
 	<string>超职教育需要您的同意,才能访问相册,使用添加照片功能</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>超职教育需要您的同意,才能访问相册,使用上传图片功能</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
