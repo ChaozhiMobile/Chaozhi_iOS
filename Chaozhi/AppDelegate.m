@@ -27,14 +27,13 @@
     
     if ([AppChannel isEqualToString:@"1"]) { //超职
         [self iapCheck]; //内购凭证服务器二次校验，防止漏单
+        [self registerUMeng]; //注册友盟
     }
 
     [Utils changeUserAgent]; //WKWebView UA初始化
     
     [self registerPush:application options:launchOptions]; //注册激光推送
-    
-    [self registerUMeng]; //注册友盟
-    
+
     //监测网络
     [[NetworkUtil sharedInstance] listening];
     
