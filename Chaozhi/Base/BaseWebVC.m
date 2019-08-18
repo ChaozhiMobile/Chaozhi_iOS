@@ -329,10 +329,8 @@
     
     [JHHJView showLoadingOnTheKeyWindowWithType:JHHJViewTypeSingleLine]; //开始加载
     
-//    if(![IAPShare sharedHelper].iap) {
-        NSSet *dataSet = [[NSSet alloc] initWithObjects:ipaID, nil];
-        [IAPShare sharedHelper].iap = [[IAPHelper alloc] initWithProductIdentifiers:dataSet];
-//    }
+    NSSet *dataSet = [[NSSet alloc] initWithObjects:ipaID, nil];
+    [IAPShare sharedHelper].iap = [[IAPHelper alloc] initWithProductIdentifiers:dataSet];
     
     if (KOnline || [Utils getServer] == 1) {
         [IAPShare sharedHelper].iap.production = YES; // 生产环境
