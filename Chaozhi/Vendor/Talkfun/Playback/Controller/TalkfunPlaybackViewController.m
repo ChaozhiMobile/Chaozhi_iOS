@@ -143,6 +143,20 @@
                 if ([[responseData valueForKey:@"is_review"] integerValue] == 0) {
                     view.dataSource = responseData;
                     [view showView];
+                    __weak typeof(view) weakView = view;
+                    view.submitBlock = ^(NSDictionary * _Nonnull resultDic) {
+                        NSDictionary *dic = @{@"product_id":self.videoItem.product_id,
+                                              @"live_id":self.videoItem.live_id,
+                                              @"star":resultDic[@"star"],
+                                              @"tag":resultDic[@"tag"]
+                                              };
+                        [[NetworkManager sharedManager] postJSON:URL_LiveReview parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+                            if (status == Request_Success) {
+                                [Utils showToast:@"感谢您的评价！"];
+                                [weakView hiddenView];
+                            }
+                        }];
+                    };
                 }
             }
         }

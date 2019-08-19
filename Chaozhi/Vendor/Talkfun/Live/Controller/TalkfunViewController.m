@@ -48,6 +48,8 @@
 #import "TalkfunWatermark.h"
 #import "TalkfunModulation.h"
 #import "TalkfunMultifunctionTool.h"
+#import "CZCommentView.h"
+
 #define TrailingValue 40
 #define NetworkStatusViewWidth 147
 #define ButtonViewHeight 35
@@ -257,11 +259,45 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sdkError:) name:TalkfunErrorNotification object:nil];
     //    self.orientation = 3;
     
-    
-    
     self.onlineLabel.userInteractionEnabled = YES;
     [self.view bringSubviewToFront:self.onlineLabel];
     
+    if ([self.videoItem.type isEqualToString:@"2"]) { //回放/直播
+        [self getLiveCommentInfo]; //获取直播评论信息
+    }
+}
+
+#pragma mark - 直播评价
+
+/** 获取直播评论信息 */
+- (void)getLiveCommentInfo {
+    NSDictionary *dic = @{@"product_id":self.videoItem.product_id,@"live_id":self.videoItem.live_id};
+    [[NetworkManager sharedManager] postJSON:URL_LiveReviewInfo parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+        if (status == Request_Success) {
+            CZCommentView *view = [[CZCommentView alloc] initWithFrame:CGRectZero];;
+            [self.view addSubview:view];
+            if ([responseData isKindOfClass:[NSDictionary class]]) {
+                if ([[responseData valueForKey:@"is_review"] integerValue] == 0) {
+                    view.dataSource = responseData;
+                    [view showView];
+                    __weak typeof(view) weakView = view;
+                    view.submitBlock = ^(NSDictionary * _Nonnull resultDic) {
+                        NSDictionary *dic = @{@"product_id":self.videoItem.product_id,
+                                              @"live_id":self.videoItem.live_id,
+                                              @"star":resultDic[@"star"],
+                                              @"tag":resultDic[@"tag"]
+                                              };
+                        [[NetworkManager sharedManager] postJSON:URL_LiveReview parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+                            if (status == Request_Success) {
+                                [Utils showToast:@"感谢您的评价！"];
+                                [weakView hiddenView];
+                            }
+                        }];
+                    };
+                }
+            }
+        }
+    }];
 }
 
 #pragma mark StatusBarHidden

@@ -69,8 +69,8 @@
     }
     if (isSelect) {
         self.layer.borderColor = AppThemeColor.CGColor;
-        self.backgroundColor = AppThemeColor;
-        [self setTitleColor:kWhiteColor forState:UIControlStateNormal];
+        [self setTitleColor:AppThemeColor forState:UIControlStateNormal];
+        self.backgroundColor = kWhiteColor;
     }
     else {
         self.layer.borderColor = RGBValue(0xf4f4f4).CGColor;
