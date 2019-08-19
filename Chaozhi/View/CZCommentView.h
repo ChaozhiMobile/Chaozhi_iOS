@@ -38,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 /** 视图高度 */
 @property (nonatomic,assign) CGFloat viewHeight;
 /** <#object#> */
-@property (nonatomic,copy) void (^submitBlock)(NSArray *answerList);
+@property (nonatomic,copy) void (^submitBlock)(NSDictionary *resultDic);
 
 /** 关闭视图 */
 @property (nonatomic,copy) dispatch_block_t closeView;

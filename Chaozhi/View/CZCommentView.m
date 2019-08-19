@@ -12,17 +12,21 @@
 
 @interface CZCommentView()
 {
-    UIView *bgWhiteView;
+    
     UILabel *_titleLab;
-    UILabel *pointLab;
-    UIView *shadowView;
     NSInteger lineCount;
     NSMutableDictionary *singleButtonDic;
     UIButton *_closeBtn;
     UIButton *submitBtn;
+    NSMutableArray *tagArr;
+   
 }
-/** 选中的数据 */
-@property (nonatomic,retain) NSMutableDictionary *selectDic;
+/** <#object#> */
+@property (nonatomic,assign)  NSInteger star;;
+/** <#object#> */
+@property (nonatomic,retain) UIView *bgWhiteView;;
+/** <#object#> */
+@property (nonatomic,retain) UIView *shadowView;;
 @end
 
 CZCommentView *singleton;
@@ -50,30 +54,31 @@ static dispatch_once_t onceToken;// 这个拿到函数体外,成为全局的.
 
 - (void)setupData {
     lineCount = 3 ;
+    _star = 0;
     singleButtonDic = [NSMutableDictionary dictionary];
-    _selectDic = [NSMutableDictionary dictionary];
 }
 
 - (void)refreshUI {
     self.hidden = YES;
     self.layer.zPosition = 2000;
-    shadowView = [[UIView alloc]initWithFrame:self.bounds];
-    shadowView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.7];
-    [self addSubview:shadowView];
+    tagArr = [NSMutableArray array];
+    _shadowView = [[UIView alloc]initWithFrame:self.bounds];
+    _shadowView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.7];
+    [self addSubview:_shadowView];
     
-    bgWhiteView = [[UIView alloc]initWithFrame:CGRectMake(0, HEIGHT-autoScaleW(250), self.width, HEIGHT/3*2)];
-    bgWhiteView.backgroundColor = [UIColor whiteColor];
-    [self addSubview:bgWhiteView];
+    _bgWhiteView = [[UIView alloc]initWithFrame:CGRectMake(0, HEIGHT-autoScaleW(250), self.width, HEIGHT/3*2)];
+    _bgWhiteView.backgroundColor = [UIColor whiteColor];
+    [self addSubview:_bgWhiteView];
     
     _titleLab = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.width, autoScaleW(50))];
     _titleLab.text = @"评价";
     _titleLab.font = [UIFont systemFontOfSize:17 weight:UIFontWeightMedium];
     _titleLab.textAlignment = NSTextAlignmentCenter;
     [_titleLab sizeToFit];
-    _titleLab.centerX = bgWhiteView.width/2.0;
+    _titleLab.centerX = _bgWhiteView.width/2.0;
     _titleLab.height = autoScaleW(50);
     _titleLab.top = 0;
-    [bgWhiteView addSubview:_titleLab];
+    [_bgWhiteView addSubview:_titleLab];
     
 //    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, _titleLab.bottom-1,  self.width, 1)];
 //    lineView.backgroundColor = RGBValue(0xf0f0f0);
@@ -81,15 +86,15 @@ static dispatch_once_t onceToken;// 这个拿到函数体外,成为全局的.
     
     _bgScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, _titleLab.bottom, self.width, autoScaleW(200))];
     _bgScrollView.backgroundColor = kWhiteColor;
-    [bgWhiteView addSubview:_bgScrollView];
+    [_bgWhiteView addSubview:_bgScrollView];
     [self reloadData];
     
-    _closeBtn = [[UIButton alloc]initWithFrame:CGRectMake(bgWhiteView.width-80, 0, 80, autoScaleW(50))];
+    _closeBtn = [[UIButton alloc]initWithFrame:CGRectMake(_bgWhiteView.width-80, 0, 80, autoScaleW(50))];
     [_closeBtn addTarget:self action:@selector(hiddenView) forControlEvents:UIControlEventTouchUpInside];
     [_closeBtn setImage:[UIImage imageNamed:@"evaluate_icon_close"] forState:UIControlStateNormal];
     _closeBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     _closeBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 10);
-    [bgWhiteView addSubview:_closeBtn];
+    [_bgWhiteView addSubview:_closeBtn];
     
     submitBtn = [[UIButton alloc]initWithFrame:CGRectMake(12, _bgScrollView.bottom+TopSpace, self.width-24, ViewH)];
     [submitBtn setTitle:@"提交评价并退出直播" forState:UIControlStateNormal];
@@ -97,7 +102,7 @@ static dispatch_once_t onceToken;// 这个拿到函数体外,成为全局的.
     submitBtn.backgroundColor = AppThemeColor;
     submitBtn.layer.masksToBounds = YES;
     [submitBtn addTarget:self action:@selector(submitDataAction) forControlEvents:UIControlEventTouchUpInside];
-    [bgWhiteView addSubview:submitBtn];
+    [_bgWhiteView addSubview:submitBtn];
     
     _viewHeight = autoScaleW(400);
 }
@@ -105,32 +110,26 @@ static dispatch_once_t onceToken;// 这个拿到函数体外,成为全局的.
 - (void)reloadData {
 
     [_bgScrollView.subviews  makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    [_selectDic removeAllObjects];
-//    CGFloat viewBottom = 0;
     UIView *view =  [self createStarView:_dataSource];
     view.top = 0;
     [_bgScrollView addSubview:view];
-//    _bgScrollView.contentSize = CGSizeMake(0, viewBottom+20);
     
 }
 
 #pragma mark - 提交数据
 /** 提交数据 */
 - (void)submitDataAction {
-    
-//        if (selectStar==NO) {
-//            _submitBlock(tempArr);
-//            [self hiddenView];
-//        }
-    
+    if (_submitBlock) {
+        _submitBlock(@{@"star":@(_star),@"tag":tagArr});
+    }
 }
 
 
 
 -(void)showMoreView {
-    _bgScrollView.scrollEnabled = YES;
+    __weak typeof(self) weakSelf = self;
     [UIView animateWithDuration:0.5 animations:^{
-        bgWhiteView.top = HEIGHT- bgWhiteView.height;
+        weakSelf.bgWhiteView.top = HEIGHT- weakSelf.bgWhiteView.height;
     }];
 }
 
@@ -153,6 +152,10 @@ static dispatch_once_t onceToken;// 这个拿到函数体外,成为全局的.
     NSDictionary *commentDic = data[@"meta"];
     __weak typeof(self) weakSelf = self;
     starView.starClick = ^(NSInteger score) {
+        if (weakSelf.star==score) {
+            return ;
+        }
+        weakSelf.star = score;
         NSString *keysStr = [NSString stringWithFormat:@"%d",(int)score];
         AnswerModel *model = [AnswerModel mj_objectWithKeyValues:commentDic[keysStr]];
         contentLab.text = model.title;
@@ -176,7 +179,7 @@ static dispatch_once_t onceToken;// 这个拿到函数体外,成为全局的.
        [ vv.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
         [vv removeFromSuperview];
     }
-    
+    [tagArr removeAllObjects];
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, _bgScrollView.width, autoScaleW(100))];
     view.tag = 9999;
     NSInteger lineCount = data.count%2==0?data.count/2:(data.count/2+1);
@@ -203,21 +206,27 @@ static dispatch_once_t onceToken;// 这个拿到函数体外,成为全局的.
 }
 
 - (void)commentClick:(XLGMyButton *)sender {
-    
+    sender.isSelect = !sender.isSelect;
+    if (sender.isSelect) {
+        [tagArr addObject:sender.currentTitle];
+    }
+    else {
+         [tagArr removeObject:sender.currentTitle];
+    }
 }
 
 - (void)showView {
     self.hidden = NO;
-    bgWhiteView.top = HEIGHT;
-    shadowView.alpha = 0.0;
+    _bgWhiteView.top = HEIGHT;
+    _shadowView.alpha = 0.0;
     self.alpha = 1.0;
     if (self.viewHeight>autoScaleW(250)) {
         self.bgScrollView.scrollEnabled = YES;
     }
     __weak typeof(self) weakSelf = self;
     [UIView animateWithDuration:0.3 animations:^{
-        bgWhiteView.top = HEIGHT-weakSelf.viewHeight;
-        shadowView.alpha = 1.0;
+        weakSelf.bgWhiteView.top = HEIGHT-weakSelf.viewHeight;
+        weakSelf.shadowView.alpha = 1.0;
     }];
 }
 
@@ -225,8 +234,8 @@ static dispatch_once_t onceToken;// 这个拿到函数体外,成为全局的.
 - (void)hiddenView {
     __weak typeof(self) weakSelf = self;
     [UIView animateWithDuration:0.3 animations:^{
-        bgWhiteView.top = HEIGHT;
-        shadowView.alpha = 0.0;
+        weakSelf.bgWhiteView.top = HEIGHT;
+        weakSelf.shadowView.alpha = 0.0;
     } completion:^(BOOL finished) {
         weakSelf.hidden = YES;
         weakSelf.alpha = 0.0;
