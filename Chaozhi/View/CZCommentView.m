@@ -92,7 +92,7 @@ static dispatch_once_t onceToken;// 这个拿到函数体外,成为全局的.
     
     submitBtn = [[UIButton alloc]initWithFrame:CGRectMake(12, _bgScrollView.bottom+TopSpace, self.width-24, ViewH)];
     [submitBtn setTitle:@"提交评价并退出直播" forState:UIControlStateNormal];
-    submitBtn.titleLabel.font = [UIFont systemFontOfSize:16];
+    submitBtn.titleLabel.font = [UIFont systemFontOfSize:17];
     submitBtn.cornerRadius = ViewH/2.0;
     submitBtn.backgroundColor = AppThemeColor;
     submitBtn.layer.masksToBounds = YES;
@@ -143,7 +143,7 @@ static dispatch_once_t onceToken;// 这个拿到函数体外,成为全局的.
     __weak typeof(self) weakSelf = self;
     starView.starClick = ^(NSInteger score) {
         if (weakSelf.star==score) {
-            return ;
+            return;
         }
         weakSelf.star = score;
         NSString *keysStr = [NSString stringWithFormat:@"%d",(int)score];
@@ -153,8 +153,18 @@ static dispatch_once_t onceToken;// 这个拿到函数体外,成为全局的.
         [view addSubview:tempView];
         tempView.top = contentLab.bottom+10;
         view.height = tempView.bottom+10;
-    } ;
-    view.height = contentLab.bottom+ (ViewH +BottomSpace)*2;
+    };
+    //默认显示五颗星
+    starView.score = 5;
+    weakSelf.star = 5;
+    NSString *keysStr = [NSString stringWithFormat:@"%d",(int)5];
+    AnswerModel *model = [AnswerModel mj_objectWithKeyValues:commentDic[keysStr]];
+    contentLab.text = model.title;
+    UIView *tempView = [weakSelf createMultipleViewWithData:model.tag];
+    [view addSubview:tempView];
+    tempView.top = contentLab.bottom+10;
+    view.height = tempView.bottom+10;
+//    view.height = contentLab.bottom+(ViewH+BottomSpace)*2;
     return view;
 }
 
@@ -197,7 +207,7 @@ static dispatch_once_t onceToken;// 这个拿到函数体外,成为全局的.
         [tagArr addObject:sender.currentTitle];
     }
     else {
-         [tagArr removeObject:sender.currentTitle];
+        [tagArr removeObject:sender.currentTitle];
     }
 }
 

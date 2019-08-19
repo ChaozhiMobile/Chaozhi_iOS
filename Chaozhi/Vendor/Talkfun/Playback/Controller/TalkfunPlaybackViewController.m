@@ -137,7 +137,7 @@
     NSDictionary *dic = @{@"product_id":self.videoItem.product_id,@"live_id":self.videoItem.live_id};
     [[NetworkManager sharedManager] postJSON:URL_LiveReviewInfo parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         if (status == Request_Success) {
-            CZCommentView *view = [[CZCommentView alloc]initWithFrame:CGRectZero];;
+            CZCommentView *view = [[CZCommentView alloc] initWithFrame:CGRectZero];;
             [self.view addSubview:view];
             if ([responseData isKindOfClass:[NSDictionary class]]) {
                 if ([[responseData valueForKey:@"is_review"] integerValue] == 0) {
