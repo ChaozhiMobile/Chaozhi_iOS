@@ -16,7 +16,6 @@
 #import "CZStarView.h"
 #import "VideoItem.h"
 #import "TalkfunPlaybackViewController.h"
-#import "CZCommentView.h"
 
 #define TEACHERNUM 2.5
 
@@ -153,17 +152,6 @@
     [self checkVersion];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeServerSucc) name:kChangeServerSuccNotification object:nil]; //环境切换成功通知
-    
-    CZCommentView *view = [[CZCommentView alloc]initWithFrame:CGRectZero];;
-    [self.view addSubview:view];
-    view.dataSource = @{@"is_review":@"0",@"meta":@{
-                                @"1":@{@"title":@"非常差1",@"tag":@[@"知识点讲解不清晰1",@"教学内容不熟练",@"授课态度差",@"语言表达能力弱",]},
-                                @"2":@{@"title":@"非常差2",@"tag":@[@"知识点讲解不清晰2",@"教学内容不熟练",@"授课态度差",@"语言表达能力弱",]},
-                                @"3":@{@"title":@"非常差3",@"tag":@[@"知识点讲解不清晰3",@"教学内容不熟练",@"授课态度差",@"语言表达能力弱",]},
-                                @"4":@{@"title":@"非常差4",@"tag":@[@"知识点讲解不清晰4",@"教学内容不熟练",@"授课态度差",@"语言表达能力弱",]},
-                                @"5":@{@"title":@"非常差5",@"tag":@[@"知识点讲解不清晰5",@"教学内容不熟练",@"授课态度差",@"语言表达能力弱",]}
-                                }};
-    [view showView];
 }
 
 - (void)changeServerSucc {

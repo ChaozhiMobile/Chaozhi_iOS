@@ -28,6 +28,7 @@
 #define ButtonViewHeight 35
 #define KIsiPhoneX  @available(iOS 11.0, *) && UIApplication.sharedApplication.keyWindow.safeAreaInsets.bottom > 0.0
 #import "DBManager.h"
+#import "CZCommentView.h"
 
 @interface TalkfunPlaybackViewController ()<UIScrollViewDelegate,TalkfunSDKPlaybackDelegate,UIAlertViewDelegate,UIGestureRecognizerDelegate>
 
@@ -76,12 +77,10 @@
 //记录摄像头是否全屏
 @property (nonatomic,assign) BOOL isCameraFullScreen;
 
-
 //视频窗口上的菊花
 @property (nonatomic,strong) UIActivityIndicatorView * activityIndicator;
 //进场动画是否显示
 @property(nonatomic,assign)BOOL isLoading;
-
 
 //是否是桌面分享
 @property (nonatomic,assign)BOOL isDesktop;
@@ -124,7 +123,37 @@
     [self registerEventListener];
     [self addGesture];
     
+    if ([self.videoItem.type isEqualToString:@"2"]) { //回放/直播
+        [self getLiveCommentInfo]; //获取直播评论信息
+    }
+    
     //    [self.networkDetector networkcheck];
+}
+
+#pragma mark - 直播评价
+
+/** 获取直播评论信息 */
+- (void)getLiveCommentInfo {
+    NSDictionary *dic = @{@"product_id":self.videoItem.product_id,@"live_id":self.videoItem.live_id};
+    [[NetworkManager sharedManager] postJSON:URL_LiveReviewInfo parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
+        if (status == Request_Success) {
+            
+        }
+    }];
+}
+
+/** 初始化直播弹框 */
+- (void)initLiveCommentView {
+    CZCommentView *view = [[CZCommentView alloc]initWithFrame:CGRectZero];;
+    [self.view addSubview:view];
+    view.dataSource = @{@"is_review":@"0",@"meta":@{
+                                @"1":@{@"title":@"非常差1",@"tag":@[@"知识点讲解不清晰1",@"教学内容不熟练",@"授课态度差",@"语言表达能力弱",]},
+                                @"2":@{@"title":@"非常差2",@"tag":@[@"知识点讲解不清晰2",@"教学内容不熟练",@"授课态度差",@"语言表达能力弱",]},
+                                @"3":@{@"title":@"非常差3",@"tag":@[@"知识点讲解不清晰3",@"教学内容不熟练",@"授课态度差",@"语言表达能力弱",]},
+                                @"4":@{@"title":@"非常差4",@"tag":@[@"知识点讲解不清晰4",@"教学内容不熟练",@"授课态度差",@"语言表达能力弱",]},
+                                @"5":@{@"title":@"非常差5",@"tag":@[@"知识点讲解不清晰5",@"教学内容不熟练",@"授课态度差",@"语言表达能力弱",]}
+                                }};
+    [view showView];
 }
 
 #pragma mark StatusBarHidden

@@ -39,6 +39,8 @@ NSString *domainUrl(void);
 #define URL_LiveToken @"api/userlive/token" //视频token接口
 #define URL_LiveProgress @"api/userlive/progress" //视频进度更新接口
 #define URL_ResetAnswer @"api/question/reset-answer" //月考重置答案
+#define URL_LiveReviewInfo @"api/userlive/review-info" //直播评价信息
+#define URL_LiveReview @"api/userlive/review" //直播评价
 
 #pragma mark - ---------------H5地址---------------
 
