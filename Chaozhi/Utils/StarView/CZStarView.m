@@ -48,16 +48,60 @@
     return self;
 }
 
+- (instancetype)initWithFrame1:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self initView1];
+        self.score = 0; // 星星控件的当前分值
+        self.enable = YES; // 是否允许滑
+    }
+    return self;
+}
+
+/**
+ *  初始化视图
+ */
+- (void)initView1{
+    self.maxScore = 5;
+    self.fullStarsView = [self initViewWithImageName:@"evaluate_icon_star_red"];
+    self.emptyStarsView = [self initViewWithImageName:@"evaluate_icon_star_black"];
+    
+    [self addSubview:self.emptyStarsView];
+    [self addSubview:self.fullStarsView];
+    
+    UIView *view = [[UIView alloc]initWithFrame:self.fullStarsView.frame];
+    [self addSubview:view];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(clickAction:)];
+    [view addGestureRecognizer:tap];
+}
+
 /**
  *  初始化视图
  */
 - (void)initView{
     self.maxScore = 5;
-    self.fullStarsView = [self initStarViewWithImageName:@"icon_fullstar"];
-    self.emptyStarsView = [self initStarViewWithImageName:@"icon_emptystar"];
+    self.fullStarsView = [self initStarViewWithImageName:@"evaluate_icon_star_red"];
+    self.emptyStarsView = [self initStarViewWithImageName:@"evaluate_icon_star_black"];
     
     [self addSubview:self.emptyStarsView];
     [self addSubview:self.fullStarsView];
+    
+    UIView *view = [[UIView alloc]initWithFrame:self.fullStarsView.frame];
+    [self addSubview:view];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(clickAction:)];
+    [view addGestureRecognizer:tap];
+}
+
+- (void)clickAction:(UITapGestureRecognizer *)taps {
+    self.fullStarsView.hidden = NO;
+    if (self.enable) {
+        CGPoint point = [taps locationInView:self];
+        CGRect rect = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+        if(CGRectContainsPoint(rect,point))
+        {
+            [self changeStarForegroundViewWithPoint:point];
+        }
+    }
 }
 
 /**
@@ -77,31 +121,30 @@
     for (int i = 0; i < self.maxScore; i ++)
     {
         UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
         imageView.frame = CGRectMake(i * (width / self.maxScore + space), 0, width / self.maxScore, frame.size.height);
         [view addSubview:imageView];
     }
     return view;
 }
-/**
- *  触摸事件
- *
- *  @param touches touches description
- *  @param event   event description
- */
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    self.fullStarsView.hidden = NO;
-    
-    if (self.enable) {
-        UITouch *touch = [touches anyObject];
-        CGPoint point = [touch locationInView:self];
-        CGRect rect = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
-        if(CGRectContainsPoint(rect,point))
-        {
-            [self changeStarForegroundViewWithPoint:point];
-        }
+
+- (CZStarView *)initViewWithImageName:(NSString *)imageName{
+    CGRect frame = self.bounds;
+    CZStarView *view = [[CZStarView alloc] init];
+    view.frame = frame;
+    view.clipsToBounds = YES;
+    CGFloat space = autoScaleW(20);
+    CGFloat width = (frame.size.width-space*(self.maxScore-1));
+    for (int i = 0; i < self.maxScore; i ++)
+    {
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
+        imageView.frame = CGRectMake(i * (width / self.maxScore + space), 0, width / self.maxScore, frame.size.height);
+        [view addSubview:imageView];
     }
+    return view;
 }
+
 /**
  *  改变分数
  *
@@ -119,9 +162,12 @@
     }
     
     NSString * str = [NSString stringWithFormat:@"%0.2f",point.x / self.frame.size.width];
-    float score = [str floatValue];
-    point.x = score * self.frame.size.width;
+    float score = [[NSString stringWithFormat:@"%0.2f",ceilf([str floatValue]*_maxScore)/_maxScore] floatValue];
+    point.x = floor((score * self.frame.size.width)-0.18*score);
     self.fullStarsView.frame = CGRectMake(0, 0, point.x, self.frame.size.height);
+    if (self.starClick) {
+        self.starClick(score*_maxScore);
+    }
     
     if(self.delegate && [self.delegate respondsToSelector:@selector(starRatingView: score:)])
     {
@@ -139,5 +185,7 @@
     
     self.fullStarsView.frame = CGRectMake(0, 0, self.frame.size.width * width, self.frame.size.height);
 }
+
+
 
 @end

@@ -43,8 +43,10 @@
  *  @return 星星控件
  */
 - (instancetype)initWithFrame:(CGRect)frame currentScore:(CGFloat)currentScore delegate:(id)starRatingViewDelegate;
+- (instancetype)initWithFrame1:(CGRect)frame ;
 
-
+/** <#object#> */
+@property (nonatomic,copy) void (^starClick)(NSInteger count);
 @property (nonatomic, weak) id <StarRatingViewDelegate> delegate;
 
 @end

@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_home" translatesAutoresizingMaskIntoConstraints="NO" id="ad5-KI-JDD">
-                                        <rect key="frame" x="126.5" y="0.0" width="122" height="44"/>
+                                        <rect key="frame" x="139" y="0.0" width="97" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="nNJ-4T-s5f"/>
                                         </constraints>
@@ -145,7 +145,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" userInteractionEnabled="NO" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TrR-rF-Pfo">
-                                                            <rect key="frame" x="136.5" y="156" width="22" height="15"/>
+                                                            <rect key="frame" x="138.5" y="156" width="20" height="15"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <state key="normal" title="0" image="icon_home_comment">
                                                                 <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -220,7 +220,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" userInteractionEnabled="NO" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9V-pG-AWZ">
-                                                            <rect key="frame" x="136.5" y="156" width="22" height="15"/>
+                                                            <rect key="frame" x="138.5" y="156" width="20" height="15"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <state key="normal" title="0" image="icon_home_comment">
                                                                 <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>

@@ -13,6 +13,7 @@
 		205FDB2F216F20C0001BE2C6 /* HomeInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FDB2E216F20C0001BE2C6 /* HomeInfoItem.m */; };
 		205FDB3321763DBE001BE2C6 /* CZGuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FDB3221763DBE001BE2C6 /* CZGuideVC.m */; };
 		208B695B2185903700B263FB /* TeacherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 208B695A2185903700B263FB /* TeacherView.xib */; };
+		20ABB12E230A7A9600DDC86F /* CZCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20ABB12D230A7A9600DDC86F /* CZCommentView.m */; };
 		20D3D36922C2280E00560A74 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D36822C2280E00560A74 /* libsqlite3.0.tbd */; };
 		20D3D36B22C2281C00560A74 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D36A22C2281C00560A74 /* Accelerate.framework */; };
 		20D3D36D22C2282A00560A74 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D36C22C2282A00560A74 /* libz.tbd */; };
@@ -859,6 +860,8 @@
 		205FDB3121763DBE001BE2C6 /* CZGuideVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZGuideVC.h; sourceTree = "<group>"; };
 		205FDB3221763DBE001BE2C6 /* CZGuideVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZGuideVC.m; sourceTree = "<group>"; };
 		208B695A2185903700B263FB /* TeacherView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeacherView.xib; sourceTree = "<group>"; };
+		20ABB12C230A7A9600DDC86F /* CZCommentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZCommentView.h; sourceTree = "<group>"; };
+		20ABB12D230A7A9600DDC86F /* CZCommentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZCommentView.m; sourceTree = "<group>"; };
 		20D3D36822C2280E00560A74 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		20D3D36A22C2281C00560A74 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		20D3D36C22C2282A00560A74 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -2113,6 +2116,8 @@
 				A00BE16C219FFB140042E6ED /* CZUpdateView.m */,
 				201DF3CE22AE584700904EAF /* CZAlertView.h */,
 				201DF3CF22AE584700904EAF /* CZAlertView.m */,
+				20ABB12C230A7A9600DDC86F /* CZCommentView.h */,
+				20ABB12D230A7A9600DDC86F /* CZCommentView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3774,6 +3779,7 @@
 				A0462A072187407600D12E65 /* CZNotNetAvailableVC.m in Sources */,
 				A0AC08AE22C4BC7D001832EA /* UIImageView+Exten.m in Sources */,
 				A00FA9D82168C26900F4DA5B /* CZSettingVC.m in Sources */,
+				20ABB12E230A7A9600DDC86F /* CZCommentView.m in Sources */,
 				A0AC08D822C4BC7D001832EA /* ChatTableViewCell.m in Sources */,
 				A020AF49214AA85B0011BB4F /* AppDelegate.m in Sources */,
 				A0AC08E722C4BC7D001832EA /* ChapterTableViewCell.m in Sources */,

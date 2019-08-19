@@ -18,7 +18,7 @@
 // 接口正式地址
 #define BASE_URL    @"https://aci-api.chaozhiedu.com/"
 // 接口测试地址
-#define BASE_URL_D  @"http://test-aci-api.chaozhiedu.com/"
+#define BASE_URL_D  @"https://test-aci-api.chaozhiedu.com/"
 // H5正式地址
 #define H5_URL      @"https://m.chaozhiedu.com/"
 // H5测试地址
