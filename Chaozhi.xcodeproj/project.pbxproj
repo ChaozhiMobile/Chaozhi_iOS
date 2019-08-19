@@ -189,7 +189,6 @@
 		A04550A222EC8DFA00E17406 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFB2214AAB130011BB4F /* Utils.m */; };
 		A04550A322EC8DFA00E17406 /* LDNetPing.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B009214AAB140011BB4F /* LDNetPing.m */; };
 		A04550A422EC8DFA00E17406 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B012214AAB140011BB4F /* Reachability.m */; };
-		A04550A522EC8DFA00E17406 /* CZHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0599A1921574CAF00D17058 /* CZHomeVC.m */; };
 		A04550A622EC8DFA00E17406 /* AlbumCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07AD22C4BC7C001832EA /* AlbumCellTableViewCell.m */; };
 		A04550A722EC8DFA00E17406 /* KeyChainUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFAD214AAB130011BB4F /* KeyChainUtil.m */; };
 		A04550A822EC8DFA00E17406 /* MEViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFD1214AAB140011BB4F /* MEViewModel.m */; };
@@ -3886,7 +3885,6 @@
 				A04550A222EC8DFA00E17406 /* Utils.m in Sources */,
 				A04550A322EC8DFA00E17406 /* LDNetPing.m in Sources */,
 				A04550A422EC8DFA00E17406 /* Reachability.m in Sources */,
-				A04550A522EC8DFA00E17406 /* CZHomeVC.m in Sources */,
 				A04550A622EC8DFA00E17406 /* AlbumCellTableViewCell.m in Sources */,
 				A04550A722EC8DFA00E17406 /* KeyChainUtil.m in Sources */,
 				A04550A822EC8DFA00E17406 /* MEViewModel.m in Sources */,
