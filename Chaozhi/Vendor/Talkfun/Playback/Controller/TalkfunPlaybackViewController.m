@@ -135,25 +135,18 @@
 /** 获取直播评论信息 */
 - (void)getLiveCommentInfo {
     NSDictionary *dic = @{@"product_id":self.videoItem.product_id,@"live_id":self.videoItem.live_id};
-    [[NetworkManager sharedManager] postJSON:URL_LiveReviewInfo parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
+    [[NetworkManager sharedManager] postJSON:URL_LiveReviewInfo parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         if (status == Request_Success) {
-            
+            CZCommentView *view = [[CZCommentView alloc]initWithFrame:CGRectZero];;
+            [self.view addSubview:view];
+            if ([responseData isKindOfClass:[NSDictionary class]]) {
+                if ([[responseData valueForKey:@"is_review"] integerValue] == 0) {
+                    view.dataSource = responseData;
+                    [view showView];
+                }
+            }
         }
     }];
-}
-
-/** 初始化直播弹框 */
-- (void)initLiveCommentView {
-    CZCommentView *view = [[CZCommentView alloc]initWithFrame:CGRectZero];;
-    [self.view addSubview:view];
-    view.dataSource = @{@"is_review":@"0",@"meta":@{
-                                @"1":@{@"title":@"非常差1",@"tag":@[@"知识点讲解不清晰1",@"教学内容不熟练",@"授课态度差",@"语言表达能力弱",]},
-                                @"2":@{@"title":@"非常差2",@"tag":@[@"知识点讲解不清晰2",@"教学内容不熟练",@"授课态度差",@"语言表达能力弱",]},
-                                @"3":@{@"title":@"非常差3",@"tag":@[@"知识点讲解不清晰3",@"教学内容不熟练",@"授课态度差",@"语言表达能力弱",]},
-                                @"4":@{@"title":@"非常差4",@"tag":@[@"知识点讲解不清晰4",@"教学内容不熟练",@"授课态度差",@"语言表达能力弱",]},
-                                @"5":@{@"title":@"非常差5",@"tag":@[@"知识点讲解不清晰5",@"教学内容不熟练",@"授课态度差",@"语言表达能力弱",]}
-                                }};
-    [view showView];
 }
 
 #pragma mark StatusBarHidden

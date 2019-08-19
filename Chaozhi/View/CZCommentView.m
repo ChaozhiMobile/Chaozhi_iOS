@@ -12,21 +12,19 @@
 
 @interface CZCommentView()
 {
-    
     UILabel *_titleLab;
     NSInteger lineCount;
     NSMutableDictionary *singleButtonDic;
     UIButton *_closeBtn;
     UIButton *submitBtn;
     NSMutableArray *tagArr;
-   
 }
 /** <#object#> */
-@property (nonatomic,assign)  NSInteger star;;
+@property (nonatomic,assign) NSInteger star;
 /** <#object#> */
-@property (nonatomic,retain) UIView *bgWhiteView;;
+@property (nonatomic,retain) UIView *bgWhiteView;
 /** <#object#> */
-@property (nonatomic,retain) UIView *shadowView;;
+@property (nonatomic,retain) UIView *shadowView;
 @end
 
 CZCommentView *singleton;
@@ -80,16 +78,12 @@ static dispatch_once_t onceToken;// 这个拿到函数体外,成为全局的.
     _titleLab.top = 0;
     [_bgWhiteView addSubview:_titleLab];
     
-//    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, _titleLab.bottom-1,  self.width, 1)];
-//    lineView.backgroundColor = RGBValue(0xf0f0f0);
-//    [bgWhiteView addSubview:lineView];
-    
     _bgScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, _titleLab.bottom, self.width, autoScaleW(200))];
     _bgScrollView.backgroundColor = kWhiteColor;
     [_bgWhiteView addSubview:_bgScrollView];
     [self reloadData];
     
-    _closeBtn = [[UIButton alloc]initWithFrame:CGRectMake(_bgWhiteView.width-80, 0, 80, autoScaleW(50))];
+    _closeBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, autoScaleW(40), autoScaleW(50))];
     [_closeBtn addTarget:self action:@selector(hiddenView) forControlEvents:UIControlEventTouchUpInside];
     [_closeBtn setImage:[UIImage imageNamed:@"evaluate_icon_close"] forState:UIControlStateNormal];
     _closeBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
@@ -98,6 +92,7 @@ static dispatch_once_t onceToken;// 这个拿到函数体外,成为全局的.
     
     submitBtn = [[UIButton alloc]initWithFrame:CGRectMake(12, _bgScrollView.bottom+TopSpace, self.width-24, ViewH)];
     [submitBtn setTitle:@"提交评价并退出直播" forState:UIControlStateNormal];
+    submitBtn.titleLabel.font = [UIFont systemFontOfSize:16];
     submitBtn.cornerRadius = ViewH/2.0;
     submitBtn.backgroundColor = AppThemeColor;
     submitBtn.layer.masksToBounds = YES;
@@ -108,12 +103,10 @@ static dispatch_once_t onceToken;// 这个拿到函数体外,成为全局的.
 }
 
 - (void)reloadData {
-
     [_bgScrollView.subviews  makeObjectsPerformSelector:@selector(removeFromSuperview)];
     UIView *view =  [self createStarView:_dataSource];
     view.top = 0;
     [_bgScrollView addSubview:view];
-    
 }
 
 #pragma mark - 提交数据
@@ -124,28 +117,25 @@ static dispatch_once_t onceToken;// 这个拿到函数体外,成为全局的.
     }
 }
 
-
-
--(void)showMoreView {
+- (void)showMoreView {
     __weak typeof(self) weakSelf = self;
     [UIView animateWithDuration:0.5 animations:^{
         weakSelf.bgWhiteView.top = HEIGHT- weakSelf.bgWhiteView.height;
     }];
 }
 
-
 #pragma mark - 创建带有星星的评价
 /** 创建带有星星的评价 */
 - (UIView *)createStarView:(id )data {
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, _bgScrollView.width, autoScaleW(60))];
     
-    CZStarView *starView = [[CZStarView alloc] initWithFrame1:CGRectMake((WIDTH-autoScaleW(280))/2.0, 0, autoScaleW(280), autoScaleW(40))];
+    CZStarView *starView = [[CZStarView alloc] initWithFrame1:CGRectMake((WIDTH-autoScaleW(280))/2.0, autoScaleW(5), autoScaleW(280), autoScaleW(40))];
     [view addSubview:starView];
     
     UILabel *contentLab = [[UILabel alloc]initWithFrame:CGRectMake(starView.left, starView.bottom+autoScaleW(10),starView.width, autoScaleW(20))];
     contentLab.text = @"";
-    contentLab.textColor = RGBValue(0xb4b4b4);
-    contentLab.font = [UIFont systemFontOfSize:12.5 weight:UIFontWeightMedium];
+    contentLab.textColor = AppThemeColor;
+    contentLab.font = [UIFont systemFontOfSize:14];
     contentLab.textAlignment = NSTextAlignmentCenter;
     [view addSubview:contentLab];
     
@@ -159,17 +149,14 @@ static dispatch_once_t onceToken;// 这个拿到函数体外,成为全局的.
         NSString *keysStr = [NSString stringWithFormat:@"%d",(int)score];
         AnswerModel *model = [AnswerModel mj_objectWithKeyValues:commentDic[keysStr]];
         contentLab.text = model.title;
-       UIView *tempView = [weakSelf createMultipleViewWithData:model.tag];
+        UIView *tempView = [weakSelf createMultipleViewWithData:model.tag];
         [view addSubview:tempView];
         tempView.top = contentLab.bottom+10;
         view.height = tempView.bottom+10;
-
     } ;
     view.height = contentLab.bottom+ (ViewH +BottomSpace)*2;
     return view;
 }
-
-
 
 #pragma mark - 创建多选
 /** 创建多选 */
@@ -201,7 +188,6 @@ static dispatch_once_t onceToken;// 这个拿到函数体外,成为全局的.
             index++;
         }
     }
-    
     return view;
 }
 
@@ -230,7 +216,6 @@ static dispatch_once_t onceToken;// 这个拿到函数体外,成为全局的.
     }];
 }
 
-
 - (void)hiddenView {
     __weak typeof(self) weakSelf = self;
     [UIView animateWithDuration:0.3 animations:^{
@@ -242,7 +227,7 @@ static dispatch_once_t onceToken;// 这个拿到函数体外,成为全局的.
     }];
 }
 
--(void)setDataSource:(id)dataSource {
+- (void)setDataSource:(id)dataSource {
     if (_dataSource!=dataSource) {
         _dataSource = dataSource;
     }
@@ -251,12 +236,10 @@ static dispatch_once_t onceToken;// 这个拿到函数体外,成为全局的.
 
 @end
 
-
 @implementation CommentDataModel
 
 @end
 
 @implementation AnswerModel
-
 
 @end
