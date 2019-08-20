@@ -127,9 +127,6 @@
     [self addGesture];
     
     [self initCommentView];
-    if ([self.videoItem.type isEqualToString:@"2"]) { //回放/直播
-        [self getLiveCommentInfo]; //获取直播评论信息
-    }
     
     //    [self.networkDetector networkcheck];
 }
@@ -139,8 +136,8 @@
     [self.view addSubview:_commentView];
     __weak typeof(self) weakSelf = self;
     _commentView.submitBlock = ^(NSDictionary * _Nonnull resultDic) {
-        NSDictionary *dic = @{@"product_id":self.videoItem.product_id,
-                              @"live_id":self.videoItem.live_id,
+        NSDictionary *dic = @{@"product_id":weakSelf.videoItem.product_id,
+                              @"live_id":weakSelf.videoItem.live_id,
                               @"star":resultDic[@"star"],
                               @"tag":resultDic[@"tag"]
                               };
@@ -148,11 +145,25 @@
             if (status == Request_Success) {
                 [Utils showToast:@"感谢您的评价！"];
                 [weakSelf.commentView hiddenView];
+                /** 欢拓自带退出方法 */
+                NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
+                [[UIDevice currentDevice] setValue:value forKey:@"orientation"];;
+                
+                [TalkfunCourseManagement setPlay:[weakSelf.playbackID  integerValue] progress:weakSelf.playDuration];
+                
+                [[NSNotificationCenter defaultCenter] removeObserver:weakSelf];
+                
+                [weakSelf.view.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+                if (weakSelf.isOrientationLandscape) {
+                    [UIApplication sharedApplication].statusBarOrientation = UIInterfaceOrientationPortrait;
+                }
+                [weakSelf.talkfunSDK destroy];
+                [weakSelf timerInvalidate];
+                QUITCONTROLLER(weakSelf)
             }
         }];
     };
 }
-
 
 #pragma mark - 直播评价
 
@@ -228,12 +239,8 @@
     }else if(self.access_token){
         [self configViewWithAccessToken:self.access_token];
     }
-    
-    
-    
     else
     {
-        
         //        [self configViewWithAccessToken:nil];
         
         WeakSelf
@@ -574,52 +581,40 @@
 #pragma mark - 按钮点击事件
 - (void)pptsButtonClicked:(UIButton *)button
 {
-    //    WeakSelf
     //返回按钮
     if (button == self.pptsFunctionView.backBtn) {
-        
-        
-        
-        //        [self.view alertStyle:UIAlertControllerStyleAlert title:@"提示" message:@"确定要退出吗" action:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        //            [weakSelf.view.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-        //            [weakSelf orientationPortrait];
-        //            [weakSelf.talkfunSDK destroy];
-        //            QUITCONTROLLER(weakSelf)
-        //        }]];
-        //        if (self.isOrientationLandscape) {
-        //            [self orientationPortrait];
-        //        }else{
-        HYAlertView *alertView = [[HYAlertView alloc] initWithTitle:@"提示" message:@"确定要退出吗" buttonTitles:@"取消", @"确定", nil];
-        self.alertView = alertView;
-        alertView.alertViewStyle = HYAlertViewStyleDefault;
-        
+        if ([self.videoItem.type isEqualToString:@"2"]
+            && self.playDuration>=30*60) { //回放/直播
+            [self getLiveCommentInfo]; //获取直播评论信息
+        } else {
+            HYAlertView *alertView = [[HYAlertView alloc] initWithTitle:@"提示" message:@"确定要退出吗" buttonTitles:@"取消", @"确定", nil];
+            self.alertView = alertView;
+            alertView.alertViewStyle = HYAlertViewStyleDefault;
+            
 #pragma mark - ---超职修改
-        //        alertView.isOrientationLandscape = self.isOrientationLandscape;
-        alertView.isOrientationLandscape = NO;
+            alertView.isOrientationLandscape = NO;
 #pragma mark - 超职修改---
-        
-        WeakSelf
-        [alertView showInView:self.view completion:^(HYAlertView *alertView, NSInteger selectIndex) {
-            //NSLog(@"点击了%d", (int)selectIndex);
-            if (selectIndex == 1) {
-                
-                NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
-                [[UIDevice currentDevice] setValue:value forKey:@"orientation"];;
-                
-                [TalkfunCourseManagement setPlay:[weakSelf.playbackID  integerValue] progress:weakSelf.playDuration];
-                
-                [[NSNotificationCenter defaultCenter] removeObserver:weakSelf];
-                
-                [weakSelf.view.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-                if (weakSelf.isOrientationLandscape) {
-                    [UIApplication sharedApplication].statusBarOrientation = UIInterfaceOrientationPortrait;
+            
+            WeakSelf
+            [alertView showInView:self.view completion:^(HYAlertView *alertView, NSInteger selectIndex) {
+                if (selectIndex == 1) {
+                    NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
+                    [[UIDevice currentDevice] setValue:value forKey:@"orientation"];;
+                    
+                    [TalkfunCourseManagement setPlay:[weakSelf.playbackID  integerValue] progress:weakSelf.playDuration];
+                    
+                    [[NSNotificationCenter defaultCenter] removeObserver:weakSelf];
+                    
+                    [weakSelf.view.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+                    if (weakSelf.isOrientationLandscape) {
+                        [UIApplication sharedApplication].statusBarOrientation = UIInterfaceOrientationPortrait;
+                    }
+                    [weakSelf.talkfunSDK destroy];
+                    [weakSelf timerInvalidate];
+                    QUITCONTROLLER(weakSelf)
                 }
-                [weakSelf.talkfunSDK destroy];
-                [weakSelf timerInvalidate];
-                QUITCONTROLLER(weakSelf)
-            }
-        }];
-        //        }
+            }];
+        }
     }
     //全屏按钮
     else if (button == self.pptsFunctionView.fullScreenBtn){

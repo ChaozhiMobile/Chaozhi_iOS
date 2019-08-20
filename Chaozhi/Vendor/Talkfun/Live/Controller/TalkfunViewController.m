@@ -265,9 +265,6 @@
     [self.view bringSubviewToFront:self.onlineLabel];
     
     [self initCommentView];
-    if ([self.videoItem.type isEqualToString:@"2"]) { //回放/直播
-        [self getLiveCommentInfo]; //获取直播评论信息
-    }
 }
 
 - (void)initCommentView {
@@ -275,8 +272,8 @@
     [self.view addSubview:_commentView];
     __weak typeof(self) weakSelf = self;
     _commentView.submitBlock = ^(NSDictionary * _Nonnull resultDic) {
-        NSDictionary *dic = @{@"product_id":self.videoItem.product_id,
-                              @"live_id":self.videoItem.live_id,
+        NSDictionary *dic = @{@"product_id":weakSelf.videoItem.product_id,
+                              @"live_id":weakSelf.videoItem.live_id,
                               @"star":resultDic[@"star"],
                               @"tag":resultDic[@"tag"]
                               };
@@ -284,6 +281,7 @@
             if (status == Request_Success) {
                 [Utils showToast:@"感谢您的评价！"];
                 [weakSelf.commentView hiddenView];
+                [weakSelf quit];
             }
         }];
     };
@@ -2446,18 +2444,19 @@ static CGRect originPPTFrame;
 #pragma mark - alertView delegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     
-    if (alertView == _forceoutAlertView){
+    if (alertView == _forceoutAlertView){ //被迫下线
         if (buttonIndex == 1) {
             [self refresh];
         }else if (buttonIndex == 0){
             [self quit];
         }
-    }else if (alertView == _kickoutAlertView){
+    }else if (alertView == _kickoutAlertView){ //被提出房间
         if (buttonIndex == 0) {
             [self quit];
         }
     }
 }
+
 - (void)quit{
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.view.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
@@ -2466,8 +2465,7 @@ static CGRect originPPTFrame;
     if (self.isOrientationLandscape) {
         [UIApplication sharedApplication].statusBarOrientation = UIInterfaceOrientationPortrait;
     }
-    
-    
+
     [self timerInvalidate];
     [self.talkfunSDK destroy];
     
@@ -2691,32 +2689,29 @@ static CGRect originPPTFrame;
     return _longTextfieldView;
 }
 
-- (HYAlertView*)alertContent:(NSString*)content
-{
-    
-    
+- (HYAlertView*)alertContent:(NSString*)content {
     HYAlertView *alert = [[HYAlertView alloc]init];
     [alert presentViewController:self content:content  actionWithTitle:@"确定"];
     return alert;
 }
-- (void)pptsFunctionButtonClicked:(UIButton *)btn{
+
+- (void)pptsFunctionButtonClicked:(UIButton *)btn {
     NSLog(@"____click %ld____",(long)btn.tag);
     //返回按钮
     if (btn.tag == returnButton) {
-        WeakSelf
-        HYAlertView *alert =  [self alertContent: @"确定要退出直播间吗"  ];
-        alert.clickEventBlock =^(NSString *title){
-            
-            if ([title isEqualToString:@"确定"])
-            {
-                [weakSelf quit];
+        if ([self.videoItem.type isEqualToString:@"2"]
+            && self.liveTime>=30*60) { //回放/直播
+            [self getLiveCommentInfo]; //获取直播评论信息
+        } else {
+            WeakSelf
+            HYAlertView *alert =  [self alertContent: @"确定要退出直播间吗"];
+            alert.clickEventBlock =^(NSString *title){
                 
-            }
-            
-        };
-        
-        
-        
+                if ([title isEqualToString:@"确定"]) {
+                    [weakSelf quit];
+                }
+            };
+        }
     }
     //隐藏camera按钮
     else if (btn.tag == hiddenCameraButton){
@@ -2756,10 +2751,7 @@ static CGRect originPPTFrame;
         }
         [self.talkfunSDK exchangePPTAndCameraContainer];
         
-        
         [self updateChrysanthemum];
-        
-        
     }
     //刷新
     else if (btn.tag == refreshButton){
@@ -2771,9 +2763,7 @@ static CGRect originPPTFrame;
             [self.view toast:@"直播未开始" position:ToastPosition];
             return;
         }
-        
-        
-        
+    
         WeakSelf
         [self.talkfunSDK getNetworkList:^(id result) {
             
@@ -2986,9 +2976,9 @@ static BOOL fromLandscape = NO;
         [self setWordsAllowed];
     }
 }
+
 - (UIAlertView *)quitAlertView{
     if (!_quitAlertView) {
-        
         _quitAlertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"确定要退出吗" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
     }
     return _quitAlertView;
@@ -3173,6 +3163,7 @@ static BOOL fromLandscape = NO;
     }
     return _forceoutAlertView;
 }
+
 //被踢出房间
 - (UIAlertView *)kickoutAlertView{
     if (!_kickoutAlertView) {
@@ -3180,6 +3171,7 @@ static BOOL fromLandscape = NO;
     }
     return _kickoutAlertView;
 }
+
 //MARK:弹幕
 - (BulletView *)barrageRender{
     if (!_barrageRender) {
@@ -3189,6 +3181,7 @@ static BOOL fromLandscape = NO;
     }
     return _barrageRender;
 }
+
 //MARK:网络较差提示
 - (UIImageView *)networkTipsImageView{
     if (!_networkTipsImageView) {
@@ -3212,6 +3205,7 @@ static BOOL fromLandscape = NO;
     }
     return _networkTipsImageView;
 }
+
 - (void)networkTipsTap:(UITapGestureRecognizer *)tapGR{
     [UIView animateWithDuration:0.25 animations:^{
         self.networkTipsImageView.alpha = 0.0;
@@ -3219,10 +3213,12 @@ static BOOL fromLandscape = NO;
         [self removeNetworkTipsView];
     }];
 }
+
 - (void)removeNetworkTipsView{
     [_networkTipsImageView removeFromSuperview];
     _networkTipsImageView = nil;
 }
+
 - (void)removeReplyTipsView{
     [_replyTipsView removeFromSuperview];
     _replyTipsView = nil;
