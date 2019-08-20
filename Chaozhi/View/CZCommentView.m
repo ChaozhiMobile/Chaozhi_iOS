@@ -10,6 +10,13 @@
 #import "CZStarView.h"
 #import "XLGCustomButton.h"
 
+#define MyAuto(width) (float)width / 375 * (MIN(WIDTH, HEIGHT))
+#define ViewH (float)MyAuto(44)
+#define LeftSpace (float)MyAuto(30)
+#define ViewSpace (float)MyAuto(20)
+#define TopSpace (float)MyAuto(30)
+#define BottomSpace (float)MyAuto(10)
+
 @interface CZCommentView()
 {
     UILabel *_titleLab;
@@ -25,6 +32,8 @@
 @property (nonatomic,retain) UIView *bgWhiteView;
 /** <#object#> */
 @property (nonatomic,retain) UIView *shadowView;
+/** <#object#> */
+@property (nonatomic,retain) UIView *refreshView;
 @end
 
 CZCommentView *singleton;
@@ -56,6 +65,17 @@ static dispatch_once_t onceToken;// 这个拿到函数体外,成为全局的.
     singleButtonDic = [NSMutableDictionary dictionary];
 }
 
+- (void)changeOrientation:(BOOL)isPortrait {
+    self.frame =  CGRectMake(0, 0, WIDTH, HEIGHT);
+    _shadowView.frame = self.bounds;
+    _bgWhiteView.frame = CGRectMake(0, HEIGHT-MyAuto(320), self.width, MyAuto(320));
+    _titleLab.frame = CGRectMake(0, 0, self.width, MyAuto(50));
+    _bgScrollView.frame = CGRectMake(0, _titleLab.bottom, self.width, MyAuto(200));
+    _closeBtn.frame = CGRectMake(0, 0, MyAuto(40), MyAuto(50));
+    submitBtn.frame = CGRectMake(12, _bgScrollView.bottom+BottomSpace, self.width-24, ViewH);
+    [self reloadData];
+}
+
 - (void)refreshUI {
     self.hidden = YES;
     self.layer.zPosition = 2000;
@@ -64,33 +84,35 @@ static dispatch_once_t onceToken;// 这个拿到函数体外,成为全局的.
     _shadowView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.7];
     [self addSubview:_shadowView];
     
-    _bgWhiteView = [[UIView alloc]initWithFrame:CGRectMake(0, HEIGHT-autoScaleW(250), self.width, HEIGHT/3*2)];
+    
+    _bgWhiteView = [[UIView alloc]initWithFrame:CGRectMake(0, HEIGHT-MyAuto(400), self.width, MyAuto(400))];
     _bgWhiteView.backgroundColor = [UIColor whiteColor];
     [self addSubview:_bgWhiteView];
     
-    _titleLab = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.width, autoScaleW(50))];
+    
+    _titleLab = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.width, MyAuto(50))];
     _titleLab.text = @"评价";
     _titleLab.font = [UIFont systemFontOfSize:17 weight:UIFontWeightMedium];
     _titleLab.textAlignment = NSTextAlignmentCenter;
     [_titleLab sizeToFit];
     _titleLab.centerX = _bgWhiteView.width/2.0;
-    _titleLab.height = autoScaleW(50);
+    _titleLab.height = MyAuto(50);
     _titleLab.top = 0;
     [_bgWhiteView addSubview:_titleLab];
     
-    _bgScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, _titleLab.bottom, self.width, autoScaleW(200))];
+    _bgScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, _titleLab.bottom, self.width, MyAuto(200))];
     _bgScrollView.backgroundColor = kWhiteColor;
     [_bgWhiteView addSubview:_bgScrollView];
     [self reloadData];
     
-    _closeBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, autoScaleW(40), autoScaleW(50))];
+    _closeBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, MyAuto(40), MyAuto(50))];
     [_closeBtn addTarget:self action:@selector(hiddenView) forControlEvents:UIControlEventTouchUpInside];
     [_closeBtn setImage:[UIImage imageNamed:@"evaluate_icon_close"] forState:UIControlStateNormal];
     _closeBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     _closeBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 10);
     [_bgWhiteView addSubview:_closeBtn];
     
-    submitBtn = [[UIButton alloc]initWithFrame:CGRectMake(12, _bgScrollView.bottom+TopSpace, self.width-24, ViewH)];
+    submitBtn = [[UIButton alloc]initWithFrame:CGRectMake(12, _bgScrollView.bottom+BottomSpace, self.width-24, ViewH)];
     [submitBtn setTitle:@"提交评价并退出直播" forState:UIControlStateNormal];
     submitBtn.titleLabel.font = [UIFont systemFontOfSize:17];
     submitBtn.cornerRadius = ViewH/2.0;
@@ -98,16 +120,14 @@ static dispatch_once_t onceToken;// 这个拿到函数体外,成为全局的.
     submitBtn.layer.masksToBounds = YES;
     [submitBtn addTarget:self action:@selector(submitDataAction) forControlEvents:UIControlEventTouchUpInside];
     [_bgWhiteView addSubview:submitBtn];
-    
-    _viewHeight = autoScaleW(400);
+    _viewHeight = MyAuto(320);
 }
 
 - (void)reloadData {
     [_bgScrollView.subviews  makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    UIView *view =  [self createStarView:_dataSource];
-    view.top = 0;
-    [_bgScrollView addSubview:view];
-}
+    _refreshView =  [self createStarView:_dataSource];
+    [_bgScrollView addSubview:_refreshView];
+    _refreshView.top = 0;}
 
 #pragma mark - 提交数据
 /** 提交数据 */
@@ -127,12 +147,12 @@ static dispatch_once_t onceToken;// 这个拿到函数体外,成为全局的.
 #pragma mark - 创建带有星星的评价
 /** 创建带有星星的评价 */
 - (UIView *)createStarView:(id )data {
-    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, _bgScrollView.width, autoScaleW(60))];
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, _bgScrollView.width, MyAuto(60))];
     
-    CZStarView *starView = [[CZStarView alloc] initWithFrame1:CGRectMake((WIDTH-autoScaleW(280))/2.0, autoScaleW(5), autoScaleW(280), autoScaleW(40))];
+    CZStarView *starView = [[CZStarView alloc] initWithFrame1:CGRectMake((WIDTH-MyAuto(280))/2.0, MyAuto(5), MyAuto(280), MyAuto(40))];
     [view addSubview:starView];
     
-    UILabel *contentLab = [[UILabel alloc]initWithFrame:CGRectMake(starView.left, starView.bottom+autoScaleW(10),starView.width, autoScaleW(20))];
+    UILabel *contentLab = [[UILabel alloc]initWithFrame:CGRectMake(starView.left, starView.bottom+MyAuto(10),starView.width, MyAuto(20))];
     contentLab.text = @"";
     contentLab.textColor = AppThemeColor;
     contentLab.font = [UIFont systemFontOfSize:14];
@@ -177,7 +197,7 @@ static dispatch_once_t onceToken;// 这个拿到函数体外,成为全局的.
         [vv removeFromSuperview];
     }
     [tagArr removeAllObjects];
-    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, _bgScrollView.width, autoScaleW(100))];
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, _bgScrollView.width, MyAuto(100))];
     view.tag = 9999;
     NSInteger lineCount = data.count%2==0?data.count/2:(data.count/2+1);
     NSInteger index = 0;
@@ -216,9 +236,6 @@ static dispatch_once_t onceToken;// 这个拿到函数体外,成为全局的.
     _bgWhiteView.top = HEIGHT;
     _shadowView.alpha = 0.0;
     self.alpha = 1.0;
-    if (self.viewHeight>autoScaleW(250)) {
-        self.bgScrollView.scrollEnabled = YES;
-    }
     __weak typeof(self) weakSelf = self;
     [UIView animateWithDuration:0.3 animations:^{
         weakSelf.bgWhiteView.top = HEIGHT-weakSelf.viewHeight;

@@ -8,11 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#define LeftSpace 30
-#define ViewSpace 20
-#define TopSpace 30
-#define BottomSpace 10
-#define ViewH autoScaleW(44)
+
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -45,6 +41,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)showView;
 - (void)hiddenView;
+
+- (void)changeOrientation:(BOOL)isPortrait;
 
 + (CZCommentView *)sharedInstance;
 

@@ -97,6 +97,9 @@
 @property(nonatomic,strong)NSMutableArray*playbackChat;//所有聊天数据
 @property(nonatomic,assign)NSInteger direction ;//5//还同记录方向
 @property (nonatomic,assign) int  origin;//触屏原点
+
+/** 评价视图 */
+@property (nonatomic,retain) CZCommentView *commentView;
 @end
 
 @implementation TalkfunPlaybackViewController
@@ -123,6 +126,7 @@
     [self registerEventListener];
     [self addGesture];
     
+    [self initCommentView];
     if ([self.videoItem.type isEqualToString:@"2"]) { //回放/直播
         [self getLiveCommentInfo]; //获取直播评论信息
     }
@@ -130,33 +134,38 @@
     //    [self.networkDetector networkcheck];
 }
 
+- (void)initCommentView {
+    _commentView = [[CZCommentView alloc] initWithFrame:CGRectZero];;
+    [self.view addSubview:_commentView];
+    __weak typeof(self) weakSelf = self;
+    _commentView.submitBlock = ^(NSDictionary * _Nonnull resultDic) {
+        NSDictionary *dic = @{@"product_id":self.videoItem.product_id,
+                              @"live_id":self.videoItem.live_id,
+                              @"star":resultDic[@"star"],
+                              @"tag":resultDic[@"tag"]
+                              };
+        [[NetworkManager sharedManager] postJSON:URL_LiveReview parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+            if (status == Request_Success) {
+                [Utils showToast:@"感谢您的评价！"];
+                [weakSelf.commentView hiddenView];
+            }
+        }];
+    };
+}
+
+
 #pragma mark - 直播评价
 
 /** 获取直播评论信息 */
 - (void)getLiveCommentInfo {
+    __weak typeof(self) weakSelf = self;
     NSDictionary *dic = @{@"product_id":self.videoItem.product_id,@"live_id":self.videoItem.live_id};
     [[NetworkManager sharedManager] postJSON:URL_LiveReviewInfo parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         if (status == Request_Success) {
-            CZCommentView *view = [[CZCommentView alloc] initWithFrame:CGRectZero];;
-            [self.view addSubview:view];
             if ([responseData isKindOfClass:[NSDictionary class]]) {
                 if ([[responseData valueForKey:@"is_review"] integerValue] == 0) {
-                    view.dataSource = responseData;
-                    [view showView];
-                    __weak typeof(view) weakView = view;
-                    view.submitBlock = ^(NSDictionary * _Nonnull resultDic) {
-                        NSDictionary *dic = @{@"product_id":self.videoItem.product_id,
-                                              @"live_id":self.videoItem.live_id,
-                                              @"star":resultDic[@"star"],
-                                              @"tag":resultDic[@"tag"]
-                                              };
-                        [[NetworkManager sharedManager] postJSON:URL_LiveReview parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
-                            if (status == Request_Success) {
-                                [Utils showToast:@"感谢您的评价！"];
-                                [weakView hiddenView];
-                            }
-                        }];
-                    };
+                    weakSelf.commentView.dataSource = responseData;
+                    [weakSelf.commentView showView];
                 }
             }
         }
@@ -515,9 +524,9 @@
     //=================== SDK发出的错误 ==================
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(errorNotification:) name:TalkfunErrorNotification object:nil];
     
-    if (IsIPAD) {
+//    if (IsIPAD) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationChanged:) name:UIDeviceOrientationDidChangeNotification object:nil];
-    }
+//    }
 }
 
 - (void)errorNotification:(NSNotification *)notification{
@@ -883,7 +892,7 @@ static BOOL fromLandscape = NO;
     if (self.pptsFunctionView.fullScreenBtn.selected) {
         return;
     }
-    //NSLog(@"oooo:%ld",[UIDevice currentDevice].orientation);
+    [_commentView changeOrientation:WIDTH<HEIGHT];
     if ([UIDevice currentDevice].orientation == 3 && !self.isOrientationLandscape) {
         [self.view endEditing:YES];
         [self orientationLandscape];
