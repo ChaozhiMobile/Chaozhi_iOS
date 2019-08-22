@@ -73,6 +73,8 @@
 
 /** 评价视图 */
 @property (nonatomic,retain) CZCommentView *commentView;
+/** 是否评价 YES已评价 */
+@property (nonatomic,assign) BOOL is_review;
 /** 直播时长 */
 @property (nonatomic,assign) NSInteger liveTime;
 
@@ -266,6 +268,7 @@
     
     if ([AppChannel isEqualToString:@"1"]) { //超职
         [self initCommentView];
+        [self getLiveCommentInfo]; //获取直播评论信息
     }
 }
 
@@ -299,8 +302,10 @@
         if (status == Request_Success) {
             if ([responseData isKindOfClass:[NSDictionary class]]) {
                 if ([[responseData valueForKey:@"is_review"] integerValue] == 0) {
+                    weakSelf.is_review = NO;
                     weakSelf.commentView.dataSource = responseData;
-                    [weakSelf.commentView showView];
+                } else {
+                    weakSelf.is_review = YES;
                 }
             }
         }
@@ -364,8 +369,6 @@
     }
     else
     {
-        
-        
         WeakSelf
         [self.view toast:@"token不能为空" position:ToastPosition];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -2697,9 +2700,10 @@ static CGRect originPPTFrame;
     //返回按钮
     if (btn.tag == returnButton) {
         if ([AppChannel isEqualToString:@"1"]
+            && self.is_review == NO
             && [self.videoItem.type isEqualToString:@"2"]
             && self.liveTime>=30*60) { //超职、回放/直播
-            [self getLiveCommentInfo]; //获取直播评论信息
+            [self.commentView showView];
         } else {
             WeakSelf
             HYAlertView *alert =  [self alertContent: @"确定要退出直播间吗"];

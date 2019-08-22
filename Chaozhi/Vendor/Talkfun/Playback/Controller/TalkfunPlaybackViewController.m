@@ -100,6 +100,9 @@
 
 /** 评价视图 */
 @property (nonatomic,retain) CZCommentView *commentView;
+/** 是否评价 YES已评价 */
+@property (nonatomic,assign) BOOL is_review;
+
 @end
 
 @implementation TalkfunPlaybackViewController
@@ -128,6 +131,7 @@
     
     if ([AppChannel isEqualToString:@"1"]) { //超职
         [self initCommentView];
+        [self getLiveCommentInfo]; //获取直播评论信息
     }
     
     //    [self.networkDetector networkcheck];
@@ -177,8 +181,10 @@
         if (status == Request_Success) {
             if ([responseData isKindOfClass:[NSDictionary class]]) {
                 if ([[responseData valueForKey:@"is_review"] integerValue] == 0) {
+                    weakSelf.is_review = NO;
                     weakSelf.commentView.dataSource = responseData;
-                    [weakSelf.commentView showView];
+                } else {
+                    weakSelf.is_review = YES;
                 }
             }
         }
@@ -586,9 +592,10 @@
     //返回按钮
     if (button == self.pptsFunctionView.backBtn) {
         if ([AppChannel isEqualToString:@"1"]
+            && self.is_review == NO
             && [self.videoItem.type isEqualToString:@"2"]
             && self.playDuration>=30*60) { //超职、回放/直播
-            [self getLiveCommentInfo]; //获取直播评论信息
+            [self.commentView showView];
         } else {
             HYAlertView *alertView = [[HYAlertView alloc] initWithTitle:@"提示" message:@"确定要退出吗" buttonTitles:@"取消", @"确定", nil];
             self.alertView = alertView;
