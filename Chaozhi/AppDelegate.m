@@ -25,8 +25,9 @@
     
     [[DBManager shareManager] createDBAndTable];
     
+    [self iapCheck]; //内购凭证服务器二次校验，防止漏单
+    
     if ([AppChannel isEqualToString:@"1"]) { //超职
-        [self iapCheck]; //内购凭证服务器二次校验，防止漏单
         [self registerUMeng]; //注册友盟
     }
 

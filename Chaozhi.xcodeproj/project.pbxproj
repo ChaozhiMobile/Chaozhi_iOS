@@ -43,7 +43,6 @@
 		A00FA9DF2169DCDC00F4DA5B /* CZSelectCourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9DE2169DCDC00F4DA5B /* CZSelectCourseCell.m */; };
 		A00FA9E1216A09EA00F4DA5B /* MyStudyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00FA9E0216A09EA00F4DA5B /* MyStudyView.xib */; };
 		A010DC6121D6003E007EBA2C /* PurchaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A010DC6021D6003E007EBA2C /* PurchaseItem.m */; };
-		A01CCCB8229D71EE00A8408B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01CCCB7229D71EE00A8408B /* StoreKit.framework */; };
 		A01E1E5122223F8800435A0E /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01E1E5022223F8800435A0E /* UserNotifications.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A01F607322CB895F001133C4 /* DownloadListController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F606A22CB895F001133C4 /* DownloadListController.m */; };
 		A01F607422CB8960001133C4 /* DownloadListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F606D22CB895F001133C4 /* DownloadListModel.m */; };
@@ -329,7 +328,6 @@
 		A045513122EC8DFA00E17406 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D37022C2284800560A74 /* libsqlite3.tbd */; };
 		A045513222EC8DFA00E17406 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D36822C2280E00560A74 /* libsqlite3.0.tbd */; };
 		A045513322EC8DFA00E17406 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01E1E5022223F8800435A0E /* UserNotifications.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		A045513422EC8DFA00E17406 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01CCCB7229D71EE00A8408B /* StoreKit.framework */; };
 		A045513522EC8DFA00E17406 /* Pods_Chaozhi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3429E05D3D88CA2DC3F14BB0 /* Pods_Chaozhi.framework */; };
 		A045513622EC8DFA00E17406 /* Pods_Chaozhi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3429E05D3D88CA2DC3F14BB0 /* Pods_Chaozhi.framework */; };
 		A045513822EC8DFA00E17406 /* TalkfunTextfieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07F122C4BC7C001832EA /* TalkfunTextfieldView.xib */; };
@@ -843,6 +841,8 @@
 		A0E0D3CC22D0E3A100296851 /* TalkfunMultifunctionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E0D3C922D0E3A100296851 /* TalkfunMultifunctionTool.m */; };
 		A0E0D3CD22D0E3A100296851 /* TalkfunMultifunctionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E0D3CA22D0E3A100296851 /* TalkfunMultifunctionButton.m */; };
 		A0E0D3D022D2299800296851 /* protocol.css in Resources */ = {isa = PBXBuildFile; fileRef = A0E0D3CF22D2299800296851 /* protocol.css */; };
+		A0E50819230ED54C005EF897 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E50818230ED54C005EF897 /* StoreKit.framework */; };
+		A0E5081A230ED762005EF897 /* CZCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20ABB12D230A7A9600DDC86F /* CZCommentView.m */; };
 		A0E8981D22CF22C600DB09BA /* VideoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E8981B22CF22C600DB09BA /* VideoItem.m */; };
 		A0E8982122CF265800DB09BA /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E8982022CF265800DB09BA /* DBManager.m */; };
 		C0E8EB6B016115D195593C73 /* Pods_Chaozhi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3429E05D3D88CA2DC3F14BB0 /* Pods_Chaozhi.framework */; };
@@ -900,7 +900,6 @@
 		A00FA9E0216A09EA00F4DA5B /* MyStudyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyStudyView.xib; sourceTree = "<group>"; };
 		A010DC5F21D6003E007EBA2C /* PurchaseItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PurchaseItem.h; sourceTree = "<group>"; };
 		A010DC6021D6003E007EBA2C /* PurchaseItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurchaseItem.m; sourceTree = "<group>"; };
-		A01CCCB7229D71EE00A8408B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A01E1E5022223F8800435A0E /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		A01F606A22CB895F001133C4 /* DownloadListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadListController.m; sourceTree = "<group>"; };
 		A01F606B22CB895F001133C4 /* DownloadListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadListController.h; sourceTree = "<group>"; };
@@ -1484,6 +1483,7 @@
 		A0E0D3CA22D0E3A100296851 /* TalkfunMultifunctionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunMultifunctionButton.m; sourceTree = "<group>"; };
 		A0E0D3CB22D0E3A100296851 /* TalkfunMultifunctionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunMultifunctionTool.h; sourceTree = "<group>"; };
 		A0E0D3CF22D2299800296851 /* protocol.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = protocol.css; sourceTree = "<group>"; };
+		A0E50818230ED54C005EF897 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A0E8981B22CF22C600DB09BA /* VideoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoItem.m; sourceTree = "<group>"; };
 		A0E8981C22CF22C600DB09BA /* VideoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoItem.h; sourceTree = "<group>"; };
 		A0E8981F22CF265800DB09BA /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
@@ -1514,7 +1514,6 @@
 				20D3D37122C2284800560A74 /* libsqlite3.tbd in Frameworks */,
 				20D3D36922C2280E00560A74 /* libsqlite3.0.tbd in Frameworks */,
 				A01E1E5122223F8800435A0E /* UserNotifications.framework in Frameworks */,
-				A01CCCB8229D71EE00A8408B /* StoreKit.framework in Frameworks */,
 				85401F932D5D75079941DDCE /* Pods_Chaozhi.framework in Frameworks */,
 				C0E8EB6B016115D195593C73 /* Pods_Chaozhi.framework in Frameworks */,
 			);
@@ -1543,9 +1542,9 @@
 				A045513122EC8DFA00E17406 /* libsqlite3.tbd in Frameworks */,
 				A045513222EC8DFA00E17406 /* libsqlite3.0.tbd in Frameworks */,
 				A045513322EC8DFA00E17406 /* UserNotifications.framework in Frameworks */,
-				A045513422EC8DFA00E17406 /* StoreKit.framework in Frameworks */,
 				A045513522EC8DFA00E17406 /* Pods_Chaozhi.framework in Frameworks */,
 				A045513622EC8DFA00E17406 /* Pods_Chaozhi.framework in Frameworks */,
+				A0E50819230ED54C005EF897 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2995,6 +2994,7 @@
 		CA884E04D0E50DD4B279DF5D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A0E50818230ED54C005EF897 /* StoreKit.framework */,
 				20572FDF22C36F8F00568CDC /* SocketIO.framework */,
 				20572EE522C36C3600568CDC /* Foundation.framework */,
 				20D3D3B922C22E2000560A74 /* SystemConfiguration.framework */,
@@ -3013,7 +3013,6 @@
 				20D3D37222C228CB00560A74 /* Security.framework */,
 				20D3D36A22C2281C00560A74 /* Accelerate.framework */,
 				20D3D36822C2280E00560A74 /* libsqlite3.0.tbd */,
-				A01CCCB7229D71EE00A8408B /* StoreKit.framework */,
 				A01E1E5022223F8800435A0E /* UserNotifications.framework */,
 				A020B07B214AAD600011BB4F /* libresolv.tbd */,
 				3429E05D3D88CA2DC3F14BB0 /* Pods_Chaozhi.framework */,
@@ -3089,6 +3088,9 @@
 					A045507022EC8DFA00E17406 = {
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
 								enabled = 1;
 							};
 							com.apple.Push = {
@@ -3826,6 +3828,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0E5081A230ED762005EF897 /* CZCommentView.m in Sources */,
 				A045507322EC8DFA00E17406 /* XLGInternalDemoVC.m in Sources */,
 				A045507422EC8DFA00E17406 /* TalkfunSignViewController.m in Sources */,
 				A045507522EC8DFA00E17406 /* Config.m in Sources */,

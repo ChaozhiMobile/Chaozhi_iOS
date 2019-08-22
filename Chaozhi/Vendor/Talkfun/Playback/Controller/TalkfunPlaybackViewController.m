@@ -126,7 +126,9 @@
     [self registerEventListener];
     [self addGesture];
     
-    [self initCommentView];
+    if ([AppChannel isEqualToString:@"1"]) { //超职
+        [self initCommentView];
+    }
     
     //    [self.networkDetector networkcheck];
 }
@@ -583,8 +585,9 @@
 {
     //返回按钮
     if (button == self.pptsFunctionView.backBtn) {
-        if ([self.videoItem.type isEqualToString:@"2"]
-            && self.playDuration>=30*60) { //回放/直播
+        if ([AppChannel isEqualToString:@"1"]
+            && [self.videoItem.type isEqualToString:@"2"]
+            && self.playDuration>=30*60) { //超职、回放/直播
             [self getLiveCommentInfo]; //获取直播评论信息
         } else {
             HYAlertView *alertView = [[HYAlertView alloc] initWithTitle:@"提示" message:@"确定要退出吗" buttonTitles:@"取消", @"确定", nil];

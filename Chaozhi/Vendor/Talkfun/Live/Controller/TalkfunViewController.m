@@ -264,7 +264,9 @@
     self.onlineLabel.userInteractionEnabled = YES;
     [self.view bringSubviewToFront:self.onlineLabel];
     
-    [self initCommentView];
+    if ([AppChannel isEqualToString:@"1"]) { //超职
+        [self initCommentView];
+    }
 }
 
 - (void)initCommentView {
@@ -422,11 +424,6 @@
     
     //3.把ppt容器给SDK（要显示摄像头区域的必须部分）
     [self.talkfunSDK configureCameraContainerView:self.cameraView];
-    
-    
-    
-    
-    
 }
 
 - (void)createUI{
@@ -2699,8 +2696,9 @@ static CGRect originPPTFrame;
     NSLog(@"____click %ld____",(long)btn.tag);
     //返回按钮
     if (btn.tag == returnButton) {
-        if ([self.videoItem.type isEqualToString:@"2"]
-            && self.liveTime>=30*60) { //回放/直播
+        if ([AppChannel isEqualToString:@"1"]
+            && [self.videoItem.type isEqualToString:@"2"]
+            && self.liveTime>=30*60) { //超职、回放/直播
             [self getLiveCommentInfo]; //获取直播评论信息
         } else {
             WeakSelf
