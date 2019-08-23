@@ -839,6 +839,7 @@ static BOOL fromLandscape = NO;
     self.pptsFunctionView.fullScreenBtn.selected = fullScreen;
     [self.pptsFunctionView.fullScreenBtn setImage:[UIImage imageNamed:fullScreen?@"退出全屏":@"全屏"] forState:UIControlStateNormal];
 }
+
 - (void)fullScreen{
     [self.view endEditing:YES];
     if ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait) {
@@ -892,7 +893,7 @@ static BOOL fromLandscape = NO;
         return;
     }
     [self.view endEditing:YES];
-    [_commentView changeOrientation:YES];
+    [_commentView changeLayout];
     if ([UIDevice currentDevice].orientation == 3 && !self.isOrientationLandscape) {
         [self orientationLandscape];
     }else if ([UIDevice currentDevice].orientation==1 && self.isOrientationLandscape){

@@ -42,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)showView;
 - (void)hiddenView;
 
-- (void)changeOrientation:(BOOL)isPortrait;
+- (void)changeLayout;
 
 + (CZCommentView *)sharedInstance;
 

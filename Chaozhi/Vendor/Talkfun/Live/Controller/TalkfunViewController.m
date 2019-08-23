@@ -1209,7 +1209,7 @@ static dispatch_once_t onceToken;
     [self expressionsViewShow:NO];
     [self.view endEditing:YES];
     
-    [_commentView changeOrientation:YES];
+    [_commentView changeLayout];
     
     if ([UIDevice currentDevice].orientation == 3 && !self.isOrientationLandscape) {
         [self orientationLandscape];
@@ -1220,7 +1220,7 @@ static dispatch_once_t onceToken;
 
 - (void)orientationPortrait:(BOOL)portrait
 {
-    [_commentView changeOrientation:portrait];
+    [_commentView changeLayout];
     
     self.isOrientationLandscape = !portrait;
     //ppt
