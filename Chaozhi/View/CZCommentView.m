@@ -66,14 +66,26 @@ static dispatch_once_t onceToken;// 这个拿到函数体外,成为全局的.
 }
 
 - (void)changeOrientation:(BOOL)isPortrait {
-    self.frame =  CGRectMake(0, 0, WIDTH, HEIGHT);
-    _shadowView.frame = self.bounds;
-    _bgWhiteView.frame = CGRectMake(0, HEIGHT-MyAuto(320), self.width, MyAuto(320));
-    _titleLab.frame = CGRectMake(0, 0, self.width, MyAuto(50));
-    _bgScrollView.frame = CGRectMake(0, _titleLab.bottom, self.width, MyAuto(200));
-    _closeBtn.frame = CGRectMake(0, 0, MyAuto(40), MyAuto(50));
-    submitBtn.frame = CGRectMake(12, _bgScrollView.bottom+BottomSpace, self.width-24, ViewH);
-    [self reloadData];
+    
+    if (isPortrait == YES) {
+        self.frame =  CGRectMake(0, 0, WIDTH, HEIGHT);
+        _shadowView.frame = self.bounds;
+        _bgWhiteView.frame = CGRectMake(0, HEIGHT-MyAuto(320), self.width, MyAuto(320));
+        _titleLab.frame = CGRectMake(0, 0, self.width, MyAuto(50));
+        _bgScrollView.frame = CGRectMake(0, _titleLab.bottom, self.width, MyAuto(200));
+        _closeBtn.frame = CGRectMake(0, 0, MyAuto(40), MyAuto(50));
+        submitBtn.frame = CGRectMake(12, _bgScrollView.bottom+BottomSpace, self.width-24, ViewH);
+        [self reloadData];
+    } else {
+        self.frame =  CGRectMake(0, 0, WIDTH, HEIGHT);
+        _shadowView.frame = self.bounds;
+        _bgWhiteView.frame = CGRectMake(0, HEIGHT-MyAuto(320), self.width, MyAuto(320));
+        _titleLab.frame = CGRectMake(0, 0, self.width, MyAuto(50));
+        _bgScrollView.frame = CGRectMake(0, _titleLab.bottom, self.width, MyAuto(200));
+        _closeBtn.frame = CGRectMake(0, 0, MyAuto(40), MyAuto(50));
+        submitBtn.frame = CGRectMake(12, _bgScrollView.bottom+BottomSpace, self.width-24, ViewH);
+        [self reloadData];
+    }
 }
 
 - (void)refreshUI {
@@ -84,11 +96,9 @@ static dispatch_once_t onceToken;// 这个拿到函数体外,成为全局的.
     _shadowView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.7];
     [self addSubview:_shadowView];
     
-    
     _bgWhiteView = [[UIView alloc]initWithFrame:CGRectMake(0, HEIGHT-MyAuto(400), self.width, MyAuto(400))];
     _bgWhiteView.backgroundColor = [UIColor whiteColor];
     [self addSubview:_bgWhiteView];
-    
     
     _titleLab = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.width, MyAuto(50))];
     _titleLab.text = @"评价";

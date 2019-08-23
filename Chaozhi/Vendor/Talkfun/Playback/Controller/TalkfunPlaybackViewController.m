@@ -544,31 +544,25 @@
 //    }
 }
 
-- (void)errorNotification:(NSNotification *)notification{
-    
+- (void)errorNotification:(NSNotification *)notification {
     NSDictionary * userInfo = notification.userInfo;
     dispatch_async(dispatch_get_main_queue(), ^{
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"温馨提示" message:[NSString stringWithFormat:@"%@",[self dictionaryToJson:userInfo]] delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
         alertView.alertViewStyle = UIAlertViewStyleDefault;
         [alertView show];
-        
     });
-    
-    
 }
-- (NSString*)dictionaryToJson:(NSDictionary *)dic
 
-{
+- (NSString*)dictionaryToJson:(NSDictionary *)dic {
     if ([dic isKindOfClass:[NSDictionary class]]) {
         NSError *parseError = nil;
         
         NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&parseError];
         
         return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    }else{
+    } else {
         return @"";
     }
-    
 }
 
 #pragma mark - ***上传视频进度到后台***
@@ -897,12 +891,11 @@ static BOOL fromLandscape = NO;
     if (self.pptsFunctionView.fullScreenBtn.selected) {
         return;
     }
-    [_commentView changeOrientation:WIDTH<HEIGHT];
+    [self.view endEditing:YES];
+    [_commentView changeOrientation:YES];
     if ([UIDevice currentDevice].orientation == 3 && !self.isOrientationLandscape) {
-        [self.view endEditing:YES];
         [self orientationLandscape];
     }else if ([UIDevice currentDevice].orientation==1 && self.isOrientationLandscape){
-        [self.view endEditing:YES];
         [self orientationPortrait];
     }
 }
@@ -976,6 +969,7 @@ static BOOL fromLandscape = NO;
     self.view.bounds = CGRectMake(0, 0, ScreenSize.width, ScreenSize.height);
     [self orientationPortrait:NO];
 }
+
 -(BOOL)gestureRecognizer:(UIGestureRecognizer*)gestureRecognizer shouldReceiveTouch:(UITouch*)touch {
     
     if([touch.view isKindOfClass:[UISlider class]])

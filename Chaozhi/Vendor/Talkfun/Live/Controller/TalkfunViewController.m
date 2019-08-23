@@ -70,7 +70,9 @@
 #define KIsiPhoneX  @available(iOS 11.0, *) && UIApplication.sharedApplication.keyWindow.safeAreaInsets.bottom > 0.0
 #define viewSize self.view.frame.size
 @interface TalkfunViewController ()<UIScrollViewDelegate,UITextFieldDelegate,UIAlertViewDelegate,TalkfunSDKLiveDelegate>
-
+{
+    NSInteger count;
+}
 /** 评价视图 */
 @property (nonatomic,retain) CZCommentView *commentView;
 /** 是否评价 YES已评价 */
@@ -223,7 +225,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    count = 0;
     self.isPanForbid = YES; //禁用侧滑返回
     
     //防止横屏进来
@@ -258,7 +260,7 @@
     //=================== 监听输入框的字符长度 ====================
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(infoAction:)name:UITextFieldTextDidChangeNotification object:nil];
     //    if (IsIPAD) {
-    //        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
+            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
     //    }
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sdkError:) name:TalkfunErrorNotification object:nil];
     //    self.orientation = 3;
@@ -713,8 +715,6 @@
             if (obj[@"chat"][@"enable"] ) {
                 //已经禁言
                 if ([obj[@"chat"][@"enable"] integerValue ]==0) {
-                    
-                    
                     //聊天开启
                 }else if ([obj[@"chat"][@"enable"] integerValue ]==1) {
                     [[NSNotificationCenter defaultCenter] postNotificationName:@"chat" object:nil userInfo:@{@"mess":obj}];
@@ -723,16 +723,12 @@
                     [weakSelf loadData:text];
                 }
             }
-            
-            
         }else{
             [[NSNotificationCenter defaultCenter] postNotificationName:@"chat" object:nil userInfo:@{@"mess":obj}];
             NSString *text =  obj[@"msg"];
             //加载数据
             [weakSelf loadData:text];
         }
-        
-        
     }];
     
     //老师删除信息
@@ -754,8 +750,6 @@
     [self.talkfunSDK on:TALKFUN_EVENT_FLOWER_TIME_LEFT callback:^(id obj) {
         //[weakSelf flowerTimeLeft:obj];
     }];
-    
-    
     
     //提问
     [self.talkfunSDK on:TALKFUN_EVENT_QUESTION_ASK callback:^(id obj) {
@@ -795,12 +789,8 @@
     //我加入房间
     [self.talkfunSDK on:TALKFUN_EVENT_MEMBER_JOIN_ME callback:^(id obj) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            
             [weakSelf memberTotal:obj];
-            
-            
         });
-        
     }];
     
     [self.talkfunSDK on:TALKFUN_EVENT_LIVE_WAIT callback:^(id obj) {
@@ -827,13 +817,10 @@
             [weakSelf.view addSubview:weakSelf.ScoreView ];
             
             [weakSelf timerInvalidate];
-            
         }
-        
         
         dispatch_async(dispatch_get_main_queue(), ^{
             weakSelf.liveStop = YES;
-            
             if(weakSelf.pptView.frame.size.height/weakSelf.pptView.frame.size.width!=0.75){
                 weakSelf.bitmapView.image = [UIImage imageNamed:@"直播已结束16_9"];
             }else{
@@ -865,17 +852,13 @@
         [weakSelf.hornView announceRoll:obj];
     }];
     
-    
-    
     //总人数
     [self.talkfunSDK on:TALKFUN_EVENT_MEMBER_TOTAL callback:^(id obj) {
         [weakSelf memberTotal:obj];
     }];
     
-    
     //接收老师发起的点名
     [self.talkfunSDK on:TALKFUN_SIGN_NEW callback:^(id obj) {
-        
         
         [APPLICATION sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
         NSString * nickname  = obj[@"data"][@"nickname"];
@@ -884,17 +867,13 @@
         NSString * message   = [NSString stringWithFormat:@"管理员 %@ 在%@开始点名",nickname,startTime];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"broadcastInfo" object:nil userInfo:@{@"vote:new":message,@"nickname":nickname,@"vid":@""}];
         
-        
-        
         dispatch_async(dispatch_get_main_queue(), ^{
-            
             
             [weakSelf.sign refreshUIWithParams:obj] ;
             
             [weakSelf.view addSubview:weakSelf.sign.view];
             
         });
-        
     }];
     
     //结束点名
@@ -904,15 +883,10 @@
         
         [weakSelf.sign deleteClicked];
     }];
-    
-    
-    
+
     //默认清晰度选择
     [self.talkfunSDK on:TALKFUN_EVENT_CURRENT_VIDEO_DEFINITION_LIST callback:^(id obj) {
-        
-        
         [weakSelf.pptsFunctionView setDefaultStream:obj];
-        
     }];
     
     //================= 未读消息红点 ====================
@@ -920,25 +894,16 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(askMessageCome) name:@"askMessageCome" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noticeMessageCome) name:@"noticeMessageCome" object:nil];
     
-    
-    
     //    [self XiaoBan];
-    
 }
-
-
 
 - (UIActivityIndicatorView *)activityIndicator
 {
     if (!_activityIndicator) {
         _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
         _activityIndicator.userInteractionEnabled = NO;
-        
     }
     return _activityIndicator;
-    
-    
-    
 }
 
 - (void)updateChrysanthemum
@@ -1221,24 +1186,16 @@ static dispatch_once_t onceToken;
 }
 
 #pragma mark - 强制竖屏
-- (void)orientationPortrait
-{
-    
-    
-    
+- (void)orientationPortrait {
+
     @synchronized (self) {
-        
-        
-        
-        
+
         self.isOrientationLandscape = NO;
-        
-        //强制翻转屏幕，Home键在右边。
-        [[UIDevice currentDevice] setValue:@(UIInterfaceOrientationLandscapeRight) forKey:@"orientation"];
-        
+    
+        self.pptsFunctionView.fullScreenBtn.selected = NO;
         [[UIDevice currentDevice] setValue:@(UIInterfaceOrientationPortrait) forKey:@"orientation"];
         [self orientationPortrait:YES];
-        
+        self.view.bounds = CGRectMake(0, 0, ScreenSize.width, ScreenSize.height);
         [self updateChrysanthemum];
         
     }
@@ -1252,24 +1209,22 @@ static dispatch_once_t onceToken;
     [self expressionsViewShow:NO];
     [self.view endEditing:YES];
     
+    [_commentView changeOrientation:YES];
+    
     if ([UIDevice currentDevice].orientation == 3 && !self.isOrientationLandscape) {
-        
         [self orientationLandscape];
-        
-    }else if ([UIDevice currentDevice].orientation==1 && self.isOrientationLandscape){
-        
+    } else if ([UIDevice currentDevice].orientation==1 && self.isOrientationLandscape){
         [self orientationPortrait];
     }
 }
 
 - (void)orientationPortrait:(BOOL)portrait
 {
+    [_commentView changeOrientation:portrait];
     
     self.isOrientationLandscape = !portrait;
-    //pPt
+    //ppt
     self.pptView.frame = portrait?CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.width * 3 / 4.0):IsIPAD&&self.iPadAutoRotate?CGRectMake(0, 0, self.view.bounds.size.width * 7 / 10, self.view.bounds.size.height):CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
-    
-    
     
     self.bitmapView.frame = CGRectMake(0, 0, self.pptView.frame.size.width, self.pptView.frame.size.height);
     
@@ -1278,28 +1233,20 @@ static dispatch_once_t onceToken;
         if(self.pptView.frame.size.height/self.pptView.frame.size.width!=0.75){
             self.bitmapView.image = [UIImage imageNamed:@"直播已结束16_9"];
         }else{
-            
-            
             self.bitmapView.image = [UIImage imageNamed:@"直播已结束"];
         }
-        
     }else{
         if(self.pptView.frame.size.height/self.pptView.frame.size.width!=0.75){
             self.bitmapView.image = [UIImage imageNamed:@"直播未开始16_9"];
         }else{
-            
-            
             self.bitmapView.image = [UIImage imageNamed:@"直播未开始"];
         }
-        
-        
     }
     
     self.longTextfieldView.frame = CGRectMake(0, CGRectGetHeight(self.pptView.frame)-50 -2, CGRectGetWidth(self.pptView.frame) - 160, 50);
     self.inputBackgroundView.frame = self.view.bounds;
     self.longTextfieldView.hidden = portrait|self.iPadAutoRotate;
     self.expressionViewVC.view.frame = CGRectMake(0, viewSize.height, viewSize.width,ExpressionViewHeight());
-    
     
     //改变喇叭滚动条的frame
     self.hornView.frame = CGRectMake(0, CGRectGetMaxY(self.pptView.frame) - 25, CGRectGetWidth(self.pptView.frame), 25);
@@ -1320,8 +1267,6 @@ static dispatch_once_t onceToken;
     //    self.cameraView.backgroundColor = [UIColor blackColor];
     //    self.cameraView.hidden = NO;
     self.buttonView.frame = portrait?CGRectMake(0, CGRectGetMaxY(self.pptView.frame) - 1, viewSize.width, ButtonViewHeight):CGRectMake(CGRectGetMaxX(self.pptView.frame), self.cameraView.hidden?0:CGRectGetMaxY(self.cameraView.frame), viewSize.width-CGRectGetWidth(self.pptView.frame), ButtonViewHeight);
-    
-    
     
     //修改scrollView的frame和contentSize
     self.scrollView.frame = portrait?CGRectMake(0, CGRectGetMaxY(self.pptView.frame) + ButtonViewHeight, viewSize.width, viewSize.height - CGRectGetMaxY(self.pptView.frame) - ButtonViewHeight):CGRectMake(CGRectGetMaxX(self.pptView.frame), CGRectGetMaxY(self.buttonView.frame), self.view.bounds.size.width - CGRectGetMaxX(self.pptView.frame), self.view.bounds.size.height - CGRectGetMaxY(self.buttonView.frame));
@@ -1397,9 +1342,9 @@ static dispatch_once_t onceToken;
         
         self.isOrientationLandscape = YES;
         
-        [[UIDevice currentDevice] setValue:@(UIInterfaceOrientationPortrait) forKey:@"orientation"];
-        //强制翻转屏幕，Home键在右边。
-        [[UIDevice currentDevice] setValue:@(UIInterfaceOrientationLandscapeRight) forKey:@"orientation"];
+//        [[UIDevice currentDevice] setValue:@(UIInterfaceOrientationPortrait) forKey:@"orientation"];
+//        //强制翻转屏幕，Home键在右边。
+//        [[UIDevice currentDevice] setValue:@(UIInterfaceOrientationLandscapeRight) forKey:@"orientation"];
         //刷新
         //        [UIViewController attemptRotationToDeviceOrientation];
         
@@ -2419,6 +2364,7 @@ static CGRect originPPTFrame;
 - (BOOL)shouldAutorotate{
     return YES;
 }
+
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
     if (self.isOrientationLandscape) {
@@ -2438,8 +2384,6 @@ static CGRect originPPTFrame;
     [self.barrageRender initWithContent:data ontOfSize:14 textColor:tempColor];
     
 }
-
-
 
 #pragma mark - alertView delegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
@@ -2701,12 +2645,15 @@ static CGRect originPPTFrame;
     if (btn.tag == returnButton) {
         if ([AppChannel isEqualToString:@"1"]
             && self.is_review == NO
-            && [self.videoItem.type isEqualToString:@"2"]
+            && [self.videoItem.type isEqualToString:@"3"]
             && self.liveTime>=30*60) { //超职、回放/直播
             [self.commentView showView];
         } else {
             WeakSelf
             HYAlertView *alert =  [self alertContent: @"确定要退出直播间吗"];
+#pragma mark - ---超职修改
+            alert.isOrientationLandscape = NO;
+#pragma mark - 超职修改---
             alert.clickEventBlock =^(NSString *title){
                 
                 if ([title isEqualToString:@"确定"]) {
@@ -2953,9 +2900,12 @@ static BOOL fromLandscape = NO;
     [self expressionsViewShow:NO];
     [self.view endEditing:YES];
     
-    
-    if (!self.isOrientationLandscape) {
+    if ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait) {
         self.onlineLabel.hidden = YES;
+#pragma mark - ---超职修改
+        NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationLandscapeRight];
+        [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
+#pragma mark - 超职修改---
         self.pptsFunctionView.fullScreenBtn.selected = YES;
         [self.pptsFunctionView.fullScreenBtn setImage:[UIImage imageNamed:@"退出全屏"] forState:UIControlStateNormal];
         [self orientationLandscape];
@@ -2964,7 +2914,10 @@ static BOOL fromLandscape = NO;
         if( self.onlineLabel.text.length>0){
             self.onlineLabel.hidden = NO;
         }
-        
+#pragma mark - ---超职修改
+        NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
+        [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
+#pragma mark - 超职修改---
         self.pptsFunctionView.fullScreenBtn.selected = NO;
         [self.pptsFunctionView.fullScreenBtn setImage:[UIImage imageNamed:@"全屏"] forState:UIControlStateNormal];
         [self orientationPortrait];
