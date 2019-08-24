@@ -268,7 +268,8 @@
     self.onlineLabel.userInteractionEnabled = YES;
     [self.view bringSubviewToFront:self.onlineLabel];
     
-    if ([AppChannel isEqualToString:@"1"]) { //超职
+    if ([AppChannel isEqualToString:@"1"]
+        && [self.videoItem.type isEqualToString:@"2"]) { //超职、直播/回放
         [self initCommentView];
         [self getLiveCommentInfo]; //获取直播评论信息
     }
