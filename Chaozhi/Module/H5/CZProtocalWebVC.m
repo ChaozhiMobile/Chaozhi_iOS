@@ -51,8 +51,10 @@
     [JHHJView showLoadingOnTheKeyWindowWithType:JHHJViewTypeSingleLine]; //开始加载
     
     //协议盖章
-    NSString *cssPath = [[NSBundle mainBundle] pathForResource:@"protocol" ofType:@"css"];
-    
+    NSString *cssPath = [[NSBundle mainBundle] pathForResource:@"ChaozhiProtocol" ofType:@"css"];
+    if ([AppChannel isEqualToString:@"2"]) { //学智
+        cssPath = [[NSBundle mainBundle] pathForResource:@"XuezhiProtocol" ofType:@"css"];
+    }
     NSMutableString *htmlString =[[NSMutableString alloc]initWithString:@"<html> \n"];
     [htmlString appendString:@"<head> \n"];
     [htmlString appendString:@"<link rel=\"stylesheet\" type=\"text/css\" href=\" "];
@@ -76,15 +78,6 @@
 // 页面加载完成之后调用
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
     [JHHJView hideLoading]; //结束加载
-}
-
-- (void)addZhangImgView {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        UIImageView *img = [[UIImageView alloc]initWithFrame:CGRectMake(0, self.wbContentHeight-autoScaleW(100), autoScaleW(80), autoScaleW(80))];
-        img.image = [UIImage imageNamed:@"protocol.png"];
-        [self.webView.scrollView addSubview:img];
-        [self.webView bringSubviewToFront:img];
-    });
 }
 
 /*

@@ -44,7 +44,5 @@
 #define kLaunchWord   @"超职教育 成就超值人生"
 // 数据库名字
 #define kDBName    @"CZDataBase.sqlite"
-// 公司盖章图片
-#define kZhangPicUrl "http://www.chaozhiedu.com/static/images/zhang.png"
 
 #endif /* Chaozhi_pch */

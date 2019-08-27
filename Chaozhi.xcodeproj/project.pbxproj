@@ -136,7 +136,6 @@
 		A020B078214AAB150011BB4F /* BaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B017214AAB140011BB4F /* BaseItem.m */; };
 		A020B079214AAB150011BB4F /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B018214AAB140011BB4F /* UserInfo.m */; };
 		A020B07A214AAB150011BB4F /* CourseCategoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B01A214AAB140011BB4F /* CourseCategoryItem.m */; };
-		A03BB01022D6246700B3A9D8 /* protocol.png in Resources */ = {isa = PBXBuildFile; fileRef = A03BB00F22D6246700B3A9D8 /* protocol.png */; };
 		A045501B22EC4FCA00E17406 /* ChaozhiAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A045501A22EC4FCA00E17406 /* ChaozhiAssets.xcassets */; };
 		A045507322EC8DFA00E17406 /* XLGInternalDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFDF214AAB140011BB4F /* XLGInternalDemoVC.m */; };
 		A045507422EC8DFA00E17406 /* TalkfunSignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07E522C4BC7C001832EA /* TalkfunSignViewController.m */; };
@@ -400,7 +399,6 @@
 		A045517B22EC8DFA00E17406 /* TalkfunSignViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07E422C4BC7C001832EA /* TalkfunSignViewController.xib */; };
 		A045517C22EC8DFA00E17406 /* ic_refresh_image_008@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF9A214AAB130011BB4F /* ic_refresh_image_008@2x.png */; };
 		A045517D22EC8DFA00E17406 /* 下载-默认.png in Resources */ = {isa = PBXBuildFile; fileRef = A01F608322CB8CD0001133C4 /* 下载-默认.png */; };
-		A045517E22EC8DFA00E17406 /* protocol.css in Resources */ = {isa = PBXBuildFile; fileRef = A0E0D3CF22D2299800296851 /* protocol.css */; };
 		A045517F22EC8DFA00E17406 /* 灰色鲜花.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC087C22C4BC7D001832EA /* 灰色鲜花.png */; };
 		A045518022EC8DFA00E17406 /* 组 103.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC088B22C4BC7D001832EA /* 组 103.png */; };
 		A045518122EC8DFA00E17406 /* ic_refresh_image_019@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF81214AAB130011BB4F /* ic_refresh_image_019@2x.png */; };
@@ -474,7 +472,6 @@
 		A04551C622EC8DFA00E17406 /* 章节-点击.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC089622C4BC7D001832EA /* 章节-点击.png */; };
 		A04551C722EC8DFA00E17406 /* failP.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC084822C4BC7D001832EA /* failP.png */; };
 		A04551C822EC8DFA00E17406 /* lottery.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC083922C4BC7D001832EA /* lottery.png */; };
-		A04551C922EC8DFA00E17406 /* protocol.png in Resources */ = {isa = PBXBuildFile; fileRef = A03BB00F22D6246700B3A9D8 /* protocol.png */; };
 		A04551CA22EC8DFA00E17406 /* TalkfunVideoControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07A922C4BC7C001832EA /* TalkfunVideoControlView.xib */; };
 		A04551CB22EC8DFA00E17406 /* DownloadListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01F607122CB895F001133C4 /* DownloadListTableViewCell.xib */; };
 		A04551CC22EC8DFA00E17406 /* ic_refresh_image_031@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF84214AAB130011BB4F /* ic_refresh_image_031@2x.png */; };
@@ -588,6 +585,8 @@
 		A05FF5DC215B163400C51E05 /* AEIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = A05FF5D8215B163400C51E05 /* AEIndicator.m */; };
 		A070498D2211610300864050 /* AppDelegate+Push.m in Sources */ = {isa = PBXBuildFile; fileRef = A070498C2211610300864050 /* AppDelegate+Push.m */; };
 		A071273B2216E7D700DC3C20 /* NotifyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A071273A2216E7D700DC3C20 /* NotifyItem.m */; };
+		A079A6BD231544CE0063123B /* XuezhiProtocol.css in Resources */ = {isa = PBXBuildFile; fileRef = A079A6BC231544CE0063123B /* XuezhiProtocol.css */; };
+		A079A6BF231544DA0063123B /* ChaozhiProtocol.css in Resources */ = {isa = PBXBuildFile; fileRef = A079A6BE231544DA0063123B /* ChaozhiProtocol.css */; };
 		A07E4E9722ED82E4000ABD86 /* CZConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A07E4E9622ED82E4000ABD86 /* CZConfig.m */; };
 		A07E4E9D22ED833D000ABD86 /* XZConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A07E4E9C22ED833D000ABD86 /* XZConfig.m */; };
 		A091D1302178FAF300CCDAF6 /* StudyInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A091D12F2178FAF300CCDAF6 /* StudyInfoItem.m */; };
@@ -840,7 +839,6 @@
 		A0CB7CB922C65D8800069B34 /* TalkfunItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CB7CB822C65D8800069B34 /* TalkfunItem.m */; };
 		A0E0D3CC22D0E3A100296851 /* TalkfunMultifunctionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E0D3C922D0E3A100296851 /* TalkfunMultifunctionTool.m */; };
 		A0E0D3CD22D0E3A100296851 /* TalkfunMultifunctionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E0D3CA22D0E3A100296851 /* TalkfunMultifunctionButton.m */; };
-		A0E0D3D022D2299800296851 /* protocol.css in Resources */ = {isa = PBXBuildFile; fileRef = A0E0D3CF22D2299800296851 /* protocol.css */; };
 		A0E50819230ED54C005EF897 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E50818230ED54C005EF897 /* StoreKit.framework */; };
 		A0E5081A230ED762005EF897 /* CZCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20ABB12D230A7A9600DDC86F /* CZCommentView.m */; };
 		A0E8981D22CF22C600DB09BA /* VideoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E8981B22CF22C600DB09BA /* VideoItem.m */; };
@@ -1038,7 +1036,6 @@
 		A020B01A214AAB140011BB4F /* CourseCategoryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseCategoryItem.m; sourceTree = "<group>"; };
 		A020B01B214AAB140011BB4F /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		A020B07B214AAD600011BB4F /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
-		A03BB00F22D6246700B3A9D8 /* protocol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = protocol.png; sourceTree = "<group>"; };
 		A045501522EC4ACB00E17406 /* Xuezhi.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Xuezhi.entitlements; sourceTree = "<group>"; };
 		A045501A22EC4FCA00E17406 /* ChaozhiAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ChaozhiAssets.xcassets; sourceTree = "<group>"; };
 		A045520C22EC8DFA00E17406 /* Xuezhi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xuezhi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1116,6 +1113,8 @@
 		A070498C2211610300864050 /* AppDelegate+Push.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Push.m"; sourceTree = "<group>"; };
 		A07127392216E7D700DC3C20 /* NotifyItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotifyItem.h; sourceTree = "<group>"; };
 		A071273A2216E7D700DC3C20 /* NotifyItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotifyItem.m; sourceTree = "<group>"; };
+		A079A6BC231544CE0063123B /* XuezhiProtocol.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = XuezhiProtocol.css; sourceTree = "<group>"; };
+		A079A6BE231544DA0063123B /* ChaozhiProtocol.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ChaozhiProtocol.css; sourceTree = "<group>"; };
 		A07E4E9322ED7BC6000ABD86 /* Public.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Public.h; sourceTree = "<group>"; };
 		A07E4E9422ED7FD0000ABD86 /* Xuezhi.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Xuezhi.pch; sourceTree = "<group>"; };
 		A07E4E9522ED82E4000ABD86 /* CZConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZConfig.h; sourceTree = "<group>"; };
@@ -1482,7 +1481,6 @@
 		A0E0D3C922D0E3A100296851 /* TalkfunMultifunctionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunMultifunctionTool.m; sourceTree = "<group>"; };
 		A0E0D3CA22D0E3A100296851 /* TalkfunMultifunctionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunMultifunctionButton.m; sourceTree = "<group>"; };
 		A0E0D3CB22D0E3A100296851 /* TalkfunMultifunctionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunMultifunctionTool.h; sourceTree = "<group>"; };
-		A0E0D3CF22D2299800296851 /* protocol.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = protocol.css; sourceTree = "<group>"; };
 		A0E50818230ED54C005EF897 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A0E8981B22CF22C600DB09BA /* VideoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoItem.m; sourceTree = "<group>"; };
 		A0E8981C22CF22C600DB09BA /* VideoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoItem.h; sourceTree = "<group>"; };
@@ -2967,8 +2965,8 @@
 		A0E0D3CE22D2295D00296851 /* H5 */ = {
 			isa = PBXGroup;
 			children = (
-				A03BB00F22D6246700B3A9D8 /* protocol.png */,
-				A0E0D3CF22D2299800296851 /* protocol.css */,
+				A079A6BE231544DA0063123B /* ChaozhiProtocol.css */,
+				A079A6BC231544CE0063123B /* XuezhiProtocol.css */,
 			);
 			path = H5;
 			sourceTree = "<group>";
@@ -3181,6 +3179,7 @@
 				A0AC093222C4BC7E001832EA /* education.png in Resources */,
 				A020B037214AAB150011BB4F /* ic_refresh_image_000@2x.png in Resources */,
 				A0AC089F22C4BC7D001832EA /* TalkfunSDK.bundle in Resources */,
+				A079A6BF231544DA0063123B /* ChaozhiProtocol.css in Resources */,
 				A0AC096122C4BC7E001832EA /* flower.png in Resources */,
 				A0AC095122C4BC7E001832EA /* generalStatus.png in Resources */,
 				A020B045214AAB150011BB4F /* ic_refresh_image_020@2x.png in Resources */,
@@ -3195,7 +3194,6 @@
 				A0AC090222C4BC7E001832EA /* TalkfunSignViewController.xib in Resources */,
 				A020B047214AAB150011BB4F /* ic_refresh_image_008@2x.png in Resources */,
 				A01F609022CB8CD0001133C4 /* 下载-默认.png in Resources */,
-				A0E0D3D022D2299800296851 /* protocol.css in Resources */,
 				A0AC097622C4BC7E001832EA /* 灰色鲜花.png in Resources */,
 				A0AC098422C4BC7E001832EA /* 组 103.png in Resources */,
 				A020B02E214AAB150011BB4F /* ic_refresh_image_019@2x.png in Resources */,
@@ -3270,7 +3268,6 @@
 				A0AC098E22C4BC7E001832EA /* 章节-点击.png in Resources */,
 				A0AC094822C4BC7E001832EA /* failP.png in Resources */,
 				A0AC093922C4BC7E001832EA /* lottery.png in Resources */,
-				A03BB01022D6246700B3A9D8 /* protocol.png in Resources */,
 				A0AC08E122C4BC7D001832EA /* TalkfunVideoControlView.xib in Resources */,
 				A01F607522CB8960001133C4 /* DownloadListTableViewCell.xib in Resources */,
 				A020B031214AAB150011BB4F /* ic_refresh_image_031@2x.png in Resources */,
@@ -3361,6 +3358,7 @@
 				A045514922EC8DFA00E17406 /* TalkfunKuaiJinView.xib in Resources */,
 				A045514A22EC8DFA00E17406 /* blueProgress.png in Resources */,
 				A045514B22EC8DFA00E17406 /* TalkfunPlaybackMessageView.xib in Resources */,
+				A079A6BD231544CE0063123B /* XuezhiProtocol.css in Resources */,
 				A045514C22EC8DFA00E17406 /* 等待队列_点击.png in Resources */,
 				A045514D22EC8DFA00E17406 /* greatwall.png in Resources */,
 				A045514E22EC8DFA00E17406 /* 章节-默认.png in Resources */,
@@ -3411,7 +3409,6 @@
 				A045517B22EC8DFA00E17406 /* TalkfunSignViewController.xib in Resources */,
 				A045517C22EC8DFA00E17406 /* ic_refresh_image_008@2x.png in Resources */,
 				A045517D22EC8DFA00E17406 /* 下载-默认.png in Resources */,
-				A045517E22EC8DFA00E17406 /* protocol.css in Resources */,
 				A045517F22EC8DFA00E17406 /* 灰色鲜花.png in Resources */,
 				A045518022EC8DFA00E17406 /* 组 103.png in Resources */,
 				A045518122EC8DFA00E17406 /* ic_refresh_image_019@2x.png in Resources */,
@@ -3487,7 +3484,6 @@
 				A04551C622EC8DFA00E17406 /* 章节-点击.png in Resources */,
 				A04551C722EC8DFA00E17406 /* failP.png in Resources */,
 				A04551C822EC8DFA00E17406 /* lottery.png in Resources */,
-				A04551C922EC8DFA00E17406 /* protocol.png in Resources */,
 				A04551CA22EC8DFA00E17406 /* TalkfunVideoControlView.xib in Resources */,
 				A04551CB22EC8DFA00E17406 /* DownloadListTableViewCell.xib in Resources */,
 				A04551CC22EC8DFA00E17406 /* ic_refresh_image_031@2x.png in Resources */,

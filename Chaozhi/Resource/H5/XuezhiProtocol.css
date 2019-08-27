@@ -3,7 +3,6 @@
   position: relative;
 }
 .dialog-agreement-content {
-/*  background: url("protocol.png") no-repeat 60% bottom;*/
-  background: url(kZhangPicUrl) no-repeat 60% bottom;
+  background: url("https://cdn.xuezhiwang.com/1564555016-5d4137088fbf0.png") no-repeat 60% bottom;
   background-size: 400px;
 }

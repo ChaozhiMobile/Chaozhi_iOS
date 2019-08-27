@@ -43,8 +43,6 @@
 #define kLaunchWord   @"学智教育 学无止境 · 汇智前行"
 // 数据库名字
 #define kDBName    @"XZDataBase.sqlite"
-// 公司盖章图片
-#define kZhangPicUrl "https://cdn.xuezhiwang.com/1564555016-5d4137088fbf0.png"
 // 首页课程分类索引
 #define kCourseCategoryKey   @"kCourseCategoryKey"
 
