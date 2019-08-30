@@ -436,7 +436,7 @@
 {
     if (btn.tag == 10) {
         self.downloadManager = nil;
-        
+        [Utils changeUserAgent]; //WKWebView UA初始化
         [[NSNotificationCenter defaultCenter] removeObserver:self];
         [self.navigationController popViewControllerAnimated:YES];
     }
