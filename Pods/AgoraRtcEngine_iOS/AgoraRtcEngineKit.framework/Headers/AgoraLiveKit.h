@@ -55,7 +55,7 @@ __attribute__((visibility("default"))) @interface AgoraLiveChannelConfig: NSObje
  @param kit     AgoraLiveKit
  @param channel Channel name
  @param uid     Local user ID
- @param elapsed Time elapsed (ms) from calling [joinChannelByToken]([AgoraRtcEngineKit joinChannelByToken:channelId:info:uid:joinSuccess:]) until this callback function being triggered.
+ @param elapsed Time elapsed (ms) from calling [joinChannelByToken]([AgoraRtcEngineKit joinChannelByToken:channelId:info:uid:joinSuccess:]) until this callback is triggered.
   */
 - (void)liveKit:(AgoraLiveKit *_Nonnull)kit didJoinChannel:(NSString *_Nonnull)channel withUid:(NSUInteger)uid elapsed:(NSInteger) elapsed;
 
@@ -70,7 +70,7 @@ __attribute__((visibility("default"))) @interface AgoraLiveChannelConfig: NSObje
  @param kit     AgoraLiveKit
  @param channel Channel name.
  @param uid     User ID.
- @param elapsed Time elapsed (ms) from calling [joinChannelByToken]([AgoraRtcEngineKit joinChannelByToken:channelId:info:uid:joinSuccess:]) until this callback function being triggered.
+ @param elapsed Time elapsed (ms) from calling [joinChannelByToken]([AgoraRtcEngineKit joinChannelByToken:channelId:info:uid:joinSuccess:]) until this callback is triggered.
  */
 - (void)liveKit:(AgoraLiveKit *_Nonnull)kit didRejoinChannel:(NSString *_Nonnull)channel withUid:(NSUInteger)uid elapsed:(NSInteger) elapsed;
 
@@ -110,7 +110,7 @@ __attribute__((visibility("default"))) @interface AgoraLiveChannelConfig: NSObje
 
 /** The connection between the SDK and the server has been interrupted.
 
-This callback function is triggered upon connection is lost between the SDK and the server.
+This callback is triggered when the SDK losses connection with the server.
 
 Once the connection is lost, the SDK attempts to reconnect until the
    application calls [leaveChannel]([AgoraLiveKit leaveChannel]).
@@ -160,7 +160,7 @@ __attribute__((visibility("default"))) @interface AgoraLiveKit : NSObject
 
 /** Initializes the AgoraLiveKit object.
 
- @param appId The appId is issued to the application developers by Agora.
+ @param appId The appId is issued to you by Agora.
 
  @return an object of AgoraLiveKit class
  */
@@ -189,7 +189,7 @@ __attribute__((visibility("default"))) @interface AgoraLiveKit : NSObject
 
 /**  Allows a user to join a channel.
 
- This method creates an open UDP socket to the AgoraLiveKit cloud service in order to join a channel.
+ This method creates an open UDP socket to the AgoraLiveKit cloud service to join a channel.
  Users in the same channel can talk to each other using the same App ID. This method is asynchronous.
 
 

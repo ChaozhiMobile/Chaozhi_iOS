@@ -23,7 +23,7 @@
 //}TalkfunMode;
 //****************
 
-#import "TalkfunSDK.h"
+#import <TalkfunSDKFramework/TalkfunSDKFramework.h>
 #import "TalkfunHttpTools.h"
 #import "UIView+TalkfunActivityIndicator.h"
 #import "TalkfunUtils.h"

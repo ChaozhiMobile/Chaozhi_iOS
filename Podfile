@@ -5,7 +5,7 @@ use_frameworks!
 target 'Chaozhi' do
   pod 'XLGCategory'
   pod 'MJRefresh'
-  pod 'MJExtension'
+  pod 'MJExtension', '~> 3.0.15.1'
   pod 'YYModel'
   pod 'Masonry'
   pod 'SDWebImage'
@@ -20,6 +20,7 @@ target 'Chaozhi' do
   pod 'IAPHelper'
   pod 'FMDB'
   #欢拓SDK Talkfun
+  pod 'TalkfunMediaFramework'
   pod 'Socket.IO-Client-Swift'
   pod 'JFImagePicker'
   pod 'KissXML'

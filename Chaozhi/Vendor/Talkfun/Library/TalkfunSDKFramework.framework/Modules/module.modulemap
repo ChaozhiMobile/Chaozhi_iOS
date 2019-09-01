@@ -1,0 +1,6 @@
+framework module TalkfunSDKFramework {
+  umbrella header "TalkfunSDKFramework.h"
+
+  export *
+  module * { export * }
+}

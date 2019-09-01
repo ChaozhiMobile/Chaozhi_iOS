@@ -10,7 +10,7 @@
 #import "ChapterModel.h"
 #import "NSString+Hashing.h"
 #import <SDWebImage/SDWebImageManager.h>
-#import "TalkfunCacheImage.h"
+//#import "TalkfunCacheImage.h"
 #define FilePath [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Caches/ImageCaches"]
 @interface ChapterTableViewCell()
 @property(nonatomic,strong)TalkfunCacheImage *dataManager;

@@ -8,7 +8,7 @@
 
 #import "TalkfunPlaybackViewController.h"
 //#import "TalkfunSDK.h"
-#import "TalkfunSDKPlayback.h"
+//#import "TalkfunSDKPlayback.h"
 #import "UIScrollView+TalkfunScrollView.h"
 #import "UIView+TalkfunView.h"
 //#import "NetworkDetector.h"
@@ -24,7 +24,6 @@
 #import "TalkfunCourseManagement.h"
 #import "TalkfunModulation.h"
 #import "BulletView.h"
-#import "TalkfunDownloadManager.h"
 #define ButtonViewHeight 35
 #define KIsiPhoneX  @available(iOS 11.0, *) && UIApplication.sharedApplication.keyWindow.safeAreaInsets.bottom > 0.0
 #import "DBManager.h"

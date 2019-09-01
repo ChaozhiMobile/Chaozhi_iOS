@@ -11,20 +11,25 @@
 #import <AppKit/AppKit.h>
 #endif
 
-/** The standard bitrate in [setVideoEncoderConfiguration]([AgoraRtcEngineKit setVideoEncoderConfiguration:]).
+/** The standard bitrate set in [setVideoEncoderConfiguration]([AgoraRtcEngineKit setVideoEncoderConfiguration:]).
 
 (Recommended) The standard bitrate mode. In this mode, the bitrate under the live broadcast and communication profiles differs:
 
-    - In the communication profile, the video bitrate is the same as the base bitrate.
-    - In the live broadcast profile, the video bitrate is twice the base bitrate.
+    - Communication profile: The video bitrate is the same as the base bitrate.
+    - Live broadcast profile: The video bitrate is twice the base bitrate.
  */
 extern NSInteger const AgoraVideoBitrateStandard;
 
-/** The compatible bitrate in [setVideoEncoderConfiguration]([AgoraRtcEngineKit setVideoEncoderConfiguration:]).
+/** The compatible bitrate set in [setVideoEncoderConfiguration]([AgoraRtcEngineKit setVideoEncoderConfiguration:]).
 
 The compatible bitrate mode. In this mode, the bitrate stays the same regardless of the channel profile. In a live broadcast channel, if you choose this mode, the video frame rate may be lower than the set value.
  */
 extern NSInteger const AgoraVideoBitrateCompatible;
+
+/** Use the default minimum bitrate.
+ */
+extern NSInteger const AgoraVideoBitrateDefaultMin;
+
 /** 120 &times; 120
  */
 extern CGSize const AgoraVideoDimension120x120;
@@ -67,20 +72,20 @@ extern CGSize const AgoraVideoDimension640x480;
 /** 840 &times; 480
  */
 extern CGSize const AgoraVideoDimension840x480;
-/** 960 &times; 720 (Depends on the hardware)
+/** 960 &times; 720 (Hardware dependent)
  */
 extern CGSize const AgoraVideoDimension960x720;
-/** 1280 &times; 720 (Depends on the hardware)
+/** 1280 &times; 720 (Hardware dependent)
  */
 extern CGSize const AgoraVideoDimension1280x720;
-#if TARGET_OS_MAC
-/** 1920 &times; 1080 (Depends on the hardware, macOS only)
+#if TARGET_OS_MAC && !TARGET_OS_IPHONE
+/** 1920 &times; 1080 (Hardware dependent, macOS only)
  */
 extern CGSize const AgoraVideoDimension1920x1080;
-/** 25400 &times; 1440 (Depends on the hardware, macOS only)
+/** 25400 &times; 1440 (Hardware dependent, macOS only)
  */
 extern CGSize const AgoraVideoDimension2540x1440;
-/** 3840 &times; 2160 (Depends on the hardware, macOS only)
+/** 3840 &times; 2160 (Hardware dependent, macOS only)
  */
 extern CGSize const AgoraVideoDimension3840x2160;
 #endif

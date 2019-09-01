@@ -11,11 +11,11 @@
 
 @implementation CourseCategoryItem
 
-+ (NSDictionary *)replacedKeyFromPropertyName {
-    return @{
-             @"ID":@"id",
-             };
-}
+//+ (NSDictionary *)replacedKeyFromPropertyName {
+//    return @{
+//             @"ID":@"id",
+//             };
+//}
 
 - (void)setImg:(NSString *)img {
     if (_img != img) {

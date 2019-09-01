@@ -8,7 +8,7 @@
 
 #import "TalkfunViewController.h"
 //#import "TalkfunSDK.h"
-#import "TalkfunSDKLive.h"
+//#import "TalkfunSDKLive.h"
 #import "UIButton+TalkfunButton.h"
 #import "UILabel+TalkfunLabel.h"
 #import "UIScrollView+TalkfunScrollView.h"
@@ -42,7 +42,6 @@
 
 #import "TalkfunNetworkLines.h"
 #import "TalkfunSignViewController.h"
-#import "TalkfunDownloadManager.h"
 #import "TalkfunMoveLabel.h"
 #import "TalkfunScoreView.h"
 #import "TalkfunWatermark.h"

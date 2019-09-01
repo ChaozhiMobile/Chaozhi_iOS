@@ -136,6 +136,8 @@
 		A020B078214AAB150011BB4F /* BaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B017214AAB140011BB4F /* BaseItem.m */; };
 		A020B079214AAB150011BB4F /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B018214AAB140011BB4F /* UserInfo.m */; };
 		A020B07A214AAB150011BB4F /* CourseCategoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B01A214AAB140011BB4F /* CourseCategoryItem.m */; };
+		A035D32A231ABE8D00F61484 /* TalkfunSDKFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A035D329231ABE8D00F61484 /* TalkfunSDKFramework.framework */; };
+		A035D32B231ABE8D00F61484 /* TalkfunSDKFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A035D329231ABE8D00F61484 /* TalkfunSDKFramework.framework */; };
 		A045501B22EC4FCA00E17406 /* ChaozhiAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A045501A22EC4FCA00E17406 /* ChaozhiAssets.xcassets */; };
 		A045507322EC8DFA00E17406 /* XLGInternalDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFDF214AAB140011BB4F /* XLGInternalDemoVC.m */; };
 		A045507422EC8DFA00E17406 /* TalkfunSignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07E522C4BC7C001832EA /* TalkfunSignViewController.m */; };
@@ -321,14 +323,11 @@
 		A045512B22EC8DFA00E17406 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D3AD22C22DCD00560A74 /* CoreAudio.framework */; };
 		A045512C22EC8DFA00E17406 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D3AB22C22DC500560A74 /* MediaPlayer.framework */; };
 		A045512D22EC8DFA00E17406 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D3A922C22DBC00560A74 /* OpenGLES.framework */; };
-		A045512E22EC8DFA00E17406 /* libTalkfunSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AC071C22C4BC7C001832EA /* libTalkfunSDK.a */; };
 		A045512F22EC8DFA00E17406 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D3A722C22DB300560A74 /* QuartzCore.framework */; };
 		A045513022EC8DFA00E17406 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D36A22C2281C00560A74 /* Accelerate.framework */; };
 		A045513122EC8DFA00E17406 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D37022C2284800560A74 /* libsqlite3.tbd */; };
 		A045513222EC8DFA00E17406 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D36822C2280E00560A74 /* libsqlite3.0.tbd */; };
 		A045513322EC8DFA00E17406 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01E1E5022223F8800435A0E /* UserNotifications.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		A045513522EC8DFA00E17406 /* Pods_Chaozhi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3429E05D3D88CA2DC3F14BB0 /* Pods_Chaozhi.framework */; };
-		A045513622EC8DFA00E17406 /* Pods_Chaozhi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3429E05D3D88CA2DC3F14BB0 /* Pods_Chaozhi.framework */; };
 		A045513822EC8DFA00E17406 /* TalkfunTextfieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07F122C4BC7C001832EA /* TalkfunTextfieldView.xib */; };
 		A045513922EC8DFA00E17406 /* vote.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC083B22C4BC7D001832EA /* vote.png */; };
 		A045513A22EC8DFA00E17406 /* 错误.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC081922C4BC7D001832EA /* 错误.png */; };
@@ -384,7 +383,6 @@
 		A045516C22EC8DFA00E17406 /* blackboard.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC089C22C4BC7D001832EA /* blackboard.png */; };
 		A045516D22EC8DFA00E17406 /* education.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC083122C4BC7D001832EA /* education.png */; };
 		A045516E22EC8DFA00E17406 /* ic_refresh_image_000@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF8A214AAB130011BB4F /* ic_refresh_image_000@2x.png */; };
-		A045516F22EC8DFA00E17406 /* TalkfunSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A0AC071922C4BC7C001832EA /* TalkfunSDK.bundle */; };
 		A045517022EC8DFA00E17406 /* flower.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC086522C4BC7D001832EA /* flower.png */; };
 		A045517122EC8DFA00E17406 /* generalStatus.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC085222C4BC7D001832EA /* generalStatus.png */; };
 		A045517222EC8DFA00E17406 /* ic_refresh_image_020@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF98214AAB130011BB4F /* ic_refresh_image_020@2x.png */; };
@@ -590,8 +588,6 @@
 		A07E4E9722ED82E4000ABD86 /* CZConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A07E4E9622ED82E4000ABD86 /* CZConfig.m */; };
 		A07E4E9D22ED833D000ABD86 /* XZConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A07E4E9C22ED833D000ABD86 /* XZConfig.m */; };
 		A091D1302178FAF300CCDAF6 /* StudyInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A091D12F2178FAF300CCDAF6 /* StudyInfoItem.m */; };
-		A0AC089F22C4BC7D001832EA /* TalkfunSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A0AC071922C4BC7C001832EA /* TalkfunSDK.bundle */; };
-		A0AC08A022C4BC7D001832EA /* libTalkfunSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AC071C22C4BC7C001832EA /* libTalkfunSDK.a */; };
 		A0AC08A222C4BC7D001832EA /* TalkfunHttpTools.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC072B22C4BC7C001832EA /* TalkfunHttpTools.m */; };
 		A0AC08A322C4BC7D001832EA /* UITextField+HTtext.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC072D22C4BC7C001832EA /* UITextField+HTtext.m */; };
 		A0AC08A422C4BC7D001832EA /* NetworkDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC072F22C4BC7C001832EA /* NetworkDetector.m */; };
@@ -843,11 +839,9 @@
 		A0E5081A230ED762005EF897 /* CZCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20ABB12D230A7A9600DDC86F /* CZCommentView.m */; };
 		A0E8981D22CF22C600DB09BA /* VideoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E8981B22CF22C600DB09BA /* VideoItem.m */; };
 		A0E8982122CF265800DB09BA /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E8982022CF265800DB09BA /* DBManager.m */; };
-		C0E8EB6B016115D195593C73 /* Pods_Chaozhi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3429E05D3D88CA2DC3F14BB0 /* Pods_Chaozhi.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		16348408E265BA9234A49C3D /* Pods-Chaozhi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chaozhi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chaozhi/Pods-Chaozhi.debug.xcconfig"; sourceTree = "<group>"; };
 		201DF3CE22AE584700904EAF /* CZAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZAlertView.h; sourceTree = "<group>"; };
 		201DF3CF22AE584700904EAF /* CZAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZAlertView.m; sourceTree = "<group>"; };
 		20572EE522C36C3600568CDC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -876,7 +870,7 @@
 		20D3D3B722C22E1900560A74 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		20D3D3B922C22E2000560A74 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3429E05D3D88CA2DC3F14BB0 /* Pods_Chaozhi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chaozhi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5213687D02D00729C4F7FA09 /* Pods-Chaozhi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chaozhi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chaozhi/Pods-Chaozhi.release.xcconfig"; sourceTree = "<group>"; };
+		57062E716BE44301CC362667 /* Pods-Chaozhi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chaozhi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chaozhi/Pods-Chaozhi.debug.xcconfig"; sourceTree = "<group>"; };
 		A00708FB22ED973B00C70CEE /* XZSelectCourseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZSelectCourseVC.h; sourceTree = "<group>"; };
 		A00708FC22ED973B00C70CEE /* XZSelectCourseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XZSelectCourseVC.m; sourceTree = "<group>"; };
 		A00708FE22EDD48D00C70CEE /* XZTabBarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZTabBarVC.h; sourceTree = "<group>"; };
@@ -1036,6 +1030,7 @@
 		A020B01A214AAB140011BB4F /* CourseCategoryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseCategoryItem.m; sourceTree = "<group>"; };
 		A020B01B214AAB140011BB4F /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		A020B07B214AAD600011BB4F /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		A035D329231ABE8D00F61484 /* TalkfunSDKFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TalkfunSDKFramework.framework; sourceTree = "<group>"; };
 		A045501522EC4ACB00E17406 /* Xuezhi.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Xuezhi.entitlements; sourceTree = "<group>"; };
 		A045501A22EC4FCA00E17406 /* ChaozhiAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ChaozhiAssets.xcassets; sourceTree = "<group>"; };
 		A045520C22EC8DFA00E17406 /* Xuezhi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xuezhi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1124,17 +1119,6 @@
 		A080B336221172D200F938A7 /* Chaozhi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Chaozhi.entitlements; sourceTree = "<group>"; };
 		A091D12E2178FAF300CCDAF6 /* StudyInfoItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudyInfoItem.h; sourceTree = "<group>"; };
 		A091D12F2178FAF300CCDAF6 /* StudyInfoItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyInfoItem.m; sourceTree = "<group>"; };
-		A0AC071922C4BC7C001832EA /* TalkfunSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TalkfunSDK.bundle; sourceTree = "<group>"; };
-		A0AC071A22C4BC7C001832EA /* TalkfunSDKPlayback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunSDKPlayback.h; sourceTree = "<group>"; };
-		A0AC071C22C4BC7C001832EA /* libTalkfunSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTalkfunSDK.a; sourceTree = "<group>"; };
-		A0AC071D22C4BC7C001832EA /* TalkfunSDKLive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunSDKLive.h; sourceTree = "<group>"; };
-		A0AC071E22C4BC7C001832EA /* TalkfunSDKRtc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunSDKRtc.h; sourceTree = "<group>"; };
-		A0AC071F22C4BC7C001832EA /* TalkfunWhiteboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunWhiteboard.h; sourceTree = "<group>"; };
-		A0AC072022C4BC7C001832EA /* TalkfunCacheImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunCacheImage.h; sourceTree = "<group>"; };
-		A0AC072122C4BC7C001832EA /* TalkfunSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunSDK.h; sourceTree = "<group>"; };
-		A0AC072222C4BC7C001832EA /* TalkfunSDKRtcPch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunSDKRtcPch.h; sourceTree = "<group>"; };
-		A0AC072322C4BC7C001832EA /* TalkfunMoviePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunMoviePlayer.h; sourceTree = "<group>"; };
-		A0AC072522C4BC7C001832EA /* TalkfunDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunDownloadManager.h; sourceTree = "<group>"; };
 		A0AC072822C4BC7C001832EA /* TalkfunModulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunModulation.h; sourceTree = "<group>"; };
 		A0AC072A22C4BC7C001832EA /* TalkfunHttpTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunHttpTools.h; sourceTree = "<group>"; };
 		A0AC072B22C4BC7C001832EA /* TalkfunHttpTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunHttpTools.m; sourceTree = "<group>"; };
@@ -1486,6 +1470,7 @@
 		A0E8981C22CF22C600DB09BA /* VideoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoItem.h; sourceTree = "<group>"; };
 		A0E8981F22CF265800DB09BA /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		A0E8982022CF265800DB09BA /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		E4FCDC3BE170EA70A51A31B5 /* Pods-Chaozhi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chaozhi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chaozhi/Pods-Chaozhi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1499,6 +1484,7 @@
 				20D3D3B822C22E1900560A74 /* MobileCoreServices.framework in Frameworks */,
 				20D3D3B622C22E1200560A74 /* VideoToolbox.framework in Frameworks */,
 				20D3D3B422C22E0B00560A74 /* CoreMedia.framework in Frameworks */,
+				A035D32A231ABE8D00F61484 /* TalkfunSDKFramework.framework in Frameworks */,
 				20D3D3B222C22DFC00560A74 /* AVFoundation.framework in Frameworks */,
 				20D3D36F22C2283700560A74 /* libiconv.tbd in Frameworks */,
 				20D3D36D22C2282A00560A74 /* libz.tbd in Frameworks */,
@@ -1506,14 +1492,12 @@
 				20D3D3AE22C22DCD00560A74 /* CoreAudio.framework in Frameworks */,
 				20D3D3AC22C22DC500560A74 /* MediaPlayer.framework in Frameworks */,
 				20D3D3AA22C22DBC00560A74 /* OpenGLES.framework in Frameworks */,
-				A0AC08A022C4BC7D001832EA /* libTalkfunSDK.a in Frameworks */,
 				20D3D3A822C22DB300560A74 /* QuartzCore.framework in Frameworks */,
 				20D3D36B22C2281C00560A74 /* Accelerate.framework in Frameworks */,
 				20D3D37122C2284800560A74 /* libsqlite3.tbd in Frameworks */,
 				20D3D36922C2280E00560A74 /* libsqlite3.0.tbd in Frameworks */,
 				A01E1E5122223F8800435A0E /* UserNotifications.framework in Frameworks */,
 				85401F932D5D75079941DDCE /* Pods_Chaozhi.framework in Frameworks */,
-				C0E8EB6B016115D195593C73 /* Pods_Chaozhi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1528,20 +1512,18 @@
 				A045512522EC8DFA00E17406 /* VideoToolbox.framework in Frameworks */,
 				A045512622EC8DFA00E17406 /* CoreMedia.framework in Frameworks */,
 				A045512722EC8DFA00E17406 /* AVFoundation.framework in Frameworks */,
+				A035D32B231ABE8D00F61484 /* TalkfunSDKFramework.framework in Frameworks */,
 				A045512822EC8DFA00E17406 /* libiconv.tbd in Frameworks */,
 				A045512922EC8DFA00E17406 /* libz.tbd in Frameworks */,
 				A045512A22EC8DFA00E17406 /* AudioToolbox.framework in Frameworks */,
 				A045512B22EC8DFA00E17406 /* CoreAudio.framework in Frameworks */,
 				A045512C22EC8DFA00E17406 /* MediaPlayer.framework in Frameworks */,
 				A045512D22EC8DFA00E17406 /* OpenGLES.framework in Frameworks */,
-				A045512E22EC8DFA00E17406 /* libTalkfunSDK.a in Frameworks */,
 				A045512F22EC8DFA00E17406 /* QuartzCore.framework in Frameworks */,
 				A045513022EC8DFA00E17406 /* Accelerate.framework in Frameworks */,
 				A045513122EC8DFA00E17406 /* libsqlite3.tbd in Frameworks */,
 				A045513222EC8DFA00E17406 /* libsqlite3.0.tbd in Frameworks */,
 				A045513322EC8DFA00E17406 /* UserNotifications.framework in Frameworks */,
-				A045513522EC8DFA00E17406 /* Pods_Chaozhi.framework in Frameworks */,
-				A045513622EC8DFA00E17406 /* Pods_Chaozhi.framework in Frameworks */,
 				A0E50819230ED54C005EF897 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2281,27 +2263,9 @@
 		A0AC071822C4BC7C001832EA /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				A0AC072022C4BC7C001832EA /* TalkfunCacheImage.h */,
-				A0AC072522C4BC7C001832EA /* TalkfunDownloadManager.h */,
-				A0AC072322C4BC7C001832EA /* TalkfunMoviePlayer.h */,
-				A0AC071922C4BC7C001832EA /* TalkfunSDK.bundle */,
-				A0AC072122C4BC7C001832EA /* TalkfunSDK.h */,
-				A0AC071D22C4BC7C001832EA /* TalkfunSDKLive.h */,
-				A0AC071A22C4BC7C001832EA /* TalkfunSDKPlayback.h */,
-				A0AC071E22C4BC7C001832EA /* TalkfunSDKRtc.h */,
-				A0AC072222C4BC7C001832EA /* TalkfunSDKRtcPch.h */,
-				A0AC071F22C4BC7C001832EA /* TalkfunWhiteboard.h */,
-				A0AC071B22C4BC7C001832EA /* Universal */,
+				A035D329231ABE8D00F61484 /* TalkfunSDKFramework.framework */,
 			);
 			path = Library;
-			sourceTree = "<group>";
-		};
-		A0AC071B22C4BC7C001832EA /* Universal */ = {
-			isa = PBXGroup;
-			children = (
-				A0AC071C22C4BC7C001832EA /* libTalkfunSDK.a */,
-			);
-			path = Universal;
 			sourceTree = "<group>";
 		};
 		A0AC072622C4BC7C001832EA /* Utils */ = {
@@ -2983,8 +2947,8 @@
 		A7FA9F4632752641B75EA9B4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				16348408E265BA9234A49C3D /* Pods-Chaozhi.debug.xcconfig */,
-				5213687D02D00729C4F7FA09 /* Pods-Chaozhi.release.xcconfig */,
+				57062E716BE44301CC362667 /* Pods-Chaozhi.debug.xcconfig */,
+				E4FCDC3BE170EA70A51A31B5 /* Pods-Chaozhi.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -3030,6 +2994,7 @@
 				A020AF41214AA85B0011BB4F /* Frameworks */,
 				A020AF42214AA85B0011BB4F /* Resources */,
 				F23DA9B50DD496AB74CB8278 /* [CP] Embed Pods Frameworks */,
+				6C57E2CD162A2A0C3FACE94A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -3044,11 +3009,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A045520922EC8DFA00E17406 /* Build configuration list for PBXNativeTarget "Xuezhi" */;
 			buildPhases = (
-				A045507122EC8DFA00E17406 /* [CP] Check Pods Manifest.lock */,
 				A045507222EC8DFA00E17406 /* Sources */,
 				A045512022EC8DFA00E17406 /* Frameworks */,
 				A045513722EC8DFA00E17406 /* Resources */,
-				A045520822EC8DFA00E17406 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -3178,7 +3141,6 @@
 				A0AC099422C4BC7E001832EA /* blackboard.png in Resources */,
 				A0AC093222C4BC7E001832EA /* education.png in Resources */,
 				A020B037214AAB150011BB4F /* ic_refresh_image_000@2x.png in Resources */,
-				A0AC089F22C4BC7D001832EA /* TalkfunSDK.bundle in Resources */,
 				A079A6BF231544DA0063123B /* ChaozhiProtocol.css in Resources */,
 				A0AC096122C4BC7E001832EA /* flower.png in Resources */,
 				A0AC095122C4BC7E001832EA /* generalStatus.png in Resources */,
@@ -3394,7 +3356,6 @@
 				A045516C22EC8DFA00E17406 /* blackboard.png in Resources */,
 				A045516D22EC8DFA00E17406 /* education.png in Resources */,
 				A045516E22EC8DFA00E17406 /* ic_refresh_image_000@2x.png in Resources */,
-				A045516F22EC8DFA00E17406 /* TalkfunSDK.bundle in Resources */,
 				A045517022EC8DFA00E17406 /* flower.png in Resources */,
 				A045517122EC8DFA00E17406 /* generalStatus.png in Resources */,
 				A045517222EC8DFA00E17406 /* ic_refresh_image_020@2x.png in Resources */,
@@ -3554,39 +3515,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A045507122EC8DFA00E17406 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Chaozhi-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A045520822EC8DFA00E17406 /* [CP] Embed Pods Frameworks */ = {
+		6C57E2CD162A2A0C3FACE94A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Chaozhi/Pods-Chaozhi-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Chaozhi/Pods-Chaozhi-resources.sh",
+				"${PODS_ROOT}/TalkfunMediaFramework/SDK/TalkfunMediaFramework.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Chaozhi/Pods-Chaozhi-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TalkfunMediaFramework.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Chaozhi/Pods-Chaozhi-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Chaozhi/Pods-Chaozhi-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C974483B2951098C6ADA4EC9 /* [CP] Check Pods Manifest.lock */ = {
@@ -4150,7 +4098,7 @@
 		};
 		A020AF5B214AA85C0011BB4F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 16348408E265BA9234A49C3D /* Pods-Chaozhi.debug.xcconfig */;
+			baseConfigurationReference = 57062E716BE44301CC362667 /* Pods-Chaozhi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Chaozhi/Chaozhi.entitlements;
@@ -4161,6 +4109,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Chaozhi/Vendor/Talkfun/Library",
 				);
 				GCC_PREFIX_HEADER = Chaozhi/Chaozhi.pch;
 				INFOPLIST_FILE = Chaozhi/Info.plist;
@@ -4241,7 +4190,7 @@
 		};
 		A020AF5C214AA85C0011BB4F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5213687D02D00729C4F7FA09 /* Pods-Chaozhi.release.xcconfig */;
+			baseConfigurationReference = E4FCDC3BE170EA70A51A31B5 /* Pods-Chaozhi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Chaozhi/Chaozhi.entitlements;
@@ -4252,6 +4201,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Chaozhi/Vendor/Talkfun/Library",
 				);
 				GCC_PREFIX_HEADER = Chaozhi/Chaozhi.pch;
 				INFOPLIST_FILE = Chaozhi/Info.plist;
@@ -4332,7 +4282,6 @@
 		};
 		A045520A22EC8DFA00E17406 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 16348408E265BA9234A49C3D /* Pods-Chaozhi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Xuezhi/Xuezhi.entitlements;
@@ -4343,6 +4292,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Chaozhi/Vendor/Talkfun/Library",
 				);
 				GCC_PREFIX_HEADER = Xuezhi/Xuezhi.pch;
 				INFOPLIST_FILE = Xuezhi/Info.plist;
@@ -4423,7 +4373,6 @@
 		};
 		A045520B22EC8DFA00E17406 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5213687D02D00729C4F7FA09 /* Pods-Chaozhi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Xuezhi/Xuezhi.entitlements;
@@ -4434,6 +4383,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Chaozhi/Vendor/Talkfun/Library",
 				);
 				GCC_PREFIX_HEADER = Xuezhi/Xuezhi.pch;
 				INFOPLIST_FILE = Xuezhi/Info.plist;

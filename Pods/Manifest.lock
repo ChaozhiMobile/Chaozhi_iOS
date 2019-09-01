@@ -14,31 +14,32 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - AgoraRtcEngine_iOS (2.3.1)
+  - AgoraRtcEngine_iOS (2.9.0)
   - FLAnimatedImage (1.0.12)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
   - IAPHelper (1.1)
-  - IQKeyboardManager (6.2.0)
+  - IQKeyboardManager (6.4.0)
   - JFImagePicker (1.0.0)
   - JPush-iOS-SDK (3.0.5)
   - KissXML (5.2.3)
-  - lottie-ios (2.5.2)
+  - lottie-ios (2.5.3)
   - Masonry (1.1.0)
   - MJExtension (3.0.15.1)
-  - MJRefresh (3.1.15.7)
-  - ReactiveObjC (3.1.0)
-  - SDCycleScrollView (1.75):
-    - SDWebImage (>= 4.0.0)
-  - SDWebImage (4.4.2):
-    - SDWebImage/Core (= 4.4.2)
-  - SDWebImage/Core (4.4.2)
-  - Socket.IO-Client-Swift (13.3.1):
-    - Starscream (~> 3.0.2)
-  - SSZipArchive (2.1.4)
-  - Starscream (3.0.6)
-  - TZImagePickerController (3.1.0)
+  - MJRefresh (3.2.0)
+  - ReactiveObjC (3.1.1)
+  - SDCycleScrollView (1.80):
+    - SDWebImage (>= 5.0.0)
+  - SDWebImage (5.1.0):
+    - SDWebImage/Core (= 5.1.0)
+  - SDWebImage/Core (5.1.0)
+  - Socket.IO-Client-Swift (15.1.0):
+    - Starscream (~> 3.1)
+  - SSZipArchive (2.2.2)
+  - Starscream (3.1.0)
+  - TalkfunMediaFramework (1.9.2)
+  - TZImagePickerController (3.2.2)
   - UMengAnalytics-NO-IDFA (4.2.5)
   - XLGCategory (1.1.0):
     - XLGCategory/NSCategory (= 1.1.0)
@@ -59,13 +60,14 @@ DEPENDENCIES:
   - KissXML
   - lottie-ios
   - Masonry
-  - MJExtension
+  - MJExtension (~> 3.0.15.1)
   - MJRefresh
   - ReactiveObjC
   - SDCycleScrollView
   - SDWebImage
   - Socket.IO-Client-Swift
   - SSZipArchive
+  - TalkfunMediaFramework
   - TZImagePickerController
   - UMengAnalytics-NO-IDFA
   - XLGCategory
@@ -92,6 +94,7 @@ SPEC REPOS:
     - Socket.IO-Client-Swift
     - SSZipArchive
     - Starscream
+    - TalkfunMediaFramework
     - TZImagePickerController
     - UMengAnalytics-NO-IDFA
     - XLGCategory
@@ -99,29 +102,30 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  AgoraRtcEngine_iOS: b0304fee470e0b88bd3abedf9ce1c4309f4fd722
+  AgoraRtcEngine_iOS: b316f64bc07f7973f0239316b2b4f79ec369e25c
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   IAPHelper: fd74f53b0ac142eed085777b88b86a11746a2dd4
-  IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
+  IQKeyboardManager: fcef267266379c003181fc3592f6bdb8bf4db839
   JFImagePicker: 2914c69dac80767a98664e768ac50118664e9f04
   JPush-iOS-SDK: f80e435b524449fd5101e247b044d4e48174ef5f
   KissXML: 09f88ff8161fd058d67b70740b8b516687b52823
-  lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
+  lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
-  MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
-  ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
-  SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
-  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
-  Socket.IO-Client-Swift: 79f8f85fa44881838175a20f9bd2c32bef2c9d37
-  SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
-  Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
-  TZImagePickerController: c9584b67b97d5a20b4dbbb58505fa0b6be590255
+  MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
+  SDWebImage: fb387001955223213dde14bc08c8b73f371f8d8f
+  Socket.IO-Client-Swift: 7cb44c0ffb86e158cee32d0642d30ec5fdcf8f61
+  SSZipArchive: fa16b8cc4cdeceb698e5e5d9f67e9558532fbf23
+  Starscream: 08172b481e145289c4930cb567230fb55897cfa4
+  TalkfunMediaFramework: a6e53cb714998de511d75e915dc985cd213bd6f1
+  TZImagePickerController: 44aa49cf35b1e88fe292be955e15b9003a5b1d83
   UMengAnalytics-NO-IDFA: 16666e32edce5be44ae5b14aaaa7f3582e09d6ab
   XLGCategory: b93fda8378ccd3e04deb87033c02ad3e6dee3c4a
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 2c314efc7902b6140933315d38c09fd994adb90d
+PODFILE CHECKSUM: c42ffd1adc61f93dcfdf45b4c21f5d4c3476564a
 
-COCOAPODS: 1.7.0.beta.2
+COCOAPODS: 1.6.1

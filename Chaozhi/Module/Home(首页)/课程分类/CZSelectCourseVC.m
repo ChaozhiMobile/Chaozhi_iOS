@@ -11,8 +11,8 @@
 
 @interface CZSelectCourseVC ()<UITableViewDataSource,UITableViewDelegate>
 
-@property (nonatomic,strong) NSMutableArray *dataArr;
-@property (nonatomic,strong) CourseCategoryItem *selectItem;
+@property (nonatomic,retain) NSMutableArray *dataArr;
+@property (nonatomic,retain) CourseCategoryItem *selectItem;
 
 @end
 

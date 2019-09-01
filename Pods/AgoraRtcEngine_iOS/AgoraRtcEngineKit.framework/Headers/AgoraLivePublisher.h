@@ -47,12 +47,12 @@
 -(void)publisherTranscodingUpdated: (AgoraLivePublisher *_Nonnull)publisher;
 
 /**
- The status of the imported external video stream.
+ The state of the imported external video stream.
 
  @param publisher AgoraRtcEngineKit object.
  @param url URL address of the imported external video stream added to the live broadcast.
  @param uid User ID.
- @param status Status of the externally injected video stream: AgoraInjectStreamStatus.
+ @param status State of the externally injected video stream: AgoraInjectStreamStatus.
  */
 -(void)publisher:(AgoraLivePublisher *_Nonnull)publisher streamInjectedStatusOfUrl:(NSString *_Nonnull)url uid:(NSUInteger)uid status:(AgoraInjectStreamStatus)status;
 @end
@@ -90,7 +90,7 @@ __attribute__((visibility("default"))) @interface AgoraLivePublisher: NSObject
 * If the frame rate is 30 fps, multiply the recommended bitrate by 1.5.
 * Calculate your bitrate with the ratio if you choose other frame rates.
 
- If the bitrate you set is beyond the proper range, the SDK will automatically adjust it to a value within the range.
+ If you set a bitrate beyond the proper range, the SDK will automatically adjust it to a value within the range.
  */
 - (void)setVideoResolution:(CGSize)resolution andFrameRate:(NSInteger)frameRate bitrate:(NSInteger)bitrate;
 
