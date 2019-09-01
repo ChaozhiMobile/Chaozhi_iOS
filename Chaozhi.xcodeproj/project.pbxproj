@@ -98,6 +98,7 @@
 		A00D0D6C231BA7A300CF25E7 /* ChapterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D32231BA7A300CF25E7 /* ChapterTableViewCell.m */; };
 		A00D0D6E231BC8C400CF25E7 /* 小班返回.png in Resources */ = {isa = PBXBuildFile; fileRef = A00D0D6D231BC8C300CF25E7 /* 小班返回.png */; };
 		A00D0D6F231BC8C400CF25E7 /* 小班返回.png in Resources */ = {isa = PBXBuildFile; fileRef = A00D0D6D231BC8C300CF25E7 /* 小班返回.png */; };
+		A00D0D70231BF6ED00CF25E7 /* Pods_Chaozhi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3429E05D3D88CA2DC3F14BB0 /* Pods_Chaozhi.framework */; };
 		A00FA9D82168C26900F4DA5B /* CZSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9D72168C26900F4DA5B /* CZSettingVC.m */; };
 		A00FA9DC2169DB0000F4DA5B /* CZSelectCourseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9DB2169DB0000F4DA5B /* CZSelectCourseVC.m */; };
 		A00FA9DF2169DCDC00F4DA5B /* CZSelectCourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9DE2169DCDC00F4DA5B /* CZSelectCourseCell.m */; };
@@ -1512,6 +1513,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A00D0D70231BF6ED00CF25E7 /* Pods_Chaozhi.framework in Frameworks */,
 				A045512122EC8DFA00E17406 /* SocketIO.framework in Frameworks */,
 				A045512222EC8DFA00E17406 /* Foundation.framework in Frameworks */,
 				A045512322EC8DFA00E17406 /* SystemConfiguration.framework in Frameworks */,

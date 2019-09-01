@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C384BCD192933CCDE5F0FC4D9BFE4F3C"
+               BlueprintIdentifier = "7F5E1A7770C8F9157E64CAD4BC104EA1"
                BuildableName = "JFImagePicker.framework"
                BlueprintName = "JFImagePicker"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C384BCD192933CCDE5F0FC4D9BFE4F3C"
+            BlueprintIdentifier = "7F5E1A7770C8F9157E64CAD4BC104EA1"
             BuildableName = "JFImagePicker.framework"
             BlueprintName = "JFImagePicker"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -63,7 +63,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C384BCD192933CCDE5F0FC4D9BFE4F3C"
+            BlueprintIdentifier = "7F5E1A7770C8F9157E64CAD4BC104EA1"
             BuildableName = "JFImagePicker.framework"
             BlueprintName = "JFImagePicker"
             ReferencedContainer = "container:Pods.xcodeproj">

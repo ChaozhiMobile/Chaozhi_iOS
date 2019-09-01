@@ -14,12 +14,27 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>AgoraRtcEngine_iOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FLAnimatedImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FLAnimatedImage.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FMDB.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FMDB.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -39,12 +54,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>JFImagePicker.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>JPush-iOS-SDK.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>KissXML.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>KissXML.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -89,12 +114,27 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SSZipArchive.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Socket.IO-Client-Swift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Socket.IO-Client-Swift.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Starscream.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Starscream.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

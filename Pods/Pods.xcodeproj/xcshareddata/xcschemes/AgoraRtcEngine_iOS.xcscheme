@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "183C29DD6DE04D22CA29BAE61F5C530B"
+               BlueprintIdentifier = "F339F092BEE2DECAA0950A9CF0D9CF21"
                BuildableName = "AgoraRtcEngine_iOS"
                BlueprintName = "AgoraRtcEngine_iOS"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "183C29DD6DE04D22CA29BAE61F5C530B"
+            BlueprintIdentifier = "F339F092BEE2DECAA0950A9CF0D9CF21"
             BuildableName = "AgoraRtcEngine_iOS"
             BlueprintName = "AgoraRtcEngine_iOS"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -63,7 +63,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "183C29DD6DE04D22CA29BAE61F5C530B"
+            BlueprintIdentifier = "F339F092BEE2DECAA0950A9CF0D9CF21"
             BuildableName = "AgoraRtcEngine_iOS"
             BlueprintName = "AgoraRtcEngine_iOS"
             ReferencedContainer = "container:Pods.xcodeproj">
