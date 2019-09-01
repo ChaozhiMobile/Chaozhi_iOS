@@ -26,6 +26,11 @@
 
 //读取
 +(NSDictionary*)getLogoUrl:(NSInteger)roomId;
+
+
+//是否能跳过广告
++(BOOL)skipAdvertising:(NSInteger)roomId;
++(void)saveSkip:(NSInteger)roomId;
 @end
 
 

@@ -65,7 +65,40 @@
     }else if ((TalkfunNewFunctionButton *)btn == self.downloadBtn){
         return;
     }
-    self.selectViewLeadingSpace.constant = btn.frame.origin.x;
+    
+    //聊天 与提问 的隐藏
+    int hiddenCount = 0;
+    
+    if (self.chatBtn.hidden == YES) {
+        hiddenCount = hiddenCount +1;
+    }
+    if (self.askBtn.hidden == YES) {
+       
+          hiddenCount = hiddenCount +1;
+    }
+    
+    
+    
+    if (btn == self.chatBtn) {
+        self.selectViewLeadingSpace.constant = 0;
+    }else if (btn == self.askBtn){
+        if (self.chatBtn.hidden) {
+            self.selectViewLeadingSpace.constant = 0;
+        }else{
+             self.selectViewLeadingSpace.constant = btn.frame.size.width;
+        }
+      
+    }else if (btn == self.noticeBtn){
+        if (hiddenCount == 0 ) {
+            self.selectViewLeadingSpace.constant = btn.frame.size.width *2;
+        }else if (hiddenCount == 1 ) {
+           self.selectViewLeadingSpace.constant = btn.frame.size.width;
+        }else{
+            self.selectViewLeadingSpace.constant = 0;
+        }
+    }
+    
+   
     self.selectBtn.selected = YES;
     self.selectBtn.backgroundColor = nil;
     self.selectBtn = btn;

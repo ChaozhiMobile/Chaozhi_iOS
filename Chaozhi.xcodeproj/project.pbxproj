@@ -38,6 +38,64 @@
 		A007090C22EDE81B00C70CEE /* XZTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00708FF22EDD48D00C70CEE /* XZTabBarVC.m */; };
 		A00BE16A219FF6E70042E6ED /* VersionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A00BE169219FF6E70042E6ED /* VersionItem.m */; };
 		A00BE16D219FFB140042E6ED /* CZUpdateView.m in Sources */ = {isa = PBXBuildFile; fileRef = A00BE16C219FFB140042E6ED /* CZUpdateView.m */; };
+		A00D0D33231BA7A300CF25E7 /* ChapterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0CFF231BA7A300CF25E7 /* ChapterViewController.m */; };
+		A00D0D34231BA7A300CF25E7 /* ChapterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0CFF231BA7A300CF25E7 /* ChapterViewController.m */; };
+		A00D0D35231BA7A300CF25E7 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D00231BA7A300CF25E7 /* BaseTableViewController.m */; };
+		A00D0D36231BA7A300CF25E7 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D00231BA7A300CF25E7 /* BaseTableViewController.m */; };
+		A00D0D37231BA7A300CF25E7 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D02231BA7A300CF25E7 /* ChatViewController.m */; };
+		A00D0D38231BA7A300CF25E7 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D02231BA7A300CF25E7 /* ChatViewController.m */; };
+		A00D0D39231BA7A300CF25E7 /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D03231BA7A300CF25E7 /* AlbumViewController.m */; };
+		A00D0D3A231BA7A300CF25E7 /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D03231BA7A300CF25E7 /* AlbumViewController.m */; };
+		A00D0D3B231BA7A300CF25E7 /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D06231BA7A300CF25E7 /* QuestionViewController.m */; };
+		A00D0D3C231BA7A300CF25E7 /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D06231BA7A300CF25E7 /* QuestionViewController.m */; };
+		A00D0D3D231BA7A300CF25E7 /* TalkfunPlaybackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D09231BA7A300CF25E7 /* TalkfunPlaybackViewController.m */; };
+		A00D0D3E231BA7A300CF25E7 /* TalkfunPlaybackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D09231BA7A300CF25E7 /* TalkfunPlaybackViewController.m */; };
+		A00D0D3F231BA7A300CF25E7 /* TalkfunCourseProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D0C231BA7A300CF25E7 /* TalkfunCourseProgress.m */; };
+		A00D0D40231BA7A300CF25E7 /* TalkfunCourseProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D0C231BA7A300CF25E7 /* TalkfunCourseProgress.m */; };
+		A00D0D41231BA7A300CF25E7 /* PlaybackQuestionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D0D231BA7A300CF25E7 /* PlaybackQuestionModel.m */; };
+		A00D0D42231BA7A300CF25E7 /* PlaybackQuestionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D0D231BA7A300CF25E7 /* PlaybackQuestionModel.m */; };
+		A00D0D43231BA7A300CF25E7 /* TalkfunCourseManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D0E231BA7A300CF25E7 /* TalkfunCourseManagement.m */; };
+		A00D0D44231BA7A300CF25E7 /* TalkfunCourseManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D0E231BA7A300CF25E7 /* TalkfunCourseManagement.m */; };
+		A00D0D45231BA7A300CF25E7 /* PlaybackChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D10231BA7A300CF25E7 /* PlaybackChatModel.m */; };
+		A00D0D46231BA7A300CF25E7 /* PlaybackChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D10231BA7A300CF25E7 /* PlaybackChatModel.m */; };
+		A00D0D47231BA7A300CF25E7 /* AlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D12231BA7A300CF25E7 /* AlbumModel.m */; };
+		A00D0D48231BA7A300CF25E7 /* AlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D12231BA7A300CF25E7 /* AlbumModel.m */; };
+		A00D0D49231BA7A300CF25E7 /* ChapterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D16231BA7A300CF25E7 /* ChapterModel.m */; };
+		A00D0D4A231BA7A300CF25E7 /* ChapterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D16231BA7A300CF25E7 /* ChapterModel.m */; };
+		A00D0D4B231BA7A300CF25E7 /* ChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D18231BA7A300CF25E7 /* ChatTableViewCell.m */; };
+		A00D0D4C231BA7A300CF25E7 /* ChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D18231BA7A300CF25E7 /* ChatTableViewCell.m */; };
+		A00D0D4D231BA7A300CF25E7 /* TalkfunNetworkLines.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D19231BA7A300CF25E7 /* TalkfunNetworkLines.m */; };
+		A00D0D4E231BA7A300CF25E7 /* TalkfunNetworkLines.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D19231BA7A300CF25E7 /* TalkfunNetworkLines.m */; };
+		A00D0D4F231BA7A300CF25E7 /* TalkfunAdvertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D1C231BA7A300CF25E7 /* TalkfunAdvertView.m */; };
+		A00D0D50231BA7A300CF25E7 /* TalkfunAdvertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D1C231BA7A300CF25E7 /* TalkfunAdvertView.m */; };
+		A00D0D51231BA7A300CF25E7 /* QuestionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00D0D1D231BA7A300CF25E7 /* QuestionTableViewCell.xib */; };
+		A00D0D52231BA7A300CF25E7 /* QuestionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00D0D1D231BA7A300CF25E7 /* QuestionTableViewCell.xib */; };
+		A00D0D53231BA7A300CF25E7 /* ChapterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00D0D1F231BA7A300CF25E7 /* ChapterTableViewCell.xib */; };
+		A00D0D54231BA7A300CF25E7 /* ChapterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00D0D1F231BA7A300CF25E7 /* ChapterTableViewCell.xib */; };
+		A00D0D55231BA7A300CF25E7 /* TalkfunKuaiJinView.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D22231BA7A300CF25E7 /* TalkfunKuaiJinView.m */; };
+		A00D0D56231BA7A300CF25E7 /* TalkfunKuaiJinView.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D22231BA7A300CF25E7 /* TalkfunKuaiJinView.m */; };
+		A00D0D57231BA7A300CF25E7 /* TalkfunKuaiJinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00D0D24231BA7A300CF25E7 /* TalkfunKuaiJinView.xib */; };
+		A00D0D58231BA7A300CF25E7 /* TalkfunKuaiJinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00D0D24231BA7A300CF25E7 /* TalkfunKuaiJinView.xib */; };
+		A00D0D59231BA7A300CF25E7 /* TalkfunPlaybackMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00D0D25231BA7A300CF25E7 /* TalkfunPlaybackMessageView.xib */; };
+		A00D0D5A231BA7A300CF25E7 /* TalkfunPlaybackMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00D0D25231BA7A300CF25E7 /* TalkfunPlaybackMessageView.xib */; };
+		A00D0D5B231BA7A300CF25E7 /* TalkfunVideoControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D27231BA7A300CF25E7 /* TalkfunVideoControlView.m */; };
+		A00D0D5C231BA7A300CF25E7 /* TalkfunVideoControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D27231BA7A300CF25E7 /* TalkfunVideoControlView.m */; };
+		A00D0D5D231BA7A300CF25E7 /* TalkfunPlaybackMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D28231BA7A300CF25E7 /* TalkfunPlaybackMessageView.m */; };
+		A00D0D5E231BA7A300CF25E7 /* TalkfunPlaybackMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D28231BA7A300CF25E7 /* TalkfunPlaybackMessageView.m */; };
+		A00D0D5F231BA7A300CF25E7 /* TalkfunVideoControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00D0D29231BA7A300CF25E7 /* TalkfunVideoControlView.xib */; };
+		A00D0D60231BA7A300CF25E7 /* TalkfunVideoControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00D0D29231BA7A300CF25E7 /* TalkfunVideoControlView.xib */; };
+		A00D0D61231BA7A300CF25E7 /* AlbumCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00D0D2D231BA7A300CF25E7 /* AlbumCellTableViewCell.xib */; };
+		A00D0D62231BA7A300CF25E7 /* AlbumCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00D0D2D231BA7A300CF25E7 /* AlbumCellTableViewCell.xib */; };
+		A00D0D63231BA7A300CF25E7 /* AlbumCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D2E231BA7A300CF25E7 /* AlbumCellTableViewCell.m */; };
+		A00D0D64231BA7A300CF25E7 /* AlbumCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D2E231BA7A300CF25E7 /* AlbumCellTableViewCell.m */; };
+		A00D0D65231BA7A300CF25E7 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00D0D2F231BA7A300CF25E7 /* ChatTableViewCell.xib */; };
+		A00D0D66231BA7A300CF25E7 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00D0D2F231BA7A300CF25E7 /* ChatTableViewCell.xib */; };
+		A00D0D67231BA7A300CF25E7 /* QuestionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D30231BA7A300CF25E7 /* QuestionTableViewCell.m */; };
+		A00D0D68231BA7A300CF25E7 /* QuestionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D30231BA7A300CF25E7 /* QuestionTableViewCell.m */; };
+		A00D0D69231BA7A300CF25E7 /* TalkfunNetworkLines.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00D0D31231BA7A300CF25E7 /* TalkfunNetworkLines.xib */; };
+		A00D0D6A231BA7A300CF25E7 /* TalkfunNetworkLines.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00D0D31231BA7A300CF25E7 /* TalkfunNetworkLines.xib */; };
+		A00D0D6B231BA7A300CF25E7 /* ChapterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D32231BA7A300CF25E7 /* ChapterTableViewCell.m */; };
+		A00D0D6C231BA7A300CF25E7 /* ChapterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D32231BA7A300CF25E7 /* ChapterTableViewCell.m */; };
 		A00FA9D82168C26900F4DA5B /* CZSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9D72168C26900F4DA5B /* CZSettingVC.m */; };
 		A00FA9DC2169DB0000F4DA5B /* CZSelectCourseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9DB2169DB0000F4DA5B /* CZSelectCourseVC.m */; };
 		A00FA9DF2169DCDC00F4DA5B /* CZSelectCourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9DE2169DCDC00F4DA5B /* CZSelectCourseCell.m */; };
@@ -149,10 +207,7 @@
 		A045507A22EC8DFA00E17406 /* TalkfunFunctionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC075A22C4BC7C001832EA /* TalkfunFunctionButton.m */; };
 		A045507B22EC8DFA00E17406 /* CZUpdateView.m in Sources */ = {isa = PBXBuildFile; fileRef = A00BE16C219FFB140042E6ED /* CZUpdateView.m */; };
 		A045507C22EC8DFA00E17406 /* DownloadListController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F606A22CB895F001133C4 /* DownloadListController.m */; };
-		A045507D22EC8DFA00E17406 /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC078722C4BC7C001832EA /* QuestionViewController.m */; };
 		A045507E22EC8DFA00E17406 /* stopCopyTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC075722C4BC7C001832EA /* stopCopyTextView.m */; };
-		A045507F22EC8DFA00E17406 /* ChapterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC079722C4BC7C001832EA /* ChapterModel.m */; };
-		A045508022EC8DFA00E17406 /* TalkfunCourseProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC078D22C4BC7C001832EA /* TalkfunCourseProgress.m */; };
 		A045508122EC8DFA00E17406 /* TalkfunGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC075422C4BC7C001832EA /* TalkfunGradientView.m */; };
 		A045508222EC8DFA00E17406 /* TalkfunExpressionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07C522C4BC7C001832EA /* TalkfunExpressionViewController.m */; };
 		A045508322EC8DFA00E17406 /* BaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B017214AAB140011BB4F /* BaseItem.m */; };
@@ -170,9 +225,7 @@
 		A045508F22EC8DFA00E17406 /* LDNetTraceRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B004214AAB140011BB4F /* LDNetTraceRoute.m */; };
 		A045509022EC8DFA00E17406 /* TalkFunTextLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC074122C4BC7C001832EA /* TalkFunTextLayer.m */; };
 		A045509122EC8DFA00E17406 /* evaluateView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC081522C4BC7D001832EA /* evaluateView.m */; };
-		A045509222EC8DFA00E17406 /* ChapterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC078022C4BC7C001832EA /* ChapterViewController.m */; };
 		A045509322EC8DFA00E17406 /* BaseNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFFD214AAB140011BB4F /* BaseNavBar.m */; };
-		A045509422EC8DFA00E17406 /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC078422C4BC7C001832EA /* AlbumViewController.m */; };
 		A045509522EC8DFA00E17406 /* TalkfunNewButtonViewButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC075E22C4BC7C001832EA /* TalkfunNewButtonViewButton.m */; };
 		A045509622EC8DFA00E17406 /* LDNetGetAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B00B214AAB140011BB4F /* LDNetGetAddress.m */; };
 		A045509722EC8DFA00E17406 /* UILabel+TalkfunLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC080922C4BC7D001832EA /* UILabel+TalkfunLabel.m */; };
@@ -184,12 +237,10 @@
 		A045509D22EC8DFA00E17406 /* QuestionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC074C22C4BC7C001832EA /* QuestionModel.m */; };
 		A045509E22EC8DFA00E17406 /* TalkfunNetworkStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC080122C4BC7D001832EA /* TalkfunNetworkStatusView.m */; };
 		A045509F22EC8DFA00E17406 /* TalkfunNewFunctionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC077822C4BC7C001832EA /* TalkfunNewFunctionView.m */; };
-		A04550A022EC8DFA00E17406 /* TalkfunPlaybackMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07A822C4BC7C001832EA /* TalkfunPlaybackMessageView.m */; };
 		A04550A122EC8DFA00E17406 /* NetworkDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC072F22C4BC7C001832EA /* NetworkDetector.m */; };
 		A04550A222EC8DFA00E17406 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFB2214AAB130011BB4F /* Utils.m */; };
 		A04550A322EC8DFA00E17406 /* LDNetPing.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B009214AAB140011BB4F /* LDNetPing.m */; };
 		A04550A422EC8DFA00E17406 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B012214AAB140011BB4F /* Reachability.m */; };
-		A04550A622EC8DFA00E17406 /* AlbumCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07AD22C4BC7C001832EA /* AlbumCellTableViewCell.m */; };
 		A04550A722EC8DFA00E17406 /* KeyChainUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFAD214AAB130011BB4F /* KeyChainUtil.m */; };
 		A04550A822EC8DFA00E17406 /* MEViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFD1214AAB140011BB4F /* MEViewModel.m */; };
 		A04550A922EC8DFA00E17406 /* UIView+TalkfunView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC075922C4BC7C001832EA /* UIView+TalkfunView.m */; };
@@ -201,7 +252,6 @@
 		A04550AF22EC8DFA00E17406 /* TalkfunLongTextfieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC082022C4BC7D001832EA /* TalkfunLongTextfieldView.m */; };
 		A04550B022EC8DFA00E17406 /* DownloadListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F607222CB895F001133C4 /* DownloadListTableViewCell.m */; };
 		A04550B122EC8DFA00E17406 /* ChoiceButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07CE22C4BC7C001832EA /* ChoiceButton.m */; };
-		A04550B222EC8DFA00E17406 /* TalkfunVideoControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07A722C4BC7C001832EA /* TalkfunVideoControlView.m */; };
 		A04550B322EC8DFA00E17406 /* StudyInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A091D12F2178FAF300CCDAF6 /* StudyInfoItem.m */; };
 		A04550B422EC8DFA00E17406 /* barrageSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC081A22C4BC7D001832EA /* barrageSwitch.m */; };
 		A04550B522EC8DFA00E17406 /* TalkfunExpressionCloseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07F822C4BC7D001832EA /* TalkfunExpressionCloseButton.m */; };
@@ -211,15 +261,12 @@
 		A04550B922EC8DFA00E17406 /* TalkfunMultifunctionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E0D3C922D0E3A100296851 /* TalkfunMultifunctionTool.m */; };
 		A04550BA22EC8DFA00E17406 /* UITextField+HTtext.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC072D22C4BC7C001832EA /* UITextField+HTtext.m */; };
 		A04550BB22EC8DFA00E17406 /* LDNetDiagnoService.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B00C214AAB140011BB4F /* LDNetDiagnoService.m */; };
-		A04550BC22EC8DFA00E17406 /* AlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC079322C4BC7C001832EA /* AlbumModel.m */; };
 		A04550BD22EC8DFA00E17406 /* TalkfunNewTextfieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC080022C4BC7D001832EA /* TalkfunNewTextfieldView.m */; };
 		A04550BE22EC8DFA00E17406 /* CourseCategoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B01A214AAB140011BB4F /* CourseCategoryItem.m */; };
 		A04550BF22EC8DFA00E17406 /* CZGuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FDB3221763DBE001BE2C6 /* CZGuideVC.m */; };
-		A04550C022EC8DFA00E17406 /* TalkfunNetworkLines.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC079A22C4BC7C001832EA /* TalkfunNetworkLines.m */; };
 		A04550C122EC8DFA00E17406 /* BaseNC.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFFC214AAB140011BB4F /* BaseNC.m */; };
 		A04550C222EC8DFA00E17406 /* CZProtocalWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A05CD23B22AE8C8E00CBE4F5 /* CZProtocalWebVC.m */; };
 		A04550C322EC8DFA00E17406 /* CZAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 201DF3CF22AE584700904EAF /* CZAlertView.m */; };
-		A04550C422EC8DFA00E17406 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC078322C4BC7C001832EA /* ChatViewController.m */; };
 		A04550C522EC8DFA00E17406 /* UTLHelpper.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC073322C4BC7C001832EA /* UTLHelpper.m */; };
 		A04550C622EC8DFA00E17406 /* ChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07FD22C4BC7D001832EA /* ChatCell.m */; };
 		A04550C722EC8DFA00E17406 /* TalkfunNewChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC076222C4BC7C001832EA /* TalkfunNewChatCell.m */; };
@@ -233,7 +280,6 @@
 		A04550CF22EC8DFA00E17406 /* TalkfunModulation.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC074522C4BC7C001832EA /* TalkfunModulation.m */; };
 		A04550D022EC8DFA00E17406 /* TalkfunMultifunctionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E0D3CA22D0E3A100296851 /* TalkfunMultifunctionButton.m */; };
 		A04550D122EC8DFA00E17406 /* TalkfunGuidenceButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC080222C4BC7D001832EA /* TalkfunGuidenceButton.m */; };
-		A04550D222EC8DFA00E17406 /* TalkfunCourseManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC078F22C4BC7C001832EA /* TalkfunCourseManagement.m */; };
 		A04550D322EC8DFA00E17406 /* ckickUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07D822C4BC7C001832EA /* ckickUILabel.m */; };
 		A04550D422EC8DFA00E17406 /* LDSimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B006214AAB140011BB4F /* LDSimplePing.m */; };
 		A04550D522EC8DFA00E17406 /* XLGLogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A05999E62155EC1500D17058 /* XLGLogVC.m */; };
@@ -244,7 +290,6 @@
 		A04550DA22EC8DFA00E17406 /* QuestionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07B522C4BC7C001832EA /* QuestionTableViewController.m */; };
 		A04550DB22EC8DFA00E17406 /* NetworkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07CC22C4BC7C001832EA /* NetworkModel.m */; };
 		A04550DC22EC8DFA00E17406 /* TalkfunItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CB7CB822C65D8800069B34 /* TalkfunItem.m */; };
-		A04550DD22EC8DFA00E17406 /* QuestionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07AF22C4BC7C001832EA /* QuestionTableViewCell.m */; };
 		A04550DE22EC8DFA00E17406 /* VersionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A00BE169219FF6E70042E6ED /* VersionItem.m */; };
 		A04550DF22EC8DFA00E17406 /* QuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC080F22C4BC7D001832EA /* QuestionCell.m */; };
 		A04550E022EC8DFA00E17406 /* CZMineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0599A1621574CAF00D17058 /* CZMineVC.m */; };
@@ -258,7 +303,6 @@
 		A04550E822EC8DFA00E17406 /* TalkfunExpressionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07F222C4BC7C001832EA /* TalkfunExpressionCell.m */; };
 		A04550E922EC8DFA00E17406 /* XLGLoginTestViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFDB214AAB140011BB4F /* XLGLoginTestViewModel.m */; };
 		A04550EA22EC8DFA00E17406 /* XLGExternalTestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A05999E02155EC1500D17058 /* XLGExternalTestTool.m */; };
-		A04550EB22EC8DFA00E17406 /* PlaybackChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC079122C4BC7C001832EA /* PlaybackChatModel.m */; };
 		A04550EC22EC8DFA00E17406 /* TalkfunNewQuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC076322C4BC7C001832EA /* TalkfunNewQuestionCell.m */; };
 		A04550ED22EC8DFA00E17406 /* XLGLoginTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFD9214AAB140011BB4F /* XLGLoginTestVC.m */; };
 		A04550EE22EC8DFA00E17406 /* TalkfunNewFunctionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC076822C4BC7C001832EA /* TalkfunNewFunctionButton.m */; };
@@ -267,22 +311,17 @@
 		A04550F122EC8DFA00E17406 /* CacheUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFAE214AAB130011BB4F /* CacheUtil.m */; };
 		A04550F222EC8DFA00E17406 /* TalkfunMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC082122C4BC7D001832EA /* TalkfunMessageView.m */; };
 		A04550F322EC8DFA00E17406 /* ChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC074D22C4BC7C001832EA /* ChatModel.m */; };
-		A04550F422EC8DFA00E17406 /* PlaybackQuestionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC078E22C4BC7C001832EA /* PlaybackQuestionModel.m */; };
 		A04550F522EC8DFA00E17406 /* WKDelegateController.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFF4214AAB140011BB4F /* WKDelegateController.m */; };
 		A04550F622EC8DFA00E17406 /* HomeInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FDB2E216F20C0001BE2C6 /* HomeInfoItem.m */; };
 		A04550F722EC8DFA00E17406 /* CZNotNetAvailableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0462A062187407600D12E65 /* CZNotNetAvailableVC.m */; };
 		A04550F822EC8DFA00E17406 /* UIImageView+Exten.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC074622C4BC7C001832EA /* UIImageView+Exten.m */; };
 		A04550F922EC8DFA00E17406 /* CZSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9D72168C26900F4DA5B /* CZSettingVC.m */; };
-		A04550FA22EC8DFA00E17406 /* ChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC079922C4BC7C001832EA /* ChatTableViewCell.m */; };
 		A04550FB22EC8DFA00E17406 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AF48214AA85B0011BB4F /* AppDelegate.m */; };
-		A04550FC22EC8DFA00E17406 /* ChapterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07B122C4BC7C001832EA /* ChapterTableViewCell.m */; };
 		A04550FD22EC8DFA00E17406 /* CZStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C1257221BC021B0026430E /* CZStarView.m */; };
-		A04550FE22EC8DFA00E17406 /* TalkfunKuaiJinView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07A222C4BC7C001832EA /* TalkfunKuaiJinView.m */; };
 		A045510022EC8DFA00E17406 /* XLGLottie.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFB8214AAB130011BB4F /* XLGLottie.m */; };
 		A045510122EC8DFA00E17406 /* NoticeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07BF22C4BC7C001832EA /* NoticeTableViewController.m */; };
 		A045510222EC8DFA00E17406 /* TalkfunMoveLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC074422C4BC7C001832EA /* TalkfunMoveLabel.m */; };
 		A045510322EC8DFA00E17406 /* TalkfunWatermark.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07FE22C4BC7D001832EA /* TalkfunWatermark.m */; };
-		A045510422EC8DFA00E17406 /* TalkfunPlaybackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC078A22C4BC7C001832EA /* TalkfunPlaybackViewController.m */; };
 		A045510522EC8DFA00E17406 /* VoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07D522C4BC7C001832EA /* VoteViewController.m */; };
 		A045510622EC8DFA00E17406 /* BaseScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFFE214AAB140011BB4F /* BaseScrollView.m */; };
 		A045510722EC8DFA00E17406 /* GroupChatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07B822C4BC7C001832EA /* GroupChatTableViewController.m */; };
@@ -295,7 +334,6 @@
 		A045510E22EC8DFA00E17406 /* GroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07C022C4BC7C001832EA /* GroupTableViewController.m */; };
 		A045510F22EC8DFA00E17406 /* ProgressLoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFBE214AAB130011BB4F /* ProgressLoadView.m */; };
 		A045511022EC8DFA00E17406 /* TalkfunLEEStarRating.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC081622C4BC7D001832EA /* TalkfunLEEStarRating.m */; };
-		A045511122EC8DFA00E17406 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC078122C4BC7C001832EA /* BaseTableViewController.m */; };
 		A045511222EC8DFA00E17406 /* TalkfunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07C622C4BC7C001832EA /* TalkfunViewController.m */; };
 		A045511322EC8DFA00E17406 /* JHHJView.m in Sources */ = {isa = PBXBuildFile; fileRef = A05FF5D4215B163400C51E05 /* JHHJView.m */; };
 		A045511422EC8DFA00E17406 /* TalkfunHttpTools.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC072B22C4BC7C001832EA /* TalkfunHttpTools.m */; };
@@ -344,10 +382,7 @@
 		A045514522EC8DFA00E17406 /* zhubo.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC083622C4BC7D001832EA /* zhubo.png */; };
 		A045514622EC8DFA00E17406 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A020AFA4214AAB130011BB4F /* Main.storyboard */; };
 		A045514722EC8DFA00E17406 /* 刷新.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC087122C4BC7D001832EA /* 刷新.png */; };
-		A045514822EC8DFA00E17406 /* ChapterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC079F22C4BC7C001832EA /* ChapterTableViewCell.xib */; };
-		A045514922EC8DFA00E17406 /* TalkfunKuaiJinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07A422C4BC7C001832EA /* TalkfunKuaiJinView.xib */; };
 		A045514A22EC8DFA00E17406 /* blueProgress.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC083D22C4BC7D001832EA /* blueProgress.png */; };
-		A045514B22EC8DFA00E17406 /* TalkfunPlaybackMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07A522C4BC7C001832EA /* TalkfunPlaybackMessageView.xib */; };
 		A045514C22EC8DFA00E17406 /* 等待队列_点击.png in Resources */ = {isa = PBXBuildFile; fileRef = A01F607C22CB8CD0001133C4 /* 等待队列_点击.png */; };
 		A045514D22EC8DFA00E17406 /* greatwall.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC083322C4BC7D001832EA /* greatwall.png */; };
 		A045514E22EC8DFA00E17406 /* 章节-默认.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC089922C4BC7D001832EA /* 章节-默认.png */; };
@@ -427,7 +462,6 @@
 		A045519A22EC8DFA00E17406 /* ic_refresh_image_011@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF7E214AAB130011BB4F /* ic_refresh_image_011@2x.png */; };
 		A045519B22EC8DFA00E17406 /* 直播已结束.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC084E22C4BC7D001832EA /* 直播已结束.png */; };
 		A045519C22EC8DFA00E17406 /* amaz.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC086122C4BC7D001832EA /* amaz.png */; };
-		A045519D22EC8DFA00E17406 /* TalkfunNetworkLines.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07B022C4BC7C001832EA /* TalkfunNetworkLines.xib */; };
 		A045519E22EC8DFA00E17406 /* fullscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC085722C4BC7D001832EA /* fullscreen.png */; };
 		A045519F22EC8DFA00E17406 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = A020AF9D214AAB130011BB4F /* loading.json */; };
 		A04551A022EC8DFA00E17406 /* openBullet.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC084A22C4BC7D001832EA /* openBullet.png */; };
@@ -438,7 +472,6 @@
 		A04551A622EC8DFA00E17406 /* ic_refresh_image_030@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF93214AAB130011BB4F /* ic_refresh_image_030@2x.png */; };
 		A04551A722EC8DFA00E17406 /* 重新_默认.png in Resources */ = {isa = PBXBuildFile; fileRef = A01F607F22CB8CD0001133C4 /* 重新_默认.png */; };
 		A04551A822EC8DFA00E17406 /* ic_refresh_image_006@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF95214AAB130011BB4F /* ic_refresh_image_006@2x.png */; };
-		A04551A922EC8DFA00E17406 /* AlbumCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07AC22C4BC7C001832EA /* AlbumCellTableViewCell.xib */; };
 		A04551AA22EC8DFA00E17406 /* 直播已结束16_9.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC083522C4BC7D001832EA /* 直播已结束16_9.png */; };
 		A04551AB22EC8DFA00E17406 /* ic_refresh_image_028@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF8D214AAB130011BB4F /* ic_refresh_image_028@2x.png */; };
 		A04551AC22EC8DFA00E17406 /* 组 102.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC088A22C4BC7D001832EA /* 组 102.png */; };
@@ -465,12 +498,10 @@
 		A04551C122EC8DFA00E17406 /* TalkfunExpressionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07C322C4BC7C001832EA /* TalkfunExpressionViewController.xib */; };
 		A04551C222EC8DFA00E17406 /* VoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07D622C4BC7C001832EA /* VoteViewController.xib */; };
 		A04551C322EC8DFA00E17406 /* ic_refresh_image_009@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF85214AAB130011BB4F /* ic_refresh_image_009@2x.png */; };
-		A04551C422EC8DFA00E17406 /* QuestionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC079D22C4BC7C001832EA /* QuestionTableViewCell.xib */; };
 		A04551C522EC8DFA00E17406 /* LotteryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07E022C4BC7C001832EA /* LotteryCell.xib */; };
 		A04551C622EC8DFA00E17406 /* 章节-点击.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC089622C4BC7D001832EA /* 章节-点击.png */; };
 		A04551C722EC8DFA00E17406 /* failP.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC084822C4BC7D001832EA /* failP.png */; };
 		A04551C822EC8DFA00E17406 /* lottery.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC083922C4BC7D001832EA /* lottery.png */; };
-		A04551CA22EC8DFA00E17406 /* TalkfunVideoControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07A922C4BC7C001832EA /* TalkfunVideoControlView.xib */; };
 		A04551CB22EC8DFA00E17406 /* DownloadListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01F607122CB895F001133C4 /* DownloadListTableViewCell.xib */; };
 		A04551CC22EC8DFA00E17406 /* ic_refresh_image_031@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A020AF84214AAB130011BB4F /* ic_refresh_image_031@2x.png */; };
 		A04551CD22EC8DFA00E17406 /* 专辑-点击.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC089E22C4BC7D001832EA /* 专辑-点击.png */; };
@@ -489,7 +520,6 @@
 		A04551DA22EC8DFA00E17406 /* 提问-默认.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC087722C4BC7D001832EA /* 提问-默认.png */; };
 		A04551DB22EC8DFA00E17406 /* TalkfunHornView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07F322C4BC7D001832EA /* TalkfunHornView.xib */; };
 		A04551DC22EC8DFA00E17406 /* 重新_点击.png in Resources */ = {isa = PBXBuildFile; fileRef = A01F608022CB8CD0001133C4 /* 重新_点击.png */; };
-		A04551DD22EC8DFA00E17406 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07AE22C4BC7C001832EA /* ChatTableViewCell.xib */; };
 		A04551DE22EC8DFA00E17406 /* TalkfunNetworkStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07F422C4BC7D001832EA /* TalkfunNetworkStatusView.xib */; };
 		A04551DF22EC8DFA00E17406 /* TeacherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 208B695A2185903700B263FB /* TeacherView.xib */; };
 		A04551E022EC8DFA00E17406 /* myLottery.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC084422C4BC7D001832EA /* myLottery.png */; };
@@ -629,34 +659,6 @@
 		A0AC08C822C4BC7D001832EA /* TalkfunNewQuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC077422C4BC7C001832EA /* TalkfunNewQuestionCell.xib */; };
 		A0AC08C922C4BC7D001832EA /* TalkfunNewFunctionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC077822C4BC7C001832EA /* TalkfunNewFunctionView.m */; };
 		A0AC08CA22C4BC7D001832EA /* UIScrollView+TalkfunScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC077922C4BC7C001832EA /* UIScrollView+TalkfunScrollView.m */; };
-		A0AC08CC22C4BC7D001832EA /* ChapterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC078022C4BC7C001832EA /* ChapterViewController.m */; };
-		A0AC08CD22C4BC7D001832EA /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC078122C4BC7C001832EA /* BaseTableViewController.m */; };
-		A0AC08CE22C4BC7D001832EA /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC078322C4BC7C001832EA /* ChatViewController.m */; };
-		A0AC08CF22C4BC7D001832EA /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC078422C4BC7C001832EA /* AlbumViewController.m */; };
-		A0AC08D022C4BC7D001832EA /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC078722C4BC7C001832EA /* QuestionViewController.m */; };
-		A0AC08D122C4BC7D001832EA /* TalkfunPlaybackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC078A22C4BC7C001832EA /* TalkfunPlaybackViewController.m */; };
-		A0AC08D222C4BC7D001832EA /* TalkfunCourseProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC078D22C4BC7C001832EA /* TalkfunCourseProgress.m */; };
-		A0AC08D322C4BC7D001832EA /* PlaybackQuestionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC078E22C4BC7C001832EA /* PlaybackQuestionModel.m */; };
-		A0AC08D422C4BC7D001832EA /* TalkfunCourseManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC078F22C4BC7C001832EA /* TalkfunCourseManagement.m */; };
-		A0AC08D522C4BC7D001832EA /* PlaybackChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC079122C4BC7C001832EA /* PlaybackChatModel.m */; };
-		A0AC08D622C4BC7D001832EA /* AlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC079322C4BC7C001832EA /* AlbumModel.m */; };
-		A0AC08D722C4BC7D001832EA /* ChapterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC079722C4BC7C001832EA /* ChapterModel.m */; };
-		A0AC08D822C4BC7D001832EA /* ChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC079922C4BC7C001832EA /* ChatTableViewCell.m */; };
-		A0AC08D922C4BC7D001832EA /* TalkfunNetworkLines.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC079A22C4BC7C001832EA /* TalkfunNetworkLines.m */; };
-		A0AC08DA22C4BC7D001832EA /* QuestionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC079D22C4BC7C001832EA /* QuestionTableViewCell.xib */; };
-		A0AC08DB22C4BC7D001832EA /* ChapterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC079F22C4BC7C001832EA /* ChapterTableViewCell.xib */; };
-		A0AC08DC22C4BC7D001832EA /* TalkfunKuaiJinView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07A222C4BC7C001832EA /* TalkfunKuaiJinView.m */; };
-		A0AC08DD22C4BC7D001832EA /* TalkfunKuaiJinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07A422C4BC7C001832EA /* TalkfunKuaiJinView.xib */; };
-		A0AC08DE22C4BC7D001832EA /* TalkfunPlaybackMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07A522C4BC7C001832EA /* TalkfunPlaybackMessageView.xib */; };
-		A0AC08DF22C4BC7D001832EA /* TalkfunVideoControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07A722C4BC7C001832EA /* TalkfunVideoControlView.m */; };
-		A0AC08E022C4BC7D001832EA /* TalkfunPlaybackMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07A822C4BC7C001832EA /* TalkfunPlaybackMessageView.m */; };
-		A0AC08E122C4BC7D001832EA /* TalkfunVideoControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07A922C4BC7C001832EA /* TalkfunVideoControlView.xib */; };
-		A0AC08E222C4BC7D001832EA /* AlbumCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07AC22C4BC7C001832EA /* AlbumCellTableViewCell.xib */; };
-		A0AC08E322C4BC7D001832EA /* AlbumCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07AD22C4BC7C001832EA /* AlbumCellTableViewCell.m */; };
-		A0AC08E422C4BC7D001832EA /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07AE22C4BC7C001832EA /* ChatTableViewCell.xib */; };
-		A0AC08E522C4BC7D001832EA /* QuestionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07AF22C4BC7C001832EA /* QuestionTableViewCell.m */; };
-		A0AC08E622C4BC7D001832EA /* TalkfunNetworkLines.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC07B022C4BC7C001832EA /* TalkfunNetworkLines.xib */; };
-		A0AC08E722C4BC7D001832EA /* ChapterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07B122C4BC7C001832EA /* ChapterTableViewCell.m */; };
 		A0AC08E822C4BC7D001832EA /* QuestionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07B522C4BC7C001832EA /* QuestionTableViewController.m */; };
 		A0AC08E922C4BC7D001832EA /* ChatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07B622C4BC7C001832EA /* ChatTableViewController.m */; };
 		A0AC08EA22C4BC7D001832EA /* RootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07B722C4BC7C001832EA /* RootTableViewController.m */; };
@@ -883,6 +885,56 @@
 		A00BE169219FF6E70042E6ED /* VersionItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VersionItem.m; sourceTree = "<group>"; };
 		A00BE16B219FFB140042E6ED /* CZUpdateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZUpdateView.h; sourceTree = "<group>"; };
 		A00BE16C219FFB140042E6ED /* CZUpdateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZUpdateView.m; sourceTree = "<group>"; };
+		A00D0CFD231BA7A300CF25E7 /* TalkfunPlaybackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunPlaybackViewController.h; sourceTree = "<group>"; };
+		A00D0CFF231BA7A300CF25E7 /* ChapterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChapterViewController.m; sourceTree = "<group>"; };
+		A00D0D00231BA7A300CF25E7 /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		A00D0D01231BA7A300CF25E7 /* QuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionViewController.h; sourceTree = "<group>"; };
+		A00D0D02231BA7A300CF25E7 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		A00D0D03231BA7A300CF25E7 /* AlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumViewController.m; sourceTree = "<group>"; };
+		A00D0D04231BA7A300CF25E7 /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
+		A00D0D05231BA7A300CF25E7 /* ChapterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChapterViewController.h; sourceTree = "<group>"; };
+		A00D0D06231BA7A300CF25E7 /* QuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionViewController.m; sourceTree = "<group>"; };
+		A00D0D07231BA7A300CF25E7 /* AlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumViewController.h; sourceTree = "<group>"; };
+		A00D0D08231BA7A300CF25E7 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		A00D0D09231BA7A300CF25E7 /* TalkfunPlaybackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunPlaybackViewController.m; sourceTree = "<group>"; };
+		A00D0D0B231BA7A300CF25E7 /* AlbumModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumModel.h; sourceTree = "<group>"; };
+		A00D0D0C231BA7A300CF25E7 /* TalkfunCourseProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunCourseProgress.m; sourceTree = "<group>"; };
+		A00D0D0D231BA7A300CF25E7 /* PlaybackQuestionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaybackQuestionModel.m; sourceTree = "<group>"; };
+		A00D0D0E231BA7A300CF25E7 /* TalkfunCourseManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunCourseManagement.m; sourceTree = "<group>"; };
+		A00D0D0F231BA7A300CF25E7 /* ChapterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChapterModel.h; sourceTree = "<group>"; };
+		A00D0D10231BA7A300CF25E7 /* PlaybackChatModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaybackChatModel.m; sourceTree = "<group>"; };
+		A00D0D11231BA7A300CF25E7 /* TalkfunCourseProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunCourseProgress.h; sourceTree = "<group>"; };
+		A00D0D12231BA7A300CF25E7 /* AlbumModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumModel.m; sourceTree = "<group>"; };
+		A00D0D13231BA7A300CF25E7 /* TalkfunCourseManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunCourseManagement.h; sourceTree = "<group>"; };
+		A00D0D14231BA7A300CF25E7 /* PlaybackQuestionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaybackQuestionModel.h; sourceTree = "<group>"; };
+		A00D0D15231BA7A300CF25E7 /* PlaybackChatModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaybackChatModel.h; sourceTree = "<group>"; };
+		A00D0D16231BA7A300CF25E7 /* ChapterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChapterModel.m; sourceTree = "<group>"; };
+		A00D0D18231BA7A300CF25E7 /* ChatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatTableViewCell.m; sourceTree = "<group>"; };
+		A00D0D19231BA7A300CF25E7 /* TalkfunNetworkLines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunNetworkLines.m; sourceTree = "<group>"; };
+		A00D0D1A231BA7A300CF25E7 /* QuestionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionTableViewCell.h; sourceTree = "<group>"; };
+		A00D0D1B231BA7A300CF25E7 /* AlbumCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumCellTableViewCell.h; sourceTree = "<group>"; };
+		A00D0D1C231BA7A300CF25E7 /* TalkfunAdvertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunAdvertView.m; sourceTree = "<group>"; };
+		A00D0D1D231BA7A300CF25E7 /* QuestionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionTableViewCell.xib; sourceTree = "<group>"; };
+		A00D0D1E231BA7A300CF25E7 /* ChapterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChapterTableViewCell.h; sourceTree = "<group>"; };
+		A00D0D1F231BA7A300CF25E7 /* ChapterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChapterTableViewCell.xib; sourceTree = "<group>"; };
+		A00D0D21231BA7A300CF25E7 /* TalkfunVideoControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunVideoControlView.h; sourceTree = "<group>"; };
+		A00D0D22231BA7A300CF25E7 /* TalkfunKuaiJinView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunKuaiJinView.m; sourceTree = "<group>"; };
+		A00D0D23231BA7A300CF25E7 /* TalkfunPlaybackMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunPlaybackMessageView.h; sourceTree = "<group>"; };
+		A00D0D24231BA7A300CF25E7 /* TalkfunKuaiJinView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TalkfunKuaiJinView.xib; sourceTree = "<group>"; };
+		A00D0D25231BA7A300CF25E7 /* TalkfunPlaybackMessageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TalkfunPlaybackMessageView.xib; sourceTree = "<group>"; };
+		A00D0D26231BA7A300CF25E7 /* TalkfunKuaiJinView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunKuaiJinView.h; sourceTree = "<group>"; };
+		A00D0D27231BA7A300CF25E7 /* TalkfunVideoControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunVideoControlView.m; sourceTree = "<group>"; };
+		A00D0D28231BA7A300CF25E7 /* TalkfunPlaybackMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunPlaybackMessageView.m; sourceTree = "<group>"; };
+		A00D0D29231BA7A300CF25E7 /* TalkfunVideoControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TalkfunVideoControlView.xib; sourceTree = "<group>"; };
+		A00D0D2A231BA7A300CF25E7 /* TalkfunNetworkLines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunNetworkLines.h; sourceTree = "<group>"; };
+		A00D0D2B231BA7A300CF25E7 /* ChatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatTableViewCell.h; sourceTree = "<group>"; };
+		A00D0D2C231BA7A300CF25E7 /* TalkfunAdvertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunAdvertView.h; sourceTree = "<group>"; };
+		A00D0D2D231BA7A300CF25E7 /* AlbumCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlbumCellTableViewCell.xib; sourceTree = "<group>"; };
+		A00D0D2E231BA7A300CF25E7 /* AlbumCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumCellTableViewCell.m; sourceTree = "<group>"; };
+		A00D0D2F231BA7A300CF25E7 /* ChatTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
+		A00D0D30231BA7A300CF25E7 /* QuestionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionTableViewCell.m; sourceTree = "<group>"; };
+		A00D0D31231BA7A300CF25E7 /* TalkfunNetworkLines.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TalkfunNetworkLines.xib; sourceTree = "<group>"; };
+		A00D0D32231BA7A300CF25E7 /* ChapterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChapterTableViewCell.m; sourceTree = "<group>"; };
 		A00FA9D62168C26900F4DA5B /* CZSettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZSettingVC.h; sourceTree = "<group>"; };
 		A00FA9D72168C26900F4DA5B /* CZSettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZSettingVC.m; sourceTree = "<group>"; };
 		A00FA9DA2169DB0000F4DA5B /* CZSelectCourseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZSelectCourseVC.h; sourceTree = "<group>"; };
@@ -1193,54 +1245,6 @@
 		A0AC077822C4BC7C001832EA /* TalkfunNewFunctionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunNewFunctionView.m; sourceTree = "<group>"; };
 		A0AC077922C4BC7C001832EA /* UIScrollView+TalkfunScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TalkfunScrollView.m"; sourceTree = "<group>"; };
 		A0AC077A22C4BC7C001832EA /* TalkfunFunctionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunFunctionView.h; sourceTree = "<group>"; };
-		A0AC077E22C4BC7C001832EA /* TalkfunPlaybackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunPlaybackViewController.h; sourceTree = "<group>"; };
-		A0AC078022C4BC7C001832EA /* ChapterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChapterViewController.m; sourceTree = "<group>"; };
-		A0AC078122C4BC7C001832EA /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
-		A0AC078222C4BC7C001832EA /* QuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionViewController.h; sourceTree = "<group>"; };
-		A0AC078322C4BC7C001832EA /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
-		A0AC078422C4BC7C001832EA /* AlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumViewController.m; sourceTree = "<group>"; };
-		A0AC078522C4BC7C001832EA /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
-		A0AC078622C4BC7C001832EA /* ChapterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChapterViewController.h; sourceTree = "<group>"; };
-		A0AC078722C4BC7C001832EA /* QuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionViewController.m; sourceTree = "<group>"; };
-		A0AC078822C4BC7C001832EA /* AlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumViewController.h; sourceTree = "<group>"; };
-		A0AC078922C4BC7C001832EA /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
-		A0AC078A22C4BC7C001832EA /* TalkfunPlaybackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunPlaybackViewController.m; sourceTree = "<group>"; };
-		A0AC078C22C4BC7C001832EA /* AlbumModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumModel.h; sourceTree = "<group>"; };
-		A0AC078D22C4BC7C001832EA /* TalkfunCourseProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunCourseProgress.m; sourceTree = "<group>"; };
-		A0AC078E22C4BC7C001832EA /* PlaybackQuestionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaybackQuestionModel.m; sourceTree = "<group>"; };
-		A0AC078F22C4BC7C001832EA /* TalkfunCourseManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunCourseManagement.m; sourceTree = "<group>"; };
-		A0AC079022C4BC7C001832EA /* ChapterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChapterModel.h; sourceTree = "<group>"; };
-		A0AC079122C4BC7C001832EA /* PlaybackChatModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaybackChatModel.m; sourceTree = "<group>"; };
-		A0AC079222C4BC7C001832EA /* TalkfunCourseProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunCourseProgress.h; sourceTree = "<group>"; };
-		A0AC079322C4BC7C001832EA /* AlbumModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumModel.m; sourceTree = "<group>"; };
-		A0AC079422C4BC7C001832EA /* TalkfunCourseManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunCourseManagement.h; sourceTree = "<group>"; };
-		A0AC079522C4BC7C001832EA /* PlaybackQuestionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaybackQuestionModel.h; sourceTree = "<group>"; };
-		A0AC079622C4BC7C001832EA /* PlaybackChatModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaybackChatModel.h; sourceTree = "<group>"; };
-		A0AC079722C4BC7C001832EA /* ChapterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChapterModel.m; sourceTree = "<group>"; };
-		A0AC079922C4BC7C001832EA /* ChatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatTableViewCell.m; sourceTree = "<group>"; };
-		A0AC079A22C4BC7C001832EA /* TalkfunNetworkLines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunNetworkLines.m; sourceTree = "<group>"; };
-		A0AC079B22C4BC7C001832EA /* QuestionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionTableViewCell.h; sourceTree = "<group>"; };
-		A0AC079C22C4BC7C001832EA /* AlbumCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumCellTableViewCell.h; sourceTree = "<group>"; };
-		A0AC079D22C4BC7C001832EA /* QuestionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionTableViewCell.xib; sourceTree = "<group>"; };
-		A0AC079E22C4BC7C001832EA /* ChapterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChapterTableViewCell.h; sourceTree = "<group>"; };
-		A0AC079F22C4BC7C001832EA /* ChapterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChapterTableViewCell.xib; sourceTree = "<group>"; };
-		A0AC07A122C4BC7C001832EA /* TalkfunVideoControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunVideoControlView.h; sourceTree = "<group>"; };
-		A0AC07A222C4BC7C001832EA /* TalkfunKuaiJinView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunKuaiJinView.m; sourceTree = "<group>"; };
-		A0AC07A322C4BC7C001832EA /* TalkfunPlaybackMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunPlaybackMessageView.h; sourceTree = "<group>"; };
-		A0AC07A422C4BC7C001832EA /* TalkfunKuaiJinView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TalkfunKuaiJinView.xib; sourceTree = "<group>"; };
-		A0AC07A522C4BC7C001832EA /* TalkfunPlaybackMessageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TalkfunPlaybackMessageView.xib; sourceTree = "<group>"; };
-		A0AC07A622C4BC7C001832EA /* TalkfunKuaiJinView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunKuaiJinView.h; sourceTree = "<group>"; };
-		A0AC07A722C4BC7C001832EA /* TalkfunVideoControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunVideoControlView.m; sourceTree = "<group>"; };
-		A0AC07A822C4BC7C001832EA /* TalkfunPlaybackMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunPlaybackMessageView.m; sourceTree = "<group>"; };
-		A0AC07A922C4BC7C001832EA /* TalkfunVideoControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TalkfunVideoControlView.xib; sourceTree = "<group>"; };
-		A0AC07AA22C4BC7C001832EA /* TalkfunNetworkLines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunNetworkLines.h; sourceTree = "<group>"; };
-		A0AC07AB22C4BC7C001832EA /* ChatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatTableViewCell.h; sourceTree = "<group>"; };
-		A0AC07AC22C4BC7C001832EA /* AlbumCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlbumCellTableViewCell.xib; sourceTree = "<group>"; };
-		A0AC07AD22C4BC7C001832EA /* AlbumCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumCellTableViewCell.m; sourceTree = "<group>"; };
-		A0AC07AE22C4BC7C001832EA /* ChatTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
-		A0AC07AF22C4BC7C001832EA /* QuestionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionTableViewCell.m; sourceTree = "<group>"; };
-		A0AC07B022C4BC7C001832EA /* TalkfunNetworkLines.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TalkfunNetworkLines.xib; sourceTree = "<group>"; };
-		A0AC07B122C4BC7C001832EA /* ChapterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChapterTableViewCell.m; sourceTree = "<group>"; };
 		A0AC07B522C4BC7C001832EA /* QuestionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionTableViewController.m; sourceTree = "<group>"; };
 		A0AC07B622C4BC7C001832EA /* ChatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatTableViewController.m; sourceTree = "<group>"; };
 		A0AC07B722C4BC7C001832EA /* RootTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTableViewController.m; sourceTree = "<group>"; };
@@ -1584,6 +1588,103 @@
 				A0541F9C22F2893A00D961B3 /* XZHomeTabCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A00D0CFB231BA7A300CF25E7 /* Playback */ = {
+			isa = PBXGroup;
+			children = (
+				A00D0CFC231BA7A300CF25E7 /* Controller */,
+				A00D0D0A231BA7A300CF25E7 /* Model */,
+				A00D0D17231BA7A300CF25E7 /* View */,
+			);
+			path = Playback;
+			sourceTree = "<group>";
+		};
+		A00D0CFC231BA7A300CF25E7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A00D0CFD231BA7A300CF25E7 /* TalkfunPlaybackViewController.h */,
+				A00D0D09231BA7A300CF25E7 /* TalkfunPlaybackViewController.m */,
+				A00D0CFE231BA7A300CF25E7 /* tableView */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A00D0CFE231BA7A300CF25E7 /* tableView */ = {
+			isa = PBXGroup;
+			children = (
+				A00D0D07231BA7A300CF25E7 /* AlbumViewController.h */,
+				A00D0D03231BA7A300CF25E7 /* AlbumViewController.m */,
+				A00D0D04231BA7A300CF25E7 /* BaseTableViewController.h */,
+				A00D0D00231BA7A300CF25E7 /* BaseTableViewController.m */,
+				A00D0D05231BA7A300CF25E7 /* ChapterViewController.h */,
+				A00D0CFF231BA7A300CF25E7 /* ChapterViewController.m */,
+				A00D0D08231BA7A300CF25E7 /* ChatViewController.h */,
+				A00D0D02231BA7A300CF25E7 /* ChatViewController.m */,
+				A00D0D01231BA7A300CF25E7 /* QuestionViewController.h */,
+				A00D0D06231BA7A300CF25E7 /* QuestionViewController.m */,
+			);
+			path = tableView;
+			sourceTree = "<group>";
+		};
+		A00D0D0A231BA7A300CF25E7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A00D0D0B231BA7A300CF25E7 /* AlbumModel.h */,
+				A00D0D12231BA7A300CF25E7 /* AlbumModel.m */,
+				A00D0D0F231BA7A300CF25E7 /* ChapterModel.h */,
+				A00D0D16231BA7A300CF25E7 /* ChapterModel.m */,
+				A00D0D15231BA7A300CF25E7 /* PlaybackChatModel.h */,
+				A00D0D10231BA7A300CF25E7 /* PlaybackChatModel.m */,
+				A00D0D14231BA7A300CF25E7 /* PlaybackQuestionModel.h */,
+				A00D0D0D231BA7A300CF25E7 /* PlaybackQuestionModel.m */,
+				A00D0D13231BA7A300CF25E7 /* TalkfunCourseManagement.h */,
+				A00D0D0E231BA7A300CF25E7 /* TalkfunCourseManagement.m */,
+				A00D0D11231BA7A300CF25E7 /* TalkfunCourseProgress.h */,
+				A00D0D0C231BA7A300CF25E7 /* TalkfunCourseProgress.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A00D0D17231BA7A300CF25E7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A00D0D1B231BA7A300CF25E7 /* AlbumCellTableViewCell.h */,
+				A00D0D2E231BA7A300CF25E7 /* AlbumCellTableViewCell.m */,
+				A00D0D2D231BA7A300CF25E7 /* AlbumCellTableViewCell.xib */,
+				A00D0D1E231BA7A300CF25E7 /* ChapterTableViewCell.h */,
+				A00D0D32231BA7A300CF25E7 /* ChapterTableViewCell.m */,
+				A00D0D1F231BA7A300CF25E7 /* ChapterTableViewCell.xib */,
+				A00D0D2B231BA7A300CF25E7 /* ChatTableViewCell.h */,
+				A00D0D18231BA7A300CF25E7 /* ChatTableViewCell.m */,
+				A00D0D2F231BA7A300CF25E7 /* ChatTableViewCell.xib */,
+				A00D0D20231BA7A300CF25E7 /* PPTComponentViews */,
+				A00D0D1A231BA7A300CF25E7 /* QuestionTableViewCell.h */,
+				A00D0D30231BA7A300CF25E7 /* QuestionTableViewCell.m */,
+				A00D0D1D231BA7A300CF25E7 /* QuestionTableViewCell.xib */,
+				A00D0D2C231BA7A300CF25E7 /* TalkfunAdvertView.h */,
+				A00D0D1C231BA7A300CF25E7 /* TalkfunAdvertView.m */,
+				A00D0D2A231BA7A300CF25E7 /* TalkfunNetworkLines.h */,
+				A00D0D19231BA7A300CF25E7 /* TalkfunNetworkLines.m */,
+				A00D0D31231BA7A300CF25E7 /* TalkfunNetworkLines.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A00D0D20231BA7A300CF25E7 /* PPTComponentViews */ = {
+			isa = PBXGroup;
+			children = (
+				A00D0D26231BA7A300CF25E7 /* TalkfunKuaiJinView.h */,
+				A00D0D22231BA7A300CF25E7 /* TalkfunKuaiJinView.m */,
+				A00D0D24231BA7A300CF25E7 /* TalkfunKuaiJinView.xib */,
+				A00D0D23231BA7A300CF25E7 /* TalkfunPlaybackMessageView.h */,
+				A00D0D28231BA7A300CF25E7 /* TalkfunPlaybackMessageView.m */,
+				A00D0D25231BA7A300CF25E7 /* TalkfunPlaybackMessageView.xib */,
+				A00D0D21231BA7A300CF25E7 /* TalkfunVideoControlView.h */,
+				A00D0D27231BA7A300CF25E7 /* TalkfunVideoControlView.m */,
+				A00D0D29231BA7A300CF25E7 /* TalkfunVideoControlView.xib */,
+			);
+			path = PPTComponentViews;
 			sourceTree = "<group>";
 		};
 		A00FA9D52168C22E00F4DA5B /* 系统设置 */ = {
@@ -2249,7 +2350,7 @@
 		A0AC071522C4BC7C001832EA /* Talkfun */ = {
 			isa = PBXGroup;
 			children = (
-				A0AC077C22C4BC7C001832EA /* Playback */,
+				A00D0CFB231BA7A300CF25E7 /* Playback */,
 				A0AC07B222C4BC7C001832EA /* Live */,
 				A01F606822CB895F001133C4 /* Download */,
 				A0AC071822C4BC7C001832EA /* Library */,
@@ -2426,101 +2527,6 @@
 				A0AC075022C4BC7C001832EA /* videoDefinition.m */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		A0AC077C22C4BC7C001832EA /* Playback */ = {
-			isa = PBXGroup;
-			children = (
-				A0AC077D22C4BC7C001832EA /* Controller */,
-				A0AC078B22C4BC7C001832EA /* Model */,
-				A0AC079822C4BC7C001832EA /* View */,
-			);
-			path = Playback;
-			sourceTree = "<group>";
-		};
-		A0AC077D22C4BC7C001832EA /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				A0AC077E22C4BC7C001832EA /* TalkfunPlaybackViewController.h */,
-				A0AC078A22C4BC7C001832EA /* TalkfunPlaybackViewController.m */,
-				A0AC077F22C4BC7C001832EA /* tableView */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		A0AC077F22C4BC7C001832EA /* tableView */ = {
-			isa = PBXGroup;
-			children = (
-				A0AC078822C4BC7C001832EA /* AlbumViewController.h */,
-				A0AC078422C4BC7C001832EA /* AlbumViewController.m */,
-				A0AC078522C4BC7C001832EA /* BaseTableViewController.h */,
-				A0AC078122C4BC7C001832EA /* BaseTableViewController.m */,
-				A0AC078622C4BC7C001832EA /* ChapterViewController.h */,
-				A0AC078022C4BC7C001832EA /* ChapterViewController.m */,
-				A0AC078922C4BC7C001832EA /* ChatViewController.h */,
-				A0AC078322C4BC7C001832EA /* ChatViewController.m */,
-				A0AC078222C4BC7C001832EA /* QuestionViewController.h */,
-				A0AC078722C4BC7C001832EA /* QuestionViewController.m */,
-			);
-			path = tableView;
-			sourceTree = "<group>";
-		};
-		A0AC078B22C4BC7C001832EA /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				A0AC078C22C4BC7C001832EA /* AlbumModel.h */,
-				A0AC079322C4BC7C001832EA /* AlbumModel.m */,
-				A0AC079022C4BC7C001832EA /* ChapterModel.h */,
-				A0AC079722C4BC7C001832EA /* ChapterModel.m */,
-				A0AC079622C4BC7C001832EA /* PlaybackChatModel.h */,
-				A0AC079122C4BC7C001832EA /* PlaybackChatModel.m */,
-				A0AC079522C4BC7C001832EA /* PlaybackQuestionModel.h */,
-				A0AC078E22C4BC7C001832EA /* PlaybackQuestionModel.m */,
-				A0AC079422C4BC7C001832EA /* TalkfunCourseManagement.h */,
-				A0AC078F22C4BC7C001832EA /* TalkfunCourseManagement.m */,
-				A0AC079222C4BC7C001832EA /* TalkfunCourseProgress.h */,
-				A0AC078D22C4BC7C001832EA /* TalkfunCourseProgress.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		A0AC079822C4BC7C001832EA /* View */ = {
-			isa = PBXGroup;
-			children = (
-				A0AC079C22C4BC7C001832EA /* AlbumCellTableViewCell.h */,
-				A0AC07AD22C4BC7C001832EA /* AlbumCellTableViewCell.m */,
-				A0AC07AC22C4BC7C001832EA /* AlbumCellTableViewCell.xib */,
-				A0AC079E22C4BC7C001832EA /* ChapterTableViewCell.h */,
-				A0AC07B122C4BC7C001832EA /* ChapterTableViewCell.m */,
-				A0AC079F22C4BC7C001832EA /* ChapterTableViewCell.xib */,
-				A0AC07AB22C4BC7C001832EA /* ChatTableViewCell.h */,
-				A0AC079922C4BC7C001832EA /* ChatTableViewCell.m */,
-				A0AC07AE22C4BC7C001832EA /* ChatTableViewCell.xib */,
-				A0AC07A022C4BC7C001832EA /* PPTComponentViews */,
-				A0AC079B22C4BC7C001832EA /* QuestionTableViewCell.h */,
-				A0AC07AF22C4BC7C001832EA /* QuestionTableViewCell.m */,
-				A0AC079D22C4BC7C001832EA /* QuestionTableViewCell.xib */,
-				A0AC07AA22C4BC7C001832EA /* TalkfunNetworkLines.h */,
-				A0AC079A22C4BC7C001832EA /* TalkfunNetworkLines.m */,
-				A0AC07B022C4BC7C001832EA /* TalkfunNetworkLines.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		A0AC07A022C4BC7C001832EA /* PPTComponentViews */ = {
-			isa = PBXGroup;
-			children = (
-				A0AC07A622C4BC7C001832EA /* TalkfunKuaiJinView.h */,
-				A0AC07A222C4BC7C001832EA /* TalkfunKuaiJinView.m */,
-				A0AC07A422C4BC7C001832EA /* TalkfunKuaiJinView.xib */,
-				A0AC07A322C4BC7C001832EA /* TalkfunPlaybackMessageView.h */,
-				A0AC07A822C4BC7C001832EA /* TalkfunPlaybackMessageView.m */,
-				A0AC07A522C4BC7C001832EA /* TalkfunPlaybackMessageView.xib */,
-				A0AC07A122C4BC7C001832EA /* TalkfunVideoControlView.h */,
-				A0AC07A722C4BC7C001832EA /* TalkfunVideoControlView.m */,
-				A0AC07A922C4BC7C001832EA /* TalkfunVideoControlView.xib */,
-			);
-			path = PPTComponentViews;
 			sourceTree = "<group>";
 		};
 		A0AC07B222C4BC7C001832EA /* Live */ = {
@@ -3085,7 +3091,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A00D0D51231BA7A300CF25E7 /* QuestionTableViewCell.xib in Resources */,
 				A0AC090722C4BC7E001832EA /* TalkfunTextfieldView.xib in Resources */,
+				A00D0D69231BA7A300CF25E7 /* TalkfunNetworkLines.xib in Resources */,
 				A0541FC622F3E2A100D961B3 /* sline_@2x.png in Resources */,
 				A0AC093B22C4BC7E001832EA /* vote.png in Resources */,
 				A0AC091E22C4BC7E001832EA /* 错误.png in Resources */,
@@ -3102,10 +3110,7 @@
 				A0AC093722C4BC7E001832EA /* zhubo.png in Resources */,
 				A020B04D214AAB150011BB4F /* Main.storyboard in Resources */,
 				A0AC096B22C4BC7E001832EA /* 刷新.png in Resources */,
-				A0AC08DB22C4BC7D001832EA /* ChapterTableViewCell.xib in Resources */,
-				A0AC08DD22C4BC7D001832EA /* TalkfunKuaiJinView.xib in Resources */,
 				A0AC093D22C4BC7E001832EA /* blueProgress.png in Resources */,
-				A0AC08DE22C4BC7D001832EA /* TalkfunPlaybackMessageView.xib in Resources */,
 				A01F608922CB8CD0001133C4 /* 等待队列_点击.png in Resources */,
 				A0AC093422C4BC7E001832EA /* greatwall.png in Resources */,
 				A0AC099122C4BC7E001832EA /* 章节-默认.png in Resources */,
@@ -3138,6 +3143,7 @@
 				A0AC093022C4BC7E001832EA /* netcom.png in Resources */,
 				A0AC092122C4BC7E001832EA /* TalkfunLongTextfieldView.xib in Resources */,
 				A0AC08F622C4BC7E001832EA /* TalkfunGuidanceView.xib in Resources */,
+				A00D0D61231BA7A300CF25E7 /* AlbumCellTableViewCell.xib in Resources */,
 				A0AC099422C4BC7E001832EA /* blackboard.png in Resources */,
 				A0AC093222C4BC7E001832EA /* education.png in Resources */,
 				A020B037214AAB150011BB4F /* ic_refresh_image_000@2x.png in Resources */,
@@ -3170,6 +3176,7 @@
 				A0AC094222C4BC7E001832EA /* delete.png in Resources */,
 				A0AC095A22C4BC7E001832EA /* pitiful.png in Resources */,
 				A0AC097722C4BC7E001832EA /* 关闭摄像头.png in Resources */,
+				A00D0D53231BA7A300CF25E7 /* ChapterTableViewCell.xib in Resources */,
 				A0AC094C22C4BC7E001832EA /* rcircle.png in Resources */,
 				A020B026214AAB150011BB4F /* ic_refresh_image_025@2x.png in Resources */,
 				A01F608B22CB8CD0001133C4 /* 暂停_默认.png in Resources */,
@@ -3186,7 +3193,6 @@
 				A020B02B214AAB150011BB4F /* ic_refresh_image_011@2x.png in Resources */,
 				A0AC094E22C4BC7E001832EA /* 直播已结束.png in Resources */,
 				A0AC095D22C4BC7E001832EA /* amaz.png in Resources */,
-				A0AC08E622C4BC7D001832EA /* TalkfunNetworkLines.xib in Resources */,
 				A0AC095422C4BC7E001832EA /* fullscreen.png in Resources */,
 				A020B049214AAB150011BB4F /* loading.json in Resources */,
 				A0AC094A22C4BC7E001832EA /* openBullet.png in Resources */,
@@ -3198,7 +3204,6 @@
 				A020B040214AAB150011BB4F /* ic_refresh_image_030@2x.png in Resources */,
 				A01F608C22CB8CD0001133C4 /* 重新_默认.png in Resources */,
 				A020B042214AAB150011BB4F /* ic_refresh_image_006@2x.png in Resources */,
-				A0AC08E222C4BC7D001832EA /* AlbumCellTableViewCell.xib in Resources */,
 				A0AC093622C4BC7E001832EA /* 直播已结束16_9.png in Resources */,
 				A020B03A214AAB150011BB4F /* ic_refresh_image_028@2x.png in Resources */,
 				A0AC098322C4BC7E001832EA /* 组 102.png in Resources */,
@@ -3225,12 +3230,10 @@
 				A0AC08EE22C4BC7D001832EA /* TalkfunExpressionViewController.xib in Resources */,
 				A0AC08FC22C4BC7E001832EA /* VoteViewController.xib in Resources */,
 				A020B032214AAB150011BB4F /* ic_refresh_image_009@2x.png in Resources */,
-				A0AC08DA22C4BC7D001832EA /* QuestionTableViewCell.xib in Resources */,
 				A0AC090122C4BC7E001832EA /* LotteryCell.xib in Resources */,
 				A0AC098E22C4BC7E001832EA /* 章节-点击.png in Resources */,
 				A0AC094822C4BC7E001832EA /* failP.png in Resources */,
 				A0AC093922C4BC7E001832EA /* lottery.png in Resources */,
-				A0AC08E122C4BC7D001832EA /* TalkfunVideoControlView.xib in Resources */,
 				A01F607522CB8960001133C4 /* DownloadListTableViewCell.xib in Resources */,
 				A020B031214AAB150011BB4F /* ic_refresh_image_031@2x.png in Resources */,
 				A0AC099622C4BC7E001832EA /* 专辑-点击.png in Resources */,
@@ -3250,9 +3253,9 @@
 				A0AC097122C4BC7E001832EA /* 提问-默认.png in Resources */,
 				A0AC090922C4BC7E001832EA /* TalkfunHornView.xib in Resources */,
 				A01F608D22CB8CD0001133C4 /* 重新_点击.png in Resources */,
-				A0AC08E422C4BC7D001832EA /* ChatTableViewCell.xib in Resources */,
 				A0AC090A22C4BC7E001832EA /* TalkfunNetworkStatusView.xib in Resources */,
 				208B695B2185903700B263FB /* TeacherView.xib in Resources */,
+				A00D0D65231BA7A300CF25E7 /* ChatTableViewCell.xib in Resources */,
 				A0AC094422C4BC7E001832EA /* myLottery.png in Resources */,
 				A0AC092B22C4BC7E001832EA /* renshu.png in Resources */,
 				A0AC091322C4BC7E001832EA /* TalkfunNoticeCell.xib in Resources */,
@@ -3261,6 +3264,7 @@
 				A0AC094922C4BC7E001832EA /* hongbao.png in Resources */,
 				A0AC093522C4BC7E001832EA /* giveFlower.png in Resources */,
 				A020B043214AAB150011BB4F /* ic_refresh_image_014@2x.png in Resources */,
+				A00D0D5F231BA7A300CF25E7 /* TalkfunVideoControlView.xib in Resources */,
 				A01F609222CB8CD0001133C4 /* 默认图片.png in Resources */,
 				A01F608722CB8CD0001133C4 /* 删除-默认.png in Resources */,
 				A0AC08C122C4BC7D001832EA /* TalkfunNewChatCell.xib in Resources */,
@@ -3270,6 +3274,7 @@
 				A0AC08F222C4BC7D001832EA /* NetworkSelectionViewController.xib in Resources */,
 				A0AC093E22C4BC7E001832EA /* rectSelect.png in Resources */,
 				A020B03F214AAB150011BB4F /* ic_refresh_image_022@2x.png in Resources */,
+				A00D0D57231BA7A300CF25E7 /* TalkfunKuaiJinView.xib in Resources */,
 				A020B03C214AAB150011BB4F /* ic_refresh_image_002@2x.png in Resources */,
 				A0AC096522C4BC7E001832EA /* goback.png in Resources */,
 				A0AC098C22C4BC7E001832EA /* xxx.png in Resources */,
@@ -3281,6 +3286,7 @@
 				A01F608E22CB8CD0001133C4 /* 下载-点击.png in Resources */,
 				A0AC094022C4BC7E001832EA /* myDelete.png in Resources */,
 				A0AC08B422C4BC7D001832EA /* TalkfunNewChatTableViewCell.xib in Resources */,
+				A00D0D59231BA7A300CF25E7 /* TalkfunPlaybackMessageView.xib in Resources */,
 				A0AC099222C4BC7E001832EA /* 进度1.png in Resources */,
 				A0AC095E22C4BC7E001832EA /* why.png in Resources */,
 				A0AC08FF22C4BC7E001832EA /* VoteEndViewController.xib in Resources */,
@@ -3316,10 +3322,7 @@
 				A045514522EC8DFA00E17406 /* zhubo.png in Resources */,
 				A045514622EC8DFA00E17406 /* Main.storyboard in Resources */,
 				A045514722EC8DFA00E17406 /* 刷新.png in Resources */,
-				A045514822EC8DFA00E17406 /* ChapterTableViewCell.xib in Resources */,
-				A045514922EC8DFA00E17406 /* TalkfunKuaiJinView.xib in Resources */,
 				A045514A22EC8DFA00E17406 /* blueProgress.png in Resources */,
-				A045514B22EC8DFA00E17406 /* TalkfunPlaybackMessageView.xib in Resources */,
 				A079A6BD231544CE0063123B /* XuezhiProtocol.css in Resources */,
 				A045514C22EC8DFA00E17406 /* 等待队列_点击.png in Resources */,
 				A045514D22EC8DFA00E17406 /* greatwall.png in Resources */,
@@ -3328,6 +3331,7 @@
 				A045515022EC8DFA00E17406 /* expressionClose.png in Resources */,
 				A045515122EC8DFA00E17406 /* 屏幕切换.png in Resources */,
 				A045515222EC8DFA00E17406 /* ic_refresh_image_001@2x.png in Resources */,
+				A00D0D66231BA7A300CF25E7 /* ChatTableViewCell.xib in Resources */,
 				A045515322EC8DFA00E17406 /* 鲜花.png in Resources */,
 				A045515422EC8DFA00E17406 /* 暂停1.png in Resources */,
 				A045515522EC8DFA00E17406 /* 开启弹幕.png in Resources */,
@@ -3352,6 +3356,7 @@
 				A045516822EC8DFA00E17406 /* circleUnselect.png in Resources */,
 				A045516922EC8DFA00E17406 /* netcom.png in Resources */,
 				A045516A22EC8DFA00E17406 /* TalkfunLongTextfieldView.xib in Resources */,
+				A00D0D6A231BA7A300CF25E7 /* TalkfunNetworkLines.xib in Resources */,
 				A045516B22EC8DFA00E17406 /* TalkfunGuidanceView.xib in Resources */,
 				A045516C22EC8DFA00E17406 /* blackboard.png in Resources */,
 				A045516D22EC8DFA00E17406 /* education.png in Resources */,
@@ -3401,20 +3406,20 @@
 				A045519A22EC8DFA00E17406 /* ic_refresh_image_011@2x.png in Resources */,
 				A045519B22EC8DFA00E17406 /* 直播已结束.png in Resources */,
 				A045519C22EC8DFA00E17406 /* amaz.png in Resources */,
-				A045519D22EC8DFA00E17406 /* TalkfunNetworkLines.xib in Resources */,
 				A045519E22EC8DFA00E17406 /* fullscreen.png in Resources */,
 				A045519F22EC8DFA00E17406 /* loading.json in Resources */,
 				A04551A022EC8DFA00E17406 /* openBullet.png in Resources */,
 				A04551A122EC8DFA00E17406 /* LotteryViewController.xib in Resources */,
+				A00D0D62231BA7A300CF25E7 /* AlbumCellTableViewCell.xib in Resources */,
 				A04551A222EC8DFA00E17406 /* 公告-点击.png in Resources */,
 				A04551A422EC8DFA00E17406 /* close_button.png in Resources */,
 				A04551A522EC8DFA00E17406 /* 暂停_点击.png in Resources */,
 				A04551A622EC8DFA00E17406 /* ic_refresh_image_030@2x.png in Resources */,
 				A04551A722EC8DFA00E17406 /* 重新_默认.png in Resources */,
 				A04551A822EC8DFA00E17406 /* ic_refresh_image_006@2x.png in Resources */,
-				A04551A922EC8DFA00E17406 /* AlbumCellTableViewCell.xib in Resources */,
 				A04551AA22EC8DFA00E17406 /* 直播已结束16_9.png in Resources */,
 				A04551AB22EC8DFA00E17406 /* ic_refresh_image_028@2x.png in Resources */,
+				A00D0D58231BA7A300CF25E7 /* TalkfunKuaiJinView.xib in Resources */,
 				A04551AC22EC8DFA00E17406 /* 组 102.png in Resources */,
 				A04551AD22EC8DFA00E17406 /* cool.png in Resources */,
 				A04551AE22EC8DFA00E17406 /* 提问-点击.png in Resources */,
@@ -3438,14 +3443,14 @@
 				A04551BF22EC8DFA00E17406 /* Assets.xcassets in Resources */,
 				A04551C022EC8DFA00E17406 /* rose.png in Resources */,
 				A04551C122EC8DFA00E17406 /* TalkfunExpressionViewController.xib in Resources */,
+				A00D0D52231BA7A300CF25E7 /* QuestionTableViewCell.xib in Resources */,
 				A04551C222EC8DFA00E17406 /* VoteViewController.xib in Resources */,
+				A00D0D5A231BA7A300CF25E7 /* TalkfunPlaybackMessageView.xib in Resources */,
 				A04551C322EC8DFA00E17406 /* ic_refresh_image_009@2x.png in Resources */,
-				A04551C422EC8DFA00E17406 /* QuestionTableViewCell.xib in Resources */,
 				A04551C522EC8DFA00E17406 /* LotteryCell.xib in Resources */,
 				A04551C622EC8DFA00E17406 /* 章节-点击.png in Resources */,
 				A04551C722EC8DFA00E17406 /* failP.png in Resources */,
 				A04551C822EC8DFA00E17406 /* lottery.png in Resources */,
-				A04551CA22EC8DFA00E17406 /* TalkfunVideoControlView.xib in Resources */,
 				A04551CB22EC8DFA00E17406 /* DownloadListTableViewCell.xib in Resources */,
 				A04551CC22EC8DFA00E17406 /* ic_refresh_image_031@2x.png in Resources */,
 				A04551CD22EC8DFA00E17406 /* 专辑-点击.png in Resources */,
@@ -3464,7 +3469,6 @@
 				A04551DA22EC8DFA00E17406 /* 提问-默认.png in Resources */,
 				A04551DB22EC8DFA00E17406 /* TalkfunHornView.xib in Resources */,
 				A04551DC22EC8DFA00E17406 /* 重新_点击.png in Resources */,
-				A04551DD22EC8DFA00E17406 /* ChatTableViewCell.xib in Resources */,
 				A04551DE22EC8DFA00E17406 /* TalkfunNetworkStatusView.xib in Resources */,
 				A04551DF22EC8DFA00E17406 /* TeacherView.xib in Resources */,
 				A04551E022EC8DFA00E17406 /* myLottery.png in Resources */,
@@ -3487,6 +3491,7 @@
 				A04551F122EC8DFA00E17406 /* ic_refresh_image_002@2x.png in Resources */,
 				A04551F222EC8DFA00E17406 /* goback.png in Resources */,
 				A04551F322EC8DFA00E17406 /* xxx.png in Resources */,
+				A00D0D54231BA7A300CF25E7 /* ChapterTableViewCell.xib in Resources */,
 				A04551F422EC8DFA00E17406 /* aha.png in Resources */,
 				A04551F522EC8DFA00E17406 /* ic_refresh_image_003@2x.png in Resources */,
 				A04551F622EC8DFA00E17406 /* 继续_默认.png in Resources */,
@@ -3496,6 +3501,7 @@
 				A04551F922EC8DFA00E17406 /* 下载-点击.png in Resources */,
 				A04551FA22EC8DFA00E17406 /* myDelete.png in Resources */,
 				A04551FB22EC8DFA00E17406 /* TalkfunNewChatTableViewCell.xib in Resources */,
+				A00D0D60231BA7A300CF25E7 /* TalkfunVideoControlView.xib in Resources */,
 				A04551FC22EC8DFA00E17406 /* 进度1.png in Resources */,
 				A04551FD22EC8DFA00E17406 /* why.png in Resources */,
 				A04551FE22EC8DFA00E17406 /* VoteEndViewController.xib in Resources */,
@@ -3587,17 +3593,16 @@
 				A0AC092322C4BC7E001832EA /* TalkfunTextfieldView.m in Sources */,
 				A0462A0D2187459600D12E65 /* CZNotDataView.m in Sources */,
 				A020B071214AAB150011BB4F /* LDNetTimer.m in Sources */,
+				A00D0D43231BA7A300CF25E7 /* TalkfunCourseManagement.m in Sources */,
 				A0AC08B922C4BC7D001832EA /* TalkfunFunctionButton.m in Sources */,
 				A00BE16D219FFB140042E6ED /* CZUpdateView.m in Sources */,
 				A01F607322CB895F001133C4 /* DownloadListController.m in Sources */,
-				A0AC08D022C4BC7D001832EA /* QuestionViewController.m in Sources */,
 				A0AC08B622C4BC7D001832EA /* stopCopyTextView.m in Sources */,
-				A0AC08D722C4BC7D001832EA /* ChapterModel.m in Sources */,
-				A0AC08D222C4BC7D001832EA /* TalkfunCourseProgress.m in Sources */,
 				A0AC08B522C4BC7D001832EA /* TalkfunGradientView.m in Sources */,
 				A0AC08F022C4BC7D001832EA /* TalkfunExpressionViewController.m in Sources */,
 				A020B078214AAB150011BB4F /* BaseItem.m in Sources */,
 				A020B06B214AAB150011BB4F /* BaseVC.m in Sources */,
+				A00D0D6B231BA7A300CF25E7 /* ChapterTableViewCell.m in Sources */,
 				A0AC08EA22C4BC7D001832EA /* RootTableViewController.m in Sources */,
 				A0AC091A22C4BC7E001832EA /* TalkfunScoreView.m in Sources */,
 				A0541FC022F3E2A100D961B3 /* OptionBarController.m in Sources */,
@@ -3614,10 +3619,8 @@
 				A020B070214AAB150011BB4F /* LDNetTraceRoute.m in Sources */,
 				A0AC08AA22C4BC7D001832EA /* TalkFunTextLayer.m in Sources */,
 				A0AC091C22C4BC7E001832EA /* evaluateView.m in Sources */,
-				A0AC08CC22C4BC7D001832EA /* ChapterViewController.m in Sources */,
 				A045521622ED44ED00E17406 /* UILabel+XLGColor.m in Sources */,
 				A020B06D214AAB150011BB4F /* BaseNavBar.m in Sources */,
-				A0AC08CF22C4BC7D001832EA /* AlbumViewController.m in Sources */,
 				A0AC08BB22C4BC7D001832EA /* TalkfunNewButtonViewButton.m in Sources */,
 				A020B074214AAB150011BB4F /* LDNetGetAddress.m in Sources */,
 				A0AC091622C4BC7E001832EA /* UILabel+TalkfunLabel.m in Sources */,
@@ -3626,16 +3629,17 @@
 				A0AC08C322C4BC7D001832EA /* TalkfunButtonView.m in Sources */,
 				A0599A2021574CAF00D17058 /* CZRegisterVC.m in Sources */,
 				A020B06F214AAB150011BB4F /* BaseWebVC.m in Sources */,
+				A00D0D5D231BA7A300CF25E7 /* TalkfunPlaybackMessageView.m in Sources */,
 				A0AC08AF22C4BC7D001832EA /* QuestionModel.m in Sources */,
 				A0AC091022C4BC7E001832EA /* TalkfunNetworkStatusView.m in Sources */,
 				A0AC08C922C4BC7D001832EA /* TalkfunNewFunctionView.m in Sources */,
-				A0AC08E022C4BC7D001832EA /* TalkfunPlaybackMessageView.m in Sources */,
 				A0AC08A422C4BC7D001832EA /* NetworkDetector.m in Sources */,
+				A00D0D39231BA7A300CF25E7 /* AlbumViewController.m in Sources */,
 				A020B053214AAB150011BB4F /* Utils.m in Sources */,
+				A00D0D4F231BA7A300CF25E7 /* TalkfunAdvertView.m in Sources */,
 				A020B073214AAB150011BB4F /* LDNetPing.m in Sources */,
 				A020B077214AAB150011BB4F /* Reachability.m in Sources */,
 				A0599A2321574CAF00D17058 /* CZHomeVC.m in Sources */,
-				A0AC08E322C4BC7D001832EA /* AlbumCellTableViewCell.m in Sources */,
 				A0541FE222F41F1400D961B3 /* CourseItem.m in Sources */,
 				A020B050214AAB150011BB4F /* KeyChainUtil.m in Sources */,
 				A020B05C214AAB150011BB4F /* MEViewModel.m in Sources */,
@@ -3644,11 +3648,11 @@
 				A020B052214AAB150011BB4F /* Toast.m in Sources */,
 				A0AC08A922C4BC7D001832EA /* BulletManager.m in Sources */,
 				A0AC08FA22C4BC7E001832EA /* LotteryViewController.m in Sources */,
+				A00D0D63231BA7A300CF25E7 /* AlbumCellTableViewCell.m in Sources */,
 				A0AC08F722C4BC7E001832EA /* MyLotteryViewController.m in Sources */,
 				A0AC092422C4BC7E001832EA /* TalkfunLongTextfieldView.m in Sources */,
 				A01F607622CB8960001133C4 /* DownloadListTableViewCell.m in Sources */,
 				A0AC08F522C4BC7E001832EA /* ChoiceButton.m in Sources */,
-				A0AC08DF22C4BC7D001832EA /* TalkfunVideoControlView.m in Sources */,
 				A091D1302178FAF300CCDAF6 /* StudyInfoItem.m in Sources */,
 				A0AC091F22C4BC7E001832EA /* barrageSwitch.m in Sources */,
 				A0AC090B22C4BC7E001832EA /* TalkfunExpressionCloseButton.m in Sources */,
@@ -3658,16 +3662,14 @@
 				A0E0D3CC22D0E3A100296851 /* TalkfunMultifunctionTool.m in Sources */,
 				A0AC08A322C4BC7D001832EA /* UITextField+HTtext.m in Sources */,
 				A020B075214AAB150011BB4F /* LDNetDiagnoService.m in Sources */,
-				A0AC08D622C4BC7D001832EA /* AlbumModel.m in Sources */,
 				A0AC090F22C4BC7E001832EA /* TalkfunNewTextfieldView.m in Sources */,
 				A020B07A214AAB150011BB4F /* CourseCategoryItem.m in Sources */,
 				A07E4E9722ED82E4000ABD86 /* CZConfig.m in Sources */,
 				205FDB3321763DBE001BE2C6 /* CZGuideVC.m in Sources */,
-				A0AC08D922C4BC7D001832EA /* TalkfunNetworkLines.m in Sources */,
 				A020B06C214AAB150011BB4F /* BaseNC.m in Sources */,
+				A00D0D3B231BA7A300CF25E7 /* QuestionViewController.m in Sources */,
 				A05CD23C22AE8C8E00CBE4F5 /* CZProtocalWebVC.m in Sources */,
 				201DF3D022AE584700904EAF /* CZAlertView.m in Sources */,
-				A0AC08CE22C4BC7D001832EA /* ChatViewController.m in Sources */,
 				A0AC08A522C4BC7D001832EA /* UTLHelpper.m in Sources */,
 				A0AC090C22C4BC7E001832EA /* ChatCell.m in Sources */,
 				A0AC08BF22C4BC7D001832EA /* TalkfunNewChatCell.m in Sources */,
@@ -3675,6 +3677,7 @@
 				A0541FA522F2C69C00D961B3 /* UIButton+CenterImageAndTitle.m in Sources */,
 				A020B054214AAB150011BB4F /* XLGAlertView.m in Sources */,
 				A071273B2216E7D700DC3C20 /* NotifyItem.m in Sources */,
+				A00D0D67231BA7A300CF25E7 /* QuestionTableViewCell.m in Sources */,
 				A0AC091722C4BC7E001832EA /* TalkfunReplyTipsView.m in Sources */,
 				A05FF5CE215B14F100C51E05 /* NetworkUtil.m in Sources */,
 				A0E8982122CF265800DB09BA /* DBManager.m in Sources */,
@@ -3682,19 +3685,19 @@
 				A0AC08AD22C4BC7D001832EA /* TalkfunModulation.m in Sources */,
 				A0E0D3CD22D0E3A100296851 /* TalkfunMultifunctionButton.m in Sources */,
 				A0AC091122C4BC7E001832EA /* TalkfunGuidenceButton.m in Sources */,
-				A0AC08D422C4BC7D001832EA /* TalkfunCourseManagement.m in Sources */,
 				A0AC08FE22C4BC7E001832EA /* ckickUILabel.m in Sources */,
 				A020B072214AAB150011BB4F /* LDSimplePing.m in Sources */,
+				A00D0D35231BA7A300CF25E7 /* BaseTableViewController.m in Sources */,
 				A0541FC222F3E2A100D961B3 /* BottomLineView.m in Sources */,
 				A05999F12155EC1500D17058 /* XLGLogVC.m in Sources */,
 				A0599A1F21574CAF00D17058 /* CZLoginVC.m in Sources */,
 				A0AC08F922C4BC7E001832EA /* VoteEndViewController.m in Sources */,
+				A00D0D3D231BA7A300CF25E7 /* TalkfunPlaybackViewController.m in Sources */,
 				A0599A2421574CAF00D17058 /* CZStudyVC.m in Sources */,
 				A05FF5D9215B163400C51E05 /* JHHJCenterBGView.m in Sources */,
 				A0AC08E822C4BC7D001832EA /* QuestionTableViewController.m in Sources */,
 				A0AC08F422C4BC7E001832EA /* NetworkModel.m in Sources */,
 				A0CB7CB922C65D8800069B34 /* TalkfunItem.m in Sources */,
-				A0AC08E522C4BC7D001832EA /* QuestionTableViewCell.m in Sources */,
 				A00BE16A219FF6E70042E6ED /* VersionItem.m in Sources */,
 				A0AC091822C4BC7E001832EA /* QuestionCell.m in Sources */,
 				A0599A2221574CAF00D17058 /* CZMineVC.m in Sources */,
@@ -3702,13 +3705,13 @@
 				A070498D2211610300864050 /* AppDelegate+Push.m in Sources */,
 				A0AC090622C4BC7E001832EA /* TalkfunCloseButton.m in Sources */,
 				A05999F42155EC1500D17058 /* XLGChangeServerVC.m in Sources */,
+				A00D0D5B231BA7A300CF25E7 /* TalkfunVideoControlView.m in Sources */,
 				A05999F22155EC1500D17058 /* XLGChangeServerCell.m in Sources */,
 				A0AC08F322C4BC7D001832EA /* NetworkSelectionViewController.m in Sources */,
 				A020B063214AAB150011BB4F /* XLGInternalTestVC.m in Sources */,
 				A0AC090822C4BC7E001832EA /* TalkfunExpressionCell.m in Sources */,
 				A020B061214AAB150011BB4F /* XLGLoginTestViewModel.m in Sources */,
 				A05999EF2155EC1500D17058 /* XLGExternalTestTool.m in Sources */,
-				A0AC08D522C4BC7D001832EA /* PlaybackChatModel.m in Sources */,
 				A0AC08C022C4BC7D001832EA /* TalkfunNewQuestionCell.m in Sources */,
 				A020B05F214AAB150011BB4F /* XLGLoginTestVC.m in Sources */,
 				A0AC08C222C4BC7D001832EA /* TalkfunNewFunctionButton.m in Sources */,
@@ -3718,42 +3721,45 @@
 				A020B051214AAB150011BB4F /* CacheUtil.m in Sources */,
 				A0AC092522C4BC7E001832EA /* TalkfunMessageView.m in Sources */,
 				A0AC08B022C4BC7D001832EA /* ChatModel.m in Sources */,
-				A0AC08D322C4BC7D001832EA /* PlaybackQuestionModel.m in Sources */,
 				A020B06A214AAB150011BB4F /* WKDelegateController.m in Sources */,
 				205FDB2F216F20C0001BE2C6 /* HomeInfoItem.m in Sources */,
 				A0462A072187407600D12E65 /* CZNotNetAvailableVC.m in Sources */,
+				A00D0D41231BA7A300CF25E7 /* PlaybackQuestionModel.m in Sources */,
 				A0AC08AE22C4BC7D001832EA /* UIImageView+Exten.m in Sources */,
 				A00FA9D82168C26900F4DA5B /* CZSettingVC.m in Sources */,
 				20ABB12E230A7A9600DDC86F /* CZCommentView.m in Sources */,
-				A0AC08D822C4BC7D001832EA /* ChatTableViewCell.m in Sources */,
+				A00D0D55231BA7A300CF25E7 /* TalkfunKuaiJinView.m in Sources */,
 				A020AF49214AA85B0011BB4F /* AppDelegate.m in Sources */,
-				A0AC08E722C4BC7D001832EA /* ChapterTableViewCell.m in Sources */,
 				A0541FC422F3E2A100D961B3 /* OptionsBarView.m in Sources */,
 				A0C1257321BC021B0026430E /* CZStarView.m in Sources */,
-				A0AC08DC22C4BC7D001832EA /* TalkfunKuaiJinView.m in Sources */,
 				A020B055214AAB150011BB4F /* XLGLottie.m in Sources */,
 				A0AC08EC22C4BC7D001832EA /* NoticeTableViewController.m in Sources */,
 				A0AC08AC22C4BC7D001832EA /* TalkfunMoveLabel.m in Sources */,
+				A00D0D49231BA7A300CF25E7 /* ChapterModel.m in Sources */,
 				A045521222ED42EB00E17406 /* UIView+XLGColor.m in Sources */,
 				A0AC090D22C4BC7E001832EA /* TalkfunWatermark.m in Sources */,
+				A00D0D4B231BA7A300CF25E7 /* ChatTableViewCell.m in Sources */,
 				A0541FCA22F3E2A100D961B3 /* OptionsBarItem.m in Sources */,
-				A0AC08D122C4BC7D001832EA /* TalkfunPlaybackViewController.m in Sources */,
 				A0AC08FB22C4BC7E001832EA /* VoteViewController.m in Sources */,
 				A020B06E214AAB150011BB4F /* BaseScrollView.m in Sources */,
+				A00D0D4D231BA7A300CF25E7 /* TalkfunNetworkLines.m in Sources */,
 				A0AC08EB22C4BC7D001832EA /* GroupChatTableViewController.m in Sources */,
 				A0AC08A722C4BC7D001832EA /* UIView+TalkfunActivityIndicator.m in Sources */,
+				A00D0D45231BA7A300CF25E7 /* PlaybackChatModel.m in Sources */,
 				A00FA9DF2169DCDC00F4DA5B /* CZSelectCourseCell.m in Sources */,
 				A0AC08BD22C4BC7D001832EA /* TalkfunReplyCell.m in Sources */,
 				A020B04E214AAB150011BB4F /* main.m in Sources */,
 				A0AC08F822C4BC7E001832EA /* LotteryCell.m in Sources */,
 				A0AC091422C4BC7E001832EA /* UITextField+TalkfunTextField.m in Sources */,
 				A0AC08ED22C4BC7D001832EA /* GroupTableViewController.m in Sources */,
+				A00D0D33231BA7A300CF25E7 /* ChapterViewController.m in Sources */,
 				A020B057214AAB150011BB4F /* ProgressLoadView.m in Sources */,
 				A0AC091D22C4BC7E001832EA /* TalkfunLEEStarRating.m in Sources */,
-				A0AC08CD22C4BC7D001832EA /* BaseTableViewController.m in Sources */,
 				A0AC08F122C4BC7D001832EA /* TalkfunViewController.m in Sources */,
 				A05FF5DA215B163400C51E05 /* JHHJView.m in Sources */,
+				A00D0D37231BA7A300CF25E7 /* ChatViewController.m in Sources */,
 				A0AC08A222C4BC7D001832EA /* TalkfunHttpTools.m in Sources */,
+				A00D0D47231BA7A300CF25E7 /* AlbumModel.m in Sources */,
 				A020B056214AAB150011BB4F /* RegularPhoneTF.m in Sources */,
 				A0AC08E922C4BC7D001832EA /* ChatTableViewController.m in Sources */,
 				A05FF5DC215B163400C51E05 /* AEIndicator.m in Sources */,
@@ -3765,6 +3771,7 @@
 				A0AC08B322C4BC7D001832EA /* TalkfunLoadingView.m in Sources */,
 				A0AC091522C4BC7E001832EA /* UIImageView+TalkfunImageView.m in Sources */,
 				A0AC08C722C4BC7D001832EA /* TalkfunNewChatTableViewCell.m in Sources */,
+				A00D0D3F231BA7A300CF25E7 /* TalkfunCourseProgress.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3785,15 +3792,14 @@
 				A045507B22EC8DFA00E17406 /* CZUpdateView.m in Sources */,
 				A0541FC322F3E2A100D961B3 /* BottomLineView.m in Sources */,
 				A045507C22EC8DFA00E17406 /* DownloadListController.m in Sources */,
-				A045507D22EC8DFA00E17406 /* QuestionViewController.m in Sources */,
 				A045507E22EC8DFA00E17406 /* stopCopyTextView.m in Sources */,
-				A045507F22EC8DFA00E17406 /* ChapterModel.m in Sources */,
-				A045508022EC8DFA00E17406 /* TalkfunCourseProgress.m in Sources */,
 				A0541FC522F3E2A100D961B3 /* OptionsBarView.m in Sources */,
+				A00D0D4E231BA7A300CF25E7 /* TalkfunNetworkLines.m in Sources */,
 				A045508122EC8DFA00E17406 /* TalkfunGradientView.m in Sources */,
 				A045508222EC8DFA00E17406 /* TalkfunExpressionViewController.m in Sources */,
 				A045508322EC8DFA00E17406 /* BaseItem.m in Sources */,
 				A045508422EC8DFA00E17406 /* BaseVC.m in Sources */,
+				A00D0D46231BA7A300CF25E7 /* PlaybackChatModel.m in Sources */,
 				A045508522EC8DFA00E17406 /* RootTableViewController.m in Sources */,
 				A045508622EC8DFA00E17406 /* TalkfunScoreView.m in Sources */,
 				A045508722EC8DFA00E17406 /* JHHJAnimation.m in Sources */,
@@ -3807,11 +3813,9 @@
 				A045508F22EC8DFA00E17406 /* LDNetTraceRoute.m in Sources */,
 				A045509022EC8DFA00E17406 /* TalkFunTextLayer.m in Sources */,
 				A045509122EC8DFA00E17406 /* evaluateView.m in Sources */,
-				A045509222EC8DFA00E17406 /* ChapterViewController.m in Sources */,
 				A0541F9D22F2893B00D961B3 /* XZHomeTabCell.m in Sources */,
 				A045521722ED44ED00E17406 /* UILabel+XLGColor.m in Sources */,
 				A045509322EC8DFA00E17406 /* BaseNavBar.m in Sources */,
-				A045509422EC8DFA00E17406 /* AlbumViewController.m in Sources */,
 				A0541FA622F2C69C00D961B3 /* UIButton+CenterImageAndTitle.m in Sources */,
 				A0541FCB22F3E2A100D961B3 /* OptionsBarItem.m in Sources */,
 				A045509522EC8DFA00E17406 /* TalkfunNewButtonViewButton.m in Sources */,
@@ -3822,17 +3826,16 @@
 				A045509A22EC8DFA00E17406 /* TalkfunButtonView.m in Sources */,
 				A045509B22EC8DFA00E17406 /* CZRegisterVC.m in Sources */,
 				A007090022EDD48D00C70CEE /* XZTabBarVC.m in Sources */,
+				A00D0D40231BA7A300CF25E7 /* TalkfunCourseProgress.m in Sources */,
 				A045509C22EC8DFA00E17406 /* BaseWebVC.m in Sources */,
 				A0541FDF22F4163F00D961B3 /* XZSelectCourseTabCell.m in Sources */,
 				A045509D22EC8DFA00E17406 /* QuestionModel.m in Sources */,
 				A045509E22EC8DFA00E17406 /* TalkfunNetworkStatusView.m in Sources */,
 				A045509F22EC8DFA00E17406 /* TalkfunNewFunctionView.m in Sources */,
-				A04550A022EC8DFA00E17406 /* TalkfunPlaybackMessageView.m in Sources */,
 				A04550A122EC8DFA00E17406 /* NetworkDetector.m in Sources */,
 				A04550A222EC8DFA00E17406 /* Utils.m in Sources */,
 				A04550A322EC8DFA00E17406 /* LDNetPing.m in Sources */,
 				A04550A422EC8DFA00E17406 /* Reachability.m in Sources */,
-				A04550A622EC8DFA00E17406 /* AlbumCellTableViewCell.m in Sources */,
 				A04550A722EC8DFA00E17406 /* KeyChainUtil.m in Sources */,
 				A04550A822EC8DFA00E17406 /* MEViewModel.m in Sources */,
 				A04550A922EC8DFA00E17406 /* UIView+TalkfunView.m in Sources */,
@@ -3840,11 +3843,13 @@
 				A04550AB22EC8DFA00E17406 /* Toast.m in Sources */,
 				A04550AC22EC8DFA00E17406 /* BulletManager.m in Sources */,
 				A04550AD22EC8DFA00E17406 /* LotteryViewController.m in Sources */,
+				A00D0D3A231BA7A300CF25E7 /* AlbumViewController.m in Sources */,
+				A00D0D42231BA7A300CF25E7 /* PlaybackQuestionModel.m in Sources */,
 				A04550AE22EC8DFA00E17406 /* MyLotteryViewController.m in Sources */,
+				A00D0D68231BA7A300CF25E7 /* QuestionTableViewCell.m in Sources */,
 				A04550AF22EC8DFA00E17406 /* TalkfunLongTextfieldView.m in Sources */,
 				A04550B022EC8DFA00E17406 /* DownloadListTableViewCell.m in Sources */,
 				A04550B122EC8DFA00E17406 /* ChoiceButton.m in Sources */,
-				A04550B222EC8DFA00E17406 /* TalkfunVideoControlView.m in Sources */,
 				A04550B322EC8DFA00E17406 /* StudyInfoItem.m in Sources */,
 				A04550B422EC8DFA00E17406 /* barrageSwitch.m in Sources */,
 				A04550B522EC8DFA00E17406 /* TalkfunExpressionCloseButton.m in Sources */,
@@ -3852,24 +3857,24 @@
 				A007090522EDD59C00C70CEE /* XZHomeVC.m in Sources */,
 				A04550B722EC8DFA00E17406 /* UIScrollView+TalkfunScrollView.m in Sources */,
 				A04550B822EC8DFA00E17406 /* VideoItem.m in Sources */,
+				A00D0D5E231BA7A300CF25E7 /* TalkfunPlaybackMessageView.m in Sources */,
 				A04550B922EC8DFA00E17406 /* TalkfunMultifunctionTool.m in Sources */,
 				A04550BA22EC8DFA00E17406 /* UITextField+HTtext.m in Sources */,
 				A04550BB22EC8DFA00E17406 /* LDNetDiagnoService.m in Sources */,
-				A04550BC22EC8DFA00E17406 /* AlbumModel.m in Sources */,
 				A04550BD22EC8DFA00E17406 /* TalkfunNewTextfieldView.m in Sources */,
 				A00708FD22ED973B00C70CEE /* XZSelectCourseVC.m in Sources */,
 				A04550BE22EC8DFA00E17406 /* CourseCategoryItem.m in Sources */,
+				A00D0D6C231BA7A300CF25E7 /* ChapterTableViewCell.m in Sources */,
 				A04550BF22EC8DFA00E17406 /* CZGuideVC.m in Sources */,
-				A04550C022EC8DFA00E17406 /* TalkfunNetworkLines.m in Sources */,
 				A04550C122EC8DFA00E17406 /* BaseNC.m in Sources */,
 				A04550C222EC8DFA00E17406 /* CZProtocalWebVC.m in Sources */,
 				A04550C322EC8DFA00E17406 /* CZAlertView.m in Sources */,
-				A04550C422EC8DFA00E17406 /* ChatViewController.m in Sources */,
 				A04550C522EC8DFA00E17406 /* UTLHelpper.m in Sources */,
 				A04550C622EC8DFA00E17406 /* ChatCell.m in Sources */,
 				A04550C722EC8DFA00E17406 /* TalkfunNewChatCell.m in Sources */,
 				A04550C822EC8DFA00E17406 /* TalkfunGuidanceView.m in Sources */,
 				A04550C922EC8DFA00E17406 /* XLGAlertView.m in Sources */,
+				A00D0D56231BA7A300CF25E7 /* TalkfunKuaiJinView.m in Sources */,
 				A04550CA22EC8DFA00E17406 /* NotifyItem.m in Sources */,
 				A04550CB22EC8DFA00E17406 /* TalkfunReplyTipsView.m in Sources */,
 				A04550CC22EC8DFA00E17406 /* NetworkUtil.m in Sources */,
@@ -3878,8 +3883,8 @@
 				A0541FC122F3E2A100D961B3 /* OptionBarController.m in Sources */,
 				A04550CF22EC8DFA00E17406 /* TalkfunModulation.m in Sources */,
 				A04550D022EC8DFA00E17406 /* TalkfunMultifunctionButton.m in Sources */,
+				A00D0D50231BA7A300CF25E7 /* TalkfunAdvertView.m in Sources */,
 				A04550D122EC8DFA00E17406 /* TalkfunGuidenceButton.m in Sources */,
-				A04550D222EC8DFA00E17406 /* TalkfunCourseManagement.m in Sources */,
 				A04550D322EC8DFA00E17406 /* ckickUILabel.m in Sources */,
 				A04550D422EC8DFA00E17406 /* LDSimplePing.m in Sources */,
 				A04550D522EC8DFA00E17406 /* XLGLogVC.m in Sources */,
@@ -3891,9 +3896,9 @@
 				A04550DA22EC8DFA00E17406 /* QuestionTableViewController.m in Sources */,
 				A04550DB22EC8DFA00E17406 /* NetworkModel.m in Sources */,
 				A04550DC22EC8DFA00E17406 /* TalkfunItem.m in Sources */,
-				A04550DD22EC8DFA00E17406 /* QuestionTableViewCell.m in Sources */,
 				A04550DE22EC8DFA00E17406 /* VersionItem.m in Sources */,
 				A04550DF22EC8DFA00E17406 /* QuestionCell.m in Sources */,
+				A00D0D48231BA7A300CF25E7 /* AlbumModel.m in Sources */,
 				A04550E022EC8DFA00E17406 /* CZMineVC.m in Sources */,
 				A04550E122EC8DFA00E17406 /* LDNetConnect.m in Sources */,
 				A04550E222EC8DFA00E17406 /* AppDelegate+Push.m in Sources */,
@@ -3903,9 +3908,10 @@
 				A04550E622EC8DFA00E17406 /* NetworkSelectionViewController.m in Sources */,
 				A04550E722EC8DFA00E17406 /* XLGInternalTestVC.m in Sources */,
 				A04550E822EC8DFA00E17406 /* TalkfunExpressionCell.m in Sources */,
+				A00D0D36231BA7A300CF25E7 /* BaseTableViewController.m in Sources */,
 				A04550E922EC8DFA00E17406 /* XLGLoginTestViewModel.m in Sources */,
+				A00D0D5C231BA7A300CF25E7 /* TalkfunVideoControlView.m in Sources */,
 				A04550EA22EC8DFA00E17406 /* XLGExternalTestTool.m in Sources */,
-				A04550EB22EC8DFA00E17406 /* PlaybackChatModel.m in Sources */,
 				A0541FA822F2C69C00D961B3 /* UIButton+ButtonStyle.m in Sources */,
 				A04550EC22EC8DFA00E17406 /* TalkfunNewQuestionCell.m in Sources */,
 				A04550ED22EC8DFA00E17406 /* XLGLoginTestVC.m in Sources */,
@@ -3914,47 +3920,49 @@
 				A04550EF22EC8DFA00E17406 /* BulletView.m in Sources */,
 				A04550F022EC8DFA00E17406 /* CZInfiniteVC.m in Sources */,
 				A04550F122EC8DFA00E17406 /* CacheUtil.m in Sources */,
+				A00D0D34231BA7A300CF25E7 /* ChapterViewController.m in Sources */,
 				A04550F222EC8DFA00E17406 /* TalkfunMessageView.m in Sources */,
 				A04550F322EC8DFA00E17406 /* ChatModel.m in Sources */,
-				A04550F422EC8DFA00E17406 /* PlaybackQuestionModel.m in Sources */,
 				A04550F522EC8DFA00E17406 /* WKDelegateController.m in Sources */,
 				A04550F622EC8DFA00E17406 /* HomeInfoItem.m in Sources */,
 				A04550F722EC8DFA00E17406 /* CZNotNetAvailableVC.m in Sources */,
 				A04550F822EC8DFA00E17406 /* UIImageView+Exten.m in Sources */,
 				A04550F922EC8DFA00E17406 /* CZSettingVC.m in Sources */,
-				A04550FA22EC8DFA00E17406 /* ChatTableViewCell.m in Sources */,
 				A04550FB22EC8DFA00E17406 /* AppDelegate.m in Sources */,
-				A04550FC22EC8DFA00E17406 /* ChapterTableViewCell.m in Sources */,
 				A04550FD22EC8DFA00E17406 /* CZStarView.m in Sources */,
-				A04550FE22EC8DFA00E17406 /* TalkfunKuaiJinView.m in Sources */,
 				A045510022EC8DFA00E17406 /* XLGLottie.m in Sources */,
 				A045510122EC8DFA00E17406 /* NoticeTableViewController.m in Sources */,
 				A045510222EC8DFA00E17406 /* TalkfunMoveLabel.m in Sources */,
 				A045521322ED42EB00E17406 /* UIView+XLGColor.m in Sources */,
 				A045510322EC8DFA00E17406 /* TalkfunWatermark.m in Sources */,
-				A045510422EC8DFA00E17406 /* TalkfunPlaybackViewController.m in Sources */,
 				A045510522EC8DFA00E17406 /* VoteViewController.m in Sources */,
+				A00D0D3E231BA7A300CF25E7 /* TalkfunPlaybackViewController.m in Sources */,
 				A045510622EC8DFA00E17406 /* BaseScrollView.m in Sources */,
 				A045510722EC8DFA00E17406 /* GroupChatTableViewController.m in Sources */,
 				A045510822EC8DFA00E17406 /* UIView+TalkfunActivityIndicator.m in Sources */,
 				A045510922EC8DFA00E17406 /* CZSelectCourseCell.m in Sources */,
 				A045510A22EC8DFA00E17406 /* TalkfunReplyCell.m in Sources */,
 				A045510B22EC8DFA00E17406 /* main.m in Sources */,
+				A00D0D4C231BA7A300CF25E7 /* ChatTableViewCell.m in Sources */,
 				A045510C22EC8DFA00E17406 /* LotteryCell.m in Sources */,
 				A045510D22EC8DFA00E17406 /* UITextField+TalkfunTextField.m in Sources */,
 				A045510E22EC8DFA00E17406 /* GroupTableViewController.m in Sources */,
+				A00D0D38231BA7A300CF25E7 /* ChatViewController.m in Sources */,
 				A07E4E9D22ED833D000ABD86 /* XZConfig.m in Sources */,
 				A045510F22EC8DFA00E17406 /* ProgressLoadView.m in Sources */,
 				A045511022EC8DFA00E17406 /* TalkfunLEEStarRating.m in Sources */,
-				A045511122EC8DFA00E17406 /* BaseTableViewController.m in Sources */,
 				A045511222EC8DFA00E17406 /* TalkfunViewController.m in Sources */,
 				A045511322EC8DFA00E17406 /* JHHJView.m in Sources */,
 				A045511422EC8DFA00E17406 /* TalkfunHttpTools.m in Sources */,
 				A045511522EC8DFA00E17406 /* RegularPhoneTF.m in Sources */,
 				A045511622EC8DFA00E17406 /* ChatTableViewController.m in Sources */,
+				A00D0D64231BA7A300CF25E7 /* AlbumCellTableViewCell.m in Sources */,
+				A00D0D3C231BA7A300CF25E7 /* QuestionViewController.m in Sources */,
 				A045511722EC8DFA00E17406 /* AEIndicator.m in Sources */,
+				A00D0D44231BA7A300CF25E7 /* TalkfunCourseManagement.m in Sources */,
 				A045511822EC8DFA00E17406 /* NetworkManager.m in Sources */,
 				A045511922EC8DFA00E17406 /* UserInfo.m in Sources */,
+				A00D0D4A231BA7A300CF25E7 /* ChapterModel.m in Sources */,
 				A045511A22EC8DFA00E17406 /* videoDefinition.m in Sources */,
 				A045511B22EC8DFA00E17406 /* PurchaseItem.m in Sources */,
 				A045511C22EC8DFA00E17406 /* TalkfunFunctionView.m in Sources */,

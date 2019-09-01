@@ -5,7 +5,7 @@ use_frameworks!
 target 'Chaozhi' do
   pod 'XLGCategory'
   pod 'MJRefresh'
-  pod 'MJExtension', '~> 3.0.15.1'
+  pod 'MJExtension', '~> 3.0.13'
   pod 'YYModel'
   pod 'Masonry'
   pod 'SDWebImage'

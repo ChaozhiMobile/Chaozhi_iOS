@@ -122,16 +122,17 @@
 
 - (void)sliderValueChange:(UISlider *)slider
 {
-//    WeakSelf
-    if (self.sliderValueBlock) {
-        self.sliderValueBlock(slider.value);
-    }
-
-        self.touch = NO;
-
+    
+//     NSLog(@"slider.value======>%f",slider.value);
     
 
-    self.playBtn.selected = NO;
+    self.touch = NO;
+
+    if(_sliderValueChangeBlock){
+        _sliderValueChangeBlock(slider.value);
+    }
+    
+//    self.playBtn.selected = NO;
     if (_timer != nil){//如果定时器已经添加,就不能再添加定时器,否则定时速度出错
         return;
     }
@@ -153,6 +154,12 @@
 {
 
         self.touch = NO;
+    
+    if (self.sliderValueBlock) {
+        self.sliderValueBlock(slider.value);
+    }
+
+    
     if (_timer != nil){//如果定时器已经添加,就不能再添加定时器,否则定时速度出错
         return;
     }
@@ -197,9 +204,11 @@
         
         UITapGestureRecognizer * sliderTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(sliderTap:)];
         [self.slider addGestureRecognizer:sliderTap];
-        self.slider.continuous = NO;
+        self.slider.continuous = YES;
         self.slider.value = 0.0;
         self.slider.userInteractionEnabled = YES;
+      
+        
         [self.slider addTarget:self action:@selector(sliderValueChange:) forControlEvents:UIControlEventValueChanged];
         [self.slider addTarget:self action:@selector(sliderThumbTouch:) forControlEvents:UIControlEventTouchDown];
         [self.slider addTarget:self action:@selector(sliderThumbUnTouch:) forControlEvents:UIControlEventTouchUpInside | UIControlEventTouchUpOutside];
@@ -269,7 +278,7 @@ static BOOL TimeLabelShow = NO;
         [self.slider setValue:duration animated:YES];
     }
     
-    [self play:YES];
+
     self.timeLabel.text = [self getTimeStr:duration];
     CGFloat totalDuration = self.slider.maximumValue;
     self.totalTimeLabel.text = [self getTimeStr:totalDuration];

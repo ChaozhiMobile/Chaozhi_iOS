@@ -8,7 +8,6 @@
 
 #import "TalkfunPlaybackViewController.h"
 //#import "TalkfunSDK.h"
-//#import "TalkfunSDKPlayback.h"
 #import "UIScrollView+TalkfunScrollView.h"
 #import "UIView+TalkfunView.h"
 //#import "NetworkDetector.h"
@@ -24,6 +23,7 @@
 #import "TalkfunCourseManagement.h"
 #import "TalkfunModulation.h"
 #import "BulletView.h"
+#import "TalkfunAdvertView.h"
 #define ButtonViewHeight 35
 #define KIsiPhoneX  @available(iOS 11.0, *) && UIApplication.sharedApplication.keyWindow.safeAreaInsets.bottom > 0.0
 #import "DBManager.h"
@@ -96,6 +96,8 @@
 @property(nonatomic,strong)NSMutableArray*playbackChat;//所有聊天数据
 @property(nonatomic,assign)NSInteger direction ;//5//还同记录方向
 @property (nonatomic,assign) int  origin;//触屏原点
+@property(nonatomic,assign)BOOL scrollViewWillBegin;
+@property (nonatomic,strong) TalkfunAdvertView *advertView;//广告视图
 
 /** 评价视图 */
 @property (nonatomic,retain) CZCommentView *commentView;
@@ -115,7 +117,7 @@
         self.downloadCompleted = YES;
     }
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor blackColor];
     [APPLICATION setStatusBarHidden:YES];
     self.isOrientationLandscape = NO;
     self.iPadAutoRotate = YES;
@@ -125,6 +127,7 @@
     //开始
     [self getAccessToken];
     [self createUI];
+    //sdk的监听回调
     [self registerEventListener];
     [self addGesture];
     
@@ -133,8 +136,6 @@
         [self initCommentView];
         [self getLiveCommentInfo]; //获取直播评论信息
     }
-    
-    //    [self.networkDetector networkcheck];
 }
 
 - (void)initCommentView {
@@ -208,6 +209,21 @@
     [self uploadProgress]; //上传视频进度到后台
 }
 
+#pragma mark - ***上传视频进度到后台***
+- (void)uploadProgress {
+    if ([self.videoItem.product_id isEqualToString:@"0"]) { //首页公开课不上传进度
+        return;
+    }
+    self.videoItem.time = [NSString stringWithFormat:@"%d",(int)self.playDuration];
+    self.videoItem.total_time = [NSString stringWithFormat:@"%d",(int)self.liveLong];
+    NSDictionary *dic = @{@"type":self.videoItem.type,@"product_id":self.videoItem.product_id,@"live_id":self.videoItem.live_id,@"time":self.videoItem.time,@"total_time":self.videoItem.total_time};
+    [[NetworkManager sharedManager] postJSON:URL_LiveProgress parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
+        if (status == Request_Success) {
+            
+        }
+    }];
+}
+
 - (void)addLoadingView{
     
     if (self.isLoading) {
@@ -219,7 +235,6 @@
     
     if (Course.count>0) {
         
-        
         [self.loadingView configLogo:Course[@"url"] courseName:Course[@"title"]];
     }else{
         
@@ -227,7 +242,7 @@
         //缓存用户数据
         [TalkfunCourseManagement saveLogoUrl:self.res[@"data"][@"logo"] roomId:[self.playbackID integerValue] title:self.res[@"data"][@"title"]];
     }
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.loadingView removeFromSuperview];
         self.loadingView = nil;
         self.isLoading = YES;
@@ -278,14 +293,11 @@
     //进入后台是否暂停（默认是暂停）
     [self.talkfunSDK setPauseInBackground:YES];
     
-    
     //ppt容器（4：3比例自适应）
     
     self.pptView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenSize.width, self.view.frame.size.width * 3 / 4.0)];
     self.pptView.backgroundColor = [UIColor blackColor];
     [self.view addSubview:self.pptView];
-    
-    
     
     //2.把ppt容器给SDK（要显示ppt区域的必须部分）
     [self.talkfunSDK configurePPTContainerView:self.pptView];
@@ -299,10 +311,8 @@
     //首先把容器隐藏
     self.cameraView .hidden = YES;
     
-    
     //3.把ppt容器给SDK（要显示摄像头区域的必须部分）
     [self.talkfunSDK configureCameraContainerView:self.cameraView];
-    
     
     //    //桌面分享(可选、默认pptView为desktopShareView)
     //    self.desktopShareView = ({
@@ -325,6 +335,16 @@
         self.pptsFunctionView.networkX.constant = 0;
     }
     [self.view addSubview:self.cameraView];
+    
+    //广告片头
+    self.advertView = [[TalkfunAdvertView alloc] initWithFrame:CGRectMake(0, 0, ScreenSize.width, ScreenSize.height )];
+    self.advertView.hidden = YES;
+    self.advertView.backgroundColor =  [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1];;
+    [self.view addSubview:self.advertView];
+    [self.talkfunSDK setADVideoContainer:self.advertView.videoView];
+    [self.advertView.back addTarget:self action:@selector(backClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.advertView.prompt addTarget:self action:@selector(promptClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.advertView.fullScreen addTarget:self action:@selector(fullScreenClick:) forControlEvents:UIControlEventTouchUpInside];
 }
 #pragma mark - PPT上的功能按钮
 - (void)createPPTsButton{
@@ -385,12 +405,15 @@
         
         NSInteger second  = [TalkfunCourseManagement getPlayProgress:[weakSelf.playbackID integerValue]];
         
-        
-        //快进到这里
-        [weakSelf.talkfunSDK seek:second];
+        if(second > 0){
+            //快进到这里
+            [weakSelf.talkfunSDK seek:second];
+        }
+        //配置 提问与聊天
+        [weakSelf mod_playbackinfo_playback:obj];
     }];
-    //    WeakSelf
-    //摄像头开
+    
+    //TODO:摄像头开
     [self.talkfunSDK on:TALKFUN_EVENT_CAMERA_SHOW callback:^(id obj) {
         if (weakSelf.pptsFunctionView.cameraBtn.selected) {
             return ;
@@ -405,7 +428,7 @@
             [weakSelf.pptsFunctionView.cameraBtn setImage:[UIImage imageNamed:@"开启摄像头"] forState:UIControlStateNormal];
         }
     }];
-    //摄像头关
+    //TODO:摄像头关
     [self.talkfunSDK on:TALKFUN_EVENT_CAMERA_HIDE callback:^(id obj) {
         
         if (weakSelf.talkfunSDK.liveMode != TalkfunLiveModeDesktop) {
@@ -446,7 +469,7 @@
             [weakSelf.pptView addSubview:tipsLabel];
         }
     }];
-    //当时视频播放的时候的回调
+    //TODO:当时视频播放的时候的回调
     [self.talkfunSDK on:TALKFUN_EVENT_PLAY callback:^(id obj) {
         //        [weakSelf.loadingView removeFromSuperview];
         //        weakSelf.loadingView = nil;
@@ -458,12 +481,12 @@
         [tipsLabel removeFromSuperview];
         tipsLabel = nil;
     }];
-    //回放开始
+    //TODO:回放开始
     [self.talkfunSDK on:TALKFUN_EVENT_VOD_START callback:^(id obj) {
         weakSelf.unStart = NO;
         [weakSelf.pptsFunctionView play:YES];
     }];
-    //回放完毕
+    //TODO:回放完毕
     [self.talkfunSDK on:TALKFUN_EVENT_VOD_STOP callback:^(id obj) {
         weakSelf.unStart = YES;
         [weakSelf.pptsFunctionView play:NO];
@@ -472,7 +495,7 @@
         }
         [self uploadProgress]; //上传视频进度到后台
     }];
-    //监测视频播放进度
+    //TODO:监测视频播放进度
     [self.talkfunSDK on:TALKFUN_EVENT_VOD_DURATION callback:^(id obj) {
         CGFloat duration = [obj floatValue];
         //获取弹幕然后弹出来
@@ -512,22 +535,40 @@
             weakSelf.scrollView.contentSize = CGSizeMake(CGRectGetWidth(weakSelf.scrollView.frame) * weakSelf.btnNames.count, CGRectGetHeight(weakSelf.scrollView.frame));
         }
     }];
-    //问答数据
+    //TODO:问答数据
     [self.talkfunSDK on:TALKFUN_EVENT_VOD_QUESTION_APPEND callback:^(id obj) {
         if (obj && [obj isKindOfClass:[NSArray class]]) {
             [[NSNotificationCenter defaultCenter] postNotificationName:@"playbackAsk" object:nil userInfo:@{@"mess":obj}];
         }
     }];
-    //聊天数据
+    //TODO:聊天数据
     [self.talkfunSDK on:TALKFUN_EVENT_VOD_MESSAGE_APPEND callback:^(id obj) {
         [weakSelf addPlaybackChat:obj];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"playbackChat" object:nil userInfo:@{@"mess":obj}];
     }];
-    //章节数据
+    //TODO:章节数据
     [self.talkfunSDK on:TALKFUN_EVENT_VOD_CHAPTER_LIST callback:^(id obj) {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"chapterList" object:nil userInfo:@{@"mess":obj}];
     }];
     
+    //TODO:广播
+    [self.talkfunSDK on:TALKFUN_EVENT_BROADCAST callback:^(id obj) {
+        NSLog(@"打印广播====>%@",obj);
+        //        [weakSelf broadcast:obj];
+    }];
+    
+    //当前页的frame
+    //    [self.talkfunSDK on:TALKFUN_EVENT_WHITEOARD_PAGE_FRAME callback:^(id obj) {
+    //
+    //        if ([obj[@"frame"] isKindOfClass:[NSString class]]) {
+    //            //字符串转换回frame
+    //            //            CGRect frame =  CGRectFromString(obj[@"frame"]);
+    //
+    //            NSLog(@"回放的当前页的frame%@",obj[@"frame"]);
+    //
+    //
+    //        }
+    //    }];
     //=================== 监听键盘 ====================
     //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardDidShow:) name:UIKeyboardWillShowNotification object:nil];
     //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardDidHide:) name:UIKeyboardWillHideNotification object:nil];
@@ -539,9 +580,9 @@
     //=================== SDK发出的错误 ==================
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(errorNotification:) name:TalkfunErrorNotification object:nil];
     
-//    if (IsIPAD) {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationChanged:) name:UIDeviceOrientationDidChangeNotification object:nil];
-//    }
+    //    if (IsIPAD) {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationChanged:) name:UIDeviceOrientationDidChangeNotification object:nil];
+    //    }
 }
 
 - (void)errorNotification:(NSNotification *)notification {
@@ -550,6 +591,7 @@
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"温馨提示" message:[NSString stringWithFormat:@"%@",[self dictionaryToJson:userInfo]] delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
         alertView.alertViewStyle = UIAlertViewStyleDefault;
         [alertView show];
+        
     });
 }
 
@@ -563,21 +605,6 @@
     } else {
         return @"";
     }
-}
-
-#pragma mark - ***上传视频进度到后台***
-- (void)uploadProgress {
-    if ([self.videoItem.product_id isEqualToString:@"0"]) { //首页公开课不上传进度
-        return;
-    }
-    self.videoItem.time = [NSString stringWithFormat:@"%d",(int)self.playDuration];
-    self.videoItem.total_time = [NSString stringWithFormat:@"%d",(int)self.liveLong];
-    NSDictionary *dic = @{@"type":self.videoItem.type,@"product_id":self.videoItem.product_id,@"live_id":self.videoItem.live_id,@"time":self.videoItem.time,@"total_time":self.videoItem.total_time};
-    [[NetworkManager sharedManager] postJSON:URL_LiveProgress parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
-        if (status == Request_Success) {
-            
-        }
-    }];
 }
 
 #pragma mark - 按钮点击事件
@@ -623,14 +650,8 @@
     //全屏按钮
     else if (button == self.pptsFunctionView.fullScreenBtn){
         
-        if (!button.selected && [UIApplication sharedApplication].statusBarOrientation != UIInterfaceOrientationPortrait) {
-            [self manualFullScreen:YES];
-        }else if (button.selected == YES && fromLandscape == YES){
-            [self manualFullScreen:NO];
-        }else{
-            self.iPadAutoRotate = NO;
-            [self fullScreen];
-        }
+        self.iPadAutoRotate = NO;
+        [self fullScreen];
     }
     //隐藏camera按钮
     else if (button.tag == 201){
@@ -659,10 +680,6 @@
         }
         [self.talkfunSDK exchangePPTAndCameraContainer];
         
-        
-        
-        
-        
         self.isExchanged = !self.isExchanged;
         
         [self updateChrysanthemum];
@@ -675,7 +692,6 @@
             
             WeakSelf
             [self.talkfunSDK getNetworkList:^(id result) {
-                
                 
                 if ([result[@"code"] intValue] == TalkfunCodeSuccess) {
                     TalkfunNetworkLines * networkLinesView = [[NSBundle mainBundle] loadNibNamed:@"TalkfunNetworkLines" owner:nil options:nil][0];
@@ -699,12 +715,7 @@
                     NSLog(@"获取列表失败");
                     NSLog(@"%@",result);
                 }
-                
-                
             }];
-            
-            
-            
         }
     }
     //刷新按钮
@@ -840,7 +851,7 @@ static BOOL fromLandscape = NO;
     [self.pptsFunctionView.fullScreenBtn setImage:[UIImage imageNamed:fullScreen?@"退出全屏":@"全屏"] forState:UIControlStateNormal];
 }
 
-- (void)fullScreen{
+- (void)fullScreen {
     [self.view endEditing:YES];
     if ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationPortrait) {
 #pragma mark - ---超职修改
@@ -869,19 +880,13 @@ static BOOL fromLandscape = NO;
 }
 
 #pragma mark - 竖屏的适配
-- (void)orientationPortrait
-{
-    //    if (APPLICATION.statusBarOrientation != UIInterfaceOrientationPortrait) {
+- (void)orientationPortrait {
     if (self.isOrientationLandscape) {
         CGFloat duration = [UIApplication sharedApplication].statusBarOrientationAnimationDuration;
         [UIView animateWithDuration:duration animations:^{
             [APPLICATION setStatusBarOrientation:UIInterfaceOrientationPortrait animated:YES];
-#pragma mark - ---超职修改
-            //            self.view.transform = CGAffineTransformRotate(self.view.transform, - M_PI_2);
-#pragma mark - 超职修改---
         }];
     }
-    //    }
     [APPLICATION setStatusBarHidden:YES];
     self.view.bounds = CGRectMake(0, 0, ScreenSize.width, ScreenSize.height);
     [self orientationPortrait:YES];
@@ -889,9 +894,6 @@ static BOOL fromLandscape = NO;
 }
 
 - (void)deviceOrientationChanged:(NSNotification *)notification{
-    if (self.pptsFunctionView.fullScreenBtn.selected) {
-        return;
-    }
     [self.view endEditing:YES];
     [_commentView changeLayout];
     if ([UIDevice currentDevice].orientation == 3 && !self.isOrientationLandscape) {
@@ -953,25 +955,19 @@ static BOOL fromLandscape = NO;
 }
 
 #pragma mark - 横屏的适配
-- (void)orientationLandscape
-{
-    //    if (APPLICATION.statusBarOrientation == UIInterfaceOrientationPortrait) {
+- (void)orientationLandscape {
     if (!self.isOrientationLandscape) {
         [APPLICATION setStatusBarHidden:YES];
         CGFloat duration = [UIApplication sharedApplication].statusBarOrientationAnimationDuration;
         [UIView animateWithDuration:duration animations:^{
             [APPLICATION setStatusBarOrientation:UIInterfaceOrientationLandscapeRight animated:YES];
-#pragma mark - ---超职修改
-            //            self.view.transform = CGAffineTransformRotate(self.view.transform, M_PI_2);
-#pragma mark - 超职修改---
         }];
     }
-    //    }
     self.view.bounds = CGRectMake(0, 0, ScreenSize.width, ScreenSize.height);
     [self orientationPortrait:NO];
 }
 
--(BOOL)gestureRecognizer:(UIGestureRecognizer*)gestureRecognizer shouldReceiveTouch:(UITouch*)touch {
+- (BOOL)gestureRecognizer:(UIGestureRecognizer*)gestureRecognizer shouldReceiveTouch:(UITouch*)touch {
     
     if([touch.view isKindOfClass:[UISlider class]])
     
@@ -980,8 +976,8 @@ static BOOL fromLandscape = NO;
     else
     
     return YES;
-    
 }
+
 #pragma mark - 加手势
 - (void)addGesture
 {
@@ -1014,10 +1010,7 @@ static BOOL fromLandscape = NO;
     //摄像头缩放
     //UIPinchGestureRecognizer * pinchGR = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchGR:)];
     //[self.cameraView addGestureRecognizer:pinchGR];
-    
 }
-
-
 
 /** 判断手势方向  */
 - (NSInteger)commitTranslation:(CGPoint)translation {
@@ -1034,9 +1027,8 @@ static BOOL fromLandscape = NO;
     }
     
     return 3;
-    
-    
 }
+
 /** 判断手势方向  */
 - (void)volumeAdjustment:(CGPoint)curP {
     
@@ -1047,10 +1039,9 @@ static BOOL fromLandscape = NO;
         Y  =  abs((int)curP.y - self.origin);
     }
     
-    if (  Y >10) {
+    if (Y >10) {
         
         self.origin = curP.y;
-        
         
         if(curP.y>0){
             if(self.lastVolume>0){
@@ -1066,11 +1057,9 @@ static BOOL fromLandscape = NO;
                 [self.modulation bfSetVolume:self.lastVolume];
             }
         }
-        
-        
     }
-    
 }
+
 #pragma mark 快进快退手势
 - (void)pptPanGR:(UIPanGestureRecognizer *)pptPanGR{
     CGFloat const divSpeed = 4;
@@ -1097,8 +1086,6 @@ static BOOL fromLandscape = NO;
             
             //判断方向
             self.direction  =    [self commitTranslation:[pptPanGR translationInView:self.view]];
-            
-            
         }
         //左右
         if (self.direction==3) {
@@ -1117,11 +1104,13 @@ static BOOL fromLandscape = NO;
             }else if (kuai < 0 && self.pptsFunctionView.slider.value < fabs(kuai)){
                 kuai = self.pptsFunctionView.slider.value;
             }
+            //        NSLog(@"进度秒数======>%f",duration);
+            self.playDuration = duration;
+            self.pptsFunctionView.timeLabel.text = [self getTimeStr:duration];
+            
             [self.kuaiJinView kuai:kuai timeLabel:self.pptsFunctionView.timeLabel.text totalTimeLabel:self.pptsFunctionView.totalTimeLabel.text];
         }
-        
-        
-    }else if (pptPanGR.state == UIGestureRecognizerStateEnded){
+    } else if (pptPanGR.state == UIGestureRecognizerStateEnded){
         //初始化
         
         if (!isValue) {
@@ -1147,8 +1136,14 @@ static BOOL fromLandscape = NO;
             [self.kuaiJinView removeFromSuperview];
             self.kuaiJinView = nil;
         }
-        
     }
+}
+
+- (NSString *)getTimeStr:(CGFloat)duration {
+    NSInteger hour   = duration / 3600;
+    NSInteger minute = (duration - hour * 3600) / 60;
+    NSInteger second = duration - minute * 60 - hour * 3600;
+    return [NSString stringWithFormat:@"%02ld:%02ld:%02ld",(long)hour,(long)minute,(long)second];
 }
 
 - (void)tap:(UITapGestureRecognizer *)tap
@@ -1174,7 +1169,6 @@ static BOOL fromLandscape = NO;
             weakSelf.cameraView.frame = CGRectMake(0, 0, ScreenSize.width, ScreenSize.height);
             [self updateChrysanthemum];
         }];
-        
     }
     else
     {
@@ -1189,7 +1183,6 @@ static BOOL fromLandscape = NO;
             //            weakSelf.cameraView.backgroundColor = [UIColor clearColor];
         }];
     }
-    
 }
 
 - (void)pptTapGR:(UITapGestureRecognizer *)pptTapGR
@@ -1198,9 +1191,6 @@ static BOOL fromLandscape = NO;
     //        return;
     //    }
     self.pptsFunctionView.hidden = !self.pptsFunctionView.hidden;
-    
-    
-    
 }
 
 - (void)pptDoubleTapGR:(UITapGestureRecognizer *)pptDoubleTapGR
@@ -1279,7 +1269,9 @@ static BOOL fromLandscape = NO;
 
 - (void)seek:(CGFloat)duration{
     [self.talkfunSDK seek:duration];
-    [self.pptsFunctionView play:YES];
+    //    [self.pptsFunctionView play:YES];
+    self.playDuration = duration;
+    [self.pptsFunctionView setDuration:duration];
     //清空当前的所有弹幕
     [self.barrageRender stopAnimation];
 }
@@ -1287,6 +1279,35 @@ static BOOL fromLandscape = NO;
 #pragma mark - scrollView 代理方法
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    NSInteger num = round((scrollView.contentOffset.x) / self.scrollView.frame.size.width);
+    //        if (point.x > 0) {// 向左滚动
+    CGPoint point = [scrollView.panGestureRecognizer translationInView:self.view];
+    
+    if (self.buttonView.chatBtn.hidden&&self.buttonView.askBtn.hidden&&self.scrollViewWillBegin) {
+        self.scrollView.contentOffset = CGPointMake(self.view.frame.size.width*2, 0);
+        return;
+    }else
+    //左
+    if (num == 1 &&self.buttonView.chatBtn.hidden == YES&&point.x > 0&&self.scrollViewWillBegin) {
+        self.scrollView.contentOffset = CGPointMake(self.view.frame.size.width, 0);
+        return;
+        
+        //右
+    }else if (num == 0 &&self.buttonView.askBtn.hidden == YES&&point.x < 0&&self.scrollViewWillBegin) {
+        self.scrollView.contentOffset = CGPointMake(self.view.frame.size.width*2, 0);
+        return;
+        //左
+    }else if (num == 2 &&self.buttonView.askBtn.hidden == YES&&point.x > 0&&self.scrollViewWillBegin) {
+        self.scrollView.contentOffset = CGPointMake(0, 0);
+        return;
+    }else if (num == 2 &&self.buttonView.chatBtn.hidden&&self.buttonView.askBtn.hidden) {
+        self.scrollView.contentOffset = CGPointMake(self.view.frame.size.width*2, 0);
+        return;
+    }
+    else{
+        
+    }
+    
     self.scrollView.clipsToBounds = YES;
     if (self.scrollView == scrollView) {
         NSInteger num = round((scrollView.contentOffset.x) / self.scrollView.frame.size.width);
@@ -1296,7 +1317,7 @@ static BOOL fromLandscape = NO;
             self.scrollView.contentOffset = CGPointMake(self.scrollView.frame.size.width * (self.tableViewNum - 1), 0) ;
         }
         if (CGRectGetWidth(self.scrollView.frame)) {
-            self.buttonView.selectViewLeadingSpace.constant = scrollView.contentOffset.x * (CGRectGetWidth(btn.frame) / CGRectGetWidth(self.scrollView.frame));
+            //            self.buttonView.selectViewLeadingSpace.constant = scrollView.contentOffset.x * (CGRectGetWidth(btn.frame) / CGRectGetWidth(self.scrollView.frame));
         }
     }
 }
@@ -1321,9 +1342,9 @@ static BOOL fromLandscape = NO;
     if (APPLICATION.statusBarOrientation == UIInterfaceOrientationLandscapeRight) {
         return UIInterfaceOrientationMaskLandscapeRight;
     }
-    if (APPLICATION.statusBarOrientation == UIInterfaceOrientationPortrait) {
-        return UIInterfaceOrientationMaskPortrait;
-    }
+//    if (APPLICATION.statusBarOrientation == UIInterfaceOrientationPortrait) {
+//        return UIInterfaceOrientationMaskPortrait;
+//    }
     return UIInterfaceOrientationMaskPortrait;
 }
 - (void)onUIApplicationDidEnterBackgroundNotification:(NSNotification *)notification{
@@ -1353,9 +1374,6 @@ static BOOL fromLandscape = NO;
                     weakSelf.alertView_1.alertViewStyle = UIAlertViewStyleDefault;
                     [weakSelf.alertView_1 show];
                 }
-                
-                
-                
             });
             NSLog(@"磁盘空间不足够");
         };
@@ -1382,6 +1400,12 @@ static BOOL fromLandscape = NO;
         _pptsFunctionView.sliderValueBlock = ^(CGFloat sliderValue){
             [weakSelf seek:sliderValue];
         };
+        //过程中
+        _pptsFunctionView.sliderValueChangeBlock = ^(CGFloat sliderValue){
+            weakSelf.playDuration = sliderValue;
+            weakSelf.pptsFunctionView.timeLabel.text = [weakSelf getTimeStr:sliderValue];
+        };
+        
     }
     return _pptsFunctionView;
 }
@@ -1482,10 +1506,6 @@ static BOOL fromLandscape = NO;
     return _loadingView;
 }
 
-
-
-
-
 - (UIActivityIndicatorView *)activityIndicator
 {
     if (!_activityIndicator) {
@@ -1510,7 +1530,6 @@ static BOOL fromLandscape = NO;
         
         [self.cameraView bringSubviewToFront:self.activityIndicator];
     }
-    
 }
 
 #pragma mark  视频播放状态改变  -黑屏加菊花时用到
@@ -1533,6 +1552,43 @@ static BOOL fromLandscape = NO;
         NSLog(@"loadStateDidChange: ???: %d\n", (int)loadState);
     }
 }
+
+#pragma mark 广告代理
+
+/**
+ *  广告播放总时长
+ *  是否可跳过广告
+ */
+- (void)onADPrepare:(TalkfunADConfig*)model
+{
+    self.advertView.hidden = NO;
+    
+    [ self.advertView advertisingPlayStart:model playbackID:self.playbackID];
+}
+/**
+ *
+ *  广告播放倒计时
+ */
+- (void)OnADCountDownTime:(NSInteger)duration
+{
+    [self.advertView setSecond:duration playbackID:self.playbackID];
+}
+
+/**
+ *
+ *  广告播放状态改变
+ */
+- (void)onADVideoStatusChange:(TalkfunMultiMediaStatusChangeListener)loadState
+{   //结束
+    if (loadState ==TalkfunMultiMediaStatusChangeListenerComplate) {
+        [self.advertView advertisingPlaybackCompleted:self.playbackID] ;
+    }else if (loadState ==TalkfunMultiMediaStatusChangeListenerError) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"温馨提示" message:@"广告加载失败 " delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
+        alertView.alertViewStyle = UIAlertViewStyleDefault;
+        [alertView show];
+    }
+}
+
 #pragma mark  添加水印
 - (void)addWatermarkLayer{
     
@@ -1557,7 +1613,6 @@ static BOOL fromLandscape = NO;
             
             self.layerTimer = [NSTimer scheduledTimerWithTimeInterval:arc4random_uniform([self getRandomNumber]) target:self selector:@selector(arc4random_uniformFrame) userInfo:nil repeats:YES];
             [[NSRunLoop mainRunLoop] addTimer:self.layerTimer forMode:NSRunLoopCommonModes];
-            
         }
     }
     
@@ -1617,8 +1672,6 @@ static BOOL fromLandscape = NO;
     return _barrageRender;
 }
 
-
-
 - (void)getBarrageRenderL:(NSInteger)time{
     
     if (self.barrageRender.bulletSwitch) {
@@ -1632,33 +1685,130 @@ static BOOL fromLandscape = NO;
             }
         }
     }
-    
-    
 }
 //加载弹幕
 - (void)loadData:(NSString *)data
 {
-    
     ColorArray
     UIColor *tempColor = TempColor;
     [self.barrageRender initWithContent:data ontOfSize:14 textColor:tempColor];
-    
 }
 
 //添加b弹幕聊天数据
 - (void)addPlaybackChat:(NSMutableArray*)array
 {
-    
     if ([array isKindOfClass:[NSArray class]]) {
         [self.playbackChat addObjectsFromArray:array];
     }
-    
 }
--(NSMutableArray*)playbackChat
+
+- (NSMutableArray*)playbackChat
 {
     if (_playbackChat==nil) {
         _playbackChat = [NSMutableArray array];
     }
     return _playbackChat;
 }
+
+#pragma mark - scrollView 代理方法
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    [self.view endEditing:YES];
+    self.scrollViewWillBegin = YES;
+}
+
+-(void)scrollViewDidEndDragging:(UIScrollView*)scrollView willDecelerate:(BOOL)decelerate
+{
+    NSLog(@"滚动视图结束滚动，它只调用一次");
+    self.scrollViewWillBegin = NO;
+}
+
+- (void)mod_playbackinfo_playback:(id)obj
+{
+    //聊天与提问的开关
+    if([obj[@"roomInfo"][@"mod_playbackinfo_playback"] isKindOfClass:[NSDictionary class]]){
+        
+        NSDictionary *mod_playbackinfo_playback = obj[@"roomInfo"][@"mod_playbackinfo_playback"];
+        
+        //聊天
+        if([mod_playbackinfo_playback[@"config"][@"chat"]isKindOfClass:[NSDictionary class]]){
+            NSDictionary *chat = mod_playbackinfo_playback[@"config"][@"chat"];
+            int chatEnable  = [chat[@"enable"] intValue];
+            //                chatEnable = 0;
+            if(chatEnable ==0){
+                self.buttonView.chatBtn.hidden = YES;
+            }
+        }
+        //问答
+        if([mod_playbackinfo_playback[@"config"][@"qa"]isKindOfClass:[NSDictionary class]]){
+            NSDictionary *qa = mod_playbackinfo_playback[@"config"][@"qa"];
+            int qaEnable  = [qa[@"enable"] intValue];
+            //                            qaEnable = 0;
+            if(qaEnable ==0){
+                self.buttonView.askBtn.hidden = YES;
+            }
+        }
+        
+        if ( self.buttonView.askBtn.hidden == YES&& self.buttonView.chatBtn.hidden ==NO) {
+            self.buttonView.askButtonX.constant =  - self.buttonView.askBtn.frame.size.width;
+        }
+        
+        if (self.buttonView.chatBtn.hidden) {
+            if (self.buttonView.askBtn.hidden == YES) {
+                self.buttonView.chatButtonX.constant = - self.buttonView.chatBtn.frame.size.width *2;
+                self.scrollView.contentOffset = CGPointMake(self.view.frame.size.width, 0);
+                
+            }else{
+                self.buttonView.chatButtonX.constant = - self.buttonView.chatBtn.frame.size.width;
+                self.scrollView.contentOffset = CGPointMake(self.view.frame.size.width*2, 0);
+            }
+        }
+        
+        [self.buttonView selectButton:self.buttonView.noticeBtn];
+    }
+}
+
+- (void)backClick:(UIButton*)btn
+{
+    [TalkfunCourseManagement setPlay:[self.playbackID  integerValue] progress:self.playDuration];
+    
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    [self.view.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    if (self.isOrientationLandscape) {
+        [UIApplication sharedApplication].statusBarOrientation = UIInterfaceOrientationPortrait;
+    }
+    [self.talkfunSDK destroy];
+    [self timerInvalidate];
+    QUITCONTROLLER(self)
+}
+
+//跳过广告
+- (void)promptClick:(UIButton*)btn
+{
+    [self.talkfunSDK skipAD];
+    self.advertView.hidden = YES;
+}
+
+//横屏
+- (void)fullScreenClick:(UIButton*)btn
+{
+    
+    if (btn.selected==NO) {
+        [UIApplication sharedApplication].statusBarOrientation = UIInterfaceOrientationLandscapeRight;
+        self.pptsFunctionView.fullScreenBtn.selected = YES;
+        //横屏
+        [self orientationLandscape];
+    }else{
+        self.pptsFunctionView.fullScreenBtn.selected = NO;
+        [UIApplication sharedApplication].statusBarOrientation = UIInterfaceOrientationPortrait;
+        [self orientationPortrait];
+    }
+    self.advertView.frame = CGRectMake(0, 0, ScreenSize.width, ScreenSize.height );
+    btn.selected = !btn.selected;
+}
+
 @end
+

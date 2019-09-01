@@ -24,6 +24,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *askTipsView;
 @property (weak, nonatomic) IBOutlet UIImageView *noticeTipsView;
 @property (nonatomic,assign,readonly) BOOL isPlayback;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *chatButtonX;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *askButtonX;
 
 + (id)initView;
 - (void)buttonsAddTarget:(id)target action:(SEL)action;

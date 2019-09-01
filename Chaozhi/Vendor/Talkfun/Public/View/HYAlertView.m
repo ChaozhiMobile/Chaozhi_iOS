@@ -351,11 +351,11 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
     self.baseViewFrame = CGRectMake(0, 0, baseView.frame.size.width, baseView.frame.size.height);
 
-    if (self.isOrientationLandscape==NO) {
+//    if (self.isOrientationLandscape==NO) {
         self.frame =CGRectMake(0, 0,  self.baseViewFrame.size.width,  self.baseViewFrame.size.height);
-    }else{
-        self.frame =CGRectMake(0, 0,  self.baseViewFrame.size.height,  self.baseViewFrame.size.width);
-    }
+//    }else{
+//        self.frame =CGRectMake(0, 0,  self.baseViewFrame.size.height,  self.baseViewFrame.size.width);
+//    }
   
     [baseView addSubview:self];
 

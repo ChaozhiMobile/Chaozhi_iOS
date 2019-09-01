@@ -187,5 +187,79 @@
     return copyDict?copyDict:@{};
     
 }
++(BOOL)skipAdvertising:(NSInteger)roomId
+{
+    
+     NSMutableArray *allPlayProgress =[NSMutableArray arrayWithArray: [self getAdvertising]];
+    
+    BOOL skip = NO;
+    for (NSDictionary *dict in allPlayProgress) {
+        if ([dict[@"roomId"] integerValue]==roomId) {
+            skip = YES;
+            break;
+        }
+    }
+   
+    return skip;
+}
++(void)saveSkip:(NSInteger)roomId
+{
+    // 6.回到主线程更新UI
+    dispatch_async(dispatch_get_main_queue(), ^{
+        //所有已经保存的房间进度
+        NSMutableArray *allPlayProgress =[NSMutableArray arrayWithArray: [self getAdvertising]];
+        if (allPlayProgress.count>100) {
+            [allPlayProgress removeObjectAtIndex:0];
+        }
+        
+        //   [arr replaceObjectAtIndex:索引 withObject:替换的元素];
+        NSInteger    Index = 0;
+        
+        NSMutableDictionary *copyDict = nil;
+        for (NSInteger i = 0; i < allPlayProgress.count; i ++) {
+            NSDictionary*dict =   allPlayProgress[i];
+            //找到已经存在的人
+            if ([dict[@"roomId"] integerValue]==roomId) {
+                
+                Index = i;
+                copyDict = [NSMutableDictionary dictionaryWithDictionary:dict];
 
+                break;
+            }
+            
+        }
+        
+        
+        //找到了替换 //更新存在的进度
+        if (copyDict) {
+            [allPlayProgress replaceObjectAtIndex:Index withObject:copyDict];
+            
+        }else{
+            //新添一个进度
+            NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+            [dict setObject:@(roomId) forKey:@"roomId"];
+
+            
+            [allPlayProgress addObject:dict];
+        }
+        
+        //本地保存进度
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        [userDefaults setObject:allPlayProgress forKey:@"TalkfunAdvertising"];
+        [userDefaults synchronize];
+        
+    });
+
+}
++(NSMutableArray*)getAdvertising
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *array = [defaults objectForKey:@"TalkfunAdvertising"];
+    [defaults synchronize];
+    if (array) {
+        return array;
+    }else{
+        return [NSMutableArray array];
+    }
+}
 @end

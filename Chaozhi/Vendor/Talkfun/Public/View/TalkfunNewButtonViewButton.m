@@ -12,18 +12,11 @@
 
 - (void)layoutSubviews{
     [super layoutSubviews];
-    
-    @try {
-        CGFloat width = CGRectGetWidth(self.frame);
-        self.imageView.frame = CGRectMake(0, 0, 30-(ScreenSize.width<=320&&width<83?5:0), 30-(ScreenSize.width<=320&&width<83?5:0));
-        self.imageView.center = CGPointMake(20+4-(ScreenSize.width<=320&&width<83?10:0), CGRectGetHeight(self.frame)/2);
-        self.titleLabel.frame = CGRectMake(0, 0, 50, 20);
-        self.titleLabel.center = CGPointMake(CGRectGetWidth(self.frame)/2.0+18+4-(ScreenSize.width<=320&&width<83?2:0), CGRectGetHeight(self.frame)/2.0);
-    } @catch (NSException *exception) {
-        
-    } @finally {
-        
-    }
+    CGFloat width = CGRectGetWidth(self.frame);
+    self.imageView.frame = CGRectMake(0, 0, 30-(ScreenSize.width<=320&&width<83?5:0), 30-(ScreenSize.width<=320&&width<83?5:0));
+    self.imageView.center = CGPointMake(20+4-(ScreenSize.width<=320&&width<83?10:0), CGRectGetHeight(self.frame)/2);
+    self.titleLabel.frame = CGRectMake(0, 0, 50, 20);
+    self.titleLabel.center = CGPointMake(CGRectGetWidth(self.frame)/2.0+18+4-(ScreenSize.width<=320&&width<83?2:0), CGRectGetHeight(self.frame)/2.0);
 }
 
 @end

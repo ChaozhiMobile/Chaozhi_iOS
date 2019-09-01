@@ -60,7 +60,7 @@ DEPENDENCIES:
   - KissXML
   - lottie-ios
   - Masonry
-  - MJExtension (~> 3.0.15.1)
+  - MJExtension (~> 3.0.13)
   - MJRefresh
   - ReactiveObjC
   - SDCycleScrollView
@@ -126,6 +126,6 @@ SPEC CHECKSUMS:
   XLGCategory: b93fda8378ccd3e04deb87033c02ad3e6dee3c4a
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: c42ffd1adc61f93dcfdf45b4c21f5d4c3476564a
+PODFILE CHECKSUM: be783482fd30c14befb866c2a621e84f1bba5ef5
 
 COCOAPODS: 1.6.1
