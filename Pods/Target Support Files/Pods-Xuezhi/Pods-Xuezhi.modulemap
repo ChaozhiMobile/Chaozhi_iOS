@@ -1,0 +1,6 @@
+framework module Pods_Xuezhi {
+  umbrella header "Pods-Xuezhi-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -29,6 +29,7 @@
 		20D3D3B622C22E1200560A74 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D3B522C22E1200560A74 /* VideoToolbox.framework */; };
 		20D3D3B822C22E1900560A74 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D3B722C22E1900560A74 /* MobileCoreServices.framework */; };
 		20D3D3BA22C22E2100560A74 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D3B922C22E2000560A74 /* SystemConfiguration.framework */; };
+		393AD834213D295BF18D4A21 /* Pods_Xuezhi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86DD11823CFA282B4A0483A3 /* Pods_Xuezhi.framework */; };
 		85401F932D5D75079941DDCE /* Pods_Chaozhi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3429E05D3D88CA2DC3F14BB0 /* Pods_Chaozhi.framework */; };
 		A00708FD22ED973B00C70CEE /* XZSelectCourseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00708FC22ED973B00C70CEE /* XZSelectCourseVC.m */; };
 		A007090022EDD48D00C70CEE /* XZTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00708FF22EDD48D00C70CEE /* XZTabBarVC.m */; };
@@ -98,7 +99,6 @@
 		A00D0D6C231BA7A300CF25E7 /* ChapterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D32231BA7A300CF25E7 /* ChapterTableViewCell.m */; };
 		A00D0D6E231BC8C400CF25E7 /* 小班返回.png in Resources */ = {isa = PBXBuildFile; fileRef = A00D0D6D231BC8C300CF25E7 /* 小班返回.png */; };
 		A00D0D6F231BC8C400CF25E7 /* 小班返回.png in Resources */ = {isa = PBXBuildFile; fileRef = A00D0D6D231BC8C300CF25E7 /* 小班返回.png */; };
-		A00D0D70231BF6ED00CF25E7 /* Pods_Chaozhi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3429E05D3D88CA2DC3F14BB0 /* Pods_Chaozhi.framework */; };
 		A00FA9D82168C26900F4DA5B /* CZSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9D72168C26900F4DA5B /* CZSettingVC.m */; };
 		A00FA9DC2169DB0000F4DA5B /* CZSelectCourseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9DB2169DB0000F4DA5B /* CZSelectCourseVC.m */; };
 		A00FA9DF2169DCDC00F4DA5B /* CZSelectCourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9DE2169DCDC00F4DA5B /* CZSelectCourseCell.m */; };
@@ -847,6 +847,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		051110EBC6AF6946C2121D3A /* Pods-Xuezhi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xuezhi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Xuezhi/Pods-Xuezhi.release.xcconfig"; sourceTree = "<group>"; };
 		201DF3CE22AE584700904EAF /* CZAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZAlertView.h; sourceTree = "<group>"; };
 		201DF3CF22AE584700904EAF /* CZAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZAlertView.m; sourceTree = "<group>"; };
 		20572EE522C36C3600568CDC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -876,6 +877,7 @@
 		20D3D3B922C22E2000560A74 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3429E05D3D88CA2DC3F14BB0 /* Pods_Chaozhi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chaozhi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57062E716BE44301CC362667 /* Pods-Chaozhi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chaozhi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chaozhi/Pods-Chaozhi.debug.xcconfig"; sourceTree = "<group>"; };
+		86DD11823CFA282B4A0483A3 /* Pods_Xuezhi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Xuezhi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A00708FB22ED973B00C70CEE /* XZSelectCourseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZSelectCourseVC.h; sourceTree = "<group>"; };
 		A00708FC22ED973B00C70CEE /* XZSelectCourseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XZSelectCourseVC.m; sourceTree = "<group>"; };
 		A00708FE22EDD48D00C70CEE /* XZTabBarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZTabBarVC.h; sourceTree = "<group>"; };
@@ -1478,6 +1480,7 @@
 		A0E8981C22CF22C600DB09BA /* VideoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoItem.h; sourceTree = "<group>"; };
 		A0E8981F22CF265800DB09BA /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		A0E8982022CF265800DB09BA /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		C14C5490DB007C7EF9765C7E /* Pods-Xuezhi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xuezhi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Xuezhi/Pods-Xuezhi.debug.xcconfig"; sourceTree = "<group>"; };
 		E4FCDC3BE170EA70A51A31B5 /* Pods-Chaozhi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chaozhi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chaozhi/Pods-Chaozhi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1513,7 +1516,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A00D0D70231BF6ED00CF25E7 /* Pods_Chaozhi.framework in Frameworks */,
 				A045512122EC8DFA00E17406 /* SocketIO.framework in Frameworks */,
 				A045512222EC8DFA00E17406 /* Foundation.framework in Frameworks */,
 				A045512322EC8DFA00E17406 /* SystemConfiguration.framework in Frameworks */,
@@ -1534,6 +1536,7 @@
 				A045513222EC8DFA00E17406 /* libsqlite3.0.tbd in Frameworks */,
 				A045513322EC8DFA00E17406 /* UserNotifications.framework in Frameworks */,
 				A0E50819230ED54C005EF897 /* StoreKit.framework in Frameworks */,
+				393AD834213D295BF18D4A21 /* Pods_Xuezhi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2961,6 +2964,8 @@
 			children = (
 				57062E716BE44301CC362667 /* Pods-Chaozhi.debug.xcconfig */,
 				E4FCDC3BE170EA70A51A31B5 /* Pods-Chaozhi.release.xcconfig */,
+				C14C5490DB007C7EF9765C7E /* Pods-Xuezhi.debug.xcconfig */,
+				051110EBC6AF6946C2121D3A /* Pods-Xuezhi.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -2990,6 +2995,7 @@
 				A01E1E5022223F8800435A0E /* UserNotifications.framework */,
 				A020B07B214AAD600011BB4F /* libresolv.tbd */,
 				3429E05D3D88CA2DC3F14BB0 /* Pods_Chaozhi.framework */,
+				86DD11823CFA282B4A0483A3 /* Pods_Xuezhi.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -3021,9 +3027,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A045520922EC8DFA00E17406 /* Build configuration list for PBXNativeTarget "Xuezhi" */;
 			buildPhases = (
+				C503501A7868E24517E6C122 /* [CP] Check Pods Manifest.lock */,
 				A045507222EC8DFA00E17406 /* Sources */,
 				A045512022EC8DFA00E17406 /* Frameworks */,
 				A045513722EC8DFA00E17406 /* Resources */,
+				E55F124EAD848F00D807C52E /* [CP] Embed Pods Frameworks */,
+				7CA64C0A30B87A7B11279ADB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -3551,6 +3560,50 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Chaozhi/Pods-Chaozhi-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7CA64C0A30B87A7B11279ADB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Xuezhi/Pods-Xuezhi-resources.sh",
+				"${PODS_ROOT}/TalkfunMediaFramework/SDK/TalkfunMediaFramework.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TalkfunMediaFramework.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Xuezhi/Pods-Xuezhi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C503501A7868E24517E6C122 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Xuezhi-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C974483B2951098C6ADA4EC9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -3567,6 +3620,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E55F124EAD848F00D807C52E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Xuezhi/Pods-Xuezhi-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F23DA9B50DD496AB74CB8278 /* [CP] Embed Pods Frameworks */ = {
@@ -4298,6 +4366,7 @@
 		};
 		A045520A22EC8DFA00E17406 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C14C5490DB007C7EF9765C7E /* Pods-Xuezhi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Xuezhi/Xuezhi.entitlements;
@@ -4389,6 +4458,7 @@
 		};
 		A045520B22EC8DFA00E17406 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 051110EBC6AF6946C2121D3A /* Pods-Xuezhi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Xuezhi/Xuezhi.entitlements;
