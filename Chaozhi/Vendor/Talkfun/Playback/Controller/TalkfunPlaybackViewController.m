@@ -1590,7 +1590,8 @@ static BOOL fromLandscape = NO;
 - (void)onADVideoStatusChange:(TalkfunMultiMediaStatusChangeListener)loadState
 {   //结束
     if (loadState ==TalkfunMultiMediaStatusChangeListenerComplate) {
-        [self.advertView advertisingPlaybackCompleted:self.playbackID] ;
+        [self.advertView advertisingPlaybackCompleted:self.playbackID];
+        [self.talkfunSDK skipAD];
     }else if (loadState ==TalkfunMultiMediaStatusChangeListenerError) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"温馨提示" message:@"广告加载失败 " delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
         alertView.alertViewStyle = UIAlertViewStyleDefault;
@@ -1624,13 +1625,14 @@ static BOOL fromLandscape = NO;
             [[NSRunLoop mainRunLoop] addTimer:self.layerTimer forMode:NSRunLoopCommonModes];
         }
     }
-    
 }
+
 - (int)getRandomNumber
 {
     int random = 60 +  arc4random_uniform((180 - 60));
     return random;
 }
+
 //生成layer层
 - (void)arc4random_uniformFrame
 {
@@ -1642,6 +1644,7 @@ static BOOL fromLandscape = NO;
     
     self.layer.frame =  [self getLayerFrame];
 }
+
 //生成位置
 - (CGRect)getLayerFrame{
     CGFloat layerX = self.pptView.frame.size.width - self.layer.frame.size.width;
@@ -1650,6 +1653,7 @@ static BOOL fromLandscape = NO;
     
     return rect;
 }
+
 - (void)timerInvalidate
 {
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -1661,8 +1665,8 @@ static BOOL fromLandscape = NO;
         self.layer = nil;
         
     });
-    
 }
+
 - (TalkfunModulation* )modulation
 {
     if (_modulation==nil) {
@@ -1670,6 +1674,7 @@ static BOOL fromLandscape = NO;
     }
     return _modulation;
 }
+
 //MARK:弹幕
 - (BulletView *)barrageRender{
     if (!_barrageRender) {
@@ -1778,10 +1783,10 @@ static BOOL fromLandscape = NO;
     }
 }
 
+//广告返回
 - (void)backClick:(UIButton*)btn
 {
     [TalkfunCourseManagement setPlay:[self.playbackID  integerValue] progress:self.playDuration];
-    
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
