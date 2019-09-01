@@ -96,6 +96,8 @@
 		A00D0D6A231BA7A300CF25E7 /* TalkfunNetworkLines.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00D0D31231BA7A300CF25E7 /* TalkfunNetworkLines.xib */; };
 		A00D0D6B231BA7A300CF25E7 /* ChapterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D32231BA7A300CF25E7 /* ChapterTableViewCell.m */; };
 		A00D0D6C231BA7A300CF25E7 /* ChapterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D32231BA7A300CF25E7 /* ChapterTableViewCell.m */; };
+		A00D0D6E231BC8C400CF25E7 /* 小班返回.png in Resources */ = {isa = PBXBuildFile; fileRef = A00D0D6D231BC8C300CF25E7 /* 小班返回.png */; };
+		A00D0D6F231BC8C400CF25E7 /* 小班返回.png in Resources */ = {isa = PBXBuildFile; fileRef = A00D0D6D231BC8C300CF25E7 /* 小班返回.png */; };
 		A00FA9D82168C26900F4DA5B /* CZSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9D72168C26900F4DA5B /* CZSettingVC.m */; };
 		A00FA9DC2169DB0000F4DA5B /* CZSelectCourseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9DB2169DB0000F4DA5B /* CZSelectCourseVC.m */; };
 		A00FA9DF2169DCDC00F4DA5B /* CZSelectCourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9DE2169DCDC00F4DA5B /* CZSelectCourseCell.m */; };
@@ -935,6 +937,7 @@
 		A00D0D30231BA7A300CF25E7 /* QuestionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionTableViewCell.m; sourceTree = "<group>"; };
 		A00D0D31231BA7A300CF25E7 /* TalkfunNetworkLines.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TalkfunNetworkLines.xib; sourceTree = "<group>"; };
 		A00D0D32231BA7A300CF25E7 /* ChapterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChapterTableViewCell.m; sourceTree = "<group>"; };
+		A00D0D6D231BC8C300CF25E7 /* 小班返回.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "小班返回.png"; sourceTree = "<group>"; };
 		A00FA9D62168C26900F4DA5B /* CZSettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZSettingVC.h; sourceTree = "<group>"; };
 		A00FA9D72168C26900F4DA5B /* CZSettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZSettingVC.m; sourceTree = "<group>"; };
 		A00FA9DA2169DB0000F4DA5B /* CZSelectCourseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZSelectCourseVC.h; sourceTree = "<group>"; };
@@ -2796,6 +2799,7 @@
 				A0AC086D22C4BC7D001832EA /* 送花 */,
 				A0AC086B22C4BC7D001832EA /* 网络提示1.png */,
 				A0AC086A22C4BC7D001832EA /* 网络提示2.png */,
+				A00D0D6D231BC8C300CF25E7 /* 小班返回.png */,
 				A0AC086F22C4BC7D001832EA /* 新功能按钮 */,
 				A0AC088722C4BC7D001832EA /* 引导 */,
 				A0AC086C22C4BC7D001832EA /* close_button.png */,
@@ -3217,6 +3221,7 @@
 				A0AC099322C4BC7E001832EA /* 专辑-默认.png in Resources */,
 				A0AC092F22C4BC7E001832EA /* telecom.png in Resources */,
 				A0AC093F22C4BC7E001832EA /* rectUnselect.png in Resources */,
+				A00D0D6E231BC8C400CF25E7 /* 小班返回.png in Resources */,
 				A0AC096322C4BC7E001832EA /* bye.png in Resources */,
 				A020B036214AAB150011BB4F /* ic_refresh_image_021@2x.png in Resources */,
 				A0AC08BE22C4BC7D001832EA /* TalkfunNewFunctionView.xib in Resources */,
@@ -3467,6 +3472,7 @@
 				A04551D822EC8DFA00E17406 /* ic_refresh_image_023@2x.png in Resources */,
 				A04551D922EC8DFA00E17406 /* 快进.png in Resources */,
 				A04551DA22EC8DFA00E17406 /* 提问-默认.png in Resources */,
+				A00D0D6F231BC8C400CF25E7 /* 小班返回.png in Resources */,
 				A04551DB22EC8DFA00E17406 /* TalkfunHornView.xib in Resources */,
 				A04551DC22EC8DFA00E17406 /* 重新_点击.png in Resources */,
 				A04551DE22EC8DFA00E17406 /* TalkfunNetworkStatusView.xib in Resources */,

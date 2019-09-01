@@ -154,7 +154,7 @@
                 [weakSelf.commentView hiddenView];
                 /** 欢拓自带退出方法 */
                 NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
-                [[UIDevice currentDevice] setValue:value forKey:@"orientation"];;
+                [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
                 
                 [TalkfunCourseManagement setPlay:[weakSelf.playbackID  integerValue] progress:weakSelf.playDuration];
                 
@@ -630,7 +630,7 @@
             [alertView showInView:self.view completion:^(HYAlertView *alertView, NSInteger selectIndex) {
                 if (selectIndex == 1) {
                     NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
-                    [[UIDevice currentDevice] setValue:value forKey:@"orientation"];;
+                    [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
                     
                     [TalkfunCourseManagement setPlay:[weakSelf.playbackID  integerValue] progress:weakSelf.playDuration];
                     
@@ -650,8 +650,14 @@
     //全屏按钮
     else if (button == self.pptsFunctionView.fullScreenBtn){
         
-        self.iPadAutoRotate = NO;
-        [self fullScreen];
+        if (!button.selected && [UIApplication sharedApplication].statusBarOrientation != UIInterfaceOrientationPortrait) {
+            [self manualFullScreen:YES];
+        }else if (button.selected == YES && fromLandscape == YES){
+            [self manualFullScreen:NO];
+        }else{
+            self.iPadAutoRotate = NO;
+            [self fullScreen];
+        }
     }
     //隐藏camera按钮
     else if (button.tag == 201){
@@ -1795,15 +1801,19 @@ static BOOL fromLandscape = NO;
 //横屏
 - (void)fullScreenClick:(UIButton*)btn
 {
-    
     if (btn.selected==NO) {
-        [UIApplication sharedApplication].statusBarOrientation = UIInterfaceOrientationLandscapeRight;
+#pragma mark - ---超职修改
+        NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationLandscapeRight];
+        [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
+#pragma mark - 超职修改---
         self.pptsFunctionView.fullScreenBtn.selected = YES;
-        //横屏
         [self orientationLandscape];
     }else{
+#pragma mark - ---超职修改
+        NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
+        [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
+#pragma mark - 超职修改---
         self.pptsFunctionView.fullScreenBtn.selected = NO;
-        [UIApplication sharedApplication].statusBarOrientation = UIInterfaceOrientationPortrait;
         [self orientationPortrait];
     }
     self.advertView.frame = CGRectMake(0, 0, ScreenSize.width, ScreenSize.height );
