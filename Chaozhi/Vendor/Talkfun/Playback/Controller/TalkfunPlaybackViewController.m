@@ -336,16 +336,19 @@
     }
     [self.view addSubview:self.cameraView];
     
-    //广告片头
-    self.advertView = [[TalkfunAdvertView alloc] initWithFrame:CGRectMake(0, 0, ScreenSize.width, ScreenSize.height )];
-    self.advertView.hidden = YES;
-    self.advertView.backgroundColor =  [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1];;
-    [self.view addSubview:self.advertView];
-    [self.talkfunSDK setADVideoContainer:self.advertView.videoView];
-    [self.advertView.back addTarget:self action:@selector(backClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self.advertView.prompt addTarget:self action:@selector(promptClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self.advertView.fullScreen addTarget:self action:@selector(fullScreenClick:) forControlEvents:UIControlEventTouchUpInside];
+    if ([self.videoItem.type isEqualToString:@"2"]) { //回放加片头
+        //广告片头
+        self.advertView = [[TalkfunAdvertView alloc] initWithFrame:CGRectMake(0, 0, ScreenSize.width, ScreenSize.height )];
+        self.advertView.hidden = YES;
+        self.advertView.backgroundColor =  [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1];;
+        [self.view addSubview:self.advertView];
+        [self.talkfunSDK setADVideoContainer:self.advertView.videoView];
+        [self.advertView.back addTarget:self action:@selector(backClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.advertView.prompt addTarget:self action:@selector(promptClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.advertView.fullScreen addTarget:self action:@selector(fullScreenClick:) forControlEvents:UIControlEventTouchUpInside];
+    }
 }
+
 #pragma mark - PPT上的功能按钮
 - (void)createPPTsButton{
     [self.pptView addSubview:self.pptsFunctionView];
