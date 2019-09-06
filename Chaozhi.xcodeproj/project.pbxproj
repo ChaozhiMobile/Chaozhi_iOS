@@ -1543,42 +1543,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		205FDB3021763D7C001BE2C6 /* Guide(导航) */ = {
+		205FDB3021763D7C001BE2C6 /* Guide */ = {
 			isa = PBXGroup;
 			children = (
 				205FDB3121763DBE001BE2C6 /* CZGuideVC.h */,
 				205FDB3221763DBE001BE2C6 /* CZGuideVC.m */,
 			);
-			path = "Guide(导航)";
+			path = Guide;
 			sourceTree = "<group>";
 		};
 		A00708F922ED96DD00C70CEE /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				A007090222EDD58100C70CEE /* Home(首页) */,
-				A00708FA22ED96EE00C70CEE /* SelectCourse(选课) */,
+				A007090222EDD58100C70CEE /* Home */,
+				A00708FA22ED96EE00C70CEE /* SelectCourse */,
 			);
 			path = Module;
 			sourceTree = "<group>";
 		};
-		A00708FA22ED96EE00C70CEE /* SelectCourse(选课) */ = {
+		A00708FA22ED96EE00C70CEE /* SelectCourse */ = {
 			isa = PBXGroup;
 			children = (
 				A00708FB22ED973B00C70CEE /* XZSelectCourseVC.h */,
 				A00708FC22ED973B00C70CEE /* XZSelectCourseVC.m */,
 				A0541FDC22F414CA00D961B3 /* View */,
 			);
-			path = "SelectCourse(选课)";
+			path = SelectCourse;
 			sourceTree = "<group>";
 		};
-		A007090222EDD58100C70CEE /* Home(首页) */ = {
+		A007090222EDD58100C70CEE /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				A007090322EDD59C00C70CEE /* XZHomeVC.h */,
 				A007090422EDD59C00C70CEE /* XZHomeVC.m */,
 				A007091822F288D600C70CEE /* View */,
 			);
-			path = "Home(首页)";
+			path = Home;
 			sourceTree = "<group>";
 		};
 		A007090922EDE06300C70CEE /* Resource */ = {
@@ -1695,16 +1695,16 @@
 			path = PPTComponentViews;
 			sourceTree = "<group>";
 		};
-		A00FA9D52168C22E00F4DA5B /* 系统设置 */ = {
+		A00FA9D52168C22E00F4DA5B /* Setting */ = {
 			isa = PBXGroup;
 			children = (
 				A00FA9D62168C26900F4DA5B /* CZSettingVC.h */,
 				A00FA9D72168C26900F4DA5B /* CZSettingVC.m */,
 			);
-			path = "系统设置";
+			path = Setting;
 			sourceTree = "<group>";
 		};
-		A00FA9D92169DAC500F4DA5B /* 课程分类 */ = {
+		A00FA9D92169DAC500F4DA5B /* SelectCourse */ = {
 			isa = PBXGroup;
 			children = (
 				A00FA9DA2169DB0000F4DA5B /* CZSelectCourseVC.h */,
@@ -1712,7 +1712,7 @@
 				A00FA9DD2169DCDC00F4DA5B /* CZSelectCourseCell.h */,
 				A00FA9DE2169DCDC00F4DA5B /* CZSelectCourseCell.m */,
 			);
-			path = "课程分类";
+			path = SelectCourse;
 			sourceTree = "<group>";
 		};
 		A01F606822CB895F001133C4 /* Download */ = {
@@ -2064,12 +2064,12 @@
 			children = (
 				A0E8981E22CF265800DB09BA /* FMDB */,
 				A05CD23922AE8C2A00CBE4F5 /* H5 */,
-				205FDB3021763D7C001BE2C6 /* Guide(导航) */,
-				A0599A0E21574CAF00D17058 /* Login(登录) */,
-				A0599A1821574CAF00D17058 /* Home(首页) */,
-				A0599A1B21574CAF00D17058 /* Study(学习) */,
-				A0599A0B21574CAF00D17058 /* Infinite(无限) */,
-				A0599A1521574CAF00D17058 /* Mine(我的) */,
+				205FDB3021763D7C001BE2C6 /* Guide */,
+				A0599A0E21574CAF00D17058 /* Login */,
+				A0599A1821574CAF00D17058 /* Home */,
+				A0599A1B21574CAF00D17058 /* Study */,
+				A0599A0B21574CAF00D17058 /* Infinite */,
+				A0599A1521574CAF00D17058 /* Mine */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -2270,16 +2270,16 @@
 			path = "环境切换";
 			sourceTree = "<group>";
 		};
-		A0599A0B21574CAF00D17058 /* Infinite(无限) */ = {
+		A0599A0B21574CAF00D17058 /* Infinite */ = {
 			isa = PBXGroup;
 			children = (
 				A0599A0C21574CAF00D17058 /* CZInfiniteVC.h */,
 				A0599A0D21574CAF00D17058 /* CZInfiniteVC.m */,
 			);
-			path = "Infinite(无限)";
+			path = Infinite;
 			sourceTree = "<group>";
 		};
-		A0599A0E21574CAF00D17058 /* Login(登录) */ = {
+		A0599A0E21574CAF00D17058 /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				A0599A1321574CAF00D17058 /* CZLoginVC.h */,
@@ -2289,38 +2289,38 @@
 				A0599A1121574CAF00D17058 /* CZForgetPswVC.h */,
 				A0599A1421574CAF00D17058 /* CZForgetPswVC.m */,
 			);
-			path = "Login(登录)";
+			path = Login;
 			sourceTree = "<group>";
 		};
-		A0599A1521574CAF00D17058 /* Mine(我的) */ = {
+		A0599A1521574CAF00D17058 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
 				A0599A1721574CAF00D17058 /* CZMineVC.h */,
 				A0599A1621574CAF00D17058 /* CZMineVC.m */,
-				A00FA9D52168C22E00F4DA5B /* 系统设置 */,
+				A00FA9D52168C22E00F4DA5B /* Setting */,
 			);
-			path = "Mine(我的)";
+			path = Mine;
 			sourceTree = "<group>";
 		};
-		A0599A1821574CAF00D17058 /* Home(首页) */ = {
+		A0599A1821574CAF00D17058 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				A0599A1A21574CAF00D17058 /* CZHomeVC.h */,
 				A0599A1921574CAF00D17058 /* CZHomeVC.m */,
 				208B695A2185903700B263FB /* TeacherView.xib */,
-				A00FA9D92169DAC500F4DA5B /* 课程分类 */,
+				A00FA9D92169DAC500F4DA5B /* SelectCourse */,
 			);
-			path = "Home(首页)";
+			path = Home;
 			sourceTree = "<group>";
 		};
-		A0599A1B21574CAF00D17058 /* Study(学习) */ = {
+		A0599A1B21574CAF00D17058 /* Study */ = {
 			isa = PBXGroup;
 			children = (
 				A0599A1D21574CAF00D17058 /* CZStudyVC.h */,
 				A0599A1C21574CAF00D17058 /* CZStudyVC.m */,
 				A00FA9E0216A09EA00F4DA5B /* MyStudyView.xib */,
 			);
-			path = "Study(学习)";
+			path = Study;
 			sourceTree = "<group>";
 		};
 		A05CD23922AE8C2A00CBE4F5 /* H5 */ = {

@@ -267,8 +267,7 @@
     self.onlineLabel.userInteractionEnabled = YES;
     [self.view bringSubviewToFront:self.onlineLabel];
     
-    if ([AppChannel isEqualToString:@"1"]
-        && [self.videoItem.type isEqualToString:@"2"]) { //超职、直播/回放
+    if ([self.videoItem.type isEqualToString:@"2"]) { //超职、直播/回放
         [self initCommentView];
         [self getLiveCommentInfo]; //获取直播评论信息
     }
@@ -2643,8 +2642,7 @@ static CGRect originPPTFrame;
     NSLog(@"____click %ld____",(long)btn.tag);
     //返回按钮
     if (btn.tag == returnButton) {
-        if ([AppChannel isEqualToString:@"1"]
-            && self.is_review == NO
+        if (self.is_review == NO
             && [self.videoItem.type isEqualToString:@"3"]
             && self.liveTime>=30*60) { //超职、回放/直播
             [self.commentView showView];
