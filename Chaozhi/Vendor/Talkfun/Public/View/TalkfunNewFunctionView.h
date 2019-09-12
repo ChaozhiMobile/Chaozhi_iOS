@@ -19,6 +19,8 @@
 //过程中
 @property (nonatomic,copy) void (^sliderValueChangeBlock)(CGFloat sliderValue);
 
+//单击
+@property (nonatomic,copy) void (^sliderTapGestureBlock)(CGFloat sliderValue);
 
 //传设置的倍速
 @property (nonatomic,copy) void (^playbackRateBlock)(CGFloat speed);

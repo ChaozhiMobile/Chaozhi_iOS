@@ -1411,6 +1411,11 @@ static BOOL fromLandscape = NO;
         _pptsFunctionView.sliderValueChangeBlock = ^(CGFloat sliderValue){
             weakSelf.playDuration = sliderValue;
             weakSelf.pptsFunctionView.timeLabel.text = [weakSelf getTimeStr:sliderValue];
+            //
+        };
+        //单击
+        _pptsFunctionView.sliderTapGestureBlock = ^(CGFloat sliderValue){
+            [weakSelf.talkfunSDK seek:sliderValue];
         };
         
     }

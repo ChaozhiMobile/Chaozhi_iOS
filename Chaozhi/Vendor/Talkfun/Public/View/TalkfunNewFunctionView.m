@@ -117,6 +117,10 @@
             [self.slider setValue:value animated:YES];
         }
     }
+    
+    if (_sliderTapGestureBlock) {
+        _sliderTapGestureBlock(self.slider.value);
+    }
     [self sliderValueChange:self.slider];
 }
 
