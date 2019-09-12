@@ -267,10 +267,8 @@
     self.onlineLabel.userInteractionEnabled = YES;
     [self.view bringSubviewToFront:self.onlineLabel];
     
-    if ([self.videoItem.type isEqualToString:@"2"]) { //超职、直播/回放
-        [self initCommentView];
-        [self getLiveCommentInfo]; //获取直播评论信息
-    }
+    [self initCommentView];
+    [self getLiveCommentInfo]; //获取直播评论信息
 }
 
 - (void)initCommentView {
@@ -809,12 +807,19 @@
     
     //直播结束
     [self.talkfunSDK on:TALKFUN_EVENT_LIVE_STOP callback:^(id obj) {
-        if(   weakSelf.talkfunSDK.evaluate&&weakSelf.bitmapView.hidden){
-            //1.启动了评分
-            weakSelf.isScore = YES;
-            //2.添加了评分
-            [weakSelf.view addSubview:weakSelf.ScoreView ];
-            
+//        if(weakSelf.talkfunSDK.evaluate&&weakSelf.bitmapView.hidden){
+//            //1.启动了评分
+//            weakSelf.isScore = YES;
+//            //2.添加了评分
+//            [weakSelf.view addSubview:weakSelf.ScoreView];
+//
+//            [weakSelf timerInvalidate];
+//        }
+        
+        if (self.is_review == NO
+           && weakSelf.bitmapView.hidden){
+            //直播结束自动弹出自己的评价页面
+            [self.commentView showView];
             [weakSelf timerInvalidate];
         }
         
@@ -823,13 +828,11 @@
             if(weakSelf.pptView.frame.size.height/weakSelf.pptView.frame.size.width!=0.75){
                 weakSelf.bitmapView.image = [UIImage imageNamed:@"直播已结束16_9"];
             }else{
-                
                 weakSelf.bitmapView.image = [UIImage imageNamed:@"直播已结束"];
             }
             
             weakSelf.bitmapView.hidden = NO;
         });
-        
         
         [weakSelf liveStop:obj];
         
@@ -2643,7 +2646,6 @@ static CGRect originPPTFrame;
     //返回按钮
     if (btn.tag == returnButton) {
         if (self.is_review == NO
-            && [self.videoItem.type isEqualToString:@"3"]
             && self.liveTime>=30*60) { //超职、回放/直播
             [self.commentView showView];
         } else {
@@ -2948,9 +2950,6 @@ static BOOL fromLandscape = NO;
             
             [weakSelf.talkfunSDK setNetwork:str[@"operatorID"]  selectedSegmentIndex:[str[@"selectedSegmentIndex"] integerValue]];
         };
-        
-        
-        
     }
     return _networkSelectionVC;
 }
@@ -3215,20 +3214,12 @@ static BOOL fromLandscape = NO;
     [self removeReplyTipsView];
 }
 
-
-
-
-
-
-
 - (NSMutableArray  *)videoSessions
 {
     if (_videoSessions==nil) {
         _videoSessions = [NSMutableArray array];
     } return _videoSessions;
 }
-
-
 
 - (TalkfunScoreView*)ScoreView
 {
@@ -3250,9 +3241,7 @@ static BOOL fromLandscape = NO;
                         [weakSelf.ScoreView removeFromSuperview];
                         weakSelf.isScore = NO;
                         _ScoreView = nil;
-                        
                     });
-                    
                 }else if ([result[@"code"]  integerValue]==-1) {
                     dispatch_async(dispatch_get_main_queue(), ^{
                         
@@ -3260,16 +3249,11 @@ static BOOL fromLandscape = NO;
                         [weakSelf.ScoreView removeFromSuperview];
                         weakSelf.isScore = NO;
                         _ScoreView = nil;
-                        
                     });
                 }else{
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        
                         [weakSelf.view toast:result[@"msg"]?result[@"msg"] :@"" position:ToastPosition];
-                        
-                        
                     });
-                    
                 }
                 //打印提交得分结果
                 NSLog(@"currentScoreChangeBlock===>%@",result);
@@ -3277,20 +3261,14 @@ static BOOL fromLandscape = NO;
             }];
         };
         
-        
         //退出
         _ScoreView.exitBlock = ^(NSDictionary *cict){
             dispatch_async(dispatch_get_main_queue(), ^{
                 [weakSelf.ScoreView removeFromSuperview];
                 weakSelf.isScore = NO;
                 _ScoreView = nil;
-                
             });
-            
         };
-        
-        
-        
     }
     return _ScoreView;
 }
