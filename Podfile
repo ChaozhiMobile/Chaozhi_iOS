@@ -27,6 +27,7 @@ target 'Chaozhi' do
   pod 'SSZipArchive'
   pod 'AgoraRtcEngine_iOS'
   pod 'FLAnimatedImage' #gif
+  pod 'NIMSDK_LITE'
   #全能App研发助手！滴滴开源DoraemonKit
 #  pod 'DoraemonKit', '~> 1.1.2', :configurations => ['Debug']
 end
@@ -56,6 +57,7 @@ target 'Xuezhi' do
   pod 'SSZipArchive'
   pod 'AgoraRtcEngine_iOS'
   pod 'FLAnimatedImage' #gif
+  pod 'NIMSDK_LITE'
   #全能App研发助手！滴滴开源DoraemonKit
 #  pod 'DoraemonKit', '~> 1.1.2', :configurations => ['Debug']
 end

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B600958DC3D1F8C94E5A69DCC8EC0417"
+               BlueprintIdentifier = "3D6682184C9F7066A80C02B77BBEA4D4"
                BuildableName = "SSZipArchive.framework"
                BlueprintName = "SSZipArchive"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B600958DC3D1F8C94E5A69DCC8EC0417"
+            BlueprintIdentifier = "3D6682184C9F7066A80C02B77BBEA4D4"
             BuildableName = "SSZipArchive.framework"
             BlueprintName = "SSZipArchive"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -63,7 +63,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B600958DC3D1F8C94E5A69DCC8EC0417"
+            BlueprintIdentifier = "3D6682184C9F7066A80C02B77BBEA4D4"
             BuildableName = "SSZipArchive.framework"
             BlueprintName = "SSZipArchive"
             ReferencedContainer = "container:Pods.xcodeproj">
