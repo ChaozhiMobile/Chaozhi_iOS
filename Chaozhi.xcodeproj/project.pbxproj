@@ -3880,12 +3880,12 @@
 		A04627E72333BA2700318F01 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				A04628132333BA2800318F01 /* Sections */,
 				A04628F52333BA2900318F01 /* Category */,
-				A046290E2333BA2900318F01 /* Util */,
 				A046292E2333BA2900318F01 /* Common */,
 				A046294A2333BA2900318F01 /* LayoutConfig */,
+				A04628132333BA2800318F01 /* Sections */,
 				A04629512333BA2900318F01 /* Service */,
+				A046290E2333BA2900318F01 /* Util */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -4405,30 +4405,30 @@
 		A04628F52333BA2900318F01 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				A04628F62333BA2900318F01 /* UIView+NTES.m */,
-				A04628F72333BA2900318F01 /* UIImage+NTES.h */,
-				A04628F82333BA2900318F01 /* NSData+NTES.m */,
-				A04628F92333BA2900318F01 /* UITextView+NTES.m */,
-				A04628FA2333BA2900318F01 /* UIAlertView+NTESBlock.h */,
-				A04628FB2333BA2900318F01 /* UIScrollView+NTESDirection.h */,
-				A04628FC2333BA2900318F01 /* NSDictionary+NTESJson.h */,
-				A04628FD2333BA2900318F01 /* UIResponder+NTESFirstResponder.m */,
-				A04628FE2333BA2900318F01 /* UIImage+NTESColor.h */,
-				A04628FF2333BA2900318F01 /* UIActionSheet+NTESBlock.m */,
-				A04629002333BA2900318F01 /* UIScrollView+NTESPullToRefresh.m */,
-				A04629012333BA2900318F01 /* NSString+NTES.m */,
-				A04629022333BA2900318F01 /* UIImage+NTES.m */,
-				A04629032333BA2900318F01 /* UIView+NTES.h */,
-				A04629042333BA2900318F01 /* UIAlertView+NTESBlock.m */,
-				A04629052333BA2900318F01 /* UITextView+NTES.h */,
 				A04629062333BA2900318F01 /* NSData+NTES.h */,
-				A04629072333BA2900318F01 /* UIResponder+NTESFirstResponder.h */,
-				A04629082333BA2900318F01 /* UIScrollView+NTESDirection.m */,
+				A04628F82333BA2900318F01 /* NSData+NTES.m */,
+				A04628FC2333BA2900318F01 /* NSDictionary+NTESJson.h */,
 				A04629092333BA2900318F01 /* NSDictionary+NTESJson.m */,
 				A046290A2333BA2900318F01 /* NSString+NTES.h */,
-				A046290B2333BA2900318F01 /* UIScrollView+NTESPullToRefresh.h */,
+				A04629012333BA2900318F01 /* NSString+NTES.m */,
 				A046290C2333BA2900318F01 /* UIActionSheet+NTESBlock.h */,
+				A04628FF2333BA2900318F01 /* UIActionSheet+NTESBlock.m */,
+				A04628FA2333BA2900318F01 /* UIAlertView+NTESBlock.h */,
+				A04629042333BA2900318F01 /* UIAlertView+NTESBlock.m */,
+				A04628F72333BA2900318F01 /* UIImage+NTES.h */,
+				A04629022333BA2900318F01 /* UIImage+NTES.m */,
+				A04628FE2333BA2900318F01 /* UIImage+NTESColor.h */,
 				A046290D2333BA2900318F01 /* UIImage+NTESColor.m */,
+				A04629072333BA2900318F01 /* UIResponder+NTESFirstResponder.h */,
+				A04628FD2333BA2900318F01 /* UIResponder+NTESFirstResponder.m */,
+				A04628FB2333BA2900318F01 /* UIScrollView+NTESDirection.h */,
+				A04629082333BA2900318F01 /* UIScrollView+NTESDirection.m */,
+				A046290B2333BA2900318F01 /* UIScrollView+NTESPullToRefresh.h */,
+				A04629002333BA2900318F01 /* UIScrollView+NTESPullToRefresh.m */,
+				A04629052333BA2900318F01 /* UITextView+NTES.h */,
+				A04628F92333BA2900318F01 /* UITextView+NTES.m */,
+				A04629032333BA2900318F01 /* UIView+NTES.h */,
+				A04628F62333BA2900318F01 /* UIView+NTES.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -4436,33 +4436,33 @@
 		A046290E2333BA2900318F01 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				A046290F2333BA2900318F01 /* NTESUserUtil.m */,
-				A04629102333BA2900318F01 /* NTESFileLocationHelper.h */,
-				A04629112333BA2900318F01 /* NTESService.h */,
-				A04629122333BA2900318F01 /* NTESSessionUtil.m */,
+				A046292C2333BA2900318F01 /* NTESAVNotifier.h */,
+				A046291A2333BA2900318F01 /* NTESAVNotifier.m */,
+				A04629162333BA2900318F01 /* NTESBundleSetting.h */,
+				A04629232333BA2900318F01 /* NTESBundleSetting.m */,
+				A04629222333BA2900318F01 /* NTESCADisplayLinkHolder.h */,
+				A04629172333BA2900318F01 /* NTESCADisplayLinkHolder.m */,
+				A046291F2333BA2900318F01 /* NTESClientUtil.h */,
 				A04629132333BA2900318F01 /* NTESClientUtil.m */,
 				A04629142333BA2900318F01 /* NTESDemoConfig.h */,
-				A04629152333BA2900318F01 /* NTESTimerHolder.h */,
-				A04629162333BA2900318F01 /* NTESBundleSetting.h */,
-				A04629172333BA2900318F01 /* NTESCADisplayLinkHolder.m */,
-				A04629182333BA2900318F01 /* NTESDevice.m */,
-				A04629192333BA2900318F01 /* NTESSDKConfigDelegate.m */,
-				A046291A2333BA2900318F01 /* NTESAVNotifier.m */,
-				A046291B2333BA2900318F01 /* NTESNotificationCenter.m */,
-				A046291C2333BA2900318F01 /* NTESService.m */,
-				A046291D2333BA2900318F01 /* NTESUserUtil.h */,
-				A046291E2333BA2900318F01 /* NTESFileLocationHelper.m */,
-				A046291F2333BA2900318F01 /* NTESClientUtil.h */,
-				A04629202333BA2900318F01 /* NTESSessionUtil.h */,
-				A04629212333BA2900318F01 /* NTESDevice.h */,
-				A04629222333BA2900318F01 /* NTESCADisplayLinkHolder.h */,
-				A04629232333BA2900318F01 /* NTESBundleSetting.m */,
-				A04629242333BA2900318F01 /* NTESTimerHolder.m */,
 				A04629252333BA2900318F01 /* NTESDemoConfig.m */,
+				A04629212333BA2900318F01 /* NTESDevice.h */,
+				A04629182333BA2900318F01 /* NTESDevice.m */,
+				A04629102333BA2900318F01 /* NTESFileLocationHelper.h */,
+				A046291E2333BA2900318F01 /* NTESFileLocationHelper.m */,
 				A04629262333BA2900318F01 /* NTESNotificationCenter.h */,
-				A04629272333BA2900318F01 /* Spelling */,
-				A046292C2333BA2900318F01 /* NTESAVNotifier.h */,
+				A046291B2333BA2900318F01 /* NTESNotificationCenter.m */,
 				A046292D2333BA2900318F01 /* NTESSDKConfigDelegate.h */,
+				A04629192333BA2900318F01 /* NTESSDKConfigDelegate.m */,
+				A04629112333BA2900318F01 /* NTESService.h */,
+				A046291C2333BA2900318F01 /* NTESService.m */,
+				A04629202333BA2900318F01 /* NTESSessionUtil.h */,
+				A04629122333BA2900318F01 /* NTESSessionUtil.m */,
+				A04629152333BA2900318F01 /* NTESTimerHolder.h */,
+				A04629242333BA2900318F01 /* NTESTimerHolder.m */,
+				A046291D2333BA2900318F01 /* NTESUserUtil.h */,
+				A046290F2333BA2900318F01 /* NTESUserUtil.m */,
+				A04629272333BA2900318F01 /* Spelling */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -4482,8 +4482,8 @@
 			isa = PBXGroup;
 			children = (
 				A046292F2333BA2900318F01 /* Addons */,
-				A04629392333BA2900318F01 /* Delegate */,
 				A046293E2333BA2900318F01 /* Controller */,
+				A04629392333BA2900318F01 /* Delegate */,
 				A04629412333BA2900318F01 /* View */,
 			);
 			path = Common;
@@ -4492,15 +4492,15 @@
 		A046292F2333BA2900318F01 /* Addons */ = {
 			isa = PBXGroup;
 			children = (
-				A04629302333BA2900318F01 /* UIViewController+Swizzling.m */,
-				A04629312333BA2900318F01 /* UIView+Swizzling.h */,
-				A04629322333BA2900318F01 /* UINavigationBar+Swizzling.m */,
-				A04629332333BA2900318F01 /* UINavigationController+Swizzling.m */,
-				A04629342333BA2900318F01 /* UINavigationBar+Swizzling.h */,
-				A04629352333BA2900318F01 /* UIView+Swizzling.m */,
 				A04629362333BA2900318F01 /* SwizzlingDefine.h */,
-				A04629372333BA2900318F01 /* UIViewController+Swizzling.h */,
+				A04629342333BA2900318F01 /* UINavigationBar+Swizzling.h */,
+				A04629322333BA2900318F01 /* UINavigationBar+Swizzling.m */,
 				A04629382333BA2900318F01 /* UINavigationController+Swizzling.h */,
+				A04629332333BA2900318F01 /* UINavigationController+Swizzling.m */,
+				A04629312333BA2900318F01 /* UIView+Swizzling.h */,
+				A04629352333BA2900318F01 /* UIView+Swizzling.m */,
+				A04629372333BA2900318F01 /* UIViewController+Swizzling.h */,
+				A04629302333BA2900318F01 /* UIViewController+Swizzling.m */,
 			);
 			path = Addons;
 			sourceTree = "<group>";
@@ -4508,9 +4508,9 @@
 		A04629392333BA2900318F01 /* Delegate */ = {
 			isa = PBXGroup;
 			children = (
+				A046293C2333BA2900318F01 /* NTESNavigationAnimator.h */,
 				A046293A2333BA2900318F01 /* NTESNavigationAnimator.m */,
 				A046293B2333BA2900318F01 /* NTESNavigationHandler.h */,
-				A046293C2333BA2900318F01 /* NTESNavigationAnimator.h */,
 				A046293D2333BA2900318F01 /* NTESNavigationHandler.m */,
 			);
 			path = Delegate;
@@ -4528,14 +4528,14 @@
 		A04629412333BA2900318F01 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A04629422333BA2900318F01 /* NTESBadgeView.m */,
-				A04629432333BA2900318F01 /* NTESPageView.m */,
-				A04629442333BA2900318F01 /* NTESFPSLabel.h */,
-				A04629452333BA2900318F01 /* NTESMarginButton.h */,
 				A04629462333BA2900318F01 /* NTESBadgeView.h */,
-				A04629472333BA2900318F01 /* NTESPageView.h */,
-				A04629482333BA2900318F01 /* NTESMarginButton.m */,
+				A04629422333BA2900318F01 /* NTESBadgeView.m */,
+				A04629442333BA2900318F01 /* NTESFPSLabel.h */,
 				A04629492333BA2900318F01 /* NTESFPSLabel.m */,
+				A04629452333BA2900318F01 /* NTESMarginButton.h */,
+				A04629482333BA2900318F01 /* NTESMarginButton.m */,
+				A04629472333BA2900318F01 /* NTESPageView.h */,
+				A04629432333BA2900318F01 /* NTESPageView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4543,12 +4543,12 @@
 		A046294A2333BA2900318F01 /* LayoutConfig */ = {
 			isa = PBXGroup;
 			children = (
-				A046294B2333BA2900318F01 /* NTESCellLayoutConfig.m */,
-				A046294C2333BA2900318F01 /* NTESSessionCustomContentConfig.m */,
-				A046294D2333BA2900318F01 /* NTESChatroomTextContentConfig.h */,
 				A046294E2333BA2900318F01 /* NTESCellLayoutConfig.h */,
-				A046294F2333BA2900318F01 /* NTESSessionCustomContentConfig.h */,
+				A046294B2333BA2900318F01 /* NTESCellLayoutConfig.m */,
+				A046294D2333BA2900318F01 /* NTESChatroomTextContentConfig.h */,
 				A04629502333BA2900318F01 /* NTESChatroomTextContentConfig.m */,
+				A046294F2333BA2900318F01 /* NTESSessionCustomContentConfig.h */,
+				A046294C2333BA2900318F01 /* NTESSessionCustomContentConfig.m */,
 			);
 			path = LayoutConfig;
 			sourceTree = "<group>";
@@ -4578,12 +4578,12 @@
 		A046295A2333BA2A00318F01 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				A046295B2333BA2A00318F01 /* Sections */,
-				A0462A542333BA2B00318F01 /* Category */,
 				A0462A632333BA2B00318F01 /* NIMKit.h */,
-				A0462A642333BA2B00318F01 /* Protocols */,
-				A0462A6B2333BA2B00318F01 /* Global */,
 				A0462A832333BA2B00318F01 /* NIMKit.m */,
+				A0462A542333BA2B00318F01 /* Category */,
+				A0462A6B2333BA2B00318F01 /* Global */,
+				A0462A642333BA2B00318F01 /* Protocols */,
+				A046295B2333BA2A00318F01 /* Sections */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -4591,14 +4591,14 @@
 		A046295B2333BA2A00318F01 /* Sections */ = {
 			isa = PBXGroup;
 			children = (
-				A046295C2333BA2A00318F01 /* Contact */,
-				A04629702333BA2A00318F01 /* Util */,
-				A04629822333BA2A00318F01 /* Input */,
 				A046299E2333BA2A00318F01 /* Common */,
-				A04629B32333BA2A00318F01 /* Team */,
+				A046295C2333BA2A00318F01 /* Contact */,
+				A04629822333BA2A00318F01 /* Input */,
 				A04629ED2333BA2B00318F01 /* Model */,
-				A04629FA2333BA2B00318F01 /* SessionList */,
 				A0462A002333BA2B00318F01 /* Session */,
+				A04629FA2333BA2B00318F01 /* SessionList */,
+				A04629B32333BA2A00318F01 /* Team */,
+				A04629702333BA2A00318F01 /* Util */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -4606,18 +4606,18 @@
 		A046295C2333BA2A00318F01 /* Contact */ = {
 			isa = PBXGroup;
 			children = (
+				A04629672333BA2A00318F01 /* Cell */,
+				A04629612333BA2A00318F01 /* ContactGroup */,
+				A046296C2333BA2A00318F01 /* NIMContactDataItem.h */,
 				A046295D2333BA2A00318F01 /* NIMContactDataItem.m */,
 				A046295E2333BA2A00318F01 /* NIMContactPickedView.h */,
-				A046295F2333BA2A00318F01 /* NIMContactSelectTabView.h */,
-				A04629602333BA2A00318F01 /* NIMContactSelectViewController.m */,
-				A04629612333BA2A00318F01 /* ContactGroup */,
-				A04629662333BA2A00318F01 /* NIMContactSelectConfig.h */,
-				A04629672333BA2A00318F01 /* Cell */,
 				A046296B2333BA2A00318F01 /* NIMContactPickedView.m */,
-				A046296C2333BA2A00318F01 /* NIMContactDataItem.h */,
-				A046296D2333BA2A00318F01 /* NIMContactSelectViewController.h */,
-				A046296E2333BA2A00318F01 /* NIMContactSelectTabView.m */,
+				A04629662333BA2A00318F01 /* NIMContactSelectConfig.h */,
 				A046296F2333BA2A00318F01 /* NIMContactSelectConfig.m */,
+				A046295F2333BA2A00318F01 /* NIMContactSelectTabView.h */,
+				A046296E2333BA2A00318F01 /* NIMContactSelectTabView.m */,
+				A046296D2333BA2A00318F01 /* NIMContactSelectViewController.h */,
+				A04629602333BA2A00318F01 /* NIMContactSelectViewController.m */,
 			);
 			path = Contact;
 			sourceTree = "<group>";
@@ -4625,10 +4625,10 @@
 		A04629612333BA2A00318F01 /* ContactGroup */ = {
 			isa = PBXGroup;
 			children = (
-				A04629622333BA2A00318F01 /* NIMGroupedUsrInfo.h */,
-				A04629632333BA2A00318F01 /* NIMGroupedData.m */,
-				A04629642333BA2A00318F01 /* NIMGroupedUsrInfo.m */,
 				A04629652333BA2A00318F01 /* NIMGroupedData.h */,
+				A04629632333BA2A00318F01 /* NIMGroupedData.m */,
+				A04629622333BA2A00318F01 /* NIMGroupedUsrInfo.h */,
+				A04629642333BA2A00318F01 /* NIMGroupedUsrInfo.m */,
 			);
 			path = ContactGroup;
 			sourceTree = "<group>";
@@ -4636,9 +4636,9 @@
 		A04629672333BA2A00318F01 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				A046296A2333BA2A00318F01 /* NIMContactDataCell.h */,
 				A04629682333BA2A00318F01 /* NIMContactDataCell.m */,
 				A04629692333BA2A00318F01 /* NIMContactDefines.h */,
-				A046296A2333BA2A00318F01 /* NIMContactDataCell.h */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -4646,19 +4646,19 @@
 		A04629702333BA2A00318F01 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				A04629712333BA2A00318F01 /* NIMKitFileLocationHelper.m */,
-				A04629722333BA2A00318F01 /* NIMKitUtil.h */,
-				A04629732333BA2A00318F01 /* NIMKitDevice.h */,
-				A04629742333BA2A00318F01 /* NIMKitAuthorizationTool.m */,
-				A04629752333BA2A00318F01 /* NIMKitResourceResizer.m */,
-				A04629762333BA2A00318F01 /* NIMKitTimerHolder.m */,
-				A04629772333BA2A00318F01 /* NIMKitFileLocationHelper.h */,
 				A04629782333BA2A00318F01 /* NIMKitAuthorizationTool.h */,
-				A04629792333BA2A00318F01 /* NIMKitResourceResizer.h */,
+				A04629742333BA2A00318F01 /* NIMKitAuthorizationTool.m */,
+				A04629732333BA2A00318F01 /* NIMKitDevice.h */,
 				A046297A2333BA2A00318F01 /* NIMKitDevice.m */,
+				A04629772333BA2A00318F01 /* NIMKitFileLocationHelper.h */,
+				A04629712333BA2A00318F01 /* NIMKitFileLocationHelper.m */,
+				A04629792333BA2A00318F01 /* NIMKitResourceResizer.h */,
+				A04629752333BA2A00318F01 /* NIMKitResourceResizer.m */,
+				A04629812333BA2A00318F01 /* NIMKitTimerHolder.h */,
+				A04629762333BA2A00318F01 /* NIMKitTimerHolder.m */,
+				A04629722333BA2A00318F01 /* NIMKitUtil.h */,
 				A046297B2333BA2A00318F01 /* NIMKitUtil.m */,
 				A046297C2333BA2A00318F01 /* Spelling */,
-				A04629812333BA2A00318F01 /* NIMKitTimerHolder.h */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -4666,10 +4666,10 @@
 		A046297C2333BA2A00318F01 /* Spelling */ = {
 			isa = PBXGroup;
 			children = (
-				A046297D2333BA2A00318F01 /* NIMPinyinConverter.m */,
-				A046297E2333BA2A00318F01 /* NIMSpellingCenter.m */,
 				A046297F2333BA2A00318F01 /* NIMPinyinConverter.h */,
+				A046297D2333BA2A00318F01 /* NIMPinyinConverter.m */,
 				A04629802333BA2A00318F01 /* NIMSpellingCenter.h */,
+				A046297E2333BA2A00318F01 /* NIMSpellingCenter.m */,
 			);
 			path = Spelling;
 			sourceTree = "<group>";
@@ -4677,29 +4677,29 @@
 		A04629822333BA2A00318F01 /* Input */ = {
 			isa = PBXGroup;
 			children = (
-				A04629832333BA2A00318F01 /* NIMInputEmoticonParser.m */,
+				A04629992333BA2A00318F01 /* GrowingTextView */,
 				A04629842333BA2A00318F01 /* NIMInputAtCache.h */,
+				A046298F2333BA2A00318F01 /* NIMInputAtCache.m */,
+				A046298E2333BA2A00318F01 /* NIMInputAudioRecordIndicatorView.h */,
 				A04629852333BA2A00318F01 /* NIMInputAudioRecordIndicatorView.m */,
+				A04629912333BA2A00318F01 /* NIMInputBarItemType.h */,
+				A046298B2333BA2A00318F01 /* NIMInputEmoticonButton.h */,
+				A04629972333BA2A00318F01 /* NIMInputEmoticonButton.m */,
+				A046298C2333BA2A00318F01 /* NIMInputEmoticonContainerView.h */,
+				A04629962333BA2A00318F01 /* NIMInputEmoticonContainerView.m */,
+				A04629952333BA2A00318F01 /* NIMInputEmoticonDefine.h */,
 				A04629862333BA2A00318F01 /* NIMInputEmoticonManager.h */,
+				A046298D2333BA2A00318F01 /* NIMInputEmoticonManager.m */,
+				A04629902333BA2A00318F01 /* NIMInputEmoticonParser.h */,
+				A04629832333BA2A00318F01 /* NIMInputEmoticonParser.m */,
+				A04629982333BA2A00318F01 /* NIMInputEmoticonTabView.h */,
+				A046298A2333BA2A00318F01 /* NIMInputEmoticonTabView.m */,
+				A04629932333BA2A00318F01 /* NIMInputMoreContainerView.h */,
 				A04629872333BA2A00318F01 /* NIMInputMoreContainerView.m */,
 				A04629882333BA2A00318F01 /* NIMInputToolBar.h */,
-				A04629892333BA2A00318F01 /* NIMInputView.m */,
-				A046298A2333BA2A00318F01 /* NIMInputEmoticonTabView.m */,
-				A046298B2333BA2A00318F01 /* NIMInputEmoticonButton.h */,
-				A046298C2333BA2A00318F01 /* NIMInputEmoticonContainerView.h */,
-				A046298D2333BA2A00318F01 /* NIMInputEmoticonManager.m */,
-				A046298E2333BA2A00318F01 /* NIMInputAudioRecordIndicatorView.h */,
-				A046298F2333BA2A00318F01 /* NIMInputAtCache.m */,
-				A04629902333BA2A00318F01 /* NIMInputEmoticonParser.h */,
-				A04629912333BA2A00318F01 /* NIMInputBarItemType.h */,
 				A04629922333BA2A00318F01 /* NIMInputToolBar.m */,
-				A04629932333BA2A00318F01 /* NIMInputMoreContainerView.h */,
 				A04629942333BA2A00318F01 /* NIMInputView.h */,
-				A04629952333BA2A00318F01 /* NIMInputEmoticonDefine.h */,
-				A04629962333BA2A00318F01 /* NIMInputEmoticonContainerView.m */,
-				A04629972333BA2A00318F01 /* NIMInputEmoticonButton.m */,
-				A04629982333BA2A00318F01 /* NIMInputEmoticonTabView.h */,
-				A04629992333BA2A00318F01 /* GrowingTextView */,
+				A04629892333BA2A00318F01 /* NIMInputView.m */,
 			);
 			path = Input;
 			sourceTree = "<group>";
@@ -4707,10 +4707,10 @@
 		A04629992333BA2A00318F01 /* GrowingTextView */ = {
 			isa = PBXGroup;
 			children = (
-				A046299A2333BA2A00318F01 /* NIMGrowingTextView.m */,
-				A046299B2333BA2A00318F01 /* NIMGrowingInternalTextView.m */,
 				A046299C2333BA2A00318F01 /* NIMGrowingInternalTextView.h */,
+				A046299B2333BA2A00318F01 /* NIMGrowingInternalTextView.m */,
 				A046299D2333BA2A00318F01 /* NIMGrowingTextView.h */,
+				A046299A2333BA2A00318F01 /* NIMGrowingTextView.m */,
 			);
 			path = GrowingTextView;
 			sourceTree = "<group>";
@@ -4718,26 +4718,26 @@
 		A046299E2333BA2A00318F01 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				A046299F2333BA2A00318F01 /* NIMPageView.h */,
-				A04629A02333BA2A00318F01 /* NIMBadgeView.m */,
-				A04629A12333BA2A00318F01 /* NIMMemberGroupView.m */,
-				A04629A22333BA2A00318F01 /* NIMKitMediaFetcher.m */,
-				A04629A32333BA2A00318F01 /* NIMAvatarImageView.m */,
-				A04629A42333BA2A00318F01 /* NIMKitKeyboardInfo.h */,
-				A04629A52333BA2A00318F01 /* NIMCustomLeftBarView.h */,
-				A04629A62333BA2A00318F01 /* NIMLoadProgressView.h */,
-				A04629A72333BA2A00318F01 /* NIMKitNotificationFirer.h */,
-				A04629A82333BA2A00318F01 /* NIMKitTitleView.m */,
-				A04629A92333BA2A00318F01 /* NIMBadgeView.h */,
-				A04629AA2333BA2A00318F01 /* NIMPageView.m */,
 				A04629AB2333BA2A00318F01 /* NIMAvatarImageView.h */,
-				A04629AC2333BA2A00318F01 /* NIMKitMediaFetcher.h */,
-				A04629AD2333BA2A00318F01 /* NIMMemberGroupView.h */,
+				A04629A32333BA2A00318F01 /* NIMAvatarImageView.m */,
+				A04629A92333BA2A00318F01 /* NIMBadgeView.h */,
+				A04629A02333BA2A00318F01 /* NIMBadgeView.m */,
+				A04629A52333BA2A00318F01 /* NIMCustomLeftBarView.h */,
 				A04629AE2333BA2A00318F01 /* NIMCustomLeftBarView.m */,
+				A04629A42333BA2A00318F01 /* NIMKitKeyboardInfo.h */,
 				A04629AF2333BA2A00318F01 /* NIMKitKeyboardInfo.m */,
-				A04629B02333BA2A00318F01 /* NIMKitTitleView.h */,
+				A04629AC2333BA2A00318F01 /* NIMKitMediaFetcher.h */,
+				A04629A22333BA2A00318F01 /* NIMKitMediaFetcher.m */,
+				A04629A72333BA2A00318F01 /* NIMKitNotificationFirer.h */,
 				A04629B12333BA2A00318F01 /* NIMKitNotificationFirer.m */,
+				A04629B02333BA2A00318F01 /* NIMKitTitleView.h */,
+				A04629A82333BA2A00318F01 /* NIMKitTitleView.m */,
+				A04629A62333BA2A00318F01 /* NIMLoadProgressView.h */,
 				A04629B22333BA2A00318F01 /* NIMLoadProgressView.m */,
+				A04629AD2333BA2A00318F01 /* NIMMemberGroupView.h */,
+				A04629A12333BA2A00318F01 /* NIMMemberGroupView.m */,
+				A046299F2333BA2A00318F01 /* NIMPageView.h */,
+				A04629AA2333BA2A00318F01 /* NIMPageView.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -4746,8 +4746,8 @@
 			isa = PBXGroup;
 			children = (
 				A04629B42333BA2A00318F01 /* DataSource */,
-				A04629BA2333BA2A00318F01 /* VC */,
 				A04629D02333BA2A00318F01 /* Model */,
+				A04629BA2333BA2A00318F01 /* VC */,
 				A04629DE2333BA2A00318F01 /* View */,
 			);
 			path = Team;
@@ -4757,10 +4757,10 @@
 			isa = PBXGroup;
 			children = (
 				A04629B52333BA2A00318F01 /* NIMSuperTeamListDataManager.h */,
-				A04629B62333BA2A00318F01 /* NIMTeamListDataManager.h */,
-				A04629B72333BA2A00318F01 /* NIMTeamMemberListDataSource.h */,
 				A04629B82333BA2A00318F01 /* NIMSuperTeamListDataManager.m */,
+				A04629B62333BA2A00318F01 /* NIMTeamListDataManager.h */,
 				A04629B92333BA2A00318F01 /* NIMTeamListDataManager.m */,
+				A04629B72333BA2A00318F01 /* NIMTeamMemberListDataSource.h */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -4769,8 +4769,8 @@
 			isa = PBXGroup;
 			children = (
 				A04629BB2333BA2A00318F01 /* MemberCard */,
-				A04629C02333BA2A00318F01 /* ToolCard */,
 				A04629C72333BA2A00318F01 /* TeamCard */,
+				A04629C02333BA2A00318F01 /* ToolCard */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -4778,10 +4778,10 @@
 		A04629BB2333BA2A00318F01 /* MemberCard */ = {
 			isa = PBXGroup;
 			children = (
-				A04629BC2333BA2A00318F01 /* NIMTeamMemberListViewController.h */,
-				A04629BD2333BA2A00318F01 /* NIMTeamMemberCardViewController.m */,
-				A04629BE2333BA2A00318F01 /* NIMTeamMemberListViewController.m */,
 				A04629BF2333BA2A00318F01 /* NIMTeamMemberCardViewController.h */,
+				A04629BD2333BA2A00318F01 /* NIMTeamMemberCardViewController.m */,
+				A04629BC2333BA2A00318F01 /* NIMTeamMemberListViewController.h */,
+				A04629BE2333BA2A00318F01 /* NIMTeamMemberListViewController.m */,
 			);
 			path = MemberCard;
 			sourceTree = "<group>";
@@ -4789,12 +4789,12 @@
 		A04629C02333BA2A00318F01 /* ToolCard */ = {
 			isa = PBXGroup;
 			children = (
-				A04629C12333BA2A00318F01 /* NIMTeamCardSelectedViewController.h */,
-				A04629C22333BA2A00318F01 /* NIMTeamAnnouncementListViewController.h */,
-				A04629C32333BA2A00318F01 /* NIMCreateTeamAnnouncement.m */,
-				A04629C42333BA2A00318F01 /* NIMTeamCardSelectedViewController.m */,
-				A04629C52333BA2A00318F01 /* NIMTeamAnnouncementListViewController.m */,
 				A04629C62333BA2A00318F01 /* NIMCreateTeamAnnouncement.h */,
+				A04629C32333BA2A00318F01 /* NIMCreateTeamAnnouncement.m */,
+				A04629C22333BA2A00318F01 /* NIMTeamAnnouncementListViewController.h */,
+				A04629C52333BA2A00318F01 /* NIMTeamAnnouncementListViewController.m */,
+				A04629C12333BA2A00318F01 /* NIMTeamCardSelectedViewController.h */,
+				A04629C42333BA2A00318F01 /* NIMTeamCardSelectedViewController.m */,
 			);
 			path = ToolCard;
 			sourceTree = "<group>";
@@ -4802,14 +4802,14 @@
 		A04629C72333BA2A00318F01 /* TeamCard */ = {
 			isa = PBXGroup;
 			children = (
-				A04629C82333BA2A00318F01 /* NIMSuperTeamCardViewController.m */,
-				A04629C92333BA2A00318F01 /* NIMTeamCardViewController.m */,
 				A04629CA2333BA2A00318F01 /* NIMAdvancedTeamCardViewController.h */,
-				A04629CB2333BA2A00318F01 /* NIMNormalTeamCardViewController.m */,
-				A04629CC2333BA2A00318F01 /* NIMTeamCardViewController.h */,
-				A04629CD2333BA2A00318F01 /* NIMSuperTeamCardViewController.h */,
 				A04629CE2333BA2A00318F01 /* NIMAdvancedTeamCardViewController.m */,
 				A04629CF2333BA2A00318F01 /* NIMNormalTeamCardViewController.h */,
+				A04629CB2333BA2A00318F01 /* NIMNormalTeamCardViewController.m */,
+				A04629CD2333BA2A00318F01 /* NIMSuperTeamCardViewController.h */,
+				A04629C82333BA2A00318F01 /* NIMSuperTeamCardViewController.m */,
+				A04629CC2333BA2A00318F01 /* NIMTeamCardViewController.h */,
+				A04629C92333BA2A00318F01 /* NIMTeamCardViewController.m */,
 			);
 			path = TeamCard;
 			sourceTree = "<group>";
@@ -4817,19 +4817,19 @@
 		A04629D02333BA2A00318F01 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A04629D92333BA2A00318F01 /* NIMCardDataSourceProtocol.h */,
+				A04629D42333BA2A00318F01 /* NIMCardMemberItem.h */,
+				A04629DA2333BA2A00318F01 /* NIMCardMemberItem.m */,
+				A04629D52333BA2A00318F01 /* NIMMembersFetchOption.h */,
+				A04629DD2333BA2A00318F01 /* NIMMembersFetchOption.m */,
+				A04629D72333BA2A00318F01 /* NIMTeamCardOperationItem.h */,
 				A04629D12333BA2A00318F01 /* NIMTeamCardOperationItem.m */,
+				A04629D82333BA2A00318F01 /* NIMTeamCardRowItem.h */,
 				A04629D22333BA2A00318F01 /* NIMTeamCardRowItem.m */,
 				A04629D32333BA2A00318F01 /* NIMTeamInfoData.h */,
-				A04629D42333BA2A00318F01 /* NIMCardMemberItem.h */,
-				A04629D52333BA2A00318F01 /* NIMMembersFetchOption.h */,
-				A04629D62333BA2A00318F01 /* NIMUsrInfoData.m */,
-				A04629D72333BA2A00318F01 /* NIMTeamCardOperationItem.h */,
-				A04629D82333BA2A00318F01 /* NIMTeamCardRowItem.h */,
-				A04629D92333BA2A00318F01 /* NIMCardDataSourceProtocol.h */,
-				A04629DA2333BA2A00318F01 /* NIMCardMemberItem.m */,
 				A04629DB2333BA2A00318F01 /* NIMTeamInfoData.m */,
 				A04629DC2333BA2A00318F01 /* NIMUsrInfoData.h */,
-				A04629DD2333BA2A00318F01 /* NIMMembersFetchOption.m */,
+				A04629D62333BA2A00318F01 /* NIMUsrInfoData.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -4837,20 +4837,20 @@
 		A04629DE2333BA2A00318F01 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A04629DF2333BA2A00318F01 /* NIMTeamSwitchTableViewCell.m */,
 				A04629E02333BA2A00318F01 /* NIMTeamAnnouncementListCell.h */,
-				A04629E12333BA2A00318F01 /* NIMTeamMemberListCell.h */,
-				A04629E22333BA2A00318F01 /* NIMTimePickerView.m */,
-				A04629E32333BA2A00318F01 /* NIMTeamCardHeaderCell.h */,
-				A04629E42333BA2A00318F01 /* NIMTeamMemberCardHeaderCell.h */,
-				A04629E52333BA2A00318F01 /* NIMTeamCardHeaderView.h */,
-				A04629E62333BA2A00318F01 /* NIMTeamMemberListCell.m */,
 				A04629E72333BA2A00318F01 /* NIMTeamAnnouncementListCell.m */,
-				A04629E82333BA2B00318F01 /* NIMTeamSwitchTableViewCell.h */,
-				A04629E92333BA2B00318F01 /* NIMTimePickerView.h */,
-				A04629EA2333BA2B00318F01 /* NIMTeamMemberCardHeaderCell.m */,
+				A04629E32333BA2A00318F01 /* NIMTeamCardHeaderCell.h */,
 				A04629EB2333BA2B00318F01 /* NIMTeamCardHeaderCell.m */,
+				A04629E52333BA2A00318F01 /* NIMTeamCardHeaderView.h */,
 				A04629EC2333BA2B00318F01 /* NIMTeamCardHeaderView.m */,
+				A04629E42333BA2A00318F01 /* NIMTeamMemberCardHeaderCell.h */,
+				A04629EA2333BA2B00318F01 /* NIMTeamMemberCardHeaderCell.m */,
+				A04629E12333BA2A00318F01 /* NIMTeamMemberListCell.h */,
+				A04629E62333BA2A00318F01 /* NIMTeamMemberListCell.m */,
+				A04629E82333BA2B00318F01 /* NIMTeamSwitchTableViewCell.h */,
+				A04629DF2333BA2A00318F01 /* NIMTeamSwitchTableViewCell.m */,
+				A04629E92333BA2B00318F01 /* NIMTimePickerView.h */,
+				A04629E22333BA2A00318F01 /* NIMTimePickerView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4858,18 +4858,18 @@
 		A04629ED2333BA2B00318F01 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A04629EE2333BA2B00318F01 /* NIMTimestampModel.m */,
-				A04629EF2333BA2B00318F01 /* NIMKitInfoFetchOption.m */,
-				A04629F02333BA2B00318F01 /* NIMKitInfo.h */,
-				A04629F12333BA2B00318F01 /* NIMMessageModel.h */,
-				A04629F22333BA2B00318F01 /* NIMKitEvent.m */,
-				A04629F32333BA2B00318F01 /* NIMMediaItem.m */,
-				A04629F42333BA2B00318F01 /* NIMTimestampModel.h */,
-				A04629F52333BA2B00318F01 /* NIMKitInfoFetchOption.h */,
 				A04629F62333BA2B00318F01 /* NIMKitEvent.h */,
-				A04629F72333BA2B00318F01 /* NIMMessageModel.m */,
+				A04629F22333BA2B00318F01 /* NIMKitEvent.m */,
+				A04629F02333BA2B00318F01 /* NIMKitInfo.h */,
 				A04629F82333BA2B00318F01 /* NIMKitInfo.m */,
+				A04629F52333BA2B00318F01 /* NIMKitInfoFetchOption.h */,
+				A04629EF2333BA2B00318F01 /* NIMKitInfoFetchOption.m */,
 				A04629F92333BA2B00318F01 /* NIMMediaItem.h */,
+				A04629F32333BA2B00318F01 /* NIMMediaItem.m */,
+				A04629F12333BA2B00318F01 /* NIMMessageModel.h */,
+				A04629F72333BA2B00318F01 /* NIMMessageModel.m */,
+				A04629F42333BA2B00318F01 /* NIMTimestampModel.h */,
+				A04629EE2333BA2B00318F01 /* NIMTimestampModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -4877,9 +4877,9 @@
 		A04629FA2333BA2B00318F01 /* SessionList */ = {
 			isa = PBXGroup;
 			children = (
+				A04629FF2333BA2B00318F01 /* NIMSessionListViewController.h */,
 				A04629FB2333BA2B00318F01 /* NIMSessionListViewController.m */,
 				A04629FC2333BA2B00318F01 /* View */,
-				A04629FF2333BA2B00318F01 /* NIMSessionListViewController.h */,
 			);
 			path = SessionList;
 			sourceTree = "<group>";
@@ -4887,8 +4887,8 @@
 		A04629FC2333BA2B00318F01 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A04629FD2333BA2B00318F01 /* NIMSessionListCell.m */,
 				A04629FE2333BA2B00318F01 /* NIMSessionListCell.h */,
+				A04629FD2333BA2B00318F01 /* NIMSessionListCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4897,8 +4897,8 @@
 			isa = PBXGroup;
 			children = (
 				A0462A012333BA2B00318F01 /* Config */,
-				A0462A192333BA2B00318F01 /* Object */,
 				A0462A2A2333BA2B00318F01 /* Model */,
+				A0462A192333BA2B00318F01 /* Object */,
 				A0462A332333BA2B00318F01 /* View */,
 				A0462A4F2333BA2B00318F01 /* ViewController */,
 			);
@@ -4908,8 +4908,8 @@
 		A0462A012333BA2B00318F01 /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				A0462A022333BA2B00318F01 /* NIMCellLayoutConfig.h */,
 				A0462A032333BA2B00318F01 /* Content */,
+				A0462A022333BA2B00318F01 /* NIMCellLayoutConfig.h */,
 				A0462A182333BA2B00318F01 /* NIMCellLayoutConfig.m */,
 			);
 			path = Config;
@@ -4918,26 +4918,26 @@
 		A0462A032333BA2B00318F01 /* Content */ = {
 			isa = PBXGroup;
 			children = (
-				A0462A042333BA2B00318F01 /* NIMUnsupportContentConfig.h */,
-				A0462A052333BA2B00318F01 /* NIMTipContentConfig.h */,
 				A0462A062333BA2B00318F01 /* NIMAudioContentConfig.h */,
-				A0462A072333BA2B00318F01 /* NIMNotificationContentConfig.h */,
-				A0462A082333BA2B00318F01 /* NIMFileContentConfig.m */,
-				A0462A092333BA2B00318F01 /* NIMLocationContentConfig.m */,
-				A0462A0A2333BA2B00318F01 /* NIMImageContentConfig.h */,
-				A0462A0B2333BA2B00318F01 /* NIMTextContentConfig.h */,
-				A0462A0C2333BA2B00318F01 /* NIMBaseSessionContentConfig.h */,
-				A0462A0D2333BA2B00318F01 /* NIMVideoContentConfig.m */,
 				A0462A0E2333BA2B00318F01 /* NIMAudioContentConfig.m */,
-				A0462A0F2333BA2B00318F01 /* NIMNotificationContentConfig.m */,
-				A0462A102333BA2B00318F01 /* NIMTipContentConfig.m */,
-				A0462A112333BA2B00318F01 /* NIMUnsupportContentConfig.m */,
+				A0462A0C2333BA2B00318F01 /* NIMBaseSessionContentConfig.h */,
+				A0462A172333BA2B00318F01 /* NIMBaseSessionContentConfig.m */,
 				A0462A122333BA2B00318F01 /* NIMFileContentConfig.h */,
-				A0462A132333BA2B00318F01 /* NIMTextContentConfig.m */,
+				A0462A082333BA2B00318F01 /* NIMFileContentConfig.m */,
+				A0462A0A2333BA2B00318F01 /* NIMImageContentConfig.h */,
 				A0462A142333BA2B00318F01 /* NIMImageContentConfig.m */,
 				A0462A152333BA2B00318F01 /* NIMLocationContentConfig.h */,
+				A0462A092333BA2B00318F01 /* NIMLocationContentConfig.m */,
+				A0462A072333BA2B00318F01 /* NIMNotificationContentConfig.h */,
+				A0462A0F2333BA2B00318F01 /* NIMNotificationContentConfig.m */,
+				A0462A0B2333BA2B00318F01 /* NIMTextContentConfig.h */,
+				A0462A132333BA2B00318F01 /* NIMTextContentConfig.m */,
+				A0462A052333BA2B00318F01 /* NIMTipContentConfig.h */,
+				A0462A102333BA2B00318F01 /* NIMTipContentConfig.m */,
+				A0462A042333BA2B00318F01 /* NIMUnsupportContentConfig.h */,
+				A0462A112333BA2B00318F01 /* NIMUnsupportContentConfig.m */,
 				A0462A162333BA2B00318F01 /* NIMVideoContentConfig.h */,
-				A0462A172333BA2B00318F01 /* NIMBaseSessionContentConfig.m */,
+				A0462A0D2333BA2B00318F01 /* NIMVideoContentConfig.m */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -4962,22 +4962,22 @@
 		A0462A192333BA2B00318F01 /* Object */ = {
 			isa = PBXGroup;
 			children = (
-				A0462A1A2333BA2B00318F01 /* NIMSessionDataSourceImpl.m */,
-				A0462A1B2333BA2B00318F01 /* NIMSessionTableAdapter.m */,
-				A0462A1C2333BA2B00318F01 /* NIMSessionConfigurator.h */,
-				A0462A1D2333BA2B00318F01 /* NIMSessionMsgDatasource.m */,
-				A0462A1E2333BA2B00318F01 /* NIMKitAudioCenter.m */,
-				A0462A1F2333BA2B00318F01 /* NIMSessionLayoutImpl.m */,
-				A0462A202333BA2B00318F01 /* NIMSessionInteractorImpl.h */,
-				A0462A212333BA2B00318F01 /* NIMSessionConfigurateProtocol.h */,
-				A0462A222333BA2B00318F01 /* NIMSessionConfigurator.m */,
-				A0462A232333BA2B00318F01 /* NIMSessionTableAdapter.h */,
-				A0462A242333BA2B00318F01 /* NIMSessionDataSourceImpl.h */,
 				A0462A252333BA2B00318F01 /* NIMKitAudioCenter.h */,
-				A0462A262333BA2B00318F01 /* NIMSessionPrivateProtocol.h */,
-				A0462A272333BA2B00318F01 /* NIMSessionMsgDatasource.h */,
+				A0462A1E2333BA2B00318F01 /* NIMKitAudioCenter.m */,
+				A0462A212333BA2B00318F01 /* NIMSessionConfigurateProtocol.h */,
+				A0462A1C2333BA2B00318F01 /* NIMSessionConfigurator.h */,
+				A0462A222333BA2B00318F01 /* NIMSessionConfigurator.m */,
+				A0462A242333BA2B00318F01 /* NIMSessionDataSourceImpl.h */,
+				A0462A1A2333BA2B00318F01 /* NIMSessionDataSourceImpl.m */,
+				A0462A202333BA2B00318F01 /* NIMSessionInteractorImpl.h */,
 				A0462A282333BA2B00318F01 /* NIMSessionInteractorImpl.m */,
 				A0462A292333BA2B00318F01 /* NIMSessionLayoutImpl.h */,
+				A0462A1F2333BA2B00318F01 /* NIMSessionLayoutImpl.m */,
+				A0462A272333BA2B00318F01 /* NIMSessionMsgDatasource.h */,
+				A0462A1D2333BA2B00318F01 /* NIMSessionMsgDatasource.m */,
+				A0462A262333BA2B00318F01 /* NIMSessionPrivateProtocol.h */,
+				A0462A232333BA2B00318F01 /* NIMSessionTableAdapter.h */,
+				A0462A1B2333BA2B00318F01 /* NIMSessionTableAdapter.m */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -4985,14 +4985,14 @@
 		A0462A2A2333BA2B00318F01 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A0462A2B2333BA2B00318F01 /* NIMMessageCellFactory.h */,
-				A0462A2C2333BA2B00318F01 /* NIMKitLocationPoint.m */,
-				A0462A2D2333BA2B00318F01 /* NIMMessageMaker.m */,
-				A0462A2E2333BA2B00318F01 /* NIMKitMessageAtModel.m */,
 				A0462A2F2333BA2B00318F01 /* NIMKitLocationPoint.h */,
+				A0462A2C2333BA2B00318F01 /* NIMKitLocationPoint.m */,
+				A0462A322333BA2B00318F01 /* NIMKitMessageAtModel.h */,
+				A0462A2E2333BA2B00318F01 /* NIMKitMessageAtModel.m */,
+				A0462A2B2333BA2B00318F01 /* NIMMessageCellFactory.h */,
 				A0462A302333BA2B00318F01 /* NIMMessageCellFactory.m */,
 				A0462A312333BA2B00318F01 /* NIMMessageMaker.h */,
-				A0462A322333BA2B00318F01 /* NIMKitMessageAtModel.h */,
+				A0462A2D2333BA2B00318F01 /* NIMMessageMaker.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -5000,13 +5000,13 @@
 		A0462A332333BA2B00318F01 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A0462A342333BA2B00318F01 /* NIMSessionTimestampCell.m */,
-				A0462A352333BA2B00318F01 /* NIMLoadMoreView.m */,
-				A0462A362333BA2B00318F01 /* SessionContentView */,
-				A0462A4B2333BA2B00318F01 /* NIMMessageCell.h */,
 				A0462A4C2333BA2B00318F01 /* NIMLoadMoreView.h */,
-				A0462A4D2333BA2B00318F01 /* NIMSessionTimestampCell.h */,
+				A0462A352333BA2B00318F01 /* NIMLoadMoreView.m */,
+				A0462A4B2333BA2B00318F01 /* NIMMessageCell.h */,
 				A0462A4E2333BA2B00318F01 /* NIMMessageCell.m */,
+				A0462A4D2333BA2B00318F01 /* NIMSessionTimestampCell.h */,
+				A0462A342333BA2B00318F01 /* NIMSessionTimestampCell.m */,
+				A0462A362333BA2B00318F01 /* SessionContentView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -5014,26 +5014,26 @@
 		A0462A362333BA2B00318F01 /* SessionContentView */ = {
 			isa = PBXGroup;
 			children = (
-				A0462A372333BA2B00318F01 /* NIMSessionLocationContentView.m */,
-				A0462A382333BA2B00318F01 /* NIMSessionTextContentView.h */,
-				A0462A392333BA2B00318F01 /* NIMSessionFileTransContentView.h */,
-				A0462A3A2333BA2B00318F01 /* NIMSessionVideoContentView.m */,
-				A0462A3B2333BA2B00318F01 /* NIMSessionUnknowContentView.h */,
-				A0462A3C2333BA2B00318F01 /* NIMSessionAudioContentView.m */,
-				A0462A3D2333BA2B00318F01 /* NIMSessionNotificationContentView.m */,
-				A0462A3E2333BA2B00318F01 /* NIMSessionNetChatNotifyContentView.m */,
-				A0462A3F2333BA2B00318F01 /* NIMSessionMessageContentView.h */,
-				A0462A402333BA2B00318F01 /* NIMSessionImageContentView.m */,
-				A0462A412333BA2B00318F01 /* NIMSessionVideoContentView.h */,
-				A0462A422333BA2B00318F01 /* NIMSessionFileTransContentView.m */,
-				A0462A432333BA2B00318F01 /* NIMSessionTextContentView.m */,
-				A0462A442333BA2B00318F01 /* NIMSessionLocationContentView.h */,
-				A0462A452333BA2B00318F01 /* NIMSessionNotificationContentView.h */,
-				A0462A462333BA2B00318F01 /* NIMSessionUnknowContentView.m */,
 				A0462A472333BA2B00318F01 /* NIMSessionAudioContentView.h */,
+				A0462A3C2333BA2B00318F01 /* NIMSessionAudioContentView.m */,
+				A0462A392333BA2B00318F01 /* NIMSessionFileTransContentView.h */,
+				A0462A422333BA2B00318F01 /* NIMSessionFileTransContentView.m */,
 				A0462A482333BA2B00318F01 /* NIMSessionImageContentView.h */,
+				A0462A402333BA2B00318F01 /* NIMSessionImageContentView.m */,
+				A0462A442333BA2B00318F01 /* NIMSessionLocationContentView.h */,
+				A0462A372333BA2B00318F01 /* NIMSessionLocationContentView.m */,
+				A0462A3F2333BA2B00318F01 /* NIMSessionMessageContentView.h */,
 				A0462A492333BA2B00318F01 /* NIMSessionMessageContentView.m */,
 				A0462A4A2333BA2B00318F01 /* NIMSessionNetChatNotifyContentView.h */,
+				A0462A3E2333BA2B00318F01 /* NIMSessionNetChatNotifyContentView.m */,
+				A0462A452333BA2B00318F01 /* NIMSessionNotificationContentView.h */,
+				A0462A3D2333BA2B00318F01 /* NIMSessionNotificationContentView.m */,
+				A0462A382333BA2B00318F01 /* NIMSessionTextContentView.h */,
+				A0462A432333BA2B00318F01 /* NIMSessionTextContentView.m */,
+				A0462A3B2333BA2B00318F01 /* NIMSessionUnknowContentView.h */,
+				A0462A462333BA2B00318F01 /* NIMSessionUnknowContentView.m */,
+				A0462A412333BA2B00318F01 /* NIMSessionVideoContentView.h */,
+				A0462A3A2333BA2B00318F01 /* NIMSessionVideoContentView.m */,
 			);
 			path = SessionContentView;
 			sourceTree = "<group>";
@@ -5042,8 +5042,8 @@
 			isa = PBXGroup;
 			children = (
 				A0462A502333BA2B00318F01 /* NIMLocationViewController.h */,
-				A0462A512333BA2B00318F01 /* NIMSessionViewController.h */,
 				A0462A522333BA2B00318F01 /* NIMLocationViewController.m */,
+				A0462A512333BA2B00318F01 /* NIMSessionViewController.h */,
 				A0462A532333BA2B00318F01 /* NIMSessionViewController.m */,
 			);
 			path = ViewController;
@@ -5052,20 +5052,20 @@
 		A0462A542333BA2B00318F01 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				A0462A552333BA2B00318F01 /* UITableView+NIMScrollToBottom.h */,
-				A0462A562333BA2B00318F01 /* NSDictionary+NIMKit.m */,
-				A0462A572333BA2B00318F01 /* UIImage+NIMKit.m */,
-				A0462A582333BA2B00318F01 /* NIMExtensionHelper.h */,
-				A0462A592333BA2B00318F01 /* UIView+NIM.h */,
 				A0462A5A2333BA2B00318F01 /* M80AttributedLabel+NIMKit.h */,
-				A0462A5B2333BA2B00318F01 /* NSString+NIMKit.m */,
-				A0462A5C2333BA2B00318F01 /* NSDictionary+NIMKit.h */,
-				A0462A5D2333BA2B00318F01 /* UIImage+NIMKit.h */,
-				A0462A5E2333BA2B00318F01 /* UITableView+NIMScrollToBottom.m */,
-				A0462A5F2333BA2B00318F01 /* NIMExtensionHelper.m */,
-				A0462A602333BA2B00318F01 /* UIView+NIM.m */,
 				A0462A612333BA2B00318F01 /* M80AttributedLabel+NIMKit.m */,
+				A0462A582333BA2B00318F01 /* NIMExtensionHelper.h */,
+				A0462A5F2333BA2B00318F01 /* NIMExtensionHelper.m */,
+				A0462A5C2333BA2B00318F01 /* NSDictionary+NIMKit.h */,
+				A0462A562333BA2B00318F01 /* NSDictionary+NIMKit.m */,
 				A0462A622333BA2B00318F01 /* NSString+NIMKit.h */,
+				A0462A5B2333BA2B00318F01 /* NSString+NIMKit.m */,
+				A0462A5D2333BA2B00318F01 /* UIImage+NIMKit.h */,
+				A0462A572333BA2B00318F01 /* UIImage+NIMKit.m */,
+				A0462A552333BA2B00318F01 /* UITableView+NIMScrollToBottom.h */,
+				A0462A5E2333BA2B00318F01 /* UITableView+NIMScrollToBottom.m */,
+				A0462A592333BA2B00318F01 /* UIView+NIM.h */,
+				A0462A602333BA2B00318F01 /* UIView+NIM.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -5073,11 +5073,11 @@
 		A0462A642333BA2B00318F01 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				A0462A652333BA2B00318F01 /* NIMInputProtocol.h */,
 				A0462A662333BA2B00318F01 /* NIMCellConfig.h */,
+				A0462A652333BA2B00318F01 /* NIMInputProtocol.h */,
+				A0462A692333BA2B00318F01 /* NIMKitDataProvider.h */,
 				A0462A672333BA2B00318F01 /* NIMKitMessageProvider.h */,
 				A0462A682333BA2B00318F01 /* NIMMessageCellProtocol.h */,
-				A0462A692333BA2B00318F01 /* NIMKitDataProvider.h */,
 				A0462A6A2333BA2B00318F01 /* NIMSessionConfig.h */,
 			);
 			path = Protocols;
@@ -5086,29 +5086,29 @@
 		A0462A6B2333BA2B00318F01 /* Global */ = {
 			isa = PBXGroup;
 			children = (
-				A0462A6C2333BA2B00318F01 /* NIMKitSwitcherCell.h */,
-				A0462A6D2333BA2B00318F01 /* NIMKitProgressHUD.m */,
-				A0462A6E2333BA2B00318F01 /* NIMKitDataProviderImpl.m */,
-				A0462A6F2333BA2B00318F01 /* NIMKitSetting.m */,
-				A0462A702333BA2B00318F01 /* NIMKitConfig.h */,
-				A0462A712333BA2B00318F01 /* NIMKitUrlManager.m */,
-				A0462A722333BA2B00318F01 /* NIMKitIndependentModeExtraInfo.h */,
-				A0462A732333BA2B00318F01 /* NIMCommonTableDelegate.m */,
-				A0462A742333BA2B00318F01 /* NIMKitColorButtonCell.h */,
+				A0462A822333BA2B00318F01 /* NIMCommonTableData.h */,
 				A0462A752333BA2B00318F01 /* NIMCommonTableData.m */,
-				A0462A762333BA2B00318F01 /* NIMKitProgressHUD.h */,
+				A0462A7E2333BA2B00318F01 /* NIMCommonTableDelegate.h */,
+				A0462A732333BA2B00318F01 /* NIMCommonTableDelegate.m */,
+				A0462A802333BA2B00318F01 /* NIMCommonTableViewCell.h */,
+				A0462A7A2333BA2B00318F01 /* NIMGlobalMacro.h */,
+				A0462A742333BA2B00318F01 /* NIMKitColorButtonCell.h */,
+				A0462A7D2333BA2B00318F01 /* NIMKitColorButtonCell.m */,
+				A0462A702333BA2B00318F01 /* NIMKitConfig.h */,
+				A0462A7B2333BA2B00318F01 /* NIMKitConfig.m */,
 				A0462A772333BA2B00318F01 /* NIMKitDataProviderImpl.h */,
+				A0462A6E2333BA2B00318F01 /* NIMKitDataProviderImpl.m */,
+				A0462A812333BA2B00318F01 /* NIMKitDependency.h */,
+				A0462A722333BA2B00318F01 /* NIMKitIndependentModeExtraInfo.h */,
+				A0462A7F2333BA2B00318F01 /* NIMKitIndependentModeExtraInfo.m */,
+				A0462A762333BA2B00318F01 /* NIMKitProgressHUD.h */,
+				A0462A6D2333BA2B00318F01 /* NIMKitProgressHUD.m */,
+				A0462A7C2333BA2B00318F01 /* NIMKitSetting.h */,
+				A0462A6F2333BA2B00318F01 /* NIMKitSetting.m */,
+				A0462A6C2333BA2B00318F01 /* NIMKitSwitcherCell.h */,
 				A0462A782333BA2B00318F01 /* NIMKitSwitcherCell.m */,
 				A0462A792333BA2B00318F01 /* NIMKitUrlManager.h */,
-				A0462A7A2333BA2B00318F01 /* NIMGlobalMacro.h */,
-				A0462A7B2333BA2B00318F01 /* NIMKitConfig.m */,
-				A0462A7C2333BA2B00318F01 /* NIMKitSetting.h */,
-				A0462A7D2333BA2B00318F01 /* NIMKitColorButtonCell.m */,
-				A0462A7E2333BA2B00318F01 /* NIMCommonTableDelegate.h */,
-				A0462A7F2333BA2B00318F01 /* NIMKitIndependentModeExtraInfo.m */,
-				A0462A802333BA2B00318F01 /* NIMCommonTableViewCell.h */,
-				A0462A812333BA2B00318F01 /* NIMKitDependency.h */,
-				A0462A822333BA2B00318F01 /* NIMCommonTableData.h */,
+				A0462A712333BA2B00318F01 /* NIMKitUrlManager.m */,
 			);
 			path = Global;
 			sourceTree = "<group>";
