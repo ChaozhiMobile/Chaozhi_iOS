@@ -124,6 +124,8 @@
 		A027B0442333C4530013322D /* NIMPinyinConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = A027B03F2333C4530013322D /* NIMPinyinConverter.m */; };
 		A027B0452333C4530013322D /* NIMSpellingCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = A027B0402333C4530013322D /* NIMSpellingCenter.m */; };
 		A027B0462333C4530013322D /* NIMSpellingCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = A027B0402333C4530013322D /* NIMSpellingCenter.m */; };
+		A027B0482333C89D0013322D /* NIMSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A027B0472333C89D0013322D /* NIMSDK.framework */; };
+		A027B0492333C89D0013322D /* NIMSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A027B0472333C89D0013322D /* NIMSDK.framework */; };
 		A045501B22EC4FCA00E17406 /* ChaozhiAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A045501A22EC4FCA00E17406 /* ChaozhiAssets.xcassets */; };
 		A045507322EC8DFA00E17406 /* XLGInternalDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFDF214AAB140011BB4F /* XLGInternalDemoVC.m */; };
 		A045507522EC8DFA00E17406 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AF68214AAB130011BB4F /* Config.m */; };
@@ -1323,8 +1325,6 @@
 		A0462CAF2333BA2D00318F01 /* NIMKitIndependentModeExtraInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A0462A7F2333BA2B00318F01 /* NIMKitIndependentModeExtraInfo.m */; };
 		A0462CB02333BA2D00318F01 /* NIMKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A0462A832333BA2B00318F01 /* NIMKit.m */; };
 		A0462CB12333BA2D00318F01 /* NIMKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A0462A832333BA2B00318F01 /* NIMKit.m */; };
-		A0462CB52333BAAB00318F01 /* NIMSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0462CB42333BAAB00318F01 /* NIMSDK.framework */; };
-		A0462CB62333BAAB00318F01 /* NIMSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0462CB42333BAAB00318F01 /* NIMSDK.framework */; };
 		A0541F9D22F2893B00D961B3 /* XZHomeTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0541F9C22F2893A00D961B3 /* XZHomeTabCell.m */; };
 		A0541FA522F2C69C00D961B3 /* UIButton+CenterImageAndTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = A0541F9F22F2C69C00D961B3 /* UIButton+CenterImageAndTitle.m */; };
 		A0541FA622F2C69C00D961B3 /* UIButton+CenterImageAndTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = A0541F9F22F2C69C00D961B3 /* UIButton+CenterImageAndTitle.m */; };
@@ -1555,6 +1555,7 @@
 		A027B0402333C4530013322D /* NIMSpellingCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIMSpellingCenter.m; sourceTree = "<group>"; };
 		A027B0412333C4530013322D /* NIMPinyinConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIMPinyinConverter.h; sourceTree = "<group>"; };
 		A027B0422333C4530013322D /* NIMSpellingCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIMSpellingCenter.h; sourceTree = "<group>"; };
+		A027B0472333C89D0013322D /* NIMSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NIMSDK.framework; sourceTree = "<group>"; };
 		A045501522EC4ACB00E17406 /* Xuezhi.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Xuezhi.entitlements; sourceTree = "<group>"; };
 		A045501A22EC4FCA00E17406 /* ChaozhiAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ChaozhiAssets.xcassets; sourceTree = "<group>"; };
 		A045520C22EC8DFA00E17406 /* Xuezhi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xuezhi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2473,7 +2474,6 @@
 		A0462A812333BA2B00318F01 /* NIMKitDependency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIMKitDependency.h; sourceTree = "<group>"; };
 		A0462A822333BA2B00318F01 /* NIMCommonTableData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIMCommonTableData.h; sourceTree = "<group>"; };
 		A0462A832333BA2B00318F01 /* NIMKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIMKit.m; sourceTree = "<group>"; };
-		A0462CB42333BAAB00318F01 /* NIMSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NIMSDK.framework; sourceTree = "<group>"; };
 		A0541F9B22F2893A00D961B3 /* XZHomeTabCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZHomeTabCell.h; sourceTree = "<group>"; };
 		A0541F9C22F2893A00D961B3 /* XZHomeTabCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XZHomeTabCell.m; sourceTree = "<group>"; };
 		A0541F9F22F2C69C00D961B3 /* UIButton+CenterImageAndTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CenterImageAndTitle.m"; sourceTree = "<group>"; };
@@ -2568,7 +2568,6 @@
 			files = (
 				20572FE022C36F9000568CDC /* SocketIO.framework in Frameworks */,
 				20572EE622C36C3600568CDC /* Foundation.framework in Frameworks */,
-				A0462CB52333BAAB00318F01 /* NIMSDK.framework in Frameworks */,
 				20D3D3BA22C22E2100560A74 /* SystemConfiguration.framework in Frameworks */,
 				20D3D3B822C22E1900560A74 /* MobileCoreServices.framework in Frameworks */,
 				20D3D3B622C22E1200560A74 /* VideoToolbox.framework in Frameworks */,
@@ -2576,6 +2575,7 @@
 				A04625D22333B94F00318F01 /* TalkfunSDKFramework.framework in Frameworks */,
 				20D3D3B222C22DFC00560A74 /* AVFoundation.framework in Frameworks */,
 				20D3D36F22C2283700560A74 /* libiconv.tbd in Frameworks */,
+				A027B0482333C89D0013322D /* NIMSDK.framework in Frameworks */,
 				20D3D36D22C2282A00560A74 /* libz.tbd in Frameworks */,
 				20D3D3B022C22DD600560A74 /* AudioToolbox.framework in Frameworks */,
 				20D3D3AE22C22DCD00560A74 /* CoreAudio.framework in Frameworks */,
@@ -2598,11 +2598,11 @@
 				A045512222EC8DFA00E17406 /* Foundation.framework in Frameworks */,
 				A045512322EC8DFA00E17406 /* SystemConfiguration.framework in Frameworks */,
 				A045512422EC8DFA00E17406 /* MobileCoreServices.framework in Frameworks */,
+				A027B0492333C89D0013322D /* NIMSDK.framework in Frameworks */,
 				A045512522EC8DFA00E17406 /* VideoToolbox.framework in Frameworks */,
 				A045512622EC8DFA00E17406 /* CoreMedia.framework in Frameworks */,
 				A045512722EC8DFA00E17406 /* AVFoundation.framework in Frameworks */,
 				A04625D32333B94F00318F01 /* TalkfunSDKFramework.framework in Frameworks */,
-				A0462CB62333BAAB00318F01 /* NIMSDK.framework in Frameworks */,
 				A045512822EC8DFA00E17406 /* libiconv.tbd in Frameworks */,
 				A045512922EC8DFA00E17406 /* libz.tbd in Frameworks */,
 				A045512A22EC8DFA00E17406 /* AudioToolbox.framework in Frameworks */,
@@ -5124,7 +5124,7 @@
 		A0462CB32333BAAB00318F01 /* NIMSDK */ = {
 			isa = PBXGroup;
 			children = (
-				A0462CB42333BAAB00318F01 /* NIMSDK.framework */,
+				A027B0472333C89D0013322D /* NIMSDK.framework */,
 			);
 			path = NIMSDK;
 			sourceTree = "<group>";
@@ -7295,12 +7295,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Chaozhi/Vendor/Talkfun/Library",
-					"$(PROJECT_DIR)/Chaozhi/Vendor/NIM/Classes/Vendors/AlipaySDK",
-					"$(PROJECT_DIR)/Chaozhi/Vendor/NIM/Classes/Vendors/RedPacket",
 					"$(PROJECT_DIR)/Chaozhi/Module/Talkfun/Library",
-					"$(PROJECT_DIR)/Chaozhi/Module/IM/NIM/Classes/Vendors/AlipaySDK",
-					"$(PROJECT_DIR)/Chaozhi/Module/IM/NIM/Classes/Vendors/RedPacket",
 					"$(PROJECT_DIR)/Chaozhi/Module/IM/NIM/Vendors/NIMSDK",
 				);
 				GCC_PREFIX_HEADER = Xuezhi/Xuezhi.pch;
@@ -7338,13 +7333,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Chaozhi/Vendor/Talkfun/Library/Universal",
-					"$(PROJECT_DIR)/Chaozhi/Vendor/Talkfun/Library",
-					"$(PROJECT_DIR)/Chaozhi/Vendor/NIM/Classes/Vendors/WXChatSDK/WXSDK",
-					"$(PROJECT_DIR)/Chaozhi/Vendor/NIM/Classes/Vendors/WXChatSDK/SPaySDK",
-					"$(PROJECT_DIR)/Chaozhi/Module/Talkfun/Library/Universal",
-					"$(PROJECT_DIR)/Chaozhi/Module/IM/NIM/Classes/Vendors/WXChatSDK/WXSDK",
-					"$(PROJECT_DIR)/Chaozhi/Module/IM/NIM/Classes/Vendors/WXChatSDK/SPaySDK",
+					"$(PROJECT_DIR)/Chaozhi/Module/Talkfun/Library",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -7424,12 +7413,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Chaozhi/Vendor/Talkfun/Library",
-					"$(PROJECT_DIR)/Chaozhi/Vendor/NIM/Classes/Vendors/AlipaySDK",
-					"$(PROJECT_DIR)/Chaozhi/Vendor/NIM/Classes/Vendors/RedPacket",
 					"$(PROJECT_DIR)/Chaozhi/Module/Talkfun/Library",
-					"$(PROJECT_DIR)/Chaozhi/Module/IM/NIM/Classes/Vendors/AlipaySDK",
-					"$(PROJECT_DIR)/Chaozhi/Module/IM/NIM/Classes/Vendors/RedPacket",
 					"$(PROJECT_DIR)/Chaozhi/Module/IM/NIM/Vendors/NIMSDK",
 				);
 				GCC_PREFIX_HEADER = Xuezhi/Xuezhi.pch;
@@ -7467,13 +7451,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Chaozhi/Vendor/Talkfun/Library/Universal",
-					"$(PROJECT_DIR)/Chaozhi/Vendor/Talkfun/Library",
-					"$(PROJECT_DIR)/Chaozhi/Vendor/NIM/Classes/Vendors/WXChatSDK/WXSDK",
-					"$(PROJECT_DIR)/Chaozhi/Vendor/NIM/Classes/Vendors/WXChatSDK/SPaySDK",
-					"$(PROJECT_DIR)/Chaozhi/Module/Talkfun/Library/Universal",
-					"$(PROJECT_DIR)/Chaozhi/Module/IM/NIM/Classes/Vendors/WXChatSDK/WXSDK",
-					"$(PROJECT_DIR)/Chaozhi/Module/IM/NIM/Classes/Vendors/WXChatSDK/SPaySDK",
+					"$(PROJECT_DIR)/Chaozhi/Module/Talkfun/Library",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
