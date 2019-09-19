@@ -10,7 +10,7 @@
 #import "NIMCellConfig.h"
 #import <NIMSDK/NIMSDK.h>
 
-@interface NIMSessionListViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,NIMLoginManagerDelegate,NIMConversationManagerDelegate>
+@interface NIMSessionListViewController : BaseVC<UITableViewDataSource,UITableViewDelegate,NIMLoginManagerDelegate,NIMConversationManagerDelegate>
 /**
  *  会话列表tableView
  */

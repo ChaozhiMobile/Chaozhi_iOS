@@ -10,6 +10,7 @@
 #import "DownloadListController.h"
 #import "PurchaseItem.h"
 #import "NotifyItem.h"
+#import "NTESSessionListViewController.h"
 
 @interface CZMineVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -254,6 +255,10 @@
     if ([str isEqualToString:@"我的班主任"]) {
 //        ChatItem *chatItem = self.purchaseArr[0];
 //        [BaseWebVC showWithContro:self withUrlStr:chatItem.chat_url withTitle:_nameArr[indexPath.row] isPresent:NO];
+        
+        NTESSessionListViewController *vc = [[NTESSessionListViewController alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
     }
     
     if ([str isEqualToString:@"报考资料"]) {

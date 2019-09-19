@@ -51,7 +51,12 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    self.supportsForceTouch = [self.traitCollection respondsToSelector:@selector(forceTouchCapability)] && self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable;
+    
+    self.title = @"我的班主任";
+    
+    if (@available(iOS 9.0, *)) {
+        self.supportsForceTouch = [self.traitCollection respondsToSelector:@selector(forceTouchCapability)] && self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable;
+    }
     
     [[NIMSDK sharedSDK].loginManager addDelegate:self];
     [[NIMSDK sharedSDK].subscribeManager addDelegate:self];

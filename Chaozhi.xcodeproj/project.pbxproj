@@ -120,6 +120,10 @@
 		A020B078214AAB150011BB4F /* BaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B017214AAB140011BB4F /* BaseItem.m */; };
 		A020B079214AAB150011BB4F /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B018214AAB140011BB4F /* UserInfo.m */; };
 		A020B07A214AAB150011BB4F /* CourseCategoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B01A214AAB140011BB4F /* CourseCategoryItem.m */; };
+		A027B0432333C4530013322D /* NIMPinyinConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = A027B03F2333C4530013322D /* NIMPinyinConverter.m */; };
+		A027B0442333C4530013322D /* NIMPinyinConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = A027B03F2333C4530013322D /* NIMPinyinConverter.m */; };
+		A027B0452333C4530013322D /* NIMSpellingCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = A027B0402333C4530013322D /* NIMSpellingCenter.m */; };
+		A027B0462333C4530013322D /* NIMSpellingCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = A027B0402333C4530013322D /* NIMSpellingCenter.m */; };
 		A045501B22EC4FCA00E17406 /* ChaozhiAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A045501A22EC4FCA00E17406 /* ChaozhiAssets.xcassets */; };
 		A045507322EC8DFA00E17406 /* XLGInternalDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFDF214AAB140011BB4F /* XLGInternalDemoVC.m */; };
 		A045507522EC8DFA00E17406 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AF68214AAB130011BB4F /* Config.m */; };
@@ -1101,10 +1105,6 @@
 		A0462BD12333BA2D00318F01 /* NIMKitDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = A046297A2333BA2A00318F01 /* NIMKitDevice.m */; };
 		A0462BD22333BA2D00318F01 /* NIMKitUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A046297B2333BA2A00318F01 /* NIMKitUtil.m */; };
 		A0462BD32333BA2D00318F01 /* NIMKitUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A046297B2333BA2A00318F01 /* NIMKitUtil.m */; };
-		A0462BD42333BA2D00318F01 /* NIMPinyinConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = A046297D2333BA2A00318F01 /* NIMPinyinConverter.m */; };
-		A0462BD52333BA2D00318F01 /* NIMPinyinConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = A046297D2333BA2A00318F01 /* NIMPinyinConverter.m */; };
-		A0462BD62333BA2D00318F01 /* NIMSpellingCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = A046297E2333BA2A00318F01 /* NIMSpellingCenter.m */; };
-		A0462BD72333BA2D00318F01 /* NIMSpellingCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = A046297E2333BA2A00318F01 /* NIMSpellingCenter.m */; };
 		A0462BD82333BA2D00318F01 /* NIMInputEmoticonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A04629832333BA2A00318F01 /* NIMInputEmoticonParser.m */; };
 		A0462BD92333BA2D00318F01 /* NIMInputEmoticonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A04629832333BA2A00318F01 /* NIMInputEmoticonParser.m */; };
 		A0462BDA2333BA2D00318F01 /* NIMInputAudioRecordIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = A04629852333BA2A00318F01 /* NIMInputAudioRecordIndicatorView.m */; };
@@ -1551,6 +1551,10 @@
 		A020B01A214AAB140011BB4F /* CourseCategoryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseCategoryItem.m; sourceTree = "<group>"; };
 		A020B01B214AAB140011BB4F /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		A020B07B214AAD600011BB4F /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		A027B03F2333C4530013322D /* NIMPinyinConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIMPinyinConverter.m; sourceTree = "<group>"; };
+		A027B0402333C4530013322D /* NIMSpellingCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIMSpellingCenter.m; sourceTree = "<group>"; };
+		A027B0412333C4530013322D /* NIMPinyinConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIMPinyinConverter.h; sourceTree = "<group>"; };
+		A027B0422333C4530013322D /* NIMSpellingCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIMSpellingCenter.h; sourceTree = "<group>"; };
 		A045501522EC4ACB00E17406 /* Xuezhi.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Xuezhi.entitlements; sourceTree = "<group>"; };
 		A045501A22EC4FCA00E17406 /* ChaozhiAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ChaozhiAssets.xcassets; sourceTree = "<group>"; };
 		A045520C22EC8DFA00E17406 /* Xuezhi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xuezhi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2231,10 +2235,6 @@
 		A04629792333BA2A00318F01 /* NIMKitResourceResizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIMKitResourceResizer.h; sourceTree = "<group>"; };
 		A046297A2333BA2A00318F01 /* NIMKitDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIMKitDevice.m; sourceTree = "<group>"; };
 		A046297B2333BA2A00318F01 /* NIMKitUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIMKitUtil.m; sourceTree = "<group>"; };
-		A046297D2333BA2A00318F01 /* NIMPinyinConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIMPinyinConverter.m; sourceTree = "<group>"; };
-		A046297E2333BA2A00318F01 /* NIMSpellingCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIMSpellingCenter.m; sourceTree = "<group>"; };
-		A046297F2333BA2A00318F01 /* NIMPinyinConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIMPinyinConverter.h; sourceTree = "<group>"; };
-		A04629802333BA2A00318F01 /* NIMSpellingCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIMSpellingCenter.h; sourceTree = "<group>"; };
 		A04629812333BA2A00318F01 /* NIMKitTimerHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIMKitTimerHolder.h; sourceTree = "<group>"; };
 		A04629832333BA2A00318F01 /* NIMInputEmoticonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIMInputEmoticonParser.m; sourceTree = "<group>"; };
 		A04629842333BA2A00318F01 /* NIMInputAtCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIMInputAtCache.h; sourceTree = "<group>"; };
@@ -3081,6 +3081,17 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		A027B03E2333C4530013322D /* Spelling */ = {
+			isa = PBXGroup;
+			children = (
+				A027B03F2333C4530013322D /* NIMPinyinConverter.m */,
+				A027B0402333C4530013322D /* NIMSpellingCenter.m */,
+				A027B0412333C4530013322D /* NIMPinyinConverter.h */,
+				A027B0422333C4530013322D /* NIMSpellingCenter.h */,
+			);
+			path = Spelling;
+			sourceTree = "<group>";
+		};
 		A045501422EC4ACB00E17406 /* Xuezhi */ = {
 			isa = PBXGroup;
 			children = (
@@ -3880,12 +3891,12 @@
 		A04627E72333BA2700318F01 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				A04628F52333BA2900318F01 /* Category */,
-				A046292E2333BA2900318F01 /* Common */,
-				A046294A2333BA2900318F01 /* LayoutConfig */,
 				A04628132333BA2800318F01 /* Sections */,
+				A046294A2333BA2900318F01 /* LayoutConfig */,
 				A04629512333BA2900318F01 /* Service */,
 				A046290E2333BA2900318F01 /* Util */,
+				A046292E2333BA2900318F01 /* Common */,
+				A04628F52333BA2900318F01 /* Category */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -3893,14 +3904,14 @@
 		A04628132333BA2800318F01 /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				A04628842333BA2800318F01 /* SessionList */,
+				A046289A2333BA2800318F01 /* Session */,
 				A04628142333BA2800318F01 /* Contact */,
 				A04628342333BA2800318F01 /* Card */,
 				A046284A2333BA2800318F01 /* Notification */,
 				A046285A2333BA2800318F01 /* Subscribe */,
 				A046285E2333BA2800318F01 /* Chatroom */,
-				A04628842333BA2800318F01 /* SessionList */,
 				A04628962333BA2800318F01 /* Login */,
-				A046289A2333BA2800318F01 /* Session */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -4148,8 +4159,8 @@
 		A04628842333BA2800318F01 /* SessionList */ = {
 			isa = PBXGroup;
 			children = (
-				A04628852333BA2800318F01 /* View */,
 				A04628912333BA2800318F01 /* ViewController */,
+				A04628852333BA2800318F01 /* View */,
 			);
 			path = SessionList;
 			sourceTree = "<group>";
@@ -4167,8 +4178,8 @@
 			isa = PBXGroup;
 			children = (
 				A04628872333BA2800318F01 /* NTESMutiClientsCell.h */,
-				A04628882333BA2800318F01 /* NTESMutiClientsCell.xib */,
 				A04628892333BA2800318F01 /* NTESMutiClientsCell.m */,
+				A04628882333BA2800318F01 /* NTESMutiClientsCell.xib */,
 			);
 			path = MutiCilentsCell;
 			sourceTree = "<group>";
@@ -4176,12 +4187,12 @@
 		A046288A2333BA2800318F01 /* SessionListHeader */ = {
 			isa = PBXGroup;
 			children = (
+				A046288E2333BA2800318F01 /* NTESListHeader.h */,
 				A046288B2333BA2800318F01 /* NTESListHeader.m */,
 				A046288C2333BA2800318F01 /* NTESMutiClientsHeaderView.h */,
-				A046288D2333BA2800318F01 /* NTESTextHeaderView.m */,
-				A046288E2333BA2800318F01 /* NTESListHeader.h */,
 				A046288F2333BA2800318F01 /* NTESMutiClientsHeaderView.m */,
 				A04628902333BA2800318F01 /* NTESTextHeaderView.h */,
+				A046288D2333BA2800318F01 /* NTESTextHeaderView.m */,
 			);
 			path = SessionListHeader;
 			sourceTree = "<group>";
@@ -4189,10 +4200,10 @@
 		A04628912333BA2800318F01 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A04628922333BA2800318F01 /* NTESSessionListViewController.m */,
-				A04628932333BA2800318F01 /* NTESClientsTableViewController.m */,
 				A04628942333BA2800318F01 /* NTESSessionListViewController.h */,
+				A04628922333BA2800318F01 /* NTESSessionListViewController.m */,
 				A04628952333BA2800318F01 /* NTESClientsTableViewController.h */,
+				A04628932333BA2800318F01 /* NTESClientsTableViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -4556,12 +4567,12 @@
 		A04629512333BA2900318F01 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				A04629522333BA2900318F01 /* NTESDemoService.h */,
+				A04629562333BA2900318F01 /* NTESDemoFetchChatroomTask.h */,
 				A04629532333BA2900318F01 /* NTESDemoFetchChatroomTask.m */,
 				A04629542333BA2900318F01 /* NTESDemoRegisterTask.h */,
-				A04629552333BA2900318F01 /* NTESDemoService.m */,
-				A04629562333BA2900318F01 /* NTESDemoFetchChatroomTask.h */,
 				A04629572333BA2900318F01 /* NTESDemoRegisterTask.m */,
+				A04629522333BA2900318F01 /* NTESDemoService.h */,
+				A04629552333BA2900318F01 /* NTESDemoService.m */,
 				A04629582333BA2900318F01 /* NTESDemoServiceTask.h */,
 			);
 			path = Service;
@@ -4658,20 +4669,9 @@
 				A04629762333BA2A00318F01 /* NIMKitTimerHolder.m */,
 				A04629722333BA2A00318F01 /* NIMKitUtil.h */,
 				A046297B2333BA2A00318F01 /* NIMKitUtil.m */,
-				A046297C2333BA2A00318F01 /* Spelling */,
+				A027B03E2333C4530013322D /* Spelling */,
 			);
 			path = Util;
-			sourceTree = "<group>";
-		};
-		A046297C2333BA2A00318F01 /* Spelling */ = {
-			isa = PBXGroup;
-			children = (
-				A046297F2333BA2A00318F01 /* NIMPinyinConverter.h */,
-				A046297D2333BA2A00318F01 /* NIMPinyinConverter.m */,
-				A04629802333BA2A00318F01 /* NIMSpellingCenter.h */,
-				A046297E2333BA2A00318F01 /* NIMSpellingCenter.m */,
-			);
-			path = Spelling;
 			sourceTree = "<group>";
 		};
 		A04629822333BA2A00318F01 /* Input */ = {
@@ -6242,6 +6242,7 @@
 				A0462BDC2333BA2D00318F01 /* NIMInputMoreContainerView.m in Sources */,
 				A0462B602333BA2C00318F01 /* UIView+NTES.m in Sources */,
 				A04625DA2333B94F00318F01 /* UTLHelpper.m in Sources */,
+				A027B0452333C4530013322D /* NIMSpellingCenter.m in Sources */,
 				A0462CA02333BA2D00318F01 /* NIMKitSetting.m in Sources */,
 				A0462C9C2333BA2D00318F01 /* NIMKitProgressHUD.m in Sources */,
 				A04626282333B94F00318F01 /* BaseTableViewController.m in Sources */,
@@ -6249,6 +6250,7 @@
 				A0462B662333BA2C00318F01 /* UIResponder+NTESFirstResponder.m in Sources */,
 				A00BE16A219FF6E70042E6ED /* VersionItem.m in Sources */,
 				A04626CA2333B95000318F01 /* TalkfunReplyTipsView.m in Sources */,
+				A027B0432333C4530013322D /* NIMPinyinConverter.m in Sources */,
 				A0462C202333BA2D00318F01 /* NIMCardMemberItem.m in Sources */,
 				A04626422333B94F00318F01 /* TalkfunAdvertView.m in Sources */,
 				A0599A2221574CAF00D17058 /* CZMineVC.m in Sources */,
@@ -6272,7 +6274,6 @@
 				A0462BE02333BA2D00318F01 /* NIMInputEmoticonTabView.m in Sources */,
 				A020B063214AAB150011BB4F /* XLGInternalTestVC.m in Sources */,
 				A04625E22333B94F00318F01 /* BulletManager.m in Sources */,
-				A0462BD42333BA2D00318F01 /* NIMPinyinConverter.m in Sources */,
 				A046267A2333B94F00318F01 /* TalkfunViewController.m in Sources */,
 				A046260E2333B94F00318F01 /* TalkfunNewChatCell.m in Sources */,
 				A0462C7E2333BA2D00318F01 /* NIMSessionImageContentView.m in Sources */,
@@ -6334,7 +6335,6 @@
 				A046262C2333B94F00318F01 /* AlbumViewController.m in Sources */,
 				A0462BF22333BA2D00318F01 /* NIMMemberGroupView.m in Sources */,
 				A0462BC82333BA2D00318F01 /* NIMKitFileLocationHelper.m in Sources */,
-				A0462BD62333BA2D00318F01 /* NIMSpellingCenter.m in Sources */,
 				A0462AEC2333BA2C00318F01 /* NTESChatroomManager.m in Sources */,
 				A04626502333B94F00318F01 /* TalkfunPlaybackMessageView.m in Sources */,
 				A0541FC422F3E2A100D961B3 /* OptionsBarView.m in Sources */,
@@ -6478,6 +6478,7 @@
 				A045507522EC8DFA00E17406 /* Config.m in Sources */,
 				A0462B932333BA2C00318F01 /* NTESPinyinConverter.m in Sources */,
 				A045507822EC8DFA00E17406 /* CZNotDataView.m in Sources */,
+				A027B0462333C4530013322D /* NIMSpellingCenter.m in Sources */,
 				A0541FE322F41F1400D961B3 /* CourseItem.m in Sources */,
 				A0462B132333BA2C00318F01 /* NTESCustomAttachmentDecoder.m in Sources */,
 				A045507922EC8DFA00E17406 /* LDNetTimer.m in Sources */,
@@ -6609,7 +6610,6 @@
 				A04550B622EC8DFA00E17406 /* MEView.m in Sources */,
 				A007090522EDD59C00C70CEE /* XZHomeVC.m in Sources */,
 				A0462CAD2333BA2D00318F01 /* NIMKitColorButtonCell.m in Sources */,
-				A0462BD72333BA2D00318F01 /* NIMSpellingCenter.m in Sources */,
 				A0462AC72333BA2C00318F01 /* NTESRobotCardViewController.m in Sources */,
 				A0462C412333BA2D00318F01 /* NIMSessionListViewController.m in Sources */,
 				A0462C1B2333BA2D00318F01 /* NIMTeamCardOperationItem.m in Sources */,
@@ -6633,7 +6633,6 @@
 				A0462C4F2333BA2D00318F01 /* NIMTipContentConfig.m in Sources */,
 				A0462C8D2333BA2D00318F01 /* NIMSessionViewController.m in Sources */,
 				A0462C9F2333BA2D00318F01 /* NIMKitDataProviderImpl.m in Sources */,
-				A0462BD52333BA2D00318F01 /* NIMPinyinConverter.m in Sources */,
 				A0462B912333BA2C00318F01 /* NTESDemoConfig.m in Sources */,
 				A0462C472333BA2D00318F01 /* NIMLocationContentConfig.m in Sources */,
 				A04550BF22EC8DFA00E17406 /* CZGuideVC.m in Sources */,
@@ -6674,6 +6673,7 @@
 				A0462B2B2333BA2C00318F01 /* NTESSearchMessageEntraceCell.m in Sources */,
 				A04625E72333B94F00318F01 /* BulletView.m in Sources */,
 				A04626052333B94F00318F01 /* TalkfunFunctionView.m in Sources */,
+				A027B0442333C4530013322D /* NIMPinyinConverter.m in Sources */,
 				A0462B432333BA2C00318F01 /* NTESExportMessageDelegateImpl.m in Sources */,
 				A04550CE22EC8DFA00E17406 /* CZSelectCourseVC.m in Sources */,
 				A04626892333B95000318F01 /* LotteryCell.m in Sources */,

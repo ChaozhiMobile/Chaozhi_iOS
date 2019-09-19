@@ -38,11 +38,17 @@
     UIFont *font   = self.titleTextAttributes[NSFontAttributeName];
     if (font)
     {
-        label.font = font;
+        if ([label isKindOfClass:[UILabel class]])
+        {
+            label.font = font;
+        }
     }
     UIColor *color = self.titleTextAttributes[NSForegroundColorAttributeName];
     if (color) {
-        label.textColor = color;
+        if ([label isKindOfClass:[UILabel class]])
+        {
+            label.textColor = color;
+        }
     }
     [label sizeToFit];
     [self layoutLabel];
