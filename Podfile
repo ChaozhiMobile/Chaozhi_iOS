@@ -27,7 +27,12 @@ target 'Chaozhi' do
   pod 'SSZipArchive'
   pod 'AgoraRtcEngine_iOS'
   pod 'FLAnimatedImage' #gif
-  pod 'NIMSDK_LITE'
+  #云信SDK NIM
+  pod 'CocoaLumberjack', '~> 3.2.1'
+  pod 'SVProgressHUD', '~> 2.1.2'
+  pod 'SDWebImageFLPlugin', '~> 0.3.0'
+  pod 'Toast', '~> 3.0'
+  pod 'M80AttributedLabel', '~> 1.6.3'
   #全能App研发助手！滴滴开源DoraemonKit
 #  pod 'DoraemonKit', '~> 1.1.2', :configurations => ['Debug']
 end
@@ -57,7 +62,12 @@ target 'Xuezhi' do
   pod 'SSZipArchive'
   pod 'AgoraRtcEngine_iOS'
   pod 'FLAnimatedImage' #gif
-  pod 'NIMSDK_LITE'
+  #云信SDK NIM
+  pod 'CocoaLumberjack', '~> 3.2.1'
+  pod 'SVProgressHUD', '~> 2.1.2'
+  pod 'SDWebImageFLPlugin', '~> 0.3.0'
+  pod 'Toast', '~> 3.0'
+  pod 'M80AttributedLabel', '~> 1.6.3'
   #全能App研发助手！滴滴开源DoraemonKit
 #  pod 'DoraemonKit', '~> 1.1.2', :configurations => ['Debug']
 end

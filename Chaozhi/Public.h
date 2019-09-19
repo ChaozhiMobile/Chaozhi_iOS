@@ -30,6 +30,7 @@
 #import <MJRefresh.h>
 #import "XLGAlertView.h"
 #import "Talkfun.h"
+#import "NTESGlobalMacro.h"
 
 // AppDelegate
 #define CZAppDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)

@@ -84,6 +84,10 @@
     [JPUSHService setTags:nil alias:@"" fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias) {
         
     }];
+    // 云信退出登录
+    [[NIMSDK sharedSDK].loginManager logout:^(NSError * _Nullable error) {
+        
+    }];
     [self cleanCacheAndCookie];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:kLogoutSuccNotification object:nil];

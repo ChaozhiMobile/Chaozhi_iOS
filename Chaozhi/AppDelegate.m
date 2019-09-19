@@ -14,8 +14,11 @@
 #import "CZGuideVC.h"
 #import "UMMobClick/MobClick.h"
 #import "DBManager.h"
+//#import "NTESClientUtil.h"
 
-@interface AppDelegate ()
+NSString *NTESNotificationLogout = @"NTESNotificationLogout";
+
+@interface AppDelegate ()<NIMLoginManagerDelegate>
 
 @end
 
@@ -29,6 +32,7 @@
     
     if ([AppChannel isEqualToString:@"1"]) { //超职
         [self registerUMeng]; //注册友盟
+        [self registerNIM]; //注册云信
     }
 
     [Utils changeUserAgent]; //WKWebView UA初始化
@@ -66,6 +70,50 @@
     return YES;
 }
 
+#pragma mark - 进入首页
+- (UITabBarController *)setTabBarController {
+    if ([AppChannel isEqualToString:@"1"]) { //超职
+        //第一步：要获取单独控制器所在的UIStoryboard
+        UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        //第二步：获取该控制器的Identifier并赋给你的单独控制器
+        _tabVC = [story instantiateViewControllerWithIdentifier:@"TabBarController"];
+    }
+    if ([AppChannel isEqualToString:@"2"]) { //学智
+        _tabVC = [[XZTabBarVC alloc] init];
+    }
+    _tabVC.delegate = self;
+    
+    return _tabVC;
+}
+
+#pragma mark - UITabBarControllerDelegate
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    
+    //这里我判断的是当前点击的tabBarItem的标题
+    NSString *tabBarTitle = viewController.tabBarItem.title;
+    if ([tabBarTitle isEqualToString:@"我的"]
+        || [tabBarTitle isEqualToString:@"学习"]
+        ) {
+        if ([Utils isLoginWithJump:YES]) {
+            return YES;
+        } else {
+            return NO;
+        }
+    }
+    else {
+        return YES;
+    }
+}
+
+#pragma mark - 键盘处理
+- (void)processKeyBoard {
+    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
+    manager.enable = YES;
+    manager.shouldResignOnTouchOutside = YES;
+    manager.shouldToolbarUsesTextFieldTintColor = YES;
+    manager.enableAutoToolbar = NO;
+}
+
 #pragma mark - 内购凭证校验
 - (void)iapCheck {
     NSString *receipt = [CacheUtil getCacherWithKey:kIapCheck];
@@ -84,7 +132,6 @@
 }
 
 #pragma mark - 注册友盟
-
 - (void)registerUMeng {
     //初始化友盟统计
     UMConfigInstance.appKey = kUMKey;
@@ -99,48 +146,55 @@
     [MobClick setEncryptEnabled:YES]; //加密，默认为NO(不加密)
 }
 
-#pragma mark - 进入首页
-
-- (UITabBarController *)setTabBarController {
-    if ([AppChannel isEqualToString:@"1"]) { //超职
-        //第一步：要获取单独控制器所在的UIStoryboard
-        UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        //第二步：获取该控制器的Identifier并赋给你的单独控制器
-        _tabVC = [story instantiateViewControllerWithIdentifier:@"TabBarController"];
-    }
-    if ([AppChannel isEqualToString:@"2"]) { //学智
-        _tabVC = [[XZTabBarVC alloc] init];
-    }
-    _tabVC.delegate = self;
+#pragma mark - 注册云信
+- (void)registerNIM {
+    //初始化NIMSDK
+    NSString *appKey        = @"96d485fd77d30186a806e443589191c7";
+    NIMSDKOption *option    = [NIMSDKOption optionWithAppKey:appKey];
+    option.apnsCername      = @"your APNs cer name";
+    option.pkCername        = @"your pushkit cer name";
+    [[NIMSDK sharedSDK] registerWithOption:option];
     
-    return _tabVC;
+    //登录状态监听
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(logout:)
+                                                 name:NTESNotificationLogout
+                                               object:nil];
+    [[[NIMSDK sharedSDK] loginManager] addDelegate:self];
 }
 
-- (void)processKeyBoard {
-    
-    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
-    manager.enable = YES;
-    manager.shouldResignOnTouchOutside = YES;
-    manager.shouldToolbarUsesTextFieldTintColor = YES;
-    manager.enableAutoToolbar = NO;
+#pragma mark - 注销
+- (void)logout:(NSNotification *)note {
+    [Utils logout:YES];
 }
 
-- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
-    
-    //这里我判断的是当前点击的tabBarItem的标题
-    NSString *tabBarTitle = viewController.tabBarItem.title;
-    if ([tabBarTitle isEqualToString:@"我的"]
-        || [tabBarTitle isEqualToString:@"学习"]
-        ) {
-        if ([Utils isLoginWithJump:YES]) {
-            return YES;
-        } else {
-            return NO;
-        }
-    }
-    else {
-        return YES;
-    }
+#pragma - NIMLoginManagerDelegate
+- (void)onKick:(NIMKickReason)code clientType:(NIMLoginClientType)clientType {
+//    NSString *reason = @"你被踢下线";
+//    switch (code) {
+//        case NIMKickReasonByClient:
+//        case NIMKickReasonByClientManually:{
+//            NSString *clientName = [NTESClientUtil clientName:clientType];
+//            reason = clientName.length ? [NSString stringWithFormat:@"你的帐号被%@端踢出下线，请注意帐号信息安全",clientName] : @"你的帐号被踢出下线，请注意帐号信息安全";
+//            break;
+//        }
+//        case NIMKickReasonByServer:
+//            reason = @"你被服务器踢下线";
+//            break;
+//        default:
+//            break;
+//    }
+//    [[[NIMSDK sharedSDK] loginManager] logout:^(NSError *error) {
+//        [[NSNotificationCenter defaultCenter] postNotificationName:NTESNotificationLogout object:nil];
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"下线通知" message:reason delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+//        [alert show];
+//    }];
+}
+
+- (void)onAutoLoginFailed:(NSError *)error {
+    //只有连接发生严重错误才会走这个回调，在这个回调里应该登出，返回界面等待用户手动重新登录。
+    NSLog(@"onAutoLoginFailed %zd",error.code);
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -15,6 +15,12 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - AgoraRtcEngine_iOS (2.9.0)
+  - CocoaLumberjack (3.2.1):
+    - CocoaLumberjack/Default (= 3.2.1)
+    - CocoaLumberjack/Extensions (= 3.2.1)
+  - CocoaLumberjack/Default (3.2.1)
+  - CocoaLumberjack/Extensions (3.2.1):
+    - CocoaLumberjack/Default
   - FLAnimatedImage (1.0.12)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
@@ -25,21 +31,26 @@ PODS:
   - JPush-iOS-SDK (3.0.5)
   - KissXML (5.2.3)
   - lottie-ios (2.5.3)
+  - M80AttributedLabel (1.6.3)
   - Masonry (1.1.0)
-  - MJExtension (3.0.15.1)
+  - MJExtension (3.0.17)
   - MJRefresh (3.2.0)
-  - NIMSDK_LITE (6.8.2)
   - ReactiveObjC (3.1.1)
   - SDCycleScrollView (1.80):
     - SDWebImage (>= 5.0.0)
   - SDWebImage (5.1.0):
     - SDWebImage/Core (= 5.1.0)
   - SDWebImage/Core (5.1.0)
+  - SDWebImageFLPlugin (0.3.0):
+    - FLAnimatedImage (>= 1.0.11)
+    - SDWebImage/Core (~> 5.0)
   - Socket.IO-Client-Swift (15.1.0):
     - Starscream (~> 3.1)
   - SSZipArchive (2.2.2)
   - Starscream (3.1.0)
+  - SVProgressHUD (2.1.2)
   - TalkfunMediaFramework (1.9.2)
+  - Toast (3.1.0)
   - TZImagePickerController (3.2.2)
   - UMengAnalytics-NO-IDFA (4.2.5)
   - XLGCategory (1.1.0):
@@ -52,6 +63,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - AgoraRtcEngine_iOS
+  - CocoaLumberjack (~> 3.2.1)
   - FLAnimatedImage
   - FMDB
   - IAPHelper
@@ -60,16 +72,19 @@ DEPENDENCIES:
   - JPush-iOS-SDK
   - KissXML
   - lottie-ios
+  - M80AttributedLabel (~> 1.6.3)
   - Masonry
   - MJExtension (~> 3.0.13)
   - MJRefresh
-  - NIMSDK_LITE
   - ReactiveObjC
   - SDCycleScrollView
   - SDWebImage
+  - SDWebImageFLPlugin (~> 0.3.0)
   - Socket.IO-Client-Swift
   - SSZipArchive
+  - SVProgressHUD (~> 2.1.2)
   - TalkfunMediaFramework
+  - Toast (~> 3.0)
   - TZImagePickerController
   - UMengAnalytics-NO-IDFA
   - XLGCategory
@@ -79,6 +94,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - AgoraRtcEngine_iOS
+    - CocoaLumberjack
     - FLAnimatedImage
     - FMDB
     - IAPHelper
@@ -87,17 +103,20 @@ SPEC REPOS:
     - JPush-iOS-SDK
     - KissXML
     - lottie-ios
+    - M80AttributedLabel
     - Masonry
     - MJExtension
     - MJRefresh
-    - NIMSDK_LITE
     - ReactiveObjC
     - SDCycleScrollView
     - SDWebImage
+    - SDWebImageFLPlugin
     - Socket.IO-Client-Swift
     - SSZipArchive
     - Starscream
+    - SVProgressHUD
     - TalkfunMediaFramework
+    - Toast
     - TZImagePickerController
     - UMengAnalytics-NO-IDFA
     - XLGCategory
@@ -106,6 +125,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   AgoraRtcEngine_iOS: b316f64bc07f7973f0239316b2b4f79ec369e25c
+  CocoaLumberjack: 2800c03334042fe80589423c8d80e582dcaec482
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   IAPHelper: fd74f53b0ac142eed085777b88b86a11746a2dd4
@@ -114,22 +134,25 @@ SPEC CHECKSUMS:
   JPush-iOS-SDK: f80e435b524449fd5101e247b044d4e48174ef5f
   KissXML: 09f88ff8161fd058d67b70740b8b516687b52823
   lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
+  M80AttributedLabel: d06543195d3e451d2ea62ad76d04aa9cea7661d4
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
+  MJExtension: 74ec83124a68891619fb7ba9c5c811bbf1691076
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
-  NIMSDK_LITE: 8d525f9a71ec8d48cd69123393d19450513e10aa
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
   SDWebImage: fb387001955223213dde14bc08c8b73f371f8d8f
+  SDWebImageFLPlugin: cf3f4ae49f249dd785129346fd61bbc8433a88cf
   Socket.IO-Client-Swift: 7cb44c0ffb86e158cee32d0642d30ec5fdcf8f61
   SSZipArchive: fa16b8cc4cdeceb698e5e5d9f67e9558532fbf23
   Starscream: 08172b481e145289c4930cb567230fb55897cfa4
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   TalkfunMediaFramework: a6e53cb714998de511d75e915dc985cd213bd6f1
+  Toast: 14a93686d6c8bfe2727afd342414e35660a8a1f3
   TZImagePickerController: 44aa49cf35b1e88fe292be955e15b9003a5b1d83
   UMengAnalytics-NO-IDFA: 16666e32edce5be44ae5b14aaaa7f3582e09d6ab
   XLGCategory: b93fda8378ccd3e04deb87033c02ad3e6dee3c4a
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: beecebab62232930cf021546d88c46ca85e37ce8
+PODFILE CHECKSUM: b30a2f40aa0b0221441de8ac877b374d7ca81e2f
 
 COCOAPODS: 1.6.1

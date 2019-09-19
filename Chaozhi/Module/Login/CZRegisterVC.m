@@ -111,9 +111,13 @@
 
             [[NSNotificationCenter defaultCenter] postNotificationName:kLoginSuccNotification object:nil];
             
-            
             // 极光推送绑定别名
             [JPUSHService setTags:nil alias:self.phoneTF.text fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias) {
+                
+            }];
+            
+            // 云信登录
+            [[[NIMSDK sharedSDK] loginManager] login:self.phoneTF.text token:token completion:^(NSError * _Nullable error) {
                 
             }];
             
