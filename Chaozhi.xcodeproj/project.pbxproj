@@ -124,8 +124,6 @@
 		A027B0442333C4530013322D /* NIMPinyinConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = A027B03F2333C4530013322D /* NIMPinyinConverter.m */; };
 		A027B0452333C4530013322D /* NIMSpellingCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = A027B0402333C4530013322D /* NIMSpellingCenter.m */; };
 		A027B0462333C4530013322D /* NIMSpellingCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = A027B0402333C4530013322D /* NIMSpellingCenter.m */; };
-		A027B0482333C89D0013322D /* NIMSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A027B0472333C89D0013322D /* NIMSDK.framework */; };
-		A027B0492333C89D0013322D /* NIMSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A027B0472333C89D0013322D /* NIMSDK.framework */; };
 		A045501B22EC4FCA00E17406 /* ChaozhiAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A045501A22EC4FCA00E17406 /* ChaozhiAssets.xcassets */; };
 		A045507322EC8DFA00E17406 /* XLGInternalDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFDF214AAB140011BB4F /* XLGInternalDemoVC.m */; };
 		A045507522EC8DFA00E17406 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AF68214AAB130011BB4F /* Config.m */; };
@@ -1375,10 +1373,41 @@
 		A091D1302178FAF300CCDAF6 /* StudyInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A091D12F2178FAF300CCDAF6 /* StudyInfoItem.m */; };
 		A0C1257321BC021B0026430E /* CZStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C1257221BC021B0026430E /* CZStarView.m */; };
 		A0CB7CB922C65D8800069B34 /* TalkfunItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CB7CB822C65D8800069B34 /* TalkfunItem.m */; };
+		A0E4A1E92334776700D7C304 /* NIMSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A027B0472333C89D0013322D /* NIMSDK.framework */; };
+		A0E4A1EA233477AB00D7C304 /* NIMSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A027B0472333C89D0013322D /* NIMSDK.framework */; };
+		A0E4A1ED233477C400D7C304 /* NIMSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A027B0472333C89D0013322D /* NIMSDK.framework */; };
+		A0E4A1EE233477C400D7C304 /* NIMSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A027B0472333C89D0013322D /* NIMSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A0E4A1F02334785C00D7C304 /* NIMSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A027B0472333C89D0013322D /* NIMSDK.framework */; };
+		A0E4A1F12334785C00D7C304 /* NIMSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A027B0472333C89D0013322D /* NIMSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A0E50819230ED54C005EF897 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E50818230ED54C005EF897 /* StoreKit.framework */; };
 		A0E5081A230ED762005EF897 /* CZCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20ABB12D230A7A9600DDC86F /* CZCommentView.m */; };
 		A0E8981D22CF22C600DB09BA /* VideoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E8981B22CF22C600DB09BA /* VideoItem.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A0E4A1EF233477C500D7C304 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A0E4A1EE233477C400D7C304 /* NIMSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0E4A1F22334785C00D7C304 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A0E4A1F12334785C00D7C304 /* NIMSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		051110EBC6AF6946C2121D3A /* Pods-Xuezhi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xuezhi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Xuezhi/Pods-Xuezhi.release.xcconfig"; sourceTree = "<group>"; };
@@ -2570,12 +2599,13 @@
 				20572EE622C36C3600568CDC /* Foundation.framework in Frameworks */,
 				20D3D3BA22C22E2100560A74 /* SystemConfiguration.framework in Frameworks */,
 				20D3D3B822C22E1900560A74 /* MobileCoreServices.framework in Frameworks */,
+				A0E4A1F02334785C00D7C304 /* NIMSDK.framework in Frameworks */,
+				A0E4A1EA233477AB00D7C304 /* NIMSDK.framework in Frameworks */,
 				20D3D3B622C22E1200560A74 /* VideoToolbox.framework in Frameworks */,
 				20D3D3B422C22E0B00560A74 /* CoreMedia.framework in Frameworks */,
 				A04625D22333B94F00318F01 /* TalkfunSDKFramework.framework in Frameworks */,
 				20D3D3B222C22DFC00560A74 /* AVFoundation.framework in Frameworks */,
 				20D3D36F22C2283700560A74 /* libiconv.tbd in Frameworks */,
-				A027B0482333C89D0013322D /* NIMSDK.framework in Frameworks */,
 				20D3D36D22C2282A00560A74 /* libz.tbd in Frameworks */,
 				20D3D3B022C22DD600560A74 /* AudioToolbox.framework in Frameworks */,
 				20D3D3AE22C22DCD00560A74 /* CoreAudio.framework in Frameworks */,
@@ -2598,9 +2628,10 @@
 				A045512222EC8DFA00E17406 /* Foundation.framework in Frameworks */,
 				A045512322EC8DFA00E17406 /* SystemConfiguration.framework in Frameworks */,
 				A045512422EC8DFA00E17406 /* MobileCoreServices.framework in Frameworks */,
-				A027B0492333C89D0013322D /* NIMSDK.framework in Frameworks */,
+				A0E4A1E92334776700D7C304 /* NIMSDK.framework in Frameworks */,
 				A045512522EC8DFA00E17406 /* VideoToolbox.framework in Frameworks */,
 				A045512622EC8DFA00E17406 /* CoreMedia.framework in Frameworks */,
+				A0E4A1ED233477C400D7C304 /* NIMSDK.framework in Frameworks */,
 				A045512722EC8DFA00E17406 /* AVFoundation.framework in Frameworks */,
 				A04625D32333B94F00318F01 /* TalkfunSDKFramework.framework in Frameworks */,
 				A045512822EC8DFA00E17406 /* libiconv.tbd in Frameworks */,
@@ -5347,6 +5378,7 @@
 				A020AF42214AA85B0011BB4F /* Resources */,
 				F23DA9B50DD496AB74CB8278 /* [CP] Embed Pods Frameworks */,
 				6C57E2CD162A2A0C3FACE94A /* [CP] Copy Pods Resources */,
+				A0E4A1F22334785C00D7C304 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -5367,6 +5399,7 @@
 				A045513722EC8DFA00E17406 /* Resources */,
 				E55F124EAD848F00D807C52E /* [CP] Embed Pods Frameworks */,
 				7CA64C0A30B87A7B11279ADB /* [CP] Copy Pods Resources */,
+				A0E4A1EF233477C500D7C304 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
