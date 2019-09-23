@@ -4364,26 +4364,26 @@
 		A04628C42333BA2900318F01 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A04628C52333BA2900318F01 /* NTESSessionLocalHistoryViewController.h */,
-				A04628C62333BA2900318F01 /* NTESTeamReceiptDetailViewController.h */,
-				A04628C72333BA2900318F01 /* File */,
-				A04628CE2333BA2900318F01 /* NTESSessionRemoteHistoryViewController.h */,
-				A04628CF2333BA2900318F01 /* NTESTeamReceiptSendViewController.h */,
-				A04628D02333BA2900318F01 /* Gallery */,
-				A04628D62333BA2900318F01 /* NTESSessionHistoryViewController.h */,
 				A04628D72333BA2900318F01 /* NTESSessionViewController.h */,
-				A04628D82333BA2900318F01 /* NTESSessionPeekViewController.h */,
-				A04628D92333BA2900318F01 /* NTESSessionLocalHistoryViewController.m */,
-				A04628DA2333BA2900318F01 /* MigrateMessage */,
-				A04628E92333BA2900318F01 /* Audio */,
-				A04628ED2333BA2900318F01 /* NTESTeamReceiptDetailViewController.m */,
-				A04628EE2333BA2900318F01 /* NTESSessionHistoryViewController.m */,
-				A04628EF2333BA2900318F01 /* NTESTeamReceiptSendViewController.m */,
-				A04628F02333BA2900318F01 /* NTESSessionRemoteHistoryViewController.m */,
-				A04628F12333BA2900318F01 /* NTESTeamReceiptDetailViewController.xib */,
-				A04628F22333BA2900318F01 /* NTESSessionPeekViewController.m */,
 				A04628F32333BA2900318F01 /* NTESSessionViewController.m */,
+				A04628D62333BA2900318F01 /* NTESSessionHistoryViewController.h */,
+				A04628EE2333BA2900318F01 /* NTESSessionHistoryViewController.m */,
+				A04628C52333BA2900318F01 /* NTESSessionLocalHistoryViewController.h */,
+				A04628D92333BA2900318F01 /* NTESSessionLocalHistoryViewController.m */,
+				A04628D82333BA2900318F01 /* NTESSessionPeekViewController.h */,
+				A04628F22333BA2900318F01 /* NTESSessionPeekViewController.m */,
+				A04628CE2333BA2900318F01 /* NTESSessionRemoteHistoryViewController.h */,
+				A04628F02333BA2900318F01 /* NTESSessionRemoteHistoryViewController.m */,
+				A04628C62333BA2900318F01 /* NTESTeamReceiptDetailViewController.h */,
+				A04628ED2333BA2900318F01 /* NTESTeamReceiptDetailViewController.m */,
+				A04628F12333BA2900318F01 /* NTESTeamReceiptDetailViewController.xib */,
+				A04628CF2333BA2900318F01 /* NTESTeamReceiptSendViewController.h */,
+				A04628EF2333BA2900318F01 /* NTESTeamReceiptSendViewController.m */,
 				A04628F42333BA2900318F01 /* NTESTeamReceiptSendViewController.xib */,
+				A04628E92333BA2900318F01 /* Audio */,
+				A04628C72333BA2900318F01 /* File */,
+				A04628D02333BA2900318F01 /* Gallery */,
+				A04628DA2333BA2900318F01 /* MigrateMessage */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -4392,11 +4392,11 @@
 			isa = PBXGroup;
 			children = (
 				A04628C82333BA2900318F01 /* NTESFilePreViewController.h */,
-				A04628C92333BA2900318F01 /* NTESFileTransSelectViewController.xib */,
+				A04628CC2333BA2900318F01 /* NTESFilePreViewController.m */,
 				A04628CA2333BA2900318F01 /* NTESFilePreViewController.xib */,
 				A04628CB2333BA2900318F01 /* NTESFileTransSelectViewController.h */,
-				A04628CC2333BA2900318F01 /* NTESFilePreViewController.m */,
 				A04628CD2333BA2900318F01 /* NTESFileTransSelectViewController.m */,
+				A04628C92333BA2900318F01 /* NTESFileTransSelectViewController.xib */,
 			);
 			path = File;
 			sourceTree = "<group>";
@@ -4404,11 +4404,11 @@
 		A04628D02333BA2900318F01 /* Gallery */ = {
 			isa = PBXGroup;
 			children = (
-				A04628D12333BA2900318F01 /* NTESMediaPreviewViewController.m */,
-				A04628D22333BA2900318F01 /* NTESGalleryViewController.xib */,
 				A04628D32333BA2900318F01 /* NTESGalleryViewController.h */,
-				A04628D42333BA2900318F01 /* NTESMediaPreviewViewController.h */,
 				A04628D52333BA2900318F01 /* NTESGalleryViewController.m */,
+				A04628D22333BA2900318F01 /* NTESGalleryViewController.xib */,
+				A04628D42333BA2900318F01 /* NTESMediaPreviewViewController.h */,
+				A04628D12333BA2900318F01 /* NTESMediaPreviewViewController.m */,
 			);
 			path = Gallery;
 			sourceTree = "<group>";
@@ -4416,20 +4416,20 @@
 		A04628DA2333BA2900318F01 /* MigrateMessage */ = {
 			isa = PBXGroup;
 			children = (
-				A04628DB2333BA2900318F01 /* NTESImportMessageViewController.m */,
-				A04628DC2333BA2900318F01 /* NTESExportMessageViewController.m */,
-				A04628DD2333BA2900318F01 /* NTESExportMessageDelegateImpl.m */,
-				A04628DE2333BA2900318F01 /* NTESImportMessageDelegateImpl.h */,
-				A04628DF2333BA2900318F01 /* NTESMigrateProgressView.m */,
-				A04628E02333BA2900318F01 /* NTESMigrateCompleteView.m */,
-				A04628E12333BA2900318F01 /* NTESMigrateMessageViewController.m */,
 				A04628E22333BA2900318F01 /* NTESExportMessageDelegateImpl.h */,
+				A04628DD2333BA2900318F01 /* NTESExportMessageDelegateImpl.m */,
 				A04628E32333BA2900318F01 /* NTESExportMessageViewController.h */,
-				A04628E42333BA2900318F01 /* NTESImportMessageViewController.h */,
-				A04628E52333BA2900318F01 /* NTESMigrateCompleteView.h */,
+				A04628DC2333BA2900318F01 /* NTESExportMessageViewController.m */,
+				A04628DE2333BA2900318F01 /* NTESImportMessageDelegateImpl.h */,
 				A04628E62333BA2900318F01 /* NTESImportMessageDelegateImpl.m */,
-				A04628E72333BA2900318F01 /* NTESMigrateProgressView.h */,
+				A04628E42333BA2900318F01 /* NTESImportMessageViewController.h */,
+				A04628DB2333BA2900318F01 /* NTESImportMessageViewController.m */,
+				A04628E52333BA2900318F01 /* NTESMigrateCompleteView.h */,
+				A04628E02333BA2900318F01 /* NTESMigrateCompleteView.m */,
 				A04628E82333BA2900318F01 /* NTESMigrateMessageViewController.h */,
+				A04628E12333BA2900318F01 /* NTESMigrateMessageViewController.m */,
+				A04628E72333BA2900318F01 /* NTESMigrateProgressView.h */,
+				A04628DF2333BA2900318F01 /* NTESMigrateProgressView.m */,
 			);
 			path = MigrateMessage;
 			sourceTree = "<group>";
@@ -4437,9 +4437,9 @@
 		A04628E92333BA2900318F01 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				A04628EC2333BA2900318F01 /* NTESAudio2TextViewController.h */,
 				A04628EA2333BA2900318F01 /* NTESAudio2TextViewController.m */,
 				A04628EB2333BA2900318F01 /* NTESAudio2TextViewController.xib */,
-				A04628EC2333BA2900318F01 /* NTESAudio2TextViewController.h */,
 			);
 			path = Audio;
 			sourceTree = "<group>";

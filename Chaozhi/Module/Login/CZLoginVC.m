@@ -79,7 +79,7 @@
             }];
             
             // 云信登录
-            [[[NIMSDK sharedSDK] loginManager] login:self.phoneTF.text token:token completion:^(NSError * _Nullable error) {
+            [[[NIMSDK sharedSDK] loginManager] login:@"31cedba2cec711e9a235080027b68021" token:@"f8ab7a382ebc0394b1187287ab23e7e3" completion:^(NSError * _Nullable error) {
                 
             }];
             

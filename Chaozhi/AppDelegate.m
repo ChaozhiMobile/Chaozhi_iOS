@@ -14,7 +14,7 @@
 #import "CZGuideVC.h"
 #import "UMMobClick/MobClick.h"
 #import "DBManager.h"
-//#import "NTESClientUtil.h"
+#import "NTESClientUtil.h"
 
 NSString *NTESNotificationLogout = @"NTESNotificationLogout";
 
@@ -170,25 +170,25 @@ NSString *NTESNotificationLogout = @"NTESNotificationLogout";
 
 #pragma - NIMLoginManagerDelegate
 - (void)onKick:(NIMKickReason)code clientType:(NIMLoginClientType)clientType {
-//    NSString *reason = @"你被踢下线";
-//    switch (code) {
-//        case NIMKickReasonByClient:
-//        case NIMKickReasonByClientManually:{
-//            NSString *clientName = [NTESClientUtil clientName:clientType];
-//            reason = clientName.length ? [NSString stringWithFormat:@"你的帐号被%@端踢出下线，请注意帐号信息安全",clientName] : @"你的帐号被踢出下线，请注意帐号信息安全";
-//            break;
-//        }
-//        case NIMKickReasonByServer:
-//            reason = @"你被服务器踢下线";
-//            break;
-//        default:
-//            break;
-//    }
-//    [[[NIMSDK sharedSDK] loginManager] logout:^(NSError *error) {
-//        [[NSNotificationCenter defaultCenter] postNotificationName:NTESNotificationLogout object:nil];
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"下线通知" message:reason delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-//        [alert show];
-//    }];
+    NSString *reason = @"你被踢下线";
+    switch (code) {
+        case NIMKickReasonByClient:
+        case NIMKickReasonByClientManually:{
+            NSString *clientName = [NTESClientUtil clientName:clientType];
+            reason = clientName.length ? [NSString stringWithFormat:@"你的帐号被%@端踢出下线，请注意帐号信息安全",clientName] : @"你的帐号被踢出下线，请注意帐号信息安全";
+            break;
+        }
+        case NIMKickReasonByServer:
+            reason = @"你被服务器踢下线";
+            break;
+        default:
+            break;
+    }
+    [[[NIMSDK sharedSDK] loginManager] logout:^(NSError *error) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NTESNotificationLogout object:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"下线通知" message:reason delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+    }];
 }
 
 - (void)onAutoLoginFailed:(NSError *)error {
