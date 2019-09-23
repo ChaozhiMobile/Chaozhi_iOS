@@ -25,30 +25,30 @@
 {
     NSArray *defaultMediaItems = [NIMKit sharedKit].config.defaultMediaItems;
     
-    NIMMediaItem *janKenPon = [NIMMediaItem item:@"onTapMediaItemJanKenPon:"
-                                     normalImage:[UIImage imageNamed:@"icon_jankenpon_normal"]
-                                   selectedImage:[UIImage imageNamed:@"icon_jankenpon_pressed"]
-                                           title:@"石头剪刀布"];
+//    NIMMediaItem *janKenPon = [NIMMediaItem item:@"onTapMediaItemJanKenPon:"
+//                                     normalImage:[UIImage imageNamed:@"icon_jankenpon_normal"]
+//                                   selectedImage:[UIImage imageNamed:@"icon_jankenpon_pressed"]
+//                                           title:@"石头剪刀布"];
     
     NIMMediaItem *fileTrans = [NIMMediaItem item:@"onTapMediaItemFileTrans:"
                                                 normalImage:[UIImage imageNamed:@"icon_file_trans_normal"]
                                               selectedImage:[UIImage imageNamed:@"icon_file_trans_pressed"]
                                            title:@"文件传输"];
     
-    NIMMediaItem *tip       = [NIMMediaItem item:@"onTapMediaItemTip:"
-                                     normalImage:[UIImage imageNamed:@"bk_media_tip_normal"]
-                                   selectedImage:[UIImage imageNamed:@"bk_media_tip_pressed"]
-                                           title:@"提示消息"];
+//    NIMMediaItem *tip       = [NIMMediaItem item:@"onTapMediaItemTip:"
+//                                     normalImage:[UIImage imageNamed:@"bk_media_tip_normal"]
+//                                   selectedImage:[UIImage imageNamed:@"bk_media_tip_pressed"]
+//                                           title:@"提示消息"];
     
-    NIMMediaItem *snapChat =   [NIMMediaItem item:@"onTapMediaItemSnapChat:"
-                                      normalImage:[UIImage imageNamed:@"bk_media_snap_normal"]
-                                    selectedImage:[UIImage imageNamed:@"bk_media_snap_pressed"]
-                                            title:@"阅后即焚"];
+//    NIMMediaItem *snapChat =   [NIMMediaItem item:@"onTapMediaItemSnapChat:"
+//                                      normalImage:[UIImage imageNamed:@"bk_media_snap_normal"]
+//                                    selectedImage:[UIImage imageNamed:@"bk_media_snap_pressed"]
+//                                            title:@"阅后即焚"];
 
-    NIMMediaItem *whiteBoard = [NIMMediaItem item:@"onTapMediaItemWhiteBoard:"
-                                      normalImage:[UIImage imageNamed:@"btn_whiteboard_invite_normal"]
-                                    selectedImage:[UIImage imageNamed:@"btn_whiteboard_invite_pressed"]
-                                            title:@"白板"];
+//    NIMMediaItem *whiteBoard = [NIMMediaItem item:@"onTapMediaItemWhiteBoard:"
+//                                      normalImage:[UIImage imageNamed:@"btn_whiteboard_invite_normal"]
+//                                    selectedImage:[UIImage imageNamed:@"btn_whiteboard_invite_pressed"]
+//                                            title:@"白板"];
     
     NIMMediaItem *teamReceipt  = [NIMMediaItem item:@"onTapMediaItemTeamReceipt:"
                                       normalImage:[UIImage imageNamed:@"icon_team_receipt_normal"]
@@ -61,20 +61,21 @@
     
     if (isMe)
     {
-        items = @[janKenPon,fileTrans,tip];
+//        items = @[janKenPon,fileTrans,tip];
+        items = @[fileTrans];
     }
     else if(_session.sessionType == NIMSessionTypeTeam || _session.sessionType == NIMSessionTypeSuperTeam)
     {
-        items = @[janKenPon,fileTrans,tip,teamReceipt];
+//        items = @[janKenPon,fileTrans,tip,teamReceipt];
+        items = @[fileTrans,teamReceipt];
     }
     else
     {
-        items = @[janKenPon,fileTrans,snapChat,whiteBoard,tip];
+//        items = @[janKenPon,fileTrans,snapChat,whiteBoard,tip];
+        items = @[fileTrans];
     }
     
-
     return [defaultMediaItems arrayByAddingObjectsFromArray:items];
-    
 }
 
 - (BOOL)shouldHandleReceipt{

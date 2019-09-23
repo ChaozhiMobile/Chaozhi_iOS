@@ -118,14 +118,11 @@ NIMTeamCardViewControllerDelegate>
     [_fpsLabel invalidate];
 }
 
-
-
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     self.fpsLabel.right = self.view.width;
     self.fpsLabel.top   = self.tableView.top + self.tableView.contentInset.top;
 }
-
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
@@ -186,10 +183,7 @@ NIMTeamCardViewControllerDelegate>
                             repeats:NO];
         }
     }
-    
-    
 }
-
 
 #pragma mark - NIMChatManagerDelegate
 

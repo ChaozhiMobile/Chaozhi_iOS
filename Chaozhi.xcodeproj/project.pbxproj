@@ -1390,6 +1390,8 @@
 		A0F13C002338B36600130E5A /* NIMKitResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A0F13BFC2338B36500130E5A /* NIMKitResource.bundle */; };
 		A0F13C062338B9C300130E5A /* NIMDemoChartlet.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A0F13C052338B9C300130E5A /* NIMDemoChartlet.bundle */; };
 		A0F13C072338B9C300130E5A /* NIMDemoChartlet.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A0F13C052338B9C300130E5A /* NIMDemoChartlet.bundle */; };
+		A0F13C0A2338CB2200130E5A /* NIMImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0F13C092338CB2200130E5A /* NIMImages.xcassets */; };
+		A0F13C0B2338CB2200130E5A /* NIMImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0F13C092338CB2200130E5A /* NIMImages.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -2599,6 +2601,7 @@
 		A0F13BFB2338B36500130E5A /* NIMKitEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NIMKitEmoticon.bundle; sourceTree = "<group>"; };
 		A0F13BFC2338B36500130E5A /* NIMKitResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NIMKitResource.bundle; sourceTree = "<group>"; };
 		A0F13C052338B9C300130E5A /* NIMDemoChartlet.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NIMDemoChartlet.bundle; sourceTree = "<group>"; };
+		A0F13C092338CB2200130E5A /* NIMImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = NIMImages.xcassets; sourceTree = "<group>"; };
 		C14C5490DB007C7EF9765C7E /* Pods-Xuezhi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xuezhi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Xuezhi/Pods-Xuezhi.debug.xcconfig"; sourceTree = "<group>"; };
 		E4FCDC3BE170EA70A51A31B5 /* Pods-Chaozhi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chaozhi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chaozhi/Pods-Chaozhi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -3929,6 +3932,7 @@
 		A04627E62333BA2700318F01 /* NIM */ = {
 			isa = PBXGroup;
 			children = (
+				A0F13C082338C9D900130E5A /* Resource */,
 				A04627E72333BA2700318F01 /* Classes */,
 				A0462CB22333BAAB00318F01 /* Vendors */,
 			);
@@ -5350,6 +5354,14 @@
 			path = Private;
 			sourceTree = "<group>";
 		};
+		A0F13C082338C9D900130E5A /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				A0F13C092338CB2200130E5A /* NIMImages.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		A7FA9F4632752641B75EA9B4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -5545,6 +5557,7 @@
 				A046279A2333B95000318F01 /* 退出全屏.png in Resources */,
 				A020B038214AAB150011BB4F /* ic_refresh_image_012@2x.png in Resources */,
 				A020B03E214AAB150011BB4F /* ic_refresh_image_026@2x.png in Resources */,
+				A0F13C0A2338CB2200130E5A /* NIMImages.xcassets in Resources */,
 				A04627042333B95000318F01 /* giveFlower.png in Resources */,
 				A020B02A214AAB150011BB4F /* ic_refresh_image_027@2x.png in Resources */,
 				A04626CE2333B95000318F01 /* 星.png in Resources */,
@@ -5932,6 +5945,7 @@
 				A046264B2333B94F00318F01 /* TalkfunKuaiJinView.xib in Resources */,
 				A04626FB2333B95000318F01 /* netcom.png in Resources */,
 				A046275B2333B95000318F01 /* S_FLOWER.png in Resources */,
+				A0F13C0B2338CB2200130E5A /* NIMImages.xcassets in Resources */,
 				A04626852333B95000318F01 /* TalkfunGuidanceView.xib in Resources */,
 				A04626ED2333B95000318F01 /* ico_scroller.png in Resources */,
 				A04551F522EC8DFA00E17406 /* ic_refresh_image_003@2x.png in Resources */,

@@ -197,7 +197,6 @@ NSInteger NIMButtonBegintLeftX = 11;
             NSAssert(0, @"invalid item selector!");
         }
     }
-    
 }
 
 @end

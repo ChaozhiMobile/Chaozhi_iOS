@@ -47,10 +47,10 @@
                   selectedImage:[UIImage nim_imageInKit:@"bk_media_shoot_pressed"]
                           title:@"拍摄"],
              
-             [NIMMediaItem item:@"onTapMediaItemLocation:"
-                    normalImage:[UIImage nim_imageInKit:@"bk_media_position_normal"]
-                  selectedImage:[UIImage nim_imageInKit:@"bk_media_position_pressed"]
-                          title:@"位置"],
+//             [NIMMediaItem item:@"onTapMediaItemLocation:"
+//                    normalImage:[UIImage nim_imageInKit:@"bk_media_position_normal"]
+//                  selectedImage:[UIImage nim_imageInKit:@"bk_media_position_pressed"]
+//                          title:@"位置"],
              ];
 }
 
