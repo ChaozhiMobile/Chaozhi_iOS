@@ -38,7 +38,7 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavBarH, WIDTH, HEIGHT-kNavBarH-kTabBarSafeH) style:UITableViewStylePlain];
     [self.view addSubview:self.tableView];
     self.tableView.delegate         = self;
     self.tableView.dataSource       = self;

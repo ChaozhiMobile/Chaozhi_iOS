@@ -19,7 +19,7 @@
 #import "NTESWhiteboardAttachment.h"
 #import "NTESSessionUtil.h"
 #import "NTESPersonalCardViewController.h"
-#define SessionListTitle @"云信 Demo"
+#define SessionListTitle @"我的班主任"
 
 @interface NTESSessionListViewController ()<NIMLoginManagerDelegate,NTESListHeaderDelegate,NIMEventSubscribeManagerDelegate,UIViewControllerPreviewingDelegate>
 
@@ -359,14 +359,14 @@
     if (@available(iOS 11.0, *))
     {
         self.header.top = self.view.safeAreaInsets.top;
-        self.tableView.top = self.header.bottom;
+//        self.tableView.top = self.header.bottom;
         CGFloat offset = self.view.safeAreaInsets.bottom;
         self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         self.tableView.contentInset = UIEdgeInsetsMake(0, 0, offset, 0);
     }
     else
     {
-        self.tableView.top = self.header.height;
+//        self.tableView.top = self.header.height;
         self.header.bottom    = self.tableView.top + self.tableView.contentInset.top;
     }
     self.tableView.height = self.view.height - self.tableView.top;

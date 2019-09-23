@@ -256,12 +256,9 @@
 //        ChatItem *chatItem = self.purchaseArr[0];
 //        [BaseWebVC showWithContro:self withUrlStr:chatItem.chat_url withTitle:_nameArr[indexPath.row] isPresent:NO];
         
-        // 云信登录
-        [[[NIMSDK sharedSDK] loginManager] login:@"31cedba2cec711e9a235080027b68021" token:@"f8ab7a382ebc0394b1187287ab23e7e3" completion:^(NSError * _Nullable error) {
-            NTESSessionListViewController *vc = [[NTESSessionListViewController alloc] init];
-            vc.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:vc animated:YES];
-        }];
+        NTESSessionListViewController *vc = [[NTESSessionListViewController alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
     }
     
     if ([str isEqualToString:@"报考资料"]) {

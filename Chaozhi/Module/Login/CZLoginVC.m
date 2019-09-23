@@ -8,6 +8,8 @@
 
 #import "CZLoginVC.h"
 #import "JPUSHService.h"
+#import "NTESLoginManager.h"
+#import "NTESService.h"
 
 @interface CZLoginVC ()
 
@@ -79,8 +81,23 @@
             }];
             
             // 云信登录
-            [[[NIMSDK sharedSDK] loginManager] login:@"31cedba2cec711e9a235080027b68021" token:@"f8ab7a382ebc0394b1187287ab23e7e3" completion:^(NSError * _Nullable error) {
-                
+            NSString *loginAccount = @"31cedba2cec711e9a235080027b68021";
+            NSString *loginToken = @"f8ab7a382ebc0394b1187287ab23e7e3";
+            [[[NIMSDK sharedSDK] loginManager] login:loginAccount token:loginToken completion:^(NSError * _Nullable error) {
+                if (error == nil)
+                {
+                    NTESLoginData *sdkData = [[NTESLoginData alloc] init];
+                    sdkData.account   = loginAccount;
+                    sdkData.token     = loginToken;
+                    [[NTESLoginManager sharedManager] setCurrentLoginData:sdkData];
+                    
+                    [[NTESServiceManager sharedManager] start];
+                }
+                else
+                {
+                    NSString *toast = [NSString stringWithFormat:@"登录失败 code: %zd",error.code];
+                    [Utils showToast:toast];
+                }
             }];
             
             // 跳转到首页

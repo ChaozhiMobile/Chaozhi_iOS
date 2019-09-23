@@ -1382,6 +1382,14 @@
 		A0E50819230ED54C005EF897 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E50818230ED54C005EF897 /* StoreKit.framework */; };
 		A0E5081A230ED762005EF897 /* CZCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20ABB12D230A7A9600DDC86F /* CZCommentView.m */; };
 		A0E8981D22CF22C600DB09BA /* VideoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E8981B22CF22C600DB09BA /* VideoItem.m */; };
+		A0F13BF92338B0CC00130E5A /* NTESPrivatizationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F13BF82338B0CB00130E5A /* NTESPrivatizationManager.m */; };
+		A0F13BFA2338B0CC00130E5A /* NTESPrivatizationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F13BF82338B0CB00130E5A /* NTESPrivatizationManager.m */; };
+		A0F13BFD2338B36600130E5A /* NIMKitEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A0F13BFB2338B36500130E5A /* NIMKitEmoticon.bundle */; };
+		A0F13BFE2338B36600130E5A /* NIMKitEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A0F13BFB2338B36500130E5A /* NIMKitEmoticon.bundle */; };
+		A0F13BFF2338B36600130E5A /* NIMKitResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A0F13BFC2338B36500130E5A /* NIMKitResource.bundle */; };
+		A0F13C002338B36600130E5A /* NIMKitResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A0F13BFC2338B36500130E5A /* NIMKitResource.bundle */; };
+		A0F13C062338B9C300130E5A /* NIMDemoChartlet.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A0F13C052338B9C300130E5A /* NIMDemoChartlet.bundle */; };
+		A0F13C072338B9C300130E5A /* NIMDemoChartlet.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A0F13C052338B9C300130E5A /* NIMDemoChartlet.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -2586,6 +2594,11 @@
 		A0E50818230ED54C005EF897 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A0E8981B22CF22C600DB09BA /* VideoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoItem.m; sourceTree = "<group>"; };
 		A0E8981C22CF22C600DB09BA /* VideoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoItem.h; sourceTree = "<group>"; };
+		A0F13BF72338B0CB00130E5A /* NTESPrivatizationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTESPrivatizationManager.h; sourceTree = "<group>"; };
+		A0F13BF82338B0CB00130E5A /* NTESPrivatizationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTESPrivatizationManager.m; sourceTree = "<group>"; };
+		A0F13BFB2338B36500130E5A /* NIMKitEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NIMKitEmoticon.bundle; sourceTree = "<group>"; };
+		A0F13BFC2338B36500130E5A /* NIMKitResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NIMKitResource.bundle; sourceTree = "<group>"; };
+		A0F13C052338B9C300130E5A /* NIMDemoChartlet.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NIMDemoChartlet.bundle; sourceTree = "<group>"; };
 		C14C5490DB007C7EF9765C7E /* Pods-Xuezhi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xuezhi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Xuezhi/Pods-Xuezhi.debug.xcconfig"; sourceTree = "<group>"; };
 		E4FCDC3BE170EA70A51A31B5 /* Pods-Chaozhi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chaozhi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chaozhi/Pods-Chaozhi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -2795,6 +2808,9 @@
 		A020AF75214AAB130011BB4F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A0F13C052338B9C300130E5A /* NIMDemoChartlet.bundle */,
+				A0F13BFB2338B36500130E5A /* NIMKitEmoticon.bundle */,
+				A0F13BFC2338B36500130E5A /* NIMKitResource.bundle */,
 				A020AF76214AAB130011BB4F /* Assets.xcassets */,
 				A045501A22EC4FCA00E17406 /* ChaozhiAssets.xcassets */,
 				A0E0D3CE22D2295D00296851 /* H5 */,
@@ -3922,6 +3938,7 @@
 		A04627E72333BA2700318F01 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A0F13BF62338B0CB00130E5A /* Private */,
 				A04628132333BA2800318F01 /* Sections */,
 				A046294A2333BA2900318F01 /* LayoutConfig */,
 				A04629512333BA2900318F01 /* Service */,
@@ -5324,6 +5341,15 @@
 			path = H5;
 			sourceTree = "<group>";
 		};
+		A0F13BF62338B0CB00130E5A /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				A0F13BF72338B0CB00130E5A /* NTESPrivatizationManager.h */,
+				A0F13BF82338B0CB00130E5A /* NTESPrivatizationManager.m */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
 		A7FA9F4632752641B75EA9B4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -5544,6 +5570,7 @@
 				A046273C2333B95000318F01 /* generalStatus.png in Resources */,
 				A046275C2333B95000318F01 /* cool.png in Resources */,
 				A04627582333B95000318F01 /* why.png in Resources */,
+				A0F13BFD2338B36600130E5A /* NIMKitEmoticon.bundle in Resources */,
 				A04627C02333B95000318F01 /* 继续_点击.png in Resources */,
 				A020B044214AAB150011BB4F /* ic_refresh_image_032@2x.png in Resources */,
 				A04627322333B95000318F01 /* rcircle.png in Resources */,
@@ -5584,6 +5611,7 @@
 				A04627BA2333B95000318F01 /* 下载-点击.png in Resources */,
 				A020B02B214AAB150011BB4F /* ic_refresh_image_011@2x.png in Resources */,
 				A04626542333B94F00318F01 /* AlbumCellTableViewCell.xib in Resources */,
+				A0F13C062338B9C300130E5A /* NIMDemoChartlet.bundle in Resources */,
 				A04626962333B95000318F01 /* VoteEndViewController.xib in Resources */,
 				A0462ABC2333BA2C00318F01 /* NTESJionTeamViewController.xib in Resources */,
 				A04627882333B95000318F01 /* 灰色鲜花.png in Resources */,
@@ -5619,6 +5647,7 @@
 				A04626842333B95000318F01 /* TalkfunGuidanceView.xib in Resources */,
 				A020B03A214AAB150011BB4F /* ic_refresh_image_028@2x.png in Resources */,
 				A04627702333B95000318F01 /* 表情.png in Resources */,
+				A0F13BFF2338B36600130E5A /* NIMKitResource.bundle in Resources */,
 				A046274A2333B95000318F01 /* icon_operation_08.png in Resources */,
 				A020B041214AAB150011BB4F /* ic_refresh_image_018@2x.png in Resources */,
 				A04627AE2333B95000318F01 /* 等待队列_默认.png in Resources */,
@@ -5730,6 +5759,7 @@
 				A04626FF2333B95000318F01 /* education.png in Resources */,
 				A04627BD2333B95000318F01 /* 继续_默认.png in Resources */,
 				A0462B392333BA2C00318F01 /* NTESGalleryViewController.xib in Resources */,
+				A0F13C002338B36600130E5A /* NIMKitResource.bundle in Resources */,
 				A046279F2333B95000318F01 /* 平板竖屏 - 引导1.png in Resources */,
 				A0462AAD2333BA2C00318F01 /* NTESContactViewController.xib in Resources */,
 				A04627732333B95000318F01 /* 刷新.png in Resources */,
@@ -5755,12 +5785,14 @@
 				A04627772333B95000318F01 /* 鲜花.png in Resources */,
 				A045516E22EC8DFA00E17406 /* ic_refresh_image_000@2x.png in Resources */,
 				A04627352333B95000318F01 /* 直播未开始.png in Resources */,
+				A0F13C072338B9C300130E5A /* NIMDemoChartlet.bundle in Resources */,
 				A04626D92333B95000318F01 /* 错误.png in Resources */,
 				A04627B92333B95000318F01 /* 重新_点击.png in Resources */,
 				A045517222EC8DFA00E17406 /* ic_refresh_image_020@2x.png in Resources */,
 				A0462AD32333BA2C00318F01 /* NTESSystemNotificationCell.xib in Resources */,
 				A04627532333B95000318F01 /* aha.png in Resources */,
 				A045517722EC8DFA00E17406 /* ic_refresh_image_032@2x.png in Resources */,
+				A0F13BFE2338B36600130E5A /* NIMKitEmoticon.bundle in Resources */,
 				A04625F52333B94F00318F01 /* TalkfunButtonView.xib in Resources */,
 				A04627AB2333B95000318F01 /* 暂停_点击.png in Resources */,
 				A04627DB2333B95000318F01 /* 进度1.png in Resources */,
@@ -6310,6 +6342,7 @@
 				A046267A2333B94F00318F01 /* TalkfunViewController.m in Sources */,
 				A046260E2333B94F00318F01 /* TalkfunNewChatCell.m in Sources */,
 				A0462C7E2333BA2D00318F01 /* NIMSessionImageContentView.m in Sources */,
+				A0F13BF92338B0CC00130E5A /* NTESPrivatizationManager.m in Sources */,
 				A0462C962333BA2D00318F01 /* NIMExtensionHelper.m in Sources */,
 				A0462B742333BA2C00318F01 /* NSDictionary+NTESJson.m in Sources */,
 				A020B061214AAB150011BB4F /* XLGLoginTestViewModel.m in Sources */,
@@ -6787,6 +6820,7 @@
 				A04550E722EC8DFA00E17406 /* XLGInternalTestVC.m in Sources */,
 				A0462C7B2333BA2D00318F01 /* NIMSessionNotificationContentView.m in Sources */,
 				A0462B172333BA2C00318F01 /* NTESSessionMsgConverter.m in Sources */,
+				A0F13BFA2338B0CC00130E5A /* NTESPrivatizationManager.m in Sources */,
 				A0462BF12333BA2D00318F01 /* NIMBadgeView.m in Sources */,
 				A0462AA72333BA2C00318F01 /* NTESUserListCell.m in Sources */,
 				A04626692333B94F00318F01 /* QuestionTableViewController.m in Sources */,
@@ -7094,6 +7128,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Chaozhi/Module/Talkfun/Library",
 					"$(PROJECT_DIR)/Chaozhi/Module/IM/NIM/Vendors/NIMSDK",
+					"$(PROJECT_DIR)/Chaozhi/Module/IM/NIM/Vendors/NIMAVChat",
 				);
 				GCC_PREFIX_HEADER = Chaozhi/Chaozhi.pch;
 				HEADER_SEARCH_PATHS = (
@@ -7212,6 +7247,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Chaozhi/Module/Talkfun/Library",
 					"$(PROJECT_DIR)/Chaozhi/Module/IM/NIM/Vendors/NIMSDK",
+					"$(PROJECT_DIR)/Chaozhi/Module/IM/NIM/Vendors/NIMAVChat",
 				);
 				GCC_PREFIX_HEADER = Chaozhi/Chaozhi.pch;
 				HEADER_SEARCH_PATHS = (
@@ -7330,6 +7366,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Chaozhi/Module/Talkfun/Library",
 					"$(PROJECT_DIR)/Chaozhi/Module/IM/NIM/Vendors/NIMSDK",
+					"$(PROJECT_DIR)/Chaozhi/Module/IM/NIM/Vendors/NIMAVChat",
 				);
 				GCC_PREFIX_HEADER = Xuezhi/Xuezhi.pch;
 				HEADER_SEARCH_PATHS = (
@@ -7448,6 +7485,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Chaozhi/Module/Talkfun/Library",
 					"$(PROJECT_DIR)/Chaozhi/Module/IM/NIM/Vendors/NIMSDK",
+					"$(PROJECT_DIR)/Chaozhi/Module/IM/NIM/Vendors/NIMAVChat",
 				);
 				GCC_PREFIX_HEADER = Xuezhi/Xuezhi.pch;
 				HEADER_SEARCH_PATHS = (

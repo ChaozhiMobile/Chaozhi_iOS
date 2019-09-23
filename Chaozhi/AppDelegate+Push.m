@@ -12,7 +12,7 @@
 
 @implementation AppDelegate (Push)
 
--(void)registerPush:(UIApplication *)application options:(NSDictionary *)launchOptions
+- (void)registerPush:(UIApplication *)application options:(NSDictionary *)launchOptions
 {
     [application registerForRemoteNotifications];
     UIUserNotificationType notificationTypes = UIUserNotificationTypeBadge |

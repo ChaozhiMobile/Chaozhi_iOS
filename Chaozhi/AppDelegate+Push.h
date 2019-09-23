@@ -15,6 +15,6 @@
 
 @interface AppDelegate (Push)
 
--(void)registerPush:(UIApplication *)application options:(NSDictionary *)launchOptions;
+- (void)registerPush:(UIApplication *)application options:(NSDictionary *)launchOptions;
 
 @end
