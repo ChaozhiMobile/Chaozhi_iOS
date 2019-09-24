@@ -38,7 +38,8 @@
 {
     self = [super init];
     if (self) {
-        _mediaTypes = @[(NSString *)kUTTypeMovie,(NSString *)kUTTypeImage, (NSString *)kUTTypeGIF];
+//        _mediaTypes = @[(NSString *)kUTTypeMovie,(NSString *)kUTTypeImage, (NSString *)kUTTypeGIF];
+        _mediaTypes = @[(NSString *)kUTTypeImage, (NSString *)kUTTypeGIF];
         _limit = 9;
     }
     return self;
@@ -76,7 +77,6 @@
 #endif
     }
 }
-
 
 - (void)setUpPhotoLibrary:(void(^)(NIMKitMediaPickerController * _Nullable picker)) handler
 {
