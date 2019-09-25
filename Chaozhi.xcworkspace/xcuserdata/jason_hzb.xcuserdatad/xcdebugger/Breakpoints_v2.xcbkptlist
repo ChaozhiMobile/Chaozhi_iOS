@@ -20,7 +20,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Chaozhi/Module/IM/NIMKit/Classes/Sections/Input/NIMInputMoreContainerView.m"
-            timestampString = "590927439.569736"
+            timestampString = "590980153.376066"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "193"
@@ -51,13 +51,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Chaozhi/Module/IM/NIMKit/Classes/Sections/Session/ViewController/NIMSessionViewController.m"
-            timestampString = "590927664.0806741"
+            filePath = "Chaozhi/Module/IM/NIM/Classes/Sections/SessionList/ViewController/NTESSessionListViewController.m"
+            timestampString = "591109038.262385"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "679"
-            endingLineNumber = "679"
-            landmarkName = "-onTapMediaItemShoot:"
+            startingLineNumber = "309"
+            endingLineNumber = "309"
+            landmarkName = "-previewingContext:commitViewController:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -67,13 +67,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Chaozhi/Module/IM/NIMKit/Classes/Sections/Session/Object/NIMSessionInteractorImpl.m"
-            timestampString = "590927719.86848"
+            filePath = "Chaozhi/Module/IM/NIM/Classes/Sections/SessionList/ViewController/NTESSessionListViewController.m"
+            timestampString = "591109038.262465"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "423"
-            endingLineNumber = "423"
-            landmarkName = "-mediaShootPressed"
+            startingLineNumber = "319"
+            endingLineNumber = "319"
+            landmarkName = "-tableView:editActionsForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

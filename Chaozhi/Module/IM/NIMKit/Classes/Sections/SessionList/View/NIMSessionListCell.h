@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XLGPaddingLabel.h"
+
 @class NIMAvatarImageView;
 @class NIMRecentSession;
 @class NIMBadgeView;
@@ -16,6 +18,8 @@
 @property (nonatomic,strong) NIMAvatarImageView *avatarImageView;
 
 @property (nonatomic,strong) UILabel *nameLabel;
+
+@property (nonatomic,strong) XLGPaddingLabel *courseLabel;
 
 @property (nonatomic,strong) UILabel *messageLabel;
 

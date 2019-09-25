@@ -35,7 +35,7 @@
 
 @implementation NTESSessionListViewController
 
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         _previews = [[NSMutableDictionary alloc] init];
@@ -48,11 +48,10 @@
     [[NIMSDK sharedSDK].loginManager removeDelegate:self];
 }
 
-
 - (void)viewDidLoad{
     [super viewDidLoad];
     
-    self.title = @"我的班主任";
+    self.title = SessionListTitle;
     
     if (@available(iOS 9.0, *)) {
         self.supportsForceTouch = [self.traitCollection respondsToSelector:@selector(forceTouchCapability)] && self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable;
@@ -67,7 +66,7 @@
     [self.view addSubview:self.header];
 
     self.emptyTipLabel = [[UILabel alloc] init];
-    self.emptyTipLabel.text = @"还没有会话，在通讯录中找个人聊聊吧";
+    self.emptyTipLabel.text = @"还没有班主任！";
     [self.emptyTipLabel sizeToFit];
     self.emptyTipLabel.hidden = self.recentSessions.count;
     [self.view addSubview:self.emptyTipLabel];
@@ -75,6 +74,19 @@
     NSString *userID = [[[NIMSDK sharedSDK] loginManager] currentAccount];
     self.navigationItem.titleView  = [self titleView:userID];
     [self setUpNavItem];
+    
+    [self getTeacherList]; //我的班主任列表
+}
+
+#pragma mark - 我的班主任列表
+- (void)getTeacherList {
+    NSDictionary *dic = [NSDictionary dictionary];
+    [[NetworkManager sharedManager] postJSON:URL_TeacherList parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+        
+        if (status == Request_Success) {
+            
+        }
+    }];
 }
 
 - (void)setUpNavItem{
@@ -87,7 +99,7 @@
     self.navigationItem.rightBarButtonItem = moreItem;
 }
 
-- (void)refresh{
+- (void)refresh {
     [super refresh];
     self.emptyTipLabel.hidden = self.recentSessions.count;
 }
@@ -144,7 +156,6 @@
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
-
 
 - (void)onDeleteRecentAtIndexPath:(NIMRecentSession *)recent atIndexPath:(NSIndexPath *)indexPath
 {

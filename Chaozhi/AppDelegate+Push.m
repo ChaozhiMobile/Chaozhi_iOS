@@ -9,6 +9,7 @@
 #import "AppDelegate+Push.h"
 #import <JPUSHService.h>
 #import "BaseWebVC.h"
+#import "NTESSessionListViewController.h"
 
 @implementation AppDelegate (Push)
 
@@ -145,8 +146,12 @@
     
     if ([type isEqualToString:@"h5_myteacher"]) { //我的班主任
         if ([Utils isLoginWithJump:YES]) {
-            NSString *url = [NSString stringWithFormat:@"%@?token=%@",value,[UserInfo share].token];
-            [BaseWebVC showWithContro:self.window.rootViewController withUrlStr:url withTitle:@"我的班主任" isPresent:YES];
+//            NSString *url = [NSString stringWithFormat:@"%@?token=%@",value,[UserInfo share].token];
+//            [BaseWebVC showWithContro:self.window.rootViewController withUrlStr:url withTitle:@"我的班主任" isPresent:YES];
+            
+            NTESSessionListViewController *vc = [[NTESSessionListViewController alloc] init];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.window.rootViewController.navigationController pushViewController:vc animated:YES];
         }
     }
     

@@ -13,6 +13,7 @@
 #import "NIMBadgeView.h"
 
 @implementation NIMSessionListCell
+
 #define AvatarWidth 40
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -24,6 +25,15 @@
         _nameLabel.backgroundColor = [UIColor whiteColor];
         _nameLabel.font            = [UIFont systemFontOfSize:15.f];
         [self addSubview:_nameLabel];
+        
+        _courseLabel = [[XLGPaddingLabel alloc] initWithFrame:CGRectZero];
+        _courseLabel.backgroundColor = RGBAValue(0x42AFD9, 0.2);
+        _courseLabel.font            = [UIFont systemFontOfSize:13.f];
+        _courseLabel.textColor       = RGBValue(0x1691C0);
+        _courseLabel.numberOfLines   = 1;
+        _courseLabel.layer.cornerRadius = 3;
+        [_courseLabel.layer setMasksToBounds:YES];
+        [self addSubview:_courseLabel];
         
         _messageLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         _messageLabel.backgroundColor = [UIColor whiteColor];
@@ -43,27 +53,30 @@
     return self;
 }
 
-
 #define NameLabelMaxWidth    160.f
 #define MessageLabelMaxWidth 200.f
+#define CourseLabelMaxWidth  200.f
 - (void)refresh:(NIMRecentSession*)recent{
     self.nameLabel.nim_width = self.nameLabel.nim_width > NameLabelMaxWidth ? NameLabelMaxWidth : self.nameLabel.nim_width;
+    self.courseLabel.nim_width = self.courseLabel.nim_width > CourseLabelMaxWidth ? CourseLabelMaxWidth : self.courseLabel.nim_width;
     self.messageLabel.nim_width = self.messageLabel.nim_width > MessageLabelMaxWidth ? MessageLabelMaxWidth : self.messageLabel.nim_width;
     if (recent.unreadCount) {
         self.badgeView.hidden = NO;
         self.badgeView.badgeValue = @(recent.unreadCount).stringValue;
-    }else{
+    } else {
         self.badgeView.hidden = YES;
     }
 }
 
-
-- (void)layoutSubviews{
+- (void)layoutSubviews {
     [super layoutSubviews];
+    
     //Session List
     NSInteger sessionListAvatarLeft             = 15;
     NSInteger sessionListNameTop                = 15;
     NSInteger sessionListNameLeftToAvatar       = 15;
+    NSInteger sessionListCourseTopToName        = 10;
+    NSInteger sessionListCourseLeftToAvatar     = 15;
     NSInteger sessionListMessageLeftToAvatar    = 15;
     NSInteger sessionListMessageBottom          = 15;
     NSInteger sessionListTimeRight              = 15;
@@ -75,6 +88,8 @@
     _avatarImageView.nim_centerY = self.nim_height * .5f;
     _nameLabel.nim_top           = sessionListNameTop;
     _nameLabel.nim_left          = _avatarImageView.nim_right + sessionListNameLeftToAvatar;
+    _courseLabel.nim_top         = _nameLabel.nim_bottom + sessionListCourseTopToName;
+    _courseLabel.nim_left        = _avatarImageView.nim_right + sessionListCourseLeftToAvatar;
     _messageLabel.nim_left       = _avatarImageView.nim_right + sessionListMessageLeftToAvatar;
     _messageLabel.nim_bottom     = self.nim_height - sessionListMessageBottom;
     _timeLabel.nim_right         = self.nim_width - sessionListTimeRight;
@@ -82,7 +97,5 @@
     _badgeView.nim_right         = self.nim_width - sessionBadgeTimeRight;
     _badgeView.nim_bottom        = self.nim_height - sessionBadgeTimeBottom;
 }
-
-
 
 @end

@@ -124,6 +124,8 @@
 		A027B0442333C4530013322D /* NIMPinyinConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = A027B03F2333C4530013322D /* NIMPinyinConverter.m */; };
 		A027B0452333C4530013322D /* NIMSpellingCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = A027B0402333C4530013322D /* NIMSpellingCenter.m */; };
 		A027B0462333C4530013322D /* NIMSpellingCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = A027B0402333C4530013322D /* NIMSpellingCenter.m */; };
+		A0290376233B9913001E061F /* XLGPaddingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0290375233B9913001E061F /* XLGPaddingLabel.m */; };
+		A0290377233B9913001E061F /* XLGPaddingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0290375233B9913001E061F /* XLGPaddingLabel.m */; };
 		A045501B22EC4FCA00E17406 /* ChaozhiAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A045501A22EC4FCA00E17406 /* ChaozhiAssets.xcassets */; };
 		A045507322EC8DFA00E17406 /* XLGInternalDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AFDF214AAB140011BB4F /* XLGInternalDemoVC.m */; };
 		A045507522EC8DFA00E17406 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = A020AF68214AAB130011BB4F /* Config.m */; };
@@ -1595,6 +1597,8 @@
 		A027B0412333C4530013322D /* NIMPinyinConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIMPinyinConverter.h; sourceTree = "<group>"; };
 		A027B0422333C4530013322D /* NIMSpellingCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIMSpellingCenter.h; sourceTree = "<group>"; };
 		A027B0472333C89D0013322D /* NIMSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NIMSDK.framework; sourceTree = "<group>"; };
+		A0290374233B9913001E061F /* XLGPaddingLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XLGPaddingLabel.h; sourceTree = "<group>"; };
+		A0290375233B9913001E061F /* XLGPaddingLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XLGPaddingLabel.m; sourceTree = "<group>"; };
 		A045501522EC4ACB00E17406 /* Xuezhi.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Xuezhi.entitlements; sourceTree = "<group>"; };
 		A045501A22EC4FCA00E17406 /* ChaozhiAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ChaozhiAssets.xcassets; sourceTree = "<group>"; };
 		A045520C22EC8DFA00E17406 /* Xuezhi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xuezhi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2897,6 +2901,7 @@
 				A020AFB7214AAB130011BB4F /* Lottie */,
 				A020AFBA214AAB130011BB4F /* RegularPhone */,
 				A020AFBD214AAB130011BB4F /* ProgressView */,
+				A0290373233B98D3001E061F /* Label */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -3140,6 +3145,15 @@
 				A027B0422333C4530013322D /* NIMSpellingCenter.h */,
 			);
 			path = Spelling;
+			sourceTree = "<group>";
+		};
+		A0290373233B98D3001E061F /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				A0290374233B9913001E061F /* XLGPaddingLabel.h */,
+				A0290375233B9913001E061F /* XLGPaddingLabel.m */,
+			);
+			path = Label;
 			sourceTree = "<group>";
 		};
 		A045501422EC4ACB00E17406 /* Xuezhi */ = {
@@ -6113,6 +6127,7 @@
 				A046268E2333B95000318F01 /* VoteViewController.m in Sources */,
 				A0462C102333BA2D00318F01 /* NIMTeamAnnouncementListViewController.m in Sources */,
 				A020B062214AAB150011BB4F /* XLGInternalDemoVC.m in Sources */,
+				A0290376233B9913001E061F /* XLGPaddingLabel.m in Sources */,
 				A0462AD82333BA2C00318F01 /* NTESCustomNotificationDB.m in Sources */,
 				A0462C802333BA2D00318F01 /* NIMSessionFileTransContentView.m in Sources */,
 				A04626262333B94F00318F01 /* ChapterViewController.m in Sources */,
@@ -6683,6 +6698,7 @@
 				A0462B332333BA2C00318F01 /* NTESFilePreViewController.m in Sources */,
 				A0462CAB2333BA2D00318F01 /* NIMKitConfig.m in Sources */,
 				A0462AC52333BA2C00318F01 /* NTESSearchTeamViewController.m in Sources */,
+				A0290377233B9913001E061F /* XLGPaddingLabel.m in Sources */,
 				A0462AE32333BA2C00318F01 /* NTESChatroomConfig.m in Sources */,
 				A0462BD92333BA2D00318F01 /* NIMInputEmoticonParser.m in Sources */,
 				A0462ADF2333BA2C00318F01 /* NTESSubscribeManager.m in Sources */,

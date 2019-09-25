@@ -37,8 +37,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavBarH, WIDTH, HEIGHT-kNavBarH-kTabBarSafeH) style:UITableViewStylePlain];
+    self.view.backgroundColor = PageColor;
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavBarH+1, WIDTH, HEIGHT-kNavBarH-kTabBarSafeH-1) style:UITableViewStylePlain];
     [self.view addSubview:self.tableView];
     self.tableView.delegate         = self;
     self.tableView.dataSource       = self;
@@ -88,14 +88,18 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 70.f;
+    NIMRecentSession *recent = self.recentSessions[indexPath.row];
+    NSString *courseStr = [self courseForRecentSession:recent];
+    if ([NSString isEmpty:courseStr]) {
+        return 70.f;
+    } else {
+        return 100.f;
+    }
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
 }
-
-
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -110,14 +114,15 @@
         [cell.avatarImageView addTarget:self action:@selector(onTouchAvatar:) forControlEvents:UIControlEventTouchUpInside];
     }
     NIMRecentSession *recent = self.recentSessions[indexPath.row];
-    cell.nameLabel.text = [self nameForRecentSession:recent];
     [cell.avatarImageView setAvatarBySession:recent.session];
+    cell.nameLabel.text = [self nameForRecentSession:recent];
     [cell.nameLabel sizeToFit];
+    cell.courseLabel.text = [self courseForRecentSession:recent];
+    [cell.courseLabel sizeToFit];
     cell.messageLabel.attributedText  = [self contentForRecentSession:recent];
     [cell.messageLabel sizeToFit];
     cell.timeLabel.text = [self timestampDescriptionForRecentSession:recent];
     [cell.timeLabel sizeToFit];
-    
     [cell refresh:recent];
     return cell;
 }
@@ -207,8 +212,6 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-
-
 - (NSString *)nameForRecentSession:(NIMRecentSession *)recent {
     if (recent.session.sessionType == NIMSessionTypeP2P) {
         return [NIMKitUtil showNick:recent.session.sessionId inSession:recent.session];
@@ -222,6 +225,26 @@
         NSAssert(NO, @"");
         return nil;
     }
+}
+
+- (NSString *)courseForRecentSession:(NIMRecentSession *)recent {
+    NSString *courseStr = @"";
+    NIMUser *user = [[NIMSDK sharedSDK].userManager userInfo:recent.session.sessionId];
+    NSString *serverExt = user.serverExt;
+    NSData *jsonData = [serverExt dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *serverExtDic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
+    if ([serverExtDic.allKeys containsObject:@"project"]) {
+        NSDictionary *dic = serverExtDic[@"project"];
+        NSArray *keyArr = dic.allKeys;
+        for (int i = 0; i<keyArr.count; i++) {
+            if (i==0) {
+                courseStr = dic[keyArr[i]];
+            } else {
+                courseStr = [NSString stringWithFormat:@"%@ %@",courseStr,dic[keyArr[i]]];
+            }
+        }
+    }
+    return courseStr;
 }
 
 - (NSAttributedString *)contentForRecentSession:(NIMRecentSession *)recent{
@@ -277,8 +300,6 @@
     NIMRecentSession *recent = self.recentSessions[indexPath.row];
     [self onSelectedAvatar:recent atIndexPath:indexPath];
 }
-
-
 
 #pragma mark - Private
 - (NSString *)messageContent:(NIMMessage*)lastMessage{
