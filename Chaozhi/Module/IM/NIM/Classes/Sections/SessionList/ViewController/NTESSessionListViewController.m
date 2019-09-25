@@ -471,7 +471,6 @@
             [content insertAttributedString:atTip atIndex:0];
         }
     }
-    
 }
 
 @end

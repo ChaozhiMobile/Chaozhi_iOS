@@ -13,6 +13,7 @@
 #import "NIMAvatarImageView.h"
 #import "NIMKitUtil.h"
 #import "NIMKit.h"
+#import "NTESSessionUtil.h"
 
 @interface NIMSessionListViewController ()
 
@@ -249,6 +250,12 @@
 
 - (NSAttributedString *)contentForRecentSession:(NIMRecentSession *)recent{
     NSString *content = [self messageContent:recent.lastMessage];
+    NSString *state = [NTESSessionUtil onlineState:recent.session.sessionId detail:NO];
+    if (![NSString isEmpty:state]) {
+        content = [NSString stringWithFormat:@"[%@] %@",state,content];
+    } else {
+        content = [NSString stringWithFormat:@"[离线] %@",content];
+    }
     return [[NSAttributedString alloc] initWithString:content ?: @""];
 }
 
