@@ -80,7 +80,7 @@ NIMTeamCardViewControllerDelegate>
     [super viewDidLoad];
     DDLogInfo(@"enter session, id = %@",self.session.sessionId);
     _notificaionSender  = [[NTESCustomSysNotificationSender alloc] init];
-    [self setUpNav];
+//    [self setUpNav];
     BOOL disableCommandTyping = self.disableCommandTyping || (self.session.sessionType == NIMSessionTypeP2P &&[[NIMSDK sharedSDK].userManager isUserInBlackList:self.session.sessionId]);
     if (!disableCommandTyping) {
         _titleTimer = [[NTESTimerHolder alloc] init];
