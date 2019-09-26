@@ -3946,9 +3946,9 @@
 		A04627E62333BA2700318F01 /* NIM */ = {
 			isa = PBXGroup;
 			children = (
-				A0F13C082338C9D900130E5A /* Resource */,
 				A04627E72333BA2700318F01 /* Classes */,
 				A0462CB22333BAAB00318F01 /* Vendors */,
+				A0F13C082338C9D900130E5A /* Resource */,
 			);
 			path = NIM;
 			sourceTree = "<group>";
@@ -3956,8 +3956,8 @@
 		A04627E72333BA2700318F01 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				A0F13BF62338B0CB00130E5A /* Private */,
 				A04628132333BA2800318F01 /* Sections */,
+				A0F13BF62338B0CB00130E5A /* Private */,
 				A046294A2333BA2900318F01 /* LayoutConfig */,
 				A04629512333BA2900318F01 /* Service */,
 				A046290E2333BA2900318F01 /* Util */,
@@ -3996,12 +3996,12 @@
 		A04628152333BA2800318F01 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A04628162333BA2800318F01 /* NTESGroupedDataCollection.h */,
 				A04628172333BA2800318F01 /* NTESContactDataMember.h */,
-				A04628182333BA2800318F01 /* NTESGroupedContacts.h */,
 				A04628192333BA2800318F01 /* NTESContactDataMember.m */,
-				A046281A2333BA2800318F01 /* NTESGroupedDataCollection.m */,
+				A04628182333BA2800318F01 /* NTESGroupedContacts.h */,
 				A046281B2333BA2800318F01 /* NTESGroupedContacts.m */,
+				A04628162333BA2800318F01 /* NTESGroupedDataCollection.h */,
+				A046281A2333BA2800318F01 /* NTESGroupedDataCollection.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -4009,15 +4009,15 @@
 		A046281C2333BA2800318F01 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A046281D2333BA2800318F01 /* NTESContactDataCell.m */,
-				A046281E2333BA2800318F01 /* NTESUserListCell.h */,
-				A046281F2333BA2800318F01 /* NTESContactUtilCell.h */,
-				A04628202333BA2800318F01 /* NTESContactUtilItem.h */,
-				A04628212333BA2800318F01 /* NTESUserListCell.m */,
 				A04628222333BA2800318F01 /* NTESContactDataCell.h */,
-				A04628232333BA2800318F01 /* NTESContactUtilItem.m */,
-				A04628242333BA2800318F01 /* NTESContactUtilCell.m */,
+				A046281D2333BA2800318F01 /* NTESContactDataCell.m */,
 				A04628252333BA2800318F01 /* NTESContactDefines.h */,
+				A046281F2333BA2800318F01 /* NTESContactUtilCell.h */,
+				A04628242333BA2800318F01 /* NTESContactUtilCell.m */,
+				A04628202333BA2800318F01 /* NTESContactUtilItem.h */,
+				A04628232333BA2800318F01 /* NTESContactUtilItem.m */,
+				A046281E2333BA2800318F01 /* NTESUserListCell.h */,
+				A04628212333BA2800318F01 /* NTESUserListCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4033,15 +4033,15 @@
 		A04628272333BA2800318F01 /* Contact */ = {
 			isa = PBXGroup;
 			children = (
-				A04628282333BA2800318F01 /* NTESContactViewController.xib */,
-				A04628292333BA2800318F01 /* NTESContactViewController.h */,
-				A046282A2333BA2800318F01 /* NTESRobotListViewController.h */,
+				A04628302333BA2800318F01 /* NTESBlackListViewController.h */,
 				A046282B2333BA2800318F01 /* NTESBlackListViewController.m */,
 				A046282C2333BA2800318F01 /* NTESContactAddFriendViewController.h */,
-				A046282D2333BA2800318F01 /* NTESContactViewController.m */,
-				A046282E2333BA2800318F01 /* NTESRobotListViewController.m */,
 				A046282F2333BA2800318F01 /* NTESContactAddFriendViewController.m */,
-				A04628302333BA2800318F01 /* NTESBlackListViewController.h */,
+				A04628292333BA2800318F01 /* NTESContactViewController.h */,
+				A046282D2333BA2800318F01 /* NTESContactViewController.m */,
+				A04628282333BA2800318F01 /* NTESContactViewController.xib */,
+				A046282A2333BA2800318F01 /* NTESRobotListViewController.h */,
+				A046282E2333BA2800318F01 /* NTESRobotListViewController.m */,
 			);
 			path = Contact;
 			sourceTree = "<group>";
@@ -4067,10 +4067,10 @@
 		A04628352333BA2800318F01 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A04628362333BA2800318F01 /* NTESColorButtonCell.m */,
+				A04628392333BA2800318F01 /* NTESCardPortraitCell.h */,
 				A04628372333BA2800318F01 /* NTESCardPortraitCell.m */,
 				A04628382333BA2800318F01 /* NTESColorButtonCell.h */,
-				A04628392333BA2800318F01 /* NTESCardPortraitCell.h */,
+				A04628362333BA2800318F01 /* NTESColorButtonCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4078,21 +4078,21 @@
 		A046283A2333BA2800318F01 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A046283B2333BA2800318F01 /* NTESJionTeamViewController.xib */,
-				A046283C2333BA2800318F01 /* NTESSessionCardViewController.h */,
-				A046283D2333BA2800318F01 /* NTESSearchTeamViewController.xib */,
-				A046283E2333BA2800318F01 /* NTESPersonalCardViewController.m */,
-				A046283F2333BA2800318F01 /* NTESRobotCardViewController.xib */,
-				A04628402333BA2800318F01 /* NTESSearchTeamViewController.m */,
 				A04628412333BA2800318F01 /* NTESJionTeamViewController.h */,
-				A04628422333BA2800318F01 /* NTESRobotCardViewController.m */,
-				A04628432333BA2800318F01 /* NTESTeamListViewController.m */,
-				A04628442333BA2800318F01 /* NTESSessionCardViewController.m */,
-				A04628452333BA2800318F01 /* NTESSearchTeamViewController.h */,
-				A04628462333BA2800318F01 /* NTESPersonalCardViewController.h */,
-				A04628472333BA2800318F01 /* NTESTeamListViewController.h */,
-				A04628482333BA2800318F01 /* NTESRobotCardViewController.h */,
 				A04628492333BA2800318F01 /* NTESJionTeamViewController.m */,
+				A046283B2333BA2800318F01 /* NTESJionTeamViewController.xib */,
+				A04628462333BA2800318F01 /* NTESPersonalCardViewController.h */,
+				A046283E2333BA2800318F01 /* NTESPersonalCardViewController.m */,
+				A04628482333BA2800318F01 /* NTESRobotCardViewController.h */,
+				A04628422333BA2800318F01 /* NTESRobotCardViewController.m */,
+				A046283F2333BA2800318F01 /* NTESRobotCardViewController.xib */,
+				A04628452333BA2800318F01 /* NTESSearchTeamViewController.h */,
+				A04628402333BA2800318F01 /* NTESSearchTeamViewController.m */,
+				A046283D2333BA2800318F01 /* NTESSearchTeamViewController.xib */,
+				A046283C2333BA2800318F01 /* NTESSessionCardViewController.h */,
+				A04628442333BA2800318F01 /* NTESSessionCardViewController.m */,
+				A04628472333BA2800318F01 /* NTESTeamListViewController.h */,
+				A04628432333BA2800318F01 /* NTESTeamListViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -4100,17 +4100,17 @@
 		A046284A2333BA2800318F01 /* Notification */ = {
 			isa = PBXGroup;
 			children = (
+				A04628552333BA2800318F01 /* DB */,
+				A04628522333BA2800318F01 /* Model */,
 				A046284B2333BA2800318F01 /* NTESCustomSysNotificationViewController.h */,
+				A04628512333BA2800318F01 /* NTESCustomSysNotificationViewController.m */,
 				A046284C2333BA2800318F01 /* NTESCustomSysNotificationViewController.xib */,
 				A046284D2333BA2800318F01 /* NTESSystemNotificationCell.h */,
-				A046284E2333BA2800318F01 /* NTESSystemNotificationViewController.xib */,
+				A04628582333BA2800318F01 /* NTESSystemNotificationCell.m */,
 				A046284F2333BA2800318F01 /* NTESSystemNotificationCell.xib */,
 				A04628502333BA2800318F01 /* NTESSystemNotificationViewController.h */,
-				A04628512333BA2800318F01 /* NTESCustomSysNotificationViewController.m */,
-				A04628522333BA2800318F01 /* Model */,
-				A04628552333BA2800318F01 /* DB */,
-				A04628582333BA2800318F01 /* NTESSystemNotificationCell.m */,
 				A04628592333BA2800318F01 /* NTESSystemNotificationViewController.m */,
+				A046284E2333BA2800318F01 /* NTESSystemNotificationViewController.xib */,
 			);
 			path = Notification;
 			sourceTree = "<group>";
@@ -4136,8 +4136,8 @@
 		A046285A2333BA2800318F01 /* Subscribe */ = {
 			isa = PBXGroup;
 			children = (
-				A046285B2333BA2800318F01 /* NTESSubscribeManager.h */,
 				A046285C2333BA2800318F01 /* NTESSubscribeDefine.h */,
+				A046285B2333BA2800318F01 /* NTESSubscribeManager.h */,
 				A046285D2333BA2800318F01 /* NTESSubscribeManager.m */,
 			);
 			path = Subscribe;
@@ -4146,23 +4146,23 @@
 		A046285E2333BA2800318F01 /* Chatroom */ = {
 			isa = PBXGroup;
 			children = (
-				A046285F2333BA2800318F01 /* NTESChatroomListViewController.h */,
-				A04628602333BA2800318F01 /* NTESChatroomMaker.m */,
 				A04628612333BA2800318F01 /* Config */,
-				A04628642333BA2800318F01 /* NTESChatroomMemberListViewController.m */,
-				A04628652333BA2800318F01 /* NTESLiveInfoViewController.m */,
-				A04628662333BA2800318F01 /* NTESChatroomViewController.h */,
-				A04628672333BA2800318F01 /* NTESChatroomMessageDataProvider.h */,
-				A04628682333BA2800318F01 /* NTESLiveViewController.m */,
-				A04628692333BA2800318F01 /* NTESChatroomListViewController.m */,
 				A046286A2333BA2800318F01 /* Manager */,
+				A046285F2333BA2800318F01 /* NTESChatroomListViewController.h */,
+				A04628692333BA2800318F01 /* NTESChatroomListViewController.m */,
 				A046286D2333BA2800318F01 /* NTESChatroomMaker.h */,
-				A046286E2333BA2800318F01 /* View */,
-				A046287F2333BA2800318F01 /* NTESChatroomMessageDataProvider.m */,
-				A04628802333BA2800318F01 /* NTESLiveInfoViewController.h */,
-				A04628812333BA2800318F01 /* NTESChatroomViewController.m */,
+				A04628602333BA2800318F01 /* NTESChatroomMaker.m */,
 				A04628822333BA2800318F01 /* NTESChatroomMemberListViewController.h */,
+				A04628642333BA2800318F01 /* NTESChatroomMemberListViewController.m */,
+				A04628672333BA2800318F01 /* NTESChatroomMessageDataProvider.h */,
+				A046287F2333BA2800318F01 /* NTESChatroomMessageDataProvider.m */,
+				A04628662333BA2800318F01 /* NTESChatroomViewController.h */,
+				A04628812333BA2800318F01 /* NTESChatroomViewController.m */,
+				A04628802333BA2800318F01 /* NTESLiveInfoViewController.h */,
+				A04628652333BA2800318F01 /* NTESLiveInfoViewController.m */,
 				A04628832333BA2800318F01 /* NTESLiveViewController.h */,
+				A04628682333BA2800318F01 /* NTESLiveViewController.m */,
+				A046286E2333BA2800318F01 /* View */,
 			);
 			path = Chatroom;
 			sourceTree = "<group>";
@@ -4170,8 +4170,8 @@
 		A04628612333BA2800318F01 /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				A04628622333BA2800318F01 /* NTESChatroomConfig.m */,
 				A04628632333BA2800318F01 /* NTESChatroomConfig.h */,
+				A04628622333BA2800318F01 /* NTESChatroomConfig.m */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -4179,8 +4179,8 @@
 		A046286A2333BA2800318F01 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				A046286B2333BA2800318F01 /* NTESChatroomManager.m */,
 				A046286C2333BA2800318F01 /* NTESChatroomManager.h */,
+				A046286B2333BA2800318F01 /* NTESChatroomManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -4294,10 +4294,10 @@
 		A046289A2333BA2800318F01 /* Session */ = {
 			isa = PBXGroup;
 			children = (
+				A04628C42333BA2900318F01 /* ViewController */,
+				A04628B12333BA2900318F01 /* View */,
 				A046289B2333BA2800318F01 /* Config */,
 				A046289E2333BA2800318F01 /* Object */,
-				A04628B12333BA2900318F01 /* View */,
-				A04628C42333BA2900318F01 /* ViewController */,
 			);
 			path = Session;
 			sourceTree = "<group>";

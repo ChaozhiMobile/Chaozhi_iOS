@@ -104,7 +104,6 @@
     [self.view addSubview:self.tableView];
 }
 
-
 - (void)setupInputView
 {
     if ([self shouldShowInputView])
@@ -118,7 +117,6 @@
         [self.view addSubview:_sessionInputView];
     }
 }
-
 
 - (void)setupConfigurator
 {
@@ -135,7 +133,6 @@
     [self.interactor onViewWillAppear];
 }
 
-
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
@@ -148,14 +145,11 @@
     [self.interactor onViewDidDisappear];
 }
 
-
 - (void)viewDidLayoutSubviews
 {
     [self changeLeftBarBadge:self.conversationManager.allUnreadCount];
     [self.interactor resetLayout];
 }
-
-
 
 #pragma mark - 消息收发接口
 - (void)sendMessage:(NIMMessage *)message
@@ -539,8 +533,6 @@
     return should;
 }
 
-
-
 //是否需要显示输入框 : 某些场景不需要显示输入框，如使用 3D touch 的场景预览会话界面内容
 - (BOOL)shouldShowInputView
 {
@@ -615,7 +607,6 @@
     }
     return NO;
 }
-
 
 - (void)copyText:(id)sender
 {

@@ -79,8 +79,6 @@
     [self.tableView reloadData];
 }
 
-
-
 - (void)changeLayout:(CGFloat)inputViewHeight
 {
     BOOL change = _inputViewHeight != inputViewHeight;
@@ -91,7 +89,6 @@
         [self adjustTableView];
     }
 }
-
 
 - (void)adjustInputView
 {
@@ -172,7 +169,6 @@
     [UIMenuController sharedMenuController].menuItems = nil;
 }
 
-
 - (void)keyboardWillChangeFrame:(NSNotification *)notification
 {
     if (!self.tableView.window)
@@ -182,9 +178,6 @@
     }
     [self.inputView sizeToFit];
 }
-
-
-
 
 #pragma mark - Private
 
@@ -255,7 +248,6 @@
         [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
     }
 }
-
 
 - (void)update:(NSIndexPath *)indexPath
 {

@@ -62,7 +62,6 @@ NTESTimerHolderDelegate,
 NIMEventSubscribeManagerDelegate,
 NIMTeamCardViewControllerDelegate>
 
-
 @property (nonatomic,strong)    NTESCustomSysNotificationSender *notificaionSender;
 @property (nonatomic,strong)    NTESSessionConfig       *sessionConfig;
 @property (nonatomic,strong)    UIImagePickerController *imagePicker;
@@ -71,8 +70,6 @@ NIMTeamCardViewControllerDelegate>
 @property (nonatomic,strong)    NTESFPSLabel *fpsLabel;
 @property (nonatomic,strong)    NIMKitMediaFetcher *mediaFetcher;
 @end
-
-
 
 @implementation NTESSessionViewController
 
@@ -104,7 +101,6 @@ NIMTeamCardViewControllerDelegate>
     
     //删除最近会话列表中有人@你的标记
     [NTESSessionUtil removeRecentSessionMark:self.session type:NTESRecentSessionMarkTypeAt];
-    
 }
 
 - (void)dealloc
@@ -122,6 +118,15 @@ NIMTeamCardViewControllerDelegate>
     [super viewDidLayoutSubviews];
     self.fpsLabel.right = self.view.width;
     self.fpsLabel.top   = self.tableView.top + self.tableView.contentInset.top;
+    
+    if (self.session.sessionType == NIMSessionTypeP2P) {
+        NSString *state  = [NTESSessionUtil onlineState:self.session.sessionId detail:YES];
+        if ([NSString isEmpty:state] || [state containsString:@"离线"]) {
+            NSString *offline_send_tip = @"班主任不在线，您可以留言，或者联系其他老师";
+            NIMMessage *message = [NTESSessionMsgConverter msgWithTip:offline_send_tip];
+            [self sendMessage:message];
+        }
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -191,7 +196,6 @@ NIMTeamCardViewControllerDelegate>
 {
     [self refreshSessionTitle:self.sessionTitle];
 }
-
 
 - (NSString *)sessionTitle
 {
@@ -270,7 +274,6 @@ NIMTeamCardViewControllerDelegate>
     }
     [super sendMessage:message];
 }
-
 
 #pragma mark - 石头剪子布
 - (void)onTapMediaItemJanKenPon:(NIMMediaItem *)item
@@ -489,11 +492,11 @@ NIMTeamCardViewControllerDelegate>
 }
 
 - (BOOL)onTapAvatar:(NIMMessage *)message{
-    NSString *userId = [self messageSendSource:message];
-    UIViewController *vc = nil;
-    vc = [[NTESPersonalCardViewController alloc] initWithUserId:userId];
-    
-    [self.navigationController pushViewController:vc animated:YES];
+//    NSString *userId = [self messageSendSource:message];
+//    UIViewController *vc = nil;
+//    vc = [[NTESPersonalCardViewController alloc] initWithUserId:userId];
+//    
+//    [self.navigationController pushViewController:vc animated:YES];
     return YES;
 }
 

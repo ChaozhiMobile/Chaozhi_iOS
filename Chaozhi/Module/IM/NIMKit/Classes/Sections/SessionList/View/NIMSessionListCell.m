@@ -54,8 +54,8 @@
 }
 
 #define NameLabelMaxWidth    160.f
-#define MessageLabelMaxWidth 200.f
-#define CourseLabelMaxWidth  200.f
+#define MessageLabelMaxWidth 300.f
+#define CourseLabelMaxWidth  300.f
 - (void)refresh:(NIMRecentSession*)recent{
     self.nameLabel.nim_width = self.nameLabel.nim_width > NameLabelMaxWidth ? NameLabelMaxWidth : self.nameLabel.nim_width;
     self.courseLabel.nim_width = self.courseLabel.nim_width > CourseLabelMaxWidth ? CourseLabelMaxWidth : self.courseLabel.nim_width;

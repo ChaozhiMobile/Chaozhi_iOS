@@ -148,13 +148,13 @@ NSString *NTESNotificationLogout = @"NTESNotificationLogout";
     UMConfigInstance.appKey = kUMKey;
     UMConfigInstance.channelId = @"App Store";
     [MobClick startWithConfigure:UMConfigInstance];//配置以上参数后调用此方法初始化SDK！
-    
     //应用趋势分析(版本分布)
     NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     [MobClick setAppVersion:version];
-    
     //日志加密设置
     [MobClick setEncryptEnabled:YES]; //加密，默认为NO(不加密)
+    //日志开启
+    [MobClick setLogEnabled:YES];
 }
 
 #pragma mark - 注册云信

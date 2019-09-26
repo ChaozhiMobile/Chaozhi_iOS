@@ -150,11 +150,11 @@
 
 - (void)onSelectedAvatar:(NIMRecentSession *)recent
              atIndexPath:(NSIndexPath *)indexPath{
-    if (recent.session.sessionType == NIMSessionTypeP2P) {
-        UIViewController *vc;
-        vc = [[NTESPersonalCardViewController alloc] initWithUserId:recent.session.sessionId];
-        [self.navigationController pushViewController:vc animated:YES];
-    }
+//    if (recent.session.sessionType == NIMSessionTypeP2P) {
+//        UIViewController *vc;
+//        vc = [[NTESPersonalCardViewController alloc] initWithUserId:recent.session.sessionId];
+//        [self.navigationController pushViewController:vc animated:YES];
+//    }
 }
 
 - (void)onDeleteRecentAtIndexPath:(NIMRecentSession *)recent atIndexPath:(NSIndexPath *)indexPath
@@ -408,7 +408,6 @@
     return titleView;
 }
 
-
 - (NSAttributedString *)contentForRecentSession:(NIMRecentSession *)recent{
     NSAttributedString *content;
     if (recent.lastMessage.messageType == NIMMessageTypeCustom)
@@ -464,7 +463,7 @@
 - (void)checkOnlineState:(NIMRecentSession *)recent content:(NSMutableAttributedString *)content
 {
     if (recent.session.sessionType == NIMSessionTypeP2P) {
-        NSString *state  = [NTESSessionUtil onlineState:recent.session.sessionId detail:NO];
+        NSString *state  = [NTESSessionUtil onlineState:recent.session.sessionId detail:YES];
         if (state.length) {
             NSString *format = [NSString stringWithFormat:@"[%@] ",state];
             NSAttributedString *atTip = [[NSAttributedString alloc] initWithString:format attributes:nil];

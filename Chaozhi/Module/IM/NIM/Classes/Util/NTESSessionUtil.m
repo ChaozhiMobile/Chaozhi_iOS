@@ -426,7 +426,7 @@ static NSString *const NTESRecentSessionTopMark = @"NTESRecentSessionTopMark";
 
 + (NSString *)onlineState:(NSString *)userId detail:(BOOL)detail
 {
-    NSString *state = @"";
+    NSString *state = @"离线";
     if (![NTESSubscribeManager sharedManager] || [[NIMSDK sharedSDK].loginManager.currentAccount isEqualToString:userId])
     {
         //没有开启订阅服务或是自己  不显示在线状态
