@@ -29,7 +29,7 @@
     if ([attachment respondsToSelector:@selector(formatedMessage)]) {
         self.label.text =  [attachment formatedMessage];
     }
-    self.label.textColor = [UIColor whiteColor];;
+    self.label.textColor = [UIColor whiteColor];
     self.label.font = [UIFont systemFontOfSize:10.f];
 }
 

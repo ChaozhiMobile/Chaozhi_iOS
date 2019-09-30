@@ -8,8 +8,8 @@
 
 #import "NIMSessionMessageContentView.h"
 
-@interface NIMSessionNotificationContentView : NIMSessionMessageContentView
+@interface NIMSessionNotificationContentView : NIMSessionMessageContentView<UITextViewDelegate>
 
-@property (strong, nonatomic) UILabel *label;
+@property (strong, nonatomic) UITextView *label;
 
 @end

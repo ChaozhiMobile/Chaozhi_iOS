@@ -20,7 +20,7 @@
 
 #define lineCount 5
 
-@interface XZHomeVC ()<UITableViewDataSource,UITableViewDelegate,SKStoreProductViewControllerDelegate, UpdateViewDelegate>
+@interface XZHomeVC ()<UITableViewDataSource,UITableViewDelegate,SKStoreProductViewControllerDelegate, UpdateViewDelegate,SDCycleScrollViewDelegate>
 
 /** 版本更新 */
 @property (nonatomic, strong) UIView *BGView;
@@ -67,6 +67,7 @@
     _page = 1;
     _bannerView.backgroundColor = PageColor;
     _bannerView.placeholderImage = [UIImage imageNamed:@"default_banner"];
+    _bannerView.delegate = self;
     _titleArr = @[@{@"title":@"畅销好课",@"titleEN":@"PART ONE"},@{@"title":@"公开课",@"titleEN":@"PART TWO"},@{@"title":@"行业资讯",@"titleEN":@"PART THREE"}];
     
     _mainTabView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -138,6 +139,13 @@
         [bannerImgUrlArr addObject:item.img];
     }
     _bannerView.imageURLStringsGroup = bannerImgUrlArr;
+}
+
+#pragma mark - SDCycleScrollViewDelegate
+
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
+    HomeBannerItem *item = _homeItem.banner_list[index];
+    [BaseWebVC showWithContro:self withUrlStr:item.param withTitle:item.title isPresent:NO];
 }
 
 #pragma mark - 课程分类

@@ -4370,16 +4370,16 @@
 		A04628B32333BA2900318F01 /* SessionContentView */ = {
 			isa = PBXGroup;
 			children = (
-				A04628B42333BA2900318F01 /* NTESSessionJankenponContentView.h */,
-				A04628B52333BA2900318F01 /* NTESSessionTipContentView.h */,
-				A04628B62333BA2900318F01 /* NTESSessionChartletContentView.m */,
-				A04628B72333BA2900318F01 /* NTESSessionWhiteBoardContentView.m */,
-				A04628B82333BA2900318F01 /* NTESSessionSnapchatContentView.m */,
-				A04628B92333BA2900318F01 /* NTESSessionTipContentView.m */,
-				A04628BA2333BA2900318F01 /* NTESSessionJankenponContentView.m */,
-				A04628BB2333BA2900318F01 /* NTESSessionWhiteBoardContentView.h */,
 				A04628BC2333BA2900318F01 /* NTESSessionChartletContentView.h */,
+				A04628B62333BA2900318F01 /* NTESSessionChartletContentView.m */,
+				A04628B42333BA2900318F01 /* NTESSessionJankenponContentView.h */,
+				A04628BA2333BA2900318F01 /* NTESSessionJankenponContentView.m */,
 				A04628BD2333BA2900318F01 /* NTESSessionSnapchatContentView.h */,
+				A04628B82333BA2900318F01 /* NTESSessionSnapchatContentView.m */,
+				A04628B52333BA2900318F01 /* NTESSessionTipContentView.h */,
+				A04628B92333BA2900318F01 /* NTESSessionTipContentView.m */,
+				A04628BB2333BA2900318F01 /* NTESSessionWhiteBoardContentView.h */,
+				A04628B72333BA2900318F01 /* NTESSessionWhiteBoardContentView.m */,
 			);
 			path = SessionContentView;
 			sourceTree = "<group>";

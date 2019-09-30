@@ -22,7 +22,7 @@
 @implementation DayNewTabCell
 @end
 
-@interface CZHomeVC ()<UITableViewDataSource,UITableViewDelegate,SKStoreProductViewControllerDelegate, UpdateViewDelegate>{
+@interface CZHomeVC ()<UITableViewDataSource,UITableViewDelegate,SKStoreProductViewControllerDelegate, UpdateViewDelegate,SDCycleScrollViewDelegate>{
 }
 @property (nonatomic, strong) UIView *BGView;
 @property (nonatomic, strong) CZUpdateView *updateView;
@@ -123,6 +123,7 @@
     _page = 1;
     _bannerView.backgroundColor = PageColor;
     _bannerView.placeholderImage = [UIImage imageNamed:@"default_banner"];
+    _bannerView.delegate = self;
     
     NSString *selectCourseID = [CacheUtil getCacherWithKey:kSelectCourseIDKey];
     __weak typeof(self) weakSelf = self;
@@ -231,7 +232,7 @@
 }
 
 // 获取banner、活动数据
-- (void) getBannerActivityData {
+- (void)getBannerActivityData {
     NSDictionary *dic = [NSDictionary dictionary];
     __weak typeof(self) weakSelf = self;
     [[NetworkManager sharedManager] postJSON:URL_AppHome parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
@@ -317,6 +318,13 @@
         [bannerImgUrlArr addObject:item.img];
     }
     _bannerView.imageURLStringsGroup = bannerImgUrlArr;
+}
+
+#pragma mark - SDCycleScrollViewDelegate
+
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
+    HomeBannerItem *item = _homeItem.banner_list[index];
+    [BaseWebVC showWithContro:self withUrlStr:item.param withTitle:item.title isPresent:NO];
 }
 
 #pragma mark - 精彩活动
