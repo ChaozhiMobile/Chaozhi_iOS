@@ -124,7 +124,6 @@
     _bannerView.backgroundColor = PageColor;
     _bannerView.placeholderImage = [UIImage imageNamed:@"default_banner"];
     _bannerView.delegate = self;
-    
     NSString *selectCourseID = [CacheUtil getCacherWithKey:kSelectCourseIDKey];
     __weak typeof(self) weakSelf = self;
     if ([NSString isEmpty:selectCourseID]) {

@@ -117,14 +117,10 @@
         NSString * newContent      = [notice stringByAppendingString:@"\n"];
         finalStr = [newContent stringByAppendingString:content?content:@""];
         
-        
-        
-       
 //        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
 //
 //        [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [content length])];
         
-     
     }
     NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
     [style setLineSpacing:4];
@@ -134,8 +130,8 @@
     [attrStr addAttribute:NSForegroundColorAttributeName value:UIColorFromRGBHex(0xff9000) range:NSMakeRange(0, notice.length)];
     
     cell.contentTextView.attributedText = attrStr;
+    cell.contentTextView.textContainerInset = UIEdgeInsetsMake(10, 5, 0, 0);
 
-    
     return cell;
 }
 
@@ -146,32 +142,23 @@
     if (!self.mess||self.mess[@"content"] == [NSNull null]) {
         return 81.0;
     }
+    
+//    NSDictionary *dic = @{NSFontAttributeName:[UIFont systemFontOfSize:14]};//指定字号
+//    CGRect rect1 = [content boundingRectWithSize:CGSizeMake(self.view.frame.size.width , 0)/*计算高度要先指定宽度*/ options:NSStringDrawingUsesLineFragmentOrigin |
+//                   NSStringDrawingUsesFontLeading attributes:dic context:nil];
+    
+    NSInteger height = [content getTextHeightWithFont:[UIFont systemFontOfSize:14] width:self.view.frame.size.width-42];
 
-
-
-    
-    
-    NSDictionary *dic = @{NSFontAttributeName:[UIFont systemFontOfSize:14]};//指定字号
-    CGRect rect1 = [content boundingRectWithSize:CGSizeMake(self.view.frame.size.width , 0)/*计算高度要先指定宽度*/ options:NSStringDrawingUsesLineFragmentOrigin |
-                   NSStringDrawingUsesFontLeading attributes:dic context:nil];
-    
-    
-    
-    
     CGFloat attrsSize = 0;
-    
     if (self.mess[@"content"] == [NSNull null]) {
-        
-      
+
     }else{
         NSDictionary *attrsDict = @{NSFontAttributeName : [UIFont boldSystemFontOfSize:14]};
         CGSize attrs=[@"\n" sizeWithAttributes:attrsDict];
         attrsSize = attrs.height;
     }
-    
-    return rect1.size.height+65.5+attrsSize;
-    
-    
+
+    return height*1.25+70+attrsSize;
 }
 
 - (void)dealloc

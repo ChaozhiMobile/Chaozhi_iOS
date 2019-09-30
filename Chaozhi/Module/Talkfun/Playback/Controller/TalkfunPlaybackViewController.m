@@ -588,12 +588,33 @@
 }
 
 - (void)errorNotification:(NSNotification *)notification {
-    NSDictionary * userInfo = notification.userInfo;
+    NSDictionary *userInfo = notification.userInfo;
     dispatch_async(dispatch_get_main_queue(), ^{
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"温馨提示" message:[NSString stringWithFormat:@"%@",[self dictionaryToJson:userInfo]] delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
-        alertView.alertViewStyle = UIAlertViewStyleDefault;
-        [alertView show];
-        
+        if ([userInfo.allKeys containsObject:@"code"]
+            && [userInfo[@"code"] intValue] == 1206) {
+            XLGAlertView *alert = [[XLGAlertView alloc] initWithTitle:@"温馨提示" content:@"回放生成中，请稍后再试！" leftButtonTitle:@"" rightButtonTitle:@"我知道了"];
+            WeakSelf
+            alert.doneBlock = ^{
+                NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
+                [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
+                
+                [TalkfunCourseManagement setPlay:[weakSelf.playbackID  integerValue] progress:weakSelf.playDuration];
+                
+                [[NSNotificationCenter defaultCenter] removeObserver:weakSelf];
+                
+                [weakSelf.view.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+                if (weakSelf.isOrientationLandscape) {
+                    [UIApplication sharedApplication].statusBarOrientation = UIInterfaceOrientationPortrait;
+                }
+                [weakSelf.talkfunSDK destroy];
+                [weakSelf timerInvalidate];
+                QUITCONTROLLER(weakSelf)
+            };
+        } else {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"温馨提示" message:[NSString stringWithFormat:@"%@",[self dictionaryToJson:userInfo]] delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
+            alertView.alertViewStyle = UIAlertViewStyleDefault;
+            [alertView show];
+        }
     });
 }
 
