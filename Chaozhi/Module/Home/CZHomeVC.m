@@ -323,7 +323,9 @@
 
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
     HomeBannerItem *item = _homeItem.banner_list[index];
-    [BaseWebVC showWithContro:self withUrlStr:item.param withTitle:item.title isPresent:NO];
+    if (![NSString isEmpty:item.param]) {
+        [BaseWebVC showWithContro:self withUrlStr:item.param withTitle:item.title isPresent:NO];
+    }
 }
 
 #pragma mark - 精彩活动
