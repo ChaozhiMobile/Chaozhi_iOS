@@ -41,7 +41,8 @@
     if ([AppChannel isEqualToString:@"1"]) { //超职
         [self registerUMeng]; //注册友盟
     }
-    [self initTXIM];
+    
+    [self initTXIM]; //注册腾讯IM
     
     [Utils changeUserAgent]; //WKWebView UA初始化
     
@@ -79,25 +80,18 @@
 }
 
 #pragma mark - 腾讯IM配置
-/** <#object#> */
+/** 腾讯IM配置 */
 - (void)initTXIM {
-    // Override point for customization after application launch.
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserStatus:) name:TUIKitNotification_TIMUserStatusListener object:nil];
     
-    
-    //_SDKAppID 填写自己控制台申请的sdkAppid
-    if (SDKAPPID == 0) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Demo 尚未配置 SDKAPPID，请前往 GenerateTestUserSig.h 配置" message:nil delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
-        [alert show];
-    }else{
-        [[TUIKit sharedInstance] setupWithAppId:SDKAPPID];
-    }
+    [[TUIKit sharedInstance] setupWithAppId:imKey()];
     
     NSNumber *appId = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_Appid];
     NSString *identifier = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_User];
-    //NSString *pwd = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_Pwd];
+//    NSString *pwd = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_Pwd];
     NSString *userSig = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_Sig];
-    if([appId integerValue] == SDKAPPID && identifier.length != 0 && userSig.length != 0){
+    if([appId integerValue] == imKey() && identifier.length != 0 && userSig.length != 0){
         __weak typeof(self) ws = self;
         TIMLoginParam *param = [[TIMLoginParam alloc] init];
         param.identifier = identifier;
@@ -126,7 +120,8 @@
     }
     else{
 //        _window.rootViewController = [self getLoginController];
-    }}
+    }
+}
 
 #pragma mark - 内购凭证校验
 - (void)iapCheck {

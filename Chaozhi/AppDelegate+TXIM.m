@@ -37,7 +37,6 @@
     }
 }
 
-
 /**
  *强制下线后的响应函数委托
  */
@@ -51,7 +50,7 @@
         NSNumber *appId = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_Appid];
         NSString *identifier = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_User];
         NSString *userSig = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_Sig];
-//        if([appId integerValue] == SDKAPPID && identifier.length != 0 && userSig.length != 0){
+//        if([appId integerValue] == imKey() && identifier.length != 0 && userSig.length != 0){
 //            __weak typeof(self) ws = self;
 //            TIMLoginParam *param = [[TIMLoginParam alloc] init];
 //            param.identifier = identifier;

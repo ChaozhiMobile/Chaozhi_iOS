@@ -11,6 +11,15 @@
 
 @implementation Config
 
+NSString *domainUrl(void) {
+    
+    if (KOnline || [Utils getServer] == 1) {
+        return BASE_URL; //正式地址
+    } else {
+        return BASE_URL_D; //测试地址
+    }
+}
+
 NSString *h5Url(void) {
     if (KOnline || [Utils getServer] == 1) {
         return H5_URL; //正式地址
@@ -19,12 +28,19 @@ NSString *h5Url(void) {
     }
 }
 
-NSString *domainUrl(void) {
-    
+NSString *imUrl(void) {
     if (KOnline || [Utils getServer] == 1) {
-        return BASE_URL; //正式地址
+        return IM_URL; //正式地址
     } else {
-        return BASE_URL_D; //测试地址
+        return IM_URL_D; //测试地址
+    }
+}
+
+int imKey(void) {
+    if (KOnline || [Utils getServer] == 1) {
+        return IM_KEY; //正式环境key
+    } else {
+        return IM_KEY_D; //测试环境key
     }
 }
 

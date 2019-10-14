@@ -8,6 +8,7 @@
 
 #import "CZLoginVC.h"
 #import "JPUSHService.h"
+#import "IMItem.h"
 
 @interface CZLoginVC ()
 
@@ -73,7 +74,6 @@
 
             [[NSNotificationCenter defaultCenter] postNotificationName:kLoginSuccNotification object:nil];
             
-            
             // 极光推送绑定别名
             [JPUSHService setTags:nil alias:self.phoneTF.text fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias) {
                 
@@ -90,13 +90,19 @@
 }
 
 - (void)loginIM {
-    TIMLoginParam *param = [[TIMLoginParam alloc] init];
-    param.identifier = @"";
-    param.userSig = @"";
-    [[TIMManager sharedInstance] login:param succ:^{
-        
-    } fail:^(int code, NSString *msg) {
-        
+    NSDictionary *dic = [NSDictionary dictionary];
+    [[NetworkManager sharedManager] postJSON:URL_IMLogin parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
+        if (status == Request_Success) {
+            IMItem *item = [IMItem mj_objectWithKeyValues:(NSDictionary *)responseData];
+            TIMLoginParam *param = [[TIMLoginParam alloc] init];
+            param.identifier = item.accid;
+            param.userSig = item.token;
+            [[TIMManager sharedInstance] login:param succ:^{
+                NSLog(@"腾讯IM登录成功");
+            } fail:^(int code, NSString *msg) {
+                NSLog(@"腾讯IM登录失败code：%d，msg：%@",code,msg);
+            }];
+        }
     }];
 }
 

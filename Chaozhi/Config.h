@@ -18,6 +18,18 @@
 
 NSString *domainUrl(void);
 
+#pragma mark - ---------------H5地址---------------
+
+NSString *h5Url(void);
+
+#pragma mark - ---------------IM地址---------------
+
+NSString *imUrl(void);
+
+#pragma mark - ---------------IM KEY---------------
+
+int imKey(void);
+
 #pragma mark - ---------------接口名称---------------
 
 #define URL_PhoneCaptcha @"api/phone-captcha" //获取验证码
@@ -44,10 +56,6 @@ NSString *domainUrl(void);
 #define URL_TeacherList @"api/user/teacher" //我的班主任列表
 #define URL_IMInfo @"api/user/im" //我的im信息
 #define URL_IMLogin @"api/user/im-login" //im登录
-
-#pragma mark - ---------------H5地址---------------
-
-NSString *h5Url(void);
 
 #pragma mark - ---------------H5名称---------------
 

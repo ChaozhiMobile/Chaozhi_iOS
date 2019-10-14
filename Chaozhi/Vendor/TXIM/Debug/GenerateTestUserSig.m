@@ -10,7 +10,7 @@
     long TLSTime = floor(current);
     NSMutableDictionary *obj = [@{@"TLS.ver": @"2.0",
                                   @"TLS.identifier": identifier,
-                                  @"TLS.sdkappid": @(SDKAPPID),
+                                  @"TLS.sdkappid": @(imKey()),
                                   @"TLS.expire": @(EXPIRETIME),
                                   @"TLS.time": @(TLSTime)} mutableCopy];
     NSMutableString *stringToSign = [[NSMutableString alloc] init];

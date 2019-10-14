@@ -23,6 +23,14 @@
 #define H5_URL      @"https://m.chaozhiedu.com/"
 // H5测试地址
 #define H5_URL_D    @"http://mtest.chaozhiedu.com/"
+// IM正式地址
+#define IM_URL      @"https://im-api.chaozhiedu.com/"
+// IM测试地址
+#define IM_URL_D    @"https://t-im-api.chaozhiedu.com/"
+// IM正式环境key
+#define IM_KEY      1400270095
+// IM测试环境key
+#define IM_KEY_D    1400269587
 
 /****************************配置项**************************/
 
