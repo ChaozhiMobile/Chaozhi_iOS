@@ -162,7 +162,7 @@ static Utils *_utils = nil;
                 //跳转到登录页面
                 UIViewController *vc = [Utils getViewController:@"Main" WithVCName:@"CZLoginVC"];
                 vc.hidesBottomBarWhenPushed = YES;
-                [[self getCurrentVC].navigationController pushViewController:vc animated:YES];
+                [[nc topViewController].navigationController pushViewController:vc animated:YES];
             }
         }
         return NO;

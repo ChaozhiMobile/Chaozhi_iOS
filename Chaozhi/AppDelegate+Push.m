@@ -45,6 +45,7 @@
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
     [JPUSHService registerDeviceToken:deviceToken];
+    self.deviceToken = deviceToken;
 }
 
 // 注册deviceToken失败

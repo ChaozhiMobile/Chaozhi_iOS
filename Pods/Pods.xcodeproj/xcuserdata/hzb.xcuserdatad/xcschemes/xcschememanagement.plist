@@ -25,6 +25,11 @@
 			<key>orderHint</key>
 			<integer>24</integer>
 		</dict>
+		<key>FBRetainCycleDetector.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>34</integer>
+		</dict>
 		<key>FLAnimatedImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,6 +72,11 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
+		<key>ISVImageScrollView.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>35</integer>
+		</dict>
 		<key>JFImagePicker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -102,6 +112,11 @@
 			<key>orderHint</key>
 			<integer>28</integer>
 		</dict>
+		<key>MBProgressHUD.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>36</integer>
+		</dict>
 		<key>MJExtension.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -116,6 +131,16 @@
 			<key>orderHint</key>
 			<integer>12</integer>
 		</dict>
+		<key>MLeaksFinder.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>37</integer>
+		</dict>
+		<key>MMLayout.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>38</integer>
+		</dict>
 		<key>Masonry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -129,6 +154,11 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>13</integer>
+		</dict>
+		<key>Pods-Xuezhi.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>39</integer>
 		</dict>
 		<key>ReactiveObjC.xcscheme</key>
 		<dict>
@@ -193,12 +223,32 @@
 			<key>orderHint</key>
 			<integer>31</integer>
 		</dict>
+		<key>TXIMSDK_TUIKit_iOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>43</integer>
+		</dict>
+		<key>TXIMSDK_iOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>42</integer>
+		</dict>
 		<key>TZImagePickerController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>20</integer>
+		</dict>
+		<key>TalkfunMediaFramework.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>40</integer>
+		</dict>
+		<key>Toast.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>41</integer>
 		</dict>
 		<key>UMengAnalytics-NO-IDFA.xcscheme</key>
 		<dict>
