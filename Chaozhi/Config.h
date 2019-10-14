@@ -41,6 +41,9 @@ NSString *domainUrl(void);
 #define URL_ResetAnswer @"api/question/reset-answer" //月考重置答案
 #define URL_LiveReviewInfo @"api/userlive/review-info" //直播评价信息
 #define URL_LiveReview @"api/userlive/review" //直播评价
+#define URL_TeacherList @"api/user/teacher" //我的班主任列表
+#define URL_IMInfo @"api/user/im" //我的im信息
+#define URL_IMLogin @"api/user/im-login" //im登录
 
 #pragma mark - ---------------H5地址---------------
 

@@ -31,6 +31,10 @@
 		20D3D3BA22C22E2100560A74 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D3B922C22E2000560A74 /* SystemConfiguration.framework */; };
 		393AD834213D295BF18D4A21 /* Pods_Xuezhi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86DD11823CFA282B4A0483A3 /* Pods_Xuezhi.framework */; };
 		85401F932D5D75079941DDCE /* Pods_Chaozhi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3429E05D3D88CA2DC3F14BB0 /* Pods_Chaozhi.framework */; };
+		A00692392354AA0000A74059 /* IMItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A00692382354A9FF00A74059 /* IMItem.m */; };
+		A006923A2354AA0000A74059 /* IMItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A00692382354A9FF00A74059 /* IMItem.m */; };
+		A006923D2354ACFC00A74059 /* TeacherItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A006923C2354ACFC00A74059 /* TeacherItem.m */; };
+		A006923E2354ACFC00A74059 /* TeacherItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A006923C2354ACFC00A74059 /* TeacherItem.m */; };
 		A00708FD22ED973B00C70CEE /* XZSelectCourseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00708FC22ED973B00C70CEE /* XZSelectCourseVC.m */; };
 		A007090022EDD48D00C70CEE /* XZTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00708FF22EDD48D00C70CEE /* XZTabBarVC.m */; };
 		A007090522EDD59C00C70CEE /* XZHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A007090422EDD59C00C70CEE /* XZHomeVC.m */; };
@@ -878,6 +882,10 @@
 		3429E05D3D88CA2DC3F14BB0 /* Pods_Chaozhi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chaozhi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57062E716BE44301CC362667 /* Pods-Chaozhi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chaozhi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chaozhi/Pods-Chaozhi.debug.xcconfig"; sourceTree = "<group>"; };
 		86DD11823CFA282B4A0483A3 /* Pods_Xuezhi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Xuezhi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A00692372354A9FF00A74059 /* IMItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IMItem.h; sourceTree = "<group>"; };
+		A00692382354A9FF00A74059 /* IMItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IMItem.m; sourceTree = "<group>"; };
+		A006923B2354ACFC00A74059 /* TeacherItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TeacherItem.h; sourceTree = "<group>"; };
+		A006923C2354ACFC00A74059 /* TeacherItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeacherItem.m; sourceTree = "<group>"; };
 		A00708FB22ED973B00C70CEE /* XZSelectCourseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZSelectCourseVC.h; sourceTree = "<group>"; };
 		A00708FC22ED973B00C70CEE /* XZSelectCourseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XZSelectCourseVC.m; sourceTree = "<group>"; };
 		A00708FE22EDD48D00C70CEE /* XZTabBarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZTabBarVC.h; sourceTree = "<group>"; };
@@ -2159,6 +2167,10 @@
 				A0CB7CB822C65D8800069B34 /* TalkfunItem.m */,
 				A0E8981C22CF22C600DB09BA /* VideoItem.h */,
 				A0E8981B22CF22C600DB09BA /* VideoItem.m */,
+				A00692372354A9FF00A74059 /* IMItem.h */,
+				A00692382354A9FF00A74059 /* IMItem.m */,
+				A006923B2354ACFC00A74059 /* TeacherItem.h */,
+				A006923C2354ACFC00A74059 /* TeacherItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3725,6 +3737,7 @@
 				A0AC08FA22C4BC7E001832EA /* LotteryViewController.m in Sources */,
 				A00D0D63231BA7A300CF25E7 /* AlbumCellTableViewCell.m in Sources */,
 				A0AC08F722C4BC7E001832EA /* MyLotteryViewController.m in Sources */,
+				A00692392354AA0000A74059 /* IMItem.m in Sources */,
 				A0AC092422C4BC7E001832EA /* TalkfunLongTextfieldView.m in Sources */,
 				A01F607622CB8960001133C4 /* DownloadListTableViewCell.m in Sources */,
 				A0AC08F522C4BC7E001832EA /* ChoiceButton.m in Sources */,
@@ -3747,6 +3760,7 @@
 				201DF3D022AE584700904EAF /* CZAlertView.m in Sources */,
 				A0AC08A522C4BC7D001832EA /* UTLHelpper.m in Sources */,
 				A0AC090C22C4BC7E001832EA /* ChatCell.m in Sources */,
+				A006923D2354ACFC00A74059 /* TeacherItem.m in Sources */,
 				A0AC08BF22C4BC7D001832EA /* TalkfunNewChatCell.m in Sources */,
 				A0AC08EF22C4BC7D001832EA /* TalkfunGuidanceView.m in Sources */,
 				A0541FA522F2C69C00D961B3 /* UIButton+CenterImageAndTitle.m in Sources */,
@@ -3906,6 +3920,7 @@
 				A045509C22EC8DFA00E17406 /* BaseWebVC.m in Sources */,
 				A0541FDF22F4163F00D961B3 /* XZSelectCourseTabCell.m in Sources */,
 				A045509D22EC8DFA00E17406 /* QuestionModel.m in Sources */,
+				A006923E2354ACFC00A74059 /* TeacherItem.m in Sources */,
 				A045509E22EC8DFA00E17406 /* TalkfunNetworkStatusView.m in Sources */,
 				A04550A122EC8DFA00E17406 /* NetworkDetector.m in Sources */,
 				A04550A222EC8DFA00E17406 /* Utils.m in Sources */,
@@ -3935,6 +3950,7 @@
 				A00D0D5E231BA7A300CF25E7 /* TalkfunPlaybackMessageView.m in Sources */,
 				A04550B922EC8DFA00E17406 /* TalkfunMultifunctionTool.m in Sources */,
 				A04550BA22EC8DFA00E17406 /* UITextField+HTtext.m in Sources */,
+				A006923A2354AA0000A74059 /* IMItem.m in Sources */,
 				A04550BB22EC8DFA00E17406 /* LDNetDiagnoService.m in Sources */,
 				A04550BD22EC8DFA00E17406 /* TalkfunNewTextfieldView.m in Sources */,
 				A00708FD22ED973B00C70CEE /* XZSelectCourseVC.m in Sources */,
