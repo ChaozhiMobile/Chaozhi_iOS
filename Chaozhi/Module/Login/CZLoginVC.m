@@ -78,7 +78,7 @@
             [JPUSHService setTags:nil alias:self.phoneTF.text fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias) {
                 
             }];
-            
+            [self loginIM];
             // 跳转到首页
             self.tabBarController.selectedIndex = 0;
             [self.navigationController popToRootViewControllerAnimated:NO];
@@ -86,6 +86,17 @@
         } else {
             [Utils showToast:@"登录失败"];
         }
+    }];
+}
+
+- (void)loginIM {
+    TIMLoginParam *param = [[TIMLoginParam alloc] init];
+    param.identifier = "";
+    param.userSig = @"";
+    [[TIMManager sharedInstance] login:param succ:^{
+        
+    } fail:^(int code, NSString *msg) {
+        
     }];
 }
 

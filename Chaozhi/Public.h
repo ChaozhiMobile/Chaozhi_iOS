@@ -31,6 +31,12 @@
 #import "XLGAlertView.h"
 #import "Talkfun.h"
 
+//腾信IM
+#import "ImSDK/ImSDK.h"
+#import "ReactiveObjC.h"
+#import "MMLayout/UIView+MMLayout.h"
+
+
 // AppDelegate
 #define CZAppDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
 #define kCachePath [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]

@@ -10,6 +10,7 @@
 #import "DownloadListController.h"
 #import "PurchaseItem.h"
 #import "NotifyItem.h"
+#import "TXChatViewController.h"
 
 @interface CZMineVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -252,8 +253,16 @@
     NSString *str = _nameArr[indexPath.row];
     
     if ([str isEqualToString:@"我的班主任"]) {
-        ChatItem *chatItem = self.purchaseArr[0];
-        [BaseWebVC showWithContro:self withUrlStr:chatItem.chat_url withTitle:_nameArr[indexPath.row] isPresent:NO];
+//        ChatItem *chatItem = self.purchaseArr[0];
+//        [BaseWebVC showWithContro:self withUrlStr:chatItem.chat_url withTitle:_nameArr[indexPath.row] isPresent:NO];
+        
+        TUIConversationCellData *data = [[TUIConversationCellData alloc] init];
+        data.convId = @"ffff";
+        data.convType = TIM_C2C;
+        data.title = @"我的班主任";
+        TXChatViewController *chat = [[TXChatViewController alloc] init];
+        chat.conversationData = data;
+        [self.navigationController pushViewController:chat animated:YES];
     }
     
     if ([str isEqualToString:@"报考资料"]) {

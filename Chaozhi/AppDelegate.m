@@ -15,6 +15,17 @@
 #import "UMMobClick/MobClick.h"
 #import "DBManager.h"
 
+#import "TNavigationController.h"
+#import "ConversationController.h"
+#import "SettingController.h"
+#import "ContactsController.h"
+#import "LoginController.h"
+#import "TUITabBarController.h"
+#import "TUIKit.h"
+#import "THeader.h"
+#import "ImSDK.h"
+#import "GenerateTestUserSig.h"
+
 @interface AppDelegate ()
 
 @end
@@ -30,7 +41,8 @@
     if ([AppChannel isEqualToString:@"1"]) { //超职
         [self registerUMeng]; //注册友盟
     }
-
+    [self initTXIM];
+    
     [Utils changeUserAgent]; //WKWebView UA初始化
     
     [self registerPush:application options:launchOptions]; //注册激光推送
@@ -65,6 +77,56 @@
     
     return YES;
 }
+
+#pragma mark - 腾讯IM配置
+/** <#object#> */
+- (void)initTXIM {
+    // Override point for customization after application launch.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserStatus:) name:TUIKitNotification_TIMUserStatusListener object:nil];
+    
+    
+    //_SDKAppID 填写自己控制台申请的sdkAppid
+    if (SDKAPPID == 0) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Demo 尚未配置 SDKAPPID，请前往 GenerateTestUserSig.h 配置" message:nil delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
+        [alert show];
+    }else{
+        [[TUIKit sharedInstance] setupWithAppId:SDKAPPID];
+    }
+    
+    NSNumber *appId = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_Appid];
+    NSString *identifier = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_User];
+    //NSString *pwd = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_Pwd];
+    NSString *userSig = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_Sig];
+    if([appId integerValue] == SDKAPPID && identifier.length != 0 && userSig.length != 0){
+        __weak typeof(self) ws = self;
+        TIMLoginParam *param = [[TIMLoginParam alloc] init];
+        param.identifier = identifier;
+        param.userSig = userSig;
+        [[TIMManager sharedInstance] login:param succ:^{
+            if (ws.deviceToken) {
+                TIMTokenParam *param = [[TIMTokenParam alloc] init];
+                /* 用户自己到苹果注册开发者证书，在开发者帐号中下载并生成证书(p12 文件)，将生成的 p12 文件传到腾讯证书管理控制台，控制台会自动生成一个证书 ID，将证书 ID 传入一下 busiId 参数中。*/
+                //企业证书 ID
+                param.busiId = sdkBusiId;
+                [param setToken:ws.deviceToken];
+                [[TIMManager sharedInstance] setToken:param succ:^{
+                    NSLog(@"-----> 上传 token 成功 ");
+                } fail:^(int code, NSString *msg) {
+                    NSLog(@"-----> 上传 token 失败 ");
+                }];
+            }
+            ws.window.rootViewController = [self getMainController];
+        } fail:^(int code, NSString *msg) {
+            [[NSUserDefaults standardUserDefaults] setObject:@(0) forKey:Key_UserInfo_Appid];
+            [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:Key_UserInfo_User];
+            [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:Key_UserInfo_Pwd];
+            [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:Key_UserInfo_Sig];
+            ws.window.rootViewController = [self getLoginController];
+        }];
+    }
+    else{
+//        _window.rootViewController = [self getLoginController];
+    }}
 
 #pragma mark - 内购凭证校验
 - (void)iapCheck {

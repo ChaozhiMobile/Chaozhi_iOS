@@ -362,7 +362,7 @@
     [self.view addSubview:self.scrollView];
     
     /*=================加tableView===================*/
-    NSArray * tableViewNameArray = @[@"ChatViewController",
+    NSArray * tableViewNameArray = @[@"TFChatViewController",
                                      @"QuestionViewController",
                                      @"ChapterViewController",
                                      @"AlbumViewController"];

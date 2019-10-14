@@ -6,17 +6,17 @@
 //  Copyright © 2016年 talk-fun. All rights reserved.
 //
 
-#import "ChatViewController.h"
+#import "TFChatViewController.h"
 #import "MJExtension.h"
 #import "PlaybackChatModel.h"
 #import "ChatTableViewCell.h"
 #import "TalkfunNewChatTableViewCell.h"
 
-@interface ChatViewController ()
+@interface TFChatViewController ()
 
 @end
 
-@implementation ChatViewController
+@implementation TFChatViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
