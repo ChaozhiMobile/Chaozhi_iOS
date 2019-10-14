@@ -91,7 +91,7 @@
 
 - (void)loginIM {
     TIMLoginParam *param = [[TIMLoginParam alloc] init];
-    param.identifier = "";
+    param.identifier = @"";
     param.userSig = @"";
     [[TIMManager sharedInstance] login:param succ:^{
         

@@ -76,6 +76,11 @@
         UIScrollView.appearance.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
     
+    if (@available(iOS 13.0, *)) {
+        self.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
+        [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDarkContent;
+    }
+    
     _viewConstraintH.constant = MIN(autoScaleH(50), 60);
     _viewTopY.constant = 44;
     self.tableFrame = CGRectMake(0, kNavBarH, WIDTH, HEIGHT-kNavBarH);
