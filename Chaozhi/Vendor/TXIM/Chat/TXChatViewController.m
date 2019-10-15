@@ -43,7 +43,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     TIMConversation *conv = [[TIMManager sharedInstance] getConversation:_conversationData.convType receiver:_conversationData.convId];
     _chat = [[TUIChatController alloc] initWithConversation:conv];
     _chat.delegate = self;
@@ -114,12 +113,12 @@
 
 - (void)setupNavigator
 {
+    self.navigationController.navigationBar.translucent = NO;
     //left
     _unRead = [[TUnReadView alloc] init];
 
     //_unRead.backgroundColor = [UIColor grayColor];//可通过此处将未读标记设置为灰色，类似微信，但目前仍使用红色未读视图
     UIBarButtonItem *urBtn = [[UIBarButtonItem alloc] initWithCustomView:_unRead];
-
 
     self.navigationItem.leftBarButtonItems = @[urBtn];
 

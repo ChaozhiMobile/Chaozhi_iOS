@@ -49,7 +49,7 @@
     [moreButton setImage:[UIImage imageNamed:TUIKitResource(@"more")] forState:UIControlStateNormal];
     [moreButton addTarget:self action:@selector(rightBarButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *moreItem = [[UIBarButtonItem alloc] initWithCustomView:moreButton];
-    self.navigationItem.rightBarButtonItem = moreItem;
+//    self.navigationItem.rightBarButtonItem = moreItem;
 
     [self setupNavigation];
 }
@@ -60,7 +60,7 @@
 - (void)setupNavigation
 {
     _titleView = [[TNaviBarIndicatorView alloc] init];
-    [_titleView setTitle:@"云通信IM"];
+    [_titleView setTitle:@"我的班主任"];
     self.navigationItem.titleView = _titleView;
     self.navigationItem.title = @"";
 
@@ -75,19 +75,19 @@
     TUINetStatus status = (TUINetStatus)[notification.object intValue];
     switch (status) {
         case TNet_Status_Succ:
-            [_titleView setTitle:@"云通信IM"];
+//            [_titleView setTitle:@"云通信IM"];
             [_titleView stopAnimating];
             break;
         case TNet_Status_Connecting:
-            [_titleView setTitle:@"连接中..."];
+//            [_titleView setTitle:@"连接中..."];
             [_titleView startAnimating];
             break;
         case TNet_Status_Disconnect:
-            [_titleView setTitle:@"云通信IM(未连接)"];
+//            [_titleView setTitle:@"云通信IM(未连接)"];
             [_titleView stopAnimating];
             break;
         case TNet_Status_ConnFailed:
-            [_titleView setTitle:@"云通信IM(未连接)"];
+//            [_titleView setTitle:@"云通信IM(未连接)"];
             [_titleView stopAnimating];
             break;
 

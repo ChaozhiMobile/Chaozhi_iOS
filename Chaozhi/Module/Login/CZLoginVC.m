@@ -9,6 +9,8 @@
 #import "CZLoginVC.h"
 #import "JPUSHService.h"
 #import "IMItem.h"
+#import "GenerateTestUserSig.h"
+
 
 @interface CZLoginVC ()
 
@@ -97,6 +99,10 @@
             TIMLoginParam *param = [[TIMLoginParam alloc] init];
             param.identifier = item.accid;
             param.userSig = item.token;
+            [[NSUserDefaults standardUserDefaults] setObject:@(imKey()) forKey:Key_UserInfo_Appid];
+            [[NSUserDefaults standardUserDefaults] setObject:param.identifier forKey:Key_UserInfo_User];
+            [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:Key_UserInfo_Pwd];
+            [[NSUserDefaults standardUserDefaults] setObject:param.userSig forKey:Key_UserInfo_Sig];
             [[TIMManager sharedInstance] login:param succ:^{
                 NSLog(@"腾讯IM登录成功");
             } fail:^(int code, NSString *msg) {

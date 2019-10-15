@@ -7,43 +7,43 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
-            uuid = "128BFCDD-6F17-4701-AF9A-EDCE424A9ED3"
+            uuid = "F4EBF930-918D-4B1D-90CA-64E5B1D9D219"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            scope = "0"
+            scope = "1"
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BB7428C4-DB19-4BCE-B669-3ACD56463645"
+            uuid = "CD022A79-7DC5-4B01-9329-5884BA85C37B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Chaozhi/AppDelegate+Push.m"
+            filePath = "Chaozhi/Module/Mine/Chat/CZTeacherConversationVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
-            landmarkName = "-jumpAction:andValue:"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "56943DBC-8D0A-485A-9353-CAD49EDDB59A"
+            uuid = "FCF7D984-CA71-43A2-A230-5ED774F96E76"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Chaozhi/Module/Login/CZLoginVC.m"
+            filePath = "Chaozhi/Module/Mine/Chat/CZTeacherConversationVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "-loginAction:"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "-didSelectConversation:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

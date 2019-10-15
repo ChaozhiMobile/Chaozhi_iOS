@@ -66,6 +66,8 @@
 		205934F6235476AB003DDF39 /* TXAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 205934F4235476AB003DDF39 /* TXAssets.xcassets */; };
 		205934F923547B2D003DDF39 /* AppDelegate+TXIM.m in Sources */ = {isa = PBXBuildFile; fileRef = 205934F823547B2D003DDF39 /* AppDelegate+TXIM.m */; };
 		205934FA23547B2D003DDF39 /* AppDelegate+TXIM.m in Sources */ = {isa = PBXBuildFile; fileRef = 205934F823547B2D003DDF39 /* AppDelegate+TXIM.m */; };
+		2059350023559E93003DDF39 /* CZChatVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 205934FF23559E93003DDF39 /* CZChatVC.m */; };
+		205935032355AB2F003DDF39 /* CZTeacherConversationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 205935022355AB2F003DDF39 /* CZTeacherConversationVC.m */; };
 		205FDB2F216F20C0001BE2C6 /* HomeInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FDB2E216F20C0001BE2C6 /* HomeInfoItem.m */; };
 		205FDB3321763DBE001BE2C6 /* CZGuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FDB3221763DBE001BE2C6 /* CZGuideVC.m */; };
 		208B695B2185903700B263FB /* TeacherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 208B695A2185903700B263FB /* TeacherView.xib */; };
@@ -964,6 +966,10 @@
 		205934F4235476AB003DDF39 /* TXAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TXAssets.xcassets; sourceTree = "<group>"; };
 		205934F723547B2D003DDF39 /* AppDelegate+TXIM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+TXIM.h"; sourceTree = "<group>"; };
 		205934F823547B2D003DDF39 /* AppDelegate+TXIM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+TXIM.m"; sourceTree = "<group>"; };
+		205934FE23559E93003DDF39 /* CZChatVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZChatVC.h; sourceTree = "<group>"; };
+		205934FF23559E93003DDF39 /* CZChatVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZChatVC.m; sourceTree = "<group>"; };
+		205935012355AB2F003DDF39 /* CZTeacherConversationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZTeacherConversationVC.h; sourceTree = "<group>"; };
+		205935022355AB2F003DDF39 /* CZTeacherConversationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZTeacherConversationVC.m; sourceTree = "<group>"; };
 		205FDB2D216F20C0001BE2C6 /* HomeInfoItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeInfoItem.h; sourceTree = "<group>"; };
 		205FDB2E216F20C0001BE2C6 /* HomeInfoItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeInfoItem.m; sourceTree = "<group>"; };
 		205FDB3121763DBE001BE2C6 /* CZGuideVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZGuideVC.h; sourceTree = "<group>"; };
@@ -1743,8 +1749,8 @@
 		205934A523547673003DDF39 /* Conversation */ = {
 			isa = PBXGroup;
 			children = (
-				205934A623547673003DDF39 /* ConversationController.m */,
 				205934A723547673003DDF39 /* ConversationController.h */,
+				205934A623547673003DDF39 /* ConversationController.m */,
 			);
 			path = Conversation;
 			sourceTree = "<group>";
@@ -1794,6 +1800,17 @@
 				205934EB2354767A003DDF39 /* 01.caf */,
 			);
 			path = Sound;
+			sourceTree = "<group>";
+		};
+		205934FD23559E60003DDF39 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				205934FE23559E93003DDF39 /* CZChatVC.h */,
+				205934FF23559E93003DDF39 /* CZChatVC.m */,
+				205935012355AB2F003DDF39 /* CZTeacherConversationVC.h */,
+				205935022355AB2F003DDF39 /* CZTeacherConversationVC.m */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		205FDB3021763D7C001BE2C6 /* Guide */ = {
@@ -2557,6 +2574,7 @@
 			children = (
 				A0599A1721574CAF00D17058 /* CZMineVC.h */,
 				A0599A1621574CAF00D17058 /* CZMineVC.m */,
+				205934FD23559E60003DDF39 /* Chat */,
 				A00FA9D52168C22E00F4DA5B /* Setting */,
 			);
 			path = Mine;
@@ -4020,6 +4038,7 @@
 				205934C723547673003DDF39 /* GroupRequestViewController.m in Sources */,
 				205934BF23547673003DDF39 /* TFriendProfileController.m in Sources */,
 				A0AC090F22C4BC7E001832EA /* TalkfunNewTextfieldView.m in Sources */,
+				205935032355AB2F003DDF39 /* CZTeacherConversationVC.m in Sources */,
 				A020B07A214AAB150011BB4F /* CourseCategoryItem.m in Sources */,
 				205934DD23547673003DDF39 /* TXChatViewController.m in Sources */,
 				A07E4E9722ED82E4000ABD86 /* CZConfig.m in Sources */,
@@ -4028,6 +4047,7 @@
 				A00D0D3B231BA7A300CF25E7 /* QuestionViewController.m in Sources */,
 				A05CD23C22AE8C8E00CBE4F5 /* CZProtocalWebVC.m in Sources */,
 				201DF3D022AE584700904EAF /* CZAlertView.m in Sources */,
+				2059350023559E93003DDF39 /* CZChatVC.m in Sources */,
 				A0AC08A522C4BC7D001832EA /* UTLHelpper.m in Sources */,
 				A0AC090C22C4BC7E001832EA /* ChatCell.m in Sources */,
 				A006923D2354ACFC00A74059 /* TeacherItem.m in Sources */,
