@@ -16,7 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface TMyConversationCell : TUIConversationCell
-@property (nonatomic, strong) UILabel *courseNameLabel;
 @end
 @interface TMyUIConversationCellData : TUIConversationCellData
 /** <#object#> */

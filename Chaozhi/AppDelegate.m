@@ -89,7 +89,6 @@
     
     NSNumber *appId = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_Appid];
     NSString *identifier = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_User];
-    NSString *pwd = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_Pwd];
     NSString *userSig = [[NSUserDefaults standardUserDefaults] objectForKey:Key_UserInfo_Sig];
     if([appId integerValue] == imKey() && identifier.length != 0 && userSig.length != 0){
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
@@ -120,7 +119,6 @@
         });
     }
     else{
-//        _window.rootViewController = [self getLoginController];
     }
 }
 

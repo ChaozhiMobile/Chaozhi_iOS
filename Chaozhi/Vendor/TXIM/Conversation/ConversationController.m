@@ -49,7 +49,7 @@
     [moreButton setImage:[UIImage imageNamed:TUIKitResource(@"more")] forState:UIControlStateNormal];
     [moreButton addTarget:self action:@selector(rightBarButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *moreItem = [[UIBarButtonItem alloc] initWithCustomView:moreButton];
-//    self.navigationItem.rightBarButtonItem = moreItem;
+    self.navigationItem.rightBarButtonItem = moreItem;
 
     [self setupNavigation];
 }

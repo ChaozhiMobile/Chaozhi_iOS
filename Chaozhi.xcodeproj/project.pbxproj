@@ -70,6 +70,7 @@
 		205935032355AB2F003DDF39 /* CZTeacherConversationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 205935022355AB2F003DDF39 /* CZTeacherConversationVC.m */; };
 		205FDB2F216F20C0001BE2C6 /* HomeInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FDB2E216F20C0001BE2C6 /* HomeInfoItem.m */; };
 		205FDB3321763DBE001BE2C6 /* CZGuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 205FDB3221763DBE001BE2C6 /* CZGuideVC.m */; };
+		206976FC2356B0D9004A6E29 /* CZTeacherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 206976FB2356B0D9004A6E29 /* CZTeacherCell.m */; };
 		208B695B2185903700B263FB /* TeacherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 208B695A2185903700B263FB /* TeacherView.xib */; };
 		20ABB12E230A7A9600DDC86F /* CZCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20ABB12D230A7A9600DDC86F /* CZCommentView.m */; };
 		20D3D36922C2280E00560A74 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D36822C2280E00560A74 /* libsqlite3.0.tbd */; };
@@ -974,6 +975,8 @@
 		205FDB2E216F20C0001BE2C6 /* HomeInfoItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeInfoItem.m; sourceTree = "<group>"; };
 		205FDB3121763DBE001BE2C6 /* CZGuideVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZGuideVC.h; sourceTree = "<group>"; };
 		205FDB3221763DBE001BE2C6 /* CZGuideVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZGuideVC.m; sourceTree = "<group>"; };
+		206976FA2356B0D9004A6E29 /* CZTeacherCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZTeacherCell.h; sourceTree = "<group>"; };
+		206976FB2356B0D9004A6E29 /* CZTeacherCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZTeacherCell.m; sourceTree = "<group>"; };
 		208B695A2185903700B263FB /* TeacherView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeacherView.xib; sourceTree = "<group>"; };
 		20ABB12C230A7A9600DDC86F /* CZCommentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZCommentView.h; sourceTree = "<group>"; };
 		20ABB12D230A7A9600DDC86F /* CZCommentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZCommentView.m; sourceTree = "<group>"; };
@@ -1809,6 +1812,8 @@
 				205934FF23559E93003DDF39 /* CZChatVC.m */,
 				205935012355AB2F003DDF39 /* CZTeacherConversationVC.h */,
 				205935022355AB2F003DDF39 /* CZTeacherConversationVC.m */,
+				206976FA2356B0D9004A6E29 /* CZTeacherCell.h */,
+				206976FB2356B0D9004A6E29 /* CZTeacherCell.m */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -3990,6 +3995,7 @@
 				A0AC08AA22C4BC7D001832EA /* TalkFunTextLayer.m in Sources */,
 				A0AC091C22C4BC7E001832EA /* evaluateView.m in Sources */,
 				A045521622ED44ED00E17406 /* UILabel+XLGColor.m in Sources */,
+				206976FC2356B0D9004A6E29 /* CZTeacherCell.m in Sources */,
 				A020B06D214AAB150011BB4F /* BaseNavBar.m in Sources */,
 				A0AC08BB22C4BC7D001832EA /* TalkfunNewButtonViewButton.m in Sources */,
 				A020B074214AAB150011BB4F /* LDNetGetAddress.m in Sources */,
