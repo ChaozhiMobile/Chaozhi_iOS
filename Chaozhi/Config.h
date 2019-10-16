@@ -56,6 +56,7 @@ int imKey(void);
 #define URL_TeacherList @"api/user/teacher" //我的班主任列表
 #define URL_IMInfo @"api/user/im" //我的im信息
 #define URL_IMLogin @"api/user/im-login" //im登录
+#define URL_IMQuery_status @"v1/education/query_status"//查询状态
 
 #pragma mark - ---------------H5名称---------------
 

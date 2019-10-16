@@ -12,6 +12,9 @@
 #import "THeader.h"
 #import "CZChatVC.h"
 #import "TeacherItem.h"
+#import "CZTeacherCell.h"
+
+#define CellHeight 90
 
 @interface CZTeacherConversationVC ()<UITableViewDelegate,UITableViewDataSource>
 /**
@@ -36,10 +39,10 @@
 
 - (void)setupViews
 {
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavBarH, WIDTH, HEIGHT-kNavBarH)];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavBarH+10, WIDTH, HEIGHT-kNavBarH-10)];
     self.tableView.tableFooterView = [[UIView alloc] init];
 //    _tableView.backgroundColor = TConversationController_Background_Color;
-    [self.tableView registerClass:[TUIConversationCell class] forCellReuseIdentifier:@"myTeachListCell"];
+    [self.tableView registerClass:[CZTeacherCell class] forCellReuseIdentifier:@"myTeachListCell"];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
@@ -83,7 +86,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 90;
+    return CellHeight;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -119,14 +122,11 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    TMyConversationCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myTeachListCell" forIndexPath:indexPath];
+    CZTeacherCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myTeachListCell" forIndexPath:indexPath];
     TUIConversationCellData *data = [self.viewModel.dataList objectAtIndex:indexPath.row];
-    [cell fillWithData:data];
-//    if (!data.cselector) {
-           data.cselector = @selector(didSelectConversation:);
-//       }
+    cell.convData = data;
+    
     //可以在此处修改，也可以在对应cell的初始化中进行修改。用户可以灵活的根据自己的使用需求进行设置。
-    cell.changeColorWhenTouched = YES;
     NSString *searchStr =[NSString stringWithFormat:@"accid = '%@'",data.convId];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:searchStr];
     NSArray *result = [self.teacherList filteredArrayUsingPredicate:predicate];
@@ -135,8 +135,6 @@
         TeacherItem *item = [result firstObject];
         cell.courseNameLabel.text = item.product_name;
     }
-
-    
     return cell;
 }
 
@@ -149,9 +147,9 @@
 
 - (void)didSelectConversation:(TUIConversationCell *)cell
 {
-    CZChatVC *chat = [[CZChatVC alloc] init];
-    chat.conversationData = cell.data;
-    [self.navigationController pushViewController:chat animated:YES];
+//    CZChatVC *chat = [[CZChatVC alloc] init];
+//    chat.conversationData = cell.data;
+//    [self.navigationController pushViewController:chat animated:YES];
 }
 
 
@@ -167,29 +165,3 @@
 
 @end
 
-
-@implementation TMyConversationCell
--(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        self.courseNameLabel = [[UILabel alloc] init];
-        self.courseNameLabel.layer.masksToBounds = YES;
-        self.courseNameLabel.font = [UIFont systemFontOfSize:14];
-        self.courseNameLabel.textColor = [UIColor redColor];
-        [self addSubview:self.courseNameLabel];
-
-        [self setSeparatorInset:UIEdgeInsetsMake(0, 90, 0, 0)];
-    }
-    return self;
-}
-
--(void)layoutSubviews {
-    [super layoutSubviews];
-    
-     self.titleLabel.mm_sizeToFitThan(120, 30).mm_top(TConversationCell_Margin_Text).mm_left(self.headImageView.mm_maxX+TConversationCell_Margin);
-    self.unReadView.mm_right(TConversationCell_Margin_Text).mm__centerY(self.height/2);
-    self.subTitleLabel.mm_sizeToFit().mm_left(self.titleLabel.mm_x).mm_bottom(TConversationCell_Margin_Text).mm_flexToRight(self.mm_w-self.unReadView.mm_x);
-    self.courseNameLabel.mm_sizeToFit().mm_left(self.titleLabel.mm_x).mm_top(self.titleLabel.mm_maxY).mm_flexToRight(self.mm_w-self.unReadView.mm_x);
-}
-
-@end

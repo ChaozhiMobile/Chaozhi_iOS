@@ -10,7 +10,7 @@
 #import "DownloadListController.h"
 #import "PurchaseItem.h"
 #import "NotifyItem.h"
-#import "CZChatVC.h"
+#import "ConversationController.h"
 #import "CZTeacherConversationVC.h"
 
 @interface CZMineVC ()<UITableViewDelegate,UITableViewDataSource>
@@ -265,7 +265,12 @@
 //        chat.hidesBottomBarWhenPushed = YES;
 //        chat.conversationData = data;
 //        [self.navigationController pushViewController:chat animated:YES];
-//        
+//
+        
+//        ConversationController *vc = [[ConversationController alloc]init];
+//        vc.hidesBottomBarWhenPushed = YES;
+//        [self.navigationController pushViewController:vc animated:YES];
+        
         CZTeacherConversationVC *vc = [[CZTeacherConversationVC alloc]init];
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
