@@ -14,7 +14,7 @@
 #import "TeacherItem.h"
 #import "CZTeacherCell.h"
 
-#define CellHeight 90
+#define CellHeight autoScaleW(90)
 
 @interface CZTeacherConversationVC ()<UITableViewDelegate,UITableViewDataSource>
 /**

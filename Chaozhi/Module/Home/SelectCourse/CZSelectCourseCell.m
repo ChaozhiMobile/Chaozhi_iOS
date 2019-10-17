@@ -25,6 +25,8 @@
         _iconImgView = [[UIImageView alloc] initWithFrame:CGRectMake(autoScaleW(20), self.height/2-autoScaleW(10), autoScaleW(20), autoScaleW(20))];
         [self addSubview:_iconImgView];
         
+       
+        
         _titleLab = [[UILabel alloc] initWithFrame:CGRectMake(_iconImgView.right+autoScaleW(12), 0, WIDTH-autoScaleW(80), self.height)];
         _titleLab.textAlignment = NSTextAlignmentLeft;
         _titleLab.font = [UIFont systemFontOfSize:13];
@@ -35,6 +37,26 @@
         _selectBtn.userInteractionEnabled = NO;
         [_selectBtn setBackgroundImage:[UIImage imageNamed:@"icon_select"] forState:UIControlStateNormal];
         [self addSubview:_selectBtn];
+        
+        
+        [_iconImgView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(autoScaleW(20), autoScaleW(20)));
+            make.left.mas_equalTo(self).offset(autoScaleW(20));
+            make.centerY.mas_equalTo(self);
+        }];
+        
+        [_titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(_iconImgView.mas_right).offset(autoScaleW(12));
+            make.centerY.mas_equalTo(self);
+            make.right.mas_equalTo(self).offset(-autoScaleW(60));
+            
+        }];
+        
+        [_selectBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(autoScaleW(20), autoScaleW(20)));
+            make.right.mas_equalTo(self).offset(-autoScaleW(35));
+            make.centerY.mas_equalTo(self);
+        }];
     }
     return self;
 }

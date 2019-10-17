@@ -199,10 +199,25 @@
         numLab.hidden = YES;
         [cell addSubview:numLab];
         
-        //箭头
-        UIImageView *arrowImgView = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH-autoScaleW(23), autoScaleW(19), autoScaleW(8), autoScaleW(12))];
-        arrowImgView.image = [UIImage imageNamed:@"arrow_more"];
-        [cell addSubview:arrowImgView];
+        [numLab mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(autoScaleW(8), autoScaleW(8)));
+            make.left.mas_equalTo(cell.mas_right).mas_offset(-autoScaleW(45));
+            make.centerY.mas_equalTo(cell);
+        }];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        UIImage *arrowImage = [UIImage imageNamed:@"arrow_more"];
+        UIImageView *arrowImageView = [[UIImageView alloc] initWithImage:arrowImage];
+        cell.accessoryView = arrowImageView;
+//        //箭头
+//        UIImageView *arrowImgView = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH-autoScaleW(23), autoScaleW(19), autoScaleW(8), autoScaleW(12))];
+//        arrowImgView.image = [UIImage imageNamed:@"arrow_more"];
+//        [cell addSubview:arrowImgView];
+//
+//        [numLab mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.size.mas_equalTo(CGSizeMake(autoScaleW(12), autoScaleW(12)));
+//            make.right.mas_equalTo(cell).mas_offset(-autoScaleW(23));
+//            make.centerY.mas_equalTo(cell);
+//        }];
     }
     
     if (indexPath.row != _nameArr.count-1) {
@@ -245,6 +260,15 @@
     }
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    UILabel *numLab = [self.view viewWithTag:1000+indexPath.row];
+    [numLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(autoScaleW(8), autoScaleW(8)));
+        make.left.mas_equalTo(cell.mas_right).mas_offset(-autoScaleW(45));
+        make.centerY.mas_equalTo(cell);
+    }];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

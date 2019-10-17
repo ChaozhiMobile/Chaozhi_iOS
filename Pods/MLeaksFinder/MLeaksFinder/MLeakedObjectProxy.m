@@ -73,8 +73,9 @@ static NSMutableSet *leakedObjectPtrs;
     NSArray *viewStack = _viewStack;
     dispatch_async(dispatch_get_main_queue(), ^{
         [leakedObjectPtrs removeObject:objectPtr];
-        [MLeaksMessenger alertWithTitle:@"Object Deallocated"
-                                message:[NSString stringWithFormat:@"%@", viewStack]];
+        NSLog(@"内存泄露%@",[NSString stringWithFormat:@"%@", viewStack]);
+//        [MLeaksMessenger alertWithTitle:@"Object Deallocated"
+//                                message:[NSString stringWithFormat:@"%@", viewStack]];
     });
 }
 
