@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BA85736271CB84EB46004DD2291DF136"
+               BlueprintIdentifier = "4A19EC64CD0BED2EB588C12DC8DD0992"
                BuildableName = "TalkfunMediaFramework"
                BlueprintName = "TalkfunMediaFramework"
                ReferencedContainer = "container:Pods.xcodeproj">

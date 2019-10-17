@@ -908,6 +908,244 @@
 		A0E6120523589985001D9258 /* CZTeacherConversationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 205935022355AB2F003DDF39 /* CZTeacherConversationVC.m */; };
 		A0E61206235899C7001D9258 /* CZChatVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 205934FF23559E93003DDF39 /* CZChatVC.m */; };
 		A0E61207235899DC001D9258 /* CZTeacherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 206976FB2356B0D9004A6E29 /* CZTeacherCell.m */; };
+		A0E615242358A6D7001D9258 /* NSString+TUICommon.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614122358A6D6001D9258 /* NSString+TUICommon.m */; };
+		A0E615252358A6D7001D9258 /* NSString+TUICommon.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614122358A6D6001D9258 /* NSString+TUICommon.m */; };
+		A0E615262358A6D7001D9258 /* TModifyView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614162358A6D6001D9258 /* TModifyView.m */; };
+		A0E615272358A6D7001D9258 /* TModifyView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614162358A6D6001D9258 /* TModifyView.m */; };
+		A0E615282358A6D7001D9258 /* TUnReadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614172358A6D6001D9258 /* TUnReadView.m */; };
+		A0E615292358A6D7001D9258 /* TUnReadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614172358A6D6001D9258 /* TUnReadView.m */; };
+		A0E6152A2358A6D7001D9258 /* TUILocalStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6141A2358A6D6001D9258 /* TUILocalStorage.m */; };
+		A0E6152B2358A6D7001D9258 /* TUILocalStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6141A2358A6D6001D9258 /* TUILocalStorage.m */; };
+		A0E6152C2358A6D7001D9258 /* THelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6141C2358A6D6001D9258 /* THelper.m */; };
+		A0E6152D2358A6D7001D9258 /* THelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6141C2358A6D6001D9258 /* THelper.m */; };
+		A0E6152E2358A6D7001D9258 /* TAddCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6141D2358A6D6001D9258 /* TAddCell.m */; };
+		A0E6152F2358A6D7001D9258 /* TAddCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6141D2358A6D6001D9258 /* TAddCell.m */; };
+		A0E615302358A6D7001D9258 /* TUIFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614202358A6D6001D9258 /* TUIFileViewController.m */; };
+		A0E615312358A6D7001D9258 /* TUIFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614202358A6D6001D9258 /* TUIFileViewController.m */; };
+		A0E615322358A6D7001D9258 /* TNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614242358A6D6001D9258 /* TNavigationController.m */; };
+		A0E615332358A6D7001D9258 /* TNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614242358A6D6001D9258 /* TNavigationController.m */; };
+		A0E615342358A6D7001D9258 /* TUIVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614252358A6D6001D9258 /* TUIVideoViewController.m */; };
+		A0E615352358A6D7001D9258 /* TUIVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614252358A6D6001D9258 /* TUIVideoViewController.m */; };
+		A0E615362358A6D7001D9258 /* TTextEditController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614262358A6D6001D9258 /* TTextEditController.m */; };
+		A0E615372358A6D7001D9258 /* TTextEditController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614262358A6D6001D9258 /* TTextEditController.m */; };
+		A0E615382358A6D7001D9258 /* TDateEditController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614272358A6D6001D9258 /* TDateEditController.m */; };
+		A0E615392358A6D7001D9258 /* TDateEditController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614272358A6D6001D9258 /* TDateEditController.m */; };
+		A0E6153A2358A6D7001D9258 /* TUIAvatarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614282358A6D6001D9258 /* TUIAvatarViewController.m */; };
+		A0E6153B2358A6D7001D9258 /* TUIAvatarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614282358A6D6001D9258 /* TUIAvatarViewController.m */; };
+		A0E6153C2358A6D7001D9258 /* TUIImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614292358A6D6001D9258 /* TUIImageViewController.m */; };
+		A0E6153D2358A6D7001D9258 /* TUIImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614292358A6D6001D9258 /* TUIImageViewController.m */; };
+		A0E6153E2358A6D7001D9258 /* TResponderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6142E2358A6D6001D9258 /* TResponderTextView.m */; };
+		A0E6153F2358A6D7001D9258 /* TResponderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6142E2358A6D6001D9258 /* TResponderTextView.m */; };
+		A0E615402358A6D7001D9258 /* TUIProfileCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614322358A6D6001D9258 /* TUIProfileCardCell.m */; };
+		A0E615412358A6D7001D9258 /* TUIProfileCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614322358A6D6001D9258 /* TUIProfileCardCell.m */; };
+		A0E615422358A6D7001D9258 /* TCommonTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614342358A6D6001D9258 /* TCommonTextCell.m */; };
+		A0E615432358A6D7001D9258 /* TCommonTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614342358A6D6001D9258 /* TCommonTextCell.m */; };
+		A0E615442358A6D7001D9258 /* TUIButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614352358A6D6001D9258 /* TUIButtonCell.m */; };
+		A0E615452358A6D7001D9258 /* TUIButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614352358A6D6001D9258 /* TUIButtonCell.m */; };
+		A0E615462358A6D7001D9258 /* TCommonSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614362358A6D6001D9258 /* TCommonSwitchCell.m */; };
+		A0E615472358A6D7001D9258 /* TCommonSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614362358A6D6001D9258 /* TCommonSwitchCell.m */; };
+		A0E615482358A6D7001D9258 /* TCommonAvatarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614372358A6D6001D9258 /* TCommonAvatarCell.m */; };
+		A0E615492358A6D7001D9258 /* TCommonAvatarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614372358A6D6001D9258 /* TCommonAvatarCell.m */; };
+		A0E6154A2358A6D7001D9258 /* TCommonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6143B2358A6D6001D9258 /* TCommonCell.m */; };
+		A0E6154B2358A6D7001D9258 /* TCommonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6143B2358A6D6001D9258 /* TCommonCell.m */; };
+		A0E6154C2358A6D7001D9258 /* TAddHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6143D2358A6D6001D9258 /* TAddHelper.m */; };
+		A0E6154D2358A6D7001D9258 /* TAddHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6143D2358A6D6001D9258 /* TAddHelper.m */; };
+		A0E6154E2358A6D7001D9258 /* TUITabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6143E2358A6D6001D9258 /* TUITabBarController.m */; };
+		A0E6154F2358A6D7001D9258 /* TUITabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6143E2358A6D6001D9258 /* TUITabBarController.m */; };
+		A0E615502358A6D7001D9258 /* NSDate+TUIKIT.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6143F2358A6D6001D9258 /* NSDate+TUIKIT.m */; };
+		A0E615512358A6D7001D9258 /* NSDate+TUIKIT.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6143F2358A6D6001D9258 /* NSDate+TUIKIT.m */; };
+		A0E615522358A6D7001D9258 /* UIImage+TUIKIT.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614402358A6D6001D9258 /* UIImage+TUIKIT.m */; };
+		A0E615532358A6D7001D9258 /* UIImage+TUIKIT.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614402358A6D6001D9258 /* UIImage+TUIKIT.m */; };
+		A0E615542358A6D7001D9258 /* TPopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614412358A6D6001D9258 /* TPopCell.m */; };
+		A0E615552358A6D7001D9258 /* TPopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614412358A6D6001D9258 /* TPopCell.m */; };
+		A0E615562358A6D7001D9258 /* TAddCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614452358A6D6001D9258 /* TAddCollectionCell.m */; };
+		A0E615572358A6D7001D9258 /* TAddCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614452358A6D6001D9258 /* TAddCollectionCell.m */; };
+		A0E615582358A6D7001D9258 /* TPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614482358A6D6001D9258 /* TPopView.m */; };
+		A0E615592358A6D7001D9258 /* TPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614482358A6D6001D9258 /* TPopView.m */; };
+		A0E6155A2358A6D7001D9258 /* TUIContactSelectController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6144C2358A6D6001D9258 /* TUIContactSelectController.m */; };
+		A0E6155B2358A6D7001D9258 /* TUIContactSelectController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6144C2358A6D6001D9258 /* TUIContactSelectController.m */; };
+		A0E6155C2358A6D7001D9258 /* TContactSelectViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6144E2358A6D6001D9258 /* TContactSelectViewModel.m */; };
+		A0E6155D2358A6D7001D9258 /* TContactSelectViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6144E2358A6D6001D9258 /* TContactSelectViewModel.m */; };
+		A0E6155E2358A6D7001D9258 /* TContactViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614512358A6D6001D9258 /* TContactViewModel.m */; };
+		A0E6155F2358A6D7001D9258 /* TContactViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614512358A6D6001D9258 /* TContactViewModel.m */; };
+		A0E615602358A6D7001D9258 /* TUIBlackListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614542358A6D6001D9258 /* TUIBlackListViewModel.m */; };
+		A0E615612358A6D7001D9258 /* TUIBlackListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614542358A6D6001D9258 /* TUIBlackListViewModel.m */; };
+		A0E615622358A6D7001D9258 /* TUINewFriendViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614552358A6D6001D9258 /* TUINewFriendViewModel.m */; };
+		A0E615632358A6D7001D9258 /* TUINewFriendViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614552358A6D6001D9258 /* TUINewFriendViewModel.m */; };
+		A0E615642358A6D7001D9258 /* TUIGroupConversationListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614562358A6D6001D9258 /* TUIGroupConversationListViewModel.m */; };
+		A0E615652358A6D7001D9258 /* TUIGroupConversationListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614562358A6D6001D9258 /* TUIGroupConversationListViewModel.m */; };
+		A0E615662358A6D7001D9258 /* TUIContactListPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614582358A6D6001D9258 /* TUIContactListPicker.m */; };
+		A0E615672358A6D7001D9258 /* TUIContactListPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614582358A6D6001D9258 /* TUIContactListPicker.m */; };
+		A0E615682358A6D7001D9258 /* TUIContactController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614592358A6D6001D9258 /* TUIContactController.m */; };
+		A0E615692358A6D7001D9258 /* TUIContactController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614592358A6D6001D9258 /* TUIContactController.m */; };
+		A0E6156A2358A6D7001D9258 /* TUIBlackListController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6145B2358A6D6001D9258 /* TUIBlackListController.m */; };
+		A0E6156B2358A6D7001D9258 /* TUIBlackListController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6145B2358A6D6001D9258 /* TUIBlackListController.m */; };
+		A0E6156C2358A6D7001D9258 /* TCommonPendencyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6145E2358A6D6001D9258 /* TCommonPendencyCell.m */; };
+		A0E6156D2358A6D7001D9258 /* TCommonPendencyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6145E2358A6D6001D9258 /* TCommonPendencyCell.m */; };
+		A0E6156E2358A6D7001D9258 /* TUIContactActionCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614602358A6D6001D9258 /* TUIContactActionCellData.m */; };
+		A0E6156F2358A6D7001D9258 /* TUIContactActionCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614602358A6D6001D9258 /* TUIContactActionCellData.m */; };
+		A0E615702358A6D7001D9258 /* TCommonContactSelectCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614612358A6D6001D9258 /* TCommonContactSelectCellData.m */; };
+		A0E615712358A6D7001D9258 /* TCommonContactSelectCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614612358A6D6001D9258 /* TCommonContactSelectCellData.m */; };
+		A0E615722358A6D7001D9258 /* TCommonContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614622358A6D6001D9258 /* TCommonContactCell.m */; };
+		A0E615732358A6D7001D9258 /* TCommonContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614622358A6D6001D9258 /* TCommonContactCell.m */; };
+		A0E615742358A6D7001D9258 /* TUIContactActionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614632358A6D6001D9258 /* TUIContactActionCell.m */; };
+		A0E615752358A6D7001D9258 /* TUIContactActionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614632358A6D6001D9258 /* TUIContactActionCell.m */; };
+		A0E615762358A6D7001D9258 /* TCommonContactSelectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614642358A6D6001D9258 /* TCommonContactSelectCell.m */; };
+		A0E615772358A6D7001D9258 /* TCommonContactSelectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614642358A6D6001D9258 /* TCommonContactSelectCell.m */; };
+		A0E615782358A6D7001D9258 /* TCommonContactCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614662358A6D6001D9258 /* TCommonContactCellData.m */; };
+		A0E615792358A6D7001D9258 /* TCommonContactCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614662358A6D6001D9258 /* TCommonContactCellData.m */; };
+		A0E6157A2358A6D7001D9258 /* TContactListPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614682358A6D6001D9258 /* TContactListPickerCell.m */; };
+		A0E6157B2358A6D7001D9258 /* TContactListPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614682358A6D6001D9258 /* TContactListPickerCell.m */; };
+		A0E6157C2358A6D7001D9258 /* TCommonPendencyCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6146B2358A6D6001D9258 /* TCommonPendencyCellData.m */; };
+		A0E6157D2358A6D7001D9258 /* TCommonPendencyCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6146B2358A6D6001D9258 /* TCommonPendencyCellData.m */; };
+		A0E6157E2358A6D7001D9258 /* TUIGroupConversationListController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614712358A6D6001D9258 /* TUIGroupConversationListController.m */; };
+		A0E6157F2358A6D7001D9258 /* TUIGroupConversationListController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614712358A6D6001D9258 /* TUIGroupConversationListController.m */; };
+		A0E615802358A6D7001D9258 /* TUINewFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614732358A6D6001D9258 /* TUINewFriendViewController.m */; };
+		A0E615812358A6D7001D9258 /* TUINewFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614732358A6D6001D9258 /* TUINewFriendViewController.m */; };
+		A0E615822358A6D7001D9258 /* TUIFaceMessageCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6147E2358A6D6001D9258 /* TUIFaceMessageCellData.m */; };
+		A0E615832358A6D7001D9258 /* TUIFaceMessageCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6147E2358A6D6001D9258 /* TUIFaceMessageCellData.m */; };
+		A0E615842358A6D7001D9258 /* TUIFileMessageCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614812358A6D6001D9258 /* TUIFileMessageCellData.m */; };
+		A0E615852358A6D7001D9258 /* TUIFileMessageCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614812358A6D6001D9258 /* TUIFileMessageCellData.m */; };
+		A0E615862358A6D7001D9258 /* TUIBubbleMessageCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614822358A6D6001D9258 /* TUIBubbleMessageCellData.m */; };
+		A0E615872358A6D7001D9258 /* TUIBubbleMessageCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614822358A6D6001D9258 /* TUIBubbleMessageCellData.m */; };
+		A0E615882358A6D7001D9258 /* TUIJoinGroupMessageCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614832358A6D6001D9258 /* TUIJoinGroupMessageCellData.m */; };
+		A0E615892358A6D7001D9258 /* TUIJoinGroupMessageCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614832358A6D6001D9258 /* TUIJoinGroupMessageCellData.m */; };
+		A0E6158A2358A6D7001D9258 /* TUITextMessageCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614842358A6D6001D9258 /* TUITextMessageCellData.m */; };
+		A0E6158B2358A6D7001D9258 /* TUITextMessageCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614842358A6D6001D9258 /* TUITextMessageCellData.m */; };
+		A0E6158C2358A6D7001D9258 /* TUISystemMessageCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614852358A6D6001D9258 /* TUISystemMessageCellData.m */; };
+		A0E6158D2358A6D7001D9258 /* TUISystemMessageCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614852358A6D6001D9258 /* TUISystemMessageCellData.m */; };
+		A0E6158E2358A6D7001D9258 /* TUIVoiceMessageCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614862358A6D6001D9258 /* TUIVoiceMessageCellData.m */; };
+		A0E6158F2358A6D7001D9258 /* TUIVoiceMessageCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614862358A6D6001D9258 /* TUIVoiceMessageCellData.m */; };
+		A0E615902358A6D7001D9258 /* TUIImageMessageCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614872358A6D6001D9258 /* TUIImageMessageCellData.m */; };
+		A0E615912358A6D7001D9258 /* TUIImageMessageCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614872358A6D6001D9258 /* TUIImageMessageCellData.m */; };
+		A0E615922358A6D7001D9258 /* TUIMessageCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614892358A6D6001D9258 /* TUIMessageCellData.m */; };
+		A0E615932358A6D7001D9258 /* TUIMessageCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614892358A6D6001D9258 /* TUIMessageCellData.m */; };
+		A0E615942358A6D7001D9258 /* TUIVideoMessageCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6148A2358A6D6001D9258 /* TUIVideoMessageCellData.m */; };
+		A0E615952358A6D7001D9258 /* TUIVideoMessageCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6148A2358A6D6001D9258 /* TUIVideoMessageCellData.m */; };
+		A0E615962358A6D7001D9258 /* TUIGroupPendencyViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6148F2358A6D6001D9258 /* TUIGroupPendencyViewModel.m */; };
+		A0E615972358A6D7001D9258 /* TUIGroupPendencyViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6148F2358A6D6001D9258 /* TUIGroupPendencyViewModel.m */; };
+		A0E615982358A6D7001D9258 /* TUIGroupPendencyCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614902358A6D6001D9258 /* TUIGroupPendencyCellData.m */; };
+		A0E615992358A6D7001D9258 /* TUIGroupPendencyCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614902358A6D6001D9258 /* TUIGroupPendencyCellData.m */; };
+		A0E6159A2358A6D7001D9258 /* TUIGroupPendencyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614942358A6D6001D9258 /* TUIGroupPendencyCell.m */; };
+		A0E6159B2358A6D7001D9258 /* TUIGroupPendencyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614942358A6D6001D9258 /* TUIGroupPendencyCell.m */; };
+		A0E6159C2358A6D7001D9258 /* TUIGroupPendencyController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614952358A6D6001D9258 /* TUIGroupPendencyController.m */; };
+		A0E6159D2358A6D7001D9258 /* TUIGroupPendencyController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614952358A6D6001D9258 /* TUIGroupPendencyController.m */; };
+		A0E6159E2358A6D7001D9258 /* TUIOutgoingTextCellLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614982358A6D6001D9258 /* TUIOutgoingTextCellLayout.m */; };
+		A0E6159F2358A6D7001D9258 /* TUIOutgoingTextCellLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614982358A6D6001D9258 /* TUIOutgoingTextCellLayout.m */; };
+		A0E615A02358A6D7001D9258 /* TUISystemMessageCellLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6149A2358A6D6001D9258 /* TUISystemMessageCellLayout.m */; };
+		A0E615A12358A6D7001D9258 /* TUISystemMessageCellLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6149A2358A6D6001D9258 /* TUISystemMessageCellLayout.m */; };
+		A0E615A22358A6D7001D9258 /* TUIMessageCellLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6149B2358A6D6001D9258 /* TUIMessageCellLayout.m */; };
+		A0E615A32358A6D7001D9258 /* TUIMessageCellLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6149B2358A6D6001D9258 /* TUIMessageCellLayout.m */; };
+		A0E615A42358A6D7001D9258 /* TUIIncommingTextCellLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6149D2358A6D6001D9258 /* TUIIncommingTextCellLayout.m */; };
+		A0E615A52358A6D7001D9258 /* TUIIncommingTextCellLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6149D2358A6D6001D9258 /* TUIIncommingTextCellLayout.m */; };
+		A0E615A62358A6D7001D9258 /* TUIChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614A22358A6D6001D9258 /* TUIChatController.m */; };
+		A0E615A72358A6D7001D9258 /* TUIChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614A22358A6D6001D9258 /* TUIChatController.m */; };
+		A0E615A82358A6D7001D9258 /* TUIInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614A52358A6D6001D9258 /* TUIInputController.m */; };
+		A0E615A92358A6D7001D9258 /* TUIInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614A52358A6D6001D9258 /* TUIInputController.m */; };
+		A0E615AA2358A6D7001D9258 /* TUIInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614A72358A6D6001D9258 /* TUIInputBar.m */; };
+		A0E615AB2358A6D7001D9258 /* TUIInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614A72358A6D6001D9258 /* TUIInputBar.m */; };
+		A0E615AC2358A6D7001D9258 /* TUIRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614A82358A6D6001D9258 /* TUIRecordView.m */; };
+		A0E615AD2358A6D7001D9258 /* TUIRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614A82358A6D6001D9258 /* TUIRecordView.m */; };
+		A0E615AE2358A6D7001D9258 /* TUIInputMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614AB2358A6D6001D9258 /* TUIInputMoreCell.m */; };
+		A0E615AF2358A6D7001D9258 /* TUIInputMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614AB2358A6D6001D9258 /* TUIInputMoreCell.m */; };
+		A0E615B02358A6D7001D9258 /* TUIMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614AD2358A6D6001D9258 /* TUIMenuCell.m */; };
+		A0E615B12358A6D7001D9258 /* TUIMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614AD2358A6D6001D9258 /* TUIMenuCell.m */; };
+		A0E615B22358A6D7001D9258 /* TUIMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614AF2358A6D6001D9258 /* TUIMenuView.m */; };
+		A0E615B32358A6D7001D9258 /* TUIMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614AF2358A6D6001D9258 /* TUIMenuView.m */; };
+		A0E615B42358A6D7001D9258 /* TUIFaceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614B02358A6D6001D9258 /* TUIFaceCell.m */; };
+		A0E615B52358A6D7001D9258 /* TUIFaceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614B02358A6D6001D9258 /* TUIFaceCell.m */; };
+		A0E615B62358A6D7001D9258 /* TUIFileMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614B32358A6D6001D9258 /* TUIFileMessageCell.m */; };
+		A0E615B72358A6D7001D9258 /* TUIFileMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614B32358A6D6001D9258 /* TUIFileMessageCell.m */; };
+		A0E615B82358A6D7001D9258 /* TUIVideoMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614B42358A6D6001D9258 /* TUIVideoMessageCell.m */; };
+		A0E615B92358A6D7001D9258 /* TUIVideoMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614B42358A6D6001D9258 /* TUIVideoMessageCell.m */; };
+		A0E615BA2358A6D7001D9258 /* TUITextMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614B62358A6D6001D9258 /* TUITextMessageCell.m */; };
+		A0E615BB2358A6D7001D9258 /* TUITextMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614B62358A6D6001D9258 /* TUITextMessageCell.m */; };
+		A0E615BC2358A6D7001D9258 /* TUIJoinGroupMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614B72358A6D6001D9258 /* TUIJoinGroupMessageCell.m */; };
+		A0E615BD2358A6D7001D9258 /* TUIJoinGroupMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614B72358A6D6001D9258 /* TUIJoinGroupMessageCell.m */; };
+		A0E615BE2358A6D7001D9258 /* TUISystemMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614B82358A6D6001D9258 /* TUISystemMessageCell.m */; };
+		A0E615BF2358A6D7001D9258 /* TUISystemMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614B82358A6D6001D9258 /* TUISystemMessageCell.m */; };
+		A0E615C02358A6D7001D9258 /* TUIImageMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614B92358A6D6001D9258 /* TUIImageMessageCell.m */; };
+		A0E615C12358A6D7001D9258 /* TUIImageMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614B92358A6D6001D9258 /* TUIImageMessageCell.m */; };
+		A0E615C22358A6D7001D9258 /* TUIFaceMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614BC2358A6D6001D9258 /* TUIFaceMessageCell.m */; };
+		A0E615C32358A6D7001D9258 /* TUIFaceMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614BC2358A6D6001D9258 /* TUIFaceMessageCell.m */; };
+		A0E615C42358A6D7001D9258 /* TUIVoiceMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614BE2358A6D6001D9258 /* TUIVoiceMessageCell.m */; };
+		A0E615C52358A6D7001D9258 /* TUIVoiceMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614BE2358A6D6001D9258 /* TUIVoiceMessageCell.m */; };
+		A0E615C62358A6D7001D9258 /* TUIBubbleMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614C22358A6D6001D9258 /* TUIBubbleMessageCell.m */; };
+		A0E615C72358A6D7001D9258 /* TUIBubbleMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614C22358A6D6001D9258 /* TUIBubbleMessageCell.m */; };
+		A0E615C82358A6D7001D9258 /* TUIFaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614C52358A6D6001D9258 /* TUIFaceView.m */; };
+		A0E615C92358A6D7001D9258 /* TUIFaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614C52358A6D6001D9258 /* TUIFaceView.m */; };
+		A0E615CA2358A6D7001D9258 /* TUIMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614C62358A6D6001D9258 /* TUIMessageCell.m */; };
+		A0E615CB2358A6D7001D9258 /* TUIMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614C62358A6D6001D9258 /* TUIMessageCell.m */; };
+		A0E615CC2358A6D7001D9258 /* TUIMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614C72358A6D6001D9258 /* TUIMessageController.m */; };
+		A0E615CD2358A6D7001D9258 /* TUIMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614C72358A6D6001D9258 /* TUIMessageController.m */; };
+		A0E615CE2358A6D7001D9258 /* TUIMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614C92358A6D6001D9258 /* TUIMoreView.m */; };
+		A0E615CF2358A6D7001D9258 /* TUIMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614C92358A6D6001D9258 /* TUIMoreView.m */; };
+		A0E615D02358A6D7001D9258 /* TUIGroupInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614CC2358A6D6001D9258 /* TUIGroupInfoController.m */; };
+		A0E615D12358A6D7001D9258 /* TUIGroupInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614CC2358A6D6001D9258 /* TUIGroupInfoController.m */; };
+		A0E615D22358A6D7001D9258 /* TUIGroupMembersView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614D12358A6D6001D9258 /* TUIGroupMembersView.m */; };
+		A0E615D32358A6D7001D9258 /* TUIGroupMembersView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614D12358A6D6001D9258 /* TUIGroupMembersView.m */; };
+		A0E615D42358A6D7001D9258 /* TUIGroupMemberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614D32358A6D6001D9258 /* TUIGroupMemberCell.m */; };
+		A0E615D52358A6D7001D9258 /* TUIGroupMemberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614D32358A6D6001D9258 /* TUIGroupMemberCell.m */; };
+		A0E615D62358A6D7001D9258 /* TUIGroupMembersCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614D42358A6D6001D9258 /* TUIGroupMembersCell.m */; };
+		A0E615D72358A6D7001D9258 /* TUIGroupMembersCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614D42358A6D6001D9258 /* TUIGroupMembersCell.m */; };
+		A0E615D82358A6D7001D9258 /* TUIGroupMemberController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614D52358A6D6001D9258 /* TUIGroupMemberController.m */; };
+		A0E615D92358A6D7001D9258 /* TUIGroupMemberController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614D52358A6D6001D9258 /* TUIGroupMemberController.m */; };
+		A0E615DA2358A6D7001D9258 /* TUIGroupInfoDataProviderService.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614DE2358A6D6001D9258 /* TUIGroupInfoDataProviderService.m */; };
+		A0E615DB2358A6D7001D9258 /* TUIGroupInfoDataProviderService.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614DE2358A6D6001D9258 /* TUIGroupInfoDataProviderService.m */; };
+		A0E615DC2358A6D7001D9258 /* TUIUserProfileDataProviderService.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614E02358A6D6001D9258 /* TUIUserProfileDataProviderService.m */; };
+		A0E615DD2358A6D7001D9258 /* TUIUserProfileDataProviderService.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614E02358A6D6001D9258 /* TUIUserProfileDataProviderService.m */; };
+		A0E615DE2358A6D7001D9258 /* TUIConversationDataProviderService.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614E12358A6D6001D9258 /* TUIConversationDataProviderService.m */; };
+		A0E615DF2358A6D7001D9258 /* TUIConversationDataProviderService.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614E12358A6D6001D9258 /* TUIConversationDataProviderService.m */; };
+		A0E615E02358A6D7001D9258 /* TUIMessageDataProviderService.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614E32358A6D6001D9258 /* TUIMessageDataProviderService.m */; };
+		A0E615E12358A6D7001D9258 /* TUIMessageDataProviderService.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614E32358A6D6001D9258 /* TUIMessageDataProviderService.m */; };
+		A0E615E22358A6D7001D9258 /* TNaviBarIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614E72358A6D6001D9258 /* TNaviBarIndicatorView.m */; };
+		A0E615E32358A6D7001D9258 /* TNaviBarIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614E72358A6D6001D9258 /* TNaviBarIndicatorView.m */; };
+		A0E615E42358A6D7001D9258 /* TConversationListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614E92358A6D6001D9258 /* TConversationListViewModel.m */; };
+		A0E615E52358A6D7001D9258 /* TConversationListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614E92358A6D6001D9258 /* TConversationListViewModel.m */; };
+		A0E615E62358A6D7001D9258 /* TUIConversationListController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614EB2358A6D6001D9258 /* TUIConversationListController.m */; };
+		A0E615E72358A6D7001D9258 /* TUIConversationListController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614EB2358A6D6001D9258 /* TUIConversationListController.m */; };
+		A0E615E82358A6D7001D9258 /* TUIConversationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614ED2358A6D6001D9258 /* TUIConversationCell.m */; };
+		A0E615E92358A6D7001D9258 /* TUIConversationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614ED2358A6D6001D9258 /* TUIConversationCell.m */; };
+		A0E615EA2358A6D7001D9258 /* TUIConversationCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614EE2358A6D6001D9258 /* TUIConversationCellData.m */; };
+		A0E615EB2358A6D7001D9258 /* TUIConversationCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614EE2358A6D6001D9258 /* TUIConversationCellData.m */; };
+		A0E615EC2358A6D7001D9258 /* TUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614F32358A6D6001D9258 /* TUIKit.m */; };
+		A0E615ED2358A6D7001D9258 /* TUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614F32358A6D6001D9258 /* TUIKit.m */; };
+		A0E615EE2358A6D7001D9258 /* TIMGroupInfo+DataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614F72358A6D6001D9258 /* TIMGroupInfo+DataProvider.m */; };
+		A0E615EF2358A6D7001D9258 /* TIMGroupInfo+DataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614F72358A6D6001D9258 /* TIMGroupInfo+DataProvider.m */; };
+		A0E615F02358A6D7001D9258 /* TIMConversation+DataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614FB2358A6D6001D9258 /* TIMConversation+DataProvider.m */; };
+		A0E615F12358A6D7001D9258 /* TIMConversation+DataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614FB2358A6D6001D9258 /* TIMConversation+DataProvider.m */; };
+		A0E615F22358A6D7001D9258 /* TIMUserProfile+DataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614FD2358A6D6001D9258 /* TIMUserProfile+DataProvider.m */; };
+		A0E615F32358A6D7001D9258 /* TIMUserProfile+DataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614FD2358A6D6001D9258 /* TIMUserProfile+DataProvider.m */; };
+		A0E615F42358A6D7001D9258 /* NSString+DataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614FE2358A6D6001D9258 /* NSString+DataProvider.m */; };
+		A0E615F52358A6D7001D9258 /* NSString+DataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614FE2358A6D6001D9258 /* NSString+DataProvider.m */; };
+		A0E615F62358A6D7001D9258 /* TIMMessage+DataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614FF2358A6D6001D9258 /* TIMMessage+DataProvider.m */; };
+		A0E615F72358A6D7001D9258 /* TIMMessage+DataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E614FF2358A6D6001D9258 /* TIMMessage+DataProvider.m */; };
+		A0E615F82358A6D7001D9258 /* TCContext.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E615012358A6D6001D9258 /* TCContext.m */; };
+		A0E615F92358A6D7001D9258 /* TCContext.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E615012358A6D6001D9258 /* TCContext.m */; };
+		A0E615FA2358A6D7001D9258 /* TCServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E615022358A6D6001D9258 /* TCServiceManager.m */; };
+		A0E615FB2358A6D7001D9258 /* TCServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E615022358A6D6001D9258 /* TCServiceManager.m */; };
+		A0E615FC2358A6D7001D9258 /* TCAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E615042358A6D6001D9258 /* TCAnnotation.m */; };
+		A0E615FD2358A6D7001D9258 /* TCAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E615042358A6D6001D9258 /* TCAnnotation.m */; };
+		A0E615FE2358A6D7001D9258 /* libopencore-amrwb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E6150B2358A6D6001D9258 /* libopencore-amrwb.a */; };
+		A0E615FF2358A6D7001D9258 /* libopencore-amrwb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E6150B2358A6D6001D9258 /* libopencore-amrwb.a */; };
+		A0E616002358A6D7001D9258 /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E615112358A6D6001D9258 /* libopencore-amrnb.a */; };
+		A0E616012358A6D7001D9258 /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E615112358A6D6001D9258 /* libopencore-amrnb.a */; };
+		A0E616022358A6D7001D9258 /* wav.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0E615142358A6D6001D9258 /* wav.mm */; };
+		A0E616032358A6D7001D9258 /* wav.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0E615142358A6D6001D9258 /* wav.mm */; };
+		A0E616042358A6D7001D9258 /* amrFileCodec.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0E615152358A6D6001D9258 /* amrFileCodec.mm */; };
+		A0E616052358A6D7001D9258 /* amrFileCodec.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0E615152358A6D6001D9258 /* amrFileCodec.mm */; };
+		A0E616062358A6D7001D9258 /* EMVoiceConverter.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0E615182358A6D6001D9258 /* EMVoiceConverter.mm */; };
+		A0E616072358A6D7001D9258 /* EMVoiceConverter.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0E615182358A6D6001D9258 /* EMVoiceConverter.mm */; };
+		A0E616082358A6D7001D9258 /* TUIError.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6151C2358A6D7001D9258 /* TUIError.m */; };
+		A0E616092358A6D7001D9258 /* TUIError.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6151C2358A6D7001D9258 /* TUIError.m */; };
+		A0E6160A2358A6D7001D9258 /* TUIImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6151D2358A6D7001D9258 /* TUIImageCache.m */; };
+		A0E6160B2358A6D7001D9258 /* TUIImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6151D2358A6D7001D9258 /* TUIImageCache.m */; };
+		A0E6160C2358A6D7001D9258 /* TUIKitConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6151E2358A6D7001D9258 /* TUIKitConfig.m */; };
+		A0E6160D2358A6D7001D9258 /* TUIKitConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E6151E2358A6D7001D9258 /* TUIKitConfig.m */; };
+		A0E6160E2358A6D7001D9258 /* TUIKitResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A0E615222358A6D7001D9258 /* TUIKitResource.bundle */; };
+		A0E6160F2358A6D7001D9258 /* TUIKitResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A0E615222358A6D7001D9258 /* TUIKitResource.bundle */; };
+		A0E616102358A6D7001D9258 /* TUIKitFace.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A0E615232358A6D7001D9258 /* TUIKitFace.bundle */; };
+		A0E616112358A6D7001D9258 /* TUIKitFace.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A0E615232358A6D7001D9258 /* TUIKitFace.bundle */; };
 		A0E8981D22CF22C600DB09BA /* VideoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E8981B22CF22C600DB09BA /* VideoItem.m */; };
 		A0E8982122CF265800DB09BA /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E8982022CF265800DB09BA /* DBManager.m */; };
 /* End PBXBuildFile section */
@@ -1604,6 +1842,252 @@
 		A0E0D3CA22D0E3A100296851 /* TalkfunMultifunctionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunMultifunctionButton.m; sourceTree = "<group>"; };
 		A0E0D3CB22D0E3A100296851 /* TalkfunMultifunctionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunMultifunctionTool.h; sourceTree = "<group>"; };
 		A0E50818230ED54C005EF897 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		A0E614112358A6D6001D9258 /* TAddHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAddHelper.h; sourceTree = "<group>"; };
+		A0E614122358A6D6001D9258 /* NSString+TUICommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TUICommon.m"; sourceTree = "<group>"; };
+		A0E614132358A6D6001D9258 /* TResponderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TResponderTextView.h; sourceTree = "<group>"; };
+		A0E614142358A6D6001D9258 /* NSDate+TUIKIT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TUIKIT.h"; sourceTree = "<group>"; };
+		A0E614152358A6D6001D9258 /* TUITabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUITabBarController.h; sourceTree = "<group>"; };
+		A0E614162358A6D6001D9258 /* TModifyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TModifyView.m; sourceTree = "<group>"; };
+		A0E614172358A6D6001D9258 /* TUnReadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUnReadView.m; sourceTree = "<group>"; };
+		A0E614182358A6D6001D9258 /* TPopCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPopCell.h; sourceTree = "<group>"; };
+		A0E614192358A6D6001D9258 /* UIImage+TUIKIT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TUIKIT.h"; sourceTree = "<group>"; };
+		A0E6141A2358A6D6001D9258 /* TUILocalStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUILocalStorage.m; sourceTree = "<group>"; };
+		A0E6141B2358A6D6001D9258 /* TPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPopView.h; sourceTree = "<group>"; };
+		A0E6141C2358A6D6001D9258 /* THelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THelper.m; sourceTree = "<group>"; };
+		A0E6141D2358A6D6001D9258 /* TAddCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAddCell.m; sourceTree = "<group>"; };
+		A0E6141E2358A6D6001D9258 /* TAddCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAddCollectionCell.h; sourceTree = "<group>"; };
+		A0E614202358A6D6001D9258 /* TUIFileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIFileViewController.m; sourceTree = "<group>"; };
+		A0E614212358A6D6001D9258 /* TUIImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIImageViewController.h; sourceTree = "<group>"; };
+		A0E614222358A6D6001D9258 /* TUIAvatarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIAvatarViewController.h; sourceTree = "<group>"; };
+		A0E614232358A6D6001D9258 /* TDateEditController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDateEditController.h; sourceTree = "<group>"; };
+		A0E614242358A6D6001D9258 /* TNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNavigationController.m; sourceTree = "<group>"; };
+		A0E614252358A6D6001D9258 /* TUIVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIVideoViewController.m; sourceTree = "<group>"; };
+		A0E614262358A6D6001D9258 /* TTextEditController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTextEditController.m; sourceTree = "<group>"; };
+		A0E614272358A6D6001D9258 /* TDateEditController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDateEditController.m; sourceTree = "<group>"; };
+		A0E614282358A6D6001D9258 /* TUIAvatarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIAvatarViewController.m; sourceTree = "<group>"; };
+		A0E614292358A6D6001D9258 /* TUIImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIImageViewController.m; sourceTree = "<group>"; };
+		A0E6142A2358A6D6001D9258 /* TUIFileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIFileViewController.h; sourceTree = "<group>"; };
+		A0E6142B2358A6D6001D9258 /* TNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNavigationController.h; sourceTree = "<group>"; };
+		A0E6142C2358A6D6001D9258 /* TUIVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIVideoViewController.h; sourceTree = "<group>"; };
+		A0E6142D2358A6D6001D9258 /* TTextEditController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTextEditController.h; sourceTree = "<group>"; };
+		A0E6142E2358A6D6001D9258 /* TResponderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TResponderTextView.m; sourceTree = "<group>"; };
+		A0E614302358A6D6001D9258 /* TCommonSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCommonSwitchCell.h; sourceTree = "<group>"; };
+		A0E614312358A6D6001D9258 /* TCommonAvatarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCommonAvatarCell.h; sourceTree = "<group>"; };
+		A0E614322358A6D6001D9258 /* TUIProfileCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIProfileCardCell.m; sourceTree = "<group>"; };
+		A0E614332358A6D6001D9258 /* TCommonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCommonCell.h; sourceTree = "<group>"; };
+		A0E614342358A6D6001D9258 /* TCommonTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCommonTextCell.m; sourceTree = "<group>"; };
+		A0E614352358A6D6001D9258 /* TUIButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIButtonCell.m; sourceTree = "<group>"; };
+		A0E614362358A6D6001D9258 /* TCommonSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCommonSwitchCell.m; sourceTree = "<group>"; };
+		A0E614372358A6D6001D9258 /* TCommonAvatarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCommonAvatarCell.m; sourceTree = "<group>"; };
+		A0E614382358A6D6001D9258 /* TUIProfileCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIProfileCardCell.h; sourceTree = "<group>"; };
+		A0E614392358A6D6001D9258 /* TUIButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIButtonCell.h; sourceTree = "<group>"; };
+		A0E6143A2358A6D6001D9258 /* TCommonTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCommonTextCell.h; sourceTree = "<group>"; };
+		A0E6143B2358A6D6001D9258 /* TCommonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCommonCell.m; sourceTree = "<group>"; };
+		A0E6143C2358A6D6001D9258 /* NSString+TUICommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TUICommon.h"; sourceTree = "<group>"; };
+		A0E6143D2358A6D6001D9258 /* TAddHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAddHelper.m; sourceTree = "<group>"; };
+		A0E6143E2358A6D6001D9258 /* TUITabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUITabBarController.m; sourceTree = "<group>"; };
+		A0E6143F2358A6D6001D9258 /* NSDate+TUIKIT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TUIKIT.m"; sourceTree = "<group>"; };
+		A0E614402358A6D6001D9258 /* UIImage+TUIKIT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TUIKIT.m"; sourceTree = "<group>"; };
+		A0E614412358A6D6001D9258 /* TPopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPopCell.m; sourceTree = "<group>"; };
+		A0E614422358A6D6001D9258 /* TUnReadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUnReadView.h; sourceTree = "<group>"; };
+		A0E614432358A6D6001D9258 /* THeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THeader.h; sourceTree = "<group>"; };
+		A0E614442358A6D6001D9258 /* TModifyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TModifyView.h; sourceTree = "<group>"; };
+		A0E614452358A6D6001D9258 /* TAddCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAddCollectionCell.m; sourceTree = "<group>"; };
+		A0E614462358A6D6001D9258 /* TAddCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAddCell.h; sourceTree = "<group>"; };
+		A0E614472358A6D6001D9258 /* THelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THelper.h; sourceTree = "<group>"; };
+		A0E614482358A6D6001D9258 /* TPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPopView.m; sourceTree = "<group>"; };
+		A0E614492358A6D6001D9258 /* TUILocalStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUILocalStorage.h; sourceTree = "<group>"; };
+		A0E6144B2358A6D6001D9258 /* TUIGroupConversationListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIGroupConversationListController.h; sourceTree = "<group>"; };
+		A0E6144C2358A6D6001D9258 /* TUIContactSelectController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIContactSelectController.m; sourceTree = "<group>"; };
+		A0E6144E2358A6D6001D9258 /* TContactSelectViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TContactSelectViewModel.m; sourceTree = "<group>"; };
+		A0E6144F2358A6D6001D9258 /* TUIBlackListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIBlackListViewModel.h; sourceTree = "<group>"; };
+		A0E614502358A6D6001D9258 /* TUINewFriendViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUINewFriendViewModel.h; sourceTree = "<group>"; };
+		A0E614512358A6D6001D9258 /* TContactViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TContactViewModel.m; sourceTree = "<group>"; };
+		A0E614522358A6D6001D9258 /* TUIGroupConversationListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIGroupConversationListViewModel.h; sourceTree = "<group>"; };
+		A0E614532358A6D6001D9258 /* TContactSelectViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TContactSelectViewModel.h; sourceTree = "<group>"; };
+		A0E614542358A6D6001D9258 /* TUIBlackListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIBlackListViewModel.m; sourceTree = "<group>"; };
+		A0E614552358A6D6001D9258 /* TUINewFriendViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUINewFriendViewModel.m; sourceTree = "<group>"; };
+		A0E614562358A6D6001D9258 /* TUIGroupConversationListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIGroupConversationListViewModel.m; sourceTree = "<group>"; };
+		A0E614572358A6D6001D9258 /* TContactViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TContactViewModel.h; sourceTree = "<group>"; };
+		A0E614582358A6D6001D9258 /* TUIContactListPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIContactListPicker.m; sourceTree = "<group>"; };
+		A0E614592358A6D6001D9258 /* TUIContactController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIContactController.m; sourceTree = "<group>"; };
+		A0E6145A2358A6D6001D9258 /* TUINewFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUINewFriendViewController.h; sourceTree = "<group>"; };
+		A0E6145B2358A6D6001D9258 /* TUIBlackListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIBlackListController.m; sourceTree = "<group>"; };
+		A0E6145D2358A6D6001D9258 /* TContactListPickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TContactListPickerCell.h; sourceTree = "<group>"; };
+		A0E6145E2358A6D6001D9258 /* TCommonPendencyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCommonPendencyCell.m; sourceTree = "<group>"; };
+		A0E6145F2358A6D6001D9258 /* TCommonContactCellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCommonContactCellData.h; sourceTree = "<group>"; };
+		A0E614602358A6D6001D9258 /* TUIContactActionCellData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIContactActionCellData.m; sourceTree = "<group>"; };
+		A0E614612358A6D6001D9258 /* TCommonContactSelectCellData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCommonContactSelectCellData.m; sourceTree = "<group>"; };
+		A0E614622358A6D6001D9258 /* TCommonContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCommonContactCell.m; sourceTree = "<group>"; };
+		A0E614632358A6D6001D9258 /* TUIContactActionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIContactActionCell.m; sourceTree = "<group>"; };
+		A0E614642358A6D6001D9258 /* TCommonContactSelectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCommonContactSelectCell.m; sourceTree = "<group>"; };
+		A0E614652358A6D6001D9258 /* TCommonPendencyCellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCommonPendencyCellData.h; sourceTree = "<group>"; };
+		A0E614662358A6D6001D9258 /* TCommonContactCellData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCommonContactCellData.m; sourceTree = "<group>"; };
+		A0E614672358A6D6001D9258 /* TCommonPendencyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCommonPendencyCell.h; sourceTree = "<group>"; };
+		A0E614682358A6D6001D9258 /* TContactListPickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TContactListPickerCell.m; sourceTree = "<group>"; };
+		A0E614692358A6D6001D9258 /* TUIContactActionCellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIContactActionCellData.h; sourceTree = "<group>"; };
+		A0E6146A2358A6D6001D9258 /* TCommonContactSelectCellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCommonContactSelectCellData.h; sourceTree = "<group>"; };
+		A0E6146B2358A6D6001D9258 /* TCommonPendencyCellData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCommonPendencyCellData.m; sourceTree = "<group>"; };
+		A0E6146C2358A6D6001D9258 /* TCommonContactSelectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCommonContactSelectCell.h; sourceTree = "<group>"; };
+		A0E6146D2358A6D6001D9258 /* TUIContactActionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIContactActionCell.h; sourceTree = "<group>"; };
+		A0E6146E2358A6D6001D9258 /* TCommonContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCommonContactCell.h; sourceTree = "<group>"; };
+		A0E6146F2358A6D6001D9258 /* TUIContactListPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIContactListPicker.h; sourceTree = "<group>"; };
+		A0E614702358A6D6001D9258 /* TUIContactSelectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIContactSelectController.h; sourceTree = "<group>"; };
+		A0E614712358A6D6001D9258 /* TUIGroupConversationListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIGroupConversationListController.m; sourceTree = "<group>"; };
+		A0E614722358A6D6001D9258 /* TUIContactController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIContactController.h; sourceTree = "<group>"; };
+		A0E614732358A6D6001D9258 /* TUINewFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUINewFriendViewController.m; sourceTree = "<group>"; };
+		A0E614742358A6D6001D9258 /* TUIBlackListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIBlackListController.h; sourceTree = "<group>"; };
+		A0E614772358A6D6001D9258 /* TUITextMessageCellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUITextMessageCellData.h; sourceTree = "<group>"; };
+		A0E614782358A6D6001D9258 /* TUIJoinGroupMessageCellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIJoinGroupMessageCellData.h; sourceTree = "<group>"; };
+		A0E614792358A6D6001D9258 /* TUIBubbleMessageCellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIBubbleMessageCellData.h; sourceTree = "<group>"; };
+		A0E6147A2358A6D6001D9258 /* TUIFileMessageCellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIFileMessageCellData.h; sourceTree = "<group>"; };
+		A0E6147B2358A6D6001D9258 /* TUISystemMessageCellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUISystemMessageCellData.h; sourceTree = "<group>"; };
+		A0E6147C2358A6D6001D9258 /* TUIVideoMessageCellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIVideoMessageCellData.h; sourceTree = "<group>"; };
+		A0E6147D2358A6D6001D9258 /* TUIMessageCellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIMessageCellData.h; sourceTree = "<group>"; };
+		A0E6147E2358A6D6001D9258 /* TUIFaceMessageCellData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIFaceMessageCellData.m; sourceTree = "<group>"; };
+		A0E6147F2358A6D6001D9258 /* TUIImageMessageCellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIImageMessageCellData.h; sourceTree = "<group>"; };
+		A0E614802358A6D6001D9258 /* TUIVoiceMessageCellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIVoiceMessageCellData.h; sourceTree = "<group>"; };
+		A0E614812358A6D6001D9258 /* TUIFileMessageCellData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIFileMessageCellData.m; sourceTree = "<group>"; };
+		A0E614822358A6D6001D9258 /* TUIBubbleMessageCellData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIBubbleMessageCellData.m; sourceTree = "<group>"; };
+		A0E614832358A6D6001D9258 /* TUIJoinGroupMessageCellData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIJoinGroupMessageCellData.m; sourceTree = "<group>"; };
+		A0E614842358A6D6001D9258 /* TUITextMessageCellData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUITextMessageCellData.m; sourceTree = "<group>"; };
+		A0E614852358A6D6001D9258 /* TUISystemMessageCellData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUISystemMessageCellData.m; sourceTree = "<group>"; };
+		A0E614862358A6D6001D9258 /* TUIVoiceMessageCellData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIVoiceMessageCellData.m; sourceTree = "<group>"; };
+		A0E614872358A6D6001D9258 /* TUIImageMessageCellData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIImageMessageCellData.m; sourceTree = "<group>"; };
+		A0E614882358A6D6001D9258 /* TUIFaceMessageCellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIFaceMessageCellData.h; sourceTree = "<group>"; };
+		A0E614892358A6D6001D9258 /* TUIMessageCellData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIMessageCellData.m; sourceTree = "<group>"; };
+		A0E6148A2358A6D6001D9258 /* TUIVideoMessageCellData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIVideoMessageCellData.m; sourceTree = "<group>"; };
+		A0E6148D2358A6D6001D9258 /* TUIGroupPendencyViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIGroupPendencyViewModel.h; sourceTree = "<group>"; };
+		A0E6148E2358A6D6001D9258 /* TUIGroupPendencyCellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIGroupPendencyCellData.h; sourceTree = "<group>"; };
+		A0E6148F2358A6D6001D9258 /* TUIGroupPendencyViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIGroupPendencyViewModel.m; sourceTree = "<group>"; };
+		A0E614902358A6D6001D9258 /* TUIGroupPendencyCellData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIGroupPendencyCellData.m; sourceTree = "<group>"; };
+		A0E614912358A6D6001D9258 /* TUIGroupPendencyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIGroupPendencyController.h; sourceTree = "<group>"; };
+		A0E614932358A6D6001D9258 /* TUIGroupPendencyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIGroupPendencyCell.h; sourceTree = "<group>"; };
+		A0E614942358A6D6001D9258 /* TUIGroupPendencyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIGroupPendencyCell.m; sourceTree = "<group>"; };
+		A0E614952358A6D6001D9258 /* TUIGroupPendencyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIGroupPendencyController.m; sourceTree = "<group>"; };
+		A0E614962358A6D6001D9258 /* TUIFaceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIFaceCell.h; sourceTree = "<group>"; };
+		A0E614982358A6D6001D9258 /* TUIOutgoingTextCellLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIOutgoingTextCellLayout.m; sourceTree = "<group>"; };
+		A0E614992358A6D6001D9258 /* TUIIncommingTextCellLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIIncommingTextCellLayout.h; sourceTree = "<group>"; };
+		A0E6149A2358A6D6001D9258 /* TUISystemMessageCellLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUISystemMessageCellLayout.m; sourceTree = "<group>"; };
+		A0E6149B2358A6D6001D9258 /* TUIMessageCellLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIMessageCellLayout.m; sourceTree = "<group>"; };
+		A0E6149C2358A6D6001D9258 /* TUIOutgoingTextCellLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIOutgoingTextCellLayout.h; sourceTree = "<group>"; };
+		A0E6149D2358A6D6001D9258 /* TUIIncommingTextCellLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIIncommingTextCellLayout.m; sourceTree = "<group>"; };
+		A0E6149E2358A6D6001D9258 /* TUISystemMessageCellLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUISystemMessageCellLayout.h; sourceTree = "<group>"; };
+		A0E6149F2358A6D6001D9258 /* TUIMessageCellLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIMessageCellLayout.h; sourceTree = "<group>"; };
+		A0E614A02358A6D6001D9258 /* TUIMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIMessageCell.h; sourceTree = "<group>"; };
+		A0E614A12358A6D6001D9258 /* TUIFaceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIFaceView.h; sourceTree = "<group>"; };
+		A0E614A22358A6D6001D9258 /* TUIChatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIChatController.m; sourceTree = "<group>"; };
+		A0E614A32358A6D6001D9258 /* TUIMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIMoreView.h; sourceTree = "<group>"; };
+		A0E614A52358A6D6001D9258 /* TUIInputController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIInputController.m; sourceTree = "<group>"; };
+		A0E614A62358A6D6001D9258 /* TUIInputMoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIInputMoreCell.h; sourceTree = "<group>"; };
+		A0E614A72358A6D6001D9258 /* TUIInputBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIInputBar.m; sourceTree = "<group>"; };
+		A0E614A82358A6D6001D9258 /* TUIRecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIRecordView.m; sourceTree = "<group>"; };
+		A0E614A92358A6D6001D9258 /* TUIInputController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIInputController.h; sourceTree = "<group>"; };
+		A0E614AA2358A6D6001D9258 /* TUIInputBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIInputBar.h; sourceTree = "<group>"; };
+		A0E614AB2358A6D6001D9258 /* TUIInputMoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIInputMoreCell.m; sourceTree = "<group>"; };
+		A0E614AC2358A6D6001D9258 /* TUIRecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIRecordView.h; sourceTree = "<group>"; };
+		A0E614AD2358A6D6001D9258 /* TUIMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIMenuCell.m; sourceTree = "<group>"; };
+		A0E614AE2358A6D6001D9258 /* TUIMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIMessageController.h; sourceTree = "<group>"; };
+		A0E614AF2358A6D6001D9258 /* TUIMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIMenuView.m; sourceTree = "<group>"; };
+		A0E614B02358A6D6001D9258 /* TUIFaceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIFaceCell.m; sourceTree = "<group>"; };
+		A0E614B22358A6D6001D9258 /* TUIFaceMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIFaceMessageCell.h; sourceTree = "<group>"; };
+		A0E614B32358A6D6001D9258 /* TUIFileMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIFileMessageCell.m; sourceTree = "<group>"; };
+		A0E614B42358A6D6001D9258 /* TUIVideoMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIVideoMessageCell.m; sourceTree = "<group>"; };
+		A0E614B52358A6D6001D9258 /* TUIVoiceMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIVoiceMessageCell.h; sourceTree = "<group>"; };
+		A0E614B62358A6D6001D9258 /* TUITextMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUITextMessageCell.m; sourceTree = "<group>"; };
+		A0E614B72358A6D6001D9258 /* TUIJoinGroupMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIJoinGroupMessageCell.m; sourceTree = "<group>"; };
+		A0E614B82358A6D6001D9258 /* TUISystemMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUISystemMessageCell.m; sourceTree = "<group>"; };
+		A0E614B92358A6D6001D9258 /* TUIImageMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIImageMessageCell.m; sourceTree = "<group>"; };
+		A0E614BA2358A6D6001D9258 /* TUIBubbleMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIBubbleMessageCell.h; sourceTree = "<group>"; };
+		A0E614BB2358A6D6001D9258 /* TUIFileMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIFileMessageCell.h; sourceTree = "<group>"; };
+		A0E614BC2358A6D6001D9258 /* TUIFaceMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIFaceMessageCell.m; sourceTree = "<group>"; };
+		A0E614BD2358A6D6001D9258 /* TUITextMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUITextMessageCell.h; sourceTree = "<group>"; };
+		A0E614BE2358A6D6001D9258 /* TUIVoiceMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIVoiceMessageCell.m; sourceTree = "<group>"; };
+		A0E614BF2358A6D6001D9258 /* TUIVideoMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIVideoMessageCell.h; sourceTree = "<group>"; };
+		A0E614C02358A6D6001D9258 /* TUISystemMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUISystemMessageCell.h; sourceTree = "<group>"; };
+		A0E614C12358A6D6001D9258 /* TUIJoinGroupMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIJoinGroupMessageCell.h; sourceTree = "<group>"; };
+		A0E614C22358A6D6001D9258 /* TUIBubbleMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIBubbleMessageCell.m; sourceTree = "<group>"; };
+		A0E614C32358A6D6001D9258 /* TUIImageMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIImageMessageCell.h; sourceTree = "<group>"; };
+		A0E614C42358A6D6001D9258 /* TUIChatController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIChatController.h; sourceTree = "<group>"; };
+		A0E614C52358A6D6001D9258 /* TUIFaceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIFaceView.m; sourceTree = "<group>"; };
+		A0E614C62358A6D6001D9258 /* TUIMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIMessageCell.m; sourceTree = "<group>"; };
+		A0E614C72358A6D6001D9258 /* TUIMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIMessageController.m; sourceTree = "<group>"; };
+		A0E614C82358A6D6001D9258 /* TUIMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIMenuCell.h; sourceTree = "<group>"; };
+		A0E614C92358A6D6001D9258 /* TUIMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIMoreView.m; sourceTree = "<group>"; };
+		A0E614CA2358A6D6001D9258 /* TUIMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIMenuView.h; sourceTree = "<group>"; };
+		A0E614CC2358A6D6001D9258 /* TUIGroupInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIGroupInfoController.m; sourceTree = "<group>"; };
+		A0E614CD2358A6D6001D9258 /* TUIGroupMembersView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIGroupMembersView.h; sourceTree = "<group>"; };
+		A0E614CE2358A6D6001D9258 /* TUIGroupMembersCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIGroupMembersCell.h; sourceTree = "<group>"; };
+		A0E614CF2358A6D6001D9258 /* TUIGroupMemberCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIGroupMemberCell.h; sourceTree = "<group>"; };
+		A0E614D02358A6D6001D9258 /* TUIGroupMemberController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIGroupMemberController.h; sourceTree = "<group>"; };
+		A0E614D12358A6D6001D9258 /* TUIGroupMembersView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIGroupMembersView.m; sourceTree = "<group>"; };
+		A0E614D22358A6D6001D9258 /* TUIGroupInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIGroupInfoController.h; sourceTree = "<group>"; };
+		A0E614D32358A6D6001D9258 /* TUIGroupMemberCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIGroupMemberCell.m; sourceTree = "<group>"; };
+		A0E614D42358A6D6001D9258 /* TUIGroupMembersCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIGroupMembersCell.m; sourceTree = "<group>"; };
+		A0E614D52358A6D6001D9258 /* TUIGroupMemberController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIGroupMemberController.m; sourceTree = "<group>"; };
+		A0E614D72358A6D6001D9258 /* TUIUserProfileControllerServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIUserProfileControllerServiceProtocol.h; sourceTree = "<group>"; };
+		A0E614D82358A6D6001D9258 /* TUIGroupInfoDataProviderServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIGroupInfoDataProviderServiceProtocol.h; sourceTree = "<group>"; };
+		A0E614D92358A6D6001D9258 /* TUIUserProfileDataProviderServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIUserProfileDataProviderServiceProtocol.h; sourceTree = "<group>"; };
+		A0E614DA2358A6D6001D9258 /* TUIMessageDataProviderServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIMessageDataProviderServiceProtocol.h; sourceTree = "<group>"; };
+		A0E614DB2358A6D6001D9258 /* TUIConversationDataProviderServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIConversationDataProviderServiceProtocol.h; sourceTree = "<group>"; };
+		A0E614DC2358A6D6001D9258 /* TUIFriendProfileControllerServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIFriendProfileControllerServiceProtocol.h; sourceTree = "<group>"; };
+		A0E614DE2358A6D6001D9258 /* TUIGroupInfoDataProviderService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIGroupInfoDataProviderService.m; sourceTree = "<group>"; };
+		A0E614DF2358A6D6001D9258 /* TUIMessageDataProviderService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIMessageDataProviderService.h; sourceTree = "<group>"; };
+		A0E614E02358A6D6001D9258 /* TUIUserProfileDataProviderService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIUserProfileDataProviderService.m; sourceTree = "<group>"; };
+		A0E614E12358A6D6001D9258 /* TUIConversationDataProviderService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIConversationDataProviderService.m; sourceTree = "<group>"; };
+		A0E614E22358A6D6001D9258 /* TUIUserProfileDataProviderService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIUserProfileDataProviderService.h; sourceTree = "<group>"; };
+		A0E614E32358A6D6001D9258 /* TUIMessageDataProviderService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIMessageDataProviderService.m; sourceTree = "<group>"; };
+		A0E614E42358A6D6001D9258 /* TUIGroupInfoDataProviderService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIGroupInfoDataProviderService.h; sourceTree = "<group>"; };
+		A0E614E52358A6D6001D9258 /* TUIConversationDataProviderService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIConversationDataProviderService.h; sourceTree = "<group>"; };
+		A0E614E72358A6D6001D9258 /* TNaviBarIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNaviBarIndicatorView.m; sourceTree = "<group>"; };
+		A0E614E92358A6D6001D9258 /* TConversationListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TConversationListViewModel.m; sourceTree = "<group>"; };
+		A0E614EA2358A6D6001D9258 /* TConversationListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TConversationListViewModel.h; sourceTree = "<group>"; };
+		A0E614EB2358A6D6001D9258 /* TUIConversationListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIConversationListController.m; sourceTree = "<group>"; };
+		A0E614ED2358A6D6001D9258 /* TUIConversationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIConversationCell.m; sourceTree = "<group>"; };
+		A0E614EE2358A6D6001D9258 /* TUIConversationCellData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIConversationCellData.m; sourceTree = "<group>"; };
+		A0E614EF2358A6D6001D9258 /* TUIConversationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIConversationCell.h; sourceTree = "<group>"; };
+		A0E614F02358A6D6001D9258 /* TUIConversationCellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIConversationCellData.h; sourceTree = "<group>"; };
+		A0E614F12358A6D6001D9258 /* TNaviBarIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNaviBarIndicatorView.h; sourceTree = "<group>"; };
+		A0E614F22358A6D6001D9258 /* TUIConversationListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIConversationListController.h; sourceTree = "<group>"; };
+		A0E614F32358A6D6001D9258 /* TUIKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIKit.m; sourceTree = "<group>"; };
+		A0E614F62358A6D6001D9258 /* TIMUserProfile+DataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TIMUserProfile+DataProvider.h"; sourceTree = "<group>"; };
+		A0E614F72358A6D6001D9258 /* TIMGroupInfo+DataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TIMGroupInfo+DataProvider.m"; sourceTree = "<group>"; };
+		A0E614F82358A6D6001D9258 /* TIMConversation+DataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TIMConversation+DataProvider.h"; sourceTree = "<group>"; };
+		A0E614F92358A6D6001D9258 /* TIMMessage+DataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TIMMessage+DataProvider.h"; sourceTree = "<group>"; };
+		A0E614FA2358A6D6001D9258 /* NSString+DataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DataProvider.h"; sourceTree = "<group>"; };
+		A0E614FB2358A6D6001D9258 /* TIMConversation+DataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TIMConversation+DataProvider.m"; sourceTree = "<group>"; };
+		A0E614FC2358A6D6001D9258 /* TIMGroupInfo+DataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TIMGroupInfo+DataProvider.h"; sourceTree = "<group>"; };
+		A0E614FD2358A6D6001D9258 /* TIMUserProfile+DataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TIMUserProfile+DataProvider.m"; sourceTree = "<group>"; };
+		A0E614FE2358A6D6001D9258 /* NSString+DataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DataProvider.m"; sourceTree = "<group>"; };
+		A0E614FF2358A6D6001D9258 /* TIMMessage+DataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TIMMessage+DataProvider.m"; sourceTree = "<group>"; };
+		A0E615012358A6D6001D9258 /* TCContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCContext.m; sourceTree = "<group>"; };
+		A0E615022358A6D6001D9258 /* TCServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCServiceManager.m; sourceTree = "<group>"; };
+		A0E615032358A6D6001D9258 /* TCServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCServiceProtocol.h; sourceTree = "<group>"; };
+		A0E615042358A6D6001D9258 /* TCAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCAnnotation.m; sourceTree = "<group>"; };
+		A0E615052358A6D6001D9258 /* TCServiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCServiceManager.h; sourceTree = "<group>"; };
+		A0E615062358A6D6001D9258 /* TCContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCContext.h; sourceTree = "<group>"; };
+		A0E615072358A6D6001D9258 /* TCAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCAnnotation.h; sourceTree = "<group>"; };
+		A0E6150B2358A6D6001D9258 /* libopencore-amrwb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrwb.a"; sourceTree = "<group>"; };
+		A0E6150C2358A6D6001D9258 /* if_rom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = if_rom.h; sourceTree = "<group>"; };
+		A0E6150D2358A6D6001D9258 /* dec_if.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dec_if.h; sourceTree = "<group>"; };
+		A0E6150E2358A6D6001D9258 /* EMVoiceConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMVoiceConverter.h; sourceTree = "<group>"; };
+		A0E615102358A6D6001D9258 /* interf_dec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interf_dec.h; sourceTree = "<group>"; };
+		A0E615112358A6D6001D9258 /* libopencore-amrnb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrnb.a"; sourceTree = "<group>"; };
+		A0E615122358A6D6001D9258 /* interf_enc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interf_enc.h; sourceTree = "<group>"; };
+		A0E615142358A6D6001D9258 /* wav.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = wav.mm; sourceTree = "<group>"; };
+		A0E615152358A6D6001D9258 /* amrFileCodec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = amrFileCodec.mm; sourceTree = "<group>"; };
+		A0E615162358A6D6001D9258 /* amrFileCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amrFileCodec.h; sourceTree = "<group>"; };
+		A0E615172358A6D6001D9258 /* wav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wav.h; sourceTree = "<group>"; };
+		A0E615182358A6D6001D9258 /* EMVoiceConverter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EMVoiceConverter.mm; sourceTree = "<group>"; };
+		A0E615192358A6D6001D9258 /* TUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIKit.h; sourceTree = "<group>"; };
+		A0E6151B2358A6D7001D9258 /* TUIKitConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIKitConfig.h; sourceTree = "<group>"; };
+		A0E6151C2358A6D7001D9258 /* TUIError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIError.m; sourceTree = "<group>"; };
+		A0E6151D2358A6D7001D9258 /* TUIImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIImageCache.m; sourceTree = "<group>"; };
+		A0E6151E2358A6D7001D9258 /* TUIKitConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIKitConfig.m; sourceTree = "<group>"; };
+		A0E6151F2358A6D7001D9258 /* TUIError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIError.h; sourceTree = "<group>"; };
+		A0E615202358A6D7001D9258 /* TUIImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIImageCache.h; sourceTree = "<group>"; };
+		A0E615222358A6D7001D9258 /* TUIKitResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TUIKitResource.bundle; sourceTree = "<group>"; };
+		A0E615232358A6D7001D9258 /* TUIKitFace.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TUIKitFace.bundle; sourceTree = "<group>"; };
 		A0E8981B22CF22C600DB09BA /* VideoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoItem.m; sourceTree = "<group>"; };
 		A0E8981C22CF22C600DB09BA /* VideoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoItem.h; sourceTree = "<group>"; };
 		A0E8981F22CF265800DB09BA /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
@@ -1628,6 +2112,7 @@
 				20D3D36F22C2283700560A74 /* libiconv.tbd in Frameworks */,
 				20D3D36D22C2282A00560A74 /* libz.tbd in Frameworks */,
 				20D3D3B022C22DD600560A74 /* AudioToolbox.framework in Frameworks */,
+				A0E616002358A6D7001D9258 /* libopencore-amrnb.a in Frameworks */,
 				20D3D3AE22C22DCD00560A74 /* CoreAudio.framework in Frameworks */,
 				20D3D3AC22C22DC500560A74 /* MediaPlayer.framework in Frameworks */,
 				20D3D3AA22C22DBC00560A74 /* OpenGLES.framework in Frameworks */,
@@ -1636,6 +2121,7 @@
 				20D3D37122C2284800560A74 /* libsqlite3.tbd in Frameworks */,
 				20D3D36922C2280E00560A74 /* libsqlite3.0.tbd in Frameworks */,
 				A01E1E5122223F8800435A0E /* UserNotifications.framework in Frameworks */,
+				A0E615FE2358A6D7001D9258 /* libopencore-amrwb.a in Frameworks */,
 				85401F932D5D75079941DDCE /* Pods_Chaozhi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1650,11 +2136,13 @@
 				A045512422EC8DFA00E17406 /* MobileCoreServices.framework in Frameworks */,
 				A045512522EC8DFA00E17406 /* VideoToolbox.framework in Frameworks */,
 				A045512622EC8DFA00E17406 /* CoreMedia.framework in Frameworks */,
+				A0E615FF2358A6D7001D9258 /* libopencore-amrwb.a in Frameworks */,
 				A045512722EC8DFA00E17406 /* AVFoundation.framework in Frameworks */,
 				A035D32B231ABE8D00F61484 /* TalkfunSDKFramework.framework in Frameworks */,
 				A045512822EC8DFA00E17406 /* libiconv.tbd in Frameworks */,
 				A045512922EC8DFA00E17406 /* libz.tbd in Frameworks */,
 				A045512A22EC8DFA00E17406 /* AudioToolbox.framework in Frameworks */,
+				A0E616012358A6D7001D9258 /* libopencore-amrnb.a in Frameworks */,
 				A045512B22EC8DFA00E17406 /* CoreAudio.framework in Frameworks */,
 				A045512C22EC8DFA00E17406 /* MediaPlayer.framework in Frameworks */,
 				A045512D22EC8DFA00E17406 /* OpenGLES.framework in Frameworks */,
@@ -1691,11 +2179,11 @@
 		2059348123547671003DDF39 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				2059348323547671003DDF39 /* TCUtil.h */,
+				2059348823547671003DDF39 /* PAirSandbox.h */,
 				2059348423547671003DDF39 /* PAirSandbox.m */,
 				2059348523547671003DDF39 /* TCConstants.h */,
+				2059348323547671003DDF39 /* TCUtil.h */,
 				2059348623547671003DDF39 /* TCUtil.m */,
-				2059348823547671003DDF39 /* PAirSandbox.h */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -1703,18 +2191,18 @@
 		2059348923547672003DDF39 /* Contact */ = {
 			isa = PBXGroup;
 			children = (
-				2059348A23547672003DDF39 /* SearchFriendViewController.h */,
-				2059348B23547672003DDF39 /* TFriendProfileController.m */,
-				2059348C23547672003DDF39 /* FriendRequestViewController.h */,
-				2059348D23547672003DDF39 /* SearchGroupViewController.m */,
-				2059348E23547672003DDF39 /* GroupRequestViewController.h */,
 				2059348F23547672003DDF39 /* ContactsController.h */,
-				2059349023547672003DDF39 /* TFriendProfileController.h */,
-				2059349123547672003DDF39 /* SearchFriendViewController.m */,
-				2059349223547672003DDF39 /* FriendRequestViewController.m */,
-				2059349323547672003DDF39 /* GroupRequestViewController.m */,
-				2059349423547672003DDF39 /* SearchGroupViewController.h */,
 				2059349523547672003DDF39 /* ContactsController.m */,
+				2059348C23547672003DDF39 /* FriendRequestViewController.h */,
+				2059349223547672003DDF39 /* FriendRequestViewController.m */,
+				2059348E23547672003DDF39 /* GroupRequestViewController.h */,
+				2059349323547672003DDF39 /* GroupRequestViewController.m */,
+				2059348A23547672003DDF39 /* SearchFriendViewController.h */,
+				2059349123547672003DDF39 /* SearchFriendViewController.m */,
+				2059349423547672003DDF39 /* SearchGroupViewController.h */,
+				2059348D23547672003DDF39 /* SearchGroupViewController.m */,
+				2059349023547672003DDF39 /* TFriendProfileController.h */,
+				2059348B23547672003DDF39 /* TFriendProfileController.m */,
 			);
 			path = Contact;
 			sourceTree = "<group>";
@@ -1722,8 +2210,8 @@
 		2059349623547672003DDF39 /* Debug */ = {
 			isa = PBXGroup;
 			children = (
-				2059349723547672003DDF39 /* GenerateTestUserSig.m */,
 				2059349823547672003DDF39 /* GenerateTestUserSig.h */,
+				2059349723547672003DDF39 /* GenerateTestUserSig.m */,
 			);
 			path = Debug;
 			sourceTree = "<group>";
@@ -1731,10 +2219,10 @@
 		2059349923547672003DDF39 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				2059349A23547672003DDF39 /* TCLoginParam.m */,
+				2059349D23547672003DDF39 /* LoginController.h */,
 				2059349B23547672003DDF39 /* LoginController.m */,
 				2059349C23547672003DDF39 /* TCLoginParam.h */,
-				2059349D23547672003DDF39 /* LoginController.h */,
+				2059349A23547672003DDF39 /* TCLoginParam.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1742,12 +2230,12 @@
 		2059349E23547672003DDF39 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				2059349F23547672003DDF39 /* SettingController.h */,
+				205934A423547672003DDF39 /* NotifySetupController.h */,
 				205934A023547672003DDF39 /* NotifySetupController.m */,
 				205934A123547672003DDF39 /* ProfileController.h */,
-				205934A223547672003DDF39 /* SettingController.m */,
 				205934A323547672003DDF39 /* ProfileController.m */,
-				205934A423547672003DDF39 /* NotifySetupController.h */,
+				2059349F23547672003DDF39 /* SettingController.h */,
+				205934A223547672003DDF39 /* SettingController.m */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -1773,15 +2261,15 @@
 		205934AB23547673003DDF39 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				205934B223547673003DDF39 /* Custom */,
 				205934AC23547673003DDF39 /* GroupInfoController.h */,
-				205934AD23547673003DDF39 /* GroupMemberController.m */,
-				205934AE23547673003DDF39 /* TXChatViewController.m */,
-				205934AF23547673003DDF39 /* TUserProfileController.m */,
 				205934B023547673003DDF39 /* GroupInfoController.m */,
 				205934B123547673003DDF39 /* GroupMemberController.h */,
-				205934B223547673003DDF39 /* Custom */,
+				205934AD23547673003DDF39 /* GroupMemberController.m */,
 				205934B723547673003DDF39 /* TUserProfileController.h */,
+				205934AF23547673003DDF39 /* TUserProfileController.m */,
 				205934B823547673003DDF39 /* TXChatViewController.h */,
+				205934AE23547673003DDF39 /* TXChatViewController.m */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -1789,10 +2277,10 @@
 		205934B223547673003DDF39 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				205934B323547673003DDF39 /* MyCustomCellData.m */,
 				205934B423547673003DDF39 /* MyCustomCell.h */,
-				205934B523547673003DDF39 /* MyCustomCellData.h */,
 				205934B623547673003DDF39 /* MyCustomCell.m */,
+				205934B523547673003DDF39 /* MyCustomCellData.h */,
+				205934B323547673003DDF39 /* MyCustomCellData.m */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -2377,6 +2865,7 @@
 			isa = PBXGroup;
 			children = (
 				2059348023547635003DDF39 /* TXIM */,
+				A0E6140D2358A6D6001D9258 /* TUIKit */,
 				A0AC071522C4BC7C001832EA /* Talkfun */,
 				A020B001214AAB140011BB4F /* LDNetDiagnoService */,
 				A020B011214AAB140011BB4F /* Reachability */,
@@ -3236,6 +3725,515 @@
 			path = H5;
 			sourceTree = "<group>";
 		};
+		A0E6140D2358A6D6001D9258 /* TUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				A0E6140E2358A6D6001D9258 /* Classes */,
+				A0E615212358A6D7001D9258 /* Resources */,
+			);
+			path = TUIKit;
+			sourceTree = "<group>";
+		};
+		A0E6140E2358A6D6001D9258 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A0E615192358A6D6001D9258 /* TUIKit.h */,
+				A0E614F32358A6D6001D9258 /* TUIKit.m */,
+				A0E6151A2358A6D6001D9258 /* Global */,
+				A0E6140F2358A6D6001D9258 /* Section */,
+				A0E615082358A6D6001D9258 /* Third */,
+				A0E614F42358A6D6001D9258 /* Util */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A0E6140F2358A6D6001D9258 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				A0E614102358A6D6001D9258 /* Commom */,
+				A0E6144A2358A6D6001D9258 /* Contact */,
+				A0E614752358A6D6001D9258 /* Chat */,
+				A0E614CB2358A6D6001D9258 /* Group */,
+				A0E614D62358A6D6001D9258 /* Protocol */,
+				A0E614DD2358A6D6001D9258 /* Service */,
+				A0E614E62358A6D6001D9258 /* Conversation */,
+			);
+			path = Section;
+			sourceTree = "<group>";
+		};
+		A0E614102358A6D6001D9258 /* Commom */ = {
+			isa = PBXGroup;
+			children = (
+				A0E6142F2358A6D6001D9258 /* Cell */,
+				A0E6141F2358A6D6001D9258 /* Controller */,
+				A0E614142358A6D6001D9258 /* NSDate+TUIKIT.h */,
+				A0E6143F2358A6D6001D9258 /* NSDate+TUIKIT.m */,
+				A0E6143C2358A6D6001D9258 /* NSString+TUICommon.h */,
+				A0E614122358A6D6001D9258 /* NSString+TUICommon.m */,
+				A0E614462358A6D6001D9258 /* TAddCell.h */,
+				A0E6141D2358A6D6001D9258 /* TAddCell.m */,
+				A0E6141E2358A6D6001D9258 /* TAddCollectionCell.h */,
+				A0E614452358A6D6001D9258 /* TAddCollectionCell.m */,
+				A0E614112358A6D6001D9258 /* TAddHelper.h */,
+				A0E6143D2358A6D6001D9258 /* TAddHelper.m */,
+				A0E614432358A6D6001D9258 /* THeader.h */,
+				A0E614472358A6D6001D9258 /* THelper.h */,
+				A0E6141C2358A6D6001D9258 /* THelper.m */,
+				A0E614442358A6D6001D9258 /* TModifyView.h */,
+				A0E614162358A6D6001D9258 /* TModifyView.m */,
+				A0E614182358A6D6001D9258 /* TPopCell.h */,
+				A0E614412358A6D6001D9258 /* TPopCell.m */,
+				A0E6141B2358A6D6001D9258 /* TPopView.h */,
+				A0E614482358A6D6001D9258 /* TPopView.m */,
+				A0E614132358A6D6001D9258 /* TResponderTextView.h */,
+				A0E6142E2358A6D6001D9258 /* TResponderTextView.m */,
+				A0E614492358A6D6001D9258 /* TUILocalStorage.h */,
+				A0E6141A2358A6D6001D9258 /* TUILocalStorage.m */,
+				A0E614152358A6D6001D9258 /* TUITabBarController.h */,
+				A0E6143E2358A6D6001D9258 /* TUITabBarController.m */,
+				A0E614422358A6D6001D9258 /* TUnReadView.h */,
+				A0E614172358A6D6001D9258 /* TUnReadView.m */,
+				A0E614192358A6D6001D9258 /* UIImage+TUIKIT.h */,
+				A0E614402358A6D6001D9258 /* UIImage+TUIKIT.m */,
+			);
+			path = Commom;
+			sourceTree = "<group>";
+		};
+		A0E6141F2358A6D6001D9258 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A0E614232358A6D6001D9258 /* TDateEditController.h */,
+				A0E614272358A6D6001D9258 /* TDateEditController.m */,
+				A0E6142B2358A6D6001D9258 /* TNavigationController.h */,
+				A0E614242358A6D6001D9258 /* TNavigationController.m */,
+				A0E6142D2358A6D6001D9258 /* TTextEditController.h */,
+				A0E614262358A6D6001D9258 /* TTextEditController.m */,
+				A0E614222358A6D6001D9258 /* TUIAvatarViewController.h */,
+				A0E614282358A6D6001D9258 /* TUIAvatarViewController.m */,
+				A0E6142A2358A6D6001D9258 /* TUIFileViewController.h */,
+				A0E614202358A6D6001D9258 /* TUIFileViewController.m */,
+				A0E614212358A6D6001D9258 /* TUIImageViewController.h */,
+				A0E614292358A6D6001D9258 /* TUIImageViewController.m */,
+				A0E6142C2358A6D6001D9258 /* TUIVideoViewController.h */,
+				A0E614252358A6D6001D9258 /* TUIVideoViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A0E6142F2358A6D6001D9258 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A0E614312358A6D6001D9258 /* TCommonAvatarCell.h */,
+				A0E614372358A6D6001D9258 /* TCommonAvatarCell.m */,
+				A0E614332358A6D6001D9258 /* TCommonCell.h */,
+				A0E6143B2358A6D6001D9258 /* TCommonCell.m */,
+				A0E614302358A6D6001D9258 /* TCommonSwitchCell.h */,
+				A0E614362358A6D6001D9258 /* TCommonSwitchCell.m */,
+				A0E6143A2358A6D6001D9258 /* TCommonTextCell.h */,
+				A0E614342358A6D6001D9258 /* TCommonTextCell.m */,
+				A0E614392358A6D6001D9258 /* TUIButtonCell.h */,
+				A0E614352358A6D6001D9258 /* TUIButtonCell.m */,
+				A0E614382358A6D6001D9258 /* TUIProfileCardCell.h */,
+				A0E614322358A6D6001D9258 /* TUIProfileCardCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		A0E6144A2358A6D6001D9258 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				A0E6145C2358A6D6001D9258 /* Cell */,
+				A0E6144D2358A6D6001D9258 /* ViewModel */,
+				A0E614742358A6D6001D9258 /* TUIBlackListController.h */,
+				A0E6145B2358A6D6001D9258 /* TUIBlackListController.m */,
+				A0E614722358A6D6001D9258 /* TUIContactController.h */,
+				A0E614592358A6D6001D9258 /* TUIContactController.m */,
+				A0E6146F2358A6D6001D9258 /* TUIContactListPicker.h */,
+				A0E614582358A6D6001D9258 /* TUIContactListPicker.m */,
+				A0E614702358A6D6001D9258 /* TUIContactSelectController.h */,
+				A0E6144C2358A6D6001D9258 /* TUIContactSelectController.m */,
+				A0E6144B2358A6D6001D9258 /* TUIGroupConversationListController.h */,
+				A0E614712358A6D6001D9258 /* TUIGroupConversationListController.m */,
+				A0E6145A2358A6D6001D9258 /* TUINewFriendViewController.h */,
+				A0E614732358A6D6001D9258 /* TUINewFriendViewController.m */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		A0E6144D2358A6D6001D9258 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A0E614532358A6D6001D9258 /* TContactSelectViewModel.h */,
+				A0E6144E2358A6D6001D9258 /* TContactSelectViewModel.m */,
+				A0E614572358A6D6001D9258 /* TContactViewModel.h */,
+				A0E614512358A6D6001D9258 /* TContactViewModel.m */,
+				A0E6144F2358A6D6001D9258 /* TUIBlackListViewModel.h */,
+				A0E614542358A6D6001D9258 /* TUIBlackListViewModel.m */,
+				A0E614522358A6D6001D9258 /* TUIGroupConversationListViewModel.h */,
+				A0E614562358A6D6001D9258 /* TUIGroupConversationListViewModel.m */,
+				A0E614502358A6D6001D9258 /* TUINewFriendViewModel.h */,
+				A0E614552358A6D6001D9258 /* TUINewFriendViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A0E6145C2358A6D6001D9258 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A0E6146E2358A6D6001D9258 /* TCommonContactCell.h */,
+				A0E614622358A6D6001D9258 /* TCommonContactCell.m */,
+				A0E6145F2358A6D6001D9258 /* TCommonContactCellData.h */,
+				A0E614662358A6D6001D9258 /* TCommonContactCellData.m */,
+				A0E6146C2358A6D6001D9258 /* TCommonContactSelectCell.h */,
+				A0E614642358A6D6001D9258 /* TCommonContactSelectCell.m */,
+				A0E6146A2358A6D6001D9258 /* TCommonContactSelectCellData.h */,
+				A0E614612358A6D6001D9258 /* TCommonContactSelectCellData.m */,
+				A0E614672358A6D6001D9258 /* TCommonPendencyCell.h */,
+				A0E6145E2358A6D6001D9258 /* TCommonPendencyCell.m */,
+				A0E614652358A6D6001D9258 /* TCommonPendencyCellData.h */,
+				A0E6146B2358A6D6001D9258 /* TCommonPendencyCellData.m */,
+				A0E6145D2358A6D6001D9258 /* TContactListPickerCell.h */,
+				A0E614682358A6D6001D9258 /* TContactListPickerCell.m */,
+				A0E6146D2358A6D6001D9258 /* TUIContactActionCell.h */,
+				A0E614632358A6D6001D9258 /* TUIContactActionCell.m */,
+				A0E614692358A6D6001D9258 /* TUIContactActionCellData.h */,
+				A0E614602358A6D6001D9258 /* TUIContactActionCellData.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		A0E614752358A6D6001D9258 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				A0E614B12358A6D6001D9258 /* Cell */,
+				A0E614762358A6D6001D9258 /* CellData */,
+				A0E614972358A6D6001D9258 /* CellLayout */,
+				A0E614A42358A6D6001D9258 /* Input */,
+				A0E6148B2358A6D6001D9258 /* Pendency */,
+				A0E614C42358A6D6001D9258 /* TUIChatController.h */,
+				A0E614A22358A6D6001D9258 /* TUIChatController.m */,
+				A0E614962358A6D6001D9258 /* TUIFaceCell.h */,
+				A0E614B02358A6D6001D9258 /* TUIFaceCell.m */,
+				A0E614A12358A6D6001D9258 /* TUIFaceView.h */,
+				A0E614C52358A6D6001D9258 /* TUIFaceView.m */,
+				A0E614C82358A6D6001D9258 /* TUIMenuCell.h */,
+				A0E614AD2358A6D6001D9258 /* TUIMenuCell.m */,
+				A0E614CA2358A6D6001D9258 /* TUIMenuView.h */,
+				A0E614AF2358A6D6001D9258 /* TUIMenuView.m */,
+				A0E614A02358A6D6001D9258 /* TUIMessageCell.h */,
+				A0E614C62358A6D6001D9258 /* TUIMessageCell.m */,
+				A0E614AE2358A6D6001D9258 /* TUIMessageController.h */,
+				A0E614C72358A6D6001D9258 /* TUIMessageController.m */,
+				A0E614A32358A6D6001D9258 /* TUIMoreView.h */,
+				A0E614C92358A6D6001D9258 /* TUIMoreView.m */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		A0E614762358A6D6001D9258 /* CellData */ = {
+			isa = PBXGroup;
+			children = (
+				A0E614792358A6D6001D9258 /* TUIBubbleMessageCellData.h */,
+				A0E614822358A6D6001D9258 /* TUIBubbleMessageCellData.m */,
+				A0E614882358A6D6001D9258 /* TUIFaceMessageCellData.h */,
+				A0E6147E2358A6D6001D9258 /* TUIFaceMessageCellData.m */,
+				A0E6147A2358A6D6001D9258 /* TUIFileMessageCellData.h */,
+				A0E614812358A6D6001D9258 /* TUIFileMessageCellData.m */,
+				A0E6147F2358A6D6001D9258 /* TUIImageMessageCellData.h */,
+				A0E614872358A6D6001D9258 /* TUIImageMessageCellData.m */,
+				A0E614782358A6D6001D9258 /* TUIJoinGroupMessageCellData.h */,
+				A0E614832358A6D6001D9258 /* TUIJoinGroupMessageCellData.m */,
+				A0E6147D2358A6D6001D9258 /* TUIMessageCellData.h */,
+				A0E614892358A6D6001D9258 /* TUIMessageCellData.m */,
+				A0E6147B2358A6D6001D9258 /* TUISystemMessageCellData.h */,
+				A0E614852358A6D6001D9258 /* TUISystemMessageCellData.m */,
+				A0E614772358A6D6001D9258 /* TUITextMessageCellData.h */,
+				A0E614842358A6D6001D9258 /* TUITextMessageCellData.m */,
+				A0E6147C2358A6D6001D9258 /* TUIVideoMessageCellData.h */,
+				A0E6148A2358A6D6001D9258 /* TUIVideoMessageCellData.m */,
+				A0E614802358A6D6001D9258 /* TUIVoiceMessageCellData.h */,
+				A0E614862358A6D6001D9258 /* TUIVoiceMessageCellData.m */,
+			);
+			path = CellData;
+			sourceTree = "<group>";
+		};
+		A0E6148B2358A6D6001D9258 /* Pendency */ = {
+			isa = PBXGroup;
+			children = (
+				A0E614922358A6D6001D9258 /* Cell */,
+				A0E6148C2358A6D6001D9258 /* ViewModel */,
+				A0E614912358A6D6001D9258 /* TUIGroupPendencyController.h */,
+				A0E614952358A6D6001D9258 /* TUIGroupPendencyController.m */,
+			);
+			path = Pendency;
+			sourceTree = "<group>";
+		};
+		A0E6148C2358A6D6001D9258 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A0E6148E2358A6D6001D9258 /* TUIGroupPendencyCellData.h */,
+				A0E614902358A6D6001D9258 /* TUIGroupPendencyCellData.m */,
+				A0E6148D2358A6D6001D9258 /* TUIGroupPendencyViewModel.h */,
+				A0E6148F2358A6D6001D9258 /* TUIGroupPendencyViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A0E614922358A6D6001D9258 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A0E614932358A6D6001D9258 /* TUIGroupPendencyCell.h */,
+				A0E614942358A6D6001D9258 /* TUIGroupPendencyCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		A0E614972358A6D6001D9258 /* CellLayout */ = {
+			isa = PBXGroup;
+			children = (
+				A0E614992358A6D6001D9258 /* TUIIncommingTextCellLayout.h */,
+				A0E6149D2358A6D6001D9258 /* TUIIncommingTextCellLayout.m */,
+				A0E6149F2358A6D6001D9258 /* TUIMessageCellLayout.h */,
+				A0E6149B2358A6D6001D9258 /* TUIMessageCellLayout.m */,
+				A0E6149C2358A6D6001D9258 /* TUIOutgoingTextCellLayout.h */,
+				A0E614982358A6D6001D9258 /* TUIOutgoingTextCellLayout.m */,
+				A0E6149E2358A6D6001D9258 /* TUISystemMessageCellLayout.h */,
+				A0E6149A2358A6D6001D9258 /* TUISystemMessageCellLayout.m */,
+			);
+			path = CellLayout;
+			sourceTree = "<group>";
+		};
+		A0E614A42358A6D6001D9258 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				A0E614AA2358A6D6001D9258 /* TUIInputBar.h */,
+				A0E614A72358A6D6001D9258 /* TUIInputBar.m */,
+				A0E614A92358A6D6001D9258 /* TUIInputController.h */,
+				A0E614A52358A6D6001D9258 /* TUIInputController.m */,
+				A0E614A62358A6D6001D9258 /* TUIInputMoreCell.h */,
+				A0E614AB2358A6D6001D9258 /* TUIInputMoreCell.m */,
+				A0E614AC2358A6D6001D9258 /* TUIRecordView.h */,
+				A0E614A82358A6D6001D9258 /* TUIRecordView.m */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		A0E614B12358A6D6001D9258 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A0E614BA2358A6D6001D9258 /* TUIBubbleMessageCell.h */,
+				A0E614C22358A6D6001D9258 /* TUIBubbleMessageCell.m */,
+				A0E614B22358A6D6001D9258 /* TUIFaceMessageCell.h */,
+				A0E614BC2358A6D6001D9258 /* TUIFaceMessageCell.m */,
+				A0E614BB2358A6D6001D9258 /* TUIFileMessageCell.h */,
+				A0E614B32358A6D6001D9258 /* TUIFileMessageCell.m */,
+				A0E614C32358A6D6001D9258 /* TUIImageMessageCell.h */,
+				A0E614B92358A6D6001D9258 /* TUIImageMessageCell.m */,
+				A0E614C12358A6D6001D9258 /* TUIJoinGroupMessageCell.h */,
+				A0E614B72358A6D6001D9258 /* TUIJoinGroupMessageCell.m */,
+				A0E614C02358A6D6001D9258 /* TUISystemMessageCell.h */,
+				A0E614B82358A6D6001D9258 /* TUISystemMessageCell.m */,
+				A0E614BD2358A6D6001D9258 /* TUITextMessageCell.h */,
+				A0E614B62358A6D6001D9258 /* TUITextMessageCell.m */,
+				A0E614BF2358A6D6001D9258 /* TUIVideoMessageCell.h */,
+				A0E614B42358A6D6001D9258 /* TUIVideoMessageCell.m */,
+				A0E614B52358A6D6001D9258 /* TUIVoiceMessageCell.h */,
+				A0E614BE2358A6D6001D9258 /* TUIVoiceMessageCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		A0E614CB2358A6D6001D9258 /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				A0E614D22358A6D6001D9258 /* TUIGroupInfoController.h */,
+				A0E614CC2358A6D6001D9258 /* TUIGroupInfoController.m */,
+				A0E614CF2358A6D6001D9258 /* TUIGroupMemberCell.h */,
+				A0E614D32358A6D6001D9258 /* TUIGroupMemberCell.m */,
+				A0E614D02358A6D6001D9258 /* TUIGroupMemberController.h */,
+				A0E614D52358A6D6001D9258 /* TUIGroupMemberController.m */,
+				A0E614CE2358A6D6001D9258 /* TUIGroupMembersCell.h */,
+				A0E614D42358A6D6001D9258 /* TUIGroupMembersCell.m */,
+				A0E614CD2358A6D6001D9258 /* TUIGroupMembersView.h */,
+				A0E614D12358A6D6001D9258 /* TUIGroupMembersView.m */,
+			);
+			path = Group;
+			sourceTree = "<group>";
+		};
+		A0E614D62358A6D6001D9258 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				A0E614DB2358A6D6001D9258 /* TUIConversationDataProviderServiceProtocol.h */,
+				A0E614DC2358A6D6001D9258 /* TUIFriendProfileControllerServiceProtocol.h */,
+				A0E614D82358A6D6001D9258 /* TUIGroupInfoDataProviderServiceProtocol.h */,
+				A0E614DA2358A6D6001D9258 /* TUIMessageDataProviderServiceProtocol.h */,
+				A0E614D72358A6D6001D9258 /* TUIUserProfileControllerServiceProtocol.h */,
+				A0E614D92358A6D6001D9258 /* TUIUserProfileDataProviderServiceProtocol.h */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		A0E614DD2358A6D6001D9258 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A0E614E52358A6D6001D9258 /* TUIConversationDataProviderService.h */,
+				A0E614E12358A6D6001D9258 /* TUIConversationDataProviderService.m */,
+				A0E614E42358A6D6001D9258 /* TUIGroupInfoDataProviderService.h */,
+				A0E614DE2358A6D6001D9258 /* TUIGroupInfoDataProviderService.m */,
+				A0E614DF2358A6D6001D9258 /* TUIMessageDataProviderService.h */,
+				A0E614E32358A6D6001D9258 /* TUIMessageDataProviderService.m */,
+				A0E614E22358A6D6001D9258 /* TUIUserProfileDataProviderService.h */,
+				A0E614E02358A6D6001D9258 /* TUIUserProfileDataProviderService.m */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		A0E614E62358A6D6001D9258 /* Conversation */ = {
+			isa = PBXGroup;
+			children = (
+				A0E614EC2358A6D6001D9258 /* Cell */,
+				A0E614E82358A6D6001D9258 /* ViewModel */,
+				A0E614F12358A6D6001D9258 /* TNaviBarIndicatorView.h */,
+				A0E614E72358A6D6001D9258 /* TNaviBarIndicatorView.m */,
+				A0E614F22358A6D6001D9258 /* TUIConversationListController.h */,
+				A0E614EB2358A6D6001D9258 /* TUIConversationListController.m */,
+			);
+			path = Conversation;
+			sourceTree = "<group>";
+		};
+		A0E614E82358A6D6001D9258 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A0E614EA2358A6D6001D9258 /* TConversationListViewModel.h */,
+				A0E614E92358A6D6001D9258 /* TConversationListViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A0E614EC2358A6D6001D9258 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A0E614EF2358A6D6001D9258 /* TUIConversationCell.h */,
+				A0E614ED2358A6D6001D9258 /* TUIConversationCell.m */,
+				A0E614F02358A6D6001D9258 /* TUIConversationCellData.h */,
+				A0E614EE2358A6D6001D9258 /* TUIConversationCellData.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		A0E614F42358A6D6001D9258 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				A0E614F52358A6D6001D9258 /* Category */,
+				A0E615002358A6D6001D9258 /* Service */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		A0E614F52358A6D6001D9258 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				A0E614FA2358A6D6001D9258 /* NSString+DataProvider.h */,
+				A0E614FE2358A6D6001D9258 /* NSString+DataProvider.m */,
+				A0E614F82358A6D6001D9258 /* TIMConversation+DataProvider.h */,
+				A0E614FB2358A6D6001D9258 /* TIMConversation+DataProvider.m */,
+				A0E614FC2358A6D6001D9258 /* TIMGroupInfo+DataProvider.h */,
+				A0E614F72358A6D6001D9258 /* TIMGroupInfo+DataProvider.m */,
+				A0E614F92358A6D6001D9258 /* TIMMessage+DataProvider.h */,
+				A0E614FF2358A6D6001D9258 /* TIMMessage+DataProvider.m */,
+				A0E614F62358A6D6001D9258 /* TIMUserProfile+DataProvider.h */,
+				A0E614FD2358A6D6001D9258 /* TIMUserProfile+DataProvider.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		A0E615002358A6D6001D9258 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A0E615072358A6D6001D9258 /* TCAnnotation.h */,
+				A0E615042358A6D6001D9258 /* TCAnnotation.m */,
+				A0E615062358A6D6001D9258 /* TCContext.h */,
+				A0E615012358A6D6001D9258 /* TCContext.m */,
+				A0E615052358A6D6001D9258 /* TCServiceManager.h */,
+				A0E615022358A6D6001D9258 /* TCServiceManager.m */,
+				A0E615032358A6D6001D9258 /* TCServiceProtocol.h */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		A0E615082358A6D6001D9258 /* Third */ = {
+			isa = PBXGroup;
+			children = (
+				A0E615092358A6D6001D9258 /* voiceConvert */,
+			);
+			path = Third;
+			sourceTree = "<group>";
+		};
+		A0E615092358A6D6001D9258 /* voiceConvert */ = {
+			isa = PBXGroup;
+			children = (
+				A0E615132358A6D6001D9258 /* amrwapper */,
+				A0E6150E2358A6D6001D9258 /* EMVoiceConverter.h */,
+				A0E615182358A6D6001D9258 /* EMVoiceConverter.mm */,
+				A0E6150F2358A6D6001D9258 /* opencore-amrnb */,
+				A0E6150A2358A6D6001D9258 /* opencore-amrwb */,
+			);
+			path = voiceConvert;
+			sourceTree = "<group>";
+		};
+		A0E6150A2358A6D6001D9258 /* opencore-amrwb */ = {
+			isa = PBXGroup;
+			children = (
+				A0E6150D2358A6D6001D9258 /* dec_if.h */,
+				A0E6150C2358A6D6001D9258 /* if_rom.h */,
+				A0E6150B2358A6D6001D9258 /* libopencore-amrwb.a */,
+			);
+			path = "opencore-amrwb";
+			sourceTree = "<group>";
+		};
+		A0E6150F2358A6D6001D9258 /* opencore-amrnb */ = {
+			isa = PBXGroup;
+			children = (
+				A0E615102358A6D6001D9258 /* interf_dec.h */,
+				A0E615122358A6D6001D9258 /* interf_enc.h */,
+				A0E615112358A6D6001D9258 /* libopencore-amrnb.a */,
+			);
+			path = "opencore-amrnb";
+			sourceTree = "<group>";
+		};
+		A0E615132358A6D6001D9258 /* amrwapper */ = {
+			isa = PBXGroup;
+			children = (
+				A0E615162358A6D6001D9258 /* amrFileCodec.h */,
+				A0E615152358A6D6001D9258 /* amrFileCodec.mm */,
+				A0E615172358A6D6001D9258 /* wav.h */,
+				A0E615142358A6D6001D9258 /* wav.mm */,
+			);
+			path = amrwapper;
+			sourceTree = "<group>";
+		};
+		A0E6151A2358A6D6001D9258 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				A0E6151F2358A6D7001D9258 /* TUIError.h */,
+				A0E6151C2358A6D7001D9258 /* TUIError.m */,
+				A0E615202358A6D7001D9258 /* TUIImageCache.h */,
+				A0E6151D2358A6D7001D9258 /* TUIImageCache.m */,
+				A0E6151B2358A6D7001D9258 /* TUIKitConfig.h */,
+				A0E6151E2358A6D7001D9258 /* TUIKitConfig.m */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		A0E615212358A6D7001D9258 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A0E615222358A6D7001D9258 /* TUIKitResource.bundle */,
+				A0E615232358A6D7001D9258 /* TUIKitFace.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		A0E8981E22CF265800DB09BA /* FMDB */ = {
 			isa = PBXGroup;
 			children = (
@@ -3451,6 +4449,7 @@
 				A020B037214AAB150011BB4F /* ic_refresh_image_000@2x.png in Resources */,
 				A079A6BF231544DA0063123B /* ChaozhiProtocol.css in Resources */,
 				A0AC096122C4BC7E001832EA /* flower.png in Resources */,
+				A0E6160E2358A6D7001D9258 /* TUIKitResource.bundle in Resources */,
 				A0AC095122C4BC7E001832EA /* generalStatus.png in Resources */,
 				A020B045214AAB150011BB4F /* ic_refresh_image_020@2x.png in Resources */,
 				A0AC094D22C4BC7E001832EA /* 直播未开始.png in Resources */,
@@ -3505,6 +4504,7 @@
 				A0AC096822C4BC7E001832EA /* close_button.png in Resources */,
 				A01F608622CB8CD0001133C4 /* 暂停_点击.png in Resources */,
 				A020B040214AAB150011BB4F /* ic_refresh_image_030@2x.png in Resources */,
+				A0E616102358A6D7001D9258 /* TUIKitFace.bundle in Resources */,
 				A01F608C22CB8CD0001133C4 /* 重新_默认.png in Resources */,
 				A020B042214AAB150011BB4F /* ic_refresh_image_006@2x.png in Resources */,
 				A0AC093622C4BC7E001832EA /* 直播已结束16_9.png in Resources */,
@@ -3748,6 +4748,7 @@
 				A04551BA22EC8DFA00E17406 /* 聊天-默认.png in Resources */,
 				A007090B22EDE09900C70CEE /* XuezhiAssets.xcassets in Resources */,
 				A04551BB22EC8DFA00E17406 /* 直播未开始16_9.png in Resources */,
+				A0E616112358A6D7001D9258 /* TUIKitFace.bundle in Resources */,
 				A04551BC22EC8DFA00E17406 /* cttnet.png in Resources */,
 				A0281B82232A4E7800559A5B /* TalkfunNewFunctionView.xib in Resources */,
 				A04551BD22EC8DFA00E17406 /* ic_refresh_image_017@2x.png in Resources */,
@@ -3796,6 +4797,7 @@
 				A04551E922EC8DFA00E17406 /* 删除-默认.png in Resources */,
 				A04551EA22EC8DFA00E17406 /* TalkfunNewChatCell.xib in Resources */,
 				A04551EB22EC8DFA00E17406 /* LaunchScreen.storyboard in Resources */,
+				A0E6160F2358A6D7001D9258 /* TUIKitResource.bundle in Resources */,
 				A04551EC22EC8DFA00E17406 /* ic_refresh_image_007@2x.png in Resources */,
 				A04551ED22EC8DFA00E17406 /* send.png in Resources */,
 				A04551EE22EC8DFA00E17406 /* NetworkSelectionViewController.xib in Resources */,
@@ -3957,39 +4959,62 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0E616022358A6D7001D9258 /* wav.mm in Sources */,
 				A007090C22EDE81B00C70CEE /* XZTabBarVC.m in Sources */,
 				A020B062214AAB150011BB4F /* XLGInternalDemoVC.m in Sources */,
+				A0E615D62358A6D7001D9258 /* TUIGroupMembersCell.m in Sources */,
 				A0AC090322C4BC7E001832EA /* TalkfunSignViewController.m in Sources */,
 				A020B01F214AAB150011BB4F /* Config.m in Sources */,
+				A0E615A22358A6D7001D9258 /* TUIMessageCellLayout.m in Sources */,
 				A0AC08A622C4BC7D001832EA /* TalkfunUtils.m in Sources */,
 				A0AC092322C4BC7E001832EA /* TalkfunTextfieldView.m in Sources */,
 				205934DF23547673003DDF39 /* TUserProfileController.m in Sources */,
 				A0462A0D2187459600D12E65 /* CZNotDataView.m in Sources */,
+				A0E615722358A6D7001D9258 /* TCommonContactCell.m in Sources */,
+				A0E615B22358A6D7001D9258 /* TUIMenuView.m in Sources */,
 				A020B071214AAB150011BB4F /* LDNetTimer.m in Sources */,
 				A00D0D43231BA7A300CF25E7 /* TalkfunCourseManagement.m in Sources */,
+				A0E615DC2358A6D7001D9258 /* TUIUserProfileDataProviderService.m in Sources */,
 				205934D523547673003DDF39 /* ProfileController.m in Sources */,
 				A0AC08B922C4BC7D001832EA /* TalkfunFunctionButton.m in Sources */,
 				A00BE16D219FFB140042E6ED /* CZUpdateView.m in Sources */,
 				A01F607322CB895F001133C4 /* DownloadListController.m in Sources */,
 				A0AC08B622C4BC7D001832EA /* stopCopyTextView.m in Sources */,
+				A0E6157A2358A6D7001D9258 /* TContactListPickerCell.m in Sources */,
+				A0E615BA2358A6D7001D9258 /* TUITextMessageCell.m in Sources */,
+				A0E615562358A6D7001D9258 /* TAddCollectionCell.m in Sources */,
+				A0E615FC2358A6D7001D9258 /* TCAnnotation.m in Sources */,
 				205934CB23547673003DDF39 /* GenerateTestUserSig.m in Sources */,
 				A0AC08B522C4BC7D001832EA /* TalkfunGradientView.m in Sources */,
 				A0AC08F022C4BC7D001832EA /* TalkfunExpressionViewController.m in Sources */,
 				A020B078214AAB150011BB4F /* BaseItem.m in Sources */,
 				A020B06B214AAB150011BB4F /* BaseVC.m in Sources */,
+				A0E6157E2358A6D7001D9258 /* TUIGroupConversationListController.m in Sources */,
 				A00D0D6B231BA7A300CF25E7 /* ChapterTableViewCell.m in Sources */,
+				A0E615A62358A6D7001D9258 /* TUIChatController.m in Sources */,
+				A0E616082358A6D7001D9258 /* TUIError.m in Sources */,
+				A0E615B82358A6D7001D9258 /* TUIVideoMessageCell.m in Sources */,
 				A0AC08EA22C4BC7D001832EA /* RootTableViewController.m in Sources */,
 				A0AC091A22C4BC7E001832EA /* TalkfunScoreView.m in Sources */,
+				A0E6159A2358A6D7001D9258 /* TUIGroupPendencyCell.m in Sources */,
 				A0541FC022F3E2A100D961B3 /* OptionBarController.m in Sources */,
 				A0541FA722F2C69C00D961B3 /* UIButton+ButtonStyle.m in Sources */,
 				A05FF5DB215B163400C51E05 /* JHHJAnimation.m in Sources */,
 				A01F607422CB8960001133C4 /* DownloadListModel.m in Sources */,
+				A0E615CE2358A6D7001D9258 /* TUIMoreView.m in Sources */,
 				A05999F32155EC1500D17058 /* XLGChangeServerModel.m in Sources */,
+				A0E6152C2358A6D7001D9258 /* THelper.m in Sources */,
 				A0AC08C422C4BC7D001832EA /* UIButton+TalkfunButton.m in Sources */,
+				A0E615802358A6D7001D9258 /* TUINewFriendViewController.m in Sources */,
+				A0E615C22358A6D7001D9258 /* TUIFaceMessageCell.m in Sources */,
+				A0E615782358A6D7001D9258 /* TCommonContactCellData.m in Sources */,
+				A0E6156C2358A6D7001D9258 /* TCommonPendencyCell.m in Sources */,
 				205934D723547673003DDF39 /* ConversationController.m in Sources */,
 				A0541FA922F2C69C00D961B3 /* XLGCustomButton.m in Sources */,
 				A0AC091222C4BC7E001832EA /* TalkfunHornView.m in Sources */,
 				205934DB23547673003DDF39 /* GroupMemberController.m in Sources */,
+				A0E615362358A6D7001D9258 /* TTextEditController.m in Sources */,
+				A0E615D22358A6D7001D9258 /* TUIGroupMembersView.m in Sources */,
 				A020B05E214AAB150011BB4F /* MEViewController.m in Sources */,
 				205934F923547B2D003DDF39 /* AppDelegate+TXIM.m in Sources */,
 				A0AC090422C4BC7E001832EA /* TalkfunNoticeCell.m in Sources */,
@@ -3997,77 +5022,124 @@
 				A020B070214AAB150011BB4F /* LDNetTraceRoute.m in Sources */,
 				A0AC08AA22C4BC7D001832EA /* TalkFunTextLayer.m in Sources */,
 				A0AC091C22C4BC7E001832EA /* evaluateView.m in Sources */,
+				A0E615962358A6D7001D9258 /* TUIGroupPendencyViewModel.m in Sources */,
+				A0E616042358A6D7001D9258 /* amrFileCodec.mm in Sources */,
+				A0E615702358A6D7001D9258 /* TCommonContactSelectCellData.m in Sources */,
+				A0E615682358A6D7001D9258 /* TUIContactController.m in Sources */,
+				A0E615322358A6D7001D9258 /* TNavigationController.m in Sources */,
 				A045521622ED44ED00E17406 /* UILabel+XLGColor.m in Sources */,
 				206976FC2356B0D9004A6E29 /* CZTeacherCell.m in Sources */,
 				A020B06D214AAB150011BB4F /* BaseNavBar.m in Sources */,
 				A0AC08BB22C4BC7D001832EA /* TalkfunNewButtonViewButton.m in Sources */,
 				A020B074214AAB150011BB4F /* LDNetGetAddress.m in Sources */,
 				A0AC091622C4BC7E001832EA /* UILabel+TalkfunLabel.m in Sources */,
+				A0E615422358A6D7001D9258 /* TCommonTextCell.m in Sources */,
 				A0AC08BC22C4BC7D001832EA /* HYAlertView.m in Sources */,
 				A020B060214AAB150011BB4F /* XLGLoginTestView.m in Sources */,
 				A0AC08C322C4BC7D001832EA /* TalkfunButtonView.m in Sources */,
 				A0599A2021574CAF00D17058 /* CZRegisterVC.m in Sources */,
 				205934E523547673003DDF39 /* MyCustomCell.m in Sources */,
+				A0E615642358A6D7001D9258 /* TUIGroupConversationListViewModel.m in Sources */,
 				A020B06F214AAB150011BB4F /* BaseWebVC.m in Sources */,
 				A00D0D5D231BA7A300CF25E7 /* TalkfunPlaybackMessageView.m in Sources */,
 				205934D323547673003DDF39 /* SettingController.m in Sources */,
 				A0AC08AF22C4BC7D001832EA /* QuestionModel.m in Sources */,
+				A0E615382358A6D7001D9258 /* TDateEditController.m in Sources */,
+				A0E615902358A6D7001D9258 /* TUIImageMessageCellData.m in Sources */,
 				A0AC091022C4BC7E001832EA /* TalkfunNetworkStatusView.m in Sources */,
 				A0AC08A422C4BC7D001832EA /* NetworkDetector.m in Sources */,
 				A00D0D39231BA7A300CF25E7 /* AlbumViewController.m in Sources */,
 				A020B053214AAB150011BB4F /* Utils.m in Sources */,
 				A00D0D4F231BA7A300CF25E7 /* TalkfunAdvertView.m in Sources */,
 				A020B073214AAB150011BB4F /* LDNetPing.m in Sources */,
+				A0E615FA2358A6D7001D9258 /* TCServiceManager.m in Sources */,
+				A0E615EC2358A6D7001D9258 /* TUIKit.m in Sources */,
 				A020B077214AAB150011BB4F /* Reachability.m in Sources */,
 				A0599A2321574CAF00D17058 /* CZHomeVC.m in Sources */,
+				A0E615CA2358A6D7001D9258 /* TUIMessageCell.m in Sources */,
 				A0541FE222F41F1400D961B3 /* CourseItem.m in Sources */,
 				A020B050214AAB150011BB4F /* KeyChainUtil.m in Sources */,
 				A020B05C214AAB150011BB4F /* MEViewModel.m in Sources */,
+				A0E615742358A6D7001D9258 /* TUIContactActionCell.m in Sources */,
 				A0AC08B822C4BC7D001832EA /* UIView+TalkfunView.m in Sources */,
 				A0AC08A822C4BC7D001832EA /* NSString+Hashing.m in Sources */,
 				A020B052214AAB150011BB4F /* Toast.m in Sources */,
 				A0AC08A922C4BC7D001832EA /* BulletManager.m in Sources */,
+				A0E615982358A6D7001D9258 /* TUIGroupPendencyCellData.m in Sources */,
 				A0AC08FA22C4BC7E001832EA /* LotteryViewController.m in Sources */,
+				A0E615482358A6D7001D9258 /* TCommonAvatarCell.m in Sources */,
 				A00D0D63231BA7A300CF25E7 /* AlbumCellTableViewCell.m in Sources */,
+				A0E615282358A6D7001D9258 /* TUnReadView.m in Sources */,
 				A0AC08F722C4BC7E001832EA /* MyLotteryViewController.m in Sources */,
+				A0E6152E2358A6D7001D9258 /* TAddCell.m in Sources */,
 				A00692392354AA0000A74059 /* IMItem.m in Sources */,
+				A0E6154A2358A6D7001D9258 /* TCommonCell.m in Sources */,
+				A0E615762358A6D7001D9258 /* TCommonContactSelectCell.m in Sources */,
+				A0E6158C2358A6D7001D9258 /* TUISystemMessageCellData.m in Sources */,
 				A0AC092422C4BC7E001832EA /* TalkfunLongTextfieldView.m in Sources */,
 				A01F607622CB8960001133C4 /* DownloadListTableViewCell.m in Sources */,
+				A0E615B42358A6D7001D9258 /* TUIFaceCell.m in Sources */,
 				A0AC08F522C4BC7E001832EA /* ChoiceButton.m in Sources */,
 				A091D1302178FAF300CCDAF6 /* StudyInfoItem.m in Sources */,
 				205934C523547673003DDF39 /* FriendRequestViewController.m in Sources */,
+				A0E615842358A6D7001D9258 /* TUIFileMessageCellData.m in Sources */,
 				A0AC091F22C4BC7E001832EA /* barrageSwitch.m in Sources */,
+				A0E615E62358A6D7001D9258 /* TUIConversationListController.m in Sources */,
+				A0E6160A2358A6D7001D9258 /* TUIImageCache.m in Sources */,
 				A0AC090B22C4BC7E001832EA /* TalkfunExpressionCloseButton.m in Sources */,
+				A0E615C02358A6D7001D9258 /* TUIImageMessageCell.m in Sources */,
 				A020B05D214AAB150011BB4F /* MEView.m in Sources */,
 				A0AC08CA22C4BC7D001832EA /* UIScrollView+TalkfunScrollView.m in Sources */,
 				A0E8981D22CF22C600DB09BA /* VideoItem.m in Sources */,
 				A0E0D3CC22D0E3A100296851 /* TalkfunMultifunctionTool.m in Sources */,
 				A0AC08A322C4BC7D001832EA /* UITextField+HTtext.m in Sources */,
 				A020B075214AAB150011BB4F /* LDNetDiagnoService.m in Sources */,
+				A0E615342358A6D7001D9258 /* TUIVideoViewController.m in Sources */,
 				205934C723547673003DDF39 /* GroupRequestViewController.m in Sources */,
 				205934BF23547673003DDF39 /* TFriendProfileController.m in Sources */,
 				A0AC090F22C4BC7E001832EA /* TalkfunNewTextfieldView.m in Sources */,
 				205935032355AB2F003DDF39 /* CZTeacherConversationVC.m in Sources */,
+				A0E615BE2358A6D7001D9258 /* TUISystemMessageCell.m in Sources */,
 				A020B07A214AAB150011BB4F /* CourseCategoryItem.m in Sources */,
+				A0E615F02358A6D7001D9258 /* TIMConversation+DataProvider.m in Sources */,
 				205934DD23547673003DDF39 /* TXChatViewController.m in Sources */,
 				A07E4E9722ED82E4000ABD86 /* CZConfig.m in Sources */,
 				205FDB3321763DBE001BE2C6 /* CZGuideVC.m in Sources */,
 				A020B06C214AAB150011BB4F /* BaseNC.m in Sources */,
+				A0E615F62358A6D7001D9258 /* TIMMessage+DataProvider.m in Sources */,
+				A0E615A42358A6D7001D9258 /* TUIIncommingTextCellLayout.m in Sources */,
 				A00D0D3B231BA7A300CF25E7 /* QuestionViewController.m in Sources */,
+				A0E615A02358A6D7001D9258 /* TUISystemMessageCellLayout.m in Sources */,
+				A0E6155E2358A6D7001D9258 /* TContactViewModel.m in Sources */,
+				A0E615E42358A6D7001D9258 /* TConversationListViewModel.m in Sources */,
 				A05CD23C22AE8C8E00CBE4F5 /* CZProtocalWebVC.m in Sources */,
 				201DF3D022AE584700904EAF /* CZAlertView.m in Sources */,
 				2059350023559E93003DDF39 /* CZChatVC.m in Sources */,
 				A0AC08A522C4BC7D001832EA /* UTLHelpper.m in Sources */,
 				A0AC090C22C4BC7E001832EA /* ChatCell.m in Sources */,
 				A006923D2354ACFC00A74059 /* TeacherItem.m in Sources */,
+				A0E615CC2358A6D7001D9258 /* TUIMessageController.m in Sources */,
 				A0AC08BF22C4BC7D001832EA /* TalkfunNewChatCell.m in Sources */,
 				A0AC08EF22C4BC7D001832EA /* TalkfunGuidanceView.m in Sources */,
+				A0E615AC2358A6D7001D9258 /* TUIRecordView.m in Sources */,
 				A0541FA522F2C69C00D961B3 /* UIButton+CenterImageAndTitle.m in Sources */,
 				A020B054214AAB150011BB4F /* XLGAlertView.m in Sources */,
 				205934BB23547673003DDF39 /* PAirSandbox.m in Sources */,
+				A0E615522358A6D7001D9258 /* UIImage+TUIKIT.m in Sources */,
 				A071273B2216E7D700DC3C20 /* NotifyItem.m in Sources */,
+				A0E615242358A6D7001D9258 /* NSString+TUICommon.m in Sources */,
+				A0E6158E2358A6D7001D9258 /* TUIVoiceMessageCellData.m in Sources */,
 				A00D0D67231BA7A300CF25E7 /* QuestionTableViewCell.m in Sources */,
+				A0E615822358A6D7001D9258 /* TUIFaceMessageCellData.m in Sources */,
+				A0E615942358A6D7001D9258 /* TUIVideoMessageCellData.m in Sources */,
+				A0E615622358A6D7001D9258 /* TUINewFriendViewModel.m in Sources */,
+				A0E615D02358A6D7001D9258 /* TUIGroupInfoController.m in Sources */,
+				A0E615C62358A6D7001D9258 /* TUIBubbleMessageCell.m in Sources */,
+				A0E615C42358A6D7001D9258 /* TUIVoiceMessageCell.m in Sources */,
 				A0AC091722C4BC7E001832EA /* TalkfunReplyTipsView.m in Sources */,
+				A0E6154E2358A6D7001D9258 /* TUITabBarController.m in Sources */,
+				A0E615662358A6D7001D9258 /* TUIContactListPicker.m in Sources */,
+				A0E615302358A6D7001D9258 /* TUIFileViewController.m in Sources */,
 				A05FF5CE215B14F100C51E05 /* NetworkUtil.m in Sources */,
 				A0E8982122CF265800DB09BA /* DBManager.m in Sources */,
 				A00FA9DC2169DB0000F4DA5B /* CZSelectCourseVC.m in Sources */,
@@ -4077,44 +5149,67 @@
 				A0AC08FE22C4BC7E001832EA /* ckickUILabel.m in Sources */,
 				A020B072214AAB150011BB4F /* LDSimplePing.m in Sources */,
 				A00D0D35231BA7A300CF25E7 /* BaseTableViewController.m in Sources */,
+				A0E615F22358A6D7001D9258 /* TIMUserProfile+DataProvider.m in Sources */,
 				A0541FC222F3E2A100D961B3 /* BottomLineView.m in Sources */,
 				A05999F12155EC1500D17058 /* XLGLogVC.m in Sources */,
+				A0E615E02358A6D7001D9258 /* TUIMessageDataProviderService.m in Sources */,
 				A0599A1F21574CAF00D17058 /* CZLoginVC.m in Sources */,
 				A0AC08F922C4BC7E001832EA /* VoteEndViewController.m in Sources */,
+				A0E615E22358A6D7001D9258 /* TNaviBarIndicatorView.m in Sources */,
+				A0E615D82358A6D7001D9258 /* TUIGroupMemberController.m in Sources */,
 				A00D0D3D231BA7A300CF25E7 /* TalkfunPlaybackViewController.m in Sources */,
+				A0E6153A2358A6D7001D9258 /* TUIAvatarViewController.m in Sources */,
 				A0599A2421574CAF00D17058 /* CZStudyVC.m in Sources */,
 				A05FF5D9215B163400C51E05 /* JHHJCenterBGView.m in Sources */,
 				A0AC08E822C4BC7D001832EA /* QuestionTableViewController.m in Sources */,
+				A0E615DA2358A6D7001D9258 /* TUIGroupInfoDataProviderService.m in Sources */,
 				A0AC08F422C4BC7E001832EA /* NetworkModel.m in Sources */,
 				A0CB7CB922C65D8800069B34 /* TalkfunItem.m in Sources */,
 				A0281B83232A4E7800559A5B /* TalkfunNewFunctionView.m in Sources */,
 				A00BE16A219FF6E70042E6ED /* VersionItem.m in Sources */,
+				A0E615BC2358A6D7001D9258 /* TUIJoinGroupMessageCell.m in Sources */,
+				A0E615E82358A6D7001D9258 /* TUIConversationCell.m in Sources */,
 				205934E123547673003DDF39 /* GroupInfoController.m in Sources */,
 				A0AC091822C4BC7E001832EA /* QuestionCell.m in Sources */,
 				A0599A2221574CAF00D17058 /* CZMineVC.m in Sources */,
+				A0E615EA2358A6D7001D9258 /* TUIConversationCellData.m in Sources */,
 				A020B076214AAB150011BB4F /* LDNetConnect.m in Sources */,
 				A070498D2211610300864050 /* AppDelegate+Push.m in Sources */,
 				A0AC090622C4BC7E001832EA /* TalkfunCloseButton.m in Sources */,
 				A05999F42155EC1500D17058 /* XLGChangeServerVC.m in Sources */,
 				A00D0D5B231BA7A300CF25E7 /* TalkfunVideoControlView.m in Sources */,
+				A0E615C82358A6D7001D9258 /* TUIFaceView.m in Sources */,
 				A05999F22155EC1500D17058 /* XLGChangeServerCell.m in Sources */,
 				A0AC08F322C4BC7D001832EA /* NetworkSelectionViewController.m in Sources */,
 				205934D923547673003DDF39 /* Aspects.m in Sources */,
 				A020B063214AAB150011BB4F /* XLGInternalTestVC.m in Sources */,
 				A0AC090822C4BC7E001832EA /* TalkfunExpressionCell.m in Sources */,
+				A0E6159C2358A6D7001D9258 /* TUIGroupPendencyController.m in Sources */,
+				A0E615DE2358A6D7001D9258 /* TUIConversationDataProviderService.m in Sources */,
 				A020B061214AAB150011BB4F /* XLGLoginTestViewModel.m in Sources */,
+				A0E6158A2358A6D7001D9258 /* TUITextMessageCellData.m in Sources */,
 				A05999EF2155EC1500D17058 /* XLGExternalTestTool.m in Sources */,
+				A0E615922358A6D7001D9258 /* TUIMessageCellData.m in Sources */,
 				A0AC08C022C4BC7D001832EA /* TalkfunNewQuestionCell.m in Sources */,
 				A020B05F214AAB150011BB4F /* XLGLoginTestVC.m in Sources */,
+				A0E6160C2358A6D7001D9258 /* TUIKitConfig.m in Sources */,
+				A0E6153E2358A6D7001D9258 /* TResponderTextView.m in Sources */,
 				A0AC08C222C4BC7D001832EA /* TalkfunNewFunctionButton.m in Sources */,
 				205934C923547673003DDF39 /* ContactsController.m in Sources */,
 				A045521A22ED46E500E17406 /* UIButton+XLGColor.m in Sources */,
+				A0E616062358A6D7001D9258 /* EMVoiceConverter.mm in Sources */,
 				A0AC08AB22C4BC7D001832EA /* BulletView.m in Sources */,
+				A0E615B02358A6D7001D9258 /* TUIMenuCell.m in Sources */,
+				A0E615502358A6D7001D9258 /* NSDate+TUIKIT.m in Sources */,
+				A0E615AE2358A6D7001D9258 /* TUIInputMoreCell.m in Sources */,
 				205934E323547673003DDF39 /* MyCustomCellData.m in Sources */,
+				A0E615602358A6D7001D9258 /* TUIBlackListViewModel.m in Sources */,
 				A0599A1E21574CAF00D17058 /* CZInfiniteVC.m in Sources */,
 				A020B051214AAB150011BB4F /* CacheUtil.m in Sources */,
 				A0AC092522C4BC7E001832EA /* TalkfunMessageView.m in Sources */,
+				A0E615F82358A6D7001D9258 /* TCContext.m in Sources */,
 				A0AC08B022C4BC7D001832EA /* ChatModel.m in Sources */,
+				A0E615862358A6D7001D9258 /* TUIBubbleMessageCellData.m in Sources */,
 				A020B06A214AAB150011BB4F /* WKDelegateController.m in Sources */,
 				205FDB2F216F20C0001BE2C6 /* HomeInfoItem.m in Sources */,
 				205934CF23547673003DDF39 /* LoginController.m in Sources */,
@@ -4122,19 +5217,28 @@
 				A00D0D41231BA7A300CF25E7 /* PlaybackQuestionModel.m in Sources */,
 				A0AC08AE22C4BC7D001832EA /* UIImageView+Exten.m in Sources */,
 				A00FA9D82168C26900F4DA5B /* CZSettingVC.m in Sources */,
+				A0E615A82358A6D7001D9258 /* TUIInputController.m in Sources */,
 				20ABB12E230A7A9600DDC86F /* CZCommentView.m in Sources */,
 				A00D0D55231BA7A300CF25E7 /* TalkfunKuaiJinView.m in Sources */,
 				A020AF49214AA85B0011BB4F /* AppDelegate.m in Sources */,
+				A0E6152A2358A6D7001D9258 /* TUILocalStorage.m in Sources */,
+				A0E615EE2358A6D7001D9258 /* TIMGroupInfo+DataProvider.m in Sources */,
+				A0E6153C2358A6D7001D9258 /* TUIImageViewController.m in Sources */,
+				A0E6157C2358A6D7001D9258 /* TCommonPendencyCellData.m in Sources */,
+				A0E6156E2358A6D7001D9258 /* TUIContactActionCellData.m in Sources */,
 				A0541FC422F3E2A100D961B3 /* OptionsBarView.m in Sources */,
 				A0C1257321BC021B0026430E /* CZStarView.m in Sources */,
+				A0E615AA2358A6D7001D9258 /* TUIInputBar.m in Sources */,
 				A020B055214AAB150011BB4F /* XLGLottie.m in Sources */,
 				A0AC08EC22C4BC7D001832EA /* NoticeTableViewController.m in Sources */,
 				205934C123547673003DDF39 /* SearchGroupViewController.m in Sources */,
+				A0E615582358A6D7001D9258 /* TPopView.m in Sources */,
 				A0AC08AC22C4BC7D001832EA /* TalkfunMoveLabel.m in Sources */,
 				A00D0D49231BA7A300CF25E7 /* ChapterModel.m in Sources */,
 				A045521222ED42EB00E17406 /* UIView+XLGColor.m in Sources */,
 				A0AC090D22C4BC7E001832EA /* TalkfunWatermark.m in Sources */,
 				205934C323547673003DDF39 /* SearchFriendViewController.m in Sources */,
+				A0E615442358A6D7001D9258 /* TUIButtonCell.m in Sources */,
 				A00D0D4B231BA7A300CF25E7 /* ChatTableViewCell.m in Sources */,
 				A0541FCA22F3E2A100D961B3 /* OptionsBarItem.m in Sources */,
 				A0AC08FB22C4BC7E001832EA /* VoteViewController.m in Sources */,
@@ -4142,15 +5246,20 @@
 				A00D0D4D231BA7A300CF25E7 /* TalkfunNetworkLines.m in Sources */,
 				A0AC08EB22C4BC7D001832EA /* GroupChatTableViewController.m in Sources */,
 				A0AC08A722C4BC7D001832EA /* UIView+TalkfunActivityIndicator.m in Sources */,
+				A0E615462358A6D7001D9258 /* TCommonSwitchCell.m in Sources */,
+				A0E6155C2358A6D7001D9258 /* TContactSelectViewModel.m in Sources */,
 				A00D0D45231BA7A300CF25E7 /* PlaybackChatModel.m in Sources */,
+				A0E6155A2358A6D7001D9258 /* TUIContactSelectController.m in Sources */,
 				A00FA9DF2169DCDC00F4DA5B /* CZSelectCourseCell.m in Sources */,
 				A0AC08BD22C4BC7D001832EA /* TalkfunReplyCell.m in Sources */,
 				A020B04E214AAB150011BB4F /* main.m in Sources */,
+				A0E615402358A6D7001D9258 /* TUIProfileCardCell.m in Sources */,
 				A0AC08F822C4BC7E001832EA /* LotteryCell.m in Sources */,
 				A0AC091422C4BC7E001832EA /* UITextField+TalkfunTextField.m in Sources */,
 				205934D123547673003DDF39 /* NotifySetupController.m in Sources */,
 				A0AC08ED22C4BC7D001832EA /* GroupTableViewController.m in Sources */,
 				205934CD23547673003DDF39 /* TCLoginParam.m in Sources */,
+				A0E615542358A6D7001D9258 /* TPopCell.m in Sources */,
 				A00D0D33231BA7A300CF25E7 /* ChapterViewController.m in Sources */,
 				205934BD23547673003DDF39 /* TCUtil.m in Sources */,
 				A020B057214AAB150011BB4F /* ProgressLoadView.m in Sources */,
@@ -4158,15 +5267,23 @@
 				A0AC08F122C4BC7D001832EA /* TalkfunViewController.m in Sources */,
 				A05FF5DA215B163400C51E05 /* JHHJView.m in Sources */,
 				A00D0D37231BA7A300CF25E7 /* TFChatViewController.m in Sources */,
+				A0E615882358A6D7001D9258 /* TUIJoinGroupMessageCellData.m in Sources */,
 				A0AC08A222C4BC7D001832EA /* TalkfunHttpTools.m in Sources */,
+				A0E615262358A6D7001D9258 /* TModifyView.m in Sources */,
 				A00D0D47231BA7A300CF25E7 /* AlbumModel.m in Sources */,
 				A020B056214AAB150011BB4F /* RegularPhoneTF.m in Sources */,
+				A0E6154C2358A6D7001D9258 /* TAddHelper.m in Sources */,
+				A0E6159E2358A6D7001D9258 /* TUIOutgoingTextCellLayout.m in Sources */,
 				A0AC08E922C4BC7D001832EA /* ChatTableViewController.m in Sources */,
 				A05FF5DC215B163400C51E05 /* AEIndicator.m in Sources */,
 				A05FF5CB215B129C00C51E05 /* NetworkManager.m in Sources */,
+				A0E6156A2358A6D7001D9258 /* TUIBlackListController.m in Sources */,
+				A0E615D42358A6D7001D9258 /* TUIGroupMemberCell.m in Sources */,
 				A020B079214AAB150011BB4F /* UserInfo.m in Sources */,
 				A0AC08B122C4BC7D001832EA /* videoDefinition.m in Sources */,
+				A0E615B62358A6D7001D9258 /* TUIFileMessageCell.m in Sources */,
 				A010DC6121D6003E007EBA2C /* PurchaseItem.m in Sources */,
+				A0E615F42358A6D7001D9258 /* NSString+DataProvider.m in Sources */,
 				A0AC08BA22C4BC7D001832EA /* TalkfunFunctionView.m in Sources */,
 				A0AC08B322C4BC7D001832EA /* TalkfunLoadingView.m in Sources */,
 				A0AC091522C4BC7E001832EA /* UIImageView+TalkfunImageView.m in Sources */,
@@ -4181,18 +5298,27 @@
 			files = (
 				A0E61207235899DC001D9258 /* CZTeacherCell.m in Sources */,
 				A0E61206235899C7001D9258 /* CZChatVC.m in Sources */,
+				A0E615392358A6D7001D9258 /* TDateEditController.m in Sources */,
 				A0E6120523589985001D9258 /* CZTeacherConversationVC.m in Sources */,
+				A0E616032358A6D7001D9258 /* wav.mm in Sources */,
+				A0E615C72358A6D7001D9258 /* TUIBubbleMessageCell.m in Sources */,
+				A0E615572358A6D7001D9258 /* TAddCollectionCell.m in Sources */,
 				A0E5081A230ED762005EF897 /* CZCommentView.m in Sources */,
 				A045507322EC8DFA00E17406 /* XLGInternalDemoVC.m in Sources */,
 				A045507422EC8DFA00E17406 /* TalkfunSignViewController.m in Sources */,
 				A045507522EC8DFA00E17406 /* Config.m in Sources */,
+				A0E615C52358A6D7001D9258 /* TUIVoiceMessageCell.m in Sources */,
 				205934D423547673003DDF39 /* SettingController.m in Sources */,
 				A045507622EC8DFA00E17406 /* TalkfunUtils.m in Sources */,
+				A0E615492358A6D7001D9258 /* TCommonAvatarCell.m in Sources */,
 				A045507722EC8DFA00E17406 /* TalkfunTextfieldView.m in Sources */,
 				A045507822EC8DFA00E17406 /* CZNotDataView.m in Sources */,
 				A0541FE322F41F1400D961B3 /* CourseItem.m in Sources */,
+				A0E6153F2358A6D7001D9258 /* TResponderTextView.m in Sources */,
 				A045507922EC8DFA00E17406 /* LDNetTimer.m in Sources */,
 				A045507A22EC8DFA00E17406 /* TalkfunFunctionButton.m in Sources */,
+				A0E615CB2358A6D7001D9258 /* TUIMessageCell.m in Sources */,
+				A0E615CD2358A6D7001D9258 /* TUIMessageController.m in Sources */,
 				A045507B22EC8DFA00E17406 /* CZUpdateView.m in Sources */,
 				A0541FC322F3E2A100D961B3 /* BottomLineView.m in Sources */,
 				A045507C22EC8DFA00E17406 /* DownloadListController.m in Sources */,
@@ -4201,6 +5327,7 @@
 				A00D0D4E231BA7A300CF25E7 /* TalkfunNetworkLines.m in Sources */,
 				A045508122EC8DFA00E17406 /* TalkfunGradientView.m in Sources */,
 				A045508222EC8DFA00E17406 /* TalkfunExpressionViewController.m in Sources */,
+				A0E615252358A6D7001D9258 /* NSString+TUICommon.m in Sources */,
 				A045508322EC8DFA00E17406 /* BaseItem.m in Sources */,
 				A045508422EC8DFA00E17406 /* BaseVC.m in Sources */,
 				A00D0D46231BA7A300CF25E7 /* PlaybackChatModel.m in Sources */,
@@ -4208,19 +5335,25 @@
 				205934D223547673003DDF39 /* NotifySetupController.m in Sources */,
 				A045508622EC8DFA00E17406 /* TalkfunScoreView.m in Sources */,
 				A045508722EC8DFA00E17406 /* JHHJAnimation.m in Sources */,
+				A0E615AF2358A6D7001D9258 /* TUIInputMoreCell.m in Sources */,
 				A045508822EC8DFA00E17406 /* DownloadListModel.m in Sources */,
 				205934E623547673003DDF39 /* MyCustomCell.m in Sources */,
 				205934E223547673003DDF39 /* GroupInfoController.m in Sources */,
 				A045508922EC8DFA00E17406 /* XLGChangeServerModel.m in Sources */,
 				A045508A22EC8DFA00E17406 /* UIButton+TalkfunButton.m in Sources */,
+				A0E615832358A6D7001D9258 /* TUIFaceMessageCellData.m in Sources */,
 				A045508B22EC8DFA00E17406 /* TalkfunHornView.m in Sources */,
 				A045508C22EC8DFA00E17406 /* MEViewController.m in Sources */,
+				A0E615BB2358A6D7001D9258 /* TUITextMessageCell.m in Sources */,
 				A045508D22EC8DFA00E17406 /* TalkfunNoticeCell.m in Sources */,
+				A0E615C32358A6D7001D9258 /* TUIFaceMessageCell.m in Sources */,
+				A0E6152D2358A6D7001D9258 /* THelper.m in Sources */,
 				A045508E22EC8DFA00E17406 /* CZForgetPswVC.m in Sources */,
 				A045508F22EC8DFA00E17406 /* LDNetTraceRoute.m in Sources */,
 				205934C423547673003DDF39 /* SearchFriendViewController.m in Sources */,
 				A045509022EC8DFA00E17406 /* TalkFunTextLayer.m in Sources */,
 				A045509122EC8DFA00E17406 /* evaluateView.m in Sources */,
+				A0E615532358A6D7001D9258 /* UIImage+TUIKIT.m in Sources */,
 				A0541F9D22F2893B00D961B3 /* XZHomeTabCell.m in Sources */,
 				A045521722ED44ED00E17406 /* UILabel+XLGColor.m in Sources */,
 				A045509322EC8DFA00E17406 /* BaseNavBar.m in Sources */,
@@ -4228,23 +5361,28 @@
 				205934D623547673003DDF39 /* ProfileController.m in Sources */,
 				A0541FCB22F3E2A100D961B3 /* OptionsBarItem.m in Sources */,
 				A045509522EC8DFA00E17406 /* TalkfunNewButtonViewButton.m in Sources */,
+				A0E6152B2358A6D7001D9258 /* TUILocalStorage.m in Sources */,
 				A045509622EC8DFA00E17406 /* LDNetGetAddress.m in Sources */,
 				A045509722EC8DFA00E17406 /* UILabel+TalkfunLabel.m in Sources */,
 				A045509822EC8DFA00E17406 /* HYAlertView.m in Sources */,
 				A045509922EC8DFA00E17406 /* XLGLoginTestView.m in Sources */,
+				A0E615A92358A6D7001D9258 /* TUIInputController.m in Sources */,
 				A045509A22EC8DFA00E17406 /* TalkfunButtonView.m in Sources */,
 				A045509B22EC8DFA00E17406 /* CZRegisterVC.m in Sources */,
 				A007090022EDD48D00C70CEE /* XZTabBarVC.m in Sources */,
 				A00D0D40231BA7A300CF25E7 /* TalkfunCourseProgress.m in Sources */,
+				A0E615672358A6D7001D9258 /* TUIContactListPicker.m in Sources */,
 				A045509C22EC8DFA00E17406 /* BaseWebVC.m in Sources */,
 				A0541FDF22F4163F00D961B3 /* XZSelectCourseTabCell.m in Sources */,
 				A045509D22EC8DFA00E17406 /* QuestionModel.m in Sources */,
+				A0E616072358A6D7001D9258 /* EMVoiceConverter.mm in Sources */,
 				A006923E2354ACFC00A74059 /* TeacherItem.m in Sources */,
 				A045509E22EC8DFA00E17406 /* TalkfunNetworkStatusView.m in Sources */,
 				205934CA23547673003DDF39 /* ContactsController.m in Sources */,
 				A04550A122EC8DFA00E17406 /* NetworkDetector.m in Sources */,
 				A04550A222EC8DFA00E17406 /* Utils.m in Sources */,
 				A04550A322EC8DFA00E17406 /* LDNetPing.m in Sources */,
+				A0E6159D2358A6D7001D9258 /* TUIGroupPendencyController.m in Sources */,
 				A04550A422EC8DFA00E17406 /* Reachability.m in Sources */,
 				A04550A722EC8DFA00E17406 /* KeyChainUtil.m in Sources */,
 				A04550A822EC8DFA00E17406 /* MEViewModel.m in Sources */,
@@ -4252,66 +5390,119 @@
 				A04550AA22EC8DFA00E17406 /* NSString+Hashing.m in Sources */,
 				A04550AB22EC8DFA00E17406 /* Toast.m in Sources */,
 				A04550AC22EC8DFA00E17406 /* BulletManager.m in Sources */,
+				A0E6156B2358A6D7001D9258 /* TUIBlackListController.m in Sources */,
+				A0E615592358A6D7001D9258 /* TPopView.m in Sources */,
 				A04550AD22EC8DFA00E17406 /* LotteryViewController.m in Sources */,
 				A00D0D3A231BA7A300CF25E7 /* AlbumViewController.m in Sources */,
 				A00D0D42231BA7A300CF25E7 /* PlaybackQuestionModel.m in Sources */,
+				A0E6157B2358A6D7001D9258 /* TContactListPickerCell.m in Sources */,
 				205934DE23547673003DDF39 /* TXChatViewController.m in Sources */,
+				A0E615612358A6D7001D9258 /* TUIBlackListViewModel.m in Sources */,
+				A0E616092358A6D7001D9258 /* TUIError.m in Sources */,
 				205934D823547673003DDF39 /* ConversationController.m in Sources */,
 				A04550AE22EC8DFA00E17406 /* MyLotteryViewController.m in Sources */,
 				A00D0D68231BA7A300CF25E7 /* QuestionTableViewCell.m in Sources */,
+				A0E6158D2358A6D7001D9258 /* TUISystemMessageCellData.m in Sources */,
 				205934BE23547673003DDF39 /* TCUtil.m in Sources */,
+				A0E615EF2358A6D7001D9258 /* TIMGroupInfo+DataProvider.m in Sources */,
 				A04550AF22EC8DFA00E17406 /* TalkfunLongTextfieldView.m in Sources */,
 				205934DC23547673003DDF39 /* GroupMemberController.m in Sources */,
 				A04550B022EC8DFA00E17406 /* DownloadListTableViewCell.m in Sources */,
 				A04550B122EC8DFA00E17406 /* ChoiceButton.m in Sources */,
 				A04550B322EC8DFA00E17406 /* StudyInfoItem.m in Sources */,
 				A04550B422EC8DFA00E17406 /* barrageSwitch.m in Sources */,
+				A0E615952358A6D7001D9258 /* TUIVideoMessageCellData.m in Sources */,
+				A0E615652358A6D7001D9258 /* TUIGroupConversationListViewModel.m in Sources */,
+				A0E615FB2358A6D7001D9258 /* TCServiceManager.m in Sources */,
 				A04550B522EC8DFA00E17406 /* TalkfunExpressionCloseButton.m in Sources */,
 				A04550B622EC8DFA00E17406 /* MEView.m in Sources */,
+				A0E615DD2358A6D7001D9258 /* TUIUserProfileDataProviderService.m in Sources */,
+				A0E615A52358A6D7001D9258 /* TUIIncommingTextCellLayout.m in Sources */,
 				205934CE23547673003DDF39 /* TCLoginParam.m in Sources */,
 				A007090522EDD59C00C70CEE /* XZHomeVC.m in Sources */,
 				A04550B722EC8DFA00E17406 /* UIScrollView+TalkfunScrollView.m in Sources */,
 				A04550B822EC8DFA00E17406 /* VideoItem.m in Sources */,
+				A0E615772358A6D7001D9258 /* TCommonContactSelectCell.m in Sources */,
+				A0E615352358A6D7001D9258 /* TUIVideoViewController.m in Sources */,
+				A0E615F32358A6D7001D9258 /* TIMUserProfile+DataProvider.m in Sources */,
 				A00D0D5E231BA7A300CF25E7 /* TalkfunPlaybackMessageView.m in Sources */,
+				A0E615272358A6D7001D9258 /* TModifyView.m in Sources */,
+				A0E615AB2358A6D7001D9258 /* TUIInputBar.m in Sources */,
+				A0E6153B2358A6D7001D9258 /* TUIAvatarViewController.m in Sources */,
 				A04550B922EC8DFA00E17406 /* TalkfunMultifunctionTool.m in Sources */,
 				A04550BA22EC8DFA00E17406 /* UITextField+HTtext.m in Sources */,
+				A0E6154B2358A6D7001D9258 /* TCommonCell.m in Sources */,
+				A0E615A72358A6D7001D9258 /* TUIChatController.m in Sources */,
+				A0E615EB2358A6D7001D9258 /* TUIConversationCellData.m in Sources */,
 				A006923A2354AA0000A74059 /* IMItem.m in Sources */,
 				A04550BB22EC8DFA00E17406 /* LDNetDiagnoService.m in Sources */,
 				A04550BD22EC8DFA00E17406 /* TalkfunNewTextfieldView.m in Sources */,
 				A00708FD22ED973B00C70CEE /* XZSelectCourseVC.m in Sources */,
+				A0E615452358A6D7001D9258 /* TUIButtonCell.m in Sources */,
+				A0E615A12358A6D7001D9258 /* TUISystemMessageCellLayout.m in Sources */,
+				A0E615CF2358A6D7001D9258 /* TUIMoreView.m in Sources */,
 				A04550BE22EC8DFA00E17406 /* CourseCategoryItem.m in Sources */,
 				205934DA23547673003DDF39 /* Aspects.m in Sources */,
 				A00D0D6C231BA7A300CF25E7 /* ChapterTableViewCell.m in Sources */,
 				A04550BF22EC8DFA00E17406 /* CZGuideVC.m in Sources */,
 				A04550C122EC8DFA00E17406 /* BaseNC.m in Sources */,
+				A0E615B52358A6D7001D9258 /* TUIFaceCell.m in Sources */,
+				A0E615F72358A6D7001D9258 /* TIMMessage+DataProvider.m in Sources */,
+				A0E615312358A6D7001D9258 /* TUIFileViewController.m in Sources */,
 				A04550C222EC8DFA00E17406 /* CZProtocalWebVC.m in Sources */,
+				A0E615812358A6D7001D9258 /* TUINewFriendViewController.m in Sources */,
 				A04550C322EC8DFA00E17406 /* CZAlertView.m in Sources */,
+				A0E615BF2358A6D7001D9258 /* TUISystemMessageCell.m in Sources */,
 				A04550C522EC8DFA00E17406 /* UTLHelpper.m in Sources */,
 				A04550C622EC8DFA00E17406 /* ChatCell.m in Sources */,
+				A0E615BD2358A6D7001D9258 /* TUIJoinGroupMessageCell.m in Sources */,
+				A0E615F52358A6D7001D9258 /* NSString+DataProvider.m in Sources */,
+				A0E615372358A6D7001D9258 /* TTextEditController.m in Sources */,
 				A04550C722EC8DFA00E17406 /* TalkfunNewChatCell.m in Sources */,
 				A04550C822EC8DFA00E17406 /* TalkfunGuidanceView.m in Sources */,
+				A0E615E32358A6D7001D9258 /* TNaviBarIndicatorView.m in Sources */,
 				A04550C922EC8DFA00E17406 /* XLGAlertView.m in Sources */,
 				A00D0D56231BA7A300CF25E7 /* TalkfunKuaiJinView.m in Sources */,
 				A04550CA22EC8DFA00E17406 /* NotifyItem.m in Sources */,
 				A04550CB22EC8DFA00E17406 /* TalkfunReplyTipsView.m in Sources */,
+				A0E615D92358A6D7001D9258 /* TUIGroupMemberController.m in Sources */,
 				A04550CC22EC8DFA00E17406 /* NetworkUtil.m in Sources */,
 				A04550CD22EC8DFA00E17406 /* DBManager.m in Sources */,
 				205934BC23547673003DDF39 /* PAirSandbox.m in Sources */,
 				A04550CE22EC8DFA00E17406 /* CZSelectCourseVC.m in Sources */,
 				A0541FC122F3E2A100D961B3 /* OptionBarController.m in Sources */,
+				A0E615B72358A6D7001D9258 /* TUIFileMessageCell.m in Sources */,
+				A0E615FD2358A6D7001D9258 /* TCAnnotation.m in Sources */,
 				A04550CF22EC8DFA00E17406 /* TalkfunModulation.m in Sources */,
+				A0E615B32358A6D7001D9258 /* TUIMenuView.m in Sources */,
+				A0E615852358A6D7001D9258 /* TUIFileMessageCellData.m in Sources */,
+				A0E615E12358A6D7001D9258 /* TUIMessageDataProviderService.m in Sources */,
+				A0E6159B2358A6D7001D9258 /* TUIGroupPendencyCell.m in Sources */,
+				A0E615B12358A6D7001D9258 /* TUIMenuCell.m in Sources */,
 				A04550D022EC8DFA00E17406 /* TalkfunMultifunctionButton.m in Sources */,
+				A0E616052358A6D7001D9258 /* amrFileCodec.mm in Sources */,
 				A00D0D50231BA7A300CF25E7 /* TalkfunAdvertView.m in Sources */,
 				A04550D122EC8DFA00E17406 /* TalkfunGuidenceButton.m in Sources */,
 				A04550D322EC8DFA00E17406 /* ckickUILabel.m in Sources */,
+				A0E615712358A6D7001D9258 /* TCommonContactSelectCellData.m in Sources */,
 				A04550D422EC8DFA00E17406 /* LDSimplePing.m in Sources */,
+				A0E615412358A6D7001D9258 /* TUIProfileCardCell.m in Sources */,
+				A0E615B92358A6D7001D9258 /* TUIVideoMessageCell.m in Sources */,
+				A0E6152F2358A6D7001D9258 /* TAddCell.m in Sources */,
+				A0E615D72358A6D7001D9258 /* TUIGroupMembersCell.m in Sources */,
 				A04550D522EC8DFA00E17406 /* XLGLogVC.m in Sources */,
+				A0E615DB2358A6D7001D9258 /* TUIGroupInfoDataProviderService.m in Sources */,
 				A04550D622EC8DFA00E17406 /* CZLoginVC.m in Sources */,
 				A04550D722EC8DFA00E17406 /* VoteEndViewController.m in Sources */,
+				A0E6156D2358A6D7001D9258 /* TCommonPendencyCell.m in Sources */,
 				A0541FAA22F2C69C00D961B3 /* XLGCustomButton.m in Sources */,
+				A0E615912358A6D7001D9258 /* TUIImageMessageCellData.m in Sources */,
 				A04550D822EC8DFA00E17406 /* CZStudyVC.m in Sources */,
+				A0E6154F2358A6D7001D9258 /* TUITabBarController.m in Sources */,
 				A04550D922EC8DFA00E17406 /* JHHJCenterBGView.m in Sources */,
+				A0E615ED2358A6D7001D9258 /* TUIKit.m in Sources */,
 				A04550DA22EC8DFA00E17406 /* QuestionTableViewController.m in Sources */,
+				A0E615892358A6D7001D9258 /* TUIJoinGroupMessageCellData.m in Sources */,
 				A04550DB22EC8DFA00E17406 /* NetworkModel.m in Sources */,
 				205934E423547673003DDF39 /* MyCustomCellData.m in Sources */,
 				A04550DC22EC8DFA00E17406 /* TalkfunItem.m in Sources */,
@@ -4323,11 +5514,15 @@
 				A04550E222EC8DFA00E17406 /* AppDelegate+Push.m in Sources */,
 				A04550E322EC8DFA00E17406 /* TalkfunCloseButton.m in Sources */,
 				A04550E422EC8DFA00E17406 /* XLGChangeServerVC.m in Sources */,
+				A0E615472358A6D7001D9258 /* TCommonSwitchCell.m in Sources */,
 				A04550E522EC8DFA00E17406 /* XLGChangeServerCell.m in Sources */,
+				A0E6153D2358A6D7001D9258 /* TUIImageViewController.m in Sources */,
 				A04550E622EC8DFA00E17406 /* NetworkSelectionViewController.m in Sources */,
 				A04550E722EC8DFA00E17406 /* XLGInternalTestVC.m in Sources */,
+				A0E615932358A6D7001D9258 /* TUIMessageCellData.m in Sources */,
 				A04550E822EC8DFA00E17406 /* TalkfunExpressionCell.m in Sources */,
 				A00D0D36231BA7A300CF25E7 /* BaseTableViewController.m in Sources */,
+				A0E6155F2358A6D7001D9258 /* TContactViewModel.m in Sources */,
 				205934C623547673003DDF39 /* FriendRequestViewController.m in Sources */,
 				A04550E922EC8DFA00E17406 /* XLGLoginTestViewModel.m in Sources */,
 				A00D0D5C231BA7A300CF25E7 /* TalkfunVideoControlView.m in Sources */,
@@ -4336,51 +5531,79 @@
 				A04550EC22EC8DFA00E17406 /* TalkfunNewQuestionCell.m in Sources */,
 				A04550ED22EC8DFA00E17406 /* XLGLoginTestVC.m in Sources */,
 				A04550EE22EC8DFA00E17406 /* TalkfunNewFunctionButton.m in Sources */,
+				A0E6160B2358A6D7001D9258 /* TUIImageCache.m in Sources */,
 				A045521B22ED46E500E17406 /* UIButton+XLGColor.m in Sources */,
+				A0E6155D2358A6D7001D9258 /* TContactSelectViewModel.m in Sources */,
 				A04550EF22EC8DFA00E17406 /* BulletView.m in Sources */,
+				A0E615D12358A6D7001D9258 /* TUIGroupInfoController.m in Sources */,
 				A04550F022EC8DFA00E17406 /* CZInfiniteVC.m in Sources */,
 				A04550F122EC8DFA00E17406 /* CacheUtil.m in Sources */,
+				A0E615C12358A6D7001D9258 /* TUIImageMessageCell.m in Sources */,
 				A00D0D34231BA7A300CF25E7 /* ChapterViewController.m in Sources */,
+				A0E615E72358A6D7001D9258 /* TUIConversationListController.m in Sources */,
 				A04550F222EC8DFA00E17406 /* TalkfunMessageView.m in Sources */,
 				A04550F322EC8DFA00E17406 /* ChatModel.m in Sources */,
 				A04550F522EC8DFA00E17406 /* WKDelegateController.m in Sources */,
+				A0E615432358A6D7001D9258 /* TCommonTextCell.m in Sources */,
 				A04550F622EC8DFA00E17406 /* HomeInfoItem.m in Sources */,
 				A04550F722EC8DFA00E17406 /* CZNotNetAvailableVC.m in Sources */,
 				A04550F822EC8DFA00E17406 /* UIImageView+Exten.m in Sources */,
 				A04550F922EC8DFA00E17406 /* CZSettingVC.m in Sources */,
 				A04550FB22EC8DFA00E17406 /* AppDelegate.m in Sources */,
+				A0E615732358A6D7001D9258 /* TCommonContactCell.m in Sources */,
+				A0E615E92358A6D7001D9258 /* TUIConversationCell.m in Sources */,
 				205934C223547673003DDF39 /* SearchGroupViewController.m in Sources */,
+				A0E615C92358A6D7001D9258 /* TUIFaceView.m in Sources */,
 				A04550FD22EC8DFA00E17406 /* CZStarView.m in Sources */,
 				A045510022EC8DFA00E17406 /* XLGLottie.m in Sources */,
 				A045510122EC8DFA00E17406 /* NoticeTableViewController.m in Sources */,
+				A0E6156F2358A6D7001D9258 /* TUIContactActionCellData.m in Sources */,
 				205934FA23547B2D003DDF39 /* AppDelegate+TXIM.m in Sources */,
+				A0E6157F2358A6D7001D9258 /* TUIGroupConversationListController.m in Sources */,
+				A0E615752358A6D7001D9258 /* TUIContactActionCell.m in Sources */,
 				205934C823547673003DDF39 /* GroupRequestViewController.m in Sources */,
+				A0E615D32358A6D7001D9258 /* TUIGroupMembersView.m in Sources */,
 				A045510222EC8DFA00E17406 /* TalkfunMoveLabel.m in Sources */,
 				A045521322ED42EB00E17406 /* UIView+XLGColor.m in Sources */,
+				A0E6158F2358A6D7001D9258 /* TUIVoiceMessageCellData.m in Sources */,
+				A0E615992358A6D7001D9258 /* TUIGroupPendencyCellData.m in Sources */,
 				A045510322EC8DFA00E17406 /* TalkfunWatermark.m in Sources */,
+				A0E615F12358A6D7001D9258 /* TIMConversation+DataProvider.m in Sources */,
+				A0E615872358A6D7001D9258 /* TUIBubbleMessageCellData.m in Sources */,
 				A045510522EC8DFA00E17406 /* VoteViewController.m in Sources */,
 				A00D0D3E231BA7A300CF25E7 /* TalkfunPlaybackViewController.m in Sources */,
 				A0281B84232A4E7800559A5B /* TalkfunNewFunctionView.m in Sources */,
 				A045510622EC8DFA00E17406 /* BaseScrollView.m in Sources */,
 				205934C023547673003DDF39 /* TFriendProfileController.m in Sources */,
+				A0E615552358A6D7001D9258 /* TPopCell.m in Sources */,
+				A0E615512358A6D7001D9258 /* NSDate+TUIKIT.m in Sources */,
 				A045510722EC8DFA00E17406 /* GroupChatTableViewController.m in Sources */,
 				A045510822EC8DFA00E17406 /* UIView+TalkfunActivityIndicator.m in Sources */,
 				A045510922EC8DFA00E17406 /* CZSelectCourseCell.m in Sources */,
 				A045510A22EC8DFA00E17406 /* TalkfunReplyCell.m in Sources */,
+				A0E6159F2358A6D7001D9258 /* TUIOutgoingTextCellLayout.m in Sources */,
 				A045510B22EC8DFA00E17406 /* main.m in Sources */,
 				205934CC23547673003DDF39 /* GenerateTestUserSig.m in Sources */,
 				A00D0D4C231BA7A300CF25E7 /* ChatTableViewCell.m in Sources */,
 				205934E023547673003DDF39 /* TUserProfileController.m in Sources */,
 				A045510C22EC8DFA00E17406 /* LotteryCell.m in Sources */,
+				A0E615AD2358A6D7001D9258 /* TUIRecordView.m in Sources */,
 				A045510D22EC8DFA00E17406 /* UITextField+TalkfunTextField.m in Sources */,
+				A0E6160D2358A6D7001D9258 /* TUIKitConfig.m in Sources */,
 				A045510E22EC8DFA00E17406 /* GroupTableViewController.m in Sources */,
 				A00D0D38231BA7A300CF25E7 /* TFChatViewController.m in Sources */,
 				A07E4E9D22ED833D000ABD86 /* XZConfig.m in Sources */,
 				A045510F22EC8DFA00E17406 /* ProgressLoadView.m in Sources */,
 				A045511022EC8DFA00E17406 /* TalkfunLEEStarRating.m in Sources */,
 				A045511222EC8DFA00E17406 /* TalkfunViewController.m in Sources */,
+				A0E615332358A6D7001D9258 /* TNavigationController.m in Sources */,
 				A045511322EC8DFA00E17406 /* JHHJView.m in Sources */,
 				A045511422EC8DFA00E17406 /* TalkfunHttpTools.m in Sources */,
+				A0E615692358A6D7001D9258 /* TUIContactController.m in Sources */,
+				A0E615D52358A6D7001D9258 /* TUIGroupMemberCell.m in Sources */,
+				A0E6155B2358A6D7001D9258 /* TUIContactSelectController.m in Sources */,
+				A0E615E52358A6D7001D9258 /* TConversationListViewModel.m in Sources */,
+				A0E6154D2358A6D7001D9258 /* TAddHelper.m in Sources */,
 				A045511522EC8DFA00E17406 /* RegularPhoneTF.m in Sources */,
 				A045511622EC8DFA00E17406 /* ChatTableViewController.m in Sources */,
 				A00D0D64231BA7A300CF25E7 /* AlbumCellTableViewCell.m in Sources */,
@@ -4390,13 +5613,22 @@
 				A045511822EC8DFA00E17406 /* NetworkManager.m in Sources */,
 				A045511922EC8DFA00E17406 /* UserInfo.m in Sources */,
 				A00D0D4A231BA7A300CF25E7 /* ChapterModel.m in Sources */,
+				A0E615A32358A6D7001D9258 /* TUIMessageCellLayout.m in Sources */,
 				A045511A22EC8DFA00E17406 /* videoDefinition.m in Sources */,
+				A0E6158B2358A6D7001D9258 /* TUITextMessageCellData.m in Sources */,
+				A0E615632358A6D7001D9258 /* TUINewFriendViewModel.m in Sources */,
 				A045511B22EC8DFA00E17406 /* PurchaseItem.m in Sources */,
+				A0E615792358A6D7001D9258 /* TCommonContactCellData.m in Sources */,
 				205934D023547673003DDF39 /* LoginController.m in Sources */,
 				A045511C22EC8DFA00E17406 /* TalkfunFunctionView.m in Sources */,
+				A0E615292358A6D7001D9258 /* TUnReadView.m in Sources */,
+				A0E615DF2358A6D7001D9258 /* TUIConversationDataProviderService.m in Sources */,
+				A0E615972358A6D7001D9258 /* TUIGroupPendencyViewModel.m in Sources */,
 				A045511D22EC8DFA00E17406 /* TalkfunLoadingView.m in Sources */,
 				A045511E22EC8DFA00E17406 /* UIImageView+TalkfunImageView.m in Sources */,
+				A0E615F92358A6D7001D9258 /* TCContext.m in Sources */,
 				A045511F22EC8DFA00E17406 /* TalkfunNewChatTableViewCell.m in Sources */,
+				A0E6157D2358A6D7001D9258 /* TCommonPendencyCellData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4558,6 +5790,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Chaozhi/Vendor/Talkfun/Library/Universal",
 					"$(PROJECT_DIR)/Chaozhi/Vendor/Talkfun/Library",
+					"$(PROJECT_DIR)/Chaozhi/Vendor/TUIKit/Classes/Third/voiceConvert/opencore-amrwb",
+					"$(PROJECT_DIR)/Chaozhi/Vendor/TUIKit/Classes/Third/voiceConvert/opencore-amrnb",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -4650,6 +5884,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Chaozhi/Vendor/Talkfun/Library/Universal",
 					"$(PROJECT_DIR)/Chaozhi/Vendor/Talkfun/Library",
+					"$(PROJECT_DIR)/Chaozhi/Vendor/TUIKit/Classes/Third/voiceConvert/opencore-amrwb",
+					"$(PROJECT_DIR)/Chaozhi/Vendor/TUIKit/Classes/Third/voiceConvert/opencore-amrnb",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -4742,6 +5978,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Chaozhi/Vendor/Talkfun/Library/Universal",
 					"$(PROJECT_DIR)/Chaozhi/Vendor/Talkfun/Library",
+					"$(PROJECT_DIR)/Chaozhi/Vendor/TUIKit/Classes/Third/voiceConvert/opencore-amrwb",
+					"$(PROJECT_DIR)/Chaozhi/Vendor/TUIKit/Classes/Third/voiceConvert/opencore-amrnb",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -4834,6 +6072,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Chaozhi/Vendor/Talkfun/Library/Universal",
 					"$(PROJECT_DIR)/Chaozhi/Vendor/Talkfun/Library",
+					"$(PROJECT_DIR)/Chaozhi/Vendor/TUIKit/Classes/Third/voiceConvert/opencore-amrwb",
+					"$(PROJECT_DIR)/Chaozhi/Vendor/TUIKit/Classes/Third/voiceConvert/opencore-amrnb",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",

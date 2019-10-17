@@ -1008,17 +1008,6 @@ Apache License
 			<key>License</key>
 			<string>Proprietary</string>
 			<key>Title</key>
-			<string>TXIMSDK_TUIKit_iOS</string>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-		</dict>
-		<dict>
-			<key>FooterText</key>
-			<string>copyright 2017 tencent Ltd. All rights reserved.
-</string>
-			<key>License</key>
-			<string>Proprietary</string>
-			<key>Title</key>
 			<string>TXIMSDK_iOS</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>

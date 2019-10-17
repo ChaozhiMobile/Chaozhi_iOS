@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1DCC740CAAE47D00DB448BDFE57840C6"
+               BlueprintIdentifier = "3B4E1206698BEED9CD05E1DBADCE94C4"
                BuildableName = "TXIMSDK_iOS"
                BlueprintName = "TXIMSDK_iOS"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -47,13 +47,6 @@ PODS:
   - TalkfunMediaFramework (1.9.2)
   - Toast (4.0.0)
   - TXIMSDK_iOS (4.5.15)
-  - TXIMSDK_TUIKit_iOS (4.5.15):
-    - ISVImageScrollView
-    - MMLayout
-    - ReactiveObjC
-    - SDWebImage
-    - Toast
-    - TXIMSDK_iOS
   - TZImagePickerController (3.2.2)
   - UMengAnalytics-NO-IDFA (4.2.5)
   - XLGCategory (1.1.0):
@@ -70,6 +63,7 @@ DEPENDENCIES:
   - FMDB
   - IAPHelper
   - IQKeyboardManager
+  - ISVImageScrollView
   - JFImagePicker
   - JPush-iOS-SDK
   - KissXML
@@ -86,7 +80,8 @@ DEPENDENCIES:
   - Socket.IO-Client-Swift
   - SSZipArchive
   - TalkfunMediaFramework
-  - TXIMSDK_TUIKit_iOS
+  - Toast
+  - TXIMSDK_iOS
   - TZImagePickerController
   - UMengAnalytics-NO-IDFA
   - XLGCategory
@@ -121,7 +116,6 @@ SPEC REPOS:
     - TalkfunMediaFramework
     - Toast
     - TXIMSDK_iOS
-    - TXIMSDK_TUIKit_iOS
     - TZImagePickerController
     - UMengAnalytics-NO-IDFA
     - XLGCategory
@@ -155,12 +149,11 @@ SPEC CHECKSUMS:
   TalkfunMediaFramework: a6e53cb714998de511d75e915dc985cd213bd6f1
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   TXIMSDK_iOS: 7cf467dc7c90f294b894e8a7b7004bce7acfd332
-  TXIMSDK_TUIKit_iOS: 95bc7ce8b6c73c8e5ebbe60c77e44c15ac4ec30c
   TZImagePickerController: 44aa49cf35b1e88fe292be955e15b9003a5b1d83
   UMengAnalytics-NO-IDFA: 16666e32edce5be44ae5b14aaaa7f3582e09d6ab
   XLGCategory: b93fda8378ccd3e04deb87033c02ad3e6dee3c4a
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 5e64395d7fbc560544300085c30792079a79084c
+PODFILE CHECKSUM: e9455a7fe3b496d19af8a6278a67a507a4207ea1
 
 COCOAPODS: 1.6.1

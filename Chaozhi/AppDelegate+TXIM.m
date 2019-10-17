@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate+TXIM.h"
-#import <TUIKit.h>
+#import "TUIKit.h"
 
 
 @implementation AppDelegate (TXIM)

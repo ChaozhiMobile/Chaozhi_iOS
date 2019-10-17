@@ -31,7 +31,9 @@ target 'Chaozhi' do
   pod 'MBProgressHUD'
   pod 'MMLayout'
   pod 'MLeaksFinder'
-  pod 'TXIMSDK_TUIKit_iOS'
+  pod 'TXIMSDK_iOS'
+  pod 'Toast'
+  pod 'ISVImageScrollView'
   #全能App研发助手！滴滴开源DoraemonKit
 #  pod 'DoraemonKit', '~> 1.1.2', :configurations => ['Debug']
 end
@@ -65,7 +67,9 @@ target 'Xuezhi' do
   pod 'MBProgressHUD'
   pod 'MMLayout'
   pod 'MLeaksFinder'
-  pod 'TXIMSDK_TUIKit_iOS'
+  pod 'TXIMSDK_iOS'
+  pod 'Toast'
+  pod 'ISVImageScrollView'
   #全能App研发助手！滴滴开源DoraemonKit
 #  pod 'DoraemonKit', '~> 1.1.2', :configurations => ['Debug']
 end
