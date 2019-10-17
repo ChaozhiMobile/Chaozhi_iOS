@@ -46,6 +46,7 @@
     TIMConversation *conv = [[TIMManager sharedInstance] getConversation:_conversationData.convType receiver:_conversationData.convId];
     _chat = [[TUIChatController alloc] initWithConversation:conv];
     _chat.delegate = self;
+    _chat.messageController.unre
     [self addChildViewController:_chat];
     [self.view addSubview:_chat.view];
 
@@ -289,9 +290,9 @@
 }
 
 
+#pragma mark -头像点击
+- (void)chatController:(TUIChatController *)controller onSelectMessageAvatar:(TUIMessageCell *)cell
+{
 
-//- (void)chatController:(TUIChatController *)controller onSelectMessageAvatar:(TUIMessageCell *)cell
-//{
-//
-//}
+}
 @end
