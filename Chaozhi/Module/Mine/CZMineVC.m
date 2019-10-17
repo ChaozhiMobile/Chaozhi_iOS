@@ -98,12 +98,12 @@
                 if ([AppChannel isEqualToString:@"1"]) { //超职
                     [self.imageArr insertObject:@"icon_报考资料" atIndex:0];
                     [self.nameArr insertObject:@"报考资料" atIndex:0];
-                }
-                
-                if (self.purchaseArr.count>0
-                    && ![self.nameArr containsObject:@"我的班主任"]) {
-                    [self.imageArr insertObject:@"icon_班主任" atIndex:0];
-                    [self.nameArr insertObject:@"我的班主任" atIndex:0];
+                    
+                    if (self.purchaseArr.count>0
+                        && ![self.nameArr containsObject:@"我的班主任"]) {
+                        [self.imageArr insertObject:@"icon_班主任" atIndex:0];
+                        [self.nameArr insertObject:@"我的班主任" atIndex:0];
+                    }
                 }
             }
             

@@ -905,6 +905,9 @@
 		A0E0D3CD22D0E3A100296851 /* TalkfunMultifunctionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E0D3CA22D0E3A100296851 /* TalkfunMultifunctionButton.m */; };
 		A0E50819230ED54C005EF897 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E50818230ED54C005EF897 /* StoreKit.framework */; };
 		A0E5081A230ED762005EF897 /* CZCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20ABB12D230A7A9600DDC86F /* CZCommentView.m */; };
+		A0E6120523589985001D9258 /* CZTeacherConversationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 205935022355AB2F003DDF39 /* CZTeacherConversationVC.m */; };
+		A0E61206235899C7001D9258 /* CZChatVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 205934FF23559E93003DDF39 /* CZChatVC.m */; };
+		A0E61207235899DC001D9258 /* CZTeacherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 206976FB2356B0D9004A6E29 /* CZTeacherCell.m */; };
 		A0E8981D22CF22C600DB09BA /* VideoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E8981B22CF22C600DB09BA /* VideoItem.m */; };
 		A0E8982122CF265800DB09BA /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E8982022CF265800DB09BA /* DBManager.m */; };
 /* End PBXBuildFile section */
@@ -4176,6 +4179,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0E61207235899DC001D9258 /* CZTeacherCell.m in Sources */,
+				A0E61206235899C7001D9258 /* CZChatVC.m in Sources */,
+				A0E6120523589985001D9258 /* CZTeacherConversationVC.m in Sources */,
 				A0E5081A230ED762005EF897 /* CZCommentView.m in Sources */,
 				A045507322EC8DFA00E17406 /* XLGInternalDemoVC.m in Sources */,
 				A045507422EC8DFA00E17406 /* TalkfunSignViewController.m in Sources */,
