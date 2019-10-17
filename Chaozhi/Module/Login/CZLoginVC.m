@@ -59,7 +59,7 @@
         [Utils showToast:@"请输入密码"];
         return;
     }
-    
+    __weak typeof(self) weakSelf = self;
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
                          self.phoneTF.text, @"phone",
                          self.pswTF.text, @"password",
@@ -71,13 +71,13 @@
             
             NSString *token = responseData[@"token"];
             [CacheUtil saveCacher:@"token" withValue:token];
-            [CacheUtil saveCacher:@"loginPhone" withValue:self.phoneTF.text];
+            [CacheUtil saveCacher:@"loginPhone" withValue:weakSelf.phoneTF.text];
             [Utils changeUserAgent]; //WKWebView UA初始化
 
             [[NSNotificationCenter defaultCenter] postNotificationName:kLoginSuccNotification object:nil];
             
             // 极光推送绑定别名
-            [JPUSHService setTags:nil alias:self.phoneTF.text fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias) {
+            [JPUSHService setTags:nil alias:weakSelf.phoneTF.text fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias) {
                 
             }];
             [self loginIM];
@@ -101,7 +101,6 @@
             param.userSig = item.token;
             [[NSUserDefaults standardUserDefaults] setObject:@(imKey()) forKey:Key_UserInfo_Appid];
             [[NSUserDefaults standardUserDefaults] setObject:param.identifier forKey:Key_UserInfo_User];
-            [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:Key_UserInfo_Pwd];
             [[NSUserDefaults standardUserDefaults] setObject:param.userSig forKey:Key_UserInfo_Sig];
             [[TIMManager sharedInstance] login:param succ:^{
                 NSLog(@"腾讯IM登录成功");
