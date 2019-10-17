@@ -46,7 +46,6 @@
     TIMConversation *conv = [[TIMManager sharedInstance] getConversation:_conversationData.convType receiver:_conversationData.convId];
     _chat = [[TUIChatController alloc] initWithConversation:conv];
     _chat.delegate = self;
-    _chat.messageController.unre
     [self addChildViewController:_chat];
     [self.view addSubview:_chat.view];
 
