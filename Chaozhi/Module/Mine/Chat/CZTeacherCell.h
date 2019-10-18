@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TUnReadView.h"
 #import "TUIConversationCellData.h"
+#import "CZLabel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -59,7 +60,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (atomic, strong) TUIConversationCellData *convData;
 
 
-@property (nonatomic, strong) UILabel *courseNameLabel;
+@property (nonatomic, strong) CZLabel *courseNameLabel;
 
 @end
 

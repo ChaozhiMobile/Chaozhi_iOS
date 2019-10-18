@@ -43,12 +43,16 @@
         _subTitleLabel.textColor = [UIColor lightGrayColor];
         [self addSubview:_subTitleLabel];
 
-
-        self.courseNameLabel = [[UILabel alloc] init];
-        self.courseNameLabel.layer.masksToBounds = YES;
-        self.courseNameLabel.font = [UIFont systemFontOfSize:14];
-        self.courseNameLabel.textColor = [UIColor redColor];
-        [self addSubview:self.courseNameLabel];
+        _courseNameLabel = [[CZLabel alloc] init];
+        _courseNameLabel.backgroundColor = RGBAValue(0x42AFD9, 0.1);
+        _courseNameLabel.edgeInsets = UIEdgeInsetsMake(3, 3, 3, 3);//设置内边距
+        [_courseNameLabel sizeToFit];
+        _courseNameLabel.layer.cornerRadius = 5;
+        [_courseNameLabel.layer setMasksToBounds:YES];
+        _courseNameLabel.numberOfLines = 0;
+        _courseNameLabel.font = [UIFont systemFontOfSize:14];
+        _courseNameLabel.textColor = RGBValue(0x1691C0);
+        [self addSubview:_courseNameLabel];
         
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
         
@@ -79,7 +83,7 @@
         [_courseNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(self.titleLabel);
             make.top.mas_equalTo(_titleLabel.mas_bottom).offset(CellSpace);
-            make.right.mas_equalTo(_titleLabel).offset(-CellSpace);
+            make.right.mas_lessThanOrEqualTo(self).offset(-CellSpace);
 
         }];
         
@@ -88,15 +92,12 @@
             make.top.mas_equalTo(_courseNameLabel.mas_bottom).offset(CellSpace);
             make.right.mas_equalTo(_titleLabel).offset(-CellSpace);
             make.bottom.mas_equalTo(self).offset(-CellSpace);
-
         }];
-        
-        
     }
     return self;
 }
 
--(void)setConvData:(TUIConversationCellData *)convData {
+- (void)setConvData:(TUIConversationCellData *)convData {
     if (_convData!=convData) {
         _convData = convData;
     }
@@ -106,17 +107,6 @@
     self.subTitleLabel.text = convData.subTitle;
     [self.unReadView setNum:convData.unRead];
     
-}
-
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 @end
