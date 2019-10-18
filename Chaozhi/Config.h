@@ -3,6 +3,7 @@
 //  Chaozhi
 //  Notes：接口地址【文档：http://39.106.129.114/showdoc/web/#/1 密码：123456】
 //  IM接口地址【文档：https://documenter.getpostman.com/view/7465408/SVmr2MAf?version=latest】
+//  腾讯IM官方地址：https://cloud.tencent.com/document/product/269/37190
 //  测试账号：18268686511/15737936517/15068850958/18621799526/18888643622 密码：123456 112233 zxcvbnm
 //  客服系统：http://kf-dev.chaozhiedu.com:88 admin/admin/qwer1234 aci-edu/8888/qwer1234
 //  欢拓SDK文档：http://open.talk-fun.com/docs/ios/precondition.html

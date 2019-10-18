@@ -2303,12 +2303,12 @@
 		205934FD23559E60003DDF39 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				205934FE23559E93003DDF39 /* CZChatVC.h */,
-				205934FF23559E93003DDF39 /* CZChatVC.m */,
 				205935012355AB2F003DDF39 /* CZTeacherConversationVC.h */,
 				205935022355AB2F003DDF39 /* CZTeacherConversationVC.m */,
 				206976FA2356B0D9004A6E29 /* CZTeacherCell.h */,
 				206976FB2356B0D9004A6E29 /* CZTeacherCell.m */,
+				205934FE23559E93003DDF39 /* CZChatVC.h */,
+				205934FF23559E93003DDF39 /* CZChatVC.m */,
 			);
 			path = Chat;
 			sourceTree = "<group>";

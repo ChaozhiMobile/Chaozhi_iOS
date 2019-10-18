@@ -130,13 +130,6 @@
     [self.navigationController pushViewController:chat animated:YES];
 }
 
-- (void)didSelectConversation:(TUIConversationCell *)cell
-{
-//    CZChatVC *chat = [[CZChatVC alloc] init];
-//    chat.conversationData = cell.data;
-//    [self.navigationController pushViewController:chat animated:YES];
-}
-
 /*
 #pragma mark - Navigation
 
