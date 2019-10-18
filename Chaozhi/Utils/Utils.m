@@ -12,6 +12,7 @@
 #import "NetworkUtil.h"
 #import "BaseNC.h"
 #import "CZLoginVC.h"
+#import "XLGExternalTestTool.h"
 
 @interface Utils ()
 {
@@ -329,8 +330,17 @@ static Utils *_utils = nil;
     
     if (@available(iOS 12.0, *)) {
         NSString *baseAgent = @"Mozilla/5.0 (iPhone; CPU iPhone OS 11_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15F79";
+        if (IS_PAD) {
+            baseAgent = @"Mozilla/5.0 (iPad; CPU OS 13_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148";
+        }
         NSString *userAgent = [NSString stringWithFormat:@"%@&&%@",baseAgent, extendStr];
         [web setCustomUserAgent:userAgent];
+        
+        
+//        NSString *userAgent = [web valueForKey:@"applicationNameForUserAgent"];
+//        NSString *newUserAgent = [NSString stringWithFormat:@"%@&&%@",userAgent,extendStr];
+//        [web setValue:newUserAgent forKey:@"applicationNameForUserAgent"];
+
     }
     
     if (IS_IOS_9) {
@@ -340,6 +350,10 @@ static Utils *_utils = nil;
                 oldUA = [[[UIWebView alloc] init] stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
             }
             NSLog(@"UserAgent：oldUA：%@",oldUA);
+            
+            XLGExternalTestTool *tool = [XLGExternalTestTool shareInstance];
+            tool.logTextViews.text = [NSString stringWithFormat:@"UserAgent：oldUA %@",oldUA];
+            
             if ([oldUA containsString:@"&&"]) {
                 NSArray *array = [oldUA componentsSeparatedByString:@"&&"];
                 oldUA = array[0];
