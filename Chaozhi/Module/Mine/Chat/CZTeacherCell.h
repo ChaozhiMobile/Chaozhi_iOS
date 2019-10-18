@@ -57,9 +57,11 @@ NS_ASSUME_NONNULL_BEGIN
  *  数据源还会负责部分数据的获取与处理。
  *  数据源的详细信息请参考 \Section\Conversation\Cell\TUIConversationCellData.h
  */
-@property (atomic, strong) TUIConversationCellData *convData;
+@property (nonatomic, strong) TUIConversationCellData *convData;
 
-
+/**
+ * 班主任课程标签
+ */
 @property (nonatomic, strong) CZLabel *courseNameLabel;
 
 @end

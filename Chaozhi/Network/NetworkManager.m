@@ -37,7 +37,9 @@ static NetworkManager *_manager = nil;
     
     [self configNetManager];
     
-    NSString *urlStr = [NSString stringWithFormat:@"%@%@",domainUrl(),name];
+    if (![name containsString:@"http"]) {
+        name = [NSString stringWithFormat:@"%@%@",domainUrl(),name];
+    }
     
     [JHHJView showLoadingOnTheKeyWindowWithType:JHHJViewTypeSingleLine]; //开始加载
     
@@ -49,7 +51,7 @@ static NetworkManager *_manager = nil;
     [paramDic setObject:@"ios" forKey:@"device"];
     [paramDic setObject:AppVersion forKey:@"version"];
 
-    [self POST:urlStr parameters:paramDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [self POST:name parameters:paramDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         [JHHJView hideLoading]; //结束加载
         
@@ -60,9 +62,17 @@ static NetworkManager *_manager = nil;
         }
         
         id _Nullable object = [NSDictionary changeType:responseObject];
-        [self printLogInfoWith:urlStr WithParam:paramDic andResult:object];
+        [self printLogInfoWith:name WithParam:paramDic andResult:object];
         
-        NSString *code = [NSString stringWithFormat:@"%@",object[@"code"]];
+        NSString *code = @"";
+        NSString *msg = @"";
+        if ([name containsString:domainUrl()]) {
+            code = [NSString stringWithFormat:@"%@",object[@"code"]];
+            msg = [NSString stringWithFormat:@"%@",object[@"msg"]];
+        } else if ([name containsString:imUrl()]) {
+            code = [NSString stringWithFormat:@"%@",object[@"status_code"]];
+            msg = [NSString stringWithFormat:@"%@",object[@"message"]];
+        }
         if ([code isEqualToString:@"200"]) { //成功
             id _Nullable dataObject = object[@"data"];
             completion(dataObject,Request_Success,nil);
@@ -73,7 +83,7 @@ static NetworkManager *_manager = nil;
         }
         else {
             completion(nil,Request_Fail,nil);
-            [Utils showToast:object[@"msg"]];
+            [Utils showToast:msg];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
@@ -84,7 +94,7 @@ static NetworkManager *_manager = nil;
         }
         
         completion(nil,Request_TimeoOut,error);
-        [self printLogInfoWith:urlStr WithParam:paramDic andResult:[error localizedDescription]];
+        [self printLogInfoWith:name WithParam:paramDic andResult:[error localizedDescription]];
         [Utils showToast:@"请求超时"];
         [JHHJView hideLoading]; //结束加载
     }];
@@ -101,11 +111,13 @@ static NetworkManager *_manager = nil;
     
     [self configNetManager];
     
-    NSString *urlStr = [NSString stringWithFormat:@"%@%@",domainUrl(),name];
+    if (![name containsString:@"http"]) {
+        name = [NSString stringWithFormat:@"%@%@",domainUrl(),name];
+    }
     
     [JHHJView showLoadingOnTheKeyWindowWithType:JHHJViewTypeSingleLine]; //开始加载
     
-    [self GET:urlStr parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [self GET:name parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         [JHHJView hideLoading]; //结束加载
         
@@ -116,21 +128,30 @@ static NetworkManager *_manager = nil;
         }
         
         id _Nullable object = [NSDictionary changeType:responseObject];
-        if ([object[@"code"] isEqualToString:@"200"]) { //成功
+        NSString *code = @"";
+        NSString *msg = @"";
+        if ([name containsString:domainUrl()]) {
+            code = [NSString stringWithFormat:@"%@",object[@"code"]];
+            msg = [NSString stringWithFormat:@"%@",object[@"msg"]];
+        } else if ([name containsString:imUrl()]) {
+            code = [NSString stringWithFormat:@"%@",object[@"status_code"]];
+            msg = [NSString stringWithFormat:@"%@",object[@"message"]];
+        }
+        if ([code isEqualToString:@"200"]) { //成功
             id _Nullable dataObject = object[@"data"];
             if ([dataObject isKindOfClass:[NSString class]]) {
                 completion(@"",Request_Success,nil);
             } else {
                 completion(dataObject,Request_Success,nil);
             }
-        } else if ([object[@"code"] intValue]>=600&&[object[@"code"] intValue]<700) { //重新登录
+        } else if ([code intValue]>=600&&[code intValue]<700) { //重新登录
             [self reLogin];
         }
         else {
             completion(nil,Request_Fail,nil);
-            [Utils showToast:object[@"msg"]];
+            [Utils showToast:msg];
         }
-        [self printLogInfoWith:urlStr WithParam:parameters andResult:object];
+        [self printLogInfoWith:name WithParam:parameters andResult:object];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
         NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
@@ -140,7 +161,7 @@ static NetworkManager *_manager = nil;
         }
         
         completion(nil,Request_TimeoOut,error);
-        [self printLogInfoWith:urlStr WithParam:parameters andResult:[error localizedDescription]];
+        [self printLogInfoWith:name WithParam:parameters andResult:[error localizedDescription]];
         [Utils showToast:@"请求超时"];
         [JHHJView hideLoading]; //结束加载
     }];
@@ -159,7 +180,9 @@ static NetworkManager *_manager = nil;
     
     [self configNetManager];
     
-    NSString *urlStr = [NSString stringWithFormat:@"%@%@",domainUrl(),name];
+    if (![name containsString:@"http"]) {
+        name = [NSString stringWithFormat:@"%@%@",domainUrl(),name];
+    }
     
     [JHHJView showLoadingOnTheKeyWindowWithType:JHHJViewTypeSingleLine]; //开始加载
     
@@ -171,7 +194,7 @@ static NetworkManager *_manager = nil;
     [paramDic setObject:@"ios" forKey:@"device"];
     [paramDic setObject:AppVersion forKey:@"version"];
     
-    [self POST:urlStr parameters:paramDic constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+    [self POST:name parameters:paramDic constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         
         if (imgDataArr.count > 0) {
             //在网络开发中，上传文件时，是文件不允许被覆盖，文件重名。要解决此问题，可以在上传时使用当前的系统事件作为文件名
@@ -197,9 +220,16 @@ static NetworkManager *_manager = nil;
         }
         
         id _Nullable object = [NSDictionary changeType:responseObject];
-        [self printLogInfoWith:urlStr WithParam:paramDic andResult:object];
-        
-        NSString *code = [NSString stringWithFormat:@"%@",object[@"code"]];
+        [self printLogInfoWith:name WithParam:paramDic andResult:object];
+        NSString *code = @"";
+        NSString *msg = @"";
+        if ([name containsString:domainUrl()]) {
+            code = [NSString stringWithFormat:@"%@",object[@"code"]];
+            msg = [NSString stringWithFormat:@"%@",object[@"msg"]];
+        } else if ([name containsString:imUrl()]) {
+            code = [NSString stringWithFormat:@"%@",object[@"status_code"]];
+            msg = [NSString stringWithFormat:@"%@",object[@"message"]];
+        }
         if ([code isEqualToString:@"200"]) { //成功
             id _Nullable dataObject = object[@"data"];
             completion(dataObject,Request_Success,nil);
@@ -208,7 +238,7 @@ static NetworkManager *_manager = nil;
         }
         else {
             completion(nil,Request_Fail,nil);
-            [Utils showToast:object[@"msg"]];
+            [Utils showToast:msg];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
@@ -219,7 +249,7 @@ static NetworkManager *_manager = nil;
         }
         
         completion(nil,Request_TimeoOut,error);
-        [self printLogInfoWith:urlStr WithParam:paramDic andResult:[error localizedDescription]];
+        [self printLogInfoWith:name WithParam:paramDic andResult:[error localizedDescription]];
         [Utils showToast:@"请求超时"];
         [JHHJView hideLoading]; //结束加载
     }];

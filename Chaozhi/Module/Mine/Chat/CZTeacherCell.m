@@ -106,7 +106,6 @@
     self.timeLabel.text = [convData.time tk_messageString];
     self.subTitleLabel.text = convData.subTitle;
     [self.unReadView setNum:convData.unRead];
-    
 }
 
 @end
