@@ -120,7 +120,8 @@
             if(self.messageData.direction == MsgDirectionOutgoing
                && self.messageData.showReadReceipt
                && self.messageData.innerMessage.getConversation.getType == TIM_C2C){//只对发送的消息进行label显示。
-                _readReceiptLabel.hidden = NO;
+//                _readReceiptLabel.hidden = NO;
+                 _readReceiptLabel.hidden = YES;
             }
             
         }
