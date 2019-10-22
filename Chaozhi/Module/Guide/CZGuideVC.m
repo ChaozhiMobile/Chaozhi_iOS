@@ -28,7 +28,7 @@
     for (int i = 0; i< imageArr.count; i++) {
         UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH * i, 0, WIDTH, HEIGHT)];
         [imgView setImage:[UIImage imageNamed:imageArr[i]]];
-        [imgView setContentMode:UIViewContentModeScaleAspectFill];
+        [imgView setContentMode:UIViewContentModeScaleToFill];
         imgView.clipsToBounds=YES;
         imgView.exclusiveTouch=YES;
         imgView.userInteractionEnabled = YES;

@@ -33,6 +33,7 @@
     [_webView evaluateJavaScript:@"window.activated && window.activated();" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
         NSLog(@"js返回结果%@",result);
     }];
+    [self initWebData]; //初始化WebView数据
 }
 
 /** 传入控制器、url、标题 */
@@ -63,23 +64,6 @@
     self.title = _webTitle;
     
     [self initWebView];
-}
-
-#pragma mark - 全局修改UserAgent，传token等参数给H5
-
-- (void)changeUserAgent {
-    
-    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    [dic setObject:[NSString isEmpty:[UserInfo share].token]?@"":[UserInfo share].token forKey:@"token"];
-    [dic setObject:[Utils getWifi]==YES?@"1":@"0" forKey:@"wifi"];
-    NSString *extendStr = [dic jsonStringEncoded];
-    
-    if (@available(iOS 12.0, *)) {
-        NSString *baseAgent = @"Mozilla/5.0 (iPhone; CPU iPhone OS 11_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15F79";
-        NSString *userAgent = [NSString stringWithFormat:@"%@&&%@",baseAgent, extendStr];
-        [self.webView setCustomUserAgent:userAgent];
-    }
-    
 }
 
 #pragma mark - 懒加载
@@ -180,7 +164,20 @@
 
 // 页面加载完成之后调用
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
-    
+    [self initWebData]; //初始化WebView数据
+}
+
+// 初始化WebView数据
+- (void)initWebData {
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setObject:[NSString isEmpty:[UserInfo share].token]?@"":[UserInfo share].token forKey:@"token"];
+    [dic setObject:[Utils getWifi]==YES?@"1":@"0" forKey:@"wifi"];
+    [dic setObject:AppVersion forKey:@"version"];
+    [dic setObject:@"ios" forKey:@"device"];
+    NSString *extendStr = [dic jsonStringEncoded];
+    [_webView evaluateJavaScript:[NSString stringWithFormat:@"window.$app = %@;",extendStr] completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+        NSLog(@"js返回结果%@",result);
+    }];
 }
 
 #pragma mark - JS调用OC
