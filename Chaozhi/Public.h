@@ -71,6 +71,9 @@
 #define kTabBarSafeH ((iPhoneX == YES || IS_IPHONE_Xr == YES || IS_IPHONE_Xs == YES || IS_IPHONE_Xs_Max == YES) ? 34.f:0.0f)
 #define QM_IS_IPHONEX ((kStatusBarH == 44)?YES:NO)
 #define kNavBtnW autoScaleH(44)
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define IS_PAD (UI_USER_INTERFACE_IDIOM()== UIUserInterfaceIdiomPad)
+
 
 /*****************************手机型号***************************/
 
