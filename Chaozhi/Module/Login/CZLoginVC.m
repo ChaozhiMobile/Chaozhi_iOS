@@ -80,7 +80,7 @@
             [JPUSHService setTags:nil alias:weakSelf.phoneTF.text fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias) {
                 
             }];
-            [self loginIM];
+//            [self loginIM];
             // 跳转到首页
             self.tabBarController.selectedIndex = 0;
             [self.navigationController popToRootViewControllerAnimated:NO];

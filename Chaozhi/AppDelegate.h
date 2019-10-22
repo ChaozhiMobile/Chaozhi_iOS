@@ -19,9 +19,10 @@
 
 @property (nonatomic,retain) UITabBarController *tabVC;
 @property (strong, nonatomic) UIWindow *window;
-//腾讯im
-@property (nonatomic, strong) NSData *deviceToken;
+@property (nonatomic, strong) NSData *deviceToken; //腾讯im
+
 - (UIViewController *)getLoginController;
 - (UITabBarController *)getMainController;
+
 @end
 
