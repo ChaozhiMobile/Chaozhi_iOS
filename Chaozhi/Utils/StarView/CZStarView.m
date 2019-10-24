@@ -26,6 +26,11 @@
 
 @implementation CZStarView
 
+-(void)awakeFromNib {
+    [super awakeFromNib];
+    [self initView];
+}
+
 /**
  *  重写父类的init方法
  *

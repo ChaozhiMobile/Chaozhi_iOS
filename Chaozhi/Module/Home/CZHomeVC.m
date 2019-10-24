@@ -19,10 +19,15 @@
 
 #define TEACHERNUM 2.5
 
-@implementation DayNewTabCell
-@end
+#define TabHeadHeight 36
+
+//@implementation DayNewTabCell
+//@end
 
 @interface CZHomeVC ()<UITableViewDataSource,UITableViewDelegate,SKStoreProductViewControllerDelegate, UpdateViewDelegate,SDCycleScrollViewDelegate>{
+    NSArray *titleArr;
+    NSArray *moreArr;
+    NSMutableDictionary *headHeightDic;//tabviewHead高度
 }
 @property (nonatomic, strong) UIView *BGView;
 @property (nonatomic, strong) CZUpdateView *updateView;
@@ -35,59 +40,8 @@
 @property (nonatomic , retain) NSMutableArray <HomeNewsItem *> *newsDatsSource;
 @property (nonatomic , retain) CourseItem *feaCourseItem1,*feaCourseItem2;
 
-/** 背景视图 */
-@property (weak, nonatomic) IBOutlet UIScrollView *bgScrollView;
 /** 轮播图 */
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *bannerView;
-/** 推荐课程 */
-@property (weak, nonatomic) IBOutlet UIView *favCourseLeftView;
-@property (weak, nonatomic) IBOutlet UIView *favCourseRightView;
-@property (weak, nonatomic) IBOutlet UIImageView *courseImgView1;
-@property (weak, nonatomic) IBOutlet UILabel *coursePriceLB1;
-@property (weak, nonatomic) IBOutlet UILabel *courseDiscountPriceLB1;
-@property (weak, nonatomic) IBOutlet UILabel *courseCommentCountLB1;
-@property (weak, nonatomic) IBOutlet UILabel *courseTeaNameLB1;
-@property (weak, nonatomic) IBOutlet UIImageView *courseImgView2;
-@property (weak, nonatomic) IBOutlet UILabel *coursePriceLB2;
-@property (weak, nonatomic) IBOutlet UILabel *courseDiscountPriceLB2;
-@property (weak, nonatomic) IBOutlet UILabel *courseCommentCountLB2;
-@property (weak, nonatomic) IBOutlet UILabel *courseTeaNameLB2;
-/** 我们的公开课 */
-@property (weak, nonatomic) IBOutlet UIImageView *publicCourseImgView;
-@property (weak, nonatomic) IBOutlet UILabel *publicTitleLB;
-@property (weak, nonatomic) IBOutlet UILabel *publicTeaLB;
-/** 微课 */
-@property (weak, nonatomic) IBOutlet UIView *weikeBgView;
-@property (weak, nonatomic) IBOutlet UIImageView *weikeImgView;
-@property (weak, nonatomic) IBOutlet UILabel *weikeTitleLB;
-@property (weak, nonatomic) IBOutlet UILabel *weikeTeaLB;
-@property (weak, nonatomic) IBOutlet UILabel *weikeCountLB;
-/** 精彩活动 */
-@property (weak, nonatomic) IBOutlet UIImageView *activityImgView;
-@property (weak, nonatomic) IBOutlet UILabel *activityTitleLB;
-@property (weak, nonatomic) IBOutlet UILabel *activityContentLB;
-/** 金牌讲师 */
-@property (weak, nonatomic) IBOutlet UIScrollView *teacherScroView;
-/** 每日新知 */
-@property (weak, nonatomic) IBOutlet UITableView *newsTabView;
-
-- (IBAction)showMoreCourseAction:(UIButton *)sender;
-- (IBAction)showPublicCourseAction:(id)sender;
-- (IBAction)showMoreVideoAction:(id)sender;
-- (IBAction)showActivityDetailAction:(id)sender;
-
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *courseViewTopConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *courseViewHConstraint; //默认240
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *publicViewTopConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *publicViewHConstraint; //默认186
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *weikeViewTopConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *weikeViewHConstraint; //默认175
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *activityViewTopContraints;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *activityViewHContraints; //默认315
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *teacherViewTopContraints;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *teacherViewHContraints; //默认220
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *newsViewTopContraints;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *lastViewHConstraints; //每日新知高度 动态
 
 @end
 
@@ -107,14 +61,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = RGBValue(0xf5f5f5);
+//    [UIColor whiteColor];
     
     _statusH.constant = kStatusBarH;
     
     if (![Utils getNetStatus]) {
         XLGAlertView *alert = [[XLGAlertView alloc] initWithTitle:@"温馨提醒" content:@"检测到您的网络异常，请检查网络" leftButtonTitle:@"" rightButtonTitle:@"我知道了"];
     }
-    
+    titleArr = @[@"推荐课程",@"我们的公开课",@"微课",@"精彩活动",@"金牌讲师",@"每日新知"];
+    moreArr = @[@"更多课程>",@"更多公开课>",@"更多视频>",@"",@"",@""];
+    headHeightDic = [NSMutableDictionary dictionary];
     _versionItem = [[VersionItem alloc] init];
     _homeItem = [[HomeInfoItem alloc] init];
     _categoryItems = [[HomeCategoryItem alloc] init];
@@ -132,19 +89,22 @@
         vc.selectCourseBlock = ^(CourseCategoryItem *item) {
             NSLog(@"选择课程ID: %@",item.ID);
             weakSelf.page = 1;
-            weakSelf.bgScrollView.contentOffset = CGPointMake(0, 0);
-            [self requestCourseData];
+//            weakSelf.bgScrollView.contentOffset = CGPointMake(0, 0);
+            [weakSelf requestCourseData];
         };
         [self.navigationController pushViewController:vc animated:YES];
     }
-    _lastViewHConstraints.constant = 40;
     
-    _bgScrollView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+    _mainTabView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         weakSelf.page = 1;
         [weakSelf getData];
     }];
-    _bgScrollView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+    _mainTabView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         [weakSelf getData];
+    }];
+    [_bannerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(weakSelf.view.mas_width);
+        make.height.mas_equalTo(weakSelf.view.mas_width).multipliedBy(0.5);
     }];
     
     [self getData];
@@ -168,15 +128,16 @@
 
 //版本更新
 - (void)checkVersion {
+    __weak typeof(self) weakSelf = self;
     [[NetworkManager sharedManager] postJSON:URL_CheckVersion parameters:@{@"device":@"ios",@"version":AppVersion} completion:^(id responseData, RequestState status, NSError *error) {
         
-        self.versionItem = [VersionItem yy_modelWithJSON:responseData];
+        weakSelf.versionItem = [VersionItem yy_modelWithJSON:responseData];
         
-        if ([self.versionItem.grade isEqualToString:@"2"]) { //推荐升级
-            [self handleVersionUpdate:UpdateTypeSelect];
+        if ([weakSelf.versionItem.grade isEqualToString:@"2"]) { //推荐升级
+            [weakSelf handleVersionUpdate:UpdateTypeSelect];
         }
-        if ([self.versionItem.grade isEqualToString:@"3"]) { //强制升级
-            [self handleVersionUpdate:UpdateTypeForce];
+        if ([weakSelf.versionItem.grade isEqualToString:@"3"]) { //强制升级
+            [weakSelf handleVersionUpdate:UpdateTypeForce];
         }
     }];
 }
@@ -209,14 +170,12 @@
 
 //取消更新
 - (void)updateRejectBtnClicked {
-    
     [self.BGView removeFromSuperview];
     [self.updateView removeFromSuperview];
 }
 
 //更新
 - (void)updateBtnClicked {
-    
     if ([self.versionItem.grade intValue] == 2) {
         [self.BGView removeFromSuperview];
         [self.updateView removeFromSuperview];
@@ -237,12 +196,12 @@
     [[NetworkManager sharedManager] postJSON:URL_AppHome parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         weakSelf.homeItem = [HomeInfoItem yy_modelWithJSON:responseData];
         [weakSelf refreshBannerUI];
-        [weakSelf refreshActivityUI];
-        if ([weakSelf.bgScrollView.mj_header isRefreshing]) {
-            [weakSelf.bgScrollView.mj_header endRefreshing];
+        [weakSelf.mainTabView reloadData];
+        if ([weakSelf.mainTabView.mj_header isRefreshing]) {
+            [weakSelf.mainTabView.mj_header endRefreshing];
         }
-        if ([weakSelf.bgScrollView.mj_footer isRefreshing]) {
-            [weakSelf.bgScrollView.mj_footer endRefreshing];
+        if ([weakSelf.mainTabView.mj_footer isRefreshing]) {
+            [weakSelf.mainTabView.mj_footer endRefreshing];
         }
     }];
 }
@@ -253,17 +212,14 @@
     if (![NSString isEmpty:selectCourseID]) {
         __weak typeof(self) weakSelf = self;
         [[NetworkManager sharedManager] postJSON:URL_Category parameters:@{@"category_id":selectCourseID} completion:^(id responseData, RequestState status, NSError *error) {
-            if ([weakSelf.bgScrollView.mj_header isRefreshing]) {
-                [weakSelf.bgScrollView.mj_header endRefreshing];
+            if ([weakSelf.mainTabView.mj_header isRefreshing]) {
+                [weakSelf.mainTabView.mj_header endRefreshing];
             }
-            if ([weakSelf.bgScrollView.mj_footer isRefreshing]) {
-                [weakSelf.bgScrollView.mj_footer endRefreshing];
+            if ([weakSelf.mainTabView.mj_footer isRefreshing]) {
+                [weakSelf.mainTabView.mj_footer endRefreshing];
             }
             weakSelf.categoryItems = [HomeCategoryItem yy_modelWithJSON:responseData];
-            [weakSelf refreshFeaCourseUI];
-            [weakSelf refreshVideoUI];
-            [weakSelf refreshWeikeUI];
-            [weakSelf refreshTeacherUI];
+            [weakSelf.mainTabView reloadData];
         }];
         
         [[NetworkManager sharedManager] postJSON:URL_NewsList parameters:@{@"category_id":selectCourseID,@"p":@(_page),@"offset":@"5",@"news_category_id":@""} completion:^(id responseData, RequestState status, NSError *error) {
@@ -271,26 +227,18 @@
             weakSelf.newsItems = [HomeNewsListItem yy_modelWithJSON:responseData];
             if (weakSelf.page==1) {
                 [weakSelf.newsDatsSource removeAllObjects];
-                weakSelf.lastViewHConstraints.constant = 40;
             }
             
             if (weakSelf.newsDatsSource.count<weakSelf.newsItems.total) {
                 weakSelf.page++;
                 [weakSelf.newsDatsSource addObjectsFromArray:            weakSelf.newsItems.rows];
-                weakSelf.bgScrollView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+                weakSelf.mainTabView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
                     [weakSelf getData];
                 }];
             } else {
-                weakSelf.bgScrollView.mj_footer = nil;
+                weakSelf.mainTabView.mj_footer = nil;
             }
-            if (weakSelf.newsDatsSource.count>0) {
-                weakSelf.newsViewTopContraints.constant = 10;
-                weakSelf.lastViewHConstraints.constant = 40 + weakSelf.newsDatsSource.count*100;
-            } else {
-                weakSelf.newsViewTopContraints.constant = 0;
-                weakSelf.lastViewHConstraints.constant = 0;
-            }
-            [weakSelf.newsTabView reloadData];
+            [weakSelf.mainTabView reloadData];
         }];
     }
 }
@@ -328,43 +276,273 @@
     }
 }
 
-#pragma mark - 精彩活动
+#pragma mark - UITableView 代理
+/** 代理 */
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 6;
+}
 
-- (void)refreshActivityUI{
-    if (_homeItem.activity_list.count==0) {
-        _activityViewTopContraints.constant = 0;
-        _activityViewHContraints.constant = 0;
-        _activityTitleLB.superview.clipsToBounds = YES;
-        return;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (section==5) {
+        return _newsDatsSource.count;
     }
-    _activityTitleLB.superview.clipsToBounds = NO;
-    _activityViewTopContraints.constant = 10;
-    _activityViewHContraints.constant = 315;
-    HomeActivityItem *activityItem = [_homeItem.activity_list firstObject];
-    _activityTitleLB.text = activityItem.title;
-    [_activityImgView sd_setImageWithURL:[NSURL URLWithString:activityItem.img] placeholderImage:[UIImage imageNamed:@"default_rectangle_img"]];
-    _activityContentLB.text = activityItem.subtitle;
+    else {
+        NSInteger count = 0;
+        if (section==0) {
+            count = _categoryItems.feature_product_list.count;
+        }
+        else if (section==1) {
+            count = _categoryItems.try_video_list.count;
+        }
+        else if (section==2) {
+            count = _categoryItems.weike_list.count;
+        }
+        else if (section==3) {
+            count = _homeItem.activity_list.count;
+        }
+        else if (section==4) {
+            count = _categoryItems.teacher_list.count;
+        }
+        CGFloat height = (count==0?1:TabHeadHeight);
+        [headHeightDic setObject:@(height) forKey:@(section)];
+        return count==0?0:1;
+    }
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CZHomeBaseCell *cell;
+    if (indexPath.section==0) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"CZHomeCourseCell"];
+        CZHomeCourseCell *tempCell = (CZHomeCourseCell *)cell;
+        NSInteger count = _categoryItems.feature_product_list.count;
+        NSArray *arr = @[tempCell.leftView,tempCell.rightView];
+        for (NSInteger index = 0; index<MIN(2, count); index++) {
+            UIView *bgView = arr[index];
+            CourseItem *item = _categoryItems.feature_product_list[index];
+            UIImageView *imgView = [bgView viewWithTag:1000];
+            UILabel *priceLab = [bgView viewWithTag:1001];
+            UILabel *oldPriceLab = [bgView viewWithTag:1002];
+            UILabel *titleLab = [bgView viewWithTag:1003];
+            UILabel *countLab = [bgView viewWithTag:1004];
+            CZStarView *starView = [bgView viewWithTag:1005];
+            UIButton *sender = [bgView viewWithTag:1006];
+            [imgView sd_setImageWithURL:[NSURL URLWithString:item.img] placeholderImage:[UIImage imageNamed:@"default_course"]];
+            priceLab.text = item.price;
+            oldPriceLab.text = item.original_price;
+            titleLab.text = item.name;
+            countLab.text = item.review_num;
+            starView.score = [item.review_star floatValue];
+            [sender setTitle:item.ID forState:UIControlStateNormal];
+            [sender addTarget:self action:@selector(coureseDetail:) forControlEvents:UIControlEventTouchUpInside];
+        }
+    }
+    else if (indexPath.section==1) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"CZHomePublicCell"];
+        HomeTryVideoItem *tryVideoItem = [_categoryItems.try_video_list firstObject];
+        [cell.imgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",tryVideoItem.img]] placeholderImage:[UIImage imageNamed:@"default_course"]];
+        cell.titleLab.text = tryVideoItem.title;
+        cell.contentLab.text = [NSString stringWithFormat:@"主讲讲师：%@",tryVideoItem.teacher];
+        cell.dataSource = tryVideoItem;
+    }
+    else if (indexPath.section==2) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"CZHomeWeiKeCell"];
+        HomeWeikeItem *weikeItem = [_categoryItems.weike_list firstObject];
+        CZHomeWeiKeCell *tempCell = (CZHomeWeiKeCell *)cell;
+        [cell.imgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",weikeItem.cover]] placeholderImage:[UIImage imageNamed:@"default_course"]];
+        cell.titleLab.text = weikeItem.title;
+        cell.contentLab.text = weikeItem.teacher_name;
+        tempCell.countLab.text = [NSString stringWithFormat:@"%@人观看",weikeItem.play_num];
+        cell.dataSource = weikeItem;
+    }
+    else if (indexPath.section==3) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"CZHomeActivityCell"];
+        HomeActivityItem *activityItem = [_homeItem.activity_list firstObject];
+        cell.titleLab.text = activityItem.title;
+        [cell.imgView sd_setImageWithURL:[NSURL URLWithString:activityItem.img] placeholderImage:[UIImage imageNamed:@"default_rectangle_img"]];
+        cell.contentLab.text = activityItem.subtitle;
+        cell.dataSource = activityItem;
+    }
+    else if (indexPath.section==4) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"CZHomeGoldTeacherCell"];
+        CZHomeGoldTeacherCell *tempCell = (CZHomeGoldTeacherCell *)cell;
+        [self refreshTeacherUI:tempCell.teacherScroView];
+    }
+    else if (indexPath.section==5) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"CZHomeNewsCell"];
+        CZHomeNewsCell *tempCell = (CZHomeNewsCell *)cell;
+        HomeNewsItem *item = _newsDatsSource[indexPath.row];
+        [tempCell.imgView sd_setImageWithURL:[NSURL URLWithString:item.img] placeholderImage:[UIImage imageNamed:@"default_square_img"]];
+        tempCell.titleLab.text = item.title;
+        tempCell.contentLab.text = item.subtitle;
+        tempCell.timeLab.text = item.ct;
+        cell.dataSource = item;
+    }
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    NSInteger count = 0;
+    if (section==0) {
+        count = _categoryItems.feature_product_list.count;
+    }
+    else if (section==1) {
+        count = _categoryItems.try_video_list.count;
+    }
+    else if (section==2) {
+        count = _categoryItems.weike_list.count;
+    }
+    else if (section==3) {
+        count = _homeItem.activity_list.count;
+    }
+    else if (section==4) {
+        count = _categoryItems.teacher_list.count;
+    }
+    else if (section==5) {
+        count = _newsDatsSource.count;
+    }
+    if (count==0) {
+        return 0.000001;
+    }
+    return  TabHeadHeight;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    CGFloat height = [[headHeightDic objectForKey:@(section)] floatValue];
+    if (height==0) {
+        return 1;
+    }
+    return 10;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *bgView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, TabHeadHeight)];
+    bgView.backgroundColor = [UIColor whiteColor];
+    bgView.clipsToBounds = YES;
+    UIImageView *leftIcon = [[UIImageView alloc]init];
+    leftIcon.image = [UIImage imageNamed:@"home_title_one"];
+    [bgView addSubview:leftIcon];
+    
+    UILabel *titleLab = [[UILabel alloc]init];
+    titleLab.font = [UIFont systemFontOfSize:14];
+    [bgView addSubview:titleLab];
+    titleLab.text = titleArr[section];
+    
+    UIButton *sender = [[UIButton alloc]init];
+    [sender setTitleColor:kBlackColor forState:UIControlStateNormal];
+    sender.titleLabel.font = [UIFont systemFontOfSize:13];
+    [sender setTitle:moreArr[section] forState:UIControlStateNormal];
+    [sender addTarget:self action:@selector(showMoreAction:) forControlEvents:UIControlEventTouchUpInside];
+    sender.tag = 100+section;
+    [bgView addSubview:sender];
+    
+    if (section==4) {
+        bgView.backgroundColor = self.view.backgroundColor;
+    }
+    
+    [leftIcon mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(bgView).offset(12);
+        make.centerY.mas_equalTo(bgView);
+    }];
+    
+    [titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(leftIcon).offset(10);
+        make.centerY.mas_equalTo(bgView);
+    }];
+    
+    [sender mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(bgView).offset(-4);
+        make.top.bottom.mas_equalTo(bgView);
+        make.width.mas_equalTo(100);
+    }];
+    
+    return bgView;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    UIView *bgView = [[UIView alloc]init];
+    bgView.backgroundColor = self.view.backgroundColor;
+    return bgView;
+}
+
+#pragma mark - 点击详情
+/** 点击详情 */
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    CZHomeBaseCell *tabCell = (CZHomeBaseCell *)[tableView cellForRowAtIndexPath:indexPath];
+    if (indexPath.section==1) {//我们公开课点击
+        HomeTryVideoItem *tryVideoItem = tabCell.dataSource;
+        VideoItem *item = [[VideoItem alloc] init];
+        item.live_id = tryVideoItem.live_id;
+        item.product_id = @"0";
+        item.type = @"1";
+        TalkfunPlaybackViewController *vc = [[TalkfunPlaybackViewController alloc] init];
+        vc.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":tryVideoItem.access_token},@"data", nil];
+        vc.playbackID = item.live_id;
+        vc.videoItem = item;
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if (indexPath.section==2) {//微课点击
+        HomeWeikeItem *weikeItem = tabCell.dataSource;
+        [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_WeikeDetail,weikeItem.ID] withTitle:weikeItem.title isPresent:NO];
+    }
+    else if (indexPath.section==3) {//精彩活动点击
+           HomeActivityItem *activityItem = tabCell.dataSource;
+           [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_InfiniteNews,activityItem.ID] withTitle:@"" isPresent:NO];
+       }
+    else if (indexPath.section==4) {
+           
+       }
+    else if (indexPath.section==5) {//活动点击
+           HomeNewsItem *item = _newsDatsSource[indexPath.row];
+           [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_InfiniteNews,item.ID] withTitle:@"" isPresent:NO];
+    }
+    else if (indexPath.section==0) {
+           
+    }
+}
+
+#pragma mark - 更多点击
+/** 更多点击 */
+- (void)showMoreAction:(UIButton *)sender {
+    NSInteger index = sender.tag-100;
+    if (index==0) {//更多课程
+        NSString *selectCourseID = [CacheUtil getCacherWithKey:kSelectCourseIDKey];
+        [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_Store,selectCourseID] withTitle:@"" isPresent:NO];
+    }
+    else if (index==1) {// 更多公开课
+        [BaseWebVC showWithContro:self withUrlStr:H5_StoreFree withTitle:@"" isPresent:NO];
+    }
+    else if (index==2) {
+        [BaseWebVC showWithContro:self withUrlStr:H5_WeikeList withTitle:@"" isPresent:NO];
+    }
 }
 
 #pragma mark - 金牌讲师
 
-- (void)refreshTeacherUI{
-    [_teacherScroView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    if (_categoryItems.teacher_list.count==0) {
-        _teacherViewTopContraints.constant = 0;
-        _teacherViewHContraints.constant = 0;
-        return;
-    }
-    _teacherScroView.contentOffset = CGPointMake(0, 0);
+- (void)refreshTeacherUI:(UIScrollView *)scroll{
+    [scroll.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    scroll.contentOffset = CGPointMake(0, 0);
     NSInteger count = _categoryItems.teacher_list.count;
     CGFloat blankSpace = 15;
     NSInteger num = TEACHERNUM;
     CGFloat viewWidth = (WIDTH-blankSpace*(num+1))/TEACHERNUM;
     CGFloat viewHeight = viewWidth*1.176+10+20*5;
-    _teacherViewTopContraints.constant = 10;
-    _teacherViewHContraints.constant = viewHeight+40;
-    _teacherScroView.contentSize = CGSizeMake((blankSpace*(count+1))+viewWidth*count,0);
-    _teacherViewHContraints.constant = viewHeight+40;
+
+    scroll.contentSize = CGSizeMake((blankSpace*(count+1))+viewWidth*count,0);
+    [scroll mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(viewHeight);
+        make.width.mas_equalTo(WIDTH);
+    }];
+    UIView *contentView = [[UIView alloc]init];;
+    [scroll addSubview:contentView];
+    [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(scroll);
+    }];
+    
+    UIView *lastView;
+    
     for (NSInteger i = 0; i < count; i ++) {
         HomeTeacherItem *teacherItem = _categoryItems.teacher_list[i];
         UIView *view = [[[NSBundle mainBundle]loadNibNamed:@"TeacherView" owner:self options:nil]firstObject];
@@ -376,13 +554,26 @@
         nameLB.text = teacherItem.name;
         UILabel *detailLB = [view viewWithTag:3];
         detailLB.text = teacherItem.info;
-        [_teacherScroView addSubview:view];
+        [contentView addSubview:view];
         
+        [view mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(contentView.mas_top).offset(10);
+            make.bottom.mas_equalTo(contentView.mas_bottom);
+            make.left.mas_equalTo(lastView?lastView.mas_right:@0).offset(10);
+            make.width.mas_equalTo(viewWidth);
+            make.height.mas_equalTo(viewHeight);
+        }];
+        lastView = view;
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jumpTeacherDetail:)];
         [view addGestureRecognizer:tap];
     }
+    [contentView mas_updateConstraints:^(MASConstraintMaker *make) {
+           make.right.equalTo(lastView.mas_right);
+       }];
 }
 
+#pragma mark - 教师详情
+/** 教师详情 */
 - (void)jumpTeacherDetail:(UITapGestureRecognizer *)tap {
     UIView *view = tap.view;
     NSInteger index = view.tag - 1000;
@@ -391,193 +582,10 @@
     [BaseWebVC showWithContro:self withUrlStr:str withTitle:teacherItem.name isPresent:NO];
 }
 
-#pragma mark - 我们的公开课
-
-- (void)refreshVideoUI {
-    if (_categoryItems.try_video_list.count==0) {
-        _publicViewTopConstraint.constant = 0;
-        _publicViewHConstraint.constant = 0;
-        return;
-    }
-    _publicViewTopConstraint.constant = 10;
-    _publicViewHConstraint.constant = 186;
-    HomeTryVideoItem *tryVideoItem = [_categoryItems.try_video_list firstObject];
-    _publicCourseImgView.image = nil;
-    _publicTeaLB.text = @"";
-    _publicTitleLB.text = @"";
-    if (tryVideoItem) {
-        [_publicCourseImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",tryVideoItem.img]] placeholderImage:[UIImage imageNamed:@"default_course"]];
-        _publicTeaLB.text = [NSString stringWithFormat:@"主讲讲师：%@",tryVideoItem.teacher];
-        _publicTitleLB.text = tryVideoItem.title;
-    }
-}
-
-#pragma mark - 微课
-
-- (void)refreshWeikeUI{
-    if (_categoryItems.weike_list.count==0) {
-        _weikeViewTopConstraint.constant = 0;
-        _weikeViewHConstraint.constant = 0;
-        return;
-    }
-    _weikeViewTopConstraint.constant = 10;
-    _weikeViewHConstraint.constant = 175;
-    HomeWeikeItem *weikeItem = [_categoryItems.weike_list firstObject];
-    _weikeImgView.image = nil;
-    _weikeTitleLB.text = @"";
-    _weikeTeaLB.text = @"";
-    _weikeCountLB.text = @"";
-    
-    if (weikeItem) {
-        [_weikeImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",weikeItem.cover]] placeholderImage:[UIImage imageNamed:@"default_course"]];
-        CGFloat titleH = [weikeItem.title getTextHeightWithFont:[UIFont systemFontOfSize:14] width:autoScaleW(182)];
-        _weikeTitleLB.height = titleH;
-        _weikeTitleLB.text = weikeItem.title;
-        _weikeTeaLB.text = weikeItem.teacher_name;
-        _weikeCountLB.text = [NSString stringWithFormat:@"%@人观看",weikeItem.play_num];
-        
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showWeikeVideoDetail)];
-        [_weikeBgView addGestureRecognizer:tap];
-    }
-}
-
-- (void)refreshFeaCourseUI{
-    
-//    _categoryItems.feature_product_list = [NSArray array];
-    
-    if (_categoryItems.feature_product_list.count==0) {
-        _courseViewTopConstraint.constant = 0;
-        _courseViewHConstraint.constant = 0;
-        return;
-    }
-    _courseViewTopConstraint.constant = 10;
-    _courseViewHConstraint.constant = 240;
-    _courseImgView1.image = nil;
-    _courseTeaNameLB1.text = @"";
-    _courseImgView2.image = nil;
-    _courseTeaNameLB2.text = @"";
-    for (NSInteger i = 0; i < MIN(2, _categoryItems.feature_product_list.count); i ++) {
-        switch (i) {
-            case 0:
-            {
-                _feaCourseItem1 = [_categoryItems.feature_product_list firstObject];
-                [_courseImgView1 sd_setImageWithURL:[NSURL URLWithString:_feaCourseItem1.img] placeholderImage:[UIImage imageNamed:@"default_course"]];
-                _coursePriceLB1.text = _feaCourseItem1.price;
-                NSAttributedString *attrStr = [[NSAttributedString alloc] initWithString:_feaCourseItem1.original_price attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:10],NSForegroundColorAttributeName:[UIColor colorWithHexString:@"#b4b4b4"],NSStrikethroughStyleAttributeName:@(NSUnderlineStyleSingle|NSUnderlinePatternSolid),NSStrikethroughColorAttributeName:[UIColor colorWithHexString:@"#b4b4b4"]}];
-                _courseDiscountPriceLB1.attributedText = attrStr;
-                _courseTeaNameLB1.text = _feaCourseItem1.name;
-                _courseCommentCountLB1.text = _feaCourseItem1.review_num;
-                [_favCourseLeftView layoutIfNeeded];
-                CZStarView *view = [[CZStarView alloc] initWithFrame:CGRectMake(_favCourseLeftView.width-76, 181, 76, 12) currentScore:[_feaCourseItem1.review_star floatValue] delegate:nil];
-                [_favCourseLeftView addSubview:view];
-                
-                UITapGestureRecognizer *leftTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(favCourseLeftAction)];
-                [_favCourseLeftView addGestureRecognizer:leftTap];
-            }
-                break;
-            case 1:
-            {
-                _feaCourseItem2 = _categoryItems.feature_product_list[1];
-                [_courseImgView2 sd_setImageWithURL:[NSURL URLWithString:_feaCourseItem2.img] placeholderImage:[UIImage imageNamed:@"default_course"]];
-                _coursePriceLB2.text = _feaCourseItem2.price;
-                _courseDiscountPriceLB2.text = _feaCourseItem2.original_price;
-                NSAttributedString *attrStr = [[NSAttributedString alloc] initWithString:_feaCourseItem2.original_price attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:10],NSForegroundColorAttributeName:[UIColor colorWithHexString:@"#b4b4b4"],NSStrikethroughStyleAttributeName:@(NSUnderlineStyleSingle|NSUnderlinePatternSolid),NSStrikethroughColorAttributeName:[UIColor colorWithHexString:@"#b4b4b4"]}];
-                _courseDiscountPriceLB2.attributedText = attrStr;
-                _courseTeaNameLB2.text = _feaCourseItem2.name;
-                _courseCommentCountLB2.text = _feaCourseItem2.review_num;
-                [_favCourseRightView layoutIfNeeded];
-                CZStarView *view = [[CZStarView alloc] initWithFrame:CGRectMake(_favCourseRightView.width-76, 181, 76, 12) currentScore:[_feaCourseItem2.review_star floatValue] delegate:nil];
-                [_favCourseRightView addSubview:view];
-                
-                UITapGestureRecognizer *rightTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(favCourseRightAction)];
-                [_favCourseRightView addGestureRecognizer:rightTap];
-            }
-                break;
-            default:
-                break;
-        }
-    }
-}
-
-// 推荐课程左点击
-- (void)favCourseLeftAction {
-    [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_StoreProduct,_feaCourseItem1.ID] withTitle:@"" isPresent:NO];
-}
-
-// 推荐课程右点击
-- (void)favCourseRightAction {
-    [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_StoreProduct,_feaCourseItem2.ID] withTitle:@"" isPresent:NO];
-}
-
-// 更多课程
-- (IBAction)showMoreCourseAction:(UIButton *)sender {
-    
-    NSString *selectCourseID = [CacheUtil getCacherWithKey:kSelectCourseIDKey];
-    [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_Store,selectCourseID] withTitle:@"" isPresent:NO];
-}
-
-// 更多公开课
-- (IBAction)showMorePublicCourseAction:(id)sender {
-    [BaseWebVC showWithContro:self withUrlStr:H5_StoreFree withTitle:@"" isPresent:NO];
-}
-
-// 马上试听
-- (IBAction)showPublicCourseAction:(id)sender {
-    HomeTryVideoItem *tryVideoItem = [_categoryItems.try_video_list firstObject];
-    VideoItem *item = [[VideoItem alloc] init];
-    item.live_id = tryVideoItem.live_id;
-    item.product_id = @"0";
-    item.type = @"1";
-    TalkfunPlaybackViewController *vc = [[TalkfunPlaybackViewController alloc] init];
-    vc.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":tryVideoItem.access_token},@"data", nil];
-    vc.playbackID = item.live_id;
-    vc.videoItem = item;
-    vc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:vc animated:YES];
-}
-
-// 微课视频详情
-- (void)showWeikeVideoDetail {
-    HomeWeikeItem *weikeItem = [_categoryItems.weike_list firstObject];
-    [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_WeikeDetail,weikeItem.ID] withTitle:weikeItem.title isPresent:NO];
-}
-
-// 更多微课视频
-- (IBAction)showMoreVideoAction:(id)sender {
-    [BaseWebVC showWithContro:self withUrlStr:H5_WeikeList withTitle:@"" isPresent:NO];
-}
-
-// 精彩活动
-- (IBAction)showActivityDetailAction:(id)sender {
-    HomeActivityItem *activityItem = [_homeItem.activity_list firstObject];
-    [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_InfiniteNews,activityItem.ID] withTitle:@"" isPresent:NO];
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _newsDatsSource.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    DayNewTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DayNewTabCellID"];
-//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    HomeNewsItem *item = _newsDatsSource[indexPath.row];
-    [cell.dayNewIconImgView sd_setImageWithURL:[NSURL URLWithString:item.img] placeholderImage:[UIImage imageNamed:@"default_square_img"]];
-    cell.dayNewTitleLB.text = item.title;
-    cell.dayNewContentLB.text = item.subtitle;
-    cell.dayNewTimeLB.text = item.ct;
-    return cell;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    HomeNewsItem *item = _newsDatsSource[indexPath.row];
-    [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_InfiniteNews,item.ID] withTitle:@"" isPresent:NO];
+#pragma mark - 课程详情
+/** 课程详情 */
+- (void)coureseDetail:(UIButton *)sender {
+    [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_StoreProduct,sender.currentTitle] withTitle:@"" isPresent:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -595,4 +603,25 @@
 }
 */
 
+@end
+
+@implementation CZHomeBaseCell
+@end
+
+@implementation CZHomeCourseCell
+@end
+
+@implementation CZHomePublicCell
+@end
+
+@implementation CZHomeWeiKeCell
+@end
+
+@implementation CZHomeActivityCell
+@end
+
+@implementation CZHomeGoldTeacherCell
+@end
+
+@implementation CZHomeNewsCell
 @end
