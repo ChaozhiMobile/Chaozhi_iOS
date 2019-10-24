@@ -244,8 +244,7 @@
  *
  *  1. 无论是公开群还是私有群，群成员均可以拉到群组信息。
  *  2. 如果是公开群，非群组成员可以拉到 group|groupName|owner|groupType|createTime|maxMemberNum|memberNum|introduction|faceURL|addOpt|onlineMemberNum|customInfo 这些字段信息。如果是私有群，非群组成员拉取不到群组信息。
- *  3. 默认拉取基本资料,如果想要拉取自定义字段，首先要通过 [IM 控制台](https://console.cloud.tencent.com/avc) -> 功能配置 -> 群维度自定义字段 配置对应的 "自定义字段" 和用户操作权限，然后设置 TIMUserConfig -> IMGroupInfoOption -> groupCustom = @[@"自定义字段名称",...]。
-
+ *
  *  @param succ 成功回调，不包含 selfInfo 信息
  *  @param fail 失败回调
  *
@@ -268,8 +267,6 @@
 /**
  *  4.4 获取群成员列表
  *
- *  默认拉取内置字段，但不拉取自定义字段，如果想要拉取自定义字段，首先要通过 [IM 控制台](https://console.cloud.tencent.com/avc) -> 功能配置 -> 群成员维度自定义字段配置对应的 "自定义字段" 和用户操作权限，后设置 TIMUserConfig -> TIMGroupMemberInfoOption -> memberCustom = @[@"自定义字段名称",...]
- *
  *  @param groupId 群组Id
  *  @param succ    成功回调 (TIMGroupMemberInfo 列表)
  *  @param fail    失败回调
@@ -280,8 +277,6 @@
 
 /**
  *  4.5 获取本人在群组内的成员信息
- *
- *  默认拉取基本资料，如果想要拉取自定义字段，请参考 getGroupMembers
  *
  *  @param groupId 群组Id
  *  @param succ    成功回调，返回信息

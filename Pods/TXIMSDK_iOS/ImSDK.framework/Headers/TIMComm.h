@@ -427,6 +427,10 @@ typedef NS_ENUM(NSInteger, TIM_GROUP_INFO_CHANGE_TYPE){
      *  群主变更
      */
     TIM_GROUP_INFO_CHANGE_GROUP_OWNER                   = 0x05,
+    /**
+     *  群自定义字段变更
+     */
+    TIM_GROUP_INFO_CHANGE_GROUP_CUSTOM                  = 0x06,
 };
 
 /**
@@ -1074,10 +1078,10 @@ typedef void (^TIMSendToUsersFail)(int code, NSString *err, TIMSendToUsersDetail
 ///已读回执是自己发出去的消息，对方设置为已读后，自己能收到已读的回调，只针对单聊（C2C）会话生效，默认是关闭的，如果需要开启，请设置 enableReadReceipt 为 YES，收到消息的用户需要显式调用 TIMConversation.h -> setReadMessage，发消息的用户才能通过 TIMMessageReceiptListener 监听到消息的已读回执。
 @property(nonatomic,assign) BOOL enableReadReceipt;
 
-///设置默认拉取的群组资料,当您获取群资料的时候，默认只能拉取内置字段，如果想要拉取自定义字段，首先要通过 [IM 控制台](https://console.cloud.tencent.com/avc) -> 功能配置 -> 群维度自定义字段 配置对应的 "自定义字段" 和用户操作权限，然后设置 groupInfoOpt -> groupCustom = @[@"自定义字段名称",...]，最后调用 TIMGroupManager -> modifyGroupCustomInfo 设置群自定字段的 value，注意如果群自定义段的 value 没设置，获取群信息是拉取不到对应的群自定义字段的。
+///设置默认拉取的群组资料,如果想要拉取自定义字段，要通过 [IM 控制台](https://console.cloud.tencent.com/avc) -> 功能配置 -> 群维度自定义字段配置对应的 "自定义字段" 和用户操作权限，控制台配置之后 5 分钟后才会生效。
 @property(nonatomic,strong) TIMGroupInfoOption * groupInfoOpt;
 
-///设置默认拉取的群成员资料,当您获取群成员资料的时候，默认只能拉取内置字段，如果想要拉取自定义字段，首先要通过 [IM 控制台](https://console.cloud.tencent.com/avc) -> 功能配置 -> 群成员维度自定义字段配置对应的 "自定义字段" 和用户操作权限，然后设置 groupMemberInfoOpt -> memberCustom = @[@"自定义字段名称",...]，最后调用 TIMGroupManager -> modifyGroupMemberInfoSetCustomInfo 设置群成员自定义字段的 value，注意如果群成员自定义段的 value 没设置，获取群成员信息是拉取不到对应自定义字段的。
+///设置默认拉取的群成员资料,如果想要拉取自定义字段，要通过 [IM 控制台](https://console.cloud.tencent.com/avc) -> 功能配置 -> 群成员维度自定义字段配置对应的 "自定义字段" 和用户操作权限，控制台配置之后 5 分钟后才会生效。
 @property(nonatomic,strong) TIMGroupMemberInfoOption * groupMemberInfoOpt;
 
 ///关系链参数
@@ -1361,8 +1365,8 @@ extern NSString * const kIOSOfflinePushNoSound;
 ///需要获取的群组信息标志（TIMGetGroupBaseInfoFlag）,默认为0xffffff
 @property(nonatomic,assign) uint64_t groupFlags;
 
-///需要获取群组资料的自定义信息（NSString*）列表
-@property(nonatomic,strong) NSArray * groupCustom;
+///需要获取群组资料的自定义信息（NSString*）列表 (接口已废弃，控制台配置群组自定义字段后，SDK 会根据权限自动拉取)
+@property(nonatomic,strong) NSArray * groupCustom DEPRECATED_ATTRIBUTE;
 
 @end
 
@@ -1370,10 +1374,10 @@ extern NSString * const kIOSOfflinePushNoSound;
 @interface TIMGroupMemberInfoOption : NSObject
 
 ///需要获取的群成员标志（TIMGetGroupMemInfoFlag）,默认为0xffffff
-@property(nonatomic,assign) uint64_t memberFlags;
+@property(nonatomic,assign) uint64_t memberFlags ;
 
-///需要获取群成员资料的自定义信息（NSString*）列表
-@property(nonatomic,strong) NSArray * memberCustom;
+///需要获取群成员资料的自定义信息（NSString*）列表 (接口已废弃，控制台配置群成员自定义字段后，SDK 会根据权限自动拉取)
+@property(nonatomic,strong) NSArray * memberCustom DEPRECATED_ATTRIBUTE;
 
 @end
 

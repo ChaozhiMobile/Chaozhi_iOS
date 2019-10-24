@@ -451,6 +451,15 @@ typedef NS_ENUM(NSInteger, AgoraCameraCaptureOutputPreference) {
     AgoraCameraCaptureOutputPreferenceUnkown = 3
 };
 
+#if TARGET_OS_IOS
+/** The camera direction. */
+typedef NS_ENUM(NSInteger, AgoraCameraDirection) {
+        /** The rear camera. */
+        AgoraCameraDirectionRear = 0,
+        /** The front camera. */
+        AgoraCameraDirectionFront = 1,
+    };
+#endif
 
 /** Video frame rate */
 typedef NS_ENUM(NSInteger, AgoraVideoFrameRate) {
@@ -728,9 +737,7 @@ typedef NS_ENUM(NSUInteger, AgoraVideoRenderMode) {
     /** Fit(2): Uniformly scale the video until one of its dimension fits the boundary (zoomed to fit). Areas that are not filled due to the disparity in the aspect ratio are filled with black. */
     AgoraVideoRenderModeFit = 2,
 
-    /**
-     Adaptive(3)：This mode is deprecated.
-     */
+    /** Adaptive(3)：This mode is deprecated. */
     AgoraVideoRenderModeAdaptive __deprecated_enum_msg("AgoraVideoRenderModeAdaptive is deprecated.") = 3,
 };
 

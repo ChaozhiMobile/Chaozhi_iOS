@@ -1500,16 +1500,14 @@
                                     <constraint firstAttribute="bottom" secondItem="aoy-9i-fZT" secondAttribute="bottom" id="th9-X3-cQh"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="fwy-FS-RcG">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="fwy-FS-RcG">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="lpr-xn-mtl" customClass="SDCycleScrollView">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="lpr-xn-mtl" secondAttribute="height" multiplier="15:8" id="vOH-NV-Sj3"/>
-                                    </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
                                             <size key="value" width="0.0" height="5"/>
@@ -1554,7 +1552,7 @@
                                                             <rect key="frame" x="0.0" y="10" width="163.5" height="101.5"/>
                                                             <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" secondItem="gd7-38-1lG" secondAttribute="height" multiplier="161:100" id="kj6-EN-deD"/>
+                                                                <constraint firstAttribute="width" secondItem="gd7-38-1lG" secondAttribute="height" multiplier="161:100" priority="999" id="kj6-EN-deD"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ZF-DV-dqY">
@@ -1620,6 +1618,7 @@ VIP保障实验班</string>
                                                         </view>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstItem="cj3-zz-hDE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7ZF-DV-dqY" secondAttribute="trailing" symbolic="YES" id="0zk-DI-cxi"/>
                                                         <constraint firstAttribute="trailing" secondItem="IB2-qu-Ccf" secondAttribute="trailing" id="22a-fz-F0I"/>
                                                         <constraint firstItem="3yY-vg-oJN" firstAttribute="top" secondItem="Mgo-hj-UcV" secondAttribute="bottom" id="25k-1r-FV2"/>
                                                         <constraint firstItem="w3d-p3-3UR" firstAttribute="trailing" secondItem="cj3-zz-hDE" secondAttribute="trailing" id="2nk-48-9db"/>
@@ -1634,6 +1633,7 @@ VIP保障实验班</string>
                                                         <constraint firstItem="Mgo-hj-UcV" firstAttribute="leading" secondItem="vy8-VX-Hc5" secondAttribute="leading" id="IeF-FV-3nz"/>
                                                         <constraint firstItem="3yY-vg-oJN" firstAttribute="leading" secondItem="vy8-VX-Hc5" secondAttribute="leading" id="LD4-zf-T4E"/>
                                                         <constraint firstItem="7ZF-DV-dqY" firstAttribute="top" secondItem="gd7-38-1lG" secondAttribute="bottom" constant="8" id="Lwz-wZ-R9s"/>
+                                                        <constraint firstItem="IB2-qu-Ccf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Kpl-UQ-If7" secondAttribute="trailing" symbolic="YES" id="RWD-ji-tko"/>
                                                         <constraint firstItem="7ZF-DV-dqY" firstAttribute="leading" secondItem="vy8-VX-Hc5" secondAttribute="leading" id="RXM-it-ic8"/>
                                                         <constraint firstItem="Kpl-UQ-If7" firstAttribute="top" secondItem="7ZF-DV-dqY" secondAttribute="bottom" constant="29.5" id="T2w-UR-yOF"/>
                                                         <constraint firstAttribute="trailing" secondItem="Mgo-hj-UcV" secondAttribute="trailing" id="YMU-hg-lVS"/>
@@ -1654,7 +1654,7 @@ VIP保障实验班</string>
                                                             <rect key="frame" x="0.0" y="10" width="163.5" height="101.5"/>
                                                             <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" secondItem="9Ww-xh-F5h" secondAttribute="height" multiplier="82:51" id="hpD-pf-OCr"/>
+                                                                <constraint firstAttribute="width" secondItem="9Ww-xh-F5h" secondAttribute="height" multiplier="82:51" priority="999" id="hpD-pf-OCr"/>
                                                             </constraints>
                                                         </imageView>
                                                         <button opaque="NO" tag="1006" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmZ-HK-N2W">
@@ -1735,8 +1735,10 @@ VIP保障实验班</string>
                                                         <constraint firstItem="jmZ-HK-N2W" firstAttribute="leading" secondItem="lhN-YN-1l1" secondAttribute="leading" id="MRO-Ne-a5X"/>
                                                         <constraint firstAttribute="trailing" secondItem="ItP-0K-D6w" secondAttribute="trailing" id="PMO-Ak-VZ5"/>
                                                         <constraint firstAttribute="trailing" secondItem="9Ww-xh-F5h" secondAttribute="trailing" id="VSq-uT-FtM"/>
+                                                        <constraint firstItem="bhs-76-Ipo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="GRi-Dk-GXx" secondAttribute="trailing" symbolic="YES" id="VhV-he-Ulq"/>
                                                         <constraint firstItem="GRi-Dk-GXx" firstAttribute="leading" secondItem="M28-Wh-Wj6" secondAttribute="leading" id="Xhb-1L-cnA"/>
                                                         <constraint firstItem="mnW-3W-g9h" firstAttribute="leading" secondItem="htw-lj-R7t" secondAttribute="trailing" constant="5" id="Xqn-ZE-5To"/>
+                                                        <constraint firstItem="ItP-0K-D6w" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mnW-3W-g9h" secondAttribute="trailing" symbolic="YES" id="Znr-g8-OeA"/>
                                                         <constraint firstAttribute="trailing" secondItem="jmZ-HK-N2W" secondAttribute="trailing" id="c51-v2-3II"/>
                                                         <constraint firstItem="bhs-76-Ipo" firstAttribute="centerY" secondItem="GRi-Dk-GXx" secondAttribute="centerY" id="dlg-sp-US3"/>
                                                         <constraint firstItem="mnW-3W-g9h" firstAttribute="top" secondItem="M28-Wh-Wj6" secondAttribute="bottom" constant="9.5" id="fF4-Wn-xKn"/>
@@ -1784,7 +1786,7 @@ VIP保障实验班</string>
                                                     <rect key="frame" x="10" y="16" width="100" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="0Np-ja-Xsh"/>
-                                                        <constraint firstAttribute="width" secondItem="fMJ-0T-zIJ" secondAttribute="height" multiplier="1:1" id="hGA-A2-v6a"/>
+                                                        <constraint firstAttribute="width" secondItem="fMJ-0T-zIJ" secondAttribute="height" multiplier="1:1" priority="999" id="hGA-A2-v6a"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1811,11 +1813,11 @@ VIP保障实验班</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqV-8U-hx3">
-                                                    <rect key="frame" x="120" y="85" width="120" height="30"/>
+                                                    <rect key="frame" x="120" y="85" width="100" height="30"/>
                                                     <color key="backgroundColor" red="0.76470588235294112" green="0.10196078431372549" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="AN8-1a-smO"/>
-                                                        <constraint firstAttribute="width" constant="120" id="k3K-Kh-Hv6"/>
+                                                        <constraint firstAttribute="width" constant="100" id="imm-tT-V6l"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                     <state key="normal" title="马上试听">
@@ -1841,6 +1843,7 @@ VIP保障实验班</string>
                                                 <constraint firstItem="hqV-8U-hx3" firstAttribute="top" secondItem="hTK-Yz-iXF" secondAttribute="bottom" constant="10" id="HRF-J3-1dM"/>
                                                 <constraint firstItem="hTK-Yz-iXF" firstAttribute="centerY" secondItem="fMJ-0T-zIJ" secondAttribute="centerY" id="KB3-hi-GHl"/>
                                                 <constraint firstItem="fMJ-0T-zIJ" firstAttribute="centerY" secondItem="vPM-dI-QLB" secondAttribute="centerY" id="UzK-w2-aFd"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hqV-8U-hx3" secondAttribute="trailing" symbolic="YES" id="YCg-xx-HV3"/>
                                                 <constraint firstAttribute="bottom" secondItem="fMJ-0T-zIJ" secondAttribute="bottom" constant="16" id="c2N-Fk-73B"/>
                                                 <constraint firstItem="fFA-e3-iLu" firstAttribute="leading" secondItem="fMJ-0T-zIJ" secondAttribute="trailing" constant="10" id="jmM-J9-htl"/>
                                                 <constraint firstItem="hqV-8U-hx3" firstAttribute="leading" secondItem="fMJ-0T-zIJ" secondAttribute="trailing" constant="10" id="mwv-AT-Efq"/>
@@ -1870,7 +1873,7 @@ VIP保障实验班</string>
                                                             <rect key="frame" x="10" y="14" width="150" height="92"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="150" id="SJC-Ac-dnt"/>
-                                                                <constraint firstAttribute="width" secondItem="bcA-O3-84v" secondAttribute="height" multiplier="75:46" id="fEX-Uq-Q7B"/>
+                                                                <constraint firstAttribute="width" secondItem="bcA-O3-84v" secondAttribute="height" multiplier="75:46" priority="999" id="fEX-Uq-Q7B"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQJ-TH-Twk">
@@ -1906,6 +1909,7 @@ VIP保障实验班</string>
                                                         <constraint firstAttribute="trailing" secondItem="OQJ-TH-Twk" secondAttribute="trailing" constant="10" id="0Zk-lZ-2bc"/>
                                                         <constraint firstItem="bcA-O3-84v" firstAttribute="top" secondItem="scj-6A-hbb" secondAttribute="top" constant="14" id="2wW-OQ-aVG"/>
                                                         <constraint firstItem="Gha-c3-o4z" firstAttribute="top" secondItem="OQJ-TH-Twk" secondAttribute="bottom" constant="10" id="34k-6r-Sl2"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fRa-F9-QtP" secondAttribute="trailing" symbolic="YES" id="8LJ-Sc-CIu"/>
                                                         <constraint firstItem="Gha-c3-o4z" firstAttribute="centerY" secondItem="bcA-O3-84v" secondAttribute="centerY" id="KKX-LB-QAp"/>
                                                         <constraint firstItem="bcA-O3-84v" firstAttribute="leading" secondItem="scj-6A-hbb" secondAttribute="leading" constant="10" id="Me5-8Q-CYe"/>
                                                         <constraint firstItem="fRa-F9-QtP" firstAttribute="top" secondItem="Gha-c3-o4z" secondAttribute="bottom" constant="10" id="OAw-nE-edm"/>
@@ -1942,7 +1946,7 @@ VIP保障实验班</string>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f6q-mo-zDp">
                                                     <rect key="frame" x="18" y="10" width="339" height="169.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="f6q-mo-zDp" secondAttribute="height" multiplier="2:1" id="XOB-ds-8gg"/>
+                                                        <constraint firstAttribute="width" secondItem="f6q-mo-zDp" secondAttribute="height" multiplier="2:1" priority="999" id="XOB-ds-8gg"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="细节感知能力强" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUF-CA-fNi">
@@ -1996,6 +2000,7 @@ VIP保障实验班</string>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </scrollView>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="kGE-EL-kMR" firstAttribute="leading" secondItem="EOr-8T-DGJ" secondAttribute="leading" id="N7L-D7-dMf"/>
                                                 <constraint firstAttribute="trailing" secondItem="kGE-EL-kMR" secondAttribute="trailing" id="aml-d9-2BM"/>
@@ -2003,6 +2008,7 @@ VIP保障实验班</string>
                                                 <constraint firstAttribute="bottom" secondItem="kGE-EL-kMR" secondAttribute="bottom" constant="10" id="s4L-OO-cwB"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="teacherScroView" destination="kGE-EL-kMR" id="BBu-Ef-Gcf"/>
                                         </connections>
@@ -2018,7 +2024,7 @@ VIP保障实验班</string>
                                                     <rect key="frame" x="12" y="10" width="80" height="80"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="gdk-Tr-CBh" secondAttribute="height" multiplier="1:1" id="FWR-yE-42A"/>
+                                                        <constraint firstAttribute="width" secondItem="gdk-Tr-CBh" secondAttribute="height" multiplier="1:1" priority="999" id="FWR-yE-42A"/>
                                                         <constraint firstAttribute="width" constant="80" id="f2R-C9-DNv"/>
                                                     </constraints>
                                                 </imageView>
@@ -2050,6 +2056,7 @@ VIP保障实验班</string>
                                                 <constraint firstItem="ans-Aw-oWb" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2S3-ML-04b" secondAttribute="bottom" constant="5" id="4FJ-ve-b2h"/>
                                                 <constraint firstItem="gdk-Tr-CBh" firstAttribute="centerY" secondItem="zMu-GJ-gyZ" secondAttribute="centerY" id="AV0-f8-K1i"/>
                                                 <constraint firstItem="gdk-Tr-CBh" firstAttribute="leading" secondItem="zMu-GJ-gyZ" secondAttribute="leading" constant="12" id="Gy3-BQ-g6P"/>
+                                                <constraint firstItem="ans-Aw-oWb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gdk-Tr-CBh" secondAttribute="trailing" symbolic="YES" id="HTT-sd-2pB"/>
                                                 <constraint firstAttribute="trailing" secondItem="2S3-ML-04b" secondAttribute="trailing" constant="10" id="Hgo-9x-ODy"/>
                                                 <constraint firstAttribute="trailing" secondItem="ans-Aw-oWb" secondAttribute="trailing" constant="10" id="JAt-D5-a4l"/>
                                                 <constraint firstAttribute="bottom" secondItem="gdk-Tr-CBh" secondAttribute="bottom" constant="10" id="OyE-5l-mqh"/>

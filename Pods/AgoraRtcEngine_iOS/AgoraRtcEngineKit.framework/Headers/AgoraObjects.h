@@ -97,9 +97,9 @@ See [AgoraLastmileProbeOneWayResult](AgoraLastmileProbeOneWayResult).
 /** Statistics of the local video stream.
  */
 __attribute__((visibility("default"))) @interface AgoraRtcLocalVideoStats : NSObject
-/** Bitrate (Kbps) sent in the reported interval, which does not include the bitrate of the re-transmission video after packet loss. */
+/** Bitrate (Kbps) sent in the reported interval, which does not include the bitrate of the retransmission video after packet loss. */
 @property (assign, nonatomic) NSUInteger sentBitrate;
-/** Frame rate (fps) sent in the reported interval, which does not include the frame rate of the re-transmission video after packet loss. */
+/** Frame rate (fps) sent in the reported interval, which does not include the frame rate of the retransmission video after packet loss. */
 @property (assign, nonatomic) NSUInteger sentFrameRate;
 /** The encoder output frame rate (fps) of the local video. */
 @property (assign, nonatomic) NSUInteger encoderOutputFrameRate;
@@ -120,7 +120,7 @@ __attribute__((visibility("default"))) @interface AgoraRtcLocalVideoStats : NSOb
 /** The height of the encoding frame (px).
  */
 @property (assign, nonatomic) NSUInteger encodedFrameHeight;
-/** The value of the sent frame rate, represented by an aggregate value.
+/** The value of the sent frames, represented by an aggregate value.
  */
 @property (assign, nonatomic) NSUInteger encodedFrameCount;
 /** The codec type of the local video：
@@ -155,7 +155,7 @@ __attribute__((visibility("default"))) @interface AgoraRtcRemoteVideoStats : NSO
 /** The renderer output frame rate (fps) of the remote video.
  */
 @property (assign, nonatomic) NSUInteger rendererOutputFrameRate;
-/** Packet loss rate (%) of the remote video stream after network countermeasures.
+/** Packet loss rate (%) of the remote video stream after using the anti-packet-loss method.
  */
 @property (assign, nonatomic) NSUInteger packetLossRate;
 /** Video stream type (high-stream or low-stream).
@@ -198,7 +198,7 @@ __attribute__((visibility("default"))) @interface AgoraRtcRemoteAudioStats : NSO
 /** Network delay (ms) from the receiver to the jitter buffer.
  */
 @property (assign, nonatomic) NSUInteger jitterBufferDelay;
-/** Packet loss rate in the reported interval.
+/** The audio frame loss rate in the reported interval.
  */
 @property (assign, nonatomic) NSUInteger audioLossRate;
 /** The number of channels.
@@ -221,19 +221,25 @@ __attribute__((visibility("default"))) @interface AgoraRtcRemoteAudioStats : NSO
 @end
 
 /** Properties of the audio volume information.
-
-An array containing the user ID and volume information for each speaker:
-
-- uid: User ID of the speaker. The uid of the local user is 0.
-- volume：Volume of the speaker. The value ranges between 0 (lowest volume) and 255 (highest volume).
  */
 __attribute__((visibility("default"))) @interface AgoraRtcAudioVolumeInfo : NSObject
-/** User ID of the speaker.
+/** User ID of the speaker. The `uid` of the local user is 0.
  */
 @property (assign, nonatomic) NSUInteger uid;
-/** The volume of the speaker. The value ranges between 0 (lowest volume) to 255 (highest volume).
+/** The sum of the voice volume and audio-mixing volume of the speaker. The value ranges between 0 (lowest volume) and 255 (highest volume).
  */
 @property (assign, nonatomic) NSUInteger volume;
+/** Voice activity status of the local user.
+
+ - 0: The local user is not speaking.
+ - 1: The local user is speaking.
+
+ **Note**
+
+ - The `vad` parameter cannot report the voice activity status of the remote users. In the remote users' callback, `vad` = 0.
+ - Ensure that you set `report_vad(YES)` in the `enableAudioVolumeIndication` method to enable the voice activity detection of the local user.
+ */
+@property (assign, nonatomic) NSUInteger vad;
 @end
 
 /** Statistics of the channel
@@ -281,10 +287,10 @@ __attribute__((visibility("default"))) @interface AgoraChannelStats: NSObject
 /** Client-server latency (ms)
  */
 @property (assign, nonatomic) NSInteger lastmileDelay;
-/** The packet loss rate (%) from the local client to Agora's edge server, before network countermeasures.
+/** The packet loss rate (%) from the local client to Agora's edge server, before using the anti-packet-loss method.
  */
 @property (assign, nonatomic) NSInteger txPacketLossRate;
-/** The packet loss rate (%) from Agora's edge server to the local client, before network countermeasures.
+/** The packet loss rate (%) from Agora's edge server to the local client, before using the anti-packet-loss method.
  */
 @property (assign, nonatomic) NSInteger rxPacketLossRate;
 /** Number of users in the channel.
@@ -519,7 +525,7 @@ __attribute__((visibility("default"))) @interface AgoraLiveTranscodingUser: NSOb
 /** User ID of the CDN live host.
  */
 @property (assign, nonatomic) NSUInteger uid;
-/** Position and size of the video frame.
+/** Size and the position of the video frame relative to the top left corner.
  */
 @property (assign, nonatomic) CGRect rect;
 /**  Layer position of the video frame. The value ranges between 0 and 100.
@@ -571,6 +577,34 @@ The maximum length of this parameter is 1024 bytes.
 @property (assign, nonatomic) CGRect rect;
 @end
 
+/** The options of the watermark image to be added.
+ */
+__attribute__((visibility("default"))) @interface WatermarkOptions: NSObject
+/** Sets whether or not the watermark image is visible in the local video preview: 
+ 
+ - YES: The watermark image is visible in preview.
+ - NO: The watermark image is not visible in preview. 
+ */
+@property (assign, nonatomic) BOOL visibleInPreview;
+/** The watermark position in [landscape mode](https://docs.agora.io/en/Interactive%20Broadcast/rotation_guide_ios?platform=iOS#orientation-mode). This parameter contains the following members:
+  
+  - `x`: The horizontal offset of the watermark from the top-left corner. 
+  - `y`: The vertical offset of the watermark from the top-left corner. 
+  - `width`: The width (pixel) of the watermark region. 
+  - `height`: The height (pixel) of the watermark region. 
+ */
+@property (assign, nonatomic) CGRect positionInLandscapeMode;
+/** The watermark position in [portrait mode](https://docs.agora.io/en/Interactive%20Broadcast/rotation_guide_ios?platform=iOS#orientation-mode). This parameter contains the following members:
+  
+  - `x`: The horizontal offset of the watermark from the top-left corner. 
+  - `y`: The vertical offset of the watermark from the top-left corner. 
+  - `width`: The width (pixel) of the watermark region. 
+  - `height`: The height (pixel) of the watermark region. 
+ */
+@property (assign, nonatomic) CGRect positionInPortraitMode;
+@end
+
+
 /** A class for managing user-specific CDN live audio/video transcoding settings.
  */
 __attribute__((visibility("default"))) @interface AgoraLiveTranscoding: NSObject
@@ -586,7 +620,9 @@ Set this parameter according to the Video Bitrate Table. If you set a bitrate be
 @property (assign, nonatomic) NSInteger videoBitrate;
 /** Frame rate of the CDN live output video stream.
 
-The default value is 15 fps. Agora adjusts all values over 30 to 30.
+The default value is 15 fps, and the value range is (0,30]. 
+
+@note Agora adjusts all values over 30 to 30.
  */
 @property (assign, nonatomic) NSInteger videoFramerate;
 /** Latency mode. **DEPRECATED** from v2.8.0
@@ -734,6 +770,14 @@ __attribute__((visibility("default"))) @interface AgoraCameraCapturerConfigurati
 /** This preference will balance the performance and preview quality by adjusting camera output frame size.
  */
 @property (assign, nonatomic) AgoraCameraCaptureOutputPreference preference;
+#if TARGET_OS_IOS
+/** The camera direction. See AgoraCameraDirection:
+
+ - AgoraCameraDirectionRear: The rear camera.
+ - AgoraCameraDirectionFront: The front camera.
+ */ 
+@property (assign, nonatomic) AgoraCameraDirection cameraDirection;
+#endif
 @end
 
 #if (!(TARGET_OS_IPHONE) && (TARGET_OS_MAC))

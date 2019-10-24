@@ -128,6 +128,8 @@
 /**
  *  1.11 自己是否已读
  *
+ *  注意 ChatRoom、AVChatRoom、BChatRoom 不支持未读的功能，isReaded 接口针对这些类型房间无效。
+ *
  *  @return TRUE：已读；FALSE：未读
  */
 - (BOOL)isReaded;
@@ -952,6 +954,11 @@
  *  根据变更类型表示不同含义
  */
 @property(nonatomic,strong) NSString * value;
+
+/**
+ *  如果变更类型是群自定义字段,key 对应的是具体变更的字段，群自定义字段的变更只会通过 TIMUserConfig -> TIMGroupEventListener 回调给客户
+ */
+@property(nonatomic,strong) NSString * key;
 @end
 
 /**
@@ -1116,7 +1123,7 @@
 /**
  * 被操作用户列表：TIMSNSChangeInfo 列表
  */
-@property(nonatomic,strong) NSArray * users;
+@property(nonatomic,strong) NSArray <TIMSNSChangeInfo *> * users;
 
 /**
  * 未决已读上报时间戳 type = TIM_SNS_SYSTEM_PENDENCY_REPORT 有效

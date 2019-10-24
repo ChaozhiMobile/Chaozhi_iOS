@@ -1,4 +1,5 @@
 /*
+ * Copyright (c) 2016 Bilibili
  * Copyright (c) 2016 Zhang Rui <bbcallen@gmail.com>
  *
  * This file is part of ijkPlayer.
@@ -53,6 +54,7 @@
 @property(nonatomic) int       httpSeekCount;
 @property(nonatomic) int64_t   lastHttpOpenDuration;
 @property(nonatomic) int64_t   lastHttpSeekDuration;
+@property(nonatomic) int64_t   filesize;
 
 @property(nonatomic) int64_t   prepareStartTick;
 @property(nonatomic) int64_t   prepareDuration;

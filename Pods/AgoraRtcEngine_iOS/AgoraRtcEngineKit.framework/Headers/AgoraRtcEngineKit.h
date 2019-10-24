@@ -206,7 +206,7 @@ This callback is different from [rtcEngineConnectionDidInterrupted]([AgoraRtcEng
 - The SDK triggers the [rtcEngineConnectionDidInterrupted]([AgoraRtcEngineDelegate rtcEngineConnectionDidInterrupted:]) callback when it loses connection with the server for more than four seconds after it successfully joins the channel.
 - The SDK triggers the [rtcEngineConnectionDidLost]([AgoraRtcEngineDelegate rtcEngineConnectionDidLost:]) callback when it loses connection with the server for more than 10 seconds, regardless of whether it joins the channel or not.
 
-For both callbacks, the SDK tries to reconnect to the server until the app calls the [leaveChannel]([AgoraRtcEngineKit leaveChannel:]) method.
+If the SDK fails to rejoin the channel 20 minutes after being disconnected from Agora's edge server, the SDK stops rejoining the channel.
 
 @param engine AgoraRtcEngineKit object.
  */
@@ -240,58 +240,54 @@ For both callbacks, the SDK tries to reconnect to the server until the app calls
  * -----------------------------------------------------------------------------
  */
 
-/** Occurs when the microphone is enabled/disabled.
 
- **DEPRECATED** from v2.9.0. Use AgoraAudioLocalStateStopped(0) or AgoraAudioLocalStateRecording(1) in the [localAudioStateChange]([AgoraRtcEngineDelegate rtcEngine:localAudioStateChange:error:]) callback instead.
 
- The SDK triggers this callback when the local user resumes or stops capturing the local audio stream by calling the [enableLocalAudio]([AgoraRtcEngineKit enableLocalAudio:]) method.
-
- @param engine AgoraRtcEngineKit object.
- @param enabled  Whether the microphone is enabled/disabled:
-
- * YES: Enabled.
- * NO: Disabled.
- */
-- (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine didMicrophoneEnabled:(BOOL)enabled;
-
-/** Reports which users are speaking and the speakers' volume at the moment.
+/** Reports which users are speaking, the speakers' volumes, and whether the local user is speaking.
 
  Same as [audioVolumeIndicationBlock]([AgoraRtcEngineKit audioVolumeIndicationBlock:]).
 
- This callback reports the ID and volume of the loudest speakers at the moment in the channel. The audio volume returned in this callback is the sum of the voice volume and audio-mixing volume of the remote user.
+ This callback reports the IDs and volumes of the loudest speakers at the moment in the channel, and whether the local user is speaking.
 
- This callback is disabled by default and can be enabled by the [enableAudioVolumeIndication]([AgoraRtcEngineKit enableAudioVolumeIndication:smooth:]) method.
+ By default, this callback is disabled. You can enable it by calling the `enableAudioVolumeIndication` method. Once enabled, this callback is triggered at the set interval, regardless of whether a user speaks or not.
 
- The local user and the remote speakers are reported in separate callbacks:
-
- - In the local user's callback, the `speakers` array contains `uid`= 0 and `volume` = `totalVolume` regardless of whether the local user speaks or not.
- - In the remote speakers' callback, the `speakers` array contains the user ID and volume of each speaker.
+ The SDK triggers two independent [reportAudioVolumeIndicationOfSpeakers]([AgoraRtcEngineDelegate rtcEngine:reportAudioVolumeIndicationOfSpeakers:totalVolume:]) callbacks at one time, which separately report the volume information of the local user and all the remote speakers. For more information, see the detailed parameter descriptions.
 
 **Note:**
 
-- Calling the [muteLocalAudioStream]([AgoraRtcEngineKit muteLocalAudioStream:]) method affects the behavior of the SDK:
-    - If the local user calls the [muteLocalAudioStream]([AgoraRtcEngineKit muteLocalAudioStream:]) method, the SDK stops returning the local user's callback immediately.
-    - 15 seconds after a remote speaker calls the [muteLocalAudioStream]([AgoraRtcEngineKit muteLocalAudioStream:]) method, the remote speakers' callback excludes information of this user; 15 seconds after all remote users call the [muteLocalAudioStream]([AgoraRtcEngineKit muteLocalAudioStream:]) method, the SDK stops triggering the remote speakers' callback.
-- An empty `speakers` array in the callback indicates that no remote user is speaking at the moment.
+ - To enable the voice activity detection of the local user, ensure that you set `report_vad(YES)` in the [enableAudioVolumeIndication]([AgoraRtcEngineKit enableAudioVolumeIndication:smooth:report_vad:]) method.
+ - Calling the [muteLocalAudioStream]([AgoraRtcEngineKit muteLocalAudioStream:]) method affects the behavior of the SDK:
+  - If the local user calls the `muteLocalAudioStream` method, the SDK stops triggering the local user’s callback immediately.
+  - 20 seconds after a remote speaker calls the `muteLocalAudioStream` method, the remote speakers' callback excludes information of this user; 20 seconds after all remote users call the `muteLocalAudioStream` method, the SDK stops triggering the remote speakers' callback.
 
  @param engine      AgoraRtcEngineKit object.
- @param speakers    An array containing the user ID and volume information for each speaker: AgoraRtcAudioVolumeInfo.
+ @param speakers    AgoraRtcAudioVolumeInfo array.
 
-- uid: User ID of the speaker.
-- volume: Volume of the speaker. The value ranges between 0 (lowest volume) and 255 (highest volume).
+ - In the local user’s callback, this array contains the following members:
+  - `uid` = 0, 
+  - `volume` = `totalVolume`, which reports the sum of the voice volume and audio-mixing volume of the local user, and
+  - `vad`, which reports the voice activity status of the local user.
 
- @param totalVolume Total volume of all speakers. The value ranges between 0 (lowest volume) and 255 (highest volume).
+ - In the remote speakers' callback, this array contains the following members:
+  - `uid` of each remote speaker,
+  - `volume`, which reports the sum of the voice volume and audio-mixing volume of each remote speaker, and
+  - `vad` = 0.
+  An empty speakers array in the callback indicates that no remote user is speaking at the moment.
+
+ @param totalVolume Total volume after audio mixing. The value range is [0,255].
+
+ - In the local user’s callback, `totalVolume` is the sum of the voice volume and audio-mixing volume of the local user.
+ - In the remote speakers' callback, `totalVolume` is the sum of the voice volume and audio-mixing volume of all the remote speakers.
  */
 - (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine reportAudioVolumeIndicationOfSpeakers:(NSArray<AgoraRtcAudioVolumeInfo *> * _Nonnull)speakers totalVolume:(NSInteger)totalVolume;
 
 /** Reports which user is the loudest speaker over a period of time.
 
 This callback reports the speaker with the highest accumulative volume during a certain period.
-If the user enables the audio volume indication by calling the [enableAudioVolumeIndication]([AgoraRtcEngineKit enableAudioVolumeIndication:smooth:]) method, this callback returns the user ID of the active speaker whose voice is detected by the audio volume detection module of the SDK.
+If the user enables the audio volume indication by calling the `enableAudioVolumeIndication` method, this callback returns the user ID of the active speaker whose voice is detected by the audio volume detection module of the SDK.
 
 **Note:**
 
-* To receive this callback, you need to call the [enableAudioVolumeIndication]([AgoraRtcEngineKit enableAudioVolumeIndication:smooth:]) method.
+* To receive this callback, you need to call the `enableAudioVolumeIndication` method.
 * This callback returns the user ID of the user with the highest voice volume during a period of time, instead of at the moment.
  @param engine     AgoraRtcEngineKit object.
  @param speakerUid The user ID of the active speaker. A `speakerUid` of 0 represents the local user.
@@ -325,6 +321,16 @@ If the user enables the audio volume indication by calling the [enableAudioVolum
 
 /** Occurs when the SDK decodes the first remote audio frame for playback.
 
+This callback is triggered in either of the following scenarios:
+
+ - The remote user joins the channel and sends the audio stream.
+ - The remote user stops sending the audio stream and re-sends it after 15 seconds. Reasons for such an interruption include:
+
+     - The remote user leaves channel.
+     - The remote user drops offline.
+     - The remote user calls the [muteLocalAudioStream]([AgoraRtcEngineKit muteLocalAudioStream:]) method to stop sending the local audio stream.
+     - The remote user calls the [disableAudio]([AgoraRtcEngineKit disableAudio]) method to disable audio.
+
  @param engine AgoraRtcEngineKit object.
  @param uid User ID of the remote user sending the audio stream.
  @param elapsed The time elapsed (ms) from the local user calling the joinChannel method until the SDK triggers this callback.
@@ -342,28 +348,7 @@ If the user enables the audio volume indication by calling the [enableAudioVolum
  */
 - (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine firstLocalVideoFrameWithSize:(CGSize)size elapsed:(NSInteger)elapsed;
 
-/** Occurs when the first remote video frame is received and decoded.
 
- **DEPRECATED** from v2.9.0. Use AgoraVideoRemoteStateStarting(1) or AgoraVideoRemoteStateDecoding(2) in the [remoteVideoStateChangedOfUid]([AgoraRtcEngineDelegate rtcEngine:remoteVideoStateChangedOfUid:state:reason:elapsed:]) callback instead.
-
- Same as [firstRemoteVideoDecodedBlock]([AgoraRtcEngineKit firstRemoteVideoDecodedBlock:]).
-
- This callback is triggered in either of the following scenarios:
-
- - The remote user joins the channel and sends the video stream.
- - The remote user stops sending the video stream and re-sends it after 15 seconds. Possible reasons include:
-
-    - The remote user leaves channel.
-    - The remote user drops offline.
-    - The remote user calls [muteLocalVideoStream]([AgoraRtcEngineKit muteLocalVideoStream:]).
-    - The remote user calls [disableVideo]([AgoraRtcEngineKit disableVideo]).
-
- @param engine  AgoraRtcEngineKit object.
- @param uid     User ID of the remote user sending the video stream.
- @param size    Size of the video frame (width and height).
- @param elapsed Time elapsed (ms) from the local user calling the [joinChannelByToken]([AgoraRtcEngineKit joinChannelByToken:channelId:info:uid:joinSuccess:]) method until the SDK triggers this callback.
- */
-- (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine firstRemoteVideoDecodedOfUid:(NSUInteger)uid size:(CGSize)size elapsed:(NSInteger)elapsed;
 
 /** Occurs when the first remote video frame is rendered.
 
@@ -393,7 +378,7 @@ Same as [firstRemoteVideoFrameBlock]([AgoraRtcEngineKit firstRemoteVideoFrameBlo
 
 /** Occurs when a remote user's video stream playback pauses/resumes.
 
- **DEPRECATED** from v2.9.0. This callback is deprecated and replaced by the [remoteVideoStateChangedOfUid]([AgoraRtcEngineDelegate rtcEngine:remoteVideoStateChangedOfUid:state:reason:elapsed:]) callback with the following parameters: 
+ You can also use the [remoteVideoStateChangedOfUid]([AgoraRtcEngineDelegate rtcEngine:remoteVideoStateChangedOfUid:state:reason:elapsed:]) callback with the following parameters: 
 
  - AgoraVideoRemoteStateStopped(0) and AgoraVideoRemoteStateReasonRemoteMuted(5).
  - AgoraVideoRemoteStateDecoding(2) and AgoraVideoRemoteStateReasonRemoteUnmuted(6).
@@ -416,45 +401,7 @@ Same as [firstRemoteVideoFrameBlock]([AgoraRtcEngineKit firstRemoteVideoFrameBlo
  */
 - (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine didVideoMuted:(BOOL)muted byUid:(NSUInteger)uid;
 
-/** Occurs when a specific remote user enables/disables the video module.
 
- **DEPRECATED** from v2.9.0. This callback is deprecated and replaced by the [remoteVideoStateChangedOfUid]([AgoraRtcEngineDelegate rtcEngine:remoteVideoStateChangedOfUid:state:reason:elapsed:]) callback with the following parameters:
-
- - AgoraVideoRemoteStateStopped(0) and AgoraVideoRemoteStateReasonRemoteMuted(5).
- - AgoraVideoRemoteStateDecoding(2) and AgoraVideoRemoteStateReasonRemoteUnmuted(6).
-
- Once the video module is disabled, the remote user can only use a voice call. The remote user cannot send or receive any video from other users.
-
- The SDK triggers this callback when the remote user enables or disables the video module by calling the [enableVideo](enableVideo) or [disableVideo](disableVideo) method.
-
- @param engine  AgoraRtcEngineKit object.
- @param enabled Whether the remote user enables/disables the video module:
-
- * YES: Enable. The remote user can enter a video session.
- * NO: Disable. The remote user can only enter a voice session, and cannot send or receive any video stream.
-
- @param uid  User ID of the remote user.
- */
-- (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine didVideoEnabled:(BOOL)enabled byUid:(NSUInteger)uid;
-
-/** Occurs when a specific remote user enables/disables the local video capturing function.
-
- **DEPRECATED** from v2.9.0. This callback is deprecated and replaced by the [remoteVideoStateChangedOfUid]([AgoraRtcEngineDelegate rtcEngine:remoteVideoStateChangedOfUid:state:reason:elapsed:]) callback with the following parameters:
-
- - AgoraVideoRemoteStateStopped(0) and AgoraVideoRemoteStateReasonRemoteMuted(5).
- - AgoraVideoRemoteStateDecoding(2) and AgoraVideoRemoteStateReasonRemoteUnmuted(6).
-
- This callback is only applicable to the scenario when the user only wants to watch the remote video without sending any video stream to the other user.
-
- @param engine  AgoraRtcEngineKit object.
- @param enabled Whether the specific remote user enables/disables the local video capturing function:
-
- * YES: Enable. Other users in the channel can see the video of this remote user.
- * NO: Disable. Other users in the channel do not receive the video stream from this remote user, while this remote user can still receive the video streams from other users.
-
- @param uid  User ID of the remote user.
- */
-- (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine didLocalVideoEnabled:(BOOL)enabled byUid:(NSUInteger)uid;
 
 /** Occurs when the video size or rotation of a specific remote user changes.
 
@@ -464,20 +411,6 @@ Same as [firstRemoteVideoFrameBlock]([AgoraRtcEngineKit firstRemoteVideoFrameBlo
  @param rotation New rotation of the video. The value ranges between 0 and 360.
  */
 - (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine videoSizeChangedOfUid:(NSUInteger)uid size:(CGSize)size rotation:(NSInteger)rotation;
-
-/** Occurs when the remote video stream state changes.
-
- **DEPRECATED**
- This callback is deprecated. Use [remoteVideoStateChangedOfUid]([AgoraRtcEngineDelegate rtcEngine:remoteVideoStateChangedOfUid:state:reason:elapsed:])2 instead.
-
- This callback is triggered when the time interval between two video frames equals or exceeds 600 ms.
-
- @param engine AgoraRtcEngineKit object.
- @param uid    ID of the user whose video state changes.
- @param state  State of the remote video: Stopped playing, playing normally, or frozen. See [AgoraVideoRemoteState](AgoraVideoRemoteState).
-
- */
-- (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine remoteVideoStateChangedOfUid:(NSUInteger)uid state:(AgoraVideoRemoteState)state;
 
 /** Occurs when the remote video state changes.
  
@@ -710,33 +643,6 @@ Schemes such as FEC (Forward Error Correction) or retransmission counter the fra
  */
 - (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine remoteAudioStats:(AgoraRtcRemoteAudioStats * _Nonnull)stats;
 
-/** Reports the transport-layer statistics of each remote audio stream.
-
- **DEPRECATED** from v2.9.0. Use the [remoteVideoStateChangedOfUid]([AgoraRtcEngineDelegate rtcEngine:remoteVideoStateChangedOfUid:state:reason:elapsed:]) callback instead.
-
- This callback reports the transport-layer statistics, such as the packet loss rate and network time delay, once every two seconds after the local user receives an audio packet from a remote user.
-
- @param engine     AgoraRtcEngineKit object.
- @param uid        User ID of the remote user sending the audio packet.
- @param delay      Network time delay (ms) from the remote user sending the audio packet to the local user.
- @param lost       Packet loss rate (%) of the audio packet sent from the remote user.
- @param rxKBitRate Received bitrate (Kbps) of the audio packet sent from the remote user.
- */
-- (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine audioTransportStatsOfUid:(NSUInteger)uid delay:(NSUInteger)delay lost:(NSUInteger)lost rxKBitRate:(NSUInteger)rxKBitRate;
-
-/** Reports the transport-layer statistics of each remote video stream.
-
- **DEPRECATED** from v2.9.0. Use the [remoteVideoStateChangedOfUid]([AgoraRtcEngineDelegate rtcEngine:remoteVideoStateChangedOfUid:state:reason:elapsed:]) callback instead.
-
- This callback reports the transport layer statistics, such as the packet loss rate and network time delay, once every two seconds after the local user receives a video packet from a remote user.
-
- @param engine     AgoraRtcEngineKit object.
- @param uid        User ID of the remote user sending the video packet.
- @param delay      Network time delay (ms) from the remote user sending the video packet to the local user.
- @param lost       Packet loss rate (%) of the video packet sent from the remote user.
- @param rxKBitRate Received bitrate (Kbps) of the video packet sent from the remote user.
- */
-- (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine videoTransportStatsOfUid:(NSUInteger)uid delay:(NSUInteger)delay lost:(NSUInteger)lost rxKBitRate:(NSUInteger)rxKBitRate;
 
 
 #pragma mark Audio Player Delegate Methods
@@ -919,12 +825,135 @@ The SDK triggers this callback when the local user receives the stream message t
 - (void)rtcEngineMediaEngineDidStartCall:(AgoraRtcEngineKit * _Nonnull)engine;
 
 
+/** Occurs when the state of the media stream relay changes.
+
+ The SDK reports the state of the current media relay and possible error messages in this callback.
+ 
+ @param engine AgoraRtcEngineKit object.
+ @param state The state code in [AgoraChannelMediaRelayState](AgoraChannelMediaRelayState).
+ @param error The error code in [AgoraChannelMediaRelayError](AgoraChannelMediaRelayError).
+ */
+- (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine channelMediaRelayStateDidChange:(AgoraChannelMediaRelayState)state error:(AgoraChannelMediaRelayError)error;
+
+/** Reports events during the media stream relay.
+ 
+ @param engine AgoraRtcEngineKit object.
+ @param event The event code in [AgoraChannelMediaRelayEvent](AgoraChannelMediaRelayEvent).
+ */
+- (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine didReceiveChannelMediaRelayEvent:(AgoraChannelMediaRelayEvent)event;
+
+
 #pragma mark Deprecated Delegates
 
 /**-----------------------------------------------------------------------------
  * @name Deprecated Delegates
  * -----------------------------------------------------------------------------
  */
+
+/** Reports the transport-layer statistics of each remote audio stream.
+
+ **DEPRECATED** from v2.9.0. Use the [remoteAudioStats]([AgoraRtcEngineDelegate rtcEngine:remoteAudioStats:]) callback instead.
+
+ This callback reports the transport-layer statistics, such as the packet loss rate and network time delay, once every two seconds after the local user receives an audio packet from a remote user.
+
+ @param engine     AgoraRtcEngineKit object.
+ @param uid        User ID of the remote user sending the audio packet.
+ @param delay      Network time delay (ms) from the remote user sending the audio packet to the local user.
+ @param lost       Packet loss rate (%) of the audio packet sent from the remote user.
+ @param rxKBitRate Received bitrate (Kbps) of the audio packet sent from the remote user.
+ */
+- (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine audioTransportStatsOfUid:(NSUInteger)uid delay:(NSUInteger)delay lost:(NSUInteger)lost rxKBitRate:(NSUInteger)rxKBitRate;
+
+/** Reports the transport-layer statistics of each remote video stream.
+
+ **DEPRECATED** from v2.9.0. Use the [remoteVideoStats]([AgoraRtcEngineDelegate rtcEngine:remoteVideoStats:]) callback instead.
+
+ This callback reports the transport layer statistics, such as the packet loss rate and network time delay, once every two seconds after the local user receives a video packet from a remote user.
+
+ @param engine     AgoraRtcEngineKit object.
+ @param uid        User ID of the remote user sending the video packet.
+ @param delay      Network time delay (ms) from the remote user sending the video packet to the local user.
+ @param lost       Packet loss rate (%) of the video packet sent from the remote user.
+ @param rxKBitRate Received bitrate (Kbps) of the video packet sent from the remote user.
+ */
+- (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine videoTransportStatsOfUid:(NSUInteger)uid delay:(NSUInteger)delay lost:(NSUInteger)lost rxKBitRate:(NSUInteger)rxKBitRate;
+
+/** Occurs when a specific remote user enables/disables the video module.
+
+ **DEPRECATED** from v2.9.0. This callback is deprecated and replaced by the [remoteVideoStateChangedOfUid]([AgoraRtcEngineDelegate rtcEngine:remoteVideoStateChangedOfUid:state:reason:elapsed:]) callback with the following parameters:
+
+ - AgoraVideoRemoteStateStopped(0) and AgoraVideoRemoteStateReasonRemoteMuted(5).
+ - AgoraVideoRemoteStateDecoding(2) and AgoraVideoRemoteStateReasonRemoteUnmuted(6).
+
+ Once the video module is disabled, the remote user can only use a voice call. The remote user cannot send or receive any video from other users.
+
+ The SDK triggers this callback when the remote user enables or disables the video module by calling the [enableVideo](enableVideo) or [disableVideo](disableVideo) method.
+
+ @param engine  AgoraRtcEngineKit object.
+ @param enabled Whether the remote user enables/disables the video module:
+
+ * YES: Enable. The remote user can enter a video session.
+ * NO: Disable. The remote user can only enter a voice session, and cannot send or receive any video stream.
+
+ @param uid  User ID of the remote user.
+ */
+- (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine didVideoEnabled:(BOOL)enabled byUid:(NSUInteger)uid;
+
+/** Occurs when a specific remote user enables/disables the local video capturing function.
+
+ **DEPRECATED** from v2.9.0. This callback is deprecated and replaced by the [remoteVideoStateChangedOfUid]([AgoraRtcEngineDelegate rtcEngine:remoteVideoStateChangedOfUid:state:reason:elapsed:]) callback with the following parameters:
+
+ - AgoraVideoRemoteStateStopped(0) and AgoraVideoRemoteStateReasonRemoteMuted(5).
+ - AgoraVideoRemoteStateDecoding(2) and AgoraVideoRemoteStateReasonRemoteUnmuted(6).
+
+ This callback is only applicable to the scenario when the user only wants to watch the remote video without sending any video stream to the other user.
+
+ @param engine  AgoraRtcEngineKit object.
+ @param enabled Whether the specific remote user enables/disables the local video capturing function:
+
+ * YES: Enable. Other users in the channel can see the video of this remote user.
+ * NO: Disable. Other users in the channel do not receive the video stream from this remote user, while this remote user can still receive the video streams from other users.
+
+ @param uid  User ID of the remote user.
+ */
+- (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine didLocalVideoEnabled:(BOOL)enabled byUid:(NSUInteger)uid;
+
+/** Occurs when the first remote video frame is received and decoded.
+
+ **DEPRECATED** from v2.9.0. Use AgoraVideoRemoteStateStarting(1) or AgoraVideoRemoteStateDecoding(2) in the [remoteVideoStateChangedOfUid]([AgoraRtcEngineDelegate rtcEngine:remoteVideoStateChangedOfUid:state:reason:elapsed:]) callback instead.
+
+ Same as [firstRemoteVideoDecodedBlock]([AgoraRtcEngineKit firstRemoteVideoDecodedBlock:]).
+
+ This callback is triggered in either of the following scenarios:
+
+ - The remote user joins the channel and sends the video stream.
+ - The remote user stops sending the video stream and re-sends it after 15 seconds. Possible reasons include:
+
+    - The remote user leaves channel.
+    - The remote user drops offline.
+    - The remote user calls [muteLocalVideoStream]([AgoraRtcEngineKit muteLocalVideoStream:]).
+    - The remote user calls [disableVideo]([AgoraRtcEngineKit disableVideo]).
+
+ @param engine  AgoraRtcEngineKit object.
+ @param uid     User ID of the remote user sending the video stream.
+ @param size    Size of the video frame (width and height).
+ @param elapsed Time elapsed (ms) from the local user calling the [joinChannelByToken]([AgoraRtcEngineKit joinChannelByToken:channelId:info:uid:joinSuccess:]) method until the SDK triggers this callback.
+ */
+- (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine firstRemoteVideoDecodedOfUid:(NSUInteger)uid size:(CGSize)size elapsed:(NSInteger)elapsed;
+
+/** Occurs when the microphone is enabled/disabled.
+
+ **DEPRECATED** from v2.9.0. Use AgoraAudioLocalStateStopped(0) or AgoraAudioLocalStateRecording(1) in the [localAudioStateChange]([AgoraRtcEngineDelegate rtcEngine:localAudioStateChange:error:]) callback instead.
+
+ The SDK triggers this callback when the local user resumes or stops capturing the local audio stream by calling the [enableLocalAudio]([AgoraRtcEngineKit enableLocalAudio:]) method.
+
+ @param engine AgoraRtcEngineKit object.
+ @param enabled  Whether the microphone is enabled/disabled:
+
+ * YES: Enabled.
+ * NO: Disabled.
+ */
+- (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine didMicrophoneEnabled:(BOOL)enabled;
 
 /** Occurs when the connection between the SDK and the server is interrupted.
 
@@ -939,7 +968,8 @@ This callback is different from [rtcEngineConnectionDidLost]([AgoraRtcEngineDele
 - The SDK triggers the [rtcEngineConnectionDidInterrupted]([AgoraRtcEngineDelegate rtcEngineConnectionDidInterrupted:]) callback when it loses connection with the server for more than four seconds after it joins the channel.
 - The SDK triggers the [rtcEngineConnectionDidLost]([AgoraRtcEngineDelegate rtcEngineConnectionDidLost:]) callback when it loses connection with the server for more than 10 seconds, regardless of whether it joins the channel or not.
 
-Whichever callback the SDK triggers, it tries reconnecting to the server until the app calls the [leaveChannel]([AgoraRtcEngineKit leaveChannel:]) method.
+If the SDK fails to rejoin the channel 20 minutes after being disconnected from Agora's edge server, the SDK stops rejoining the channel.
+
  @param engine AgoraRtcEngineKit object.
  */
 - (void)rtcEngineConnectionDidInterrupted:(AgoraRtcEngineKit * _Nonnull)engine;
@@ -990,23 +1020,6 @@ The SDK triggers this callback once every two seconds. This callback reports the
  @param engine AgoraRtcEngineKit object.
  */
 - (void)rtcEngineVideoDidStop:(AgoraRtcEngineKit * _Nonnull)engine;
-
-/** Occurs when the state of the media stream relay changes.
-
- The SDK reports the state of the current media relay and possible error messages in this callback.
- 
- @param engine AgoraRtcEngineKit object.
- @param state The state code in [AgoraChannelMediaRelayState](AgoraChannelMediaRelayState).
- @param error The error code in [AgoraChannelMediaRelayError](AgoraChannelMediaRelayError).
- */
-- (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine channelMediaRelayStateDidChange:(AgoraChannelMediaRelayState)state error:(AgoraChannelMediaRelayError)error;
-
-/** Reports events during the media stream relay.
- 
- @param engine AgoraRtcEngineKit object.
- @param event The event code in [AgoraChannelMediaRelayEvent](AgoraChannelMediaRelayEvent).
- */
-- (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine didReceiveChannelMediaRelayEvent:(AgoraChannelMediaRelayEvent)event;
 
 
 @end
@@ -1468,16 +1481,16 @@ The `token` expires after a period of time once the token schema is enabled when
  */
 - (int)adjustRecordingSignalVolume:(NSInteger)volume;
 
-/** Adjusts the playback volume.
+/** Adjusts the playback volume of the voice.
 
- @param volume Playback volume. The value ranges between 0 and 400:
+ @param volume The playback volume of the voice. The value ranges between 0 and 400:
 
  * 0: Mute.
  * 100: Original volume.
  * 400: (Maximum) Four times the original volume with signal clipping protection.
 
  @return * 0: Success.
-* < 0: Failure.
+ * < 0: Failure.
  */
 - (int)adjustPlaybackSignalVolume:(NSInteger)volume;
 
@@ -1489,12 +1502,15 @@ The `token` expires after a period of time once the token schema is enabled when
  * &gt; 0: The time interval (ms) between two consecutive volume indications. Agora recommends setting `interval` &ge; 200 ms. Once this method is enabled, the SDK returns the volume indications at the set time interval in the [reportAudioVolumeIndicationOfSpeakers]([AgoraRtcEngineDelegate rtcEngine:reportAudioVolumeIndicationOfSpeakers:totalVolume:]) and [audioVolumeIndicationBlock](audioVolumeIndicationBlock:) callbacks, regardless of whether any user is speaking in the channel.
 
  @param smooth The smoothing factor sets the sensitivity of the audio volume indicator. The value ranges between 0 and 10. The greater the value, the more sensitive the indicator. The recommended value is 3.
+ @param report_vad - YES: Enable the voice activity detection of the local user. Once it is enabled, the `speakers` array of the [reportAudioVolumeIndicationOfSpeakers]([AgoraRtcEngineDelegate rtcEngine:reportAudioVolumeIndicationOfSpeakers:totalVolume:]) callback reports the voice activity status of the local user.
+ - NO: (Default) Disable the voice activity detection of the local user. Once it is disabled, the [reportAudioVolumeIndicationOfSpeakers]([AgoraRtcEngineDelegate rtcEngine:reportAudioVolumeIndicationOfSpeakers:totalVolume:]) callback does not report the voice activity status of the local user, except for the scenario where the engine automatically detects the voice activity of the local user.
 
  @return * 0: Success.
 * < 0: Failure.
  */
 - (int)enableAudioVolumeIndication:(NSInteger)interval
-                            smooth:(NSInteger)smooth;
+                            smooth:(NSInteger)smooth
+                        report_vad:(BOOL)report_vad;
 
 /** Enables/Disables the local audio capture.
 
@@ -1735,15 +1751,14 @@ Before calling this method, you must:
 - (int)stopPreview;
 
 /** Disables the local video.
+ 
+ This method disables or re-enables the local video capturer, and does not affect receiving the remote video stream.
 
- This method disables the local video and enableLocalVideo(NO) is only applicable when the user wants to watch the remote video without sending any video stream to the other user.
+ After you call the [enableVideo]([AgoraRtcEngineKit enableVideo]) method, the local video capturer is enabled by default. You can call [enableLocalVideo(NO)]([AgoraRtcEngineKit enableLocalVideo:]) to disable the local video capturer. If you want to re-enable it, call [enableLocalVideo(YES)]([AgoraRtcEngineKit enableLocalVideo:]).
 
- Call this method after calling the [enableVideo](enableVideo) method. Otherwise, this method may not work properly.
-
- After the enableVideo method is called, the local video is enabled by default. You can use this method to disable the local video while the remote video remains unaffected.
-
- A successful enableLocalVideo method call triggers the [didLocalVideoEnabled]([AgoraRtcEngineDelegate rtcEngine:didLocalVideoEnabled:byUid:]) callback on the remote client.
-
+ After the local video capturer is successfully disabled or re-enabled, the SDK triggers the [didLocalVideoEnabled]([AgoraRtcEngineDelegate rtcEngine:didLocalVideoEnabled:byUid:]) callback on the remote client.
+     
+ 
  **Note:**
 
  This method enables the internal engine and can be called after calling the [leaveChannel]([AgoraRtcEngineKit leaveChannel:]) method.
@@ -2352,29 +2367,41 @@ When the audio effect file playback is finished, the SDK triggers the [rtcEngine
  * -----------------------------------------------------------------------------
  */
 
-/** Starts an audio recording.
+/** Starts an audio recording on the client.
 
- The SDK allows recording during a call. Supported formats:
+ The SDK allows recording during a call. After successfully calling this method, you can record the audio of all the users in the channel and get an audio recording file. Supported formats of the recording file are as follows:
 
- * .wav: Large file size with high fidelity.
- * .aac: Small file size with low fidelity.
+ - .wav: Large file size with high fidelity.
+ - .aac: Small file size with low fidelity.
 
- Ensure that the directory to save the recording file exists and is writable. You can call this method after calling the [joinChannelByToken]([AgoraRtcEngineKit joinChannelByToken:channelId:info:uid:joinSuccess:]) method. The recording automatically stops when you call the [leaveChannel]([AgoraRtcEngineKit leaveChannel:]) method.
+ **Note**
 
- @param filePath Absolute file path of the recording file. The string of the file name is in UTF-8.
- @param quality  Sets the audio recording quality. See AgoraAudioRecordingQuality.
+ - Ensure that the directory you use to save the recording file exists and is writable.
+ - This method is usually called after the [joinChannelByToken]([AgoraRtcEngineKit joinChannelByToken:channelId:info:uid:joinSuccess:]) method. The recording automatically stops when you call the [leaveChannel]([AgoraRtcEngineKit leaveChannel:]) method.
+ - For better recording effects, set `quality` as AgoraAudioRecordingQualityMedium or AgoraAudioRecordingQualityHigh when `sampleRate` is 44.1 kHz or 48 kHz.
 
- @return * 0: Success.
-* < 0: Failure.
- */
+ @param filePath Absolute file path of the recording file. The string of the filename is in UTF-8.
+ @param sampleRate Sample rate (kHz) of the recording file. Supported values are as follows:
+
+ - 16
+ - (Default) 32
+ - 44.1
+ - 48
+
+ @param quality Audio recording quality. See AgoraAudioRecordingQuality.
+
+  @return - 0: Success.
+- < 0: Failure.
+ */ 
 - (int)startAudioRecording:(NSString * _Nonnull)filePath
+                   sampleRate:(NSInteger)sampleRate
                    quality:(AgoraAudioRecordingQuality)quality;
 
 /** Stops an audio recording on the client.
 
  **Note:**
 
- You can call this method before calling the [leaveChannel]([AgoraRtcEngineKit leaveChannel:]) method, else the recording automatically stops when you call the leaveChannel method.
+ You can call this method before calling the [leaveChannel]([AgoraRtcEngineKit leaveChannel:]) method, else the recording automatically stops when you call the [leaveChannel]([AgoraRtcEngineKit leaveChannel:]) method.
 
  @return * 0: Success.
 * < 0: Failure.
@@ -2809,29 +2836,51 @@ See [Modify Raw Data](https://docs.agora.io/en/Interactive%20Broadcast/rawdata_i
  * -----------------------------------------------------------------------------
  */
 
-/** Adds a watermark image to the local video or CDN live stream.
+/** Adds a watermark image to the local video.
 
-This method adds a PNG watermark to the local video stream for the recording device, channel audience, or CDN live audience to see and capture.
+ This method adds a PNG watermark image to the local video in a live broadcast. Once the watermark image is added, all the audience in the channel (CDN audience included), and the recording device can see and capture it. Agora supports adding only one watermark image onto the local video, and the newly watermark image replaces the previous one.
 
- To add the PNG file onto a CDN live publishing stream only, see the [setLiveTranscoding](setLiveTranscoding:) method.
+ The watermark position depends on the settings in the [setVideoEncoderConfiguration]([AgoraRtcEngineKit setVideoEncoderConfiguration:]) method:
 
-**Note:**
+ - If the orientation mode of the encoding video is AgoraVideoOutputOrientationModeFixedLandscape, or the landscape mode in AgoraVideoOutputOrientationModeAdaptative, the watermark uses the landscape orientation.
+ - If the orientation mode of the encoding video is AgoraVideoOutputOrientationModeFixedPortrait, or the portrait mode in AgoraVideoOutputOrientationModeAdaptative, the watermark uses the portrait orientation.
+ - When setting the watermark position, the region must be less than the dimensions set in the [setVideoEncoderConfiguration]([AgoraRtcEngineKit setVideoEncoderConfiguration:]) method. Otherwise, the watermark image will be cropped.
 
-* The URL descriptions are different for the local video and CDN live streams:
-  * In a local video stream, `url` in AgoraImage refers to the absolute path of the added watermark image file in the local video stream.
-  * In a CDN live stream, `url` in AgoraImage refers to the URL address of the added watermark image in the CDN live broadcast.
-* The source file of the watermark image must be in the PNG file format. If the width and height of the PNG file differ from your settings in this method, the PNG file is cropped to conform to your settings.
-* The SDK supports adding only one watermark image onto a local video or CDN live stream. The newly added watermark image replaces the previous one.
-* If you set `orientationMode` as `Adaptive` in the [setVideoEncoderConfiguration](setVideoEncoderConfiguration:) method, the watermark image rotates with the video frame and rotates around the upper left corner of the watermark image.
+ **Note**
 
-@param watermark Watermark image to be added to the local video stream. See AgoraImage.
+ - Ensure that you have called the [enableVideo]([AgoraRtcEngineKit enableVideo]) method to enable the video module before calling this method.
+ - If you only want to add a watermark image to the local video for the audience in the CDN live broadcast channel to see and capture, you can call this method or the [setLiveTranscoding]([AgoraRtcEngineKit setLiveTranscoding:]) method.
+ - This method supports adding a watermark image in the PNG file format only. Supported pixel formats of the PNG image are RGBA, RGB, Palette, Gray, and Alpha_gray.
+ - If the dimensions of the PNG image differ from your settings in this method, the image will be cropped or zoomed to conform to your settings.
+ - If you have enabled the local video preview by calling the [startPreview]([AgoraRtcEngineKit startPreview]) method, you can use the `visibleInPreview` member in the WatermarkOptions class to set whether or not the watermark is visible in preview.
+ - If you have mirrored the local video by calling the [setLocalVideoMirrorMode]([AgoraRtcEngineKit setLocalVideoMirrorMode:]) method, the watermark image in preview is also mirrored.
 
-@return * 0: Success.
-* < 0: Failure.
+ @param url The local file path of the watermark image to be added. This method supports adding a watermark image from the local file path. If the watermark image to be added is in the project file, you need to change the image's Type from PNG image to Data in the Xcode property, otherwise, the Agora Native SDK cannot recognize the image.
+ @param options The options of the watermark image to be added. See WatermarkOptions:
+
+ - `visibleInPreview`: Sets whether or not the watermark image is visible in the local video preview: 
+  - YES: The watermark image is visible in preview.
+  - NO: The watermark image is not visible in preview. 
+
+ - `positionInLandscapeMode`: The watermark position in [landscape mode](https://docs.agora.io/en/Interactive%20Broadcast/rotation_guide_ios?platform=iOS#orientation-mode). This parameter contains the following members:
+  - `x`: The horizontal offset of the watermark from the top-left corner. 
+  - `y`: The vertical offset of the watermark from the top-left corner. 
+  - `width`: The width (pixel) of the watermark region. 
+  - `height`: The height (pixel) of the watermark region. 
+ 
+ - `positionInPortraitMode`: The watermark position in [portrait mode](https://docs.agora.io/en/Interactive%20Broadcast/rotation_guide_ios?platform=iOS#orientation-mode). This parameter contains the following members:
+  - `x`: The horizontal offset of the watermark from the top-left corner. 
+  - `y`: The vertical offset of the watermark from the top-left corner. 
+  - `width`: The width (pixel) of the watermark region. 
+  - `height`: The height (pixel) of the watermark region. 
+
+ @return * 0: Success.
+ * < 0: Failure.
  */
-- (int)addVideoWatermark:(AgoraImage * _Nonnull)watermark NS_SWIFT_NAME(addVideoWatermark(_:));
+- (int)addVideoWatermark:(NSURL * _Nonnull)url
+                 options:(WatermarkOptions * _Nonnull)options;
 
-/** Removes the watermark image from the video stream added by [addVideoWatermark](addVideoWatermark:).
+/** Removes the watermark image from the video stream added by [addVideoWatermark]([AgoraRtcEngineKit addVideoWatermark:options:]).
 
  @return * 0: Success.
 * < 0: Failure.
@@ -3780,6 +3829,53 @@ The SDK has two log files, each with a default size of 512 KB. If you set fileSi
  * -----------------------------------------------------------------------------
  */
 
+/** Adds a watermark image to the local video or CDN live stream.
+
+ **DEPRECATED** from v2.9.1. Use the new [addVideoWatermark]([AgoraRtcEngineKit addVideoWatermark:options:]) method.
+ 
+ This method adds a PNG watermark to the local video stream for the recording device, channel audience, or CDN live audience to see and capture.
+
+ To add the PNG file onto a CDN live publishing stream only, see the [setLiveTranscoding](setLiveTranscoding:) method.
+
+**Note:**
+
+* The URL descriptions are different for the local video and CDN live streams:
+  * In a local video stream, `url` in AgoraImage refers to the local file path of the added watermark image file in the local video stream.
+  * In a CDN live stream, `url` in AgoraImage refers to the URL address of the added watermark image in the CDN live broadcast.
+* The source file of the watermark image must be in the PNG file format. If the width and height of the PNG file differ from your settings in this method, the PNG file is cropped to conform to your settings.
+* The SDK supports adding only one watermark image onto a local video or CDN live stream. The newly added watermark image replaces the previous one.
+* If you set `orientationMode` as `Adaptive` in the [setVideoEncoderConfiguration](setVideoEncoderConfiguration:) method, the watermark image rotates with the video frame and rotates around the upper left corner of the watermark image.
+
+@param watermark Watermark image to be added to the local video stream. See AgoraImage.
+
+@return * 0: Success.
+* < 0: Failure.
+ */
+- (int)addVideoWatermark:(AgoraImage * _Nonnull)watermark NS_SWIFT_NAME(addVideoWatermark(_:)) __deprecated_msg("use addVideoWatermark:url options instead.");
+
+/** Starts an audio recording.
+
+ **DEPRECATED** from v2.9.1. Use the new [startAudioRecording]([AgoraRtcEngineKit startAudioRecording:sampleRate:quality:]) method instead.
+
+ This method has a fixed sample rate of 32 kHz.
+
+ The SDK allows recording during a call. Supported formats:
+
+ * .wav: Large file size with high fidelity.
+ * .aac: Small file size with low fidelity.
+
+ Ensure that the directory to save the recording file exists and is writable. You can call this method after calling the [joinChannelByToken]([AgoraRtcEngineKit joinChannelByToken:channelId:info:uid:joinSuccess:]) method. The recording automatically stops when you call the [leaveChannel]([AgoraRtcEngineKit leaveChannel:]) method.
+
+ @param filePath Absolute file path of the recording file. The string of the file name is in UTF-8.
+ @param quality  Sets the audio recording quality. See AgoraAudioRecordingQuality.
+
+ @return * 0: Success.
+* < 0: Failure.
+ */
+- (int)startAudioRecording:(NSString * _Nonnull)filePath
+                   quality:(AgoraAudioRecordingQuality)quality;
+
+
 /** Starts an audio call test.
 
 **DEPRECATED** from v2.4.
@@ -4030,7 +4126,7 @@ Under unreliable network connections or the device's CPU is overloaded, the vide
 
  **DEPRECATED** from v1.1.
 
- This callback is disabled by default and can be enabled by the [enableAudioVolumeIndication]([AgoraRtcEngineKit enableAudioVolumeIndication:smooth:]) method.
+ This callback is disabled by default and can be enabled by the `enableAudioVolumeIndication` method.
 
  In the returned speakers' array:
 
@@ -4191,7 +4287,7 @@ Under unreliable network connections or the device's CPU is overloaded, the vide
  - quality:                Audio receiving quality of the user
  - networkTransportDelay:  Network delay from the sender to the receiver.
  - jitterBufferDelay:      Jitter buffer delay at the receiver.
- - audioLossRate:          Audio packet loss rate in the reported interval.
+ - audioLossRate:          Audio frame loss rate in the reported interval.
  */
 - (void)remoteAudioStatBlock:(void(^ _Nullable)(NSUInteger uid, NSInteger quality, NSInteger networkTransportDelay, NSInteger jitterBufferDelay, NSInteger audioLossRate))remoteAudioStatBlock __deprecated_msg("use delegate instead.");
 

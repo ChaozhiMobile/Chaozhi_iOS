@@ -436,8 +436,13 @@
     sender.tag = 100+section;
     [bgView addSubview:sender];
     
+    UIView *lineView = [[UIView alloc]init];
+    lineView.backgroundColor = RGBValue(0xe6e6e6);
+    [bgView addSubview:lineView];
+
     if (section==4) {
         bgView.backgroundColor = self.view.backgroundColor;
+        lineView.backgroundColor = self.view.backgroundColor;
     }
     
     [leftIcon mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -455,6 +460,12 @@
         make.top.bottom.mas_equalTo(bgView);
         make.width.mas_equalTo(100);
     }];
+    
+    [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.bottom.right.mas_equalTo(bgView);
+        make.height.mas_equalTo(1);
+    }];
+    
     
     return bgView;
 }
@@ -532,10 +543,11 @@
 
     scroll.contentSize = CGSizeMake((blankSpace*(count+1))+viewWidth*count,0);
     [scroll mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(viewHeight);
+        make.height.mas_equalTo(viewHeight+20);
         make.width.mas_equalTo(WIDTH);
     }];
     UIView *contentView = [[UIView alloc]init];;
+    contentView.backgroundColor = [UIColor clearColor];
     [scroll addSubview:contentView];
     [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(scroll);
@@ -559,7 +571,7 @@
         [view mas_updateConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(contentView.mas_top).offset(10);
             make.bottom.mas_equalTo(contentView.mas_bottom);
-            make.left.mas_equalTo(lastView?lastView.mas_right:@0).offset(10);
+            make.left.mas_equalTo(lastView?lastView.mas_right:@0).offset(20);
             make.width.mas_equalTo(viewWidth);
             make.height.mas_equalTo(viewHeight);
         }];
@@ -569,7 +581,7 @@
     }
     [contentView mas_updateConstraints:^(MASConstraintMaker *make) {
            make.right.equalTo(lastView.mas_right);
-       }];
+    }];
 }
 
 #pragma mark - 教师详情

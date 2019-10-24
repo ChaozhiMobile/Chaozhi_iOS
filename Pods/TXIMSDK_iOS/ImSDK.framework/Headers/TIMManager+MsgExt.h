@@ -64,6 +64,15 @@
  */
 - (void)setCustomVersion:(NSString *)version;
 
+/**
+ *  删除未读消息的时候减少会话的未读数
+ *
+ *  不建议客户使用，删除消息和减少未读数是本地操作，没有和服务器做同步，在程序卸载或则多端同步中会出现未读数不一致的问题。
+ *
+ *  @note reduceUnreadNumberWhenRemoveMessage 要在 initSdk() 之前调用。
+ */
+- (void)reduceUnreadNumberWhenRemoveMessage;
+
 @end
 
 

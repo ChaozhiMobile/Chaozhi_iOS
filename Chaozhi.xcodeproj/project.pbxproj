@@ -4848,16 +4848,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Chaozhi/Pods-Chaozhi-resources.sh",
-				"${PODS_ROOT}/TalkfunMediaFramework/SDK/TalkfunMediaFramework.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-Chaozhi/Pods-Chaozhi-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TalkfunMediaFramework.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-Chaozhi/Pods-Chaozhi-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -4870,16 +4865,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Xuezhi/Pods-Xuezhi-resources.sh",
-				"${PODS_ROOT}/TalkfunMediaFramework/SDK/TalkfunMediaFramework.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-Xuezhi/Pods-Xuezhi-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TalkfunMediaFramework.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-Xuezhi/Pods-Xuezhi-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -4932,9 +4922,11 @@
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Xuezhi/Pods-Xuezhi-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Xuezhi/Pods-Xuezhi-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -5805,8 +5797,6 @@
 					"$(inherited)",
 					"-ObjC",
 					"-l\"c++\"",
-					"-l\"jcore-ios-1.1.1\"",
-					"-l\"jpush-ios-3.0.3\"",
 					"-l\"resolv\"",
 					"-l\"sqlite3\"",
 					"-l\"xml2\"",
@@ -5899,8 +5889,6 @@
 					"$(inherited)",
 					"-ObjC",
 					"-l\"c++\"",
-					"-l\"jcore-ios-1.1.1\"",
-					"-l\"jpush-ios-3.0.3\"",
 					"-l\"resolv\"",
 					"-l\"sqlite3\"",
 					"-l\"xml2\"",
@@ -5993,8 +5981,6 @@
 					"$(inherited)",
 					"-ObjC",
 					"-l\"c++\"",
-					"-l\"jcore-ios-1.1.1\"",
-					"-l\"jpush-ios-3.0.3\"",
 					"-l\"resolv\"",
 					"-l\"sqlite3\"",
 					"-l\"xml2\"",
@@ -6087,8 +6073,6 @@
 					"$(inherited)",
 					"-ObjC",
 					"-l\"c++\"",
-					"-l\"jcore-ios-1.1.1\"",
-					"-l\"jpush-ios-3.0.3\"",
 					"-l\"resolv\"",
 					"-l\"sqlite3\"",
 					"-l\"xml2\"",
