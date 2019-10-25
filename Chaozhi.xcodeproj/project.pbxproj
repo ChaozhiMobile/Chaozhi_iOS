@@ -272,6 +272,8 @@
 		A02C02412362C271008B470A /* UILabel+XLGFont.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C023E2362C271008B470A /* UILabel+XLGFont.m */; };
 		A02C02442362C2F1008B470A /* UIFont+XLGFont.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C02422362C2F0008B470A /* UIFont+XLGFont.m */; };
 		A02C02452362C2F1008B470A /* UIFont+XLGFont.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C02422362C2F0008B470A /* UIFont+XLGFont.m */; };
+		A02C02482362C7BF008B470A /* UITextField+XLGFont.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C02472362C7BF008B470A /* UITextField+XLGFont.m */; };
+		A02C02492362C7BF008B470A /* UITextField+XLGFont.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C02472362C7BF008B470A /* UITextField+XLGFont.m */; };
 		A035D32A231ABE8D00F61484 /* TalkfunSDKFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A035D329231ABE8D00F61484 /* TalkfunSDKFramework.framework */; };
 		A035D32B231ABE8D00F61484 /* TalkfunSDKFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A035D329231ABE8D00F61484 /* TalkfunSDKFramework.framework */; };
 		A045501B22EC4FCA00E17406 /* ChaozhiAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A045501A22EC4FCA00E17406 /* ChaozhiAssets.xcassets */; };
@@ -1473,6 +1475,8 @@
 		A02C023F2362C271008B470A /* UILabel+XLGFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+XLGFont.h"; sourceTree = "<group>"; };
 		A02C02422362C2F0008B470A /* UIFont+XLGFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+XLGFont.m"; sourceTree = "<group>"; };
 		A02C02432362C2F1008B470A /* UIFont+XLGFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+XLGFont.h"; sourceTree = "<group>"; };
+		A02C02462362C7BF008B470A /* UITextField+XLGFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+XLGFont.h"; sourceTree = "<group>"; };
+		A02C02472362C7BF008B470A /* UITextField+XLGFont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+XLGFont.m"; sourceTree = "<group>"; };
 		A035D329231ABE8D00F61484 /* TalkfunSDKFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TalkfunSDKFramework.framework; sourceTree = "<group>"; };
 		A045501522EC4ACB00E17406 /* Xuezhi.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Xuezhi.entitlements; sourceTree = "<group>"; };
 		A045501A22EC4FCA00E17406 /* ChaozhiAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ChaozhiAssets.xcassets; sourceTree = "<group>"; };
@@ -2984,6 +2988,8 @@
 				A02C023E2362C271008B470A /* UILabel+XLGFont.m */,
 				A02C02362362A263008B470A /* UIButton+XLGFont.h */,
 				A02C02372362A263008B470A /* UIButton+XLGFont.m */,
+				A02C02462362C7BF008B470A /* UITextField+XLGFont.h */,
+				A02C02472362C7BF008B470A /* UITextField+XLGFont.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -5210,6 +5216,7 @@
 				A0E615922358A6D7001D9258 /* TUIMessageCellData.m in Sources */,
 				A0AC08C022C4BC7D001832EA /* TalkfunNewQuestionCell.m in Sources */,
 				A020B05F214AAB150011BB4F /* XLGLoginTestVC.m in Sources */,
+				A02C02482362C7BF008B470A /* UITextField+XLGFont.m in Sources */,
 				A0E6160C2358A6D7001D9258 /* TUIKitConfig.m in Sources */,
 				A0E6153E2358A6D7001D9258 /* TResponderTextView.m in Sources */,
 				A0AC08C222C4BC7D001832EA /* TalkfunNewFunctionButton.m in Sources */,
@@ -5624,6 +5631,7 @@
 				A045511322EC8DFA00E17406 /* JHHJView.m in Sources */,
 				A045511422EC8DFA00E17406 /* TalkfunHttpTools.m in Sources */,
 				A0E615692358A6D7001D9258 /* TUIContactController.m in Sources */,
+				A02C02492362C7BF008B470A /* UITextField+XLGFont.m in Sources */,
 				A0E615D52358A6D7001D9258 /* TUIGroupMemberCell.m in Sources */,
 				A0E6155B2358A6D7001D9258 /* TUIContactSelectController.m in Sources */,
 				A0E615E52358A6D7001D9258 /* TConversationListViewModel.m in Sources */,

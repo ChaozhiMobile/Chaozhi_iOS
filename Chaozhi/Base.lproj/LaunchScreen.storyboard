@@ -34,6 +34,7 @@
                             <constraint firstItem="0wt-Fe-Ec9" firstAttribute="top" secondItem="aCb-zC-MvB" secondAttribute="bottom" constant="40" id="l5y-L3-rVa"/>
                         </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

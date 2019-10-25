@@ -36,14 +36,14 @@
 
 + (UIFont *)test_systemFontOfSize:(CGFloat)fontSize {
     if (IsIPAD) {
-        return [UIFont test_systemFontOfSize:fontSize*1.5];
+        return [UIFont test_systemFontOfSize:fontSize*1.3];
     }
     return [UIFont test_systemFontOfSize:fontSize*kScale];
 }
 
 + (UIFont *)test_systemFontOfSize:(CGFloat)fontSize weight:(UIFontWeight)weight {
     if (IsIPAD) {
-        return [UIFont test_systemFontOfSize:fontSize*1.5 weight:weight];
+        return [UIFont test_systemFontOfSize:fontSize*1.3 weight:weight];
     }
     return [UIFont test_systemFontOfSize:fontSize*kScale weight:weight];
 }

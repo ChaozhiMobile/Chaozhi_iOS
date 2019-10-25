@@ -1,15 +1,15 @@
 //
-//  UIButton+XLGFont.m
+//  UITextField+XLGFont.m
 //  Chaozhi
 //
 //  Created by Jason_zyl on 2019/10/25.
 //  Copyright © 2019 Jason_hzb. All rights reserved.
 //
 
-#import "UIButton+XLGFont.h"
+#import "UITextField+XLGFont.h"
 #import <objc/runtime.h>
 
-@implementation UIButton (XLGFont)
+@implementation UITextField (XLGFont)
 
 //只执行一次的方法，在这个地方 替换方法
 + (void)load {
@@ -35,7 +35,7 @@
 - (void)testFontAwakeFromNib {
     [self testFontAwakeFromNib];
     
-    self.titleLabel.font = [UIFont systemFontOfSize:self.titleLabel.font.pointSize];
+    self.font = [UIFont systemFontOfSize:self.font.pointSize];
 }
 
 @end

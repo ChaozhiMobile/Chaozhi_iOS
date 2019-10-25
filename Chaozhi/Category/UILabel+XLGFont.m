@@ -9,8 +9,6 @@
 #import "UILabel+XLGFont.h"
 #import <objc/runtime.h>
 
-#define kScale MIN([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) / 375
-
 @implementation UILabel (XLGFont)
 
 //只执行一次的方法，在这个地方 替换方法
