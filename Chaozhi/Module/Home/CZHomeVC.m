@@ -544,13 +544,14 @@
     scroll.contentSize = CGSizeMake((blankSpace*(count+1))+viewWidth*count,0);
     [scroll mas_updateConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(viewHeight+20);
-        make.width.mas_equalTo(WIDTH);
+        make.width.mas_equalTo(scroll.superview.mas_width);
     }];
     UIView *contentView = [[UIView alloc]init];;
     contentView.backgroundColor = [UIColor clearColor];
     [scroll addSubview:contentView];
     [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(scroll);
+        make.edges.mas_equalTo (scroll);
+        make.height.mas_equalTo (scroll); //此处没有设置宽的约束
     }];
     
     UIView *lastView;
@@ -569,7 +570,7 @@
         [contentView addSubview:view];
         
         [view mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(contentView.mas_top).offset(10);
+            make.top.mas_equalTo(contentView.mas_top).offset(0);
             make.bottom.mas_equalTo(contentView.mas_bottom);
             make.left.mas_equalTo(lastView?lastView.mas_right:@0).offset(20);
             make.width.mas_equalTo(viewWidth);
@@ -580,7 +581,7 @@
         [view addGestureRecognizer:tap];
     }
     [contentView mas_updateConstraints:^(MASConstraintMaker *make) {
-           make.right.equalTo(lastView.mas_right);
+        make.right.equalTo(lastView.mas_right).offset(20);
     }];
 }
 
