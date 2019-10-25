@@ -39,6 +39,7 @@
 @property (nonatomic , retain) HomeNewsListItem *newsItems;
 @property (nonatomic , retain) NSMutableArray <HomeNewsItem *> *newsDatsSource;
 @property (nonatomic , retain) CourseItem *feaCourseItem1,*feaCourseItem2;
+@property (weak, nonatomic) IBOutlet UIView *statuView;
 
 /** 轮播图 */
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *bannerView;
@@ -65,6 +66,9 @@
 //    [UIColor whiteColor];
     
     _statusH.constant = kStatusBarH;
+    [_statuView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(kStatusBarH);
+    }];
     
     if (![Utils getNetStatus]) {
         XLGAlertView *alert = [[XLGAlertView alloc] initWithTitle:@"温馨提醒" content:@"检测到您的网络异常，请检查网络" leftButtonTitle:@"" rightButtonTitle:@"我知道了"];
@@ -112,6 +116,13 @@
     [self checkVersion];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeServerSucc) name:kChangeServerSuccNotification object:nil]; //环境切换成功通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:UIApplicationDidChangeStatusBarOrientationNotification object:nil]; //屏幕旋转监听
+}
+
+- (void)refreshData {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.mainTabView reloadData];
+    });
 }
 
 - (void)changeServerSucc {
