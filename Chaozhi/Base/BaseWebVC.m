@@ -85,7 +85,7 @@
         //配置环境
         WKWebViewConfiguration * configuration = [[WKWebViewConfiguration alloc]init];
         configuration.allowsInlineMediaPlayback = true;
-        _userContentController =[[WKUserContentController alloc]init];
+        _userContentController = [[WKUserContentController alloc] init];
         configuration.userContentController = _userContentController;
         _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, kNavBarH, WIDTH, HEIGHT-kNavBarH) configuration:configuration];
         _webView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
@@ -104,7 +104,7 @@
         [_webView.scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
 
         //注册方法
-        WKDelegateController *delegateController = [[WKDelegateController alloc]init];
+        WKDelegateController *delegateController = [[WKDelegateController alloc] init];
         delegateController.delegate = self;
         [_userContentController addScriptMessageHandler:delegateController name:@"return"]; //返回
         [_userContentController addScriptMessageHandler:delegateController name:@"login"]; //登录

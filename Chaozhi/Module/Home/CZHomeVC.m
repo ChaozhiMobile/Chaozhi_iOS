@@ -434,6 +434,7 @@
     [sender setTitle:moreArr[section] forState:UIControlStateNormal];
     [sender addTarget:self action:@selector(showMoreAction:) forControlEvents:UIControlEventTouchUpInside];
     sender.tag = 100+section;
+    sender.contentHorizontalAlignment = NSTextAlignmentRight;
     [bgView addSubview:sender];
     
     UIView *lineView = [[UIView alloc]init];
@@ -456,9 +457,9 @@
     }];
     
     [sender mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(bgView).offset(-4);
+        make.right.mas_equalTo(bgView).offset(-10);
         make.top.bottom.mas_equalTo(bgView);
-        make.width.mas_equalTo(100);
+        make.width.mas_equalTo(150);
     }];
     
     [lineView mas_makeConstraints:^(MASConstraintMaker *make) {

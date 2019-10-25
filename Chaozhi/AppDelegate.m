@@ -34,6 +34,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [self printFont]; //输出所有系统字体
+    
     [[DBManager shareManager] createDBAndTable];
     
     [self iapCheck]; //内购凭证服务器二次校验，防止漏单
@@ -77,6 +79,19 @@
     [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+/** 输出得到所有的字体 */
+- (void)printFont {
+    NSArray *familyNames = [UIFont familyNames];
+    for (NSString *familyName in familyNames) {
+        printf("Family: %s \n",[familyName UTF8String]);
+        NSArray *fontNames = [UIFont fontNamesForFamilyName:familyName];
+        for (NSString *fontName in fontNames) {
+            printf("\tFont: %s \n",[fontName UTF8String]);
+        }
+        NSLog(@"\n----------输出字体种类-----------")
+    }
 }
 
 #pragma mark - 腾讯IM配置

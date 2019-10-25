@@ -266,6 +266,12 @@
 		A0281B82232A4E7800559A5B /* TalkfunNewFunctionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0281B7E232A4E7800559A5B /* TalkfunNewFunctionView.xib */; };
 		A0281B83232A4E7800559A5B /* TalkfunNewFunctionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0281B7F232A4E7800559A5B /* TalkfunNewFunctionView.m */; };
 		A0281B84232A4E7800559A5B /* TalkfunNewFunctionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0281B7F232A4E7800559A5B /* TalkfunNewFunctionView.m */; };
+		A02C02382362A263008B470A /* UIButton+XLGFont.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C02372362A263008B470A /* UIButton+XLGFont.m */; };
+		A02C02392362A263008B470A /* UIButton+XLGFont.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C02372362A263008B470A /* UIButton+XLGFont.m */; };
+		A02C02402362C271008B470A /* UILabel+XLGFont.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C023E2362C271008B470A /* UILabel+XLGFont.m */; };
+		A02C02412362C271008B470A /* UILabel+XLGFont.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C023E2362C271008B470A /* UILabel+XLGFont.m */; };
+		A02C02442362C2F1008B470A /* UIFont+XLGFont.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C02422362C2F0008B470A /* UIFont+XLGFont.m */; };
+		A02C02452362C2F1008B470A /* UIFont+XLGFont.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C02422362C2F0008B470A /* UIFont+XLGFont.m */; };
 		A035D32A231ABE8D00F61484 /* TalkfunSDKFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A035D329231ABE8D00F61484 /* TalkfunSDKFramework.framework */; };
 		A035D32B231ABE8D00F61484 /* TalkfunSDKFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A035D329231ABE8D00F61484 /* TalkfunSDKFramework.framework */; };
 		A045501B22EC4FCA00E17406 /* ChaozhiAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A045501A22EC4FCA00E17406 /* ChaozhiAssets.xcassets */; };
@@ -1461,6 +1467,12 @@
 		A0281B7E232A4E7800559A5B /* TalkfunNewFunctionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TalkfunNewFunctionView.xib; sourceTree = "<group>"; };
 		A0281B7F232A4E7800559A5B /* TalkfunNewFunctionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunNewFunctionView.m; sourceTree = "<group>"; };
 		A0281B80232A4E7800559A5B /* TalkfunNewFunctionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunNewFunctionView.h; sourceTree = "<group>"; };
+		A02C02362362A263008B470A /* UIButton+XLGFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+XLGFont.h"; sourceTree = "<group>"; };
+		A02C02372362A263008B470A /* UIButton+XLGFont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+XLGFont.m"; sourceTree = "<group>"; };
+		A02C023E2362C271008B470A /* UILabel+XLGFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+XLGFont.m"; sourceTree = "<group>"; };
+		A02C023F2362C271008B470A /* UILabel+XLGFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+XLGFont.h"; sourceTree = "<group>"; };
+		A02C02422362C2F0008B470A /* UIFont+XLGFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+XLGFont.m"; sourceTree = "<group>"; };
+		A02C02432362C2F1008B470A /* UIFont+XLGFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+XLGFont.h"; sourceTree = "<group>"; };
 		A035D329231ABE8D00F61484 /* TalkfunSDKFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TalkfunSDKFramework.framework; sourceTree = "<group>"; };
 		A045501522EC4ACB00E17406 /* Xuezhi.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Xuezhi.entitlements; sourceTree = "<group>"; };
 		A045501A22EC4FCA00E17406 /* ChaozhiAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ChaozhiAssets.xcassets; sourceTree = "<group>"; };
@@ -2966,6 +2978,12 @@
 				A045521522ED44ED00E17406 /* UILabel+XLGColor.m */,
 				A045521822ED46E500E17406 /* UIButton+XLGColor.h */,
 				A045521922ED46E500E17406 /* UIButton+XLGColor.m */,
+				A02C02432362C2F1008B470A /* UIFont+XLGFont.h */,
+				A02C02422362C2F0008B470A /* UIFont+XLGFont.m */,
+				A02C023F2362C271008B470A /* UILabel+XLGFont.h */,
+				A02C023E2362C271008B470A /* UILabel+XLGFont.m */,
+				A02C02362362A263008B470A /* UIButton+XLGFont.h */,
+				A02C02372362A263008B470A /* UIButton+XLGFont.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -5048,6 +5066,7 @@
 				A0AC08A422C4BC7D001832EA /* NetworkDetector.m in Sources */,
 				A00D0D39231BA7A300CF25E7 /* AlbumViewController.m in Sources */,
 				A020B053214AAB150011BB4F /* Utils.m in Sources */,
+				A02C02402362C271008B470A /* UILabel+XLGFont.m in Sources */,
 				A00D0D4F231BA7A300CF25E7 /* TalkfunAdvertView.m in Sources */,
 				A020B073214AAB150011BB4F /* LDNetPing.m in Sources */,
 				A0E615FA2358A6D7001D9258 /* TCServiceManager.m in Sources */,
@@ -5228,6 +5247,7 @@
 				A0541FC422F3E2A100D961B3 /* OptionsBarView.m in Sources */,
 				A0C1257321BC021B0026430E /* CZStarView.m in Sources */,
 				A0E615AA2358A6D7001D9258 /* TUIInputBar.m in Sources */,
+				A02C02382362A263008B470A /* UIButton+XLGFont.m in Sources */,
 				A020B055214AAB150011BB4F /* XLGLottie.m in Sources */,
 				A0AC08EC22C4BC7D001832EA /* NoticeTableViewController.m in Sources */,
 				205934C123547673003DDF39 /* SearchGroupViewController.m in Sources */,
@@ -5236,6 +5256,7 @@
 				A00D0D49231BA7A300CF25E7 /* ChapterModel.m in Sources */,
 				A045521222ED42EB00E17406 /* UIView+XLGColor.m in Sources */,
 				A0AC090D22C4BC7E001832EA /* TalkfunWatermark.m in Sources */,
+				A02C02442362C2F1008B470A /* UIFont+XLGFont.m in Sources */,
 				205934C323547673003DDF39 /* SearchFriendViewController.m in Sources */,
 				A0E615442358A6D7001D9258 /* TUIButtonCell.m in Sources */,
 				A00D0D4B231BA7A300CF25E7 /* ChatTableViewCell.m in Sources */,
@@ -5359,6 +5380,7 @@
 				A0541FA622F2C69C00D961B3 /* UIButton+CenterImageAndTitle.m in Sources */,
 				205934D623547673003DDF39 /* ProfileController.m in Sources */,
 				A0541FCB22F3E2A100D961B3 /* OptionsBarItem.m in Sources */,
+				A02C02452362C2F1008B470A /* UIFont+XLGFont.m in Sources */,
 				A045509522EC8DFA00E17406 /* TalkfunNewButtonViewButton.m in Sources */,
 				A0E6152B2358A6D7001D9258 /* TUILocalStorage.m in Sources */,
 				A045509622EC8DFA00E17406 /* LDNetGetAddress.m in Sources */,
@@ -5458,6 +5480,7 @@
 				A0E615BD2358A6D7001D9258 /* TUIJoinGroupMessageCell.m in Sources */,
 				A0E615F52358A6D7001D9258 /* NSString+DataProvider.m in Sources */,
 				A0E615372358A6D7001D9258 /* TTextEditController.m in Sources */,
+				A02C02392362A263008B470A /* UIButton+XLGFont.m in Sources */,
 				A04550C722EC8DFA00E17406 /* TalkfunNewChatCell.m in Sources */,
 				A04550C822EC8DFA00E17406 /* TalkfunGuidanceView.m in Sources */,
 				A0E615E32358A6D7001D9258 /* TNaviBarIndicatorView.m in Sources */,
@@ -5569,6 +5592,7 @@
 				A0E615992358A6D7001D9258 /* TUIGroupPendencyCellData.m in Sources */,
 				A045510322EC8DFA00E17406 /* TalkfunWatermark.m in Sources */,
 				A0E615F12358A6D7001D9258 /* TIMConversation+DataProvider.m in Sources */,
+				A02C02412362C271008B470A /* UILabel+XLGFont.m in Sources */,
 				A0E615872358A6D7001D9258 /* TUIBubbleMessageCellData.m in Sources */,
 				A045510522EC8DFA00E17406 /* VoteViewController.m in Sources */,
 				A00D0D3E231BA7A300CF25E7 /* TalkfunPlaybackViewController.m in Sources */,
