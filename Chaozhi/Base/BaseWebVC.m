@@ -84,12 +84,6 @@
     if (!_webView) {
         //配置环境
         WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
-//        // 创建设置对象
-//        WKPreferences *preference = [[WKPreferences alloc]init];
-//        // 设置字体大小(最小的字体大小)
-//        preference.minimumFontSize = 40;
-//        // 设置偏好设置对象
-//        configuration.preferences = preference;
         configuration.allowsInlineMediaPlayback = true;
         _userContentController = [[WKUserContentController alloc] init];
         configuration.userContentController = _userContentController;
@@ -172,8 +166,8 @@
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
     [self initWebData]; //初始化WebView数据
     if (IsIPAD) {
-        //修改字体大小（方法一）
-        NSString *fontSize = [NSString stringWithFormat:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '%d%%'",200];
+        //修改字体大小
+        NSString *fontSize = [NSString stringWithFormat:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '%d%%'",130];
         [ webView evaluateJavaScript:fontSize completionHandler:nil];
     }
 }

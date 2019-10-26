@@ -1530,6 +1530,7 @@ static BOOL fromLandscape = NO;
 //    }
 //    return _networkDetector;
 //}
+
 - (TalkfunLoadingView *)loadingView{
     if (!_loadingView) {
         _loadingView = [TalkfunLoadingView initView];
