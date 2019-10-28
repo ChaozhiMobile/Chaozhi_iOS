@@ -33,7 +33,6 @@
     [_webView evaluateJavaScript:@"window.activated && window.activated();" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
         NSLog(@"js返回结果%@",result);
     }];
-    [self initWebData]; //初始化WebView数据
 }
 
 /** 传入控制器、url、标题 */
@@ -106,6 +105,7 @@
         //注册方法
         WKDelegateController *delegateController = [[WKDelegateController alloc] init];
         delegateController.delegate = self;
+//        [_userContentController addScriptMessageHandler:delegateController name:@"getWebConfig"]; //获取网页配置
         [_userContentController addScriptMessageHandler:delegateController name:@"return"]; //返回
         [_userContentController addScriptMessageHandler:delegateController name:@"login"]; //登录
         [_userContentController addScriptMessageHandler:delegateController name:@"refresh"]; //刷新
@@ -118,7 +118,7 @@
     [self.view addSubview:_webView];
     
     if ([_homeUrl containsString:@"http"]) {
-        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_homeUrl] cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:30]];
+        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_homeUrl] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30]];
     } else {
          [self.webView loadHTMLString:_homeUrl baseURL:nil];
     }
@@ -164,11 +164,11 @@
 
 // 页面加载完成之后调用
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
-    [self initWebData]; //初始化WebView数据
+//    [self initWebData]; //初始化WebView数据
 //    if (IsIPAD) {
-//        //修改字体大小
-//        NSString *fontSize = [NSString stringWithFormat:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '%d%%'",130];
-//        [ webView evaluateJavaScript:fontSize completionHandler:nil];
+        //修改字体大小
+        NSString *fontSize = [NSString stringWithFormat:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '%d%%'",100];
+        [ webView evaluateJavaScript:fontSize completionHandler:nil];
 //    }
 }
 
@@ -190,6 +190,18 @@
 // WKScriptMessageHandler
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
     NSLog(@"name:%@\\\\n body:%@\\\\n frameInfo:%@\\\\n",message.name,message.body,message.frameInfo);
+    
+//    if ([message.name isEqualToString:@"getWebConfig"]) { //获取网页配置
+//        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+//        [dic setObject:[NSString isEmpty:[UserInfo share].token]?@"":[UserInfo share].token forKey:@"token"];
+//        [dic setObject:[Utils getWifi]==YES?@"1":@"0" forKey:@"wifi"];
+//        [dic setObject:AppVersion forKey:@"version"];
+//        [dic setObject:@"ios" forKey:@"device"];
+//        NSString *extendStr = [dic jsonStringEncoded];
+//        [_webView evaluateJavaScript:[NSString stringWithFormat:@"fn_getWebConfig(%@);",extendStr] completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+//            NSLog(@"js返回结果%@",result);
+//        }];
+//    }
     
     if ([message.name isEqualToString:@"open"]) { //打开新页面
         NSDictionary *dic = message.body;
@@ -423,6 +435,8 @@
         XLGExternalTestTool *tool = [XLGExternalTestTool shareInstance];
         tool.logTextViews.text = [NSString stringWithFormat:@"跳转网页地址：%@ \n\n\n%@",webView.URL.absoluteString,tool.logTextViews.text];
     }
+    
+    [self initWebData]; //初始化WebView数据
 }
 
 // 当内容开始返回时调用
@@ -532,6 +546,7 @@
     [_webView removeObserver:self forKeyPath:@"estimatedProgress"];
     [_webView removeObserver:self forKeyPath:@"title"];
     [_webView.scrollView removeObserver:self forKeyPath:@"contentOffset"];
+//    [_userContentController removeScriptMessageHandlerForName:@"getWebConfig"];
     [_userContentController removeScriptMessageHandlerForName:@"open"];
     [_userContentController removeScriptMessageHandlerForName:@"close"];
     [_userContentController removeScriptMessageHandlerForName:@"tapBack"];

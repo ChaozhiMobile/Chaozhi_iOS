@@ -34,25 +34,14 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self refresh];
     if (self.webView == nil) {
         [self initWebView];
     }
+    self.webView.frame = CGRectMake(0, kNavBarH, WIDTH, HEIGHT-kNavBarH-kTabBarH-kTabBarSafeH);
 }
 
 #pragma mark - 刷新H5
 - (void)refresh {
-    if (@available(iOS 9.0, *)) {
-        NSSet *websiteDataTypes = [WKWebsiteDataStore allWebsiteDataTypes];
-        NSDate *dateFrom = [NSDate dateWithTimeIntervalSince1970:0];
-        [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes modifiedSince:dateFrom completionHandler:^{
-        }];
-    } else {
-        NSString *libraryPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory,NSUserDomainMask,YES) objectAtIndex:0];
-        NSString *cookiesFolderPath = [libraryPath stringByAppendingString:@"/Cookies"];
-        NSError *errors;
-        [[NSFileManager defaultManager] removeItemAtPath:cookiesFolderPath error:&errors];
-    }
     [self.webView removeFromSuperview];
     self.webView = nil;
 }
