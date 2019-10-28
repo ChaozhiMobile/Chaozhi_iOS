@@ -27,7 +27,7 @@
 /**
  *  视频播放状态改变
  */
-- (void)playerLoadStateDidChange:(TalkfunPlayStatus)loadState;
+- (void)playerLoadStateDidChange:(TalkfunPlayerLoadState)loadState;
 
 /**
  *  视频播放结束代理

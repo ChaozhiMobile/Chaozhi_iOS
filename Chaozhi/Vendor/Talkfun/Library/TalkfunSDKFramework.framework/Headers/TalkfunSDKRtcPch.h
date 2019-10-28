@@ -85,6 +85,13 @@ typedef NS_ENUM(NSInteger, TalkfunRTCLiveState)
      TalkfunLiveRTCStateStart,         //开始状态
 
 };
+
+typedef NS_ENUM(NSInteger, TalkfunVideoOutputOrientationMode) {
+
+    TalkfunVideoOutputOrientationModeAdaptative = 0,
+    TalkfunVideoOutputOrientationModeFixedLandscape = 1,
+    TalkfunVideoOutputOrientationModeFixedPortrait = 2,
+};
 @interface TalkfunSDKRtcPch : NSObject
 @end
 

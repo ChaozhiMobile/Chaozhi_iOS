@@ -26,7 +26,10 @@
 #import "ImSDK.h"
 #import "GenerateTestUserSig.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UIAlertViewDelegate>
+
+@property (nonatomic,strong) UIAlertView *networkAlertView;
+@property (nonatomic,strong) UIAlertView *notReachableAlertView;
 
 @end
 
@@ -52,6 +55,7 @@
 
     //监测网络
     [[NetworkUtil sharedInstance] listening];
+    [self talkFunNetworkCheck];
     
     //键盘事件
     [self processKeyBoard];
@@ -79,6 +83,55 @@
     [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+#pragma mark - 欢拓网络监测
+- (void)talkFunNetworkCheck {
+    WeakSelf
+    //网络检测
+    AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
+    [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        weakSelf.status = status;
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            // 当网络状态改变时调用
+            switch (status) {
+                case AFNetworkReachabilityStatusUnknown:
+                    NSLog(@"未知网络");
+                    break;
+                case AFNetworkReachabilityStatusNotReachable:
+                    NSLog(@"没有网络");
+                    [weakSelf.notReachableAlertView show];
+                    break;
+                case AFNetworkReachabilityStatusReachableViaWWAN:
+                    
+                    NSLog(@"手机自带网络");
+                    [weakSelf.networkAlertView show];
+                    break;
+                case AFNetworkReachabilityStatusReachableViaWiFi:
+                    NSLog(@"WIFI");
+                    [weakSelf.networkAlertView dismissWithClickedButtonIndex:0 animated:NO];
+                    
+                    [weakSelf.notReachableAlertView dismissWithClickedButtonIndex:0 animated:NO];
+                    break;
+            }
+        });
+    }];
+}
+
+- (UIAlertView *)networkAlertView {
+    if (!_networkAlertView) {
+        _networkAlertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"确定不在wifi环境下观看或下载?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    }
+    return _networkAlertView;
+}
+
+- (UIAlertView *)notReachableAlertView {
+    if (!_notReachableAlertView) {
+        _notReachableAlertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"网络中断!" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] ;
+    }
+    return _notReachableAlertView;
 }
 
 /** 输出得到所有的字体 */

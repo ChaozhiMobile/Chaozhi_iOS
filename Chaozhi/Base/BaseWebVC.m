@@ -14,7 +14,7 @@
 #import "VideoItem.h"
 #import "TalkfunItem.h"
 #import "TalkfunViewController.h"
-#import "TalkfunPlaybackViewController.h"
+#import "CZPlaybackVC.h"
 #import "XLGExternalTestTool.h"
 
 @interface BaseWebVC ()<WKUIDelegate,WKNavigationDelegate,WKDelegate,UITextFieldDelegate>
@@ -118,7 +118,7 @@
     [self.view addSubview:_webView];
     
     if ([_homeUrl containsString:@"http"]) {
-        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_homeUrl] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30]];
+        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_homeUrl] cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:30]];
     } else {
          [self.webView loadHTMLString:_homeUrl baseURL:nil];
     }
@@ -165,11 +165,11 @@
 // 页面加载完成之后调用
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
     [self initWebData]; //初始化WebView数据
-    if (IsIPAD) {
-        //修改字体大小
-        NSString *fontSize = [NSString stringWithFormat:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '%d%%'",130];
-        [ webView evaluateJavaScript:fontSize completionHandler:nil];
-    }
+//    if (IsIPAD) {
+//        //修改字体大小
+//        NSString *fontSize = [NSString stringWithFormat:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '%d%%'",130];
+//        [ webView evaluateJavaScript:fontSize completionHandler:nil];
+//    }
 }
 
 // 初始化WebView数据
@@ -277,7 +277,7 @@
     if (![NSString isEmpty:item.token]) { //公开课视频token是H5传过来的
         if ([item.type isEqualToString:@"1"]
             || [item.type isEqualToString:@"2"]) {
-            TalkfunPlaybackViewController *vc = [[TalkfunPlaybackViewController alloc] init];
+            CZPlaybackVC *vc = [[CZPlaybackVC alloc] init];
             vc.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":item.token},@"data", nil];
             vc.playbackID = item.live_id;
             vc.videoItem = item;
@@ -301,7 +301,7 @@
                 TalkfunItem *talkfunItem = [TalkfunItem mj_objectWithKeyValues:(NSDictionary *)responseData];
                 if ([item.type isEqualToString:@"1"]
                     || [item.type isEqualToString:@"2"]) {
-                    TalkfunPlaybackViewController *vc = [[TalkfunPlaybackViewController alloc] init];
+                    CZPlaybackVC *vc = [[CZPlaybackVC alloc] init];
                     vc.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":talkfunItem.access_token},@"data", nil];
                     vc.playbackID = item.live_id;
                     vc.videoItem = item;

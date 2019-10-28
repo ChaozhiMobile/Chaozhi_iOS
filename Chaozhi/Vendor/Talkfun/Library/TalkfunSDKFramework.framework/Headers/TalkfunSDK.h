@@ -43,6 +43,7 @@ extern NSString * const TALKFUN_SIGN_IN;     //提交签到
 
 extern NSString * const TALKFUN_EVENT_BROADCAST;            //广播
 extern NSString * const TALKFUN_EVENT_CHAT_DISABLE;         //禁言
+extern NSString * const TALKFUN_EVENT_CHAT_ENABLE; // 解除禁言
 extern NSString * const TALKFUN_EVENT_CHAT_DISABLE_ALL;     //全体禁言
 extern NSString * const TALKFUN_EVENT_CHAT_SEND;            //信息发送接收
 extern NSString * const TALKFUN_EVENT_CHAT_PRIVATE;         //私聊
@@ -244,6 +245,12 @@ typedef enum {
     TalkfunRespondinviteStatusAccept  = 1, //接受
     
 }TalkfunRespondinviteStatus;
+typedef enum {
+    TalkfunCourseTypeUnknown = -1,//未知
+    TalkfunCourseTypeLive = 0, //大班模式             (非互动直播)
+    TalkfunCourseTypeInteractiveLive  = 1, //混合模式  (互动直播)
+    TalkfunCourseTypeStatusRTC  = 2, //小班模式
+}TalkfunCourseType;
 
 @end
 

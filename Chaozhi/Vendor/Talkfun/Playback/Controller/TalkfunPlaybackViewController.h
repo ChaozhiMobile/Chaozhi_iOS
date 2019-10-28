@@ -7,12 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "VideoItem.h"
 
 @interface TalkfunPlaybackViewController : BaseVC
-
-/** 视频model */
-@property (nonatomic,retain) VideoItem *videoItem;
 
 @property (nonatomic,strong) NSDictionary * res;
 //@property (nonatomic,assign) BOOL isProtrait;

@@ -15,7 +15,7 @@
 #import "CZUpdateView.h"
 #import "CZStarView.h"
 #import "VideoItem.h"
-#import "TalkfunPlaybackViewController.h"
+#import "CZPlaybackVC.h"
 
 #define TEACHERNUM 2.5
 
@@ -499,7 +499,7 @@
         item.live_id = tryVideoItem.live_id;
         item.product_id = @"0";
         item.type = @"1";
-        TalkfunPlaybackViewController *vc = [[TalkfunPlaybackViewController alloc] init];
+        CZPlaybackVC *vc = [[CZPlaybackVC alloc] init];
         vc.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":tryVideoItem.access_token},@"data", nil];
         vc.playbackID = item.live_id;
         vc.videoItem = item;
@@ -531,8 +531,9 @@
 - (void)showMoreAction:(UIButton *)sender {
     NSInteger index = sender.tag-100;
     if (index==0) {//更多课程
-        NSString *selectCourseID = [CacheUtil getCacherWithKey:kSelectCourseIDKey];
-        [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_Store,selectCourseID] withTitle:@"" isPresent:NO];
+//        NSString *selectCourseID = [CacheUtil getCacherWithKey:kSelectCourseIDKey];
+//        [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_Store,selectCourseID] withTitle:@"" isPresent:NO];
+        [BaseWebVC showWithContro:self withUrlStr:H5_Infinite withTitle:@"无限" isPresent:NO];
     }
     else if (index==1) {// 更多公开课
         [BaseWebVC showWithContro:self withUrlStr:H5_StoreFree withTitle:@"" isPresent:NO];

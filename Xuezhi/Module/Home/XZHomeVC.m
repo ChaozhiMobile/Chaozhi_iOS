@@ -13,7 +13,7 @@
 #import "HomeInfoItem.h"
 #import "CourseCategoryItem.h"
 #import "VideoItem.h"
-#import "TalkfunPlaybackViewController.h"
+#import "CZPlaybackVC.h"
 #import "XZHomeTabCell.h"
 #import "XLGCustomButton.h"
 #import "NotifyItem.h"
@@ -361,7 +361,7 @@
         item.live_id = tryVideoItem.live_id;
         item.product_id = @"0";
         item.type = @"1";
-        TalkfunPlaybackViewController *vc = [[TalkfunPlaybackViewController alloc] init];
+        CZPlaybackVC *vc = [[CZPlaybackVC alloc] init];
         vc.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":tryVideoItem.access_token},@"data", nil];
         vc.playbackID = item.live_id;
         vc.videoItem = item;
