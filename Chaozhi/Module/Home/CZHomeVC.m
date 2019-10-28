@@ -531,9 +531,8 @@
 - (void)showMoreAction:(UIButton *)sender {
     NSInteger index = sender.tag-100;
     if (index==0) {//更多课程
-//        NSString *selectCourseID = [CacheUtil getCacherWithKey:kSelectCourseIDKey];
-//        [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_Store,selectCourseID] withTitle:@"" isPresent:NO];
-        [BaseWebVC showWithContro:self withUrlStr:H5_Infinite withTitle:@"无限" isPresent:NO];
+        NSString *selectCourseID = [CacheUtil getCacherWithKey:kSelectCourseIDKey];
+        [BaseWebVC showWithContro:self withUrlStr:[NSString stringWithFormat:@"%@%@",H5_Store,selectCourseID] withTitle:@"" isPresent:NO];
     }
     else if (index==1) {// 更多公开课
         [BaseWebVC showWithContro:self withUrlStr:H5_StoreFree withTitle:@"" isPresent:NO];

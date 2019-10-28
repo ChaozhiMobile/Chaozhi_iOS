@@ -166,9 +166,9 @@
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
 //    [self initWebData]; //初始化WebView数据
 //    if (IsIPAD) {
-        //修改字体大小
-        NSString *fontSize = [NSString stringWithFormat:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '%d%%'",100];
-        [ webView evaluateJavaScript:fontSize completionHandler:nil];
+//        //修改字体大小
+//        NSString *fontSize = [NSString stringWithFormat:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '%d%%'",100];
+//        [ webView evaluateJavaScript:fontSize completionHandler:nil];
 //    }
 }
 
