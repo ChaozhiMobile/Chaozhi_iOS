@@ -105,7 +105,6 @@
         //注册方法
         WKDelegateController *delegateController = [[WKDelegateController alloc] init];
         delegateController.delegate = self;
-//        [_userContentController addScriptMessageHandler:delegateController name:@"getWebConfig"]; //获取网页配置
         [_userContentController addScriptMessageHandler:delegateController name:@"return"]; //返回
         [_userContentController addScriptMessageHandler:delegateController name:@"login"]; //登录
         [_userContentController addScriptMessageHandler:delegateController name:@"refresh"]; //刷新
@@ -190,18 +189,6 @@
 // WKScriptMessageHandler
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
     NSLog(@"name:%@\\\\n body:%@\\\\n frameInfo:%@\\\\n",message.name,message.body,message.frameInfo);
-    
-//    if ([message.name isEqualToString:@"getWebConfig"]) { //获取网页配置
-//        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-//        [dic setObject:[NSString isEmpty:[UserInfo share].token]?@"":[UserInfo share].token forKey:@"token"];
-//        [dic setObject:[Utils getWifi]==YES?@"1":@"0" forKey:@"wifi"];
-//        [dic setObject:AppVersion forKey:@"version"];
-//        [dic setObject:@"ios" forKey:@"device"];
-//        NSString *extendStr = [dic jsonStringEncoded];
-//        [_webView evaluateJavaScript:[NSString stringWithFormat:@"fn_getWebConfig(%@);",extendStr] completionHandler:^(id _Nullable result, NSError * _Nullable error) {
-//            NSLog(@"js返回结果%@",result);
-//        }];
-//    }
     
     if ([message.name isEqualToString:@"open"]) { //打开新页面
         NSDictionary *dic = message.body;
@@ -546,7 +533,6 @@
     [_webView removeObserver:self forKeyPath:@"estimatedProgress"];
     [_webView removeObserver:self forKeyPath:@"title"];
     [_webView.scrollView removeObserver:self forKeyPath:@"contentOffset"];
-//    [_userContentController removeScriptMessageHandlerForName:@"getWebConfig"];
     [_userContentController removeScriptMessageHandlerForName:@"open"];
     [_userContentController removeScriptMessageHandlerForName:@"close"];
     [_userContentController removeScriptMessageHandlerForName:@"tapBack"];

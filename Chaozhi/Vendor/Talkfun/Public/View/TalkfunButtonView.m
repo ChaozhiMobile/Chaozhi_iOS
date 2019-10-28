@@ -26,13 +26,22 @@
     
     [btnView.albumBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [btnView.albumBtn setTitleColor:LIGHTBLUECOLOR forState:UIControlStateSelected];
-
-    btnView.selectView.backgroundColor = [UIColor whiteColor];
-
     
-     btnView.chatBtn.selected = YES;
-     btnView.askBtn.selected = YES;
-     btnView.noticeBtn.selected = YES;
+    btnView.selectView.backgroundColor = [UIColor whiteColor];
+    
+    btnView.chatBtn.selected = YES;
+    btnView.askBtn.selected = YES;
+    btnView.noticeBtn.selected = YES;
+    
+    if (IsIPAD) {
+        UIFont *font = [UIFont systemFontOfSize:15];
+        btnView.chatBtn.titleLabel.font = font;
+        btnView.askBtn.titleLabel.font = font;
+        btnView.noticeBtn.titleLabel.font = font;
+        btnView.albumBtn.titleLabel.font = font;
+        btnView.downloadBtn.titleLabel.font = font;
+    }
+    
     return btnView;
 }
 
