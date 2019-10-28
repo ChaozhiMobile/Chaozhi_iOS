@@ -8,6 +8,6 @@
 
 #import "BaseTableViewController.h"
 
-@interface ChatViewController : BaseTableViewController
+@interface TFChatViewController : BaseTableViewController
 
 @end

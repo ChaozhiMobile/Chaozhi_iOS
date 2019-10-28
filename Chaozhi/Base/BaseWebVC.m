@@ -14,7 +14,7 @@
 #import "VideoItem.h"
 #import "TalkfunItem.h"
 #import "TalkfunViewController.h"
-#import "CZPlaybackVC.h"
+#import "TalkfunPlaybackViewController.h"
 #import "XLGExternalTestTool.h"
 
 @interface BaseWebVC ()<WKUIDelegate,WKNavigationDelegate,WKDelegate,UITextFieldDelegate>
@@ -277,7 +277,7 @@
     if (![NSString isEmpty:item.token]) { //公开课视频token是H5传过来的
         if ([item.type isEqualToString:@"1"]
             || [item.type isEqualToString:@"2"]) {
-            CZPlaybackVC *vc = [[CZPlaybackVC alloc] init];
+            TalkfunPlaybackViewController *vc = [[TalkfunPlaybackViewController alloc] init];
             vc.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":item.token},@"data", nil];
             vc.playbackID = item.live_id;
             vc.videoItem = item;
@@ -301,7 +301,7 @@
                 TalkfunItem *talkfunItem = [TalkfunItem mj_objectWithKeyValues:(NSDictionary *)responseData];
                 if ([item.type isEqualToString:@"1"]
                     || [item.type isEqualToString:@"2"]) {
-                    CZPlaybackVC *vc = [[CZPlaybackVC alloc] init];
+                    TalkfunPlaybackViewController *vc = [[TalkfunPlaybackViewController alloc] init];
                     vc.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":talkfunItem.access_token},@"data", nil];
                     vc.playbackID = item.live_id;
                     vc.videoItem = item;

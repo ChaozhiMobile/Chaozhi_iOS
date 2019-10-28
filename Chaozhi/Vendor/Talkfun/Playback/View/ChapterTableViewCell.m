@@ -59,29 +59,21 @@
     
     
     WeakSelf
-    
-    if (  ![Model.thumb hasPrefix:@"http"] && [Model.course isEqualToString:@"黑板"]) {
-        self.page.text   = [NSString stringWithFormat:@"黑板%@（%@）",Model.page,starttime];
-        self.thumb.image = [UIImage imageNamed:@"blackboard"];
-    }else{
-        SDWebImageManager * manager = [SDWebImageManager sharedManager];
-        [manager loadImageWithURL:[NSURL URLWithString: Model.thumb] options:32 progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
+    SDWebImageManager * manager = [SDWebImageManager sharedManager];
+    [manager loadImageWithURL:[NSURL URLWithString: Model.thumb] options:32 progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
+        
+    } completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (image) {
+                weakSelf.thumb.image = image;
+            }
             
-        } completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                if (image) {
-                    weakSelf.thumb.image = image;
-                    return ;
-                }
-                
-                if (error && ![Model.thumb hasPrefix:@"http"] && [Model.course isEqualToString:@"黑板"]) {
-                    weakSelf.page.text                  = [NSString stringWithFormat:@"黑板%@（%@）",Model.page,starttime];
-                    weakSelf.thumb.image = [UIImage imageNamed:@"blackboard"];
-                }
-            });
-        }];
-    }
-  
+            if (error && ![Model.thumb hasPrefix:@"http"] && [Model.course isEqualToString:@"黑板"]) {
+                weakSelf.page.text                  = [NSString stringWithFormat:@"黑板%@（%@）",Model.page,starttime];
+                weakSelf.thumb.image = [UIImage imageNamed:@"blackboard"];
+            }
+        });
+    }];
     /*
      dispatch_queue_t queue = dispatch_queue_create("chapter", DISPATCH_QUEUE_CONCURRENT);
      dispatch_async(queue, ^{

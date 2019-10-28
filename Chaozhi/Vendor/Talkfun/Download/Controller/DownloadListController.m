@@ -10,7 +10,7 @@
 #import "DownloadListTableViewCell.h"
 #import "DownloadListModel.h"
 //#import "TalkfunSDK.h"
-#import "CZPlaybackVC.h"
+#import "TalkfunPlaybackViewController.h"
 #import "NSString+Hashing.h"
 #import "MJExtension.h"
 #import <SDWebImage/SDWebImageManager.h>
@@ -405,7 +405,7 @@
         NSString *videoType =  [self.downloadManager getVideoType:model.playbackID];
         if ([videoType isEqualToString:@"1"]) {     
             //TODO:原生模式的点播
-            CZPlaybackVC *vc = [[CZPlaybackVC alloc] init];
+            TalkfunPlaybackViewController *vc = [[TalkfunPlaybackViewController alloc] init];
             vc.playbackID = model.playbackID;
             vc.res = @{@"data":@{@"access_token":model.access_token},TalkfunPlaybackID:model.playbackID};
             vc.videoItem = item;

@@ -15,7 +15,7 @@
 #import "CZUpdateView.h"
 #import "CZStarView.h"
 #import "VideoItem.h"
-#import "CZPlaybackVC.h"
+#import "TalkfunPlaybackViewController.h"
 
 #define TEACHERNUM 2.5
 
@@ -499,7 +499,7 @@
         item.live_id = tryVideoItem.live_id;
         item.product_id = @"0";
         item.type = @"1";
-        CZPlaybackVC *vc = [[CZPlaybackVC alloc] init];
+        TalkfunPlaybackViewController *vc = [[TalkfunPlaybackViewController alloc] init];
         vc.res = [[NSDictionary alloc] initWithObjectsAndKeys:@{@"access_token":tryVideoItem.access_token},@"data", nil];
         vc.playbackID = item.live_id;
         vc.videoItem = item;

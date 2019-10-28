@@ -6,17 +6,17 @@
 //  Copyright © 2016年 talk-fun. All rights reserved.
 //
 
-#import "ChatViewController.h"
+#import "TFChatViewController.h"
 #import "MJExtension.h"
 #import "PlaybackChatModel.h"
 #import "ChatTableViewCell.h"
 #import "TalkfunNewChatTableViewCell.h"
 
-@interface ChatViewController ()
+@interface TFChatViewController ()
 
 @end
 
-@implementation ChatViewController
+@implementation TFChatViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -78,7 +78,26 @@
 
 - (void)recalculateCellHeight
 {
-
+//    [self.heightArray removeAllObjects];
+//    for (id obj in self.dataSource) {
+//        
+//        NSString * msg = obj[@"message"];
+//        
+//        //计算信息内容的高度
+//        if (msg) {
+//            NSString * msgString = msg;
+//            for (NSString * name in self.expressionDict) {
+//                msgString = [msgString stringByReplacingOccurrencesOfString:name withString:self.expressionDict[name]];
+//                
+//            }
+//            
+//            CGRect rect    = [msgString boundingRectWithSize:CGSizeMake(self.view.frame.size.width - 20, 9999) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} context:nil];
+//            CGFloat height = rect.size.height + 30;
+//            
+//            [self.heightArray addObject:@(height)];
+//        }
+//       
+//    }
     [self.tableView reloadData];
 }
 
