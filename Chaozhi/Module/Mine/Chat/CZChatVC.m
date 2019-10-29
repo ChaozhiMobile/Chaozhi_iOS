@@ -27,6 +27,8 @@
     _chatTab.tableFooterView = _tabFootView;
     
     [self getTeacherStatus];
+    self.navigationItem.rightBarButtonItem = nil;
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"Back"] style:UIBarButtonItemStylePlain target:self action:nil];
 }
 
 - (void)getTeacherStatus {

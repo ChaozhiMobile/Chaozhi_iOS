@@ -13,6 +13,7 @@
 #import "CZChatVC.h"
 #import "TeacherItem.h"
 #import "CZTeacherCell.h"
+#import "TUITextMessageCellData.h"
 
 #define CellHeight autoScaleW(90)
 
@@ -59,8 +60,26 @@
         if (status == Request_Success) {
             weakSelf.teacherList = [TeacherItem mj_objectArrayWithKeyValuesArray:responseData];
             [weakSelf.tableView reloadData];
+            [weakSelf createChat];
         }
     }];
+}
+
+- (void)createChat {
+    for (TeacherItem *item in self.teacherList) {
+        TIMMessage *msg = [[TIMMessage alloc] init];
+        TIMTextElem *imText = [[TIMTextElem alloc] init];
+        imText.text = @"现在我们可以开始聊天啦";
+        [msg addElem:imText];
+        TIMConversation *conv =   [[TIMManager sharedInstance]getConversation:TIM_C2C receiver:item.accid];
+        NSString *searchStr =[NSString stringWithFormat:@"convId = '%@'",item.accid];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:searchStr];
+        NSArray *data = self.viewModel.dataList;
+        NSArray *result = [data filteredArrayUsingPredicate:predicate];
+        if (result.count==0) {
+            [conv sendMessage:msg succ:nil fail:nil];
+        }
+    }
 }
 
 - (TConversationListViewModel *)viewModel {
