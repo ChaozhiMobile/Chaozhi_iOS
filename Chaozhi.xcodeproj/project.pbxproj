@@ -5825,6 +5825,7 @@
 					"$(PROJECT_DIR)/Chaozhi/Vendor/TUIKit/Classes/Third/voiceConvert/opencore-amrwb",
 					"$(PROJECT_DIR)/Chaozhi/Vendor/TUIKit/Classes/Third/voiceConvert/opencore-amrnb",
 				);
+				MARKETING_VERSION = 1.2.6;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -5917,6 +5918,7 @@
 					"$(PROJECT_DIR)/Chaozhi/Vendor/TUIKit/Classes/Third/voiceConvert/opencore-amrwb",
 					"$(PROJECT_DIR)/Chaozhi/Vendor/TUIKit/Classes/Third/voiceConvert/opencore-amrnb",
 				);
+				MARKETING_VERSION = 1.2.6;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
