@@ -33,7 +33,6 @@
     [_webView evaluateJavaScript:@"window.activated && window.activated();" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
         NSLog(@"js返回结果%@",result);
     }];
-    [self initWebData]; //初始化WebView数据
 }
 
 /** 传入控制器、url、标题 */
@@ -164,12 +163,12 @@
 
 // 页面加载完成之后调用
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
-    [self initWebData]; //初始化WebView数据
-    if (IsIPAD) {
-        //修改字体大小
-        NSString *fontSize = [NSString stringWithFormat:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '%d%%'",130];
-        [ webView evaluateJavaScript:fontSize completionHandler:nil];
-    }
+//    [self initWebData]; //初始化WebView数据
+//    if (IsIPAD) {
+//        //修改字体大小
+//        NSString *fontSize = [NSString stringWithFormat:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '%d%%'",100];
+//        [ webView evaluateJavaScript:fontSize completionHandler:nil];
+//    }
 }
 
 // 初始化WebView数据
@@ -423,6 +422,8 @@
         XLGExternalTestTool *tool = [XLGExternalTestTool shareInstance];
         tool.logTextViews.text = [NSString stringWithFormat:@"跳转网页地址：%@ \n\n\n%@",webView.URL.absoluteString,tool.logTextViews.text];
     }
+    
+    [self initWebData]; //初始化WebView数据
 }
 
 // 当内容开始返回时调用

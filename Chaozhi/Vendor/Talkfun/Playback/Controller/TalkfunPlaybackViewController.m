@@ -1805,6 +1805,9 @@ static BOOL fromLandscape = NO;
         }
         
         [self.buttonView selectButton:self.buttonView.noticeBtn];
+    
+        //随便设置一个位置
+        [self.scrollView setContentOffset:CGPointMake(self.scrollView.frame.size.width * (self.buttonView.noticeBtn.tag - 500), 0) animated:NO];
     }
 }
 

@@ -87,6 +87,9 @@
 @property (nonatomic,assign) BOOL pptDisplay;
 //在请求数据 ,在刷新过程中
 @property (nonatomic, assign)BOOL  isRefresh;
+
+//rtc视频支持方向
+@property (nonatomic, assign )TalkfunVideoOutputOrientationMode orientationMode;
 /**
  *  重新加载SDK
  **/
@@ -305,6 +308,15 @@
 
 //响应被邀请上讲台
 -(void)respondinvite:(TalkfunRespondinviteStatus)status callback:(void (^)(id  result))callback;
+
+
+/**
+* 获取当前课程类型  (sdk初始化成功后才有值)
+*
+*
+**/
+
+- (TalkfunCourseType)getCourseType;
 
 /**
  *  销毁SDK

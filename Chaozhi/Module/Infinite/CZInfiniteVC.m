@@ -19,12 +19,12 @@
 @implementation CZInfiniteVC
 
 - (void)viewDidLoad {
-    
+
     _webUrl = [NSString stringWithFormat:@"%@%@",h5Url(),H5_Infinite];
     self.homeUrl = _webUrl;
     self.webTitle = @"无限";
     self.isPresent = NO;
-
+    
     [super viewDidLoad];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refresh) name:kLoginSuccNotification object:nil]; //登录成功通知
@@ -32,11 +32,12 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refresh) name:kChangeServerSuccNotification object:nil]; //环境切换成功通知
 }
 
--(void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     if (self.webView == nil) {
         [self initWebView];
     }
+    self.webView.frame = CGRectMake(0, kNavBarH, WIDTH, HEIGHT-kNavBarH-kTabBarH-kTabBarSafeH);
 }
 
 #pragma mark - 刷新H5
@@ -49,15 +50,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

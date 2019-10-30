@@ -19,8 +19,8 @@ typedef enum {
     TalkfunDownloadStatusStart      = 2, //正在下载
     TalkfunDownloadStatusPause      = 3, //暂停
     TalkfunDownloadStatusFinish     = 4, //下载完成
-    TalkfunDownloadStatusError      = 5  //下载错误
-    
+    TalkfunDownloadStatusError      = 5 , //下载错误
+    TalkfunDownloadStatusExpired    = 6  //资源过期
 }TalkfunDownloadStatus;
 
 /**

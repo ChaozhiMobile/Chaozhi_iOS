@@ -21,17 +21,17 @@ target 'Chaozhi' do
   pod 'IAPHelper'
   pod 'FMDB'
   #欢拓SDK Talkfun
-  pod 'TalkfunMediaFramework'
-  pod 'Socket.IO-Client-Swift'
-  pod 'JFImagePicker'
-  pod 'KissXML'
-  pod 'SSZipArchive'
-  pod 'AgoraRtcEngine_iOS'
-  pod 'FLAnimatedImage' #gif
+  pod 'TalkfunMediaFramework','~> 1.9.2'
+  pod 'Socket.IO-Client-Swift', '~> 15.1.0'
+#  pod 'JFImagePicker'
+#  pod 'KissXML'
+#  pod 'SSZipArchive'
+  pod 'AgoraRtcEngine_iOS','~> 2.9.0'
+  pod 'FLAnimatedImage','~> 1.0.12' #gif
   #腾讯IM
   pod 'MBProgressHUD'
   pod 'MMLayout'
-  pod 'MLeaksFinder'
+#  pod 'MLeaksFinder'
   pod 'TXIMSDK_iOS'
   pod 'Toast'
   pod 'ISVImageScrollView'
@@ -58,17 +58,17 @@ target 'Xuezhi' do
   pod 'IAPHelper'
   pod 'FMDB'
   #欢拓SDK Talkfun
-  pod 'TalkfunMediaFramework'
-  pod 'Socket.IO-Client-Swift'
-  pod 'JFImagePicker'
-  pod 'KissXML'
-  pod 'SSZipArchive'
-  pod 'AgoraRtcEngine_iOS'
-  pod 'FLAnimatedImage' #gif
+  pod 'TalkfunMediaFramework','~> 1.9.2'
+  pod 'Socket.IO-Client-Swift', '~> 15.1.0'
+#  pod 'JFImagePicker'
+#  pod 'KissXML'
+#  pod 'SSZipArchive'
+  pod 'AgoraRtcEngine_iOS','~> 2.9.0'
+  pod 'FLAnimatedImage','~> 1.0.12' #gif
   #腾讯IM
   pod 'MBProgressHUD'
   pod 'MMLayout'
-  pod 'MLeaksFinder'
+#  pod 'MLeaksFinder'
   pod 'TXIMSDK_iOS'
   pod 'Toast'
   pod 'ISVImageScrollView'

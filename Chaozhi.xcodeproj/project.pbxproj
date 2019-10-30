@@ -106,16 +106,12 @@
 		A00D0D34231BA7A300CF25E7 /* ChapterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0CFF231BA7A300CF25E7 /* ChapterViewController.m */; };
 		A00D0D35231BA7A300CF25E7 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D00231BA7A300CF25E7 /* BaseTableViewController.m */; };
 		A00D0D36231BA7A300CF25E7 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D00231BA7A300CF25E7 /* BaseTableViewController.m */; };
-		A00D0D37231BA7A300CF25E7 /* TFChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D02231BA7A300CF25E7 /* TFChatViewController.m */; };
-		A00D0D38231BA7A300CF25E7 /* TFChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D02231BA7A300CF25E7 /* TFChatViewController.m */; };
 		A00D0D39231BA7A300CF25E7 /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D03231BA7A300CF25E7 /* AlbumViewController.m */; };
 		A00D0D3A231BA7A300CF25E7 /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D03231BA7A300CF25E7 /* AlbumViewController.m */; };
 		A00D0D3B231BA7A300CF25E7 /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D06231BA7A300CF25E7 /* QuestionViewController.m */; };
 		A00D0D3C231BA7A300CF25E7 /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D06231BA7A300CF25E7 /* QuestionViewController.m */; };
 		A00D0D3D231BA7A300CF25E7 /* TalkfunPlaybackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D09231BA7A300CF25E7 /* TalkfunPlaybackViewController.m */; };
 		A00D0D3E231BA7A300CF25E7 /* TalkfunPlaybackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D09231BA7A300CF25E7 /* TalkfunPlaybackViewController.m */; };
-		A00D0D3F231BA7A300CF25E7 /* TalkfunCourseProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D0C231BA7A300CF25E7 /* TalkfunCourseProgress.m */; };
-		A00D0D40231BA7A300CF25E7 /* TalkfunCourseProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D0C231BA7A300CF25E7 /* TalkfunCourseProgress.m */; };
 		A00D0D41231BA7A300CF25E7 /* PlaybackQuestionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D0D231BA7A300CF25E7 /* PlaybackQuestionModel.m */; };
 		A00D0D42231BA7A300CF25E7 /* PlaybackQuestionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D0D231BA7A300CF25E7 /* PlaybackQuestionModel.m */; };
 		A00D0D43231BA7A300CF25E7 /* TalkfunCourseManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = A00D0D0E231BA7A300CF25E7 /* TalkfunCourseManagement.m */; };
@@ -689,6 +685,8 @@
 		A05FF5DA215B163400C51E05 /* JHHJView.m in Sources */ = {isa = PBXBuildFile; fileRef = A05FF5D4215B163400C51E05 /* JHHJView.m */; };
 		A05FF5DB215B163400C51E05 /* JHHJAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A05FF5D5215B163400C51E05 /* JHHJAnimation.m */; };
 		A05FF5DC215B163400C51E05 /* AEIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = A05FF5D8215B163400C51E05 /* AEIndicator.m */; };
+		A064801123668626008CD8A1 /* TFChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A064801023668626008CD8A1 /* TFChatViewController.m */; };
+		A064801223668626008CD8A1 /* TFChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A064801023668626008CD8A1 /* TFChatViewController.m */; };
 		A070498D2211610300864050 /* AppDelegate+Push.m in Sources */ = {isa = PBXBuildFile; fileRef = A070498C2211610300864050 /* AppDelegate+Push.m */; };
 		A071273B2216E7D700DC3C20 /* NotifyItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A071273A2216E7D700DC3C20 /* NotifyItem.m */; };
 		A079A6BD231544CE0063123B /* XuezhiProtocol.css in Resources */ = {isa = PBXBuildFile; fileRef = A079A6BC231544CE0063123B /* XuezhiProtocol.css */; };
@@ -1270,21 +1268,17 @@
 		A00D0CFF231BA7A300CF25E7 /* ChapterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChapterViewController.m; sourceTree = "<group>"; };
 		A00D0D00231BA7A300CF25E7 /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
 		A00D0D01231BA7A300CF25E7 /* QuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionViewController.h; sourceTree = "<group>"; };
-		A00D0D02231BA7A300CF25E7 /* TFChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFChatViewController.m; sourceTree = "<group>"; };
 		A00D0D03231BA7A300CF25E7 /* AlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumViewController.m; sourceTree = "<group>"; };
 		A00D0D04231BA7A300CF25E7 /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
 		A00D0D05231BA7A300CF25E7 /* ChapterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChapterViewController.h; sourceTree = "<group>"; };
 		A00D0D06231BA7A300CF25E7 /* QuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionViewController.m; sourceTree = "<group>"; };
 		A00D0D07231BA7A300CF25E7 /* AlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumViewController.h; sourceTree = "<group>"; };
-		A00D0D08231BA7A300CF25E7 /* TFChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFChatViewController.h; sourceTree = "<group>"; };
 		A00D0D09231BA7A300CF25E7 /* TalkfunPlaybackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunPlaybackViewController.m; sourceTree = "<group>"; };
 		A00D0D0B231BA7A300CF25E7 /* AlbumModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumModel.h; sourceTree = "<group>"; };
-		A00D0D0C231BA7A300CF25E7 /* TalkfunCourseProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunCourseProgress.m; sourceTree = "<group>"; };
 		A00D0D0D231BA7A300CF25E7 /* PlaybackQuestionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaybackQuestionModel.m; sourceTree = "<group>"; };
 		A00D0D0E231BA7A300CF25E7 /* TalkfunCourseManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunCourseManagement.m; sourceTree = "<group>"; };
 		A00D0D0F231BA7A300CF25E7 /* ChapterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChapterModel.h; sourceTree = "<group>"; };
 		A00D0D10231BA7A300CF25E7 /* PlaybackChatModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaybackChatModel.m; sourceTree = "<group>"; };
-		A00D0D11231BA7A300CF25E7 /* TalkfunCourseProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunCourseProgress.h; sourceTree = "<group>"; };
 		A00D0D12231BA7A300CF25E7 /* AlbumModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumModel.m; sourceTree = "<group>"; };
 		A00D0D13231BA7A300CF25E7 /* TalkfunCourseManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunCourseManagement.h; sourceTree = "<group>"; };
 		A00D0D14231BA7A300CF25E7 /* PlaybackQuestionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaybackQuestionModel.h; sourceTree = "<group>"; };
@@ -1551,6 +1545,8 @@
 		A05FF5D6215B163400C51E05 /* JHHJCenterBGView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHHJCenterBGView.h; sourceTree = "<group>"; };
 		A05FF5D7215B163400C51E05 /* AEIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEIndicator.h; sourceTree = "<group>"; };
 		A05FF5D8215B163400C51E05 /* AEIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEIndicator.m; sourceTree = "<group>"; };
+		A064800F23668626008CD8A1 /* TFChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFChatViewController.h; sourceTree = "<group>"; };
+		A064801023668626008CD8A1 /* TFChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFChatViewController.m; sourceTree = "<group>"; };
 		A070498B2211610100864050 /* AppDelegate+Push.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Push.h"; sourceTree = "<group>"; };
 		A070498C2211610300864050 /* AppDelegate+Push.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Push.m"; sourceTree = "<group>"; };
 		A07127392216E7D700DC3C20 /* NotifyItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotifyItem.h; sourceTree = "<group>"; };
@@ -2413,10 +2409,10 @@
 				A00D0D00231BA7A300CF25E7 /* BaseTableViewController.m */,
 				A00D0D05231BA7A300CF25E7 /* ChapterViewController.h */,
 				A00D0CFF231BA7A300CF25E7 /* ChapterViewController.m */,
-				A00D0D08231BA7A300CF25E7 /* TFChatViewController.h */,
-				A00D0D02231BA7A300CF25E7 /* TFChatViewController.m */,
 				A00D0D01231BA7A300CF25E7 /* QuestionViewController.h */,
 				A00D0D06231BA7A300CF25E7 /* QuestionViewController.m */,
+				A064800F23668626008CD8A1 /* TFChatViewController.h */,
+				A064801023668626008CD8A1 /* TFChatViewController.m */,
 			);
 			path = tableView;
 			sourceTree = "<group>";
@@ -2434,8 +2430,6 @@
 				A00D0D0D231BA7A300CF25E7 /* PlaybackQuestionModel.m */,
 				A00D0D13231BA7A300CF25E7 /* TalkfunCourseManagement.h */,
 				A00D0D0E231BA7A300CF25E7 /* TalkfunCourseManagement.m */,
-				A00D0D11231BA7A300CF25E7 /* TalkfunCourseProgress.h */,
-				A00D0D0C231BA7A300CF25E7 /* TalkfunCourseProgress.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -4874,9 +4868,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Chaozhi/Pods-Chaozhi-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Chaozhi/Pods-Chaozhi-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -4891,9 +4889,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Xuezhi/Pods-Xuezhi-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Xuezhi/Pods-Xuezhi-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -5103,6 +5105,7 @@
 				A01F607622CB8960001133C4 /* DownloadListTableViewCell.m in Sources */,
 				A0E615B42358A6D7001D9258 /* TUIFaceCell.m in Sources */,
 				A0AC08F522C4BC7E001832EA /* ChoiceButton.m in Sources */,
+				A064801123668626008CD8A1 /* TFChatViewController.m in Sources */,
 				A091D1302178FAF300CCDAF6 /* StudyInfoItem.m in Sources */,
 				205934C523547673003DDF39 /* FriendRequestViewController.m in Sources */,
 				A0E615842358A6D7001D9258 /* TUIFileMessageCellData.m in Sources */,
@@ -5293,7 +5296,6 @@
 				A0AC091D22C4BC7E001832EA /* TalkfunLEEStarRating.m in Sources */,
 				A0AC08F122C4BC7D001832EA /* TalkfunViewController.m in Sources */,
 				A05FF5DA215B163400C51E05 /* JHHJView.m in Sources */,
-				A00D0D37231BA7A300CF25E7 /* TFChatViewController.m in Sources */,
 				A0E615882358A6D7001D9258 /* TUIJoinGroupMessageCellData.m in Sources */,
 				A0AC08A222C4BC7D001832EA /* TalkfunHttpTools.m in Sources */,
 				A0E615262358A6D7001D9258 /* TModifyView.m in Sources */,
@@ -5315,7 +5317,6 @@
 				A0AC08B322C4BC7D001832EA /* TalkfunLoadingView.m in Sources */,
 				A0AC091522C4BC7E001832EA /* UIImageView+TalkfunImageView.m in Sources */,
 				A0AC08C722C4BC7D001832EA /* TalkfunNewChatTableViewCell.m in Sources */,
-				A00D0D3F231BA7A300CF25E7 /* TalkfunCourseProgress.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5398,7 +5399,6 @@
 				A045509A22EC8DFA00E17406 /* TalkfunButtonView.m in Sources */,
 				A045509B22EC8DFA00E17406 /* CZRegisterVC.m in Sources */,
 				A007090022EDD48D00C70CEE /* XZTabBarVC.m in Sources */,
-				A00D0D40231BA7A300CF25E7 /* TalkfunCourseProgress.m in Sources */,
 				A0E615672358A6D7001D9258 /* TUIContactListPicker.m in Sources */,
 				A045509C22EC8DFA00E17406 /* BaseWebVC.m in Sources */,
 				A0541FDF22F4163F00D961B3 /* XZSelectCourseTabCell.m in Sources */,
@@ -5503,6 +5503,7 @@
 				A0541FC122F3E2A100D961B3 /* OptionBarController.m in Sources */,
 				A0E615B72358A6D7001D9258 /* TUIFileMessageCell.m in Sources */,
 				A0E615FD2358A6D7001D9258 /* TCAnnotation.m in Sources */,
+				A064801223668626008CD8A1 /* TFChatViewController.m in Sources */,
 				A04550CF22EC8DFA00E17406 /* TalkfunModulation.m in Sources */,
 				A0E615B32358A6D7001D9258 /* TUIMenuView.m in Sources */,
 				A0E615852358A6D7001D9258 /* TUIFileMessageCellData.m in Sources */,
@@ -5622,7 +5623,6 @@
 				A045510D22EC8DFA00E17406 /* UITextField+TalkfunTextField.m in Sources */,
 				A0E6160D2358A6D7001D9258 /* TUIKitConfig.m in Sources */,
 				A045510E22EC8DFA00E17406 /* GroupTableViewController.m in Sources */,
-				A00D0D38231BA7A300CF25E7 /* TFChatViewController.m in Sources */,
 				A07E4E9D22ED833D000ABD86 /* XZConfig.m in Sources */,
 				A045510F22EC8DFA00E17406 /* ProgressLoadView.m in Sources */,
 				A045511022EC8DFA00E17406 /* TalkfunLEEStarRating.m in Sources */,

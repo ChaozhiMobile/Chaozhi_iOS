@@ -15,36 +15,30 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - AgoraRtcEngine_iOS (2.9.1)
-  - FBRetainCycleDetector (0.1.4)
   - FLAnimatedImage (1.0.12)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
   - IAPHelper (1.1)
-  - IQKeyboardManager (6.5.0)
+  - IQKeyboardManager (6.5.3)
   - ISVImageScrollView (0.1.2)
   - JCore (2.1.4)
-  - JFImagePicker (1.0.0)
   - JPush (3.2.6):
     - JCore (< 3.0.0, >= 2.0.0)
-  - KissXML (5.2.3)
   - lottie-ios (2.5.3)
   - Masonry (1.1.0)
   - MBProgressHUD (1.1.0)
   - MJExtension (3.0.17)
   - MJRefresh (3.2.0)
-  - MLeaksFinder (1.0.0):
-    - FBRetainCycleDetector
   - MMLayout (0.2.0)
   - ReactiveObjC (3.1.1)
   - SDCycleScrollView (1.80):
     - SDWebImage (>= 5.0.0)
-  - SDWebImage (5.2.3):
-    - SDWebImage/Core (= 5.2.3)
-  - SDWebImage/Core (5.2.3)
-  - Socket.IO-Client-Swift (15.2.0):
+  - SDWebImage (5.2.5):
+    - SDWebImage/Core (= 5.2.5)
+  - SDWebImage/Core (5.2.5)
+  - Socket.IO-Client-Swift (15.1.0):
     - Starscream (~> 3.1)
-  - SSZipArchive (2.2.2)
   - Starscream (3.1.1)
   - TalkfunMediaFramework (1.9.4)
   - Toast (4.0.0)
@@ -60,29 +54,25 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
-  - AgoraRtcEngine_iOS
-  - FLAnimatedImage
+  - AgoraRtcEngine_iOS (~> 2.9.0)
+  - FLAnimatedImage (~> 1.0.12)
   - FMDB
   - IAPHelper
   - IQKeyboardManager
   - ISVImageScrollView
   - JCore
-  - JFImagePicker
   - JPush (~> 3.2.6-noidfa)
-  - KissXML
   - lottie-ios
   - Masonry
   - MBProgressHUD
   - MJExtension (~> 3.0.13)
   - MJRefresh
-  - MLeaksFinder
   - MMLayout
   - ReactiveObjC
   - SDCycleScrollView
   - SDWebImage
-  - Socket.IO-Client-Swift
-  - SSZipArchive
-  - TalkfunMediaFramework
+  - Socket.IO-Client-Swift (~> 15.1.0)
+  - TalkfunMediaFramework (~> 1.9.2)
   - Toast
   - TXIMSDK_iOS
   - TZImagePickerController
@@ -91,31 +81,26 @@ DEPENDENCIES:
   - YYModel
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - AFNetworking
     - AgoraRtcEngine_iOS
-    - FBRetainCycleDetector
     - FLAnimatedImage
     - FMDB
     - IAPHelper
     - IQKeyboardManager
     - ISVImageScrollView
     - JCore
-    - JFImagePicker
     - JPush
-    - KissXML
     - lottie-ios
     - Masonry
     - MBProgressHUD
     - MJExtension
     - MJRefresh
-    - MLeaksFinder
     - MMLayout
     - ReactiveObjC
     - SDCycleScrollView
     - SDWebImage
     - Socket.IO-Client-Swift
-    - SSZipArchive
     - Starscream
     - TalkfunMediaFramework
     - Toast
@@ -128,28 +113,23 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   AgoraRtcEngine_iOS: b2eedd8f9ab47b71163f3285e836bd23feb43fff
-  FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   IAPHelper: fd74f53b0ac142eed085777b88b86a11746a2dd4
-  IQKeyboardManager: 700e5155d6a292383b54e8678aec769e14fc78fc
+  IQKeyboardManager: c2f901164d56807a35788483584d09fa69192e8e
   ISVImageScrollView: ba511d12a1661b40feb8921309c0854bf93ec749
   JCore: d345c049141877eb61c33011455fdb5fcab1673f
-  JFImagePicker: 2914c69dac80767a98664e768ac50118664e9f04
   JPush: 41dd48a69bd8c08abc692dc7f2b23c0fb281471f
-  KissXML: 09f88ff8161fd058d67b70740b8b516687b52823
   lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJExtension: 74ec83124a68891619fb7ba9c5c811bbf1691076
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
-  MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   MMLayout: 3fb59d58eeb8656c64e61d550fb0088e10666c11
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
-  SDWebImage: 46a7f73228f84ce80990c786e4372cf4db5875ce
-  Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
-  SSZipArchive: fa16b8cc4cdeceb698e5e5d9f67e9558532fbf23
+  SDWebImage: 4eabf2fa6695c95c47724214417a9c036c965e4a
+  Socket.IO-Client-Swift: 7cb44c0ffb86e158cee32d0642d30ec5fdcf8f61
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
   TalkfunMediaFramework: 6f8fd3fc6dc9678d3554690849a8d8bc46285b65
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
@@ -159,6 +139,6 @@ SPEC CHECKSUMS:
   XLGCategory: b93fda8378ccd3e04deb87033c02ad3e6dee3c4a
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: d1b489951f92b96d9a15322b9946febb10615664
+PODFILE CHECKSUM: 403ea5a67c0819950d5b22849c04410877863d01
 
-COCOAPODS: 1.8.3
+COCOAPODS: 1.6.1
