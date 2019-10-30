@@ -37,9 +37,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    if ([Utils isLoginWithJump:YES]) {
-        [self getUserInfo];
-    }
+    [self getData];
 }
 
 - (void)viewDidLoad {
@@ -47,12 +45,12 @@
     
     self.title = @"个人中心";
     
-    [self getData];
+//    [self getData];
     
     self.mineTableView.tableHeaderView = self.headView;
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getUserInfo) name:kLoginSuccNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getUserInfo) name:kUserInfoChangeNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getData) name:kLoginSuccNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getData) name:kUserInfoChangeNotification object:nil];
 }
 
 #pragma mark - get data
@@ -61,55 +59,57 @@
     
     self.imageArr = [NSMutableArray arrayWithObjects:@"icon_消息",@"icon_收藏",@"icon_下载",@"icon_反馈",@"icon_设置", nil];
     self.nameArr = [NSMutableArray arrayWithObjects:@"我的消息",@"我的收藏",@"我的下载",@"问题反馈",@"系统设置", nil];
+    
+    [self getUserInfo];
 }
 
 // 获取用户信息
 - (void)getUserInfo {
-    
-    NSDictionary *dic = [NSDictionary dictionary];
-    [[NetworkManager sharedManager] postJSON:URL_UserInfo parameters:dic imageDataArr:nil imageName:nil  completion:^(id responseData, RequestState status, NSError *error) {
-        
-        if (status == Request_Success) {
+    if ([Utils isLoginWithJump:YES]) {
+        NSDictionary *dic = [NSDictionary dictionary];
+        [[NetworkManager sharedManager] postJSON:URL_UserInfo parameters:dic imageDataArr:nil imageName:nil  completion:^(id responseData, RequestState status, NSError *error) {
             
-            //缓存用户信息
-            NSDictionary *userDic = responseData;
-            [[UserInfo share] setUserInfo:[userDic mutableCopy]];
-            
-            //将用户信息解析成model
-            UserInfo *userInfo = [UserInfo mj_objectWithKeyValues:(NSDictionary *)responseData];
-            
-            //头像、账号
-            [self.headImgView sd_setImageWithURL:[NSURL URLWithString:userInfo.head_img_url] placeholderImage:[UIImage imageNamed:@"icon_mine_selected"]];
-            self.accountLab.text = userInfo.phone;
-            
-            //报班状态
-            self.purchaseItem = userInfo.purchase;
-            self.purchaseArr = [self.purchaseItem.chat mutableCopy];
-            
-            if (![userInfo.has_order isEqualToString:@"0"]
-                && ![self.nameArr containsObject:@"我的订单"]) {
-                [self.imageArr insertObject:@"icon_课程" atIndex:0];
-                [self.nameArr insertObject:@"我的订单" atIndex:0];
-            }
-            
-            if (self.purchaseItem.is_purchase == 1
-                && ![self.nameArr containsObject:@"报考资料"]) {
+            if (status == Request_Success) {
                 
-                if ([AppChannel isEqualToString:@"1"]) { //超职
-                    [self.imageArr insertObject:@"icon_报考资料" atIndex:0];
-                    [self.nameArr insertObject:@"报考资料" atIndex:0];
+                //缓存用户信息
+                NSDictionary *userDic = responseData;
+                [[UserInfo share] setUserInfo:[userDic mutableCopy]];
+                
+                //将用户信息解析成model
+                UserInfo *userInfo = [UserInfo mj_objectWithKeyValues:(NSDictionary *)responseData];
+                
+                //头像、账号
+                [self.headImgView sd_setImageWithURL:[NSURL URLWithString:userInfo.head_img_url] placeholderImage:[UIImage imageNamed:@"icon_mine_selected"]];
+                self.accountLab.text = userInfo.phone;
+                
+                //报班状态
+                self.purchaseItem = userInfo.purchase;
+                self.purchaseArr = [self.purchaseItem.chat mutableCopy];
+                
+                if (![userInfo.has_order isEqualToString:@"0"]
+                    && ![self.nameArr containsObject:@"我的订单"]) {
+                    [self.imageArr insertObject:@"icon_课程" atIndex:0];
+                    [self.nameArr insertObject:@"我的订单" atIndex:0];
+                }
+                
+                if (self.purchaseItem.is_purchase == 1
+                    && ![self.nameArr containsObject:@"报考资料"]) {
                     
-                    if (self.purchaseArr.count>0
-                        && ![self.nameArr containsObject:@"我的班主任"]) {
-                        [self.imageArr insertObject:@"icon_班主任" atIndex:0];
-                        [self.nameArr insertObject:@"我的班主任" atIndex:0];
+                    if ([AppChannel isEqualToString:@"1"]) { //超职
+                        [self.imageArr insertObject:@"icon_报考资料" atIndex:0];
+                        [self.nameArr insertObject:@"报考资料" atIndex:0];
+                        
+                        if (self.purchaseArr.count>0
+                            && ![self.nameArr containsObject:@"我的班主任"]) {
+                            [self.imageArr insertObject:@"icon_班主任" atIndex:0];
+                            [self.nameArr insertObject:@"我的班主任" atIndex:0];
+                        }
                     }
                 }
+                [self getRedPointInfo]; //获取小红点数量
             }
-            
-            [self getRedPointInfo]; //获取小红点数量
-        }
-    }];
+        }];
+    }
 }
 
 //获取小红点数量
