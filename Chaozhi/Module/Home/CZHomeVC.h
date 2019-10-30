@@ -18,7 +18,6 @@
 //@end
 
 @interface CZHomeVC : BaseVC
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *statusH;
 @property (weak, nonatomic) IBOutlet UITableView *mainTabView;
 
 @end

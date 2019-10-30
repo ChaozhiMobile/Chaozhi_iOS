@@ -65,11 +65,12 @@
 #define SCREEN_BOUNDS [[UIScreen mainScreen] bounds]
 #define WIDTH  [[UIScreen mainScreen] bounds].size.width
 #define HEIGHT [[UIScreen mainScreen] bounds].size.height
-#define kNavBarH ((iPhoneX == YES || IS_IPHONE_Xr == YES || IS_IPHONE_Xs == YES || IS_IPHONE_Xs_Max == YES) ? 88.0 : 64.0)
-#define kStatusBarH ((iPhoneX == YES || IS_IPHONE_Xr == YES || IS_IPHONE_Xs == YES || IS_IPHONE_Xs_Max == YES) ? 44.0 : 20.0)
-#define kTabBarH ((iPhoneX == YES || IS_IPHONE_Xr == YES || IS_IPHONE_Xs == YES || IS_IPHONE_Xs_Max == YES) ? 83.0 : 49.0)
-#define kTabBarSafeH ((iPhoneX == YES || IS_IPHONE_Xr == YES || IS_IPHONE_Xs == YES || IS_IPHONE_Xs_Max == YES) ? 34.f:0.0f)
-#define QM_IS_IPHONEX ((kStatusBarH == 44)?YES:NO)
+#define YYISiPhoneX [[UIScreen mainScreen] bounds].size.width >=375.0f && [[UIScreen mainScreen] bounds].size.height >=812.0f&& YYIS_IPHONE
+#define YYIS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define kStatusBarH (CGFloat)(YYISiPhoneX?(44):(20))
+#define kNavBarH (CGFloat)(YYISiPhoneX?(88.0):(64.0))
+#define kTabBarH (CGFloat)(YYISiPhoneX?(49+34):(49))
+#define kTabBarSafeH (CGFloat)(YYISiPhoneX?(34):(0))
 #define kNavBtnW autoScaleH(44)
 #define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 #define IS_PAD (UI_USER_INTERFACE_IDIOM()== UIUserInterfaceIdiomPad)
