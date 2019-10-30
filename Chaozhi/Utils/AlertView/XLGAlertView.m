@@ -61,18 +61,18 @@
     UILabel *titleLab = [[UILabel alloc] initWithFrame:CGRectMake(0, autoScaleH(18), autoScaleW(280), autoScaleW(40))];
     titleLab.text = self.topTitle;
     titleLab.textColor = kBlack55Color;
-    titleLab.font = [UIFont systemFontOfSize:autoScaleW(18)];
+    titleLab.font = [UIFont systemFontOfSize:18];
     titleLab.textAlignment = NSTextAlignmentCenter;
     [bgView addSubview:titleLab];
     
     CGFloat contentHeight = autoScaleH(5);
-    CGFloat height = [self.textStr getTextHeightWithFont:[UIFont systemFontOfSize:autoScaleW(14)] width:autoScaleW(220)];
+    CGFloat height = [self.textStr getTextHeightWithFont:[UIFont systemFontOfSize:14] width:autoScaleW(220)];
     _contentLab = [[UILabel alloc] initWithFrame:CGRectMake(autoScaleW(280)/2-autoScaleW(220)/2, titleLab.bottom+contentHeight, autoScaleW(220), height)];
     [_contentLab setTextAlignment:NSTextAlignmentCenter];
     
     _contentLab.numberOfLines = 0;
     _contentLab.text = self.textStr;
-    _contentLab.font = [UIFont systemFontOfSize:autoScaleW(14)];
+    _contentLab.font = [UIFont systemFontOfSize:14];
     _contentLab.textColor =  RGBValue(0xB4B4B4);;
     if (_leftTitle.length==0) {
         _contentLab.textColor = AppThemeColor;
@@ -98,7 +98,7 @@
     cancelBtn.userInteractionEnabled = YES;
     cancelBtn.backgroundColor = RGBValue(0xF9F9F9);
     [cancelBtn setTitle:self.leftTitle forState:UIControlStateNormal];
-    cancelBtn.titleLabel.font = [UIFont systemFontOfSize:autoScaleW(16)];
+    cancelBtn.titleLabel.font = [UIFont systemFontOfSize:16];
     [cancelBtn setTitleColor:RGBValue(0x9F9F9F) forState:UIControlStateNormal];
     cancelBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
     [cancelBtn addTarget:self action:@selector(cancelAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -206,12 +206,12 @@
     titleLab.textAlignment = NSTextAlignmentCenter;
     [bgView addSubview:titleLab];
     
-    CGFloat height = [self.textStr getTextHeightWithFont:[UIFont systemFontOfSize:autoScaleW(15)] width:bgView.width-16];
+    CGFloat height = [self.textStr getTextHeightWithFont:[UIFont systemFontOfSize:15] width:bgView.width-16];
     _contentLab = [[UILabel alloc] initWithFrame:CGRectMake(8, titleLab.bottom+autoScaleW(20), bgView.width-16, height+5)];
     _contentLab.numberOfLines = 0;
     _contentLab.textAlignment = NSTextAlignmentCenter;
     _contentLab.text = self.textStr;
-    _contentLab.font = [UIFont systemFontOfSize:autoScaleW(14.5)];
+    _contentLab.font = [UIFont systemFontOfSize:14.5];
     _contentLab.textColor = AppThemeColor;
     [bgView addSubview:_contentLab];
     
@@ -220,7 +220,7 @@
     UIButton *cancelBtn = [[UIButton alloc] initWithFrame:CGRectMake(leftSpace, _contentLab.bottom+autoScaleW(28), btnWidth, autoScaleW(40))];
     cancelBtn.userInteractionEnabled = YES;
     [cancelBtn setTitle:self.leftTitle forState:UIControlStateNormal];
-    cancelBtn.titleLabel.font = [UIFont systemFontOfSize:autoScaleW(15)];
+    cancelBtn.titleLabel.font = [UIFont systemFontOfSize:15];
     [cancelBtn addTarget:self action:@selector(cancelAction:) forControlEvents:UIControlEventTouchUpInside];
     [cancelBtn setTitleColor:RGBValue(0xB5B5B5) forState:UIControlStateNormal];
     cancelBtn.layer.borderColor = RGBValue(0xDEDEDE).CGColor;
@@ -231,7 +231,7 @@
     
     UIButton *doneBtn = [[UIButton alloc] initWithFrame:CGRectMake(cancelBtn.right+leftSpace, cancelBtn.top, btnWidth, cancelBtn.height)];
     [doneBtn setTitle:self.rigthTitle forState:UIControlStateNormal];
-    doneBtn.titleLabel.font = [UIFont systemFontOfSize:autoScaleW(15)];
+    doneBtn.titleLabel.font = [UIFont systemFontOfSize:15];
     [doneBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     doneBtn.backgroundColor = AppThemeColor;
     doneBtn.cornerRadius = 5;
@@ -266,12 +266,12 @@
     [bgView addSubview:succImgView];
     succImgView.centerX = bgView.width/2.0;
     
-    CGFloat height = [self.textStr getTextHeightWithFont:[UIFont systemFontOfSize:autoScaleW(15)] width:bgView.width-16];
+    CGFloat height = [self.textStr getTextHeightWithFont:[UIFont systemFontOfSize:15] width:bgView.width-16];
     _contentLab = [[UILabel alloc] initWithFrame:CGRectMake(8, succImgView.bottom+autoScaleW(20), bgView.width-16, height+5)];
     _contentLab.numberOfLines = 0;
     _contentLab.textAlignment = NSTextAlignmentCenter;
     _contentLab.text = self.textStr;
-    _contentLab.font = [UIFont systemFontOfSize:autoScaleW(14.5)];
+    _contentLab.font = [UIFont systemFontOfSize:14.5];
     _contentLab.textColor =  AppThemeColor;
     [bgView addSubview:_contentLab];
     
@@ -280,7 +280,7 @@
     UIButton *cancelBtn = [[UIButton alloc] initWithFrame:CGRectMake(leftSpace, _contentLab.bottom+autoScaleW(28), btnWidth, autoScaleW(40))];
     cancelBtn.userInteractionEnabled = YES;
     [cancelBtn setTitle:self.leftTitle forState:UIControlStateNormal];
-    cancelBtn.titleLabel.font = [UIFont systemFontOfSize:autoScaleW(15)];
+    cancelBtn.titleLabel.font = [UIFont systemFontOfSize:15];
     [cancelBtn addTarget:self action:@selector(cancelAction:) forControlEvents:UIControlEventTouchUpInside];
     [cancelBtn setTitleColor:RGBValue(0xB5B5B5) forState:UIControlStateNormal];
     cancelBtn.layer.borderColor = RGBValue(0xDEDEDE).CGColor;
@@ -291,7 +291,7 @@
     
     UIButton *doneBtn = [[UIButton alloc] initWithFrame:CGRectMake(cancelBtn.right+leftSpace, cancelBtn.top, btnWidth, cancelBtn.height)];
     [doneBtn setTitle:self.rigthTitle forState:UIControlStateNormal];
-    doneBtn.titleLabel.font = [UIFont systemFontOfSize:autoScaleW(15)];
+    doneBtn.titleLabel.font = [UIFont systemFontOfSize:15];
     [doneBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     doneBtn.backgroundColor = AppThemeColor;
     doneBtn.cornerRadius = 5;

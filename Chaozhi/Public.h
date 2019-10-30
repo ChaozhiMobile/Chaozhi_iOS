@@ -91,8 +91,8 @@
 #define IS_IPHONE_Xs_Max ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size)  : NO)
 
 // 控件宽高、字体适配
-#define autoScaleW(width) (float)width / 375 * WIDTH
-#define autoScaleH(height) (float)height / 667 * HEIGHT
+#define autoScaleW(width) (IS_PAD?width:((float)width / 375 * WIDTH))
+#define autoScaleH(height) (IS_PAD?height:((float)height / 667 * HEIGHT))
 
 /*****************************系统版本***************************/
 
