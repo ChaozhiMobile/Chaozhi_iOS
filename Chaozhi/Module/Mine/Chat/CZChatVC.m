@@ -34,7 +34,10 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"Back"] style:UIBarButtonItemStylePlain target:self action:@selector(backAction)];
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor blackColor];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(showTapAction) name:@"didTapOnRestNameLabel" object:nil];
-}
+    NSMutableArray *moreMenus = [NSMutableArray array];
+    [moreMenus addObject:[TUIInputMoreCellData photoData]];
+    [moreMenus addObject:[TUIInputMoreCellData pictureData]];
+    self.chat.moreMenus = moreMenus;}
 
 - (void)getTeacherStatus {
     [self mySendMsgWithName:@"联系其他老师" content:@"班主任不在线，您可以留言，或者"];
