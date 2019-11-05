@@ -108,4 +108,16 @@
     [self.unReadView setNum:convData.unRead];
 }
 
+- (void)setIsTop:(BOOL)isTop {
+    if (_isTop!=isTop) {
+        _isTop=isTop;
+    }
+    if (isTop) {
+        self.backgroundColor = PageColor;
+    }
+    else {
+        self.backgroundColor = [UIColor whiteColor];
+    }
+}
+
 @end

@@ -19,4 +19,5 @@
 @interface TXChatViewController : UIViewController
 @property (nonatomic, strong) TUIConversationCellData *conversationData;
 @property (nonatomic, strong) TUnReadView *unRead;
+@property (nonatomic, strong) TUIChatController *chat;
 @end

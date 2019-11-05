@@ -36,7 +36,6 @@
 @end
 
 @interface TXChatViewController () <TUIChatControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentPickerDelegate>
-@property (nonatomic, strong) TUIChatController *chat;
 @end
 
 @implementation TXChatViewController

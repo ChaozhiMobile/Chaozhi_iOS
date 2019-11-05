@@ -63,6 +63,8 @@ NS_ASSUME_NONNULL_BEGIN
  * 班主任课程标签
  */
 @property (nonatomic, strong) CZLabel *courseNameLabel;
+/** <#object#> */
+@property (nonatomic,assign) BOOL isTop;
 
 @end
 

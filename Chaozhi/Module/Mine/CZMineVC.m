@@ -12,6 +12,7 @@
 #import "NotifyItem.h"
 #import "ConversationController.h"
 #import "CZTeacherConversationVC.h"
+#import "TXChatViewController.h"
 
 @interface CZMineVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -265,6 +266,16 @@
     if ([str isEqualToString:@"我的班主任"]) {
 //        ChatItem *chatItem = self.purchaseArr[0];
 //        [BaseWebVC showWithContro:self withUrlStr:chatItem.chat_url withTitle:_nameArr[indexPath.row] isPresent:NO];
+        
+//        //创建成功后，默认跳转到群组对应的聊天界面
+//        TUIConversationCellData *data = [[TUIConversationCellData alloc] init];
+//        data.convId = @"susissisi";
+//        data.convType = TIM_C2C;
+//        data.title = @"你好呀";
+//        TXChatViewController *chat = [[TXChatViewController alloc] init];
+//        chat.conversationData = data;
+//                chat.hidesBottomBarWhenPushed = YES;
+//        [self.navigationController pushViewController:chat animated:YES];
         
         CZTeacherConversationVC *vc = [[CZTeacherConversationVC alloc]init];
         vc.hidesBottomBarWhenPushed = YES;

@@ -25,6 +25,8 @@
 @property (nonatomic, strong) TConversationListViewModel *viewModel;
 /** 班主任列表 */
 @property (nonatomic, retain) NSArray <TeacherItem *>*teacherList;
+/** <#object#> */
+@property (nonatomic,retain) NSMutableArray *dataSource;
 @end
 
 @implementation CZTeacherConversationVC
@@ -44,11 +46,12 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
+    self.dataSource = [NSMutableArray array];
 
     @weakify(self)
     [RACObserve(self.viewModel, dataList) subscribeNext:^(id  _Nullable x) {
         @strongify(self)
-        [self.tableView reloadData];
+        [self showTop];
     }];
 }
 
@@ -67,19 +70,49 @@
 
 - (void)createChat {
     for (TeacherItem *item in self.teacherList) {
-        TIMMessage *msg = [[TIMMessage alloc] init];
-        TIMTextElem *imText = [[TIMTextElem alloc] init];
-        imText.text = @"现在我们可以开始聊天啦";
-        [msg addElem:imText];
-        TIMConversation *conv =   [[TIMManager sharedInstance]getConversation:TIM_C2C receiver:item.accid];
         NSString *searchStr =[NSString stringWithFormat:@"convId = '%@'",item.accid];
         NSPredicate *predicate = [NSPredicate predicateWithFormat:searchStr];
         NSArray *data = self.viewModel.dataList;
         NSArray *result = [data filteredArrayUsingPredicate:predicate];
         if (result.count==0) {
+            TIMMessage *msg = [[TIMMessage alloc] init];
+            TIMCustomElem *custom = [[TIMCustomElem alloc] init];
+            custom.data = [@"group_create" dataUsingEncoding:NSUTF8StringEncoding];
+            //对于创建群消息时的名称显示（此时还未设置群名片），优先显示用户昵称。
+            custom.ext = [NSString stringWithFormat:@"现在我们可以开始聊天啦"];
+            [msg addElem:custom];
+            TIMConversation *conv =   [[TIMManager sharedInstance]getConversation:TIM_C2C receiver:item.accid];
             [conv sendMessage:msg succ:nil fail:nil];
         }
     }
+    [self showTop];
+}
+
+- (void)showTop {
+    
+    NSMutableArray *topArr = [NSMutableArray array];//置顶数组
+    NSMutableArray *otherArr = [NSMutableArray array];//其他
+    if (self.teacherList.count>0) {//老师列表
+        for (TUIConversationCellData *data in self.viewModel.dataList) {
+            NSString *searchStr =[NSString stringWithFormat:@"accid = '%@'",data.convId];
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:searchStr];
+            NSArray *result = [self.teacherList filteredArrayUsingPredicate:predicate];
+            if (result.count>0) {
+                [topArr addObject:data];
+            }
+            else {
+                [otherArr addObject:data];
+            }
+        }
+        [self.dataSource removeAllObjects];
+        [self.dataSource addObjectsFromArray:topArr];
+        [self.dataSource addObjectsFromArray:otherArr];
+    }
+    else {
+        [self.dataSource addObjectsFromArray:self.viewModel.dataList];
+    }
+    
+    [self.tableView reloadData];
 }
 
 - (TConversationListViewModel *)viewModel {
@@ -95,7 +128,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.viewModel.dataList.count;
+    return self.dataSource.count;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -119,6 +152,7 @@
         [tableView beginUpdates];
         TUIConversationCellData *conv = self.viewModel.dataList[indexPath.row];
         [self.viewModel removeData:conv];
+//        [self.dataSource removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil] withRowAnimation:UITableViewRowAnimationNone];
         [tableView endUpdates];
     }
@@ -126,7 +160,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CZTeacherCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myTeachListCell" forIndexPath:indexPath];
-    TUIConversationCellData *data = [self.viewModel.dataList objectAtIndex:indexPath.row];
+    TUIConversationCellData *data = [self.dataSource objectAtIndex:indexPath.row];
     cell.convData = data;
     //可以在此处修改，也可以在对应cell的初始化中进行修改。用户可以灵活的根据自己的使用需求进行设置。
     NSString *searchStr =[NSString stringWithFormat:@"accid = '%@'",data.convId];
@@ -134,30 +168,32 @@
     NSArray *result = [self.teacherList filteredArrayUsingPredicate:predicate];
     cell.courseNameLabel.hidden = YES;
     cell.courseNameLabel.text = @"";
+    cell.isTop = NO;
     if (result.count>0) {
         cell.courseNameLabel.hidden = NO;
         TeacherItem *item = [result firstObject];
         cell.courseNameLabel.text = item.product_name;
+        cell.isTop = YES;
     }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    TUIConversationCellData *data = [self.viewModel.dataList objectAtIndex:indexPath.row];
+    TUIConversationCellData *data = [self.dataSource objectAtIndex:indexPath.row];
     CZChatVC *chat = [[CZChatVC alloc] init];
     chat.conversationData = data;
     [self.navigationController pushViewController:chat animated:YES];
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
 
