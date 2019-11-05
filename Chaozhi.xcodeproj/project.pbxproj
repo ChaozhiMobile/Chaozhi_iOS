@@ -2317,10 +2317,9 @@
 			children = (
 				205935012355AB2F003DDF39 /* CZTeacherConversationVC.h */,
 				205935022355AB2F003DDF39 /* CZTeacherConversationVC.m */,
-				206976FA2356B0D9004A6E29 /* CZTeacherCell.h */,
-				206976FB2356B0D9004A6E29 /* CZTeacherCell.m */,
 				205934FE23559E93003DDF39 /* CZChatVC.h */,
 				205934FF23559E93003DDF39 /* CZChatVC.m */,
+				2098F7F02371804100A5CD4A /* View */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -2332,6 +2331,15 @@
 				205FDB3221763DBE001BE2C6 /* CZGuideVC.m */,
 			);
 			path = Guide;
+			sourceTree = "<group>";
+		};
+		2098F7F02371804100A5CD4A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				206976FA2356B0D9004A6E29 /* CZTeacherCell.h */,
+				206976FB2356B0D9004A6E29 /* CZTeacherCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		A00708F922ED96DD00C70CEE /* Module */ = {
