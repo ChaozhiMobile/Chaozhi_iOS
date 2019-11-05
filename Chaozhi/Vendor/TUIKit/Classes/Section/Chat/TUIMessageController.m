@@ -593,6 +593,12 @@
         imFile.filename = uiFile.fileName;
         [msg addElem:imFile];
     }
+   else if([data isKindOfClass:[TUIJoinGroupMessageCellData class]]){
+        TIMCustomElem *imText = [[TIMCustomElem alloc] init];
+        TUIJoinGroupMessageCellData *text = (TUIJoinGroupMessageCellData *)data;
+        imText.data = [text.content dataUsingEncoding:NSUTF8StringEncoding];
+        [msg addElem:imText];
+    }
     data.innerMessage = msg;
     return msg;
 
@@ -839,7 +845,8 @@
 
 
 - (void)didTapOnRestNameLabel:(TUIJoinGroupMessageCell *)cell withIndex:(NSInteger)index{
-    [self jumpToProfileController:cell.joinData.userID[index]];
+//    [self jumpToProfileController:cell.joinData.userID[index]];
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"didTapOnRestNameLabel"object:nil];;
 }
 - (void)jumpToProfileController:(NSString *)memberId{
     //此处实现点击入群的姓名 Label 后，跳转到对应的消息界面。此处的跳转逻辑和点击头像的跳转逻辑相同。

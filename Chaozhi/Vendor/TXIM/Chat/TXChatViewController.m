@@ -232,6 +232,7 @@
         [myCell fillWithData:(MyCustomCellData *)data];
         return myCell;
     }
+    
     return nil;
 }
 

@@ -11,7 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CZChatVC : TXChatViewController
-
+/** <#object#> */
+@property (nonatomic,assign) BOOL isTeacher;
 @end
 
 NS_ASSUME_NONNULL_END

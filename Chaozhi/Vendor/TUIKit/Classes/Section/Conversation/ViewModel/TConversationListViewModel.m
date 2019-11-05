@@ -148,8 +148,11 @@
         data.unRead = [conv getUnReadMessageNum];
         data.subTitle = [self getLastDisplayString:conv];
         data.time = [self getLastDisplayDate:conv];
-
-        if (data.subTitle == nil || data.time == nil) {
+        if (data.subTitle==nil) {
+            data.subTitle = @"";
+        }
+//        if (data.subTitle == nil || data.time == nil) {
+        if (data.time == nil) {
             [dataList removeObject:data]; // 清理无效的记录
             continue;
         }

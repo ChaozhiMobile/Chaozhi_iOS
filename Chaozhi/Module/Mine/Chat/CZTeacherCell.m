@@ -90,7 +90,7 @@
         [_subTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(self.titleLabel);
             make.top.mas_equalTo(_courseNameLabel.mas_bottom).offset(CellSpace);
-            make.right.mas_equalTo(_titleLabel).offset(-CellSpace);
+            make.right.mas_equalTo(self).offset(-CellSpace);
             make.bottom.mas_equalTo(self).offset(-CellSpace);
         }];
     }

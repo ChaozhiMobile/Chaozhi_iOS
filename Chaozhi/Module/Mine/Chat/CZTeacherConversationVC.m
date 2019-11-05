@@ -47,6 +47,13 @@
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
     self.dataSource = [NSMutableArray array];
+    __weak typeof(self) weakSelf = self;
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.left.right.mas_equalTo(weakSelf.view);
+        make.top.mas_equalTo(weakSelf.view).offset(kNavBarH);
+    }];
+    
+  NSArray *arr=  [[TIMManager sharedInstance]getConversationList];
 
     @weakify(self)
     [RACObserve(self.viewModel, dataList) subscribeNext:^(id  _Nullable x) {
@@ -81,7 +88,7 @@
             //对于创建群消息时的名称显示（此时还未设置群名片），优先显示用户昵称。
             custom.ext = [NSString stringWithFormat:@"现在我们可以开始聊天啦"];
             [msg addElem:custom];
-            TIMConversation *conv =   [[TIMManager sharedInstance]getConversation:TIM_C2C receiver:item.accid];
+            TIMConversation *conv = [[TIMManager sharedInstance]getConversation:TIM_C2C receiver:item.accid];
             [conv sendMessage:msg succ:nil fail:nil];
         }
     }
@@ -118,9 +125,9 @@
 - (TConversationListViewModel *)viewModel {
     if (!_viewModel) {
         _viewModel = [TConversationListViewModel new];
-        _viewModel.listFilter = ^BOOL(TUIConversationCellData * _Nonnull data) {
-            return (data.convType != TIM_SYSTEM);
-        };
+//        _viewModel.listFilter = ^BOOL(TUIConversationCellData * _Nonnull data) {
+//            return (data.convType != TIM_SYSTEM);
+//        };
     }
     return _viewModel;
 }
@@ -179,10 +186,19 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    CZTeacherCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     TUIConversationCellData *data = [self.dataSource objectAtIndex:indexPath.row];
     CZChatVC *chat = [[CZChatVC alloc] init];
     chat.conversationData = data;
+    chat.isTeacher = cell.isTop;
     [self.navigationController pushViewController:chat animated:YES];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (self.teacherList.count>0) {
+        [self createChat];
+    }
 }
 
 /*
