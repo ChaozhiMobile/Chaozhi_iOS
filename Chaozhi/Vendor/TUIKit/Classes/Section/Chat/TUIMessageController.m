@@ -596,7 +596,8 @@
    else if([data isKindOfClass:[TUIJoinGroupMessageCellData class]]){
         TIMCustomElem *imText = [[TIMCustomElem alloc] init];
         TUIJoinGroupMessageCellData *text = (TUIJoinGroupMessageCellData *)data;
-        imText.data = [text.content dataUsingEncoding:NSUTF8StringEncoding];
+        imText.data = [@"group_create" dataUsingEncoding:NSUTF8StringEncoding];
+        imText.ext = text.content;
         [msg addElem:imText];
     }
     data.innerMessage = msg;

@@ -15,7 +15,8 @@
 @interface CZChatVC ()
 
 @property (nonatomic,strong) UITableView *chatTab;
-
+/** <#object#> */
+@property (nonatomic,copy) NSString *otherTeacherAccid;
 @end
 
 @implementation CZChatVC
@@ -23,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self logViewHierarchy:self.view];
+    _otherTeacherAccid = @"";
     if (_isTeacher) {
         [self getTeacherStatus];
     }
@@ -37,17 +39,24 @@
     NSMutableArray *moreMenus = [NSMutableArray array];
     [moreMenus addObject:[TUIInputMoreCellData photoData]];
     [moreMenus addObject:[TUIInputMoreCellData pictureData]];
-    self.chat.moreMenus = moreMenus;}
+    self.chat.moreMenus = moreMenus;
+}
 
 - (void)getTeacherStatus {
-    [self mySendMsgWithName:@"联系其他老师" content:@"班主任不在线，您可以留言，或者"];
-    return;
-
-    NSString *utl = [NSString stringWithFormat:@"%@%@/%@",imUrl(),URL_IMQuery_status,self.conversationData.convId];
-    NSDictionary *dic = [NSDictionary dictionary];
-    [[NetworkManager sharedManager] getJSON:utl parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+    __weak typeof(self) weakSelf = self;
+    NSString *urlStr = [NSString stringWithFormat:@"%@%@",imUrl(),URL_IMQuery_status];
+    NSDictionary *dic = @{@"accid":self.conversationData.convId};
+    [[NetworkManager sharedManager] postJSON:urlStr parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         if (status == Request_Success) {
-
+            NSArray *arr = responseData;
+            if (arr.count>0) {
+                NSDictionary *dic = [arr firstObject];
+                NSString *state = [NSString stringWithFormat:@"%@",dic[@"State"]];
+                if ([state isEqualToString:@"Offline"]) {
+                    [weakSelf mySendMsgWithName:@"联系其他老师" content:@"班主任不在线，您可以留言，或者"];
+//                    weakSelf.otherTeacherAccid = [NSString stringWithFormat:@"%@",dic[@"To_Account"]];
+                }
+            }
         }
     }];
 }
@@ -82,16 +91,43 @@
 
 
 - (void)showTapAction{
+    [self queryOtherTeacher];
+    return;
+    
+    if ([NSString isEmpty:self.otherTeacherAccid]) {
+        [self mySendMsgWithName:@"" content:@"抱歉，没有空闲的老师！"];
+    }
+    
     [self.navigationController popViewControllerAnimated:NO];
      //创建成功后，默认跳转到群组对应的聊天界面
-    TUIConversationCellData *data = [[TUIConversationCellData alloc] init];
-    data.convId = @"在线老师";
-    data.convType = TIM_C2C;
-//    data.title = @"你好呀";
-    CZChatVC *chat = [[CZChatVC alloc] init];
-    chat.conversationData = data;
-    BaseNC *nc = CZAppDelegate.tabVC.selectedViewController;
-    [nc.topViewController.navigationController pushViewController:chat animated:YES];
+}
+
+- (void)queryOtherTeacher {
+    __weak typeof(self) weakSelf = self;
+    NSString *urlStr = [NSString stringWithFormat:@"%@%@",imUrl(),URL_Change_teacher];
+    NSDictionary *dic = @{@"accid":[[TIMManager sharedInstance] getLoginUser],@"faceid":self.conversationData.convId};
+    [[NetworkManager sharedManager] postJSON:urlStr parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
+        if (status == Request_Success) {
+                NSDictionary *dataDic = responseData;
+                if ([dataDic.allKeys containsObject:@"statusCode"]) {
+                    NSInteger statusCode = [dataDic[@"statusCode"] integerValue];
+                    if (statusCode==401) {
+                        [weakSelf mySendMsgWithName:@"" content:@"抱歉，没有空闲的老师！"];
+                    }
+                }
+                else {
+                    TUIConversationCellData *data = [[TUIConversationCellData alloc] init];
+                    data.convId = responseData[@"faceid"];
+                    data.convType = TIM_C2C;
+                //    data.title = @"你好呀";
+                    CZChatVC *chat = [[CZChatVC alloc] init];
+                    chat.conversationData = data;
+                    BaseNC *nc = CZAppDelegate.tabVC.selectedViewController;
+                    [nc.topViewController.navigationController pushViewController:chat animated:YES];
+
+                }
+        }
+    }];
 }
 
 - (void)scrollTableToFoot:(BOOL)animated

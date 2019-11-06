@@ -89,13 +89,18 @@ static NetworkManager *_manager = nil;
         
         NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
         NSLog(@"状态码：%ld",(long)response.statusCode);
+        
         if([self isTokenInvalid:(int)response.statusCode]) {
             return;
         }
-        
-        completion(nil,Request_TimeoOut,error);
+        if (response.statusCode==401&&[name containsString:URL_Change_teacher]) {
+            completion(@{@"statusCode":@(401)},Request_Success,nil);
+        }
+        else {
+            completion(nil,Request_TimeoOut,error);
+            [Utils showToast:@"请求超时"];
+        }
         [self printLogInfoWith:name WithParam:paramDic andResult:[error localizedDescription]];
-        [Utils showToast:@"请求超时"];
         [JHHJView hideLoading]; //结束加载
     }];
 }
@@ -166,6 +171,79 @@ static NetworkManager *_manager = nil;
         [JHHJView hideLoading]; //结束加载
     }];
 }
+
+- (void)putJSON:(NSString *)name
+      parameters:(NSDictionary *)parameters
+      completion:(RequestCompletion)completion {
+    
+    if (![Utils getNetStatus]) {
+        [Utils showToast:@"检测到您的网络异常，请检查网络"];
+        return;
+    }
+    
+    [self configNetManager];
+    
+    if (![name containsString:@"http"]) {
+        name = [NSString stringWithFormat:@"%@%@",domainUrl(),name];
+    }
+    
+    [JHHJView showLoadingOnTheKeyWindowWithType:JHHJViewTypeSingleLine]; //开始加载
+    
+    NSMutableDictionary *paramDic = [parameters mutableCopy];
+    if ([Utils isLoginWithJump:NO]) {
+        NSLog(@"token值：%@",[UserInfo share].token);
+        [paramDic setObject:[UserInfo share].token forKey:@"token"];
+    }
+    [paramDic setObject:@"ios" forKey:@"device"];
+    [paramDic setObject:AppVersion forKey:@"version"];
+    [self PUT:name parameters:paramDic success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [JHHJView hideLoading]; //结束加载
+        
+        NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
+        NSLog(@"状态码：%ld",(long)response.statusCode);
+        if([self isTokenInvalid:(int)response.statusCode]) {
+            return;
+        }
+        
+        id _Nullable object = [NSDictionary changeType:responseObject];
+        [self printLogInfoWith:name WithParam:paramDic andResult:object];
+        
+        NSString *code = @"";
+        NSString *msg = @"";
+        if ([name containsString:domainUrl()]) {
+            code = [NSString stringWithFormat:@"%@",object[@"code"]];
+            msg = [NSString stringWithFormat:@"%@",object[@"msg"]];
+        } else if ([name containsString:imUrl()]) {
+            code = [NSString stringWithFormat:@"%@",object[@"status_code"]];
+            msg = [NSString stringWithFormat:@"%@",object[@"message"]];
+        }
+        if ([code isEqualToString:@"200"]) { //成功
+            id _Nullable dataObject = object[@"data"];
+            completion(dataObject,Request_Success,nil);
+        } else if ([code intValue]>=600&&[code intValue]<700) { //重新登录
+            [self reLogin];
+        } else if ([code isEqualToString:@"210"]&&[name containsString:URL_CheckVersion]) {
+            //已经是最新版本
+        }
+        else {
+            completion(nil,Request_Fail,nil);
+            [Utils showToast:msg];
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
+        NSLog(@"状态码：%ld",(long)response.statusCode);
+        if([self isTokenInvalid:(int)response.statusCode]) {
+            return;
+        }
+        
+        completion(nil,Request_TimeoOut,error);
+        [self printLogInfoWith:name WithParam:paramDic andResult:[error localizedDescription]];
+        [Utils showToast:@"请求超时"];
+        [JHHJView hideLoading]; //结束加载
+    }];
+
+}
+
 
 - (void)postJSON:(NSString *)name
       parameters:(NSDictionary *)parameters

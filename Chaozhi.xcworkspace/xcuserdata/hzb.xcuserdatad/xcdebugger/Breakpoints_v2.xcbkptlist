@@ -175,5 +175,85 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "86D772C5-91C9-44A3-BFC3-B669D5D0FBD2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chaozhi/Vendor/TUIKit/Classes/Section/Chat/TUIMessageCell.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "-layoutSubviews"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E1CE8EDC-3E5E-4A42-A72C-DB1398955829"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chaozhi/Vendor/TUIKit/Classes/Section/Chat/CellData/TUISystemMessageCellData.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "-contentSize"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CA3F552F-C79D-455F-A8F5-6ADA556F598B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chaozhi/Network/NetworkManager.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
+            landmarkName = "-putJSON:parameters:completion:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CA3F552F-C79D-455F-A8F5-6ADA556F598B - 9af7ac780af978ae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[NetworkManager putJSON:parameters:completion:]"
+                  moduleName = "Chaozhi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hzb/Documents/GitHub/Chaozhi_iOS/Chaozhi/Network/NetworkManager.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "199"
+                  endingLineNumber = "199"
+                  offsetFromSymbolStart = "1228">
+               </Location>
+               <Location
+                  uuid = "CA3F552F-C79D-455F-A8F5-6ADA556F598B - bfd8f6f0c8cba6c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__48-[NetworkManager putJSON:parameters:completion:]_block_invoke"
+                  moduleName = "Chaozhi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hzb/Documents/GitHub/Chaozhi_iOS/Chaozhi/Network/NetworkManager.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "199"
+                  endingLineNumber = "199"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

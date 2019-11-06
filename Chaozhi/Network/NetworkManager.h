@@ -58,5 +58,16 @@ typedef void(^RequestCompletion)(id responseData,RequestState status,NSError *er
        imageName:(NSString *)imageName
       completion:(RequestCompletion)completion;
 
+/**
+ *  POST请求
+ *
+ *  @param name       接口名称
+ *  @param parameters 传参
+ *  @param completion 结果回调
+ */
+- (void)putJSON:(NSString *)name
+      parameters:(NSDictionary *)parameters
+      completion:(RequestCompletion)completion;
+
 
 @end

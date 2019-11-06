@@ -100,16 +100,17 @@
     NSMutableArray *topArr = [NSMutableArray array];//置顶数组
     NSMutableArray *otherArr = [NSMutableArray array];//其他
     if (self.teacherList.count>0) {//老师列表
-        for (TUIConversationCellData *data in self.viewModel.dataList) {
+        for (NSInteger index = self.viewModel.dataList.count-1; index>=0; index--) {
+            TUIConversationCellData *data = self.viewModel.dataList[index];
             NSString *searchStr =[NSString stringWithFormat:@"accid = '%@'",data.convId];
-            NSPredicate *predicate = [NSPredicate predicateWithFormat:searchStr];
-            NSArray *result = [self.teacherList filteredArrayUsingPredicate:predicate];
-            if (result.count>0) {
-                [topArr addObject:data];
-            }
-            else {
-                [otherArr addObject:data];
-            }
+               NSPredicate *predicate = [NSPredicate predicateWithFormat:searchStr];
+               NSArray *result = [self.teacherList filteredArrayUsingPredicate:predicate];
+               if (result.count>0) {
+                   [topArr addObject:data];
+               }
+               else {
+                   [otherArr addObject:data];
+               }
         }
         [self.dataSource removeAllObjects];
         [self.dataSource addObjectsFromArray:topArr];
@@ -197,7 +198,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     if (self.teacherList.count>0) {
-        [self createChat];
+        [self showTop];
     }
 }
 

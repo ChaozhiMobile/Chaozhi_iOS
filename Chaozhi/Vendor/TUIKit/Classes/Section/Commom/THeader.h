@@ -44,7 +44,7 @@
 //system cell
 #define TSystemMessageCell_ReuseId @"TSystemMessageCell"
 #define TSystemMessageCell_Background_Color RGBA(215, 215, 215, 1.0)
-#define TSystemMessageCell_Text_Width_Max (Screen_Width * 0.5)
+#define TSystemMessageCell_Text_Width_Max (Screen_Width * 0.9)
 #define TSystemMessageCell_Margin 5
 
 //joinGroup cell 继承自 system cell
