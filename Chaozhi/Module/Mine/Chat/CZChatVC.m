@@ -25,9 +25,9 @@
     [super viewDidLoad];
     [self logViewHierarchy:self.view];
     _otherTeacherAccid = @"";
-    if (_isTeacher) {
+//    if (_isTeacher) {
         [self getTeacherStatus];
-    }
+//    }
     if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
         self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     }
