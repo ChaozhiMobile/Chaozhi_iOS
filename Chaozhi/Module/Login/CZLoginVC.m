@@ -71,15 +71,19 @@
             NSString *token = responseData[@"token"];
             [CacheUtil saveCacher:@"token" withValue:token];
             [CacheUtil saveCacher:@"loginPhone" withValue:weakSelf.phoneTF.text];
-            [Utils changeUserAgent]; //WKWebView UA初始化
 
             [[NSNotificationCenter defaultCenter] postNotificationName:kLoginSuccNotification object:nil];
+            
+            // WKWebView UA初始化
+            [Utils changeUserAgent];
             
             // 极光推送绑定别名
             [JPUSHService setAlias:weakSelf.phoneTF.text completion:^(NSInteger iResCode, NSString *iAlias, NSInteger seq) {
             } seq:0];
             
+            // 腾讯IM登录
             [self loginIM];
+            
             // 跳转到首页
             self.tabBarController.selectedIndex = 0;
             [self.navigationController popToRootViewControllerAnimated:NO];

@@ -8,6 +8,8 @@
 
 #import "CZRegisterVC.h"
 #import "JPUSHService.h"
+#import "IMItem.h"
+#import "GenerateTestUserSig.h"
 
 @interface CZRegisterVC ()
 
@@ -107,19 +109,44 @@
             
             NSString *token = responseData[@"token"];
             [CacheUtil saveCacher:@"token" withValue:token];
-            [Utils changeUserAgent]; //WKWebView UA初始化
 
             [[NSNotificationCenter defaultCenter] postNotificationName:kLoginSuccNotification object:nil];
+            
+            // WKWebView UA初始化
+            [Utils changeUserAgent];
             
             // 极光推送绑定别名
             [JPUSHService setAlias:self.phoneTF.text completion:^(NSInteger iResCode, NSString *iAlias, NSInteger seq) {
             } seq:0];
+            
+            // 腾讯IM登录
+            [self loginIM];
             
             // 跳转到首页
             [self.navigationController popToRootViewControllerAnimated:NO];
             self.tabBarController.selectedIndex = 0;
         } else {
             [Utils showToast:@"注册失败"];
+        }
+    }];
+}
+
+- (void)loginIM {
+    NSDictionary *dic = [NSDictionary dictionary];
+    [[NetworkManager sharedManager] postJSON:URL_IMLogin parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
+        if (status == Request_Success) {
+            IMItem *item = [IMItem mj_objectWithKeyValues:(NSDictionary *)responseData];
+            TIMLoginParam *param = [[TIMLoginParam alloc] init];
+            param.identifier = item.accid;
+            param.userSig = item.token;
+            [[NSUserDefaults standardUserDefaults] setObject:@(imKey()) forKey:Key_UserInfo_Appid];
+            [[NSUserDefaults standardUserDefaults] setObject:param.identifier forKey:Key_UserInfo_User];
+            [[NSUserDefaults standardUserDefaults] setObject:param.userSig forKey:Key_UserInfo_Sig];
+            [[TIMManager sharedInstance] login:param succ:^{
+                NSLog(@"腾讯IM登录成功");
+            } fail:^(int code, NSString *msg) {
+                NSLog(@"腾讯IM登录失败code：%d，msg：%@",code,msg);
+            }];
         }
     }];
 }
