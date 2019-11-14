@@ -76,9 +76,9 @@
             [[NSNotificationCenter defaultCenter] postNotificationName:kLoginSuccNotification object:nil];
             
             // 极光推送绑定别名
-            [JPUSHService setTags:nil alias:weakSelf.phoneTF.text fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias) {
-                
-            }];
+            [JPUSHService setAlias:weakSelf.phoneTF.text completion:^(NSInteger iResCode, NSString *iAlias, NSInteger seq) {
+            } seq:0];
+            
             [self loginIM];
             // 跳转到首页
             self.tabBarController.selectedIndex = 0;

@@ -81,9 +81,8 @@
     
     [Utils logout:NO]; //不跳登录页面
     // 极光推送清除别名
-    [JPUSHService setTags:nil alias:@"" fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias) {
-        
-    }];
+    [JPUSHService setAlias:@"" completion:^(NSInteger iResCode, NSString *iAlias, NSInteger seq) {
+    } seq:0];
     [self cleanCacheAndCookie];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:kLogoutSuccNotification object:nil];

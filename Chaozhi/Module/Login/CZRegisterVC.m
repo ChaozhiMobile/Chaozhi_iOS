@@ -112,9 +112,8 @@
             [[NSNotificationCenter defaultCenter] postNotificationName:kLoginSuccNotification object:nil];
             
             // 极光推送绑定别名
-            [JPUSHService setTags:nil alias:self.phoneTF.text fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias) {
-                
-            }];
+            [JPUSHService setAlias:self.phoneTF.text completion:^(NSInteger iResCode, NSString *iAlias, NSInteger seq) {
+            } seq:0];
             
             // 跳转到首页
             [self.navigationController popToRootViewControllerAnimated:NO];
