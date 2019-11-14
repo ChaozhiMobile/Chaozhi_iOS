@@ -11,6 +11,7 @@
 #import "XLGChangeServerCell.h"
 #import "XLGChangeServerModel.h"
 #import "JPUSHService.h"
+#import "TUILocalStorage.h"
 
 @interface XLGChangeServerVC ()<UITableViewDataSource,UITableViewDelegate>
 {
@@ -104,29 +105,18 @@
     // 极光推送清除别名
     [JPUSHService setAlias:@"" completion:^(NSInteger iResCode, NSString *iAlias, NSInteger seq) {
     } seq:0];
-    [self cleanCacheAndCookie];
+    // 腾讯IM退出
+    [[TIMManager sharedInstance] logout:^{
+        [[TUILocalStorage sharedInstance] logout];
+    } fail:^(int code, NSString *msg) {
+        NSLog(@"");
+    }];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:kChangeServerSuccNotification object:nil];
     [self.navigationController popViewControllerAnimated:NO];
     self.tabBarController.selectedIndex = 0;
     
     [Utils changeUserAgent]; //WKWebView UA初始化
-}
-
-/**清除缓存和cookie*/
-- (void)cleanCacheAndCookie{
-    //清除cookies
-    NSHTTPCookie *cookie;
-    NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-    for (cookie in [storage cookies]){
-        [storage deleteCookie:cookie];
-    }
-    //清除UIWebView的缓存
-    [[NSURLCache sharedURLCache] removeAllCachedResponses];
-    NSURLCache * cache = [NSURLCache sharedURLCache];
-    [cache removeAllCachedResponses];
-    [cache setDiskCapacity:0];
-    [cache setMemoryCapacity:0];
 }
 
 - (void)didReceiveMemoryWarning {

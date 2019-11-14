@@ -14,7 +14,6 @@
 #import "CZGuideVC.h"
 #import "UMMobClick/MobClick.h"
 #import "DBManager.h"
-
 #import "TNavigationController.h"
 #import "ConversationController.h"
 #import "SettingController.h"
@@ -25,6 +24,8 @@
 #import "THeader.h"
 #import "ImSDK.h"
 #import "GenerateTestUserSig.h"
+#import "JPUSHService.h"
+#import "BaseNC.h"
 
 @interface AppDelegate ()<UIAlertViewDelegate>
 
@@ -190,6 +191,49 @@
     }
 }
 
+- (void)onUserStatus:(NSNotification *)notification {
+    TUIUserStatus status = [notification.object integerValue];
+    switch (status) {
+        case TUser_Status_ForceOffline:
+        {
+            XLGAlertView *alert = [[XLGAlertView alloc] initWithTitle:@"下线通知" content:@"您的帐号于另一台手机上登录。" leftButtonTitle:@"" rightButtonTitle:@"退出"];
+            alert.doneBlock = ^{
+                [Utils logout:NO]; //不跳登录页面
+                // 极光推送清除别名
+                [JPUSHService setAlias:@"" completion:^(NSInteger iResCode, NSString *iAlias, NSInteger seq) {
+                } seq:0];
+                // 腾讯IM退出
+                [[TIMManager sharedInstance] logout:^{
+                    [[TUILocalStorage sharedInstance] logout];
+                } fail:^(int code, NSString *msg) {
+                    NSLog(@"");
+                }];
+                
+                [[NSNotificationCenter defaultCenter] postNotificationName:kLogoutSuccNotification object:nil];
+
+                BaseNC *nc = CZAppDelegate.tabVC.selectedViewController;
+                [[nc topViewController].navigationController popViewControllerAnimated:NO];
+                [nc topViewController].tabBarController.selectedIndex = 0;
+                
+                [Utils changeUserAgent]; //WKWebView UA初始化
+            };
+        }
+            break;
+        case TUser_Status_ReConnFailed:
+        {
+            NSLog(@"连网失败");
+        }
+            break;
+        case TUser_Status_SigExpired:
+        {
+            NSLog(@"userSig过期");
+        }
+            break;
+        default:
+            break;
+    }
+}
+
 #pragma mark - 内购凭证校验
 - (void)iapCheck {
     NSString *receipt = [CacheUtil getCacherWithKey:kIapCheck];
@@ -274,8 +318,32 @@
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    __block UIBackgroundTaskIdentifier bgTaskID;
+    bgTaskID = [application beginBackgroundTaskWithExpirationHandler:^ {
+        //不管有没有完成，结束 background_task 任务
+        [application endBackgroundTask: bgTaskID];
+        bgTaskID = UIBackgroundTaskInvalid;
+    }];
+    
+    //获取未读计数
+    int unReadCount = 0;
+    NSArray *convs = [[TIMManager sharedInstance] getConversationList];
+    for (TIMConversation *conv in convs) {
+        if([conv getType] == TIM_SYSTEM){
+            continue;
+        }
+        unReadCount += [conv getUnReadMessageNum];
+    }
+    [UIApplication sharedApplication].applicationIconBadgeNumber = unReadCount;
+    
+    //doBackground
+    TIMBackgroundParam  *param = [[TIMBackgroundParam alloc] init];
+    [param setC2cUnread:unReadCount];
+    [[TIMManager sharedInstance] doBackground:param succ:^() {
+        NSLog(@"doBackgroud Succ");
+    } fail:^(int code, NSString * err) {
+        NSLog(@"Fail: %d->%@", code, err);
+    }];
 }
 
 
@@ -285,7 +353,11 @@
 
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [[TIMManager sharedInstance] doForeground:^() {
+        NSLog(@"doForegroud Succ");
+    } fail:^(int code, NSString * err) {
+        NSLog(@"Fail: %d->%@", code, err);
+    }];
 }
 
 
