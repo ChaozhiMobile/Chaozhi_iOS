@@ -64,8 +64,7 @@
     
     self.view.backgroundColor = RGBValue(0xf5f5f5);
 //    [UIColor whiteColor];
-    
-    _statusH.constant = kStatusBarH;
+    NSLog(@"ddd %f",kStatusBarH);
     [_statuView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(kStatusBarH);
     }];

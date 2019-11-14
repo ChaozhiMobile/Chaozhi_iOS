@@ -28,7 +28,20 @@
     self.tf.rightViewMode = UITextFieldViewModeAlways;
     self.tf.autocorrectionType = UITextAutocorrectionTypeNo;
 
-    [self.tf setValue:[[UIColor blackColor] colorWithAlphaComponent:0.5] forKeyPath:@"_placeholderLabel.textColor"];
+//    [self.tf setValue:[[UIColor blackColor] colorWithAlphaComponent:0.5] forKeyPath:@"_placeholderLabel.textColor"];
+    
+    //带属性的文字（富文本技术）
+//       NSAttributedString *placeholder = [[NSAttributedString alloc] initWithString:@"请输入手机号"];
+    
+    
+    NSShadow * shadow = [[NSShadow alloc] init];
+  
+        shadow.shadowOffset = CGSizeMake(0.5, 0.5);
+        shadow.shadowColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
+
+    NSAttributedString  *aa =   [[NSAttributedString alloc]initWithString:@"" attributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:30],NSForegroundColorAttributeName :[UIColor blackColor],NSShadowAttributeName:shadow}];
+    
+       self.tf.attributedPlaceholder  = aa;
 }
 
 - (void)expressionBtnSelected:(BOOL)selected{

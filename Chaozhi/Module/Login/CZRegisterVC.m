@@ -104,22 +104,7 @@
         
         if (status == Request_Success) {
             [Utils showToast:@"注册成功"];
-
-            NSString *token = responseData[@"token"];
-            [CacheUtil saveCacher:@"token" withValue:token];
-            [Utils changeUserAgent]; //WKWebView UA初始化
-
-            [[NSNotificationCenter defaultCenter] postNotificationName:kLoginSuccNotification object:nil];
-            
-            
-            // 极光推送绑定别名
-            [JPUSHService setTags:nil alias:self.phoneTF.text fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias) {
-                
-            }];
-            
-            // 跳转到首页
-            [self.navigationController popToRootViewControllerAnimated:NO];
-            self.tabBarController.selectedIndex = 0;
+            [self backAction];
         } else {
             [Utils showToast:@"注册失败"];
         }

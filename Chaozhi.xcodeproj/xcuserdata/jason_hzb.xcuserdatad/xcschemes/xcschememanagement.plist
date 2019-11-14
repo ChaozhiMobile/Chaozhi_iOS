@@ -4,19 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Chaozhi.xcscheme</key>
+		<key>Chaozhi.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
 			<integer>0</integer>
-		</dict>
-		<key>Chaozhi.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>5</integer>
 		</dict>
 		<key>Xuezhi.xcscheme_^#shared#^_</key>
 		<dict>
