@@ -38,7 +38,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [self printFont]; //输出所有系统字体
+//    [self printFont]; //输出所有系统字体
     
     [[DBManager shareManager] createDBAndTable];
     

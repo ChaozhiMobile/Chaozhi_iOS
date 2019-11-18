@@ -54,6 +54,9 @@
     }];
     
   NSArray *arr=  [[TIMManager sharedInstance]getConversationList];
+    for (TIMConversation *conv in arr) {
+      NSLog(@"%@",  [conv getReceiver]);
+    }
 
     @weakify(self)
     [RACObserve(self.viewModel, dataList) subscribeNext:^(id  _Nullable x) {
@@ -126,9 +129,9 @@
 - (TConversationListViewModel *)viewModel {
     if (!_viewModel) {
         _viewModel = [TConversationListViewModel new];
-//        _viewModel.listFilter = ^BOOL(TUIConversationCellData * _Nonnull data) {
-//            return (data.convType != TIM_SYSTEM);
-//        };
+        _viewModel.listFilter = ^BOOL(TUIConversationCellData * _Nonnull data) {
+            return (data.convType != TIM_SYSTEM);
+        };
     }
     return _viewModel;
 }
@@ -169,7 +172,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CZTeacherCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myTeachListCell" forIndexPath:indexPath];
     TUIConversationCellData *data = [self.dataSource objectAtIndex:indexPath.row];
-    cell.convData = data;
     //可以在此处修改，也可以在对应cell的初始化中进行修改。用户可以灵活的根据自己的使用需求进行设置。
     NSString *searchStr =[NSString stringWithFormat:@"accid = '%@'",data.convId];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:searchStr];
@@ -182,7 +184,10 @@
         TeacherItem *item = [result firstObject];
         cell.courseNameLabel.text = item.product_name;
         cell.isTop = YES;
+        data.isOnTop = YES;
     }
+    cell.convData = data;
+
     return cell;
 }
 

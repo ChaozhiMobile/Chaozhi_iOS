@@ -71,7 +71,7 @@
         [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(self.headImageView.mas_right).offset(CellSpace);
             make.top.mas_equalTo(self).offset(CellSpace);
-            make.right.mas_equalTo(self).offset(100);
+            make.right.mas_equalTo(self).offset(-100);
         }];
         
         [_timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {

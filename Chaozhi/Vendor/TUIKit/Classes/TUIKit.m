@@ -58,6 +58,7 @@
     sdkConfig.sdkAppId = (int)sdkAppId;
     sdkConfig.dbPath = TUIKit_DB_Path;
     sdkConfig.connListener = self;
+    sdkConfig.disableLogPrint = YES;
     [[TIMManager sharedInstance] initSdk:sdkConfig];
 
     TIMUserConfig *userConfig = [[TIMUserConfig alloc] init];
