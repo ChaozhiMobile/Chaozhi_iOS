@@ -53,6 +53,7 @@
     [[NetworkManager sharedManager] postJSON:URL_CategoryList parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         if (status == Request_Success) {
             self.titleArr = [CourseCategoryItem mj_objectArrayWithKeyValuesArray:(NSArray *)responseData];
+//            [self.titleArr addObjectsFromArray:self.titleArr];
             if (self.titleArr.count>0) {
                 self.categoryItem = self.titleArr[0];
                 [self initView];
