@@ -14,7 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface XZHomeVC : BaseVC
 
 @property (weak, nonatomic) IBOutlet UILabel *redPointLab;
+@property (weak, nonatomic) IBOutlet UIView *headerView;
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *bannerView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bannerH;
 @property (weak, nonatomic) IBOutlet UIScrollView *courseScrollView;
 @property (weak, nonatomic) IBOutlet UITableView *mainTabView;
 

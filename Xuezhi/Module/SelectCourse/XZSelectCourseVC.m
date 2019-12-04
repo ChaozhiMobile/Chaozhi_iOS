@@ -11,7 +11,7 @@
 #import "CourseCategoryItem.h"
 #import "CourseItem.h"
 
-#define LineMaxCount 5
+#define LineMaxCount 4
 #define PageSize @"10"
 
 @interface XZSelectCourseVC ()
@@ -53,7 +53,6 @@
     [[NetworkManager sharedManager] postJSON:URL_CategoryList parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         if (status == Request_Success) {
             self.titleArr = [CourseCategoryItem mj_objectArrayWithKeyValuesArray:(NSArray *)responseData];
-//            [self.titleArr addObjectsFromArray:self.titleArr];
             if (self.titleArr.count>0) {
                 self.categoryItem = self.titleArr[0];
                 [self initView];
@@ -81,7 +80,9 @@
     CGFloat viewLeft = 0;
     for (NSInteger index = 0; index<_titleArr.count; index++) {
         CourseCategoryItem *item = _titleArr[index];
-        viewW = [item.name getTextWidthWithFont:[UIFont systemFontOfSize:15] height:50]+40;
+        if (_titleArr.count>LineMaxCount) {
+            viewW = [item.name getTextWidthWithFont:[UIFont systemFontOfSize:15] height:50]+40;
+        }
         UIButton *sender = [[UIButton alloc] initWithFrame:CGRectMake(viewLeft, 0, viewW, 50)];
         sender.titleLabel.font = [UIFont systemFontOfSize:15];
         [sender setTitle:item.name forState:UIControlStateNormal];
@@ -91,7 +92,7 @@
         sender.tag = 1000+index;
         [_titleBgScrollView addSubview:sender];
         
-        _titleLineView = [[UIView alloc]initWithFrame:CGRectMake(0, 47, 0, 3)];
+        _titleLineView = [[UIView alloc] initWithFrame:CGRectMake(0, 47, 0, 3)];
         _titleLineView.backgroundColor = AppThemeColor;
         [_titleBgScrollView addSubview:_titleLineView];
         

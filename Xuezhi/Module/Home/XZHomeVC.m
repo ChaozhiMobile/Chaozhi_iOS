@@ -138,7 +138,14 @@
         HomeBannerItem *item = _homeItem.banner_list[i];
         [bannerImgUrlArr addObject:item.img];
     }
-    _bannerView.imageURLStringsGroup = bannerImgUrlArr;
+    if (bannerImgUrlArr.count == 0) {
+        _bannerH.constant = 0;
+        _headerView.height = 120;
+    } else {
+        _bannerH.constant = WIDTH*(12.0/25.0);
+        _headerView.height = _bannerH.constant+120;
+        _bannerView.imageURLStringsGroup = bannerImgUrlArr;
+    }
 }
 
 #pragma mark - SDCycleScrollViewDelegate
@@ -379,8 +386,7 @@
         return (WIDTH-16*2-14)/2.0*(99.0/164.0)
         +100;
     }
-    else
-        if (indexPath.section==1) {
+    else if (indexPath.section==1) {
        return 120;
     }
     else if (indexPath.section==2) {

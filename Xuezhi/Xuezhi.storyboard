@@ -89,7 +89,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="UeA-G9-pg8" secondAttribute="height" multiplier="25:12" id="BjS-T1-XKd"/>
+                                                <constraint firstAttribute="height" constant="180" id="ifg-QA-Q3Y"/>
                                             </constraints>
                                         </view>
                                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Dc-Ok-US3">
@@ -469,8 +469,10 @@
                     </view>
                     <size key="freeformSize" width="375" height="900"/>
                     <connections>
+                        <outlet property="bannerH" destination="ifg-QA-Q3Y" id="PVm-gt-15U"/>
                         <outlet property="bannerView" destination="UeA-G9-pg8" id="Wom-94-axi"/>
                         <outlet property="courseScrollView" destination="2Dc-Ok-US3" id="OJC-8V-YOk"/>
+                        <outlet property="headerView" destination="uJ3-Iq-xHD" id="cPM-at-jbn"/>
                         <outlet property="mainTabView" destination="tHR-Dd-EfS" id="m4C-s2-XD6"/>
                         <outlet property="redPointLab" destination="i5f-Lj-aRi" id="IQd-Bx-Gu2"/>
                     </connections>
