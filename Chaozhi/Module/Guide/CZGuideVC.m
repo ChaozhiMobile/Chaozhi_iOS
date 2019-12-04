@@ -43,6 +43,9 @@
             }
             if ([AppChannel isEqualToString:@"2"]) { //学智
                 offY = autoScaleH(80);
+                if (IsIPAD) {
+                    offY = autoScaleH(150);
+                }
             }
             UIButton *enterBtn = [[UIButton alloc] initWithFrame:CGRectMake((WIDTH-btnW)/2, HEIGHT-btnH-offY, btnW, btnH)];
             [enterBtn setTitle:@"立即体验" forState:UIControlStateNormal];
