@@ -11,7 +11,6 @@
 #import "CourseCategoryItem.h"
 #import "CourseItem.h"
 
-#define LineMaxCount 4
 #define PageSize @"10"
 
 @interface XZSelectCourseVC ()
@@ -76,11 +75,15 @@
     
     [_titleBgScrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)]; //移除所有子视图
     
-    CGFloat viewW = WIDTH/(MIN(_titleArr.count, LineMaxCount));
+    NSInteger maxCount = 3;
+    if (IsIPAD) {
+        maxCount = 5;
+    }
+    CGFloat viewW = WIDTH/(MIN(_titleArr.count, maxCount));
     CGFloat viewLeft = 0;
     for (NSInteger index = 0; index<_titleArr.count; index++) {
         CourseCategoryItem *item = _titleArr[index];
-        if (_titleArr.count>LineMaxCount) {
+        if (_titleArr.count>maxCount) {
             viewW = [item.name getTextWidthWithFont:[UIFont systemFontOfSize:15] height:50]+40;
         }
         UIButton *sender = [[UIButton alloc] initWithFrame:CGRectMake(viewLeft, 0, viewW, 50)];
