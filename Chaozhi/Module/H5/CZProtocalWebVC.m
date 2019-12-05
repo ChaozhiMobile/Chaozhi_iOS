@@ -60,9 +60,6 @@
     [htmlString appendString:@"<link rel=\"stylesheet\" type=\"text/css\" href=\" "];
     [htmlString appendString:cssPath];
     [htmlString appendString:@"\"/> \n"];
-    [htmlString appendString:@"<style type=\"text/css\"> \n"];
-    [htmlString appendString:@"body {font-size:30px;} \n"];
-    [htmlString appendString:@"</style> \n"];
     [htmlString appendString:@"</head> \n"];
     [htmlString appendString:@"<body> \n"];
     [htmlString appendString:@"<div class=\"dialog-agreement\"> \n"];

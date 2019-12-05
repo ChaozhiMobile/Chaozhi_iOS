@@ -1,8 +1,14 @@
 .dialog-agreement {
-  overflow-y: auto;
-  position: relative;
+    overflow-y: auto;
+    position: relative;
 }
 .dialog-agreement-content {
-  background: url("http://www.chaozhiedu.com/static/images/zhang.png") no-repeat 60% bottom;
-  background-size: 400px;
+    background: url("http://www.chaozhiedu.com/static/images/zhang.png") no-repeat 60% bottom;
+    background-size: 400px;
+}
+body {
+    font-size:30px;
+}
+table td {
+    font-size:38px;
 }
