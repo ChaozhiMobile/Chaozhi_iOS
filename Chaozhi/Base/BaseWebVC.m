@@ -46,6 +46,7 @@
     webVC.isPresent = isPresent;
     
     if (isPresent==YES) {
+        contro.modalPresentationStyle = UIModalPresentationFullScreen;
         [contro presentViewController:webVC animated:YES completion:nil];
     } else {
         webVC.hidesBottomBarWhenPushed = YES;

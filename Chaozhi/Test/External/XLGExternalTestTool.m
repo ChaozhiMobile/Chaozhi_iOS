@@ -126,18 +126,21 @@
         case 2000: //环境切换
         {
             XLGChangeServerVC *vc = [[XLGChangeServerVC alloc] init];
+            vc.modalPresentationStyle = UIModalPresentationFullScreen;
             [keyWindow.rootViewController presentViewController:vc animated:NO completion:nil];
         }
             break;
         case 2001: //接口日志
         {
             XLGLogVC *vc = [[XLGLogVC alloc] init];
+            vc.modalPresentationStyle = UIModalPresentationFullScreen;
             [keyWindow.rootViewController presentViewController:vc animated:NO completion:nil];
         }
             break;
         case 2002://内部测试
         {
             XLGInternalTestVC *vc = [[XLGInternalTestVC alloc] init];
+            vc.modalPresentationStyle = UIModalPresentationFullScreen;
             [keyWindow.rootViewController presentViewController:vc animated:NO completion:nil];
         }
             break;
