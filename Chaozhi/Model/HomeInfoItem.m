@@ -12,7 +12,9 @@
 
 + (NSDictionary<NSString *,id> *)modelContainerPropertyGenericClass
 {
-    return @{@"activity_list":[HomeActivityItem class],@"banner_list":[HomeBannerItem class]};
+    return @{@"activity_list":[HomeActivityItem class],@"banner_list":[HomeBannerItem class]
+             ,@"splash_list":[HomeBannerItem class]
+    };
 }
 
 @end

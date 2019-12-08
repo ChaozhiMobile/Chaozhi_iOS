@@ -11,7 +11,7 @@
 
 @interface XLGAlertView ()
 {
-    UIView *bgView; //模糊弹框背景视图
+    UIView *bgView; //背景视图
 }
 @end
 
@@ -188,7 +188,7 @@
 }
 
 #pragma mark - 设置弹框动画效果
--(void)setAnimationStyle:(AShowAnimationStyle)animationStyle{
+- (void)setAnimationStyle:(AShowAnimationStyle)animationStyle{
     [bgView setShowAnimationWithStyle:animationStyle];
 }
 

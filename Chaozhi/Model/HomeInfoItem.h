@@ -20,6 +20,7 @@
 
 @property (nonatomic , retain) NSArray <HomeActivityItem *>*activity_list;
 @property (nonatomic , retain) NSArray <HomeBannerItem *>*banner_list;
+@property (nonatomic , retain) NSArray <HomeBannerItem *>*splash_list;
 
 @end
 

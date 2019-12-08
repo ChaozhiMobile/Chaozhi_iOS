@@ -694,6 +694,12 @@
 		A07E4E9722ED82E4000ABD86 /* CZConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A07E4E9622ED82E4000ABD86 /* CZConfig.m */; };
 		A07E4E9D22ED833D000ABD86 /* XZConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A07E4E9C22ED833D000ABD86 /* XZConfig.m */; };
 		A091D1302178FAF300CCDAF6 /* StudyInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A091D12F2178FAF300CCDAF6 /* StudyInfoItem.m */; };
+		A0A3FE4D239BE53D00B2B4BE /* NewPagedFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A3FE49239BE53C00B2B4BE /* NewPagedFlowView.m */; };
+		A0A3FE4E239BE53D00B2B4BE /* NewPagedFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A3FE49239BE53C00B2B4BE /* NewPagedFlowView.m */; };
+		A0A3FE4F239BE53D00B2B4BE /* PGIndexBannerSubiew.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A3FE4B239BE53C00B2B4BE /* PGIndexBannerSubiew.m */; };
+		A0A3FE50239BE53D00B2B4BE /* PGIndexBannerSubiew.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A3FE4B239BE53C00B2B4BE /* PGIndexBannerSubiew.m */; };
+		A0A3FE54239BE90300B2B4BE /* CZPopAdsView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A3FE53239BE90300B2B4BE /* CZPopAdsView.m */; };
+		A0A3FE55239BE90300B2B4BE /* CZPopAdsView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A3FE53239BE90300B2B4BE /* CZPopAdsView.m */; };
 		A0AC08A222C4BC7D001832EA /* TalkfunHttpTools.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC072B22C4BC7C001832EA /* TalkfunHttpTools.m */; };
 		A0AC08A322C4BC7D001832EA /* UITextField+HTtext.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC072D22C4BC7C001832EA /* UITextField+HTtext.m */; };
 		A0AC08A422C4BC7D001832EA /* NetworkDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC072F22C4BC7C001832EA /* NetworkDetector.m */; };
@@ -1562,6 +1568,12 @@
 		A080B336221172D200F938A7 /* Chaozhi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Chaozhi.entitlements; sourceTree = "<group>"; };
 		A091D12E2178FAF300CCDAF6 /* StudyInfoItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudyInfoItem.h; sourceTree = "<group>"; };
 		A091D12F2178FAF300CCDAF6 /* StudyInfoItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyInfoItem.m; sourceTree = "<group>"; };
+		A0A3FE49239BE53C00B2B4BE /* NewPagedFlowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPagedFlowView.m; sourceTree = "<group>"; };
+		A0A3FE4A239BE53C00B2B4BE /* PGIndexBannerSubiew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGIndexBannerSubiew.h; sourceTree = "<group>"; };
+		A0A3FE4B239BE53C00B2B4BE /* PGIndexBannerSubiew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGIndexBannerSubiew.m; sourceTree = "<group>"; };
+		A0A3FE4C239BE53D00B2B4BE /* NewPagedFlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPagedFlowView.h; sourceTree = "<group>"; };
+		A0A3FE52239BE90300B2B4BE /* CZPopAdsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZPopAdsView.h; sourceTree = "<group>"; };
+		A0A3FE53239BE90300B2B4BE /* CZPopAdsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZPopAdsView.m; sourceTree = "<group>"; };
 		A0AC072822C4BC7C001832EA /* TalkfunModulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunModulation.h; sourceTree = "<group>"; };
 		A0AC072A22C4BC7C001832EA /* TalkfunHttpTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunHttpTools.h; sourceTree = "<group>"; };
 		A0AC072B22C4BC7C001832EA /* TalkfunHttpTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunHttpTools.m; sourceTree = "<group>"; };
@@ -2705,6 +2717,7 @@
 				A0C1257021BC01E00026430E /* StarView */,
 				A05FF5CF215B163400C51E05 /* Indicator(指示器) */,
 				A0541FB522F3E2A000D961B3 /* OptionsBar(切换卡) */,
+				A0A3FE48239BE51600B2B4BE /* CoverFlow(电影卡片轮播) */,
 				A020AFAA214AAB130011BB4F /* Cache */,
 				A020AFAF214AAB130011BB4F /* Toast */,
 				A020AFB4214AAB130011BB4F /* AlertView */,
@@ -3107,6 +3120,7 @@
 				A0599A1A21574CAF00D17058 /* CZHomeVC.h */,
 				A0599A1921574CAF00D17058 /* CZHomeVC.m */,
 				208B695A2185903700B263FB /* TeacherView.xib */,
+				A0A3FE51239BE85300B2B4BE /* PopAds */,
 				A00FA9D92169DAC500F4DA5B /* SelectCourse */,
 			);
 			path = Home;
@@ -3152,6 +3166,26 @@
 				A05FF5D6215B163400C51E05 /* JHHJCenterBGView.h */,
 			);
 			path = JHLoadingForHJ;
+			sourceTree = "<group>";
+		};
+		A0A3FE48239BE51600B2B4BE /* CoverFlow(电影卡片轮播) */ = {
+			isa = PBXGroup;
+			children = (
+				A0A3FE4C239BE53D00B2B4BE /* NewPagedFlowView.h */,
+				A0A3FE49239BE53C00B2B4BE /* NewPagedFlowView.m */,
+				A0A3FE4A239BE53C00B2B4BE /* PGIndexBannerSubiew.h */,
+				A0A3FE4B239BE53C00B2B4BE /* PGIndexBannerSubiew.m */,
+			);
+			path = "CoverFlow(电影卡片轮播)";
+			sourceTree = "<group>";
+		};
+		A0A3FE51239BE85300B2B4BE /* PopAds */ = {
+			isa = PBXGroup;
+			children = (
+				A0A3FE52239BE90300B2B4BE /* CZPopAdsView.h */,
+				A0A3FE53239BE90300B2B4BE /* CZPopAdsView.m */,
+			);
+			path = PopAds;
 			sourceTree = "<group>";
 		};
 		A0AC071522C4BC7C001832EA /* Talkfun */ = {
@@ -5051,6 +5085,7 @@
 				A0E615702358A6D7001D9258 /* TCommonContactSelectCellData.m in Sources */,
 				A0E615682358A6D7001D9258 /* TUIContactController.m in Sources */,
 				A0E615322358A6D7001D9258 /* TNavigationController.m in Sources */,
+				A0A3FE4F239BE53D00B2B4BE /* PGIndexBannerSubiew.m in Sources */,
 				A045521622ED44ED00E17406 /* UILabel+XLGColor.m in Sources */,
 				206976FC2356B0D9004A6E29 /* CZTeacherCell.m in Sources */,
 				A020B06D214AAB150011BB4F /* BaseNavBar.m in Sources */,
@@ -5095,6 +5130,7 @@
 				A0E615482358A6D7001D9258 /* TCommonAvatarCell.m in Sources */,
 				A00D0D63231BA7A300CF25E7 /* AlbumCellTableViewCell.m in Sources */,
 				A0E615282358A6D7001D9258 /* TUnReadView.m in Sources */,
+				A0A3FE4D239BE53D00B2B4BE /* NewPagedFlowView.m in Sources */,
 				A0AC08F722C4BC7E001832EA /* MyLotteryViewController.m in Sources */,
 				A0E6152E2358A6D7001D9258 /* TAddCell.m in Sources */,
 				A00692392354AA0000A74059 /* IMItem.m in Sources */,
@@ -5105,6 +5141,7 @@
 				A01F607622CB8960001133C4 /* DownloadListTableViewCell.m in Sources */,
 				A0E615B42358A6D7001D9258 /* TUIFaceCell.m in Sources */,
 				A0AC08F522C4BC7E001832EA /* ChoiceButton.m in Sources */,
+				A0A3FE54239BE90300B2B4BE /* CZPopAdsView.m in Sources */,
 				A064801123668626008CD8A1 /* TFChatViewController.m in Sources */,
 				A091D1302178FAF300CCDAF6 /* StudyInfoItem.m in Sources */,
 				205934C523547673003DDF39 /* FriendRequestViewController.m in Sources */,
@@ -5341,6 +5378,7 @@
 				A0E615492358A6D7001D9258 /* TCommonAvatarCell.m in Sources */,
 				A045507722EC8DFA00E17406 /* TalkfunTextfieldView.m in Sources */,
 				A045507822EC8DFA00E17406 /* CZNotDataView.m in Sources */,
+				A0A3FE4E239BE53D00B2B4BE /* NewPagedFlowView.m in Sources */,
 				A0541FE322F41F1400D961B3 /* CourseItem.m in Sources */,
 				A0E6153F2358A6D7001D9258 /* TResponderTextView.m in Sources */,
 				A045507922EC8DFA00E17406 /* LDNetTimer.m in Sources */,
@@ -5556,6 +5594,7 @@
 				A0E6155F2358A6D7001D9258 /* TContactViewModel.m in Sources */,
 				205934C623547673003DDF39 /* FriendRequestViewController.m in Sources */,
 				A04550E922EC8DFA00E17406 /* XLGLoginTestViewModel.m in Sources */,
+				A0A3FE50239BE53D00B2B4BE /* PGIndexBannerSubiew.m in Sources */,
 				A00D0D5C231BA7A300CF25E7 /* TalkfunVideoControlView.m in Sources */,
 				A04550EA22EC8DFA00E17406 /* XLGExternalTestTool.m in Sources */,
 				A0541FA822F2C69C00D961B3 /* UIButton+ButtonStyle.m in Sources */,
@@ -5590,6 +5629,7 @@
 				A045510122EC8DFA00E17406 /* NoticeTableViewController.m in Sources */,
 				A0E6156F2358A6D7001D9258 /* TUIContactActionCellData.m in Sources */,
 				205934FA23547B2D003DDF39 /* AppDelegate+TXIM.m in Sources */,
+				A0A3FE55239BE90300B2B4BE /* CZPopAdsView.m in Sources */,
 				A0E6157F2358A6D7001D9258 /* TUIGroupConversationListController.m in Sources */,
 				A0E615752358A6D7001D9258 /* TUIContactActionCell.m in Sources */,
 				205934C823547673003DDF39 /* GroupRequestViewController.m in Sources */,
@@ -5826,7 +5866,7 @@
 					"$(PROJECT_DIR)/Chaozhi/Vendor/TUIKit/Classes/Third/voiceConvert/opencore-amrwb",
 					"$(PROJECT_DIR)/Chaozhi/Vendor/TUIKit/Classes/Third/voiceConvert/opencore-amrnb",
 				);
-				MARKETING_VERSION = 1.2.8;
+				MARKETING_VERSION = 1.2.9;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -5920,7 +5960,7 @@
 					"$(PROJECT_DIR)/Chaozhi/Vendor/TUIKit/Classes/Third/voiceConvert/opencore-amrwb",
 					"$(PROJECT_DIR)/Chaozhi/Vendor/TUIKit/Classes/Third/voiceConvert/opencore-amrnb",
 				);
-				MARKETING_VERSION = 1.2.8;
+				MARKETING_VERSION = 1.2.9;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

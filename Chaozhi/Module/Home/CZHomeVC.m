@@ -16,13 +16,10 @@
 #import "CZStarView.h"
 #import "VideoItem.h"
 #import "TalkfunPlaybackViewController.h"
+#import "CZPopAdsView.h"
 
 #define TEACHERNUM 2.5
-
 #define TabHeadHeight 36
-
-//@implementation DayNewTabCell
-//@end
 
 @interface CZHomeVC ()<UITableViewDataSource,UITableViewDelegate,SKStoreProductViewControllerDelegate, UpdateViewDelegate,SDCycleScrollViewDelegate>{
     NSArray *titleArr;
@@ -63,8 +60,6 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = RGBValue(0xf5f5f5);
-//    [UIColor whiteColor];
-    NSLog(@"ddd %f",kStatusBarH);
     [_statuView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(kStatusBarH);
     }];
@@ -206,6 +201,7 @@
     [[NetworkManager sharedManager] postJSON:URL_AppHome parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         weakSelf.homeItem = [HomeInfoItem yy_modelWithJSON:responseData];
         [weakSelf refreshBannerUI];
+        [weakSelf refreshPopAdsUI];
         [weakSelf.mainTabView reloadData];
         if ([weakSelf.mainTabView.mj_header isRefreshing]) {
             [weakSelf.mainTabView.mj_header endRefreshing];
@@ -267,18 +263,34 @@
 }
 
 #pragma mark - Banner
-
-- (void)refreshBannerUI{
-    NSMutableArray *bannerImgUrlArr = [NSMutableArray array];
+- (void)refreshBannerUI {
+    NSMutableArray *bannerImgArr = [NSMutableArray array];
     for (NSInteger i = 0; i < _homeItem.banner_list.count; i ++) {
         HomeBannerItem *item = _homeItem.banner_list[i];
-        [bannerImgUrlArr addObject:item.img];
+        [bannerImgArr addObject:item.img];
     }
-    _bannerView.imageURLStringsGroup = bannerImgUrlArr;
+    _bannerView.imageURLStringsGroup = bannerImgArr;
+}
+
+#pragma mark - PopAds
+- (void)refreshPopAdsUI {
+    NSMutableArray *splashImgArr = [NSMutableArray array];
+    for (NSInteger i = 0; i < _homeItem.splash_list.count; i ++) {
+        HomeBannerItem *item = _homeItem.splash_list[i];
+        [splashImgArr addObject:item.img];
+    }
+    CZPopAdsView *popAdsView = [[CZPopAdsView alloc] initWithImages:splashImgArr];
+//    [self.view addSubview:popAdsView];
+    __weak typeof(self) weakSelf = self;
+    popAdsView.clickBlock = ^(NSInteger index) {
+        HomeBannerItem *item = weakSelf.homeItem.splash_list[index];
+        if (![NSString isEmpty:item.param]) {
+            [BaseWebVC showWithContro:self withUrlStr:item.param withTitle:item.title isPresent:NO];
+        }
+    };
 }
 
 #pragma mark - SDCycleScrollViewDelegate
-
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
     HomeBannerItem *item = _homeItem.banner_list[index];
     if (![NSString isEmpty:item.param]) {

@@ -8,21 +8,9 @@
 
 #import "BaseVC.h"
 
-//@interface DayNewTabCell : UITableViewCell
-//
-//@property (weak, nonatomic) IBOutlet UIImageView *dayNewIconImgView;
-//@property (weak, nonatomic) IBOutlet UILabel *dayNewTitleLB;
-//@property (weak, nonatomic) IBOutlet UILabel *dayNewContentLB;
-//@property (weak, nonatomic) IBOutlet UILabel *dayNewTimeLB;
-//
-//@end
-
 @interface CZHomeVC : BaseVC
 @property (weak, nonatomic) IBOutlet UITableView *mainTabView;
-
 @end
-
-
 
 @interface CZHomeBaseCell : UITableViewCell
 /** 数据源 */
@@ -35,17 +23,14 @@
 @interface CZHomeCourseCell : CZHomeBaseCell
 @property (weak, nonatomic) IBOutlet UIView *leftView;
 @property (weak, nonatomic) IBOutlet UIView *rightView;
-
 @end
 
 @interface CZHomePublicCell : CZHomeBaseCell
 @property (weak, nonatomic) IBOutlet UIButton *tryListeningBtn;
-
 @end
 
 @interface CZHomeWeiKeCell : CZHomeBaseCell
 @property (weak, nonatomic) IBOutlet UILabel *countLab;
-
 @end
 
 @interface CZHomeActivityCell : CZHomeBaseCell
@@ -54,11 +39,9 @@
 
 @interface CZHomeGoldTeacherCell : CZHomeBaseCell
 @property (weak, nonatomic) IBOutlet UIScrollView *teacherScroView;
-
 @end
 
 @interface CZHomeNewsCell : CZHomeBaseCell
 @property (weak, nonatomic) IBOutlet UILabel *timeLab;
-
 @end
 

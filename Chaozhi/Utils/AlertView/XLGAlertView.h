@@ -13,7 +13,7 @@
 
 @property (nonatomic,copy) dispatch_block_t cancelBlock;
 @property (nonatomic,copy) dispatch_block_t doneBlock;
-@property (nonatomic, copy) dispatch_block_t dismissBlock; //点击左右按钮都会触发该消失的block
+@property (nonatomic,copy) dispatch_block_t dismissBlock; //点击左右按钮都会触发该消失的block
 
 @property (nonatomic,copy) NSString *topTitle;
 @property (nonatomic,copy) NSString *version;
@@ -43,7 +43,6 @@
  */
 - (id)initWithTitle:(NSString *)topTitle content:(NSString *)textStr leftButtonTitle:(NSString *)leftBtnTitle rightButtonTitle:(NSString *)rigthBtnTitle;
 
-
 /**
  初始化带有成功或者失败的弹框
 
@@ -54,6 +53,5 @@
  @return id
  */
 - (id)initWithSucc:(BOOL)isSucc content:(NSString *)textStr leftButtonTitle:(NSString *)leftBtnTitle rightButtonTitle:(NSString *)rigthBtnTitle;
-
 
 @end
