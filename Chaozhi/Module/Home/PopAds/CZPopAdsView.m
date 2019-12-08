@@ -48,7 +48,7 @@
     pageFlowView.isCarousel = YES;//是否开启无限轮播
     pageFlowView.orientation = NewPagedFlowViewOrientationHorizontal;//横向纵向
     pageFlowView.urlImageDataSource = self.imageArray;//传入网络数据
-    pageFlowView.imgProportion = 14/10.0;//设置图片比例
+    pageFlowView.imgProportion = 4.0/3.0;//设置图片比例
     pageFlowView.cornerRadius = 8;//设置圆角
     pageFlowView.contentMode = UIViewContentModeScaleToFill;
     [pageFlowView reloadData];//设置完数据刷新数据
