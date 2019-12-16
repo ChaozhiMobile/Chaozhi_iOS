@@ -195,7 +195,7 @@
 }
 
 // 获取banner、活动数据
-- (void) getBannerActivityData {
+- (void)getBannerActivityData {
     NSDictionary *dic = [NSDictionary dictionary];
     __weak typeof(self) weakSelf = self;
     [[NetworkManager sharedManager] postJSON:URL_AppHome parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
@@ -345,8 +345,10 @@
         CZHomeCourseCell *tempCell = (CZHomeCourseCell *)cell;
         NSInteger count = _categoryItems.feature_product_list.count;
         NSArray *arr = @[tempCell.leftView,tempCell.rightView];
+        tempCell.rightView.hidden = YES;
         for (NSInteger index = 0; index<MIN(2, count); index++) {
             UIView *bgView = arr[index];
+            bgView.hidden = NO;
             CourseItem *item = _categoryItems.feature_product_list[index];
             UIImageView *imgView = [bgView viewWithTag:1000];
             UILabel *priceLab = [bgView viewWithTag:1001];

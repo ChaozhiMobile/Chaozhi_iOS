@@ -17,6 +17,7 @@
 #import "XZHomeTabCell.h"
 #import "XLGCustomButton.h"
 #import "NotifyItem.h"
+#import "CZPopAdsView.h"
 
 #define lineCount 5
 
@@ -120,12 +121,13 @@
 }
 
 #pragma mark - 轮播图
-- (void) getBannerActivityData {
+- (void)getBannerActivityData {
     NSDictionary *dic = [NSDictionary dictionary];
     __weak typeof(self) weakSelf = self;
     [[NetworkManager sharedManager] postJSON:URL_AppHome parameters:dic completion:^(id responseData, RequestState status, NSError *error) {
         weakSelf.homeItem = [HomeInfoItem yy_modelWithJSON:responseData];
         [weakSelf refreshBannerUI];
+        [weakSelf refreshPopAdsUI];
         if ([weakSelf.mainTabView.mj_header isRefreshing]) {
             [weakSelf.mainTabView.mj_header endRefreshing];
         }
@@ -145,6 +147,30 @@
         _bannerH.constant = WIDTH*(12.0/25.0);
         _headerView.height = _bannerH.constant+120;
         _bannerView.imageURLStringsGroup = bannerImgUrlArr;
+    }
+}
+
+#pragma mark - PopAds
+- (void)refreshPopAdsUI {
+    NSMutableArray *splashImgArr = [NSMutableArray array];
+    for (NSInteger i = 0; i < _homeItem.splash_list.count; i ++) {
+        HomeBannerItem *item = _homeItem.splash_list[i];
+        [splashImgArr addObject:item.img];
+    }
+    if (splashImgArr.count>0) {
+        CZPopAdsView *popAdsView = [[CZPopAdsView alloc] initWithImages:splashImgArr];
+        __weak typeof(self) weakSelf = self;
+        popAdsView.clickBlock = ^(NSInteger index) {
+            HomeBannerItem *item = weakSelf.homeItem.splash_list[index];
+            if (![NSString isEmpty:item.param]) {
+                [BaseWebVC showWithContro:weakSelf withUrlStr:item.param withTitle:item.title isPresent:NO];
+            }
+        };
+        popAdsView.closeBlock = ^{
+            weakSelf.bannerView.autoScroll = YES;
+        };
+    } else {
+        _bannerView.autoScroll = YES;
     }
 }
 
