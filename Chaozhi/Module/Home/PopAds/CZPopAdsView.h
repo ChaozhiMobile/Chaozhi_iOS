@@ -16,6 +16,8 @@ typedef void (^PopAdsClickBlock) (NSInteger index);
 
 /** 广告点击Block */
 @property (nonatomic,copy) PopAdsClickBlock clickBlock;
+/** 关闭Block */
+@property (nonatomic,copy) dispatch_block_t closeBlock;
 
 - (instancetype)initWithImages:(NSMutableArray *)imageArray;
 

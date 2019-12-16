@@ -79,6 +79,7 @@
     _bannerView.backgroundColor = PageColor;
     _bannerView.placeholderImage = [UIImage imageNamed:@"default_banner"];
     _bannerView.delegate = self;
+    _bannerView.autoScroll = NO;
     NSString *selectCourseID = [CacheUtil getCacherWithKey:kSelectCourseIDKey];
     __weak typeof(self) weakSelf = self;
     if ([NSString isEmpty:selectCourseID]) {
@@ -87,7 +88,6 @@
         vc.selectCourseBlock = ^(CourseCategoryItem *item) {
             NSLog(@"选择课程ID: %@",item.ID);
             weakSelf.page = 1;
-//            weakSelf.bgScrollView.contentOffset = CGPointMake(0, 0);
             [weakSelf requestCourseData];
         };
         [self.navigationController pushViewController:vc animated:YES];
@@ -279,15 +279,21 @@
         HomeBannerItem *item = _homeItem.splash_list[i];
         [splashImgArr addObject:item.img];
     }
-    CZPopAdsView *popAdsView = [[CZPopAdsView alloc] initWithImages:splashImgArr];
-//    [self.view addSubview:popAdsView];
-    __weak typeof(self) weakSelf = self;
-    popAdsView.clickBlock = ^(NSInteger index) {
-        HomeBannerItem *item = weakSelf.homeItem.splash_list[index];
-        if (![NSString isEmpty:item.param]) {
-            [BaseWebVC showWithContro:self withUrlStr:item.param withTitle:item.title isPresent:NO];
-        }
-    };
+    if (splashImgArr.count>0) {
+        CZPopAdsView *popAdsView = [[CZPopAdsView alloc] initWithImages:splashImgArr];
+        __weak typeof(self) weakSelf = self;
+        popAdsView.clickBlock = ^(NSInteger index) {
+            HomeBannerItem *item = weakSelf.homeItem.splash_list[index];
+            if (![NSString isEmpty:item.param]) {
+                [BaseWebVC showWithContro:weakSelf withUrlStr:item.param withTitle:item.title isPresent:NO];
+            }
+        };
+        popAdsView.closeBlock = ^{
+            weakSelf.bannerView.autoScroll = YES;
+        };
+    } else {
+        _bannerView.autoScroll = YES;
+    }
 }
 
 #pragma mark - SDCycleScrollViewDelegate

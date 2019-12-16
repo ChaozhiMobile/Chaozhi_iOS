@@ -22,7 +22,7 @@
     CGRect frame = CGRectMake(0, 0, WIDTH, HEIGHT);
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.5];
+        self.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.6];
         [[UIApplication sharedApplication].keyWindow addSubview:self];
         [self initView]; //初始化视图
         
@@ -64,6 +64,9 @@
 
 #pragma mark - 关闭
 - (void)closeAction {
+    if (self.closeBlock) {
+        self.closeBlock();
+    }
     [UIView animateWithDuration:0.5 animations:^{
         self.alpha = 0;
     } completion:^(BOOL finished) {
