@@ -161,7 +161,7 @@
 		A00FA9D82168C26900F4DA5B /* CZSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9D72168C26900F4DA5B /* CZSettingVC.m */; };
 		A00FA9DC2169DB0000F4DA5B /* CZSelectCourseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9DB2169DB0000F4DA5B /* CZSelectCourseVC.m */; };
 		A00FA9DF2169DCDC00F4DA5B /* CZSelectCourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A00FA9DE2169DCDC00F4DA5B /* CZSelectCourseCell.m */; };
-		A00FA9E1216A09EA00F4DA5B /* MyStudyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00FA9E0216A09EA00F4DA5B /* MyStudyView.xib */; };
+		A00FA9E1216A09EA00F4DA5B /* CZStudyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00FA9E0216A09EA00F4DA5B /* CZStudyView.xib */; };
 		A0108C5C23596836007CE861 /* CZLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0108C5B23596836007CE861 /* CZLabel.m */; };
 		A0108C5D23596836007CE861 /* CZLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0108C5B23596836007CE861 /* CZLabel.m */; };
 		A010DC6121D6003E007EBA2C /* PurchaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A010DC6021D6003E007EBA2C /* PurchaseItem.m */; };
@@ -360,7 +360,6 @@
 		A04550D522EC8DFA00E17406 /* XLGLogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A05999E62155EC1500D17058 /* XLGLogVC.m */; };
 		A04550D622EC8DFA00E17406 /* CZLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0599A0F21574CAF00D17058 /* CZLoginVC.m */; };
 		A04550D722EC8DFA00E17406 /* VoteEndViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07D322C4BC7C001832EA /* VoteEndViewController.m */; };
-		A04550D822EC8DFA00E17406 /* CZStudyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0599A1C21574CAF00D17058 /* CZStudyVC.m */; };
 		A04550D922EC8DFA00E17406 /* JHHJCenterBGView.m in Sources */ = {isa = PBXBuildFile; fileRef = A05FF5D2215B163400C51E05 /* JHHJCenterBGView.m */; };
 		A04550DA22EC8DFA00E17406 /* QuestionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07B522C4BC7C001832EA /* QuestionTableViewController.m */; };
 		A04550DB22EC8DFA00E17406 /* NetworkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AC07CC22C4BC7C001832EA /* NetworkModel.m */; };
@@ -584,7 +583,7 @@
 		A04551D022EC8DFA00E17406 /* 答复提示.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC088622C4BC7D001832EA /* 答复提示.png */; };
 		A04551D122EC8DFA00E17406 /* goodStatus.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC085022C4BC7D001832EA /* goodStatus.png */; };
 		A04551D222EC8DFA00E17406 /* 进度2.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC089822C4BC7D001832EA /* 进度2.png */; };
-		A04551D322EC8DFA00E17406 /* MyStudyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00FA9E0216A09EA00F4DA5B /* MyStudyView.xib */; };
+		A04551D322EC8DFA00E17406 /* CZStudyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00FA9E0216A09EA00F4DA5B /* CZStudyView.xib */; };
 		A04551D422EC8DFA00E17406 /* TalkfunNewQuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AC077422C4BC7C001832EA /* TalkfunNewQuestionCell.xib */; };
 		A04551D522EC8DFA00E17406 /* 返回.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC088322C4BC7D001832EA /* 返回.png */; };
 		A04551D622EC8DFA00E17406 /* grayProgress.png in Resources */ = {isa = PBXBuildFile; fileRef = A0AC084122C4BC7D001832EA /* grayProgress.png */; };
@@ -917,6 +916,8 @@
 		A0CB7CB922C65D8800069B34 /* TalkfunItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CB7CB822C65D8800069B34 /* TalkfunItem.m */; };
 		A0E0D3CC22D0E3A100296851 /* TalkfunMultifunctionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E0D3C922D0E3A100296851 /* TalkfunMultifunctionTool.m */; };
 		A0E0D3CD22D0E3A100296851 /* TalkfunMultifunctionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E0D3CA22D0E3A100296851 /* TalkfunMultifunctionButton.m */; };
+		A0E2C66323AB4A9000D5ED91 /* XZStudyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E2C66223AB4A9000D5ED91 /* XZStudyVC.m */; };
+		A0E2C66523AB4C4D00D5ED91 /* XZStudyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0E2C66423AB4C4D00D5ED91 /* XZStudyView.xib */; };
 		A0E50819230ED54C005EF897 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E50818230ED54C005EF897 /* StoreKit.framework */; };
 		A0E5081A230ED762005EF897 /* CZCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20ABB12D230A7A9600DDC86F /* CZCommentView.m */; };
 		A0E6120523589985001D9258 /* CZTeacherConversationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 205935022355AB2F003DDF39 /* CZTeacherConversationVC.m */; };
@@ -1323,7 +1324,7 @@
 		A00FA9DB2169DB0000F4DA5B /* CZSelectCourseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZSelectCourseVC.m; sourceTree = "<group>"; };
 		A00FA9DD2169DCDC00F4DA5B /* CZSelectCourseCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZSelectCourseCell.h; sourceTree = "<group>"; };
 		A00FA9DE2169DCDC00F4DA5B /* CZSelectCourseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZSelectCourseCell.m; sourceTree = "<group>"; };
-		A00FA9E0216A09EA00F4DA5B /* MyStudyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyStudyView.xib; sourceTree = "<group>"; };
+		A00FA9E0216A09EA00F4DA5B /* CZStudyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CZStudyView.xib; sourceTree = "<group>"; };
 		A0108C5A23596836007CE861 /* CZLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZLabel.h; sourceTree = "<group>"; };
 		A0108C5B23596836007CE861 /* CZLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZLabel.m; sourceTree = "<group>"; };
 		A010DC5F21D6003E007EBA2C /* PurchaseItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PurchaseItem.h; sourceTree = "<group>"; };
@@ -1869,6 +1870,9 @@
 		A0E0D3C922D0E3A100296851 /* TalkfunMultifunctionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunMultifunctionTool.m; sourceTree = "<group>"; };
 		A0E0D3CA22D0E3A100296851 /* TalkfunMultifunctionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunMultifunctionButton.m; sourceTree = "<group>"; };
 		A0E0D3CB22D0E3A100296851 /* TalkfunMultifunctionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunMultifunctionTool.h; sourceTree = "<group>"; };
+		A0E2C66123AB4A9000D5ED91 /* XZStudyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZStudyVC.h; sourceTree = "<group>"; };
+		A0E2C66223AB4A9000D5ED91 /* XZStudyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XZStudyVC.m; sourceTree = "<group>"; };
+		A0E2C66423AB4C4D00D5ED91 /* XZStudyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XZStudyView.xib; sourceTree = "<group>"; };
 		A0E50818230ED54C005EF897 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A0E614112358A6D6001D9258 /* TAddHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAddHelper.h; sourceTree = "<group>"; };
 		A0E614122358A6D6001D9258 /* NSString+TUICommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TUICommon.m"; sourceTree = "<group>"; };
@@ -2350,6 +2354,7 @@
 			isa = PBXGroup;
 			children = (
 				A007090222EDD58100C70CEE /* Home */,
+				A0E2C66023AB4A4900D5ED91 /* Study */,
 				A00708FA22ED96EE00C70CEE /* SelectCourse */,
 			);
 			path = Module;
@@ -3131,7 +3136,7 @@
 			children = (
 				A0599A1D21574CAF00D17058 /* CZStudyVC.h */,
 				A0599A1C21574CAF00D17058 /* CZStudyVC.m */,
-				A00FA9E0216A09EA00F4DA5B /* MyStudyView.xib */,
+				A00FA9E0216A09EA00F4DA5B /* CZStudyView.xib */,
 			);
 			path = Study;
 			sourceTree = "<group>";
@@ -3781,6 +3786,16 @@
 				A079A6BC231544CE0063123B /* XuezhiProtocol.css */,
 			);
 			path = H5;
+			sourceTree = "<group>";
+		};
+		A0E2C66023AB4A4900D5ED91 /* Study */ = {
+			isa = PBXGroup;
+			children = (
+				A0E2C66123AB4A9000D5ED91 /* XZStudyVC.h */,
+				A0E2C66223AB4A9000D5ED91 /* XZStudyVC.m */,
+				A0E2C66423AB4C4D00D5ED91 /* XZStudyView.xib */,
+			);
+			path = Study;
 			sourceTree = "<group>";
 		};
 		A0E6140D2358A6D6001D9258 /* TUIKit */ = {
@@ -4607,7 +4622,7 @@
 				A0AC098022C4BC7E001832EA /* 答复提示.png in Resources */,
 				A0AC094F22C4BC7E001832EA /* goodStatus.png in Resources */,
 				A0AC099022C4BC7E001832EA /* 进度2.png in Resources */,
-				A00FA9E1216A09EA00F4DA5B /* MyStudyView.xib in Resources */,
+				A00FA9E1216A09EA00F4DA5B /* CZStudyView.xib in Resources */,
 				A0AC08C822C4BC7D001832EA /* TalkfunNewQuestionCell.xib in Resources */,
 				A0AC097D22C4BC7E001832EA /* 返回.png in Resources */,
 				A0AC094122C4BC7E001832EA /* grayProgress.png in Resources */,
@@ -4671,6 +4686,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0E2C66523AB4C4D00D5ED91 /* XZStudyView.xib in Resources */,
 				A045513822EC8DFA00E17406 /* TalkfunTextfieldView.xib in Resources */,
 				A045513922EC8DFA00E17406 /* vote.png in Resources */,
 				A045513A22EC8DFA00E17406 /* 错误.png in Resources */,
@@ -4830,7 +4846,7 @@
 				A04551D022EC8DFA00E17406 /* 答复提示.png in Resources */,
 				A04551D122EC8DFA00E17406 /* goodStatus.png in Resources */,
 				A04551D222EC8DFA00E17406 /* 进度2.png in Resources */,
-				A04551D322EC8DFA00E17406 /* MyStudyView.xib in Resources */,
+				A04551D322EC8DFA00E17406 /* CZStudyView.xib in Resources */,
 				A04551D422EC8DFA00E17406 /* TalkfunNewQuestionCell.xib in Resources */,
 				A04551D522EC8DFA00E17406 /* 返回.png in Resources */,
 				A04551D622EC8DFA00E17406 /* grayProgress.png in Resources */,
@@ -5393,6 +5409,7 @@
 				A00D0D4E231BA7A300CF25E7 /* TalkfunNetworkLines.m in Sources */,
 				A045508122EC8DFA00E17406 /* TalkfunGradientView.m in Sources */,
 				A045508222EC8DFA00E17406 /* TalkfunExpressionViewController.m in Sources */,
+				A0E2C66323AB4A9000D5ED91 /* XZStudyVC.m in Sources */,
 				A0E615252358A6D7001D9258 /* NSString+TUICommon.m in Sources */,
 				A045508322EC8DFA00E17406 /* BaseItem.m in Sources */,
 				A045508422EC8DFA00E17406 /* BaseVC.m in Sources */,
@@ -5566,7 +5583,6 @@
 				A0E6156D2358A6D7001D9258 /* TCommonPendencyCell.m in Sources */,
 				A0541FAA22F2C69C00D961B3 /* XLGCustomButton.m in Sources */,
 				A0E615912358A6D7001D9258 /* TUIImageMessageCellData.m in Sources */,
-				A04550D822EC8DFA00E17406 /* CZStudyVC.m in Sources */,
 				A0E6154F2358A6D7001D9258 /* TUITabBarController.m in Sources */,
 				A04550D922EC8DFA00E17406 /* JHHJCenterBGView.m in Sources */,
 				A0E615ED2358A6D7001D9258 /* TUIKit.m in Sources */,

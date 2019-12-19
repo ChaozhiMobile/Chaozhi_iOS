@@ -23,14 +23,14 @@
 
 - (void)createTabBar {
     //视图数组
-    NSArray *controllerArr = @[@"XZHomeVC",@"CZStudyVC",@"XZSelectCourseVC",@"CZMineVC"];
+    NSArray *controllerArr = @[@"XZHomeVC",@"XZStudyVC",@"XZSelectCourseVC",@"CZMineVC"];
     //标题数组
     NSArray *titleArr = @[@"首页",@"学习",@"选课",@"我的"];
     //图片数组
     NSArray *picArr = @[@"icon_home_normal",@"icon_study_normal",@"icon_selectcourse_normal",@"icon_mine_normal"];
     
     //storyboard name 数组
-    NSArray *storyArr = @[@"Xuezhi",@"Main",@"Xuezhi",@"Main"];
+    NSArray *storyArr = @[@"Xuezhi",@"Xuezhi",@"Xuezhi",@"Main"];
     
     NSMutableArray *array = [[NSMutableArray alloc] init];
     

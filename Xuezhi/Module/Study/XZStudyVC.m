@@ -1,12 +1,12 @@
 //
-//  CZStudyVC.m
-//  Chaozhi
+//  XZStudyVC.m
+//  Xuezhi
 //
-//  Created by Jason_zyl on 2018/9/22.
-//  Copyright © 2018年 Jason_hzb. All rights reserved.
+//  Created by Jason_zyl on 2019/12/19.
+//  Copyright © 2019 Jason_hzb. All rights reserved.
 //
 
-#import "CZStudyVC.h"
+#import "XZStudyVC.h"
 #import "StudyInfoItem.h"
 #import "CZNotDataView.h"
 #import "CZAlertView.h"
@@ -20,7 +20,7 @@
 @implementation StudyCourseCell
 @end
 
-@interface CZStudyVC ()<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
+@interface XZStudyVC ()<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
 {
     BOOL show;
 }
@@ -71,7 +71,7 @@
 
 @end
 
-@implementation CZStudyVC
+@implementation XZStudyVC
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -168,7 +168,7 @@
     _courseScrollView.contentSize = CGSizeMake(courseCount*(WIDTH-20), 0);
     for (NSInteger i = 0; i < courseCount; i ++) {
         StudyInfoItem *item = self.dataArr[i];
-        UIView *view = [[[NSBundle mainBundle]loadNibNamed:@"CZStudyView" owner:self options:nil]firstObject];
+        UIView *view = [[[NSBundle mainBundle]loadNibNamed:@"XZStudyView" owner:self options:nil]firstObject];
         view.frame = CGRectMake(i*(WIDTH-20), 0, (WIDTH-20), 120);
         view.tag = 120+i;
         [_courseScrollView addSubview:view];
