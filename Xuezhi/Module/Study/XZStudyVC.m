@@ -28,7 +28,6 @@
 @property (nonatomic,strong) NSMutableArray *allAlertView;
 @property (nonatomic,retain) CZNotDataView *notDataView; //无数据视图
 
-@property (weak, nonatomic) IBOutlet UIView *statusBarView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *statusBarHConstraint;
 @property (weak, nonatomic) IBOutlet UIPageControl *coursePageControl;
 @property (weak, nonatomic) IBOutlet UIScrollView *courseScrollView;
@@ -45,23 +44,19 @@
 @property (weak, nonatomic) IBOutlet UIButton *yuekaoEnterBtn;
 
 @property (weak, nonatomic) IBOutlet UIView *liveCourseView;
-@property (weak, nonatomic) IBOutlet UIImageView *liveCourseIconImgView;
+@property (weak, nonatomic) IBOutlet UIView *liveCourseContentView;
 @property (weak, nonatomic) IBOutlet UILabel *liveCourseTitleLB;
 @property (weak, nonatomic) IBOutlet UILabel *liveCourseTeacherLB;
 @property (weak, nonatomic) IBOutlet UILabel *liveStartTimeLB;
 @property (weak, nonatomic) IBOutlet UIButton *enterLiveBtn;
 @property (weak, nonatomic) IBOutlet UITableView *studyTabView;
 @property (weak, nonatomic) IBOutlet UILabel *studyCourseTipLab;
-@property (weak, nonatomic) IBOutlet UIView *studyCourseLineView;
 @property (weak, nonatomic) IBOutlet UIView *titleView;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleViewH;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *yuekaoConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *yuekaoTopConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *liveCourseConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *liveCourseTopConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *studyCourseTipConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *studyCourseTipTopConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tabHeightConstraint;
 
 @property (assign, nonatomic) NSInteger currentPage;
@@ -373,11 +368,9 @@
     
     if (!_yuekaoItem) {
         _yuekaoView.hidden = YES;
-        _yuekaoTopConstraint.constant = 0;
         _yuekaoConstraint.constant = 0;
     } else {
         _yuekaoView.hidden = NO;
-        _yuekaoTopConstraint.constant = 10;
         _yuekaoConstraint.constant = 124;
         
         [_yuekaoTitleBtn setTitle:_yuekaoItem.name forState:UIControlStateNormal];
@@ -394,18 +387,14 @@
     }
     if (_liveArr.count==0) {
         _liveCourseView.hidden = YES;
-        _liveCourseTopConstraint.constant = 0;
         _liveCourseConstraint.constant = 0;
-        _studyCourseTipTopConstraint.constant = 0;
     } else {
         _liveCourseView.hidden = NO;
-        _liveCourseTopConstraint.constant = 10;
-        _liveCourseConstraint.constant = 150;
-        _studyCourseTipTopConstraint.constant = 10;
+        _liveCourseConstraint.constant = 175;
+        [_liveCourseContentView setViewShadowColor:kBlackColor shadowOpacity:0.15 shadowBlur:10 shadowOffset:CGSizeMake(0, 0)];
         
         LiveItem *liveItems = _liveArr.firstObject;
         if (liveItems) {
-            _liveCourseIconImgView.image = [UIImage imageNamed:@"default_live"];
             _liveCourseTitleLB.text = liveItems.live_name;
             _liveCourseTeacherLB.text = [NSString stringWithFormat:@"主讲讲师：%@",liveItems.teacher];
             _liveStartTimeLB.text = [NSString stringWithFormat:@"开始时间：%@",liveItems.live_st];
@@ -433,15 +422,12 @@
     }
     if (_courseArr.count==0) {
         _studyCourseTipConstraint.constant = 50;
-        
         _studyCourseTipLab.text = @"您还没有开始学习，加油噢";
         _studyCourseTipLab.textAlignment = NSTextAlignmentCenter;
-        _studyCourseLineView.hidden = YES;
     } else {
         _studyCourseTipConstraint.constant = 30;
         _studyCourseTipLab.text = @"最新学习课程";
         _studyCourseTipLab.textAlignment = NSTextAlignmentLeft;
-        _studyCourseLineView.hidden = NO;
     }
     _tabHeightConstraint.constant = _courseArr.count*60;
     [_studyTabView reloadData];
