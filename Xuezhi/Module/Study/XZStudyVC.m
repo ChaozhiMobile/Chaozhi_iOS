@@ -55,6 +55,7 @@
 @property (weak, nonatomic) IBOutlet UIView *studyCourseLineView;
 @property (weak, nonatomic) IBOutlet UIView *titleView;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleViewH;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *yuekaoConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *yuekaoTopConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *liveCourseConstraint;
@@ -72,6 +73,10 @@
 @end
 
 @implementation XZStudyVC
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -91,10 +96,6 @@
     _tabHeightConstraint.constant = 3*60;
     _statusBarHConstraint.constant = kStatusBarH;
     _allAlertView = [NSMutableArray array];
-    //    __weak typeof(self) weakSelf = self;
-    //    _bgScroView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-    //        [weakSelf getData];
-    //    }];
     self.topBGBackView.backgroundColor = kStudyNavBgColor;
     [self blankView];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginSucc) name:kLoginSuccNotification object:nil]; //登录成功通知
@@ -132,11 +133,13 @@
         if (status == Request_Success) {
             self.dataArr = [StudyInfoItem mj_objectArrayWithKeyValuesArray:(NSArray *)responseData];
             if (self.dataArr.count>0) {
+                weakSelf.titleViewH.constant = 0;
                 weakSelf.notDataView.hidden = YES;
                 weakSelf.studyTabView.hidden = NO;
                 [self initView];
                 [self refreshUI];
             } else {
+                weakSelf.titleViewH.constant = 44;
                 weakSelf.studyTabView.hidden = YES;
                 weakSelf.notDataView.hidden = NO;
             }
@@ -165,20 +168,18 @@
     NSInteger courseCount = self.dataArr.count;
     __weak typeof(self) weakSelf = self;
     [_allAlertView removeAllObjects];;
-    _courseScrollView.contentSize = CGSizeMake(courseCount*(WIDTH-20), 0);
-    for (NSInteger i = 0; i < courseCount; i ++) {
+    _courseScrollView.contentSize = CGSizeMake(courseCount*(WIDTH-32), 0);
+    for (NSInteger i = 0; i < 1; i ++) {
         StudyInfoItem *item = self.dataArr[i];
-        UIView *view = [[[NSBundle mainBundle]loadNibNamed:@"XZStudyView" owner:self options:nil]firstObject];
-        view.frame = CGRectMake(i*(WIDTH-20), 0, (WIDTH-20), 120);
+        UIView *view = [[[NSBundle mainBundle] loadNibNamed:@"XZStudyView" owner:self options:nil] firstObject];
+        view.frame = CGRectMake(i*(WIDTH-32), 0, (WIDTH-32), 150);
         view.tag = 120+i;
         [_courseScrollView addSubview:view];
         UIImageView *courseIconImgView = [view viewWithTag:2];
         courseIconImgView.contentMode = UIViewContentModeScaleToFill;
-        [courseIconImgView sd_setImageWithURL:[NSURL URLWithString:item.product_img] placeholderImage:[UIImage imageNamed:@"default_course"]];
+        [courseIconImgView sd_setImageWithURL:[NSURL URLWithString:item.product_img] placeholderImage:[UIImage imageNamed:@"default_rectangle_img"]];
         UILabel *courseTitleLB = [view viewWithTag:3];
         courseTitleLB.text = item.product_name;
-        UILabel *courseTypeLB = [view viewWithTag:4];
-        courseTypeLB.text = item.product_sub_name;
         UILabel *courseDurationLB = [view viewWithTag:5];
         courseDurationLB.text = [NSString stringWithFormat:@"%@节",item.user_time];
         UILabel *courseSubjectLB =[view viewWithTag:6];

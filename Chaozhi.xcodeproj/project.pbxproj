@@ -918,6 +918,8 @@
 		A0E0D3CD22D0E3A100296851 /* TalkfunMultifunctionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E0D3CA22D0E3A100296851 /* TalkfunMultifunctionButton.m */; };
 		A0E2C66323AB4A9000D5ED91 /* XZStudyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E2C66223AB4A9000D5ED91 /* XZStudyVC.m */; };
 		A0E2C66523AB4C4D00D5ED91 /* XZStudyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0E2C66423AB4C4D00D5ED91 /* XZStudyView.xib */; };
+		A0E2C66823AB68B600D5ED91 /* CZVerticalLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E2C66723AB68B600D5ED91 /* CZVerticalLabel.m */; };
+		A0E2C66923AB68B600D5ED91 /* CZVerticalLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E2C66723AB68B600D5ED91 /* CZVerticalLabel.m */; };
 		A0E50819230ED54C005EF897 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E50818230ED54C005EF897 /* StoreKit.framework */; };
 		A0E5081A230ED762005EF897 /* CZCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20ABB12D230A7A9600DDC86F /* CZCommentView.m */; };
 		A0E6120523589985001D9258 /* CZTeacherConversationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 205935022355AB2F003DDF39 /* CZTeacherConversationVC.m */; };
@@ -1873,6 +1875,8 @@
 		A0E2C66123AB4A9000D5ED91 /* XZStudyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZStudyVC.h; sourceTree = "<group>"; };
 		A0E2C66223AB4A9000D5ED91 /* XZStudyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XZStudyVC.m; sourceTree = "<group>"; };
 		A0E2C66423AB4C4D00D5ED91 /* XZStudyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XZStudyView.xib; sourceTree = "<group>"; };
+		A0E2C66623AB68B600D5ED91 /* CZVerticalLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZVerticalLabel.h; sourceTree = "<group>"; };
+		A0E2C66723AB68B600D5ED91 /* CZVerticalLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZVerticalLabel.m; sourceTree = "<group>"; };
 		A0E50818230ED54C005EF897 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A0E614112358A6D6001D9258 /* TAddHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAddHelper.h; sourceTree = "<group>"; };
 		A0E614122358A6D6001D9258 /* NSString+TUICommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TUICommon.m"; sourceTree = "<group>"; };
@@ -3021,6 +3025,8 @@
 				20ABB12D230A7A9600DDC86F /* CZCommentView.m */,
 				A0108C5A23596836007CE861 /* CZLabel.h */,
 				A0108C5B23596836007CE861 /* CZLabel.m */,
+				A0E2C66623AB68B600D5ED91 /* CZVerticalLabel.h */,
+				A0E2C66723AB68B600D5ED91 /* CZVerticalLabel.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -5114,6 +5120,7 @@
 				A0AC08C322C4BC7D001832EA /* TalkfunButtonView.m in Sources */,
 				A0599A2021574CAF00D17058 /* CZRegisterVC.m in Sources */,
 				205934E523547673003DDF39 /* MyCustomCell.m in Sources */,
+				A0E2C66823AB68B600D5ED91 /* CZVerticalLabel.m in Sources */,
 				A0E615642358A6D7001D9258 /* TUIGroupConversationListViewModel.m in Sources */,
 				A020B06F214AAB150011BB4F /* BaseWebVC.m in Sources */,
 				A00D0D5D231BA7A300CF25E7 /* TalkfunPlaybackMessageView.m in Sources */,
@@ -5505,6 +5512,7 @@
 				205934CE23547673003DDF39 /* TCLoginParam.m in Sources */,
 				A007090522EDD59C00C70CEE /* XZHomeVC.m in Sources */,
 				A04550B722EC8DFA00E17406 /* UIScrollView+TalkfunScrollView.m in Sources */,
+				A0E2C66923AB68B600D5ED91 /* CZVerticalLabel.m in Sources */,
 				A04550B822EC8DFA00E17406 /* VideoItem.m in Sources */,
 				A0E615772358A6D7001D9258 /* TCommonContactSelectCell.m in Sources */,
 				A0E615352358A6D7001D9258 /* TUIVideoViewController.m in Sources */,
