@@ -16,6 +16,7 @@
 #import "TalkfunItem.h"
 #import "TalkfunViewController.h"
 #import "TalkfunPlaybackViewController.h"
+#import "CZLabel.h"
 
 @implementation StudyCourseCell
 @end
@@ -44,9 +45,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *yuekaoEnterBtn;
 
 @property (weak, nonatomic) IBOutlet UIView *liveCourseView;
-@property (weak, nonatomic) IBOutlet UIView *liveCourseContentView;
 @property (weak, nonatomic) IBOutlet UILabel *liveCourseTitleLB;
-@property (weak, nonatomic) IBOutlet UILabel *liveCourseTeacherLB;
+@property (weak, nonatomic) IBOutlet CZLabel *liveCourseTeacherLB;
 @property (weak, nonatomic) IBOutlet UILabel *liveStartTimeLB;
 @property (weak, nonatomic) IBOutlet UIButton *enterLiveBtn;
 @property (weak, nonatomic) IBOutlet UITableView *studyTabView;
@@ -391,12 +391,15 @@
     } else {
         _liveCourseView.hidden = NO;
         _liveCourseConstraint.constant = 175;
-        [_liveCourseContentView setViewShadowColor:kBlackColor shadowOpacity:0.15 shadowBlur:10 shadowOffset:CGSizeMake(0, 0)];
         
         LiveItem *liveItems = _liveArr.firstObject;
         if (liveItems) {
             _liveCourseTitleLB.text = liveItems.live_name;
-            _liveCourseTeacherLB.text = [NSString stringWithFormat:@"主讲讲师：%@",liveItems.teacher];
+            NSString *teacher = [NSString stringWithFormat:@"主讲讲师：%@",liveItems.teacher];
+            CGFloat teacherW = [teacher getTextWidthWithFont:[UIFont systemFontOfSize:13 weight:UIFontWeightMedium] height:20];
+            _liveCourseTeacherLB.width = teacherW+16;
+            _liveCourseTeacherLB.edgeInsets = UIEdgeInsetsMake(2, 8, 2, 8);
+            _liveCourseTeacherLB.text = teacher;
             _liveStartTimeLB.text = [NSString stringWithFormat:@"开始时间：%@",liveItems.live_st];
             if ([liveItems.status isEqualToString:@"-1"]) {
                 _enterLiveBtn.userInteractionEnabled = YES;
@@ -429,7 +432,7 @@
         _studyCourseTipLab.text = @"最新学习课程";
         _studyCourseTipLab.textAlignment = NSTextAlignmentLeft;
     }
-    _tabHeightConstraint.constant = _courseArr.count*60;
+    _tabHeightConstraint.constant = _courseArr.count*82;
     [_studyTabView reloadData];
 }
 

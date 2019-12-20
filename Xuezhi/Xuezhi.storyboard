@@ -691,7 +691,7 @@
                         <viewControllerLayoutGuide type="bottom" id="WkE-ro-SAF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="M6m-1C-9vW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="720"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UfM-dg-imV">
@@ -702,7 +702,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lK7-mW-6lo">
-                                <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="670"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cei-7A-EBM">
                                         <rect key="frame" x="0.0" y="120" width="375" height="500"/>
@@ -756,14 +756,14 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aS6-Wz-yqw" userLabel="Four View">
-                                        <rect key="frame" x="0.0" y="170" width="375" height="90"/>
+                                        <rect key="frame" x="16" y="170" width="343" height="90"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="flP-HD-8Fu">
-                                                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="82" height="90"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_video" translatesAutoresizingMaskIntoConstraints="NO" id="Nn8-we-0Pr">
-                                                        <rect key="frame" x="18" y="5" width="53" height="53"/>
+                                                        <rect key="frame" x="14" y="5" width="53" height="53"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="录播课程" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ipV-M0-jLA">
@@ -774,7 +774,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPT-MI-eD6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="91" height="90"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="83" height="90"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <connections>
                                                             <action selector="luboAction:" destination="hx9-Hl-YZV" eventType="touchUpInside" id="na5-qw-JkW"/>
@@ -784,22 +784,22 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mee-Tc-lcm">
-                                                <rect key="frame" x="90" y="0.0" width="93" height="90"/>
+                                                <rect key="frame" x="82" y="0.0" width="85" height="90"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_live" translatesAutoresizingMaskIntoConstraints="NO" id="172-Zp-eu9">
-                                                        <rect key="frame" x="20" y="5" width="53" height="53"/>
+                                                        <rect key="frame" x="16" y="5" width="53" height="53"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="直播课程" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Lh-Be-lHW">
-                                                        <rect key="frame" x="0.0" y="58" width="93" height="21"/>
+                                                        <rect key="frame" x="-4" y="58" width="93" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRZ-9D-Ltu">
-                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="90"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="85" height="90"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <connections>
                                                             <action selector="zhiboAction:" destination="hx9-Hl-YZV" eventType="touchUpInside" id="oeQ-gx-C2c"/>
@@ -809,22 +809,22 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U0z-Fk-PVZ">
-                                                <rect key="frame" x="185" y="0.0" width="93" height="90"/>
+                                                <rect key="frame" x="169" y="0.0" width="85" height="90"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_database" translatesAutoresizingMaskIntoConstraints="NO" id="p0s-Q3-9AV">
-                                                        <rect key="frame" x="20" y="5" width="53" height="53"/>
+                                                        <rect key="frame" x="16" y="5" width="53" height="53"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="资料库" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gi-oh-Wls">
-                                                        <rect key="frame" x="0.0" y="58" width="93" height="21"/>
+                                                        <rect key="frame" x="-4" y="58" width="93" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WlQ-bn-asK">
-                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="90"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="85" height="90"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <connections>
                                                             <action selector="ziliaokuAction:" destination="hx9-Hl-YZV" eventType="touchUpInside" id="JEL-2d-w0S"/>
@@ -834,11 +834,11 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gl2-Y2-6sN">
-                                                <rect key="frame" x="282" y="0.0" width="93" height="90"/>
+                                                <rect key="frame" x="258" y="0.0" width="85" height="90"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_question" translatesAutoresizingMaskIntoConstraints="NO" id="kjX-p4-XTY">
-                                                        <rect key="frame" x="20" y="5" width="53" height="53"/>
+                                                        <rect key="frame" x="16" y="5" width="53" height="53"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="题库" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="imZ-ev-vaG">
@@ -849,7 +849,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qE2-W3-krt">
-                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="90"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="85" height="90"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <connections>
                                                             <action selector="tikuAction:" destination="hx9-Hl-YZV" eventType="touchUpInside" id="x35-Lk-OE3"/>
@@ -863,21 +863,6 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="90" id="X4y-Wv-zzI"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
-                                                <size key="value" width="0.0" height="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowUIColor">
-                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
-                                                <real key="value" value="0.050000000000000003"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.shdowRadius">
-                                                <integer key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="NO"/>
-                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qK9-Iy-Pr3">
                                         <rect key="frame" x="0.0" y="260" width="375" height="124"/>
@@ -1044,7 +1029,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="主讲讲师：小月老师" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="999-6C-RGU">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="主讲讲师：小月老师" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="999-6C-RGU" customClass="CZLabel">
                                                         <rect key="frame" x="16" y="50" width="190" height="20"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" red="0.19215686274509802" green="0.64313725490196072" blue="0.96470588235294119" alpha="0.12" colorSpace="calibratedRGB"/>
@@ -1093,8 +1078,21 @@
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="4"/>
+                                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                                        <size key="value" width="0.0" height="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowUIColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                                        <real key="value" value="0.14999999999999999"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shdowRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
@@ -1139,38 +1137,56 @@
                                             <constraint firstAttribute="height" constant="30" id="Qis-sM-aVi"/>
                                         </constraints>
                                     </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="61" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GTA-JD-Ndo">
-                                        <rect key="frame" x="0.0" y="564" width="375" height="94"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="82" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="GTA-JD-Ndo">
+                                        <rect key="frame" x="0.0" y="564" width="375" height="82"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="94" id="2wK-il-qYW"/>
+                                            <constraint firstAttribute="height" constant="82" id="2wK-il-qYW"/>
                                         </constraints>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeStudyCourseCellID" id="1TR-YW-1fO" customClass="StudyCourseCell">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="61"/>
+                                                <rect key="frame" x="0.0" y="28" width="375" height="82"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1TR-YW-1fO" id="EGH-B1-lkz">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="82"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_new_course" translatesAutoresizingMaskIntoConstraints="NO" id="beO-cI-v4H">
+                                                            <rect key="frame" x="16" y="16" width="50" height="50"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="心理变态学和简历心理学第一节课" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ht9-TJ-Xyc">
-                                                            <rect key="frame" x="15" y="10" width="290" height="15"/>
+                                                            <rect key="frame" x="76" y="16" width="225" height="20"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" fixedFrame="YES" text="学习时间：09月19日 19:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fZ-L6-ocw">
-                                                            <rect key="frame" x="15" y="27" width="290" height="28"/>
+                                                            <rect key="frame" x="76" y="48" width="225" height="18"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
-                                                            <color key="textColor" red="0.70588235290000001" green="0.70588235290000001" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzc-fc-Yqb">
-                                                            <rect key="frame" x="310" y="0.0" width="60" height="62"/>
+                                                            <rect key="frame" x="307" y="30" width="52" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
-                                                            <state key="normal" image="icon_vgo"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <state key="normal" title="播放">
+                                                                <color key="titleColor" red="0.1137254902" green="0.58823529409999997" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                    <color key="value" red="0.1137254902" green="0.58823529409999997" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                    <real key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="11"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </button>
                                                     </subviews>
                                                 </tableViewCellContentView>
@@ -1196,7 +1212,7 @@
                                     <constraint firstItem="QBy-v8-rg6" firstAttribute="leading" secondItem="lK7-mW-6lo" secondAttribute="leading" constant="16" id="Iau-So-Heb"/>
                                     <constraint firstItem="GTA-JD-Ndo" firstAttribute="top" secondItem="GhD-3O-H79" secondAttribute="bottom" id="NoO-HW-9Gr"/>
                                     <constraint firstItem="GhD-3O-H79" firstAttribute="leading" secondItem="lK7-mW-6lo" secondAttribute="leading" id="Sld-VY-0Qd"/>
-                                    <constraint firstItem="aS6-Wz-yqw" firstAttribute="leading" secondItem="lK7-mW-6lo" secondAttribute="leading" id="Y65-si-kzF"/>
+                                    <constraint firstItem="aS6-Wz-yqw" firstAttribute="leading" secondItem="lK7-mW-6lo" secondAttribute="leading" constant="16" id="Y65-si-kzF"/>
                                     <constraint firstItem="aS6-Wz-yqw" firstAttribute="top" secondItem="QBy-v8-rg6" secondAttribute="bottom" constant="10" id="aj8-Bj-aee"/>
                                     <constraint firstAttribute="bottom" secondItem="GTA-JD-Ndo" secondAttribute="bottom" id="arl-Es-0Ue"/>
                                     <constraint firstAttribute="trailing" secondItem="qK9-Iy-Pr3" secondAttribute="trailing" id="bgd-LR-NBw"/>
@@ -1204,7 +1220,7 @@
                                     <constraint firstItem="ZeO-ZO-3LI" firstAttribute="leading" secondItem="lK7-mW-6lo" secondAttribute="leading" id="gy0-94-CDi"/>
                                     <constraint firstAttribute="trailing" secondItem="GTA-JD-Ndo" secondAttribute="trailing" id="hDU-l2-Xez"/>
                                     <constraint firstItem="QBy-v8-rg6" firstAttribute="top" secondItem="lK7-mW-6lo" secondAttribute="top" constant="10" id="jDd-fV-j3x"/>
-                                    <constraint firstAttribute="trailing" secondItem="aS6-Wz-yqw" secondAttribute="trailing" id="l7r-2i-W4m"/>
+                                    <constraint firstAttribute="trailing" secondItem="aS6-Wz-yqw" secondAttribute="trailing" constant="16" id="l7r-2i-W4m"/>
                                     <constraint firstItem="GTA-JD-Ndo" firstAttribute="leading" secondItem="lK7-mW-6lo" secondAttribute="leading" id="rKf-mP-M87"/>
                                     <constraint firstItem="ZeO-ZO-3LI" firstAttribute="top" secondItem="qK9-Iy-Pr3" secondAttribute="bottom" id="sCj-6u-ZMs"/>
                                     <constraint firstItem="qK9-Iy-Pr3" firstAttribute="leading" secondItem="lK7-mW-6lo" secondAttribute="leading" id="sEF-XO-M9r"/>
@@ -1242,13 +1258,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="学习" id="IoX-qz-Z8h"/>
+                    <size key="freeformSize" width="375" height="720"/>
                     <connections>
                         <outlet property="bgScroView" destination="lK7-mW-6lo" id="Wie-eg-wDZ"/>
                         <outlet property="coursePageControl" destination="bAI-yK-1EC" id="4Ge-po-SxF"/>
                         <outlet property="courseScrollView" destination="08P-z9-ib1" id="HZ9-5r-vGY"/>
                         <outlet property="enterLiveBtn" destination="oBn-e9-6dM" id="sAl-qE-dES"/>
                         <outlet property="liveCourseConstraint" destination="Jbv-Xl-eJA" id="TkS-oE-Iow"/>
-                        <outlet property="liveCourseContentView" destination="dZo-Oe-hcl" id="JrO-EW-sej"/>
                         <outlet property="liveCourseTeacherLB" destination="999-6C-RGU" id="278-Kx-UeA"/>
                         <outlet property="liveCourseTitleLB" destination="3di-1Z-Ggn" id="tRB-OP-AJc"/>
                         <outlet property="liveCourseView" destination="ZeO-ZO-3LI" id="GEV-7j-zaU"/>
@@ -1273,7 +1289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="adH-Ng-Msd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="743" y="-152"/>
+            <point key="canvasLocation" x="741.60000000000002" y="-152.02398800599701"/>
         </scene>
     </scenes>
     <resources>
@@ -1284,9 +1300,9 @@
         <image name="icon_database" width="60" height="60"/>
         <image name="icon_home_comment" width="14" height="14"/>
         <image name="icon_live" width="60" height="60"/>
+        <image name="icon_new_course" width="50" height="50"/>
         <image name="icon_question" width="60" height="60"/>
         <image name="icon_teacher" width="14" height="14"/>
-        <image name="icon_vgo" width="20" height="20"/>
         <image name="icon_video" width="60" height="60"/>
         <image name="logo_home" width="122" height="30"/>
         <image name="study_examination_icon" width="60" height="60"/>
