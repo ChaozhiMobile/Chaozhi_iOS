@@ -258,6 +258,8 @@
 		A020B078214AAB150011BB4F /* BaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B017214AAB140011BB4F /* BaseItem.m */; };
 		A020B079214AAB150011BB4F /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B018214AAB140011BB4F /* UserInfo.m */; };
 		A020B07A214AAB150011BB4F /* CourseCategoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A020B01A214AAB140011BB4F /* CourseCategoryItem.m */; };
+		A0272CE523AC9622008D24D3 /* XZCourseListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0272CE423AC9622008D24D3 /* XZCourseListVC.m */; };
+		A0272CE923ACC264008D24D3 /* XZCourseListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0272CE823ACC264008D24D3 /* XZCourseListCell.m */; };
 		A0281B81232A4E7800559A5B /* TalkfunNewFunctionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0281B7E232A4E7800559A5B /* TalkfunNewFunctionView.xib */; };
 		A0281B82232A4E7800559A5B /* TalkfunNewFunctionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0281B7E232A4E7800559A5B /* TalkfunNewFunctionView.xib */; };
 		A0281B83232A4E7800559A5B /* TalkfunNewFunctionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0281B7F232A4E7800559A5B /* TalkfunNewFunctionView.m */; };
@@ -1469,6 +1471,10 @@
 		A020B01A214AAB140011BB4F /* CourseCategoryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseCategoryItem.m; sourceTree = "<group>"; };
 		A020B01B214AAB140011BB4F /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		A020B07B214AAD600011BB4F /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		A0272CE323AC9622008D24D3 /* XZCourseListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZCourseListVC.h; sourceTree = "<group>"; };
+		A0272CE423AC9622008D24D3 /* XZCourseListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XZCourseListVC.m; sourceTree = "<group>"; };
+		A0272CE723ACC264008D24D3 /* XZCourseListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZCourseListCell.h; sourceTree = "<group>"; };
+		A0272CE823ACC264008D24D3 /* XZCourseListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XZCourseListCell.m; sourceTree = "<group>"; };
 		A0281B7E232A4E7800559A5B /* TalkfunNewFunctionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TalkfunNewFunctionView.xib; sourceTree = "<group>"; };
 		A0281B7F232A4E7800559A5B /* TalkfunNewFunctionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkfunNewFunctionView.m; sourceTree = "<group>"; };
 		A0281B80232A4E7800559A5B /* TalkfunNewFunctionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkfunNewFunctionView.h; sourceTree = "<group>"; };
@@ -2973,6 +2979,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		A0272CE623AC9BB8008D24D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A0E2C66423AB4C4D00D5ED91 /* XZStudyView.xib */,
+				A0272CE723ACC264008D24D3 /* XZCourseListCell.h */,
+				A0272CE823ACC264008D24D3 /* XZCourseListCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A045501422EC4ACB00E17406 /* Xuezhi */ = {
 			isa = PBXGroup;
 			children = (
@@ -3799,7 +3815,9 @@
 			children = (
 				A0E2C66123AB4A9000D5ED91 /* XZStudyVC.h */,
 				A0E2C66223AB4A9000D5ED91 /* XZStudyVC.m */,
-				A0E2C66423AB4C4D00D5ED91 /* XZStudyView.xib */,
+				A0272CE323AC9622008D24D3 /* XZCourseListVC.h */,
+				A0272CE423AC9622008D24D3 /* XZCourseListVC.m */,
+				A0272CE623AC9BB8008D24D3 /* View */,
 			);
 			path = Study;
 			sourceTree = "<group>";
@@ -5590,6 +5608,7 @@
 				A04550D722EC8DFA00E17406 /* VoteEndViewController.m in Sources */,
 				A0E6156D2358A6D7001D9258 /* TCommonPendencyCell.m in Sources */,
 				A0541FAA22F2C69C00D961B3 /* XLGCustomButton.m in Sources */,
+				A0272CE923ACC264008D24D3 /* XZCourseListCell.m in Sources */,
 				A0E615912358A6D7001D9258 /* TUIImageMessageCellData.m in Sources */,
 				A0E6154F2358A6D7001D9258 /* TUITabBarController.m in Sources */,
 				A04550D922EC8DFA00E17406 /* JHHJCenterBGView.m in Sources */,
@@ -5621,6 +5640,7 @@
 				A0A3FE50239BE53D00B2B4BE /* PGIndexBannerSubiew.m in Sources */,
 				A00D0D5C231BA7A300CF25E7 /* TalkfunVideoControlView.m in Sources */,
 				A04550EA22EC8DFA00E17406 /* XLGExternalTestTool.m in Sources */,
+				A0272CE523AC9622008D24D3 /* XZCourseListVC.m in Sources */,
 				A0541FA822F2C69C00D961B3 /* UIButton+ButtonStyle.m in Sources */,
 				A04550EC22EC8DFA00E17406 /* TalkfunNewQuestionCell.m in Sources */,
 				A04550ED22EC8DFA00E17406 /* XLGLoginTestVC.m in Sources */,

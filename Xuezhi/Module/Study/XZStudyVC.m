@@ -17,6 +17,7 @@
 #import "TalkfunViewController.h"
 #import "TalkfunPlaybackViewController.h"
 #import "CZLabel.h"
+#import "XZCourseListVC.h"
 
 @implementation StudyCourseCell
 @end
@@ -30,7 +31,6 @@
 @property (nonatomic,retain) CZNotDataView *notDataView; //无数据视图
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *statusBarHConstraint;
-@property (weak, nonatomic) IBOutlet UIPageControl *coursePageControl;
 @property (weak, nonatomic) IBOutlet UIScrollView *courseScrollView;
 
 @property (weak, nonatomic) IBOutlet UIView *topBGBackView;
@@ -131,12 +131,12 @@
             if (self.dataArr.count>0) {
                 weakSelf.titleViewH.constant = 0;
                 weakSelf.notDataView.hidden = YES;
-                weakSelf.studyTabView.hidden = NO;
+                weakSelf.bgScroView.hidden = NO;
                 [self initView];
                 [self refreshUI];
             } else {
                 weakSelf.titleViewH.constant = 44;
-                weakSelf.studyTabView.hidden = YES;
+                weakSelf.bgScroView.hidden = YES;
                 weakSelf.notDataView.hidden = NO;
             }
         }
@@ -221,22 +221,20 @@
             };
         }
     }
-    _coursePageControl.currentPageIndicatorTintColor = AppThemeColor;
-    _coursePageControl.pageIndicatorTintColor = kPageControlColor;
-    _coursePageControl.height = 20;
-    _coursePageControl.currentPage = _currentPage;
-    _coursePageControl.numberOfPages = courseCount;
     [self showAlertView];
 }
 
 #pragma mark - methods
 
-#pragma mark - 顶部课程
+#pragma mark - 全部课程
 - (void)courseClick:(UIButton *)btn {
     NSInteger index = btn.tag-1000;
     NSLog(@"点击页数：%ld",(long)index);
     
-    //    StudyInfoItem *item = self.dataArr[index];
+    XZCourseListVC *vc = (XZCourseListVC *)[Utils getViewController:@"Xuezhi" WithVCName:@"XZCourseListVC"];
+    vc.dataArr = self.dataArr;
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - 录播课程
@@ -356,7 +354,6 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     
     int currentPageTem = fabs(scrollView.contentOffset.x)/(WIDTH-20); //计算当前页
-    _coursePageControl.currentPage = currentPageTem;
     _currentPage = currentPageTem;
     [self refreshUI];
 }

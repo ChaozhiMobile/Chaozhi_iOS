@@ -17,13 +17,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *titleLab;
 @property (weak, nonatomic) IBOutlet UILabel *currentPriceLab;
 @property (weak, nonatomic) IBOutlet UILabel *oldPriceLab;
-
-/** 课程model */
-@property (nonatomic,retain) CourseItem *item;
 @property (weak, nonatomic) IBOutlet UILabel *tagLab1;
 @property (weak, nonatomic) IBOutlet UILabel *tagLab2;
 @property (weak, nonatomic) IBOutlet UILabel *tagLab3;
 
+/** 课程model */
+@property (nonatomic,retain) CourseItem *item;
 
 @end
 
