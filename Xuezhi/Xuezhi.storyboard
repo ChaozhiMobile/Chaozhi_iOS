@@ -1270,6 +1270,7 @@
                         <outlet property="liveCourseView" destination="ZeO-ZO-3LI" id="GEV-7j-zaU"/>
                         <outlet property="liveStartTimeLB" destination="Ij9-Sz-TxU" id="nrg-qc-uIT"/>
                         <outlet property="studyCourseTipConstraint" destination="Qis-sM-aVi" id="Fmd-Sy-2DH"/>
+                        <outlet property="studyCourseTipImgView" destination="igu-mJ-tP3" id="NbI-V4-j8e"/>
                         <outlet property="studyCourseTipLab" destination="NB1-Xb-Dwm" id="dWu-bm-EYI"/>
                         <outlet property="studyTabView" destination="GTA-JD-Ndo" id="Jm5-fY-i9v"/>
                         <outlet property="tabHeightConstraint" destination="2wK-il-qYW" id="wp1-RW-dS2"/>

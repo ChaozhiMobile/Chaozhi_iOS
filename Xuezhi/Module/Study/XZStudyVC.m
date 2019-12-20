@@ -50,6 +50,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *liveStartTimeLB;
 @property (weak, nonatomic) IBOutlet UIButton *enterLiveBtn;
 @property (weak, nonatomic) IBOutlet UITableView *studyTabView;
+@property (weak, nonatomic) IBOutlet UIImageView *studyCourseTipImgView;
 @property (weak, nonatomic) IBOutlet UILabel *studyCourseTipLab;
 @property (weak, nonatomic) IBOutlet UIView *titleView;
 
@@ -423,16 +424,19 @@
             }
         }
     }
-    if (_courseArr.count==0) {
+    if (_courseArr.count == 0) {
+        _studyCourseTipImgView.hidden = YES;
         _studyCourseTipConstraint.constant = 50;
         _studyCourseTipLab.text = @"您还没有开始学习，加油噢";
         _studyCourseTipLab.textAlignment = NSTextAlignmentCenter;
+        _tabHeightConstraint.constant = 0;
     } else {
+        _studyCourseTipImgView.hidden = NO;
         _studyCourseTipConstraint.constant = 30;
         _studyCourseTipLab.text = @"最新学习课程";
         _studyCourseTipLab.textAlignment = NSTextAlignmentLeft;
+        _tabHeightConstraint.constant = _courseArr.count*82;
     }
-    _tabHeightConstraint.constant = _courseArr.count*82;
     [_studyTabView reloadData];
 }
 
