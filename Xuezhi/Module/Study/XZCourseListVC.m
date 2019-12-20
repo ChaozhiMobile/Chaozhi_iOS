@@ -12,6 +12,7 @@
 @interface XZCourseListVC ()
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *navBarH;
+@property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 
 @end
 
@@ -30,7 +31,9 @@
     [super viewDidLoad];
     
     self.title = @"全部课程";
+    self.view.backgroundColor = kWhiteColor;
     _navBarH.constant = kNavBarH;
+    _mainTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 #pragma mark - methods
@@ -52,6 +55,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (self.selectBlock) {
+        self.selectBlock(indexPath.row);
+        [self backAction];
+    }
 }
 
 @end

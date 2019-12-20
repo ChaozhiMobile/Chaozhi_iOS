@@ -54,6 +54,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *studyCourseTipLab;
 @property (weak, nonatomic) IBOutlet UIView *titleView;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topBgH;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleViewH;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *yuekaoConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *liveCourseConstraint;
@@ -88,7 +89,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = kWhiteColor;
     show = YES;
+    _currentPage = 0;
     _tabHeightConstraint.constant = 3*60;
     _statusBarHConstraint.constant = kStatusBarH;
     _allAlertView = [NSMutableArray array];
@@ -163,63 +166,59 @@
     
     NSInteger courseCount = self.dataArr.count;
     __weak typeof(self) weakSelf = self;
-    [_allAlertView removeAllObjects];;
+    [_allAlertView removeAllObjects];
     _courseScrollView.contentSize = CGSizeMake(courseCount*(WIDTH-32), 0);
-    for (NSInteger i = 0; i < 1; i ++) {
-        StudyInfoItem *item = self.dataArr[i];
-        UIView *view = [[[NSBundle mainBundle] loadNibNamed:@"XZStudyView" owner:self options:nil] firstObject];
-        view.frame = CGRectMake(i*(WIDTH-32), 0, (WIDTH-32), 150);
-        view.tag = 120+i;
-        [_courseScrollView addSubview:view];
-        UIImageView *courseIconImgView = [view viewWithTag:2];
-        courseIconImgView.contentMode = UIViewContentModeScaleToFill;
-        [courseIconImgView sd_setImageWithURL:[NSURL URLWithString:item.product_img] placeholderImage:[UIImage imageNamed:@"default_rectangle_img"]];
-        UILabel *courseTitleLB = [view viewWithTag:3];
-        courseTitleLB.text = item.product_name;
-        UILabel *courseDurationLB = [view viewWithTag:5];
-        courseDurationLB.text = [NSString stringWithFormat:@"%@节",item.user_time];
-        UILabel *courseSubjectLB =[view viewWithTag:6];
-        courseSubjectLB.text = [NSString stringWithFormat:@"%@道",item.user_question];
-        UIButton *viewBtn = [view viewWithTag:7];
-        viewBtn.tag = 1000+i;
-        [viewBtn addTarget:self action:@selector(courseClick:) forControlEvents:UIControlEventTouchUpInside];
-        if ([item.is_agreement_confirm integerValue]==0&&show) {
-            CZAlertView *alert = [[CZAlertView alloc] initWithTitle:@"温馨提示" content:item.product_name leftButtonTitle:@"不同意" rightButtonTitle:@"已阅读并同意"];
-            alert.hidden = YES;
-            [_allAlertView addObject:alert];
-            alert.cancelBlock = ^{
-                // 跳转到首页
-                self.tabBarController.selectedIndex = 0;
-                [self.navigationController popToRootViewControllerAnimated:NO];
-                for (CZAlertView *view in weakSelf.allAlertView) {
-                    [view removeFromSuperview];
+    StudyInfoItem *item = self.dataArr[_currentPage];
+    UIView *view = [[[NSBundle mainBundle] loadNibNamed:@"XZStudyView" owner:self options:nil] firstObject];
+    view.frame = CGRectMake(0, 0, (WIDTH-32), 150);
+    [_courseScrollView addSubview:view];
+    UIImageView *courseIconImgView = [view viewWithTag:2];
+    courseIconImgView.contentMode = UIViewContentModeScaleToFill;
+    [courseIconImgView sd_setImageWithURL:[NSURL URLWithString:item.product_img] placeholderImage:[UIImage imageNamed:@"default_rectangle_img"]];
+    UILabel *courseTitleLB = [view viewWithTag:3];
+    courseTitleLB.text = item.product_name;
+    UILabel *courseDurationLB = [view viewWithTag:5];
+    courseDurationLB.text = [NSString stringWithFormat:@"%@节",item.user_time];
+    UILabel *courseSubjectLB =[view viewWithTag:6];
+    courseSubjectLB.text = [NSString stringWithFormat:@"%@道",item.user_question];
+    UIButton *viewBtn = [view viewWithTag:7];
+    [viewBtn addTarget:self action:@selector(courseClick:) forControlEvents:UIControlEventTouchUpInside];
+    if ([item.is_agreement_confirm integerValue]==0&&show) {
+        CZAlertView *alert = [[CZAlertView alloc] initWithTitle:@"温馨提示" content:item.product_name leftButtonTitle:@"不同意" rightButtonTitle:@"已阅读并同意"];
+        alert.hidden = YES;
+        [_allAlertView addObject:alert];
+        alert.cancelBlock = ^{
+            // 跳转到首页
+            self.tabBarController.selectedIndex = 0;
+            [self.navigationController popToRootViewControllerAnimated:NO];
+            for (CZAlertView *view in weakSelf.allAlertView) {
+                [view removeFromSuperview];
+            }
+        };
+        alert.doneBlock = ^{
+            NSDictionary *dic = @{@"id":item.ID};
+            [[NetworkManager sharedManager] postJSON:URL_ConfirmAgreement parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
+                if (status == Request_Success) {
+                    alert.isRelease = YES;
+                    [weakSelf showAlertView];
                 }
-            };
-            alert.doneBlock = ^{
-                NSDictionary *dic = @{@"id":item.ID};
-                [[NetworkManager sharedManager] postJSON:URL_ConfirmAgreement parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
-                    if (status == Request_Success) {
-                        alert.isRelease = YES;
-                        [weakSelf showAlertView];
-                    }
-                }];
-            };
-            alert.urlClickBlock = ^{
-                for (CZAlertView *view in weakSelf.allAlertView) {
-                    [view removeFromSuperview];
+            }];
+        };
+        alert.urlClickBlock = ^{
+            for (CZAlertView *view in weakSelf.allAlertView) {
+                [view removeFromSuperview];
+            }
+            NSDictionary *dic = @{@"order_id":item.ID};
+            [[NetworkManager sharedManager] postJSON:URL_OrdersAgreement parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
+                if (status == Request_Success) {
+                    CZProtocalWebVC *vc = [[CZProtocalWebVC alloc] init];
+                    vc.webTitle = [NSString stringWithFormat:@"《%@·协议》",item.product_name];
+                    vc.homeUrl = [NSString stringWithFormat:@"%@",responseData[@"agreement"]];
+                    vc.hidesBottomBarWhenPushed = YES;
+                    [weakSelf.navigationController pushViewController:vc animated:NO];
                 }
-                NSDictionary *dic = @{@"order_id":item.ID};
-                [[NetworkManager sharedManager] postJSON:URL_OrdersAgreement parameters:dic imageDataArr:nil imageName:nil completion:^(id responseData, RequestState status, NSError *error) {
-                    if (status == Request_Success) {
-                        CZProtocalWebVC *vc = [[CZProtocalWebVC alloc] init];
-                        vc.webTitle = [NSString stringWithFormat:@"《%@·协议》",item.product_name];
-                        vc.homeUrl = [NSString stringWithFormat:@"%@",responseData[@"agreement"]];
-                        vc.hidesBottomBarWhenPushed = YES;
-                        [weakSelf.navigationController pushViewController:vc animated:NO];
-                    }
-                }];
-            };
-        }
+            }];
+        };
     }
     [self showAlertView];
 }
@@ -228,10 +227,11 @@
 
 #pragma mark - 全部课程
 - (void)courseClick:(UIButton *)btn {
-    NSInteger index = btn.tag-1000;
-    NSLog(@"点击页数：%ld",(long)index);
-    
+    __weak typeof(self) weakSelf = self;
     XZCourseListVC *vc = (XZCourseListVC *)[Utils getViewController:@"Xuezhi" WithVCName:@"XZCourseListVC"];
+    vc.selectBlock = ^(NSInteger index) {
+        weakSelf.currentPage = index;
+    };
     vc.dataArr = self.dataArr;
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
@@ -396,7 +396,7 @@
             NSString *teacher = [NSString stringWithFormat:@"主讲讲师：%@",liveItems.teacher];
             CGFloat teacherW = [teacher getTextWidthWithFont:[UIFont systemFontOfSize:13 weight:UIFontWeightMedium] height:20];
             _liveCourseTeacherLB.width = teacherW+16;
-            _liveCourseTeacherLB.edgeInsets = UIEdgeInsetsMake(2, 8, 2, 8);
+            _liveCourseTeacherLB.edgeInsets = UIEdgeInsetsMake(3, 8, 3, 8);
             _liveCourseTeacherLB.text = teacher;
             _liveStartTimeLB.text = [NSString stringWithFormat:@"开始时间：%@",liveItems.live_st];
             if ([liveItems.status isEqualToString:@"-1"]) {

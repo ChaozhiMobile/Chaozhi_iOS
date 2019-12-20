@@ -11,9 +11,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void (^SelectCourseBlock) (NSInteger index);
+
 @interface XZCourseListVC : BaseVC
 
-@property (strong, nonatomic) NSArray <StudyInfoItem *>*dataArr;
+/** 选择课程回调 */
+@property (nonatomic, copy) SelectCourseBlock selectBlock;
+
+@property (nonatomic, strong) NSArray <StudyInfoItem *>*dataArr;
 
 @end
 
