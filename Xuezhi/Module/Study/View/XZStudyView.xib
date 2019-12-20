@@ -33,13 +33,13 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gck-kJ-vNH">
-                            <rect key="frame" x="265" y="0.0" width="90" height="40"/>
+                            <rect key="frame" x="255" y="0.0" width="100" height="40"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="90" id="8vP-25-SWA"/>
+                                <constraint firstAttribute="width" constant="100" id="8vP-25-SWA"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                             <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
-                            <inset key="imageEdgeInsets" minX="105" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="115" minY="0.0" maxX="0.0" maxY="0.0"/>
                             <state key="normal" title="查看全部课程" image="icon_arrow">
                                 <color key="titleColor" red="0.11372549019607843" green="0.58823529411764708" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </state>
