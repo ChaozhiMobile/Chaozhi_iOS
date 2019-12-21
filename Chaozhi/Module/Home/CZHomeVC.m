@@ -89,16 +89,15 @@
             NSLog(@"选择课程ID: %@",item.ID);
             weakSelf.page = 1;
             [weakSelf requestCourseData];
+            [weakSelf getNewList];
         };
         [self.navigationController pushViewController:vc animated:YES];
     }
     
     _mainTabView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         weakSelf.page = 1;
-        [weakSelf getData];
-    }];
-    _mainTabView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        [weakSelf getData];
+        [weakSelf requestCourseData];
+        [weakSelf getNewList];
     }];
     [_bannerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(weakSelf.view.mas_width);
@@ -127,6 +126,7 @@
 - (void)getData {
     [self getBannerActivityData];
     [self requestCourseData];
+    [self getNewList];
 }
 
 #pragma mark - get data
@@ -227,19 +227,24 @@
             weakSelf.categoryItems = [HomeCategoryItem yy_modelWithJSON:responseData];
             [weakSelf.mainTabView reloadData];
         }];
-        
-        [[NetworkManager sharedManager] postJSON:URL_NewsList parameters:@{@"category_id":selectCourseID,@"p":@(_page),@"offset":@"5",@"news_category_id":@""} completion:^(id responseData, RequestState status, NSError *error) {
+    }
+}
 
+#pragma mark - 行业资讯
+- (void)getNewList {
+    NSString *selectCourseID = [CacheUtil getCacherWithKey:kSelectCourseIDKey];
+    if (![NSString isEmpty:selectCourseID]) {
+        __weak typeof(self) weakSelf = self;
+        [[NetworkManager sharedManager] postJSON:URL_NewsList parameters:@{@"category_id":selectCourseID,@"p":@(_page),@"offset":@"5",@"news_category_id":@""} completion:^(id responseData, RequestState status, NSError *error) {
             weakSelf.newsItems = [HomeNewsListItem yy_modelWithJSON:responseData];
             if (weakSelf.page==1) {
                 [weakSelf.newsDatsSource removeAllObjects];
             }
-            
             if (weakSelf.newsDatsSource.count<weakSelf.newsItems.total) {
                 weakSelf.page++;
                 [weakSelf.newsDatsSource addObjectsFromArray:            weakSelf.newsItems.rows];
                 weakSelf.mainTabView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-                    [weakSelf getData];
+                    [weakSelf getNewList];
                 }];
             } else {
                 weakSelf.mainTabView.mj_footer = nil;
@@ -258,6 +263,7 @@
     vc.selectCourseBlock = ^(CourseCategoryItem *item) {
         weakSelf.page = 1;
         [self requestCourseData];
+        [self getNewList];
     };
     [self.navigationController pushViewController:vc animated:YES];
 }

@@ -73,7 +73,9 @@
     
     _mainTabView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         self.page = 1;
-        [self getData];
+        [self getCategoryList];
+        [self getCourseData];
+        [self getNewList];
     }];
     
     [self getData];
