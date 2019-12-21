@@ -7,6 +7,7 @@
 //
 
 #import "CZGuideVC.h"
+#import "AppDelegate.h"
 
 @interface CZGuideVC ()<UIScrollViewDelegate>
 
@@ -16,8 +17,12 @@
 
 @implementation CZGuideVC
 
-- (void)viewWillAppear:(BOOL)animated
-{
+// 不支持转屏
+- (BOOL)shouldAutorotate {
+    return NO;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     self.navBar.hidden = YES;
