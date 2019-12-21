@@ -164,10 +164,9 @@
     gradientLayer.frame = _topBGBackView.bounds;
     [self.topBGBackView.layer addSublayer:gradientLayer];
     
-    NSInteger courseCount = self.dataArr.count;
     __weak typeof(self) weakSelf = self;
     [_allAlertView removeAllObjects];
-    _courseScrollView.contentSize = CGSizeMake(courseCount*(WIDTH-32), 0);
+    _courseScrollView.contentSize = CGSizeMake(WIDTH-32, 0);
     StudyInfoItem *item = self.dataArr[_currentPage];
     UIView *view = [[[NSBundle mainBundle] loadNibNamed:@"XZStudyView" owner:self options:nil] firstObject];
     view.frame = CGRectMake(0, 0, (WIDTH-32), 150);
