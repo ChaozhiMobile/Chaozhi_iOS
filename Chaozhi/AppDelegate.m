@@ -84,14 +84,14 @@
     return YES;
 }
 
-#pragma mark    禁止横屏
-- (UIInterfaceOrientationMask )application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
-{
-    if (self.allowRotation) {
-        return UIInterfaceOrientationMaskAll;
-    }
-    return UIInterfaceOrientationMaskPortrait;
-}
+//#pragma mark    禁止横屏
+//- (UIInterfaceOrientationMask )application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
+//{
+//    if (self.allowRotation) {
+//        return UIInterfaceOrientationMaskAll;
+//    }
+//    return UIInterfaceOrientationMaskPortrait;
+//}
 
 
 - (void)initRootVC {
