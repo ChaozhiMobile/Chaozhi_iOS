@@ -25,6 +25,7 @@
 #import "THeader.h"
 #import "ImSDK.h"
 #import "GenerateTestUserSig.h"
+#import "CZAuthorityShowVC.h"
 
 @interface AppDelegate ()<UIAlertViewDelegate>
 
@@ -59,10 +60,10 @@
     
     //键盘事件
     [self processKeyBoard];
-    
+    //[[NSUserDefaults standardUserDefaults]setBool:NO forKey:@"agreeAuthority"];; //测试权限代码
+
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = PageColor;
-
     //判断是否首次进入应用
     if (![[NSUserDefaults standardUserDefaults] objectForKey:@"FirstLG"])
     {
@@ -74,15 +75,49 @@
         [guideVC setDoneBlock:^(){
             NSLog(@"点击“进入”进入应用");
             //进入应用主界面
-            self.window.rootViewController = [self setTabBarController];
+            [self initRootVC];
         }];
     } else {
-        self.window.rootViewController = [self setTabBarController];
+        [self initRootVC];
     }
-    
     [self.window makeKeyAndVisible];
-    
     return YES;
+}
+
+//#pragma mark    禁止横屏
+//- (UIInterfaceOrientationMask )application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
+//{
+//    if (self.allowRotation) {
+//        return UIInterfaceOrientationMaskAll;
+//    }
+//    return UIInterfaceOrientationMaskPortrait;
+//}
+
+
+- (void)initRootVC {
+    if ([AppChannel isEqualToString:@"1"]) { //超职
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"agreeAuthority"]) {
+            //第二步：获取该控制器的Identifier并赋给你的单独控制器
+            _tabVC = (UITabBarController *)[Utils getViewController:@"Main" WithVCName:@"TabBarController"];
+            _tabVC.delegate = self;
+            self.window.rootViewController = _tabVC;;
+            [self.window makeKeyAndVisible];
+        }
+        else {
+            CZAuthorityShowVC *vc = (CZAuthorityShowVC *)[Utils getViewController:@"Main" WithVCName:@"CZAuthorityShowVC"];
+            __weak typeof(self) weakSelf = self;
+            vc.doneBlock = ^{
+                [weakSelf initRootVC];
+            };
+            self.window.rootViewController = vc;;
+        }
+    }
+    if ([AppChannel isEqualToString:@"2"]) { //学智
+        _tabVC = [[XZTabBarVC alloc] init];
+        _tabVC.delegate = self;
+        self.window.rootViewController = _tabVC;;
+        [self.window makeKeyAndVisible];
+    }
 }
 
 #pragma mark - 欢拓网络监测
@@ -223,22 +258,6 @@
     [MobClick setEncryptEnabled:YES]; //加密，默认为NO(不加密)
 }
 
-#pragma mark - 进入首页
-
-- (UITabBarController *)setTabBarController {
-    if ([AppChannel isEqualToString:@"1"]) { //超职
-        //第一步：要获取单独控制器所在的UIStoryboard
-        UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        //第二步：获取该控制器的Identifier并赋给你的单独控制器
-        _tabVC = [story instantiateViewControllerWithIdentifier:@"TabBarController"];
-    }
-    if ([AppChannel isEqualToString:@"2"]) { //学智
-        _tabVC = [[XZTabBarVC alloc] init];
-    }
-    _tabVC.delegate = self;
-    
-    return _tabVC;
-}
 
 - (void)processKeyBoard {
     
