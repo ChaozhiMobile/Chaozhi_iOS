@@ -88,6 +88,8 @@
 		20D3D3B622C22E1200560A74 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D3B522C22E1200560A74 /* VideoToolbox.framework */; };
 		20D3D3B822C22E1900560A74 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D3B722C22E1900560A74 /* MobileCoreServices.framework */; };
 		20D3D3BA22C22E2100560A74 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D3B922C22E2000560A74 /* SystemConfiguration.framework */; };
+		20DDB6A823C8537500F7A4CE /* CZAuthorityShowVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDB6A723C8537500F7A4CE /* CZAuthorityShowVC.m */; };
+		20DDB6A923C8537500F7A4CE /* CZAuthorityShowVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDB6A723C8537500F7A4CE /* CZAuthorityShowVC.m */; };
 		393AD834213D295BF18D4A21 /* Pods_Xuezhi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86DD11823CFA282B4A0483A3 /* Pods_Xuezhi.framework */; };
 		85401F932D5D75079941DDCE /* Pods_Chaozhi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3429E05D3D88CA2DC3F14BB0 /* Pods_Chaozhi.framework */; };
 		A00692392354AA0000A74059 /* IMItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A00692382354A9FF00A74059 /* IMItem.m */; };
@@ -1256,6 +1258,8 @@
 		20D3D3B522C22E1200560A74 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		20D3D3B722C22E1900560A74 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		20D3D3B922C22E2000560A74 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		20DDB6A623C8537500F7A4CE /* CZAuthorityShowVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZAuthorityShowVC.h; sourceTree = "<group>"; };
+		20DDB6A723C8537500F7A4CE /* CZAuthorityShowVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZAuthorityShowVC.m; sourceTree = "<group>"; };
 		3429E05D3D88CA2DC3F14BB0 /* Pods_Chaozhi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chaozhi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57062E716BE44301CC362667 /* Pods-Chaozhi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chaozhi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chaozhi/Pods-Chaozhi.debug.xcconfig"; sourceTree = "<group>"; };
 		86DD11823CFA282B4A0483A3 /* Pods_Xuezhi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Xuezhi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2356,6 +2360,8 @@
 			children = (
 				205FDB3121763DBE001BE2C6 /* CZGuideVC.h */,
 				205FDB3221763DBE001BE2C6 /* CZGuideVC.m */,
+				20DDB6A623C8537500F7A4CE /* CZAuthorityShowVC.h */,
+				20DDB6A723C8537500F7A4CE /* CZAuthorityShowVC.m */,
 			);
 			path = Guide;
 			sourceTree = "<group>";
@@ -5080,6 +5086,7 @@
 				A0AC08B622C4BC7D001832EA /* stopCopyTextView.m in Sources */,
 				A0E6157A2358A6D7001D9258 /* TContactListPickerCell.m in Sources */,
 				A0E615BA2358A6D7001D9258 /* TUITextMessageCell.m in Sources */,
+				20DDB6A823C8537500F7A4CE /* CZAuthorityShowVC.m in Sources */,
 				A0E615562358A6D7001D9258 /* TAddCollectionCell.m in Sources */,
 				A0E615FC2358A6D7001D9258 /* TCAnnotation.m in Sources */,
 				205934CB23547673003DDF39 /* GenerateTestUserSig.m in Sources */,
@@ -5600,6 +5607,7 @@
 				A04550D422EC8DFA00E17406 /* LDSimplePing.m in Sources */,
 				A0E615412358A6D7001D9258 /* TUIProfileCardCell.m in Sources */,
 				A0E615B92358A6D7001D9258 /* TUIVideoMessageCell.m in Sources */,
+				20DDB6A923C8537500F7A4CE /* CZAuthorityShowVC.m in Sources */,
 				A0E6152F2358A6D7001D9258 /* TAddCell.m in Sources */,
 				A0E615D72358A6D7001D9258 /* TUIGroupMembersCell.m in Sources */,
 				A04550D522EC8DFA00E17406 /* XLGLogVC.m in Sources */,

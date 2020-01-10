@@ -22,6 +22,8 @@
 @property (nonatomic, retain) UITabBarController *tabVC;
 @property (nonatomic, assign) AFNetworkReachabilityStatus status;
 @property (nonatomic, strong) NSData *deviceToken; //腾讯im
+/** 是否禁止横竖屏 */
+@property (nonatomic,assign) BOOL allowRotation;
 
 - (UIViewController *)getLoginController;
 - (UITabBarController *)getMainController;
