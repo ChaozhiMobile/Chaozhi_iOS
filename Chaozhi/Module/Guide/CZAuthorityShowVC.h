@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CZAuthorityShowVC : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *appNameLab;
 @property (weak, nonatomic) IBOutlet UILabel *showProtocolLab;
 - (IBAction)startVCClickAction:(UIButton *)sender;
 /** <#object#> */

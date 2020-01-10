@@ -90,6 +90,8 @@
 		20D3D3BA22C22E2100560A74 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D3D3B922C22E2000560A74 /* SystemConfiguration.framework */; };
 		20DDB6A823C8537500F7A4CE /* CZAuthorityShowVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDB6A723C8537500F7A4CE /* CZAuthorityShowVC.m */; };
 		20DDB6A923C8537500F7A4CE /* CZAuthorityShowVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDB6A723C8537500F7A4CE /* CZAuthorityShowVC.m */; };
+		20DDB6B023C8655A00F7A4CE /* UILabel+RichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDB6AF23C8655A00F7A4CE /* UILabel+RichText.m */; };
+		20DDB6B123C8655A00F7A4CE /* UILabel+RichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DDB6AF23C8655A00F7A4CE /* UILabel+RichText.m */; };
 		393AD834213D295BF18D4A21 /* Pods_Xuezhi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86DD11823CFA282B4A0483A3 /* Pods_Xuezhi.framework */; };
 		85401F932D5D75079941DDCE /* Pods_Chaozhi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3429E05D3D88CA2DC3F14BB0 /* Pods_Chaozhi.framework */; };
 		A00692392354AA0000A74059 /* IMItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A00692382354A9FF00A74059 /* IMItem.m */; };
@@ -1260,6 +1262,8 @@
 		20D3D3B922C22E2000560A74 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		20DDB6A623C8537500F7A4CE /* CZAuthorityShowVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CZAuthorityShowVC.h; sourceTree = "<group>"; };
 		20DDB6A723C8537500F7A4CE /* CZAuthorityShowVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CZAuthorityShowVC.m; sourceTree = "<group>"; };
+		20DDB6AE23C8655A00F7A4CE /* UILabel+RichText.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+RichText.h"; sourceTree = "<group>"; };
+		20DDB6AF23C8655A00F7A4CE /* UILabel+RichText.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+RichText.m"; sourceTree = "<group>"; };
 		3429E05D3D88CA2DC3F14BB0 /* Pods_Chaozhi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chaozhi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57062E716BE44301CC362667 /* Pods-Chaozhi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chaozhi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chaozhi/Pods-Chaozhi.debug.xcconfig"; sourceTree = "<group>"; };
 		86DD11823CFA282B4A0483A3 /* Pods_Xuezhi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Xuezhi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -3024,6 +3028,8 @@
 				A02C02422362C2F0008B470A /* UIFont+XLGFont.m */,
 				A02C023F2362C271008B470A /* UILabel+XLGFont.h */,
 				A02C023E2362C271008B470A /* UILabel+XLGFont.m */,
+				20DDB6AE23C8655A00F7A4CE /* UILabel+RichText.h */,
+				20DDB6AF23C8655A00F7A4CE /* UILabel+RichText.m */,
 				A02C02362362A263008B470A /* UIButton+XLGFont.h */,
 				A02C02372362A263008B470A /* UIButton+XLGFont.m */,
 				A02C02462362C7BF008B470A /* UITextField+XLGFont.h */,
@@ -5144,6 +5150,7 @@
 				A020B060214AAB150011BB4F /* XLGLoginTestView.m in Sources */,
 				A0AC08C322C4BC7D001832EA /* TalkfunButtonView.m in Sources */,
 				A0599A2021574CAF00D17058 /* CZRegisterVC.m in Sources */,
+				20DDB6B023C8655A00F7A4CE /* UILabel+RichText.m in Sources */,
 				205934E523547673003DDF39 /* MyCustomCell.m in Sources */,
 				A0E2C66823AB68B600D5ED91 /* CZVerticalLabel.m in Sources */,
 				A0E615642358A6D7001D9258 /* TUIGroupConversationListViewModel.m in Sources */,
@@ -5525,6 +5532,7 @@
 				205934DC23547673003DDF39 /* GroupMemberController.m in Sources */,
 				A04550B022EC8DFA00E17406 /* DownloadListTableViewCell.m in Sources */,
 				A04550B122EC8DFA00E17406 /* ChoiceButton.m in Sources */,
+				20DDB6B123C8655A00F7A4CE /* UILabel+RichText.m in Sources */,
 				A04550B322EC8DFA00E17406 /* StudyInfoItem.m in Sources */,
 				A04550B422EC8DFA00E17406 /* barrageSwitch.m in Sources */,
 				A0E615952358A6D7001D9258 /* TUIVideoMessageCellData.m in Sources */,

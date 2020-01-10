@@ -2305,6 +2305,7 @@ VIP保障实验班</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="appNameLab" destination="xyW-Nv-Ni2" id="ExO-T1-3t3"/>
                         <outlet property="showProtocolLab" destination="RYM-dE-pe1" id="geW-sy-wTg"/>
                     </connections>
                 </viewController>
