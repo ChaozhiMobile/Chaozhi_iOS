@@ -60,7 +60,7 @@
     
     //键盘事件
     [self processKeyBoard];
-    [[NSUserDefaults standardUserDefaults]setBool:NO forKey:@"agreeAuthority"];; //测试权限代码
+//    [[NSUserDefaults standardUserDefaults]setBool:NO forKey:@"agreeAuthority"];; //测试权限代码
 
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = PageColor;
