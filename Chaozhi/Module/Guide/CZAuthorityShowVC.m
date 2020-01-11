@@ -40,7 +40,7 @@
     
     //调整行距
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    paragraphStyle.lineSpacing = 5;
+    paragraphStyle.lineSpacing = 3;
     paragraphStyle.baseWritingDirection = NSWritingDirectionLeftToRight;
     [attributeString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, _showProtocolLab.text.length)];
     _showProtocolLab.attributedText = attributeString;
