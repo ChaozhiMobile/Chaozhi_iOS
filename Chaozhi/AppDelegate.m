@@ -60,7 +60,7 @@
     
     //键盘事件
     [self processKeyBoard];
-//    [[NSUserDefaults standardUserDefaults]setBool:NO forKey:@"agreeAuthority"];; //测试权限代码
+//    [[NSUserDefaults standardUserDefaults]setBool:NO forKey:@"AgreeAuthority"];; //测试权限代码
 
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = PageColor;
@@ -95,28 +95,28 @@
 
 
 - (void)initRootVC {
-    if ([AppChannel isEqualToString:@"1"]) { //超职
-        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"agreeAuthority"]) {
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"AgreeAuthority"]) {
+        if ([AppChannel isEqualToString:@"1"]) { //超职
             //第二步：获取该控制器的Identifier并赋给你的单独控制器
             _tabVC = (UITabBarController *)[Utils getViewController:@"Main" WithVCName:@"TabBarController"];
             _tabVC.delegate = self;
             self.window.rootViewController = _tabVC;;
             [self.window makeKeyAndVisible];
         }
-        else {
-            CZAuthorityShowVC *vc = (CZAuthorityShowVC *)[Utils getViewController:@"Main" WithVCName:@"CZAuthorityShowVC"];
-            __weak typeof(self) weakSelf = self;
-            vc.doneBlock = ^{
-                [weakSelf initRootVC];
-            };
-            self.window.rootViewController = vc;;
+        if ([AppChannel isEqualToString:@"2"]) { //学智
+            _tabVC = [[XZTabBarVC alloc] init];
+            _tabVC.delegate = self;
+            self.window.rootViewController = _tabVC;;
+            [self.window makeKeyAndVisible];
         }
     }
-    if ([AppChannel isEqualToString:@"2"]) { //学智
-        _tabVC = [[XZTabBarVC alloc] init];
-        _tabVC.delegate = self;
-        self.window.rootViewController = _tabVC;;
-        [self.window makeKeyAndVisible];
+    else {
+        CZAuthorityShowVC *vc = (CZAuthorityShowVC *)[Utils getViewController:@"Main" WithVCName:@"CZAuthorityShowVC"];
+        __weak typeof(self) weakSelf = self;
+        vc.doneBlock = ^{
+            [weakSelf initRootVC];
+        };
+        self.window.rootViewController = vc;;
     }
 }
 

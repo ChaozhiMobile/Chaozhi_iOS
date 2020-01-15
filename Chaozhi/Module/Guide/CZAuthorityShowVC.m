@@ -22,9 +22,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     _appNameLab.text = AppName;
     NSString *nameStr = @"超职";
-    if ([AppChannel isEqualToString:@"2"]) { //超职
+    if ([AppChannel isEqualToString:@"2"]) { //学智
         nameStr = @"学智";
     }
     NSString *str1 = [NSString stringWithFormat:@"《%@用户服务协议》",nameStr];
@@ -48,31 +49,23 @@
     [_showProtocolLab clickRichTextWithStrings:@[str1,str2] clickAction:^(NSString * _Nonnull string, NSRange range, NSInteger index) {
         if ([string isEqualToString:str1]) {
             NSString *url = [h5Url() stringByAppendingString:H5_UserProtocal];
+            if ([AppChannel isEqualToString:@"2"]) { //学智
+                url = H5_UserProtocal;
+            }
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
-//            [BaseWebVC showWithContro:self withUrlStr:H5_UserProtocal withTitle:@"用户服务协议" isPresent:YES];
         }
         else if ([string isEqualToString:str2]) {
             NSString *url = [h5Url() stringByAppendingString:H5_Privacy];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
-//            [BaseWebVC showWithContro:self withUrlStr:H5_Privacy withTitle:@"用户隐私政策" isPresent:YES];
         }
     }];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (IBAction)startVCClickAction:(UIButton *)sender {
     if (_doneBlock) {
-        [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"agreeAuthority"];;
+        [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"AgreeAuthority"];;
         self.doneBlock();
     }
 }
+
 @end

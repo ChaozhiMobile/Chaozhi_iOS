@@ -124,10 +124,10 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_black" translatesAutoresizingMaskIntoConstraints="NO" id="YFZ-Bi-KfC">
-                                <rect key="frame" x="130" y="316" width="115" height="110"/>
+                                <rect key="frame" x="72.5" y="316" width="230" height="220"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fQ-83-NnP">
-                                <rect key="frame" x="0.0" y="436" width="375" height="20"/>
+                                <rect key="frame" x="0.0" y="546" width="375" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="VD3-H5-Lhj"/>
                                 </constraints>
@@ -136,7 +136,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HVS-tQ-BHh">
-                                <rect key="frame" x="0.0" y="461" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="571" width="375" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="iPd-sb-bb4"/>
                                 </constraints>
@@ -219,11 +219,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_home" translatesAutoresizingMaskIntoConstraints="NO" id="BWx-4G-sH5">
-                                <rect key="frame" x="126.5" y="114" width="122" height="30"/>
+                                <rect key="frame" x="65.5" y="114" width="244" height="60"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QFg-mH-9Df">
-                                <rect key="frame" x="21" y="164" width="333" height="50"/>
+                                <rect key="frame" x="21" y="194" width="333" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入手机号" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="59w-GR-aXq">
                                         <rect key="frame" x="15" y="0.0" width="302" height="50"/>
@@ -243,7 +243,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sua-VY-fzK">
-                                <rect key="frame" x="21" y="224" width="333" height="50"/>
+                                <rect key="frame" x="21" y="254" width="333" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nyR-nP-6XJ">
                                         <rect key="frame" x="15" y="0.0" width="302" height="50"/>
@@ -260,7 +260,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCZ-FO-8zr">
-                                <rect key="frame" x="21" y="304" width="332" height="44"/>
+                                <rect key="frame" x="21" y="334" width="332" height="44"/>
                                 <color key="backgroundColor" red="0.76470588235294112" green="0.10196078431372549" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="0lI-ic-JcQ"/>
@@ -281,7 +281,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ubq-8k-QMt">
-                                <rect key="frame" x="50" y="358" width="72" height="40"/>
+                                <rect key="frame" x="50" y="388" width="72" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="BTv-g8-DGd"/>
                                     <constraint firstAttribute="height" constant="40" id="nIn-tB-Wxy"/>
@@ -295,7 +295,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeG-cc-RCZ">
-                                <rect key="frame" x="253" y="358" width="72" height="40"/>
+                                <rect key="frame" x="253" y="388" width="72" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="btV-ww-zWc"/>
                                 </constraints>
@@ -697,7 +697,6 @@
             <objects>
                 <navigationController storyboardIdentifier="XLGLoginVC" id="n7o-Yw-9p2" customClass="BaseNC" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mbb-c9-FME">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -736,7 +735,6 @@
                 <navigationController id="JmR-YS-nCW" customClass="BaseNC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="学习" image="icon_study_normal" selectedImage="icon_study_selected" id="5W5-Rg-K02"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zlB-MU-hhp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -1335,7 +1333,6 @@
                 <navigationController id="Abx-ch-goK" customClass="BaseNC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="无限" image="icon_infinite_normal" selectedImage="icon_infinite_selected" id="LsM-oJ-VCD"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nQD-bg-CKD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -1371,7 +1368,6 @@
                 <navigationController id="jY3-kB-Jul" customClass="BaseNC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="我的" image="icon_mine_normal" selectedImage="icon_mine_selected" id="1SE-aD-QmU"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JdH-hX-lyC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -1428,7 +1424,6 @@
                 <navigationController id="IiP-lI-iPM" customClass="BaseNC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="超职" image="icon_home_normal" selectedImage="icon_home_selected" id="ZQC-l5-DDl"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Lfj-tc-QZX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -2146,16 +2141,16 @@ VIP保障实验班</string>
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="89.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jurisdiction_icon_video" translatesAutoresizingMaskIntoConstraints="NO" id="Dg1-Fd-WTF">
-                                                <rect key="frame" x="12" y="20" width="20" height="20"/>
+                                                <rect key="frame" x="12" y="20" width="40" height="40"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="课程的观看、缓存" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QP3-Dv-DGe">
-                                                <rect key="frame" x="42" y="20.5" width="131" height="19.5"/>
+                                                <rect key="frame" x="62" y="30.5" width="131" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="将申请存储和音频权限" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueu-ir-9ag">
-                                                <rect key="frame" x="42" y="50" width="143" height="17"/>
+                                                <rect key="frame" x="62" y="60" width="143" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2175,16 +2170,16 @@ VIP保障实验班</string>
                                         <rect key="frame" x="0.0" y="90.5" width="350" height="89"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jurisdiction_icon_camera" translatesAutoresizingMaskIntoConstraints="NO" id="n3Z-lK-Jso">
-                                                <rect key="frame" x="12" y="20" width="20" height="20"/>
+                                                <rect key="frame" x="12" y="20" width="40" height="40"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设置图像、报考资料上传" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GH-sG-UTx">
-                                                <rect key="frame" x="42" y="20" width="180" height="19.5"/>
+                                                <rect key="frame" x="62" y="30" width="180" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="将申请相机权限" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wjj-6q-Ywe">
-                                                <rect key="frame" x="42" y="49.5" width="100" height="17"/>
+                                                <rect key="frame" x="62" y="59.5" width="100" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2204,16 +2199,16 @@ VIP保障实验班</string>
                                         <rect key="frame" x="0.0" y="180.5" width="350" height="89.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jurisdiction_icon_notice" translatesAutoresizingMaskIntoConstraints="NO" id="Lxv-Up-awm">
-                                                <rect key="frame" x="12" y="20" width="20" height="20"/>
+                                                <rect key="frame" x="12" y="20" width="40" height="40"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="课程相关消息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f13-XO-aza">
-                                                <rect key="frame" x="42" y="20.5" width="98" height="19.5"/>
+                                                <rect key="frame" x="62" y="30.5" width="98" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="将申请通知权限" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XjX-8a-d8T">
-                                                <rect key="frame" x="42" y="50" width="100" height="17"/>
+                                                <rect key="frame" x="62" y="60" width="100" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
