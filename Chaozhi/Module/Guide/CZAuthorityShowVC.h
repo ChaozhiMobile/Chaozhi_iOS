@@ -11,11 +11,14 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CZAuthorityShowVC : UIViewController
+
+@property (nonatomic, copy) dispatch_block_t doneBlock;
+
 @property (weak, nonatomic) IBOutlet UILabel *appNameLab;
 @property (weak, nonatomic) IBOutlet UILabel *showProtocolLab;
+
 - (IBAction)startVCClickAction:(UIButton *)sender;
-/** <#object#> */
-@property (nonatomic,copy) dispatch_block_t doneBlock;
+
 @end
 
 NS_ASSUME_NONNULL_END

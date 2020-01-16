@@ -45,6 +45,7 @@
     paragraphStyle.baseWritingDirection = NSWritingDirectionLeftToRight;
     [attributeString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, _showProtocolLab.text.length)];
     _showProtocolLab.attributedText = attributeString;
+    _showProtocolLab.font = [UIFont systemFontOfSize:autoScaleW(13)];
     
     [_showProtocolLab clickRichTextWithStrings:@[str1,str2] clickAction:^(NSString * _Nonnull string, NSRange range, NSInteger index) {
         if ([string isEqualToString:str1]) {
