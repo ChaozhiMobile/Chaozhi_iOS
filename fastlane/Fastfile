@@ -17,7 +17,7 @@ default_platform(:ios)
 
 platform :ios do
   desc "蒲公英测试版"
-  lane :test do |options| # option用于接收我们的外部参数，这里可以传入当前build的描述信息到蒲公英平台
+  lane :chaozhi do |options| # option用于接收我们的外部参数，这里可以传入当前build的描述信息到蒲公英平台
     gym(
         clean:true, # 打包前clean项目
         scheme:"Chaozhi", # scheme
@@ -27,7 +27,20 @@ platform :ios do
         output_name:"Chaozhi" # ipa 文件名
        )
     #蒲公英的配置 替换为自己的api_key和user_key
-    pgyer(api_key: "24ab778fdefd56713d8840d4fb7126af", user_key: "bee712f25eab64ded9cc4d14f0f5aa53",update_description: options[:desc])
+    pgyer(api_key: "24ab778fdefd56713d8840d4fb7126af", user_key: "bee712f25eab64ded9cc4d14f0f5aa53", password: "czjy", install_type: "2", update_description: options[:desc])
+    # add actions here: https://docs.fastlane.tools/actions
+  end
+  lane :xuezhi do |options| # option用于接收我们的外部参数，这里可以传入当前build的描述信息到蒲公英平台
+    gym(
+        clean:true, # 打包前clean项目
+        scheme:"Xuezhi", # scheme
+        export_method:"development", # 导出方式
+        configuration:"Debug", # 环境
+        output_directory:"/Users/jason_hzb/Desktop/fastlane", # 打包后的ipa文件存放的目录
+        output_name:"Xuezhi" # ipa 文件名
+       )
+    #蒲公英的配置 替换为自己的api_key和user_key
+    pgyer(api_key: "24ab778fdefd56713d8840d4fb7126af", user_key: "bee712f25eab64ded9cc4d14f0f5aa53", password: "xzjy", install_type: "2", update_description: options[:desc])
     # add actions here: https://docs.fastlane.tools/actions
   end
 end
