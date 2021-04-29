@@ -1,5 +1,5 @@
 # app_identifier("com.czjy.chaozhi") # The bundle identifier of your app
-# apple_id("appdeveloper@evcoming.com") # Your Apple email address
+# apple_id("") # Your Apple email address
 
 
 # For more information about the Appfile, see:
